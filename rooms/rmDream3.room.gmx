@@ -73,8 +73,8 @@ surface_reset_target()</code>
     <instance objName="objArmchair" x="272" y="48" name="inst_15A7C722" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objLight" x="192" y="80" name="inst_5237AC90" locked="0" code="color=c_aqua&#xA;targetstrength=0&#xA;radius=96" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLight" x="272" y="48" name="inst_D0942128" locked="0" code="radius=96&#xA;targetstrength=0&#xA;color=c_yellow" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlant" x="216" y="40" name="inst_559E5B5C" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlant" x="332" y="40" name="inst_88C58CEA" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlant" x="216" y="40" name="inst_559E5B5C" locked="0" code="sprite_index=sprPlantDestroyed&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlant" x="332" y="40" name="inst_88C58CEA" locked="0" code="sprite_index=sprPlantDestroyed&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGlassTable" x="272" y="96" name="inst_B22B71AB" locked="0" code="image_index=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objNightStand" x="240" y="52" name="inst_E5BB0F47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objNightStand" x="304" y="52" name="inst_EBFED170" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

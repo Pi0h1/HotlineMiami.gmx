@@ -57,7 +57,6 @@ global.package=0</code>
     <instance objName="objBackgroundColor" x="40" y="28" name="inst_6CCC7738" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShadowV" x="608" y="144" name="inst_D53876E0" locked="0" code="" scaleX="20" scaleY="2" colour="4294967295" rotation="180"/>
     <instance objName="objShadowV" x="200" y="112" name="inst_54CFA273" locked="0" code="" scaleX="5.5" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="objShadowV" x="128" y="256" name="inst_D97120F7" locked="0" code="color1=c_ltgray&#xA;color2=c_black&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objShadowV" x="544" y="320" name="inst_F1CF4C3C" locked="0" code="color2=c_ltgray&#xA;color1=c_black&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSurfacer" x="60" y="32" name="inst_2E272EA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTrashbag" x="464" y="288" name="inst_E856830B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -90,11 +89,10 @@ global.package=0</code>
     <instance objName="objDoorH" x="544" y="352" name="inst_60F56B1B" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="608" y="64" name="inst_74F04FF4" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRailV" x="160" y="256" name="inst_6A198F90" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objRailV" x="128" y="256" name="inst_89F008AD" locked="0" code="" scaleX="-1" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="objRailV" x="120" y="256" name="inst_89F008AD" locked="0" code="image_index=1&#xA;" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objRailV" x="288" y="112" name="inst_55C9EAE9" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="objRailV" x="576" y="320" name="inst_5DDD6FB9" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="objRailV" x="544" y="320" name="inst_03AA83EC" locked="0" code="" scaleX="-1" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="objRailH" x="288" y="112" name="inst_F34A8A2D" locked="0" code="" scaleX="40" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRailV" x="536" y="320" name="inst_03AA83EC" locked="0" code="image_index=1&#xA;" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objWoodFenceV" x="0" y="352" name="inst_2D2D6E46" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWoodFenceV" x="0" y="384" name="inst_D50C5B59" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWoodFenceV" x="0" y="416" name="inst_07374A87" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -120,18 +118,20 @@ global.package=0</code>
     <instance objName="objWallBrickV" x="96" y="256" name="inst_DD2336C2" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="480" y="224" name="inst_8186050A" locked="0" code="" scaleX="1" scaleY="17" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="352" y="224" name="inst_ABA2B090" locked="0" code="" scaleX="1" scaleY="17" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickH" x="96" y="256" name="inst_500B4C5E" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickH" x="160" y="256" name="inst_BD594749" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickH" x="96" y="352" name="inst_2A038F79" locked="0" code="" scaleX="33" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickH" x="0" y="160" name="inst_13AA0424" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickH" x="0" y="448" name="inst_0DCF2917" locked="0" code="" scaleX="77" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickH" x="192" y="32" name="inst_01C1D1F9" locked="0" code="" scaleX="53" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickH" x="352" y="224" name="inst_31C157FD" locked="0" code="" scaleX="17" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickH" x="480" y="352" name="inst_76F7369E" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickH" x="576" y="352" name="inst_903F37AB" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWallHeavyV" x="608" y="96" name="inst_1A1251C1" locked="0" code="" scaleX="1" scaleY="32" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHeavyV" x="608" y="96" name="inst_1A1251C1" locked="0" code="" scaleX="1" scaleY="33" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="608" y="32" name="inst_855BF7C5" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objEffectorHouse" x="24" y="32" name="inst_7539EEFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallBrickV" x="192" y="32" name="inst_DDE300D3" locked="0" code="" scaleX="53" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallBrickV" x="576" y="352" name="inst_D3C36B06" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallBrickV" x="480" y="352" name="inst_4ED362B7" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallBrickV" x="96" y="352" name="inst_70472B20" locked="0" code="" scaleX="33" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallBrickV" x="352" y="224" name="inst_C96E104F" locked="0" code="" scaleX="17" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallBrickV" x="96" y="256" name="inst_5179EC42" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallBrickV" x="160" y="256" name="inst_025C992F" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallBrickV" x="0" y="448" name="inst_366FA197" locked="0" code="" scaleX="77" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objShadowV" x="128" y="288" name="inst_2C3CB134" locked="0" code="color2=c_ltgray&#xA;color1=c_black&#xA;" scaleX="2" scaleY="-2" colour="4294967295" rotation="0"/>
+    <instance objName="objRailV" x="288" y="112" name="inst_C13BDD9E" locked="0" code="image_index=1&#xA;" scaleX="41" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallBrickV" x="0" y="160" name="inst_2FBC1260" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="256" y="128" w="16" h="16" xo="48" yo="208" id="10017296" name="tile_10BA6423" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

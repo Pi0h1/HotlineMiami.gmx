@@ -20,6 +20,6 @@
   <width>25</width>
   <height>40</height>
   <frames>
-    <frame index="0">images\sprPlayerJacket_0.png</frame>
+    <frame index="0">images\sprItemJacket_0.png</frame>
   </frames>
 </sprite>

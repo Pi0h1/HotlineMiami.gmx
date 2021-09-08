@@ -20,13 +20,13 @@
   <width>32</width>
   <height>44</height>
   <frames>
-    <frame index="0">images\Pose_PlayerMelee_0.png</frame>
-    <frame index="1">images\Pose_PlayerMelee_1.png</frame>
-    <frame index="2">images\Pose_PlayerMelee_2.png</frame>
-    <frame index="3">images\Pose_PlayerMelee_3.png</frame>
-    <frame index="4">images\Pose_PlayerMelee_4.png</frame>
-    <frame index="5">images\Pose_PlayerMelee_5.png</frame>
-    <frame index="6">images\Pose_PlayerMelee_6.png</frame>
-    <frame index="7">images\Pose_PlayerMelee_7.png</frame>
+    <frame index="0">images\Pose_PlayerWalkMelee_0.png</frame>
+    <frame index="1">images\Pose_PlayerWalkMelee_1.png</frame>
+    <frame index="2">images\Pose_PlayerWalkMelee_2.png</frame>
+    <frame index="3">images\Pose_PlayerWalkMelee_3.png</frame>
+    <frame index="4">images\Pose_PlayerWalkMelee_4.png</frame>
+    <frame index="5">images\Pose_PlayerWalkMelee_5.png</frame>
+    <frame index="6">images\Pose_PlayerWalkMelee_6.png</frame>
+    <frame index="7">images\Pose_PlayerWalkMelee_7.png</frame>
   </frames>
 </sprite>

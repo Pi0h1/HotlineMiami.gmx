@@ -3,7 +3,7 @@
   <spriteName>sprRailH</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>objSolid</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrInitWall(sprCornerStair)
+            <string>scrInitWall(sprCornerStair,sprite_index)
 </string>
           </argument>
         </arguments>

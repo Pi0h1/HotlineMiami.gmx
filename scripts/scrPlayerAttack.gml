@@ -2,7 +2,7 @@ if scrDontMove(){}else{
 sprite      =   mask_index 
 if reload  <=   0   {
 /*                                   Melee (speed,delay)            */
-if sprite_index=sprPWalkUnarmed     {Melee (00.5 ,20 )}
+if sprite_index=sprPWalkUnarmed     {if instance_exists(objEnemy){Melee (00.5 ,20 )}}
 if sprite_index=sprPWalkBag         {Melee (00.5 ,20 )}
 if sprite_index=sprPWalkPan         {Melee (00.5 ,20 )}
 if sprite_index=sprPWalkCrowbar     {Melee (00.5 ,20 )}

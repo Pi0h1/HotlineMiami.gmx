@@ -29,7 +29,7 @@
 scrInitPlayer();
 
 sprite_index=sprPWalkUnarmed
-pose_index=Pose_PlayerWalk
+pose_index=Pose_PlayerWalkUnarmed
 </string>
           </argument>
         </arguments>

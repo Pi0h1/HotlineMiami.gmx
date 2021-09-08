@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrInitWall(sprCornerBrick)
+            <string>scrInitWall(sprCornerBrick,sprite_index)
 </string>
           </argument>
         </arguments>

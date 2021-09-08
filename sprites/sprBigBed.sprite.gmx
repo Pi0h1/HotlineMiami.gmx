@@ -2,15 +2,15 @@
 <sprite>
   <type>0</type>
   <xorig>30</xorig>
-  <yorigin>37</yorigin>
+  <yorigin>28</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>59</bbox_right>
-  <bbox_top>9</bbox_top>
-  <bbox_bottom>65</bbox_bottom>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>56</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>60</width>
-  <height>80</height>
+  <height>57</height>
   <frames>
     <frame index="0">images\sprBigBed_0.png</frame>
   </frames>

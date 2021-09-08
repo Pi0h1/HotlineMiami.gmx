@@ -3,7 +3,7 @@
   <spriteName>sprWindowRight</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-11</depth>
   <persistent>0</persistent>
   <parentName>objSolid</parentName>
   <maskName>&lt;undefined&gt;</maskName>

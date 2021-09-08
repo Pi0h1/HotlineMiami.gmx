@@ -104,11 +104,11 @@
             <sprite>sprites\sprLegsStairs</sprite>
           </sprites>
           <sprite>sprites\sprPlayerHead</sprite>
-          <sprite>sprites\Pose_PlayerWalk</sprite>
-          <sprite>sprites\Pose_PlayerAim</sprite>
-          <sprite>sprites\Pose_PlayerGangster</sprite>
-          <sprite>sprites\Pose_PlayerMelee</sprite>
-          <sprite>sprites\Pose_PlayerShort</sprite>
+          <sprite>sprites\Pose_PlayerWalkUnarmed</sprite>
+          <sprite>sprites\Pose_PlayerWalkAim</sprite>
+          <sprite>sprites\Pose_PlayerWalkAimGangster</sprite>
+          <sprite>sprites\Pose_PlayerWalkMelee</sprite>
+          <sprite>sprites\Pose_PlayerWalkMeleeShort</sprite>
         </sprites>
         <sprites name="Walking">
           <sprite>sprites\sprPWalkAxe</sprite>
@@ -318,9 +318,9 @@
           <sprite>sprites\sprPlayerClimbDown</sprite>
           <sprite>sprites\sprShotgunTurn</sprite>
           <sprite>sprites\sprPlayerClimbUp</sprite>
-          <sprite>sprites\sprPlayerJacket</sprite>
+          <sprite>sprites\sprItemJacket</sprite>
           <sprite>sprites\sprPlayerLighter</sprite>
-          <sprite>sprites\sprPlayerPants</sprite>
+          <sprite>sprites\sprItemPants</sprite>
           <sprite>sprites\sprPLeaveBag</sprite>
           <sprite>sprites\sprPMaskSlip</sprite>
           <sprite>sprites\sprPOpenSewer</sprite>
@@ -1028,78 +1028,87 @@
       <sprite>sprites\sprMaskMenu</sprite>
       <sprite>sprites\sprBackgroundColor</sprite>
       <sprite>sprites\sprSurface</sprite>
+      <sprite>sprites\sprWeaponUI</sprite>
     </sprites>
     <sprites name="Walls">
-      <sprite>sprites\sprWallBrickH</sprite>
-      <sprite>sprites\sprWallBrickV</sprite>
-      <sprite>sprites\sprWallHeavyH</sprite>
-      <sprite>sprites\sprWallHeavyV</sprite>
-      <sprite>sprites\sprWallHospitalH</sprite>
-      <sprite>sprites\sprWallHospitalV</sprite>
-      <sprite>sprites\sprBunkerWallH</sprite>
-      <sprite>sprites\sprBunkerWallV</sprite>
-      <sprite>sprites\sprSubwayWallH</sprite>
-      <sprite>sprites\sprSubwayWallV</sprite>
-      <sprite>sprites\sprSubwayWindowH</sprite>
-      <sprite>sprites\sprSubwayWindowV</sprite>
-      <sprite>sprites\sprBoatRailingH</sprite>
-      <sprite>sprites\sprBoatRailingV</sprite>
-      <sprite>sprites\sprWoodWallV</sprite>
-      <sprite>sprites\sprWoodWallH</sprite>
-      <sprite>sprites\sprWoodWallInteriorV</sprite>
-      <sprite>sprites\sprWoodWallInteriorH</sprite>
-      <sprite>sprites\sprCementWallV</sprite>
-      <sprite>sprites\sprCementWallH</sprite>
-      <sprite>sprites\sprPorchWallV</sprite>
-      <sprite>sprites\sprPorchWallH</sprite>
-      <sprite>sprites\sprFenceH</sprite>
-      <sprite>sprites\sprFenceV</sprite>
-      <sprite>sprites\sprWindowLargeV</sprite>
-      <sprite>sprites\sprWindowLargeMirroredV</sprite>
-      <sprite>sprites\sprWindowLargeH</sprite>
-      <sprite>sprites\sprWindowLargeMirroredH</sprite>
-      <sprite>sprites\sprFenceBroken</sprite>
-      <sprite>sprites\sprWalls</sprite>
-      <sprite>sprites\sprWallSoftH</sprite>
-      <sprite>sprites\sprWallSoftV</sprite>
-      <sprite>sprites\sprWoodFenceH</sprite>
-      <sprite>sprites\sprWoodFenceV</sprite>
-      <sprite>sprites\sprBalconyH</sprite>
-      <sprite>sprites\sprBalconyV</sprite>
-      <sprite>sprites\sprCellDoor</sprite>
-      <sprite>sprites\sprWindow</sprite>
-      <sprite>sprites\sprWindowDown</sprite>
-      <sprite>sprites\sprWindowExplode</sprite>
-      <sprite>sprites\sprWindowframe</sprite>
-      <sprite>sprites\sprWindowLeft</sprite>
-      <sprite>sprites\sprWindowOpen</sprite>
-      <sprite>sprites\sprWindowRight</sprite>
-      <sprite>sprites\sprWindowSill</sprite>
-      <sprite>sprites\sprWindowUp</sprite>
-      <sprite>sprites\sprBrokenWindow</sprite>
-      <sprite>sprites\sprRailH</sprite>
-      <sprite>sprites\sprRailV</sprite>
-      <sprite>sprites\sprSewerWallH</sprite>
-      <sprite>sprites\sprSewerWallV</sprite>
-      <sprite>sprites\sprGlassPanelBrokenH</sprite>
-      <sprite>sprites\sprGlassPanelBrokenV</sprite>
-      <sprite>sprites\sprGlassPanelDestroyedH</sprite>
-      <sprite>sprites\sprGlassPanelDestroyedV</sprite>
-      <sprite>sprites\sprGlassPanelH</sprite>
-      <sprite>sprites\sprGlassPanelV</sprite>
-      <sprite>sprites\sprDoorH</sprite>
-      <sprite>sprites\sprDoorV</sprite>
-      <sprite>sprites\sprDoorH2</sprite>
-      <sprite>sprites\sprDoorV2</sprite>
-      <sprite>sprites\sprCorner</sprite>
-      <sprite>sprites\sprCornerBrick</sprite>
-      <sprite>sprites\sprCornerSoft</sprite>
-      <sprite>sprites\sprCornerHospital</sprite>
-      <sprite>sprites\sprCornerStair</sprite>
-      <sprite>sprites\sprCellWallH</sprite>
-      <sprite>sprites\sprCellWallV</sprite>
-      <sprite>sprites\sprHorBarrier</sprite>
-      <sprite>sprites\sprVertBarrier</sprite>
+      <sprite>sprites\repWallHeavy</sprite>
+      <sprite>sprites\repWallBrick</sprite>
+      <sprite>sprites\repWallRail</sprite>
+      <sprite>sprites\repWallSoft</sprite>
+      <sprite>sprites\sprWallShadow</sprite>
+      <sprites name="Textures">
+        <sprite>sprites\sprWallBrickH</sprite>
+        <sprite>sprites\sprWallBrickV</sprite>
+        <sprite>sprites\sprWallHeavyH</sprite>
+        <sprite>sprites\sprWallHeavyV</sprite>
+        <sprite>sprites\sprWallHospitalH</sprite>
+        <sprite>sprites\sprWallHospitalV</sprite>
+        <sprite>sprites\sprBunkerWallH</sprite>
+        <sprite>sprites\sprBunkerWallV</sprite>
+        <sprite>sprites\sprSubwayWallH</sprite>
+        <sprite>sprites\sprSubwayWallV</sprite>
+        <sprite>sprites\sprSubwayWindowH</sprite>
+        <sprite>sprites\sprSubwayWindowV</sprite>
+        <sprite>sprites\sprBoatRailingH</sprite>
+        <sprite>sprites\sprBoatRailingV</sprite>
+        <sprite>sprites\sprWoodWallV</sprite>
+        <sprite>sprites\sprWoodWallH</sprite>
+        <sprite>sprites\sprWoodWallInteriorV</sprite>
+        <sprite>sprites\sprWoodWallInteriorH</sprite>
+        <sprite>sprites\sprCementWallV</sprite>
+        <sprite>sprites\sprCementWallH</sprite>
+        <sprite>sprites\sprPorchWallV</sprite>
+        <sprite>sprites\sprPorchWallH</sprite>
+        <sprite>sprites\sprFenceH</sprite>
+        <sprite>sprites\sprFenceV</sprite>
+        <sprite>sprites\sprWindowLargeV</sprite>
+        <sprite>sprites\sprWindowLargeMirroredV</sprite>
+        <sprite>sprites\sprWindowLargeH</sprite>
+        <sprite>sprites\sprWindowLargeMirroredH</sprite>
+        <sprite>sprites\sprFenceBroken</sprite>
+        <sprite>sprites\sprWalls</sprite>
+        <sprite>sprites\sprWallSoftH</sprite>
+        <sprite>sprites\sprWallSoftV</sprite>
+        <sprite>sprites\sprWoodFenceH</sprite>
+        <sprite>sprites\sprWoodFenceV</sprite>
+        <sprite>sprites\sprBalconyH</sprite>
+        <sprite>sprites\sprBalconyV</sprite>
+        <sprite>sprites\sprCellDoor</sprite>
+        <sprite>sprites\sprWindow</sprite>
+        <sprite>sprites\sprWindowDown</sprite>
+        <sprite>sprites\sprWindowExplode</sprite>
+        <sprite>sprites\sprWindowframe</sprite>
+        <sprite>sprites\sprWindowLeft</sprite>
+        <sprite>sprites\sprWindowOpen</sprite>
+        <sprite>sprites\sprWindowRight</sprite>
+        <sprite>sprites\sprWindowSill</sprite>
+        <sprite>sprites\sprWindowUp</sprite>
+        <sprite>sprites\sprBrokenWindow</sprite>
+        <sprite>sprites\sprRailH</sprite>
+        <sprite>sprites\sprRailV</sprite>
+        <sprite>sprites\sprSewerWallH</sprite>
+        <sprite>sprites\sprSewerWallV</sprite>
+        <sprite>sprites\sprGlassPanelBrokenH</sprite>
+        <sprite>sprites\sprGlassPanelBrokenV</sprite>
+        <sprite>sprites\sprGlassPanelDestroyedH</sprite>
+        <sprite>sprites\sprGlassPanelDestroyedV</sprite>
+        <sprite>sprites\sprGlassPanelH</sprite>
+        <sprite>sprites\sprGlassPanelV</sprite>
+        <sprite>sprites\sprDoorH</sprite>
+        <sprite>sprites\sprDoorV</sprite>
+        <sprite>sprites\sprDoorH2</sprite>
+        <sprite>sprites\sprDoorV2</sprite>
+        <sprite>sprites\sprCorner</sprite>
+        <sprite>sprites\sprCornerBrick</sprite>
+        <sprite>sprites\sprCornerSewer</sprite>
+        <sprite>sprites\sprCornerSoft</sprite>
+        <sprite>sprites\sprCornerHospital</sprite>
+        <sprite>sprites\sprCornerStair</sprite>
+        <sprite>sprites\sprCellWallH</sprite>
+        <sprite>sprites\sprCellWallV</sprite>
+        <sprite>sprites\sprHorBarrier</sprite>
+        <sprite>sprites\sprVertBarrier</sprite>
+      </sprites>
     </sprites>
     <sprites name="Environment">
       <sprites name="Assault">
@@ -1745,6 +1754,7 @@
       <sprite>sprites\sprExplosionSmoke</sprite>
       <sprite>sprites\sprLaser</sprite>
     </sprites>
+    <sprite>sprites\sprPlantDestroyed</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tlCorners</background>
@@ -2222,6 +2232,7 @@
         <object>objects\objSubwayWallH</object>
         <object>objects\objPorchWallH</object>
         <object>objects\objPorchWallV</object>
+        <object>objects\objWallShadow</object>
       </objects>
       <objects name="Exterior">
         <object>objects\objWallBrickV</object>
@@ -2346,8 +2357,8 @@
         <object>objects\objSixpack</object>
         <object>objects\objChipsBag</object>
         <object>objects\objKeys</object>
-        <object>objects\objPlayerJacket</object>
-        <object>objects\objPlayerPants</object>
+        <object>objects\objItemJacket</object>
+        <object>objects\objItemPants</object>
         <object>objects\objToken</object>
         <object>objects\objSecretMask</object>
       </objects>

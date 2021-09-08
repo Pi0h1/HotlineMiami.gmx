@@ -66,8 +66,8 @@ global.revisit=0</code>
     <instance objName="objGirlfriendDeadOutline" x="356" y="376" name="inst_026AF06B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSink" x="378" y="364" name="inst_A8EA677C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLaundryBasket" x="372" y="344" name="inst_7F46FB2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerPants" x="344" y="348" name="inst_FCC9E49B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerJacket" x="352" y="352" name="inst_E75E5741" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objItemPants" x="344" y="348" name="inst_FCC9E49B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objItemJacket" x="352" y="352" name="inst_E75E5741" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objChair" x="504" y="238" name="inst_2AEE67E2" locked="0" code="image_angle=random(360)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objChair" x="560" y="300" name="inst_C1C8EE74" locked="0" code="image_angle=random(360)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="320" y="32" name="inst_3E5F170C" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Bottom
+            <string>//Bottom
 color1=c_black
 
 //Top
@@ -53,9 +52,12 @@ color2=c_gray
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_blend_mode(bm_subtract)
+            <string>/*draw_set_blend_mode(bm_subtract)
 draw_rectangle_color(x,y,x+16*image_xscale,y+16*image_yscale,color1,color1,color2,color2,0)
-draw_set_blend_mode(bm_normal)</string>
+draw_set_blend_mode(bm_normal)
+*/
+draw_self();
+</string>
           </argument>
         </arguments>
       </action>

@@ -57,7 +57,7 @@ if image_index&lt;18 image_index+=0.5
 }
 if state=0 {
 if objPlayer.y&lt;224 {
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.image_index=image_index
 my_id.dir=dir

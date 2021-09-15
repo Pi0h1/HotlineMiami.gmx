@@ -73,7 +73,7 @@ touch=0
 if !place_meeting(x,y,objPlayer) {
 if wait&lt;30 wait=30
 }
-if instance_number(objPlayerMouse)+instance_number(objPlayerMouseHouse)+instance_number(objPlayerBiker)+instance_number(objPlayerBikerHouse)=0 exit
+if instance_number(objPlayerJacket)+instance_number(objPlayerMouseHouse)+instance_number(objPlayerBiker)+instance_number(objPlayerBikerHouse)=0 exit
 if valid=0 exit
 if instance_exists(objEnemy) or instance_exists(objBoss) {
 if place_meeting(x,y,objPlayer) {

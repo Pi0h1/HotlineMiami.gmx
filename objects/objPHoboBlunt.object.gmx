@@ -56,7 +56,7 @@ maskindex=global.maskindex
             <kind>1</kind>
             <string>if hurtindex=4 {
 if image_index=0 {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.alarm[2]=160
 global.angle=image_angle-180
 my_id.reload=10

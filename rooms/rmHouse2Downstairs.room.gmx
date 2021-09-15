@@ -149,7 +149,7 @@ surface_reset_target()
     <instance objName="objEnemy" x="96" y="280" name="inst_14EF9B7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMeleeStationary" x="464" y="188" name="inst_1C0967B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMeleeStationary" x="528" y="188" name="inst_F70602DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMouse" x="120" y="72" name="inst_11ECB91E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerJacket" x="120" y="72" name="inst_11ECB91E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerCar" x="120" y="28" name="inst_651C6C2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="objTrophyHead" x="400" y="168" name="inst_EC6EFE8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTrophyHead" x="400" y="200" name="inst_3C761493" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

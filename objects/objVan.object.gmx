@@ -82,7 +82,7 @@ objPlayer.persistent=test
           <argument>
             <kind>1</kind>
             <string>if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
-if place_meeting(x,y,objPlayerMouse) {
+if place_meeting(x,y,objPlayerJacket) {
 global.dir=point_direction(x,y,objPlayer.x,objPlayer.y)
 with objPlayer {
 my_id=instance_create(x,y,objPlayerDead)
@@ -211,7 +211,7 @@ my_id.direction=90
 
 
 if state=5 {
-if instance_exists(objPlayerMouse) {
+if instance_exists(objPlayerJacket) {
 if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objBurningGuy)=0 {
 objEffector.brus=10
 with objBottleExplosion {my_id=instance_create(x,y,objBombGround) my_id.image_angle=random(360) instance_destroy()}
@@ -220,7 +220,7 @@ my_id=instance_create(x+lengthdir_x(24,image_angle+90),y+lengthdir_y(24,image_an
 my_id.direction=90
 viewx=view_xview[0]
 viewy=view_yview[0]
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.dir=dir
 my_id.maskon=1

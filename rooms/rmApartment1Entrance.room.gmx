@@ -62,7 +62,7 @@ global.done=0</code>
     <instance objName="objDoorH" x="320" y="448" name="inst_73FBFF86" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMaskMenu" x="288" y="104" name="inst_C6891419" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHorBarrier" x="128" y="24" name="inst_DFBF4AB7" locked="0" code="ylimit=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMouse" x="144" y="8" name="inst_99DAC12C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerJacket" x="144" y="8" name="inst_99DAC12C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerCar" x="144" y="-40" name="inst_445F0929" locked="0" code="image_angle=180&#xA;nextroom=rmMenu" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="64" y="32" name="inst_6A9DA50C" locked="0" code="" scaleX="1" scaleY="53" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="224" y="32" name="inst_126C463B" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>

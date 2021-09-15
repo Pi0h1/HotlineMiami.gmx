@@ -127,32 +127,6 @@ mask_index=sprWeaponMask
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objGate">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>move_bounce_all(0)
-speed*=0.6
-PlaySFX(sndHitWall)
-bounce=1
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objShootThrough">
       <action>
         <libid>1</libid>
@@ -216,6 +190,32 @@ instance_destroy()
 }
 exit
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objGate">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>move_bounce_all(0)
+speed*=0.6
+PlaySFX(sndHitWall)
+bounce=1
 </string>
           </argument>
         </arguments>

@@ -91,14 +91,15 @@ my_id.direction=dir-180
 my_id.speed=random(1)+bullets*0.15
 my_id.image_angle=my_id.direction
 instance_destroy()
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.ammo=ammo
 if sprite_index=sprPHumanShieldDoubleBarrel my_id.sprite=sprPWalkDoubleBarrel
 if sprite_index=sprPHumanShieldMagnum my_id.sprite=sprPWalkMagnum
 if sprite_index=sprPHumanShieldScorpion my_id.sprite=sprPWalkScorpion
 if sprite_index=sprPHumanShieldUzi my_id.sprite=sprPWalkUzi
 if sprite_index=sprPHumanShieldMP5 my_id.sprite=sprPWalkMP5
-if sprite_index=sprPHumanShieldSilencer my_id.sprite=sprPWalkSilencer</string>
+if sprite_index=sprPHumanShieldSilencer my_id.sprite=sprPWalkSilencer
+</string>
           </argument>
         </arguments>
       </action>
@@ -249,7 +250,7 @@ my_id.direction=other.direction
 my_id.speed=1.5+random(1)+bullets*0.15
 my_id.image_angle=my_id.direction
 instance_destroy()
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.ammo=ammo
 if sprite_index=sprPHumanShieldDoubleBarrel my_id.sprite=sprPWalkDoubleBarrel
 if sprite_index=sprPHumanShieldMagnum my_id.sprite=sprPWalkMagnum

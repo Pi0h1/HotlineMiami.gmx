@@ -1,7 +1,7 @@
 room_persistent=0
 objEffector.next=1 
 objEffector.fade=1 
-if instance_exists(objPlayerMouse) or 
+if instance_exists(objPlayerJacket) or 
 room=rmHouse1Downstairs or
 room=rmBuildingFloor1 or 
 room=rmPhoneHomEntranceBiker or 

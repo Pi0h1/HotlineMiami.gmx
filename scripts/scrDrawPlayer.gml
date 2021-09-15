@@ -1,4 +1,4 @@
-if instance_exists(objPlayerMouse) or instance_exists(objPlayerMouseHouse) {
+if instance_exists(objPlayerJacket) or instance_exists(objPlayerMouseHouse) {
 with objPlayer {
 if persistent=1 {
 

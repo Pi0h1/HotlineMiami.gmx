@@ -55,7 +55,7 @@ ammo=0
             <kind>1</kind>
             <string>if hurtindex=15 {
 if image_index=0 {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.sprite_index=sprPWalkThrow
 my_id.throwindex=3
 my_id.maskon=global.maskon

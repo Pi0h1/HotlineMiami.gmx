@@ -79,7 +79,7 @@ image_angle+=angle_speed*speed*3
 with objPlayerShieldMouse {scrPlayerDropShield()}
 }
 
-if place_meeting(x,y,objPlayerMouse)  {
+if place_meeting(x,y,objPlayerJacket)  {
 with objPlayer {
 if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackUnarmed or sprite_index=sprPAttackBash {} else {
 my_id=instance_create(x,y,objWeaponThrow)

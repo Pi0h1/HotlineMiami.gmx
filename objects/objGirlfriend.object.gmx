@@ -55,8 +55,8 @@ if instance_exists(objBoss1Die) exit
 if wait&gt;0 {wait-=1 exit}
 if state=0 {
 if objPlayer.x&lt;128 and objPlayer.y&gt;456 or point_distance(x,y,objPlayer.x,objPlayer.y)&lt;64 {
-if instance_exists(objPlayerMouse) {
-with objPlayerMouse {
+if instance_exists(objPlayerJacket) {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.sprite_index=sprite_index

@@ -80,8 +80,8 @@ if alert=0 or alert=2 {
 direction=scrRotate(direction,point_direction(x,y,objPlayer.x,objPlayer.y),10)
 
 if state=0 {
-if instance_exists(objPlayerMouse) {
-with objPlayerMouse {
+if instance_exists(objPlayerJacket) {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.sprite_index=sprite_index
@@ -106,7 +106,7 @@ if !instance_exists(objPhoneConversation) {
 if wait&gt;0 wait-=1 else {
 state=2
 with objPlayer {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.active=1
 my_id.sprite_index=sprite_index
 my_id.ammo=ammo

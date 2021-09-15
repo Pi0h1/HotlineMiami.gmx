@@ -158,7 +158,7 @@ global.done=0</code>
     <instance objName="objDogPatrol" x="80" y="48" name="inst_FD494DC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMeleeStationary" x="464" y="360" name="inst_3A345FA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDogPatrol" x="448" y="176" name="inst_F0306A1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMouse" x="304" y="8" name="inst_B2A212EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerJacket" x="304" y="8" name="inst_B2A212EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerCar" x="304" y="-48" name="inst_A4915F25" locked="0" code="image_angle=180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="224" y="288" name="inst_3577F7C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="224" y="256" name="inst_8A739199" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

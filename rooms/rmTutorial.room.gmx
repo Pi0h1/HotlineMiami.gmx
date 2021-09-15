@@ -90,7 +90,7 @@ global.maskindex=3</code>
     <instance objName="objEnemy" x="248" y="116" name="inst_8AF5F33E" locked="0" code="sprite_index=sprEWalkUnarmed" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemy" x="300" y="116" name="inst_17275F04" locked="0" code="sprite_index=sprEWalkUnarmed" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemy" x="273" y="334" name="inst_D5AC1E4F" locked="0" code="sprite_index=sprEWalkUnarmed" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMouse" x="280" y="188" name="inst_B29233DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerJacket" x="280" y="188" name="inst_B29233DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTutorialHobo" x="279" y="24" name="inst_93D9A34A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHospitalV" x="128" y="128" name="inst_BC4F0560" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHospitalV" x="128" y="128" name="inst_C2F4DC6F" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>

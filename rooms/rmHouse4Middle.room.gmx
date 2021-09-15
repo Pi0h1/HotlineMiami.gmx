@@ -104,7 +104,7 @@ global.done=0</code>
     <instance objName="objWaterPuddle" x="332" y="252" name="inst_ABB05796" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMelee" x="276" y="144" name="inst_FFFBF737" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyPatrol" x="368" y="20" name="inst_E7533011" locked="0" code="direction=180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMouse" x="176" y="608" name="inst_ABE18AA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerJacket" x="176" y="608" name="inst_ABE18AA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyStationary" x="352" y="368" name="inst_23AC6251" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMelee" x="480" y="512" name="inst_01ED281C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyStationary" x="432" y="472" name="inst_FD3DC984" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

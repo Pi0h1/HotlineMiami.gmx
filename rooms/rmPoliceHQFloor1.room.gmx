@@ -143,7 +143,7 @@ global.done=0</code>
     <instance objName="objPoliceArmchair" x="18" y="260" name="inst_FB21FEC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objToken" x="162" y="500" name="inst_5D66FF0E" locked="0" code="letter=3" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHorBarrier" x="256" y="32" name="inst_FA486B00" locked="0" code="ylimit=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMouse" x="248" y="8" name="inst_B1C27710" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerJacket" x="248" y="8" name="inst_B1C27710" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPolicePatrol" x="236" y="560" name="inst_B2D3BCF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPolicePatrol" x="300" y="560" name="inst_B136E820" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPolice" x="84" y="164" name="inst_E1C3B818" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

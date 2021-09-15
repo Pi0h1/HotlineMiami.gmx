@@ -76,7 +76,7 @@ speed=0
 direction=image_angle+90
 if instance_exists(objPhoneConversation) exit
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.maskindex=maskindex
 my_id.maskon=1
 my_id.sprite_index=sprPWalkClub

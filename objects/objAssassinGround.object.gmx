@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objPlayerMouse {
+            <string>with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.sprite_index=sprite_index
@@ -38,7 +38,8 @@ instance_destroy()
 friction=0.5
 image_speed=0
 state=0
-wait=100</string>
+wait=100
+</string>
           </argument>
         </arguments>
       </action>
@@ -65,8 +66,8 @@ wait=100</string>
 if speed=0 {
 if state=0 {
 if wait&gt;0 wait-=1 else {
-if instance_exists(objPlayerMouse) {
-with objPlayerMouse {
+if instance_exists(objPlayerJacket) {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.sprite_index=sprite_index
@@ -91,7 +92,7 @@ if state=1 {
 if !instance_exists(objPhoneConversation) {
 if wait&gt;0 wait-=1 else {
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.active=0
 my_id.sprite_index=sprite_index
 my_id.ammo=ammo

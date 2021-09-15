@@ -1,6 +1,6 @@
 image_speed=0
 if sprite_index=sprPUnlockDoor {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.ammo=ammo
 global.maskon=1
 my_id.maskon=1

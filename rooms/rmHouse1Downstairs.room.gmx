@@ -120,7 +120,7 @@ global.done=0</code>
     <instance objName="objEnemy" x="400" y="272" name="inst_11D6BCF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyStationary" x="432" y="400" name="inst_1F7C8242" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyPatrol" x="192" y="432" name="inst_667558DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMouse" x="16" y="496" name="inst_270D47D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerJacket" x="16" y="496" name="inst_270D47D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMeleeStationary" x="208" y="496" name="inst_F6020F31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyPatrol" x="320" y="496" name="inst_100394D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPornLight" x="264" y="48" name="inst_C688BC7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="2000"/>

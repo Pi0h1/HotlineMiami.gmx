@@ -54,42 +54,6 @@ image_blend=merge_color(c_white,c_yellow,random(1))
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objGate">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.solid=1 move_contact_solid(direction,speed*2) else exit 
-my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objHit)
-my_id.image_angle=direction
-my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objSmokeHit)
-my_id.image_angle=direction
-my_id.direction=random(360)
-my_id.speed=random(0.5)
-
-repeat (4) {
-my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objDebris)
-my_id.direction=direction-140-random(80)
-my_id.speed=random(4)
-}
-
-instance_destroy()</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objShootThrough">
       <action>
         <libid>1</libid>
@@ -163,6 +127,42 @@ instance_destroy()
 exit
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objGate">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if other.solid=1 move_contact_solid(direction,speed*2) else exit 
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objHit)
+my_id.image_angle=direction
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objSmokeHit)
+my_id.image_angle=direction
+my_id.direction=random(360)
+my_id.speed=random(0.5)
+
+repeat (4) {
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objDebris)
+my_id.direction=direction-140-random(80)
+my_id.speed=random(4)
+}
+
+instance_destroy()</string>
           </argument>
         </arguments>
       </action>

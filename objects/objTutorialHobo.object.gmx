@@ -87,7 +87,7 @@ image_angle=scrRotate(image_angle,point_direction(x,y,objPlayer.x,objPlayer.y),5
 
 if state=0 {
 if wait&gt;0 wait-=1 else {
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -108,7 +108,7 @@ exit
 if state=1 {
 if !instance_exists(objPhoneConversation) {
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.dir=dir
 my_id.legindex=legindex
 my_id.image_index=image_index
@@ -127,7 +127,7 @@ exit
 if state=2 {
 if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objEnemyBash)+instance_number(objEnemyHeadKick)+instance_number(objPAttackThroat)&lt;3 {
 if wait&gt;0 wait-=1 else {
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -156,7 +156,7 @@ with objLight {
 if color=c_red targetstrength=0.8
 }
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.dir=dir
 my_id.legindex=legindex
 my_id.sprite_index=sprite_index
@@ -179,7 +179,7 @@ exit
 if state=4 {
 if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objEnemyBash)+instance_number(objEnemyHeadKick)+instance_number(objPBluntKill)+instance_number(objPAttackThroat)&lt;2 {
 if wait&gt;0 wait-=1 else {
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -208,7 +208,7 @@ with objLight {
 if color=c_aqua targetstrength=0.8
 }
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.dir=dir
 my_id.legindex=legindex
 my_id.sprite_index=sprite_index
@@ -244,7 +244,7 @@ if state=7 {
 with objLight {
 if image_blend=c_yellow targetstrength=0.8
 }
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -271,7 +271,8 @@ objEffector.newsong=0
 global.nextlevel=rmDream1
 global.sequence=rmSequence1
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

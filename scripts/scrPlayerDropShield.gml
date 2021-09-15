@@ -7,7 +7,7 @@ my_id.direction=dir
 my_id.speed=2+random(1)
 my_id.image_angle=my_id.direction
 my_id.type=objEnemy
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.ammo=ammo
 my_id.release=1
 instance_destroy()

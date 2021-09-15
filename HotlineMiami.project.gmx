@@ -923,194 +923,89 @@
         </sprites>
       </sprites>
     </sprites>
-    <sprites name="UI">
-      <sprites name="Dennaton &amp; Devolver Logo">
-        <sprite>sprites\sprDevolver</sprite>
-        <sprite>sprites\splBullet</sprite>
-        <sprite>sprites\splDennatonBlink</sprite>
-        <sprite>sprites\splDennatonFlash</sprite>
-        <sprite>sprites\splDennatonTitle</sprite>
-        <sprite>sprites\splDennatonPieces</sprite>
-        <sprite>sprites\splGames</sprite>
-        <sprite>sprites\splSpeaker</sprite>
-        <sprite>sprites\splSplash</sprite>
-        <sprite>sprites\splSplashShift</sprite>
-        <sprite>sprites\splWaveComing</sprite>
-      </sprites>
-      <sprites name="Title screen">
-        <sprite>sprites\sprTitle</sprite>
-        <sprite>sprites\sprPalmTrees</sprite>
-      </sprites>
-      <sprites name="Level Select">
-        <sprites name="Blueprints">
-          <sprite>sprites\sprApartment1</sprite>
-          <sprite>sprites\sprApartment2</sprite>
-          <sprite>sprites\sprArcade</sprite>
-          <sprite>sprites\sprBossClub</sprite>
-          <sprite>sprites\sprBossClub2</sprite>
-          <sprite>sprites\sprHospital</sprite>
-          <sprite>sprites\sprHotel</sprite>
-          <sprite>sprites\sprHouse4</sprite>
-          <sprite>sprites\sprHouse5</sprite>
-          <sprite>sprites\sprMansion</sprite>
-          <sprite>sprites\sprNoodleShop</sprite>
-          <sprite>sprites\sprPhoneLevel</sprite>
-          <sprite>sprites\sprPoliceHQ</sprite>
-          <sprite>sprites\sprSwatLevel</sprite>
-          <sprite>sprites\sprBuilding</sprite>
-          <sprite>sprites\sprHouse1</sprite>
-          <sprite>sprites\sprHouse2</sprite>
-          <sprite>sprites\sprHouse3</sprite>
-          <sprite>sprites\sprOffice</sprite>
-          <sprite>sprites\sprTrainstation</sprite>
-        </sprites>
-        <sprite>sprites\sprNoMask</sprite>
-        <sprite>sprites\sprLetterIcon</sprite>
-        <sprite>sprites\sprSecretLevel</sprite>
-      </sprites>
-      <sprites name="Cursor">
-        <sprite>sprites\sprCursor</sprite>
-        <sprite>sprites\sprCursorAction</sprite>
-        <sprite>sprites\sprAim</sprite>
-      </sprites>
-      <sprites name="Arrow">
-        <sprite>sprites\sprArrow</sprite>
-        <sprite>sprites\sprArrowGray</sprite>
-        <sprite>sprites\sprGoArrow</sprite>
-      </sprites>
-      <sprites name="Puzzle Pieces">
-        <sprite>sprites\sprToken</sprite>
-        <sprite>sprites\sprLetters</sprite>
-        <sprite>sprites\sprI</sprite>
-        <sprite>sprites\sprW</sprite>
-        <sprite>sprites\sprA</sprite>
-        <sprite>sprites\sprS</sprite>
-        <sprite>sprites\sprB</sprite>
-        <sprite>sprites\sprO</sprite>
-        <sprite>sprites\sprR</sprite>
-        <sprite>sprites\sprN</sprite>
-        <sprite>sprites\sprT</sprite>
-        <sprite>sprites\sprH</sprite>
-        <sprite>sprites\sprE</sprite>
-        <sprite>sprites\sprU</sprite>
-        <sprite>sprites\sprLetterSocket</sprite>
-        <sprite>sprites\sprPuzzleCursor</sprite>
-        <sprite>sprites\sprIGlow</sprite>
-        <sprite>sprites\sprWGlow</sprite>
-        <sprite>sprites\sprAGlow</sprite>
-        <sprite>sprites\sprSGlow</sprite>
-        <sprite>sprites\sprBGlow</sprite>
-        <sprite>sprites\sprOGlow</sprite>
-        <sprite>sprites\sprRGlow</sprite>
-        <sprite>sprites\sprNGlow</sprite>
-        <sprite>sprites\sprTGlow</sprite>
-        <sprite>sprites\sprHGlow</sprite>
-        <sprite>sprites\sprEGlow</sprite>
-        <sprite>sprites\sprUGlow</sprite>
-        <sprite>sprites\sprLetterMask</sprite>
-      </sprites>
-      <sprites name="Elevator">
-        <sprite>sprites\sprElevator</sprite>
-        <sprite>sprites\sprElevatorFloor</sprite>
-        <sprite>sprites\sprElevatorMask</sprite>
-      </sprites>
-      <sprites name="Dialogue">
-        <sprite>sprites\sprPhoneLine</sprite>
-      </sprites>
-      <sprite>sprites\sprHouse</sprite>
-      <sprite>sprites\sprHouses</sprite>
-      <sprite>sprites\sprHouseSilhouettes</sprite>
-      <sprite>sprites\sprSunSparkle</sprite>
-      <sprite>sprites\sprSpread</sprite>
-      <sprite>sprites\sprWave</sprite>
-      <sprite>sprites\sprScanlines</sprite>
-      <sprite>sprites\sprHLM1Scanlines</sprite>
-      <sprite>sprites\sprMaskMenu</sprite>
-      <sprite>sprites\sprBackgroundColor</sprite>
-      <sprite>sprites\sprSurface</sprite>
-      <sprite>sprites\sprWeaponUI</sprite>
-    </sprites>
-    <sprites name="Walls">
-      <sprite>sprites\repWallHeavy</sprite>
-      <sprite>sprites\repWallBrick</sprite>
-      <sprite>sprites\repWallRail</sprite>
-      <sprite>sprites\repWallSoft</sprite>
-      <sprite>sprites\sprWallShadow</sprite>
-      <sprites name="Textures">
-        <sprite>sprites\sprWallBrickH</sprite>
-        <sprite>sprites\sprWallBrickV</sprite>
-        <sprite>sprites\sprWallHeavyH</sprite>
-        <sprite>sprites\sprWallHeavyV</sprite>
-        <sprite>sprites\sprWallHospitalH</sprite>
-        <sprite>sprites\sprWallHospitalV</sprite>
-        <sprite>sprites\sprBunkerWallH</sprite>
-        <sprite>sprites\sprBunkerWallV</sprite>
-        <sprite>sprites\sprSubwayWallH</sprite>
-        <sprite>sprites\sprSubwayWallV</sprite>
-        <sprite>sprites\sprSubwayWindowH</sprite>
-        <sprite>sprites\sprSubwayWindowV</sprite>
-        <sprite>sprites\sprBoatRailingH</sprite>
-        <sprite>sprites\sprBoatRailingV</sprite>
-        <sprite>sprites\sprWoodWallV</sprite>
-        <sprite>sprites\sprWoodWallH</sprite>
-        <sprite>sprites\sprWoodWallInteriorV</sprite>
-        <sprite>sprites\sprWoodWallInteriorH</sprite>
-        <sprite>sprites\sprCementWallV</sprite>
-        <sprite>sprites\sprCementWallH</sprite>
-        <sprite>sprites\sprPorchWallV</sprite>
-        <sprite>sprites\sprPorchWallH</sprite>
-        <sprite>sprites\sprFenceH</sprite>
-        <sprite>sprites\sprFenceV</sprite>
-        <sprite>sprites\sprWindowLargeV</sprite>
-        <sprite>sprites\sprWindowLargeMirroredV</sprite>
-        <sprite>sprites\sprWindowLargeH</sprite>
-        <sprite>sprites\sprWindowLargeMirroredH</sprite>
-        <sprite>sprites\sprFenceBroken</sprite>
-        <sprite>sprites\sprWalls</sprite>
-        <sprite>sprites\sprWallSoftH</sprite>
-        <sprite>sprites\sprWallSoftV</sprite>
-        <sprite>sprites\sprWoodFenceH</sprite>
-        <sprite>sprites\sprWoodFenceV</sprite>
-        <sprite>sprites\sprBalconyH</sprite>
-        <sprite>sprites\sprBalconyV</sprite>
-        <sprite>sprites\sprCellDoor</sprite>
-        <sprite>sprites\sprWindow</sprite>
-        <sprite>sprites\sprWindowDown</sprite>
-        <sprite>sprites\sprWindowExplode</sprite>
-        <sprite>sprites\sprWindowframe</sprite>
-        <sprite>sprites\sprWindowLeft</sprite>
-        <sprite>sprites\sprWindowOpen</sprite>
-        <sprite>sprites\sprWindowRight</sprite>
-        <sprite>sprites\sprWindowSill</sprite>
-        <sprite>sprites\sprWindowUp</sprite>
-        <sprite>sprites\sprBrokenWindow</sprite>
-        <sprite>sprites\sprRailH</sprite>
-        <sprite>sprites\sprRailV</sprite>
-        <sprite>sprites\sprSewerWallH</sprite>
-        <sprite>sprites\sprSewerWallV</sprite>
-        <sprite>sprites\sprGlassPanelBrokenH</sprite>
-        <sprite>sprites\sprGlassPanelBrokenV</sprite>
-        <sprite>sprites\sprGlassPanelDestroyedH</sprite>
-        <sprite>sprites\sprGlassPanelDestroyedV</sprite>
-        <sprite>sprites\sprGlassPanelH</sprite>
-        <sprite>sprites\sprGlassPanelV</sprite>
-        <sprite>sprites\sprDoorH</sprite>
-        <sprite>sprites\sprDoorV</sprite>
-        <sprite>sprites\sprDoorH2</sprite>
-        <sprite>sprites\sprDoorV2</sprite>
-        <sprite>sprites\sprCorner</sprite>
-        <sprite>sprites\sprCornerBrick</sprite>
-        <sprite>sprites\sprCornerSewer</sprite>
-        <sprite>sprites\sprCornerSoft</sprite>
-        <sprite>sprites\sprCornerHospital</sprite>
-        <sprite>sprites\sprCornerStair</sprite>
-        <sprite>sprites\sprCellWallH</sprite>
-        <sprite>sprites\sprCellWallV</sprite>
-        <sprite>sprites\sprHorBarrier</sprite>
-        <sprite>sprites\sprVertBarrier</sprite>
-      </sprites>
-    </sprites>
     <sprites name="Environment">
+      <sprites name="Walls">
+        <sprite>sprites\repWallHeavy</sprite>
+        <sprite>sprites\sprWallHospital</sprite>
+        <sprite>sprites\repWallBrick</sprite>
+        <sprite>sprites\repWallInvisible</sprite>
+        <sprite>sprites\repWallRail</sprite>
+        <sprite>sprites\repWallSoft</sprite>
+        <sprite>sprites\sprWallShadow</sprite>
+        <sprites name="Textures">
+          <sprite>sprites\sprWallBrickH</sprite>
+          <sprite>sprites\sprWallBrickV</sprite>
+          <sprite>sprites\sprWallHeavyH</sprite>
+          <sprite>sprites\sprWallHeavyV</sprite>
+          <sprite>sprites\sprWallHospitalH</sprite>
+          <sprite>sprites\sprWallHospitalV</sprite>
+          <sprite>sprites\sprBunkerWallH</sprite>
+          <sprite>sprites\sprBunkerWallV</sprite>
+          <sprite>sprites\sprSubwayWallH</sprite>
+          <sprite>sprites\sprSubwayWallV</sprite>
+          <sprite>sprites\sprSubwayWindowH</sprite>
+          <sprite>sprites\sprSubwayWindowV</sprite>
+          <sprite>sprites\sprBoatRailingH</sprite>
+          <sprite>sprites\sprBoatRailingV</sprite>
+          <sprite>sprites\sprWoodWallV</sprite>
+          <sprite>sprites\sprWoodWallH</sprite>
+          <sprite>sprites\sprWoodWallInteriorV</sprite>
+          <sprite>sprites\sprWoodWallInteriorH</sprite>
+          <sprite>sprites\sprCementWallV</sprite>
+          <sprite>sprites\sprCementWallH</sprite>
+          <sprite>sprites\sprPorchWallV</sprite>
+          <sprite>sprites\sprPorchWallH</sprite>
+          <sprite>sprites\sprFenceH</sprite>
+          <sprite>sprites\sprFenceV</sprite>
+          <sprite>sprites\sprWindowLargeV</sprite>
+          <sprite>sprites\sprWindowLargeMirroredV</sprite>
+          <sprite>sprites\sprWindowLargeH</sprite>
+          <sprite>sprites\sprWindowLargeMirroredH</sprite>
+          <sprite>sprites\sprFenceBroken</sprite>
+          <sprite>sprites\sprWalls</sprite>
+          <sprite>sprites\sprWallSoftH</sprite>
+          <sprite>sprites\sprWallSoftV</sprite>
+          <sprite>sprites\sprWoodFenceH</sprite>
+          <sprite>sprites\sprWoodFenceV</sprite>
+          <sprite>sprites\sprBalconyH</sprite>
+          <sprite>sprites\sprBalconyV</sprite>
+          <sprite>sprites\sprCellDoor</sprite>
+          <sprite>sprites\sprWindow</sprite>
+          <sprite>sprites\sprWindowDown</sprite>
+          <sprite>sprites\sprWindowExplode</sprite>
+          <sprite>sprites\sprWindowframe</sprite>
+          <sprite>sprites\sprWindowLeft</sprite>
+          <sprite>sprites\sprWindowOpen</sprite>
+          <sprite>sprites\sprWindowRight</sprite>
+          <sprite>sprites\sprWindowSill</sprite>
+          <sprite>sprites\sprWindowUp</sprite>
+          <sprite>sprites\sprBrokenWindow</sprite>
+          <sprite>sprites\sprRailH</sprite>
+          <sprite>sprites\sprRailV</sprite>
+          <sprite>sprites\sprSewerWallH</sprite>
+          <sprite>sprites\sprSewerWallV</sprite>
+          <sprite>sprites\sprGlassPanelBrokenH</sprite>
+          <sprite>sprites\sprGlassPanelBrokenV</sprite>
+          <sprite>sprites\sprGlassPanelDestroyedH</sprite>
+          <sprite>sprites\sprGlassPanelDestroyedV</sprite>
+          <sprite>sprites\sprGlassPanelH</sprite>
+          <sprite>sprites\sprGlassPanelV</sprite>
+          <sprite>sprites\sprDoorH</sprite>
+          <sprite>sprites\sprDoorV</sprite>
+          <sprite>sprites\sprDoorH2</sprite>
+          <sprite>sprites\sprDoorV2</sprite>
+          <sprite>sprites\sprCorner</sprite>
+          <sprite>sprites\sprCornerBrick</sprite>
+          <sprite>sprites\sprCornerSewer</sprite>
+          <sprite>sprites\sprCornerSoft</sprite>
+          <sprite>sprites\sprCornerHospital</sprite>
+          <sprite>sprites\sprCornerStair</sprite>
+          <sprite>sprites\sprCellWallH</sprite>
+          <sprite>sprites\sprCellWallV</sprite>
+          <sprite>sprites\sprHorBarrier</sprite>
+          <sprite>sprites\sprVertBarrier</sprite>
+        </sprites>
+      </sprites>
       <sprites name="Assault">
         <sprite>sprites\sprBarricade1</sprite>
         <sprite>sprites\sprBarricade2</sprite>
@@ -1668,6 +1563,7 @@
       <sprite>sprites\sprJacket</sprite>
       <sprite>sprites\sprSewerShadow</sprite>
       <sprite>sprites\sprSoup</sprite>
+      <sprite>sprites\sprPlantDestroyed</sprite>
     </sprites>
     <sprites name="Items">
       <sprites name="Clips">
@@ -1692,69 +1588,177 @@
       <sprite>sprites\sprCellKeys</sprite>
       <sprite>sprites\sprKeycard</sprite>
     </sprites>
-    <sprites name="Effects">
-      <sprites name="Gore">
-        <sprites name="Blood">
-          <sprite>sprites\sprBloodDrop</sprite>
-          <sprite>sprites\sprBloodDrop2</sprite>
-          <sprite>sprites\sprBloodHit1</sprite>
-          <sprite>sprites\sprBloodPool</sprite>
-          <sprite>sprites\sprBloodRun2</sprite>
-          <sprite>sprites\sprBloodSmoke2</sprite>
-          <sprite>sprites\sprBloodSmoke</sprite>
-          <sprite>sprites\sprBloodSplat</sprite>
-          <sprite>sprites\sprBloodSplatSmall</sprite>
-          <sprite>sprites\sprBloodSquirt1</sprite>
-          <sprite>sprites\sprBloodSplat2</sprite>
-          <sprite>sprites\sprBloodSquirt2</sprite>
+    <sprites name="Other">
+      <sprites name="UI">
+        <sprites name="Dennaton &amp; Devolver Logo">
+          <sprite>sprites\sprDevolver</sprite>
+          <sprite>sprites\splBullet</sprite>
+          <sprite>sprites\splDennatonBlink</sprite>
+          <sprite>sprites\splDennatonFlash</sprite>
+          <sprite>sprites\splDennatonTitle</sprite>
+          <sprite>sprites\splDennatonPieces</sprite>
+          <sprite>sprites\splGames</sprite>
+          <sprite>sprites\splSpeaker</sprite>
+          <sprite>sprites\splSplash</sprite>
+          <sprite>sprites\splSplashShift</sprite>
+          <sprite>sprites\splWaveComing</sprite>
         </sprites>
-        <sprite>sprites\sprBrainChunk</sprite>
-        <sprite>sprites\sprBrainChunk2</sprite>
-        <sprite>sprites\sprBrains</sprite>
-        <sprite>sprites\sprBrains2</sprite>
-        <sprite>sprites\sprBrainSplat</sprite>
-        <sprite>sprites\sprGuts2</sprite>
-        <sprite>sprites\sprSkinPiece2</sprite>
+        <sprites name="Title screen">
+          <sprite>sprites\sprTitle</sprite>
+          <sprite>sprites\sprPalmTrees</sprite>
+        </sprites>
+        <sprites name="Level Select">
+          <sprites name="Blueprints">
+            <sprite>sprites\sprApartment1</sprite>
+            <sprite>sprites\sprApartment2</sprite>
+            <sprite>sprites\sprArcade</sprite>
+            <sprite>sprites\sprBossClub</sprite>
+            <sprite>sprites\sprBossClub2</sprite>
+            <sprite>sprites\sprHospital</sprite>
+            <sprite>sprites\sprHotel</sprite>
+            <sprite>sprites\sprHouse4</sprite>
+            <sprite>sprites\sprHouse5</sprite>
+            <sprite>sprites\sprMansion</sprite>
+            <sprite>sprites\sprNoodleShop</sprite>
+            <sprite>sprites\sprPhoneLevel</sprite>
+            <sprite>sprites\sprPoliceHQ</sprite>
+            <sprite>sprites\sprSwatLevel</sprite>
+            <sprite>sprites\sprBuilding</sprite>
+            <sprite>sprites\sprHouse1</sprite>
+            <sprite>sprites\sprHouse2</sprite>
+            <sprite>sprites\sprHouse3</sprite>
+            <sprite>sprites\sprOffice</sprite>
+            <sprite>sprites\sprTrainstation</sprite>
+          </sprites>
+          <sprite>sprites\sprNoMask</sprite>
+          <sprite>sprites\sprLetterIcon</sprite>
+          <sprite>sprites\sprSecretLevel</sprite>
+        </sprites>
+        <sprites name="Cursor">
+          <sprite>sprites\sprCursor</sprite>
+          <sprite>sprites\sprCursorAction</sprite>
+          <sprite>sprites\sprAim</sprite>
+        </sprites>
+        <sprites name="Arrow">
+          <sprite>sprites\sprArrow</sprite>
+          <sprite>sprites\sprArrowGray</sprite>
+          <sprite>sprites\sprGoArrow</sprite>
+        </sprites>
+        <sprites name="Puzzle Pieces">
+          <sprite>sprites\sprToken</sprite>
+          <sprite>sprites\sprLetters</sprite>
+          <sprite>sprites\sprI</sprite>
+          <sprite>sprites\sprW</sprite>
+          <sprite>sprites\sprA</sprite>
+          <sprite>sprites\sprS</sprite>
+          <sprite>sprites\sprB</sprite>
+          <sprite>sprites\sprO</sprite>
+          <sprite>sprites\sprR</sprite>
+          <sprite>sprites\sprN</sprite>
+          <sprite>sprites\sprT</sprite>
+          <sprite>sprites\sprH</sprite>
+          <sprite>sprites\sprE</sprite>
+          <sprite>sprites\sprU</sprite>
+          <sprite>sprites\sprLetterSocket</sprite>
+          <sprite>sprites\sprPuzzleCursor</sprite>
+          <sprite>sprites\sprIGlow</sprite>
+          <sprite>sprites\sprWGlow</sprite>
+          <sprite>sprites\sprAGlow</sprite>
+          <sprite>sprites\sprSGlow</sprite>
+          <sprite>sprites\sprBGlow</sprite>
+          <sprite>sprites\sprOGlow</sprite>
+          <sprite>sprites\sprRGlow</sprite>
+          <sprite>sprites\sprNGlow</sprite>
+          <sprite>sprites\sprTGlow</sprite>
+          <sprite>sprites\sprHGlow</sprite>
+          <sprite>sprites\sprEGlow</sprite>
+          <sprite>sprites\sprUGlow</sprite>
+          <sprite>sprites\sprLetterMask</sprite>
+        </sprites>
+        <sprites name="Elevator">
+          <sprite>sprites\sprElevator</sprite>
+          <sprite>sprites\sprElevatorFloor</sprite>
+          <sprite>sprites\sprElevatorMask</sprite>
+        </sprites>
+        <sprites name="Dialogue">
+          <sprite>sprites\sprPhoneLine</sprite>
+        </sprites>
+        <sprite>sprites\sprHouse</sprite>
+        <sprite>sprites\sprHouses</sprite>
+        <sprite>sprites\sprHouseSilhouettes</sprite>
+        <sprite>sprites\sprSunSparkle</sprite>
+        <sprite>sprites\sprSpread</sprite>
+        <sprite>sprites\sprWave</sprite>
+        <sprite>sprites\sprScanlines</sprite>
+        <sprite>sprites\sprHLM1Scanlines</sprite>
+        <sprite>sprites\sprMaskMenu</sprite>
+        <sprite>sprites\sprBackgroundColor</sprite>
+        <sprite>sprites\sprSurface</sprite>
+        <sprite>sprites\sprWeaponUI</sprite>
       </sprites>
-      <sprites name="Photo">
-        <sprite>sprites\sprPhotoFlip1</sprite>
-        <sprite>sprites\sprPhotoFlip3</sprite>
-        <sprite>sprites\sprPhotoFlip2</sprite>
+      <sprites name="Effects">
+        <sprites name="Gore">
+          <sprites name="Blood">
+            <sprite>sprites\sprBloodDrop</sprite>
+            <sprite>sprites\sprBloodDrop2</sprite>
+            <sprite>sprites\sprBloodHit1</sprite>
+            <sprite>sprites\sprBloodPool</sprite>
+            <sprite>sprites\sprBloodRun2</sprite>
+            <sprite>sprites\sprBloodSmoke2</sprite>
+            <sprite>sprites\sprBloodSmoke</sprite>
+            <sprite>sprites\sprBloodSplat</sprite>
+            <sprite>sprites\sprBloodSplatSmall</sprite>
+            <sprite>sprites\sprBloodSquirt1</sprite>
+            <sprite>sprites\sprBloodSplat2</sprite>
+            <sprite>sprites\sprBloodSquirt2</sprite>
+          </sprites>
+          <sprite>sprites\sprBrainChunk</sprite>
+          <sprite>sprites\sprBrainChunk2</sprite>
+          <sprite>sprites\sprBrains</sprite>
+          <sprite>sprites\sprBrains2</sprite>
+          <sprite>sprites\sprBrainSplat</sprite>
+          <sprite>sprites\sprGuts2</sprite>
+          <sprite>sprites\sprSkinPiece2</sprite>
+        </sprites>
+        <sprites name="Photo">
+          <sprite>sprites\sprPhotoFlip1</sprite>
+          <sprite>sprites\sprPhotoFlip3</sprite>
+          <sprite>sprites\sprPhotoFlip2</sprite>
+        </sprites>
+        <sprite>sprites\sprShadowMask</sprite>
+        <sprite>sprites\sprM16Shell</sprite>
+        <sprite>sprites\sprShotgunShell</sprite>
+        <sprite>sprites\sprUziShell</sprite>
+        <sprite>sprites\sprMag</sprite>
+        <sprite>sprites\sprDebris</sprite>
+        <sprite>sprites\sprNoise</sprite>
+        <sprite>sprites\sprDestroyedDoor</sprite>
+        <sprite>sprites\sprBrokenBottle</sprite>
+        <sprite>sprites\sprShards</sprite>
+        <sprite>sprites\sprSmoke</sprite>
+        <sprite>sprites\sprSteamSmoke</sprite>
+        <sprite>sprites\sprSmokeHit</sprite>
+        <sprite>sprites\sprBreakingBottle</sprite>
+        <sprite>sprites\sprBullet</sprite>
+        <sprite>sprites\sprBulletHit</sprite>
+        <sprite>sprites\sprExplosion</sprite>
+        <sprite>sprites\sprExplodingDoor</sprite>
+        <sprite>sprites\sprBombGuyDie</sprite>
+        <sprite>sprites\sprFlameSmall1</sprite>
+        <sprite>sprites\sprFlameBig</sprite>
+        <sprite>sprites\sprFlameSmall2</sprite>
+        <sprite>sprites\sprWallDebris</sprite>
+        <sprite>sprites\sprHit</sprite>
+        <sprite>sprites\sprCut</sprite>
+        <sprite>sprites\sprRoomExplosion</sprite>
+        <sprite>sprites\sprTinyShard</sprite>
+        <sprite>sprites\sprMagnetic</sprite>
+        <sprite>sprites\sprSpark1</sprite>
+        <sprite>sprites\sprSpark2</sprite>
+        <sprite>sprites\sprExplosionSmoke</sprite>
+        <sprite>sprites\sprLaser</sprite>
       </sprites>
-      <sprite>sprites\sprShadowMask</sprite>
-      <sprite>sprites\sprM16Shell</sprite>
-      <sprite>sprites\sprShotgunShell</sprite>
-      <sprite>sprites\sprUziShell</sprite>
-      <sprite>sprites\sprMag</sprite>
-      <sprite>sprites\sprDebris</sprite>
-      <sprite>sprites\sprNoise</sprite>
-      <sprite>sprites\sprDestroyedDoor</sprite>
-      <sprite>sprites\sprBrokenBottle</sprite>
-      <sprite>sprites\sprShards</sprite>
-      <sprite>sprites\sprSmoke</sprite>
-      <sprite>sprites\sprSteamSmoke</sprite>
-      <sprite>sprites\sprSmokeHit</sprite>
-      <sprite>sprites\sprBreakingBottle</sprite>
-      <sprite>sprites\sprBullet</sprite>
-      <sprite>sprites\sprBulletHit</sprite>
-      <sprite>sprites\sprExplosion</sprite>
-      <sprite>sprites\sprExplodingDoor</sprite>
-      <sprite>sprites\sprBombGuyDie</sprite>
-      <sprite>sprites\sprFlameSmall1</sprite>
-      <sprite>sprites\sprFlameBig</sprite>
-      <sprite>sprites\sprFlameSmall2</sprite>
-      <sprite>sprites\sprWallDebris</sprite>
-      <sprite>sprites\sprHit</sprite>
-      <sprite>sprites\sprCut</sprite>
-      <sprite>sprites\sprRoomExplosion</sprite>
-      <sprite>sprites\sprTinyShard</sprite>
-      <sprite>sprites\sprMagnetic</sprite>
-      <sprite>sprites\sprSpark1</sprite>
-      <sprite>sprites\sprSpark2</sprite>
-      <sprite>sprites\sprExplosionSmoke</sprite>
-      <sprite>sprites\sprLaser</sprite>
     </sprites>
-    <sprite>sprites\sprPlantDestroyed</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tlCorners</background>
@@ -2120,7 +2124,7 @@
   <objects name="objects">
     <objects name="Player">
       <objects name="Jacket">
-        <object>objects\objPlayerMouse</object>
+        <object>objects\objPlayerJacket</object>
         <object>objects\objPlayerMouseHouse</object>
         <object>objects\objPlayerShieldMouse</object>
         <object>objects\objPlayerHospital</object>
@@ -2207,133 +2211,807 @@
       <object>objects\objBackgroundColorClear</object>
       <object>objects\objPlayer</object>
     </objects>
-    <objects name="Walls">
-      <objects name="Doors">
-        <object>objects\objDoorV</object>
-        <object>objects\objDoorH</object>
-        <object>objects\objDoorV2</object>
-        <object>objects\objDoorH2</object>
-        <object>objects\objHospitalEntranceDoors</object>
+    <objects name="NPCs">
+      <object>objects\objKillable</object>
+      <objects name="Hostile">
+        <objects name="Boss Fights">
+          <objects name="Boss 1 (Producer)">
+            <object>objects\objBossJacket</object>
+            <object>objects\objBoss1Spawn</object>
+            <object>objects\objBoss1</object>
+            <object>objects\objBoss1Down</object>
+            <object>objects\objBoss1Die</object>
+            <object>objects\objBossChair</object>
+          </objects>
+          <objects name="Boss 2 (Biker)">
+            <object>objects\objBoss2</object>
+            <object>objects\objCleaver</object>
+            <object>objects\objBoss2Pry</object>
+            <object>objects\objBoss2GetUp</object>
+            <object>objects\objBoss2Crawl</object>
+            <object>objects\objPBashBoss2</object>
+          </objects>
+          <objects name="Boss 3 (Van driver)">
+            <object>objects\objBottleExplosion</object>
+            <object>objects\objMolotov</object>
+            <object>objects\objBurningGuy</object>
+            <object>objects\objBoss3</object>
+            <object>objects\objBoss3Kneel</object>
+            <object>objects\objBoss3Dead</object>
+            <object>objects\objDeadBurning</object>
+            <object>objects\objPlayerLighter</object>
+          </objects>
+          <objects name="Boss 4 (The Father)">
+            <object>objects\objBoss4</object>
+            <object>objects\objBoss4Chair</object>
+            <object>objects\objBoss4Desk</object>
+            <object>objects\objBossFountain</object>
+            <object>objects\objBodyguard</object>
+            <object>objects\objPanther</object>
+            <object>objects\objPantherBite</object>
+            <object>objects\objBossPhone</object>
+            <object>objects\objBodyguardCrawl</object>
+            <object>objects\objBodyguardKnife</object>
+          </objects>
+          <objects name="Boss 5 (PhoneHom Jacket)">
+            <object>objects\objPlayerBoss</object>
+          </objects>
+        </objects>
+        <objects name="Police">
+          <object>objects\objPolice</object>
+          <object>objects\objPolicePatrol</object>
+          <object>objects\objPoliceStationary</object>
+          <object>objects\objPoliceMelee</object>
+          <object>objects\objPoliceMeleeStationary</object>
+          <object>objects\objInspector</object>
+          <object>objects\objChief</object>
+          <object>objects\objPoliceHat</object>
+        </objects>
+        <objects name="Politicians">
+          <object>objects\objFatmanEating</object>
+          <object>objects\objFatmanTelephone</object>
+          <object>objects\objFatmanShit</object>
+          <object>objects\objWaiter</object>
+          <object>objects\objWaiterStationary</object>
+        </objects>
+        <objects name="Idle">
+          <object>objects\objEnemyIdlePee</object>
+          <object>objects\objEnemyIdleSmoke</object>
+          <object>objects\objEnemySit</object>
+          <object>objects\objEnemyIdleGuard</object>
+          <object>objects\objEnemySitDrink</object>
+          <object>objects\objEnemyDrink</object>
+          <object>objects\objEnemyPhone</object>
+          <object>objects\objCellPhone</object>
+          <object>objects\objEnemyIdle</object>
+        </objects>
+        <object>objects\objEnemy</object>
+        <object>objects\objEnemyPatrol</object>
+        <object>objects\objEnemyStationary</object>
+        <object>objects\objEnemyMelee</object>
+        <object>objects\objEnemyMeleeStationary</object>
+        <object>objects\objEHideM16</object>
+        <object>objects\objDogPatrol</object>
+        <object>objects\objEnemyFat</object>
+        <object>objects\objEnemyMobile</object>
+        <object>objects\objKnockedOut</object>
+        <object>objects\objDeadBody</object>
+        <object>objects\objBodyPart</object>
+        <object>objects\objECrawl</object>
+        <object>objects\objDogBite</object>
+        <objects name="Old">
+          <object>objects\objEnemyOld</object>
+          <object>objects\objDogPatrolOld</object>
+          <object>objects\objEnemyStationaryOld</object>
+          <object>objects\objEnemyPatrolOld</object>
+          <object>objects\objEnemyMeleeOld</object>
+          <object>objects\objEnemyMobileOld</object>
+          <object>objects\objEnemyMeleeStationaryOld</object>
+        </objects>
+        <object>objects\objESubwayStatic</object>
+        <object>objects\objSubwayKnockedOut</object>
+        <object>objects\objEGiveUp</object>
       </objects>
-      <objects name="Interior">
-        <object>objects\objWallHeavyV</object>
-        <object>objects\objWallHeavyH</object>
-        <object>objects\objWallSoftV</object>
-        <object>objects\objWallSoftH</object>
-        <object>objects\objSewerWallV</object>
-        <object>objects\objSewerWallH</object>
-        <object>objects\objCementWallV</object>
-        <object>objects\objCementWallH</object>
-        <object>objects\objCellWallV</object>
-        <object>objects\objCellWallH</object>
-        <object>objects\objWoodWallInteriorV</object>
-        <object>objects\objWoodWallInteriorH</object>
-        <object>objects\objSubwayWallV</object>
-        <object>objects\objSubwayWallH</object>
-        <object>objects\objPorchWallH</object>
-        <object>objects\objPorchWallV</object>
-        <object>objects\objWallShadow</object>
+      <objects name="Friendly">
+        <objects name="Mafia">
+          <object>objects\objETauntChain</object>
+          <object>objects\objETauntPipe</object>
+          <object>objects\objETauntBat</object>
+          <object>objects\objETauntSmoke</object>
+          <object>objects\objEBombTinker</object>
+          <object>objects\objEStandGuardBomb</object>
+        </objects>
+        <objects name="Janitors">
+          <object>objects\objJanitorVacuum</object>
+          <object>objects\objJanitorClean</object>
+          <object>objects\objJanitorNotice</object>
+          <object>objects\objJanitorFlee</object>
+          <object>objects\objJanitor</object>
+          <object>objects\objJanitorDennisDie</object>
+          <object>objects\objJanitorJonatanDie</object>
+        </objects>
+        <objects name="Bodies">
+          <object>objects\objVictimWall</object>
+          <object>objects\objBombGuy</object>
+          <object>objects\objBombGuyDie</object>
+          <object>objects\objCobraDead</object>
+          <object>objects\objLocustDead</object>
+          <object>objects\objWalrusDead</object>
+        </objects>
+        <objects name="Cameos">
+          <object>objects\objLoneSurvivor</object>
+          <object>objects\objSunAraw</object>
+          <object>objects\objCoconuts</object>
+          <object>objects\objPerturbator</object>
+          <object>objects\objJasper</object>
+          <object>objects\objMoon</object>
+          <object>objects\objElliott</object>
+          <object>objects\objScattle</object>
+          <object>objects\objEirik</object>
+          <object>objects\objDJ</object>
+          <object>objects\objOscar</object>
+          <object>objects\objOscarTable</object>
+          <object>objects\objOscarPlate</object>
+          <object>objects\objBenjamin</object>
+          <object>objects\objNigelScream</object>
+          <object>objects\objRasmus</object>
+          <object>objects\objRasmusHat</object>
+        </objects>
+        <objects name="Story">
+          <objects name="Niklas">
+            <object>objects\objNicklasStore</object>
+            <object>objects\objNicklasPizza</object>
+            <object>objects\objNicklasVHS</object>
+            <object>objects\objNicklasBar</object>
+            <object>objects\objNicklasStoreSpecial</object>
+            <object>objects\objNickeDead</object>
+            <object>objects\objNickeTiedUp</object>
+          </objects>
+          <objects name="Richter">
+            <object>objects\objPrisoner</object>
+            <object>objects\objAssassinGround</object>
+            <object>objects\objAssassinDie</object>
+            <object>objects\objAssassinPizza</object>
+            <object>objects\objAssassinWait</object>
+            <object>objects\objAssassinSitUzi</object>
+            <object>objects\objAssassinVHS</object>
+            <object>objects\objAssassinBar</object>
+          </objects>
+          <object>objects\objDreamPeople</object>
+          <object>objects\objDreamPlayer</object>
+          <object>objects\objGirlfriendDead</object>
+          <object>objects\objGirlfriendDeadOutline</object>
+          <object>objects\objGirlfriend</object>
+          <object>objects\objGirlfriendBathroom</object>
+          <object>objects\objGirlfriendSit</object>
+          <object>objects\objDoctorTalk</object>
+          <object>objects\objPoliceTalk</object>
+          <object>objects\objHobo</object>
+          <object>objects\objHoboKnockedOut</object>
+          <object>objects\objDeadTable</object>
+          <object>objects\objWileyWiggins</object>
+          <object>objects\objDogPetCorpse</object>
+          <object>objects\objFatCorpseEat</object>
+          <object>objects\objCrocodileMan</object>
+          <object>objects\objBoss2Corpse</object>
+          <object>objects\objTutorialHobo</object>
+          <object>objects\objGirlfriendEat</object>
+          <object>objects\objMCDate</object>
+        </objects>
       </objects>
-      <objects name="Exterior">
-        <object>objects\objWallBrickV</object>
-        <object>objects\objWallBrickH</object>
-        <object>objects\objWallHospitalV</object>
-        <object>objects\objWallHospitalH</object>
-        <object>objects\objWoodWallV</object>
-        <object>objects\objWoodWallH</object>
-        <object>objects\objBunkerWallH</object>
-        <object>objects\objBunkerWallV</object>
-        <object>objects\objFenceH</object>
-        <object>objects\objFenceBroken</object>
-        <object>objects\objFenceV</object>
-      </objects>
-      <objects name="Glass (Breakable &amp; Unbreakable)">
-        <object>objects\objGlassPanelV</object>
-        <object>objects\objGlassPanelVBroken</object>
-        <object>objects\objGlassPanelH</object>
-        <object>objects\objGlassPanelHBroken</object>
-        <object>objects\objWindowV</object>
-        <object>objects\objWindowLargeV</object>
-        <object>objects\objWindowH</object>
-        <object>objects\objWindowLargeH</object>
-        <object>objects\objSubwayWindowV</object>
-        <object>objects\objSubwayWindowH</object>
-      </objects>
-      <objects name="Railing">
-        <object>objects\objRailV</object>
-        <object>objects\objRailH</object>
-        <object>objects\objWoodFenceV</object>
-        <object>objects\objWoodFenceH</object>
-        <object>objects\objBalconyV</object>
-        <object>objects\objBalconyH</object>
-        <object>objects\objBoatRailingH</object>
-        <object>objects\objBoatRailingV</object>
-      </objects>
-      <object>objects\objHorBarrier</object>
-      <object>objects\objVertBarrier</object>
-      <object>objects\objSolid</object>
-      <object>objects\objCorner</object>
-      <object>objects\objTransitioner</object>
-      <object>objects\objElevator</object>
     </objects>
-    <objects name="Enemy">
-      <objects name="Police">
-        <object>objects\objPolice</object>
-        <object>objects\objPolicePatrol</object>
-        <object>objects\objPoliceStationary</object>
-        <object>objects\objPoliceMelee</object>
-        <object>objects\objPoliceMeleeStationary</object>
-        <object>objects\objInspector</object>
-        <object>objects\objChief</object>
-        <object>objects\objPoliceHat</object>
+    <objects name="Environment">
+      <objects name="Walls">
+        <objects name="Doors">
+          <object>objects\objDoorV</object>
+          <object>objects\objDoorH</object>
+          <object>objects\objDoorV2</object>
+          <object>objects\objDoorH2</object>
+          <object>objects\objHospitalEntranceDoors</object>
+        </objects>
+        <objects name="Interior">
+          <object>objects\objWallHeavyV</object>
+          <object>objects\objWallInvisble</object>
+          <object>objects\objWallHeavyH</object>
+          <object>objects\objWallSoftV</object>
+          <object>objects\objWallSoftH</object>
+          <object>objects\objSewerWallV</object>
+          <object>objects\objSewerWallH</object>
+          <object>objects\objCementWallV</object>
+          <object>objects\objCementWallH</object>
+          <object>objects\objCellWallV</object>
+          <object>objects\objCellWallH</object>
+          <object>objects\objWoodWallInteriorV</object>
+          <object>objects\objWoodWallInteriorH</object>
+          <object>objects\objSubwayWallV</object>
+          <object>objects\objSubwayWallH</object>
+          <object>objects\objPorchWallH</object>
+          <object>objects\objPorchWallV</object>
+          <object>objects\objWallShadow</object>
+        </objects>
+        <objects name="Exterior">
+          <object>objects\objWallBrickV</object>
+          <object>objects\objWallBrickH</object>
+          <object>objects\objWallHospitalV</object>
+          <object>objects\objWallHospitalH</object>
+          <object>objects\objWoodWallV</object>
+          <object>objects\objWoodWallH</object>
+          <object>objects\objBunkerWallH</object>
+          <object>objects\objBunkerWallV</object>
+          <object>objects\objFenceH</object>
+          <object>objects\objFenceBroken</object>
+          <object>objects\objFenceV</object>
+        </objects>
+        <objects name="Glass (Breakable &amp; Unbreakable)">
+          <object>objects\objGlassPanelV</object>
+          <object>objects\objGlassPanelVBroken</object>
+          <object>objects\objGlassPanelH</object>
+          <object>objects\objGlassPanelHBroken</object>
+          <object>objects\objWindowV</object>
+          <object>objects\objWindowLargeV</object>
+          <object>objects\objWindowH</object>
+          <object>objects\objWindowLargeH</object>
+          <object>objects\objSubwayWindowV</object>
+          <object>objects\objSubwayWindowH</object>
+        </objects>
+        <objects name="Railing">
+          <object>objects\objRailV</object>
+          <object>objects\objRailH</object>
+          <object>objects\objWoodFenceV</object>
+          <object>objects\objWoodFenceH</object>
+          <object>objects\objBalconyV</object>
+          <object>objects\objBalconyH</object>
+          <object>objects\objBoatRailingH</object>
+          <object>objects\objBoatRailingV</object>
+        </objects>
+        <object>objects\objHorBarrier</object>
+        <object>objects\objVertBarrier</object>
+        <object>objects\objSolid</object>
+        <object>objects\objCorner</object>
+        <object>objects\objTransitioner</object>
+        <object>objects\objElevator</object>
       </objects>
-      <objects name="Politicians &amp; Waiters">
-        <object>objects\objFatmanEating</object>
-        <object>objects\objFatmanTelephone</object>
-        <object>objects\objFatmanShit</object>
-        <object>objects\objWaiter</object>
-        <object>objects\objWaiterStationary</object>
+      <objects name="Furniture">
+        <object>objects\objFurniture</object>
+        <objects name="Bathroom">
+          <object>objects\objTub</object>
+          <object>objects\objSink</object>
+          <object>objects\objUrinalV</object>
+          <object>objects\objToilet</object>
+          <object>objects\objShowerCurtain</object>
+          <object>objects\objJacuzzi</object>
+          <object>objects\objShowerGlassV</object>
+          <object>objects\objShowerGlassH</object>
+          <object>objects\objShowerGlassDoor</object>
+          <object>objects\objHotelSuiteTub</object>
+          <object>objects\objHotelSink</object>
+          <object>objects\objHotelSuiteToilet</object>
+        </objects>
+        <objects name="Kitchen">
+          <object>objects\objChair</object>
+          <object>objects\objShelves</object>
+          <object>objects\objKitchenSink</object>
+          <object>objects\objStove</object>
+          <object>objects\objTable</object>
+          <object>objects\objMicrowave</object>
+          <object>objects\objFridge</object>
+        </objects>
+        <objects name="General">
+          <objects name="Toys">
+            <object>objects\objToyBall</object>
+            <object>objects\objToyTurtle</object>
+            <object>objects\objToyBear</object>
+            <object>objects\objToyLego</object>
+            <object>objects\objToyM16</object>
+            <object>objects\objToyMP5</object>
+          </objects>
+          <objects name="Plants">
+            <object>objects\objPelletsCorner</object>
+            <object>objects\objPelletsSide</object>
+            <object>objects\objPellets</object>
+            <object>objects\objPelletPlant</object>
+            <object>objects\objPlant</object>
+            <object>objects\objHospitalPlant</object>
+          </objects>
+          <objects name="Trash">
+            <object>objects\objPizza</object>
+            <object>objects\objTrashbag</object>
+            <object>objects\objTrashcan</object>
+            <object>objects\objBurningTrashcan</object>
+            <object>objects\objHomelessBed</object>
+          </objects>
+          <object>objects\objSofaV64</object>
+          <object>objects\objSofaV48</object>
+          <object>objects\objSofaH64</object>
+          <object>objects\objDrawerV24</object>
+          <object>objects\objDrawerH24</object>
+          <object>objects\objSofaH48</object>
+          <object>objects\objShirts</object>
+          <object>objects\objCassetteDeck</object>
+          <object>objects\objComputer</object>
+          <object>objects\objVinylRecord</object>
+          <object>objects\objBigTable</object>
+          <object>objects\objBeds</object>
+          <object>objects\objLamps</object>
+          <object>objects\objJackets</object>
+          <object>objects\objNes</object>
+          <object>objects\objVinylPlayer</object>
+          <object>objects\objSpeaker</object>
+          <object>objects\objTVBlack</object>
+          <object>objects\objTigerCarpet</object>
+          <object>objects\objFountain</object>
+          <object>objects\objBigBed</object>
+          <object>objects\objLeatherCouch</object>
+          <object>objects\objPoolTable</object>
+          <object>objects\objGlassTable</object>
+          <object>objects\objNightStand</object>
+          <object>objects\objTrophyHead</object>
+          <object>objects\objWineRack</object>
+          <object>objects\objCouchCushion</object>
+          <object>objects\objArmchair</object>
+          <object>objects\objRichTable</object>
+          <object>objects\objDiningChair</object>
+          <object>objects\objLaundryBasket</object>
+          <object>objects\objCarBottom</object>
+          <object>objects\objAquarium</object>
+          <object>objects\objAquariumBreak</object>
+          <object>objects\objAquariumWater</object>
+          <object>objects\objPhone</object>
+          <object>objects\objVendingMachine</object>
+          <object>objects\objTVWallMounted</object>
+        </objects>
+        <objects name="Subway">
+          <object>objects\objLockerH</object>
+          <object>objects\objLockerV</object>
+          <object>objects\objSubwayBenchV</object>
+          <object>objects\objSubwayBench</object>
+          <object>objects\objTrain</object>
+          <object>objects\objSubwayDoor</object>
+          <object>objects\objClotheslineH</object>
+          <object>objects\objClotheslineV</object>
+        </objects>
+        <objects name="Jacket's apartment">
+          <object>objects\objAnsweringMachine</object>
+          <object>objects\objPlayerBed1</object>
+          <object>objects\objPlayerBed2</object>
+          <object>objects\objPlayerCouch</object>
+          <object>objects\objPlayerKitchenCounter</object>
+          <object>objects\objPlayerKitchenShelf</object>
+          <object>objects\objPlayerKitchenSink</object>
+          <object>objects\objPlayerLivingRoomTable</object>
+          <object>objects\objPlayerFridge</object>
+          <object>objects\objPlayerTable</object>
+          <object>objects\objVomitBucket</object>
+          <object>objects\objPlayerTub</object>
+        </objects>
+        <objects name="Decadence">
+          <object>objects\objGate</object>
+          <object>objects\objMonitors</object>
+          <object>objects\objPornBed</object>
+          <object>objects\objPornCamera</object>
+          <object>objects\objPornLight</object>
+        </objects>
+        <objects name="Police Station">
+          <object>objects\objPoliceDesk</object>
+          <object>objects\objPoliceDeskPuter</object>
+          <object>objects\objInterrogationTable</object>
+          <object>objects\objSpeakerBooth</object>
+          <object>objects\objPoliceArmchair</object>
+          <object>objects\objPoliceDeskChair</object>
+          <object>objects\objMetalDetector</object>
+          <object>objects\objPaperbin</object>
+          <object>objects\objPoliceSofa</object>
+          <object>objects\objFiles</object>
+          <object>objects\objFileCabinet</object>
+          <object>objects\objPoliceFrontDesk</object>
+          <object>objects\objPoliceEntryDesk</object>
+          <object>objects\objBigPoliceTable</object>
+          <object>objects\objEvidenceTable</object>
+          <object>objects\objSurveillanceCamera</object>
+          <object>objects\objCellBed</object>
+          <object>objects\objCellSink</object>
+          <object>objects\objCellToilet</object>
+          <object>objects\objCellDoor</object>
+          <object>objects\objSurveillanceCenter</object>
+          <object>objects\objBarricade1</object>
+          <object>objects\objBarricade2</object>
+          <object>objects\objCopCar</object>
+          <object>objects\objPhoneRecorder</object>
+          <object>objects\objPhoneTable</object>
+          <object>objects\objPhone1</object>
+          <object>objects\objPhone2</object>
+        </objects>
+        <objects name="Sauna">
+          <object>objects\objTowels</object>
+          <object>objects\objWaterPuddle</object>
+          <object>objects\objBubbleBath</object>
+          <object>objects\objGymLocker</object>
+          <object>objects\objSaunaBench</object>
+          <object>objects\objSunChair</object>
+          <object>objects\objSolarium</object>
+          <object>objects\objSolariumOpen</object>
+          <object>objects\objHeater</object>
+          <object>objects\objGymBench</object>
+          <object>objects\objSaunaSteam</object>
+          <object>objects\objCandleTable</object>
+          <object>objects\objCandleTableBurning</object>
+          <object>objects\objMassageTable</object>
+          <object>objects\objEnormousFountain</object>
+          <object>objects\objSaunaCurtain</object>
+          <object>objects\objSaunaCounter</object>
+          <object>objects\objSaunaFountain</object>
+          <object>objects\objYinYang</object>
+        </objects>
+        <objects name="PhoneHom">
+          <object>objects\objCeoTable</object>
+          <object>objects\objReceptionDesk</object>
+          <object>objects\objPhoneHom</object>
+          <object>objects\objCeoDead</object>
+          <object>objects\objEmployeeDead</object>
+          <object>objects\objEmployeeDeadPiece</object>
+          <object>objects\objEmployeeDeadWall</object>
+          <object>objects\objWorkerdDead</object>
+          <object>objects\objGolfBag</object>
+          <object>objects\objWorker</object>
+          <object>objects\objEmployee</object>
+          <object>objects\objCEO</object>
+          <object>objects\objPhoneHomSafe</object>
+          <object>objects\objPhoneHomPainting</object>
+          <object>objects\objPhoneHomPaintingWall</object>
+          <object>objects\objGolfCourt</object>
+        </objects>
+        <objects name="Niklas">
+          <objects name="Store">
+            <object>objects\objNiklasFridge</object>
+            <object>objects\objFreezer</object>
+            <object>objects\objStoreShelf</object>
+            <object>objects\objStoreFridge</object>
+            <object>objects\objRegister</object>
+            <object>objects\objDoubleFridge</object>
+            <object>objects\objNeonSign</object>
+            <object>objects\objFan</object>
+            <object>objects\objStorePapers</object>
+          </objects>
+          <objects name="Pizza">
+            <object>objects\objPizzaRegister</object>
+            <object>objects\objPizzaOven</object>
+            <object>objects\objPizzaDisplay</object>
+            <object>objects\objPizzaCounter</object>
+            <object>objects\objPizzaTable</object>
+          </objects>
+          <objects name="VHS">
+            <object>objects\sprVHSDoorMat</object>
+            <object>objects\objVHSRackH</object>
+            <object>objects\objVHSRackV</object>
+            <object>objects\objVHSTape</object>
+            <object>objects\objVHSCounter</object>
+            <object>objects\objVHSArchive</object>
+          </objects>
+          <objects name="Bar">
+            <object>objects\objBarPlant</object>
+            <object>objects\objBarBooth</object>
+            <object>objects\objBarStool</object>
+            <object>objects\objBarRegister</object>
+            <object>objects\objBarShelf</object>
+            <object>objects\objJukebox</object>
+            <object>objects\objBarTable</object>
+            <object>objects\objBarPoolTable</object>
+            <object>objects\objPhoneBooth</object>
+          </objects>
+        </objects>
+        <objects name="Hospital">
+          <object>objects\objHospitalChair</object>
+          <object>objects\objHospitalBed</object>
+          <object>objects\objHospitalBedStand</object>
+          <object>objects\objHospitalCouch</object>
+          <object>objects\objHospitalCouch2</object>
+          <object>objects\objWheelChair</object>
+          <object>objects\objHospitalDesk</object>
+          <object>objects\objHospitalCupboard</object>
+          <object>objects\objHospitalCurtains</object>
+          <object>objects\objHospitalLocker</object>
+          <object>objects\objHospitalSofaV</object>
+          <object>objects\objHospitalSofaH</object>
+          <object>objects\objHospitalElevator</object>
+          <object>objects\objWindowOpen</object>
+          <object>objects\objDoctorPatrol</object>
+          <object>objects\objPoliceRead</object>
+          <object>objects\objKeycard</object>
+          <object>objects\objLockedDoor</object>
+          <object>objects\objHandicapToilet</object>
+          <object>objects\objHospitalReception</object>
+          <object>objects\objGargoyle</object>
+          <object>objects\objXray</object>
+          <object>objects\objExamTable</object>
+          <object>objects\objHospitalStaffSofa</object>
+          <object>objects\objHospitalStaffMicro</object>
+          <object>objects\objHospitalStaffTable</object>
+        </objects>
+        <objects name="Hotel">
+          <objects name="Restaurant">
+            <object>objects\objRestaurantChair</object>
+            <object>objects\objWineBottle</object>
+            <object>objects\objBuffe</object>
+            <object>objects\objFoodTray</object>
+            <object>objects\objBuffePlates</object>
+          </objects>
+          <object>objects\objHotelSuiteSofa</object>
+          <object>objects\objHotelSuiteChair</object>
+          <object>objects\objHotelSuiteEntertainment</object>
+          <object>objects\objHotelSimpleBed</object>
+          <object>objects\objRestaurantTable</object>
+          <object>objects\objHotelNightStandLight</object>
+          <object>objects\objHotelNightStand</object>
+          <object>objects\objHotelSuiteBed</object>
+          <object>objects\objMinibar</object>
+          <object>objects\objCleaningCart</object>
+          <object>objects\objHotelCloset</object>
+          <object>objects\objFootstand</object>
+          <object>objects\objHotelChair</object>
+          <object>objects\objWetSpot</object>
+          <object>objects\objWetFloorWarning</object>
+          <object>objects\objPoolTray</object>
+          <object>objects\objPool</object>
+          <object>objects\objPoolChair</object>
+          <object>objects\objFireAxe</object>
+        </objects>
+        <objects name="Highballer">
+          <object>objects\objKaraokeCouchPink</object>
+          <object>objects\objKaraokeCouchBlack</object>
+          <object>objects\objSpeakerTable</object>
+          <object>objects\objKaraokeMachine</object>
+          <object>objects\objHighballBooth</object>
+          <object>objects\objLaneStart</object>
+          <object>objects\objBowlingLane</object>
+          <object>objects\objBowlingEnd</object>
+          <object>objects\objLaptopTable</object>
+          <object>objects\objHighballBoothBlack</object>
+          <object>objects\objHighballChair</object>
+          <object>objects\objSquareTable</object>
+          <object>objects\objHighballCurtain</object>
+          <object>objects\objHighballDiningChair</object>
+          <object>objects\objHighballSign</object>
+          <object>objects\objHighballBar</object>
+          <object>objects\objVenuspatrol</object>
+          <object>objects\objVenuspetrol</object>
+          <object>objects\objVenuspatrolChalk</object>
+          <object>objects\objBrandon</object>
+          <object>objects\objSacrifice</object>
+          <object>objects\objVenusPatrolSmall</object>
+          <object>objects\objVenusCandle</object>
+          <object>objects\objStroller</object>
+        </objects>
+        <objects name="Exposed">
+          <objects name="Logos">
+            <object>objects\objEuroLogo</object>
+            <object>objects\objBallOfDuty</object>
+            <object>objects\objAssassinsBreed</object>
+            <object>objects\object707</object>
+            <object>objects\objRezzed</object>
+            <object>objects\objHotlineLogo</object>
+          </objects>
+          <object>objects\objEuroPodV</object>
+          <object>objects\objEuroPodH</object>
+          <object>objects\objEuroFenceH</object>
+          <object>objects\objEuroFenceV</object>
+          <object>objects\objEuroPillar</object>
+          <object>objects\objEuroIce</object>
+          <object>objects\objEuroTrash</object>
+        </objects>
+        <objects name="Biker's house">
+          <objects name="Bathroom">
+            <object>objects\objPimpToilet</object>
+            <object>objects\objBlackTub</object>
+            <object>objects\objPimpSink</object>
+          </objects>
+          <objects name="Kitchen">
+            <object>objects\objMCKitchenShelf</object>
+            <object>objects\objMCKitchenSink</object>
+          </objects>
+          <object>objects\objMCBed</object>
+          <object>objects\objMCComputer</object>
+          <object>objects\objMCCouch</object>
+          <object>objects\objMCStereo</object>
+          <object>objects\objMCGlassTable</object>
+          <object>objects\objMCKeytar</object>
+          <object>objects\objMCSkateboard</object>
+          <object>objects\objMCStatue</object>
+          <object>objects\objMCStove</object>
+          <object>objects\objMCRecords</object>
+          <object>objects\objUnderwear</object>
+          <object>objects\objShoes</object>
+          <object>objects\objMCTVTable</object>
+          <object>objects\objMCTigerCarpet</object>
+          <object>objects\objMCAquarium</object>
+          <object>objects\objPimpPhone</object>
+          <object>objects\objMCBottle</object>
+        </objects>
+        <objects name="Office">
+          <object>objects\objProjector</object>
+          <object>objects\objProjectorLight</object>
+          <object>objects\objCopyMachine</object>
+          <object>objects\objFileCabinetOffice</object>
+          <object>objects\objConferenceTable</object>
+          <object>objects\objOfficeCouch</object>
+          <object>objects\objOfficeDesk</object>
+          <object>objects\objOfficeCouchSmall</object>
+          <object>objects\objProjectorTable</object>
+          <object>objects\objVan</object>
+          <object>objects\objGlassPanelDestroyedH</object>
+          <object>objects\objGlassPanelDestroyedV</object>
+          <object>objects\objOfficeDoor</object>
+          <object>objects\objVanBottom</object>
+        </objects>
+        <objects name="Tension">
+          <object>objects\objExplosion</object>
+          <object>objects\objBombCables</object>
+          <object>objects\objDestroyedDoor</object>
+          <object>objects\objDoorDebris</object>
+          <object>objects\objWindowExplode</object>
+          <object>objects\objTableBarricade</object>
+        </objects>
+        <objects name="Apartment Furniture">
+          <object>objects\objDennisCouch</object>
+          <object>objects\objAndersBed</object>
+          <object>objects\objAndersCouch</object>
+          <object>objects\objAndersDesk</object>
+          <object>objects\objAndersTable</object>
+          <object>objects\objLitterBox</object>
+          <object>objects\objDennisBed</object>
+          <object>objects\objDennisShelves</object>
+          <object>objects\objDennisTable</object>
+          <object>objects\objPeterCloset</object>
+          <object>objects\objPetersBed</object>
+          <object>objects\objPetersCouch</object>
+          <object>objects\objPetersTub</object>
+          <object>objects\objDennisTVBench</object>
+          <object>objects\objEnvelopes</object>
+          <object>objects\objDennisLivingRoomTable</object>
+          <object>objects\objFloorMail</object>
+          <object>objects\objAndersDrawer</object>
+          <object>objects\objHatRack</object>
+          <object>objects\objMailBoxes</object>
+        </objects>
+        <objects name="Disco">
+          <object>objects\objDanceFloor</object>
+          <object>objects\objDiscoLights</object>
+          <object>objects\objDiscoLight</object>
+          <object>objects\objSpotlight</object>
+          <object>objects\objDiscoBar</object>
+          <object>objects\objDJRecords</object>
+          <object>objects\objDJTable</object>
+          <object>objects\objRecordPlayer</object>
+          <object>objects\objDiscoRoofLight</object>
+        </objects>
+        <objects name="Mansion (Showdown)">
+          <objects name="Old Guy">
+            <object>objects\objOldman</object>
+            <object>objects\objPicture</object>
+            <object>objects\objOldEntertainment</object>
+            <object>objects\objOldFountain</object>
+            <object>objects\objOldCouch</object>
+            <object>objects\objOldBed</object>
+            <object>objects\objOldNightstand</object>
+            <object>objects\objOldPhone</object>
+            <object>objects\objBossgun</object>
+          </objects>
+          <objects name="Cars">
+            <object>objects\objBossCar1</object>
+            <object>objects\objBossCar2</object>
+            <object>objects\objCarLift</object>
+            <object>objects\objTyre</object>
+            <object>objects\objToolTable</object>
+            <object>objects\objWorkTable</object>
+            <object>objects\objBoss4Pool</object>
+          </objects>
+          <object>objects\objGlassFloor</object>
+          <object>objects\objGlassCross</object>
+          <object>objects\objTrophyCabinet1</object>
+          <object>objects\objTrophyCabinet2</object>
+          <object>objects\objBoss4Sofa</object>
+          <object>objects\objCyanPlant</object>
+          <object>objects\objGlimmer</object>
+        </objects>
+        <objects name="Arcade">
+          <object>objects\objArcadeCabinet</object>
+          <object>objects\objHockeyTable</object>
+          <object>objects\objBasketBallGame</object>
+          <object>objects\objArcadeLight1</object>
+          <object>objects\objArcadeLight2</object>
+          <object>objects\objCarcade</object>
+          <object>objects\objClawMachine</object>
+        </objects>
+        <objects name="Chinese Restaurant">
+          <object>objects\objFryingKitchen</object>
+          <object>objects\objWokKitchen</object>
+          <object>objects\objNoodleTable</object>
+          <object>objects\objGoldenCat</object>
+          <object>objects\objBuddha</object>
+          <object>objects\objChineseFishtank</object>
+          <object>objects\objBannerV</object>
+          <object>objects\objGoldenDragon</object>
+          <object>objects\objChineseLight</object>
+          <object>objects\objChineseLightBlue</object>
+        </objects>
+        <objects name="Golden Bar">
+          <object>objects\objGoldenBarBooth</object>
+          <object>objects\objGoldenBar</object>
+          <object>objects\objTruck</object>
+          <object>objects\objTruckFence</object>
+          <object>objects\objModernArt</object>
+          <object>objects\objFancyBar</object>
+          <object>objects\objWhiteBarStool</object>
+          <object>objects\objStage</object>
+          <object>objects\objStatueFence</object>
+          <object>objects\objSmallTable</object>
+          <object>objects\objClubSafe</object>
+          <object>objects\objOwnerDesk</object>
+          <object>objects\objClubSafePapers</object>
+          <object>objects\objClubKeys</object>
+          <object>objects\objClubRegister</object>
+          <object>objects\objPantherStatue</object>
+        </objects>
+        <objects name="Crackdown">
+          <object>objects\objFloorTable</object>
+          <object>objects\objSitCushion</object>
+          <object>objects\objJapaneseTable</object>
+          <object>objects\objJapaneseLiquor</object>
+          <object>objects\objDrugTable</object>
+          <object>objects\objCocaineBox</object>
+          <object>objects\objCocaineCrate</object>
+          <object>objects\objLaser</object>
+          <object>objects\objBrokenWindowH</object>
+          <object>objects\objSwat</object>
+          <object>objects\objSwatOpenDoor</object>
+          <object>objects\objSwatSpawn</object>
+          <object>objects\objSwatVan</object>
+          <object>objects\objSwatFade</object>
+          <object>objects\objSwatKnockedOut</object>
+          <object>objects\objDrugMaterial</object>
+          <object>objects\objDrugSafe</object>
+          <object>objects\objDrugCabinet</object>
+        </objects>
+        <objects name="Shitty Bar">
+          <object>objects\objShittyBar</object>
+          <object>objects\objShittyBarShelf</object>
+          <object>objects\objShittyBarTable</object>
+        </objects>
+        <objects name="Resolution">
+          <object>objects\objLadder</object>
+          <object>objects\objSewerWaterLarge</object>
+          <object>objects\objSewerWaterSmall</object>
+          <object>objects\objSewerWaterMedium</object>
+          <object>objects\objSewerPlans</object>
+          <object>objects\objSewerTapes</object>
+          <object>objects\objSewerForms</object>
+          <object>objects\objSewerMasks</object>
+          <object>objects\objSewerPhones</object>
+          <object>objects\objWater</object>
+          <object>objects\objJanitorPhoneBox</object>
+          <object>objects\objJanitorBucket</object>
+          <object>objects\objManhole</object>
+          <object>objects\objManholeEquipment</object>
+          <object>objects\objJanitorTable</object>
+          <object>objects\objJanitorWorkBench</object>
+          <object>objects\objManholePipe</object>
+          <object>objects\objJanitorComputer</object>
+          <object>objects\objSewerFall1</object>
+          <object>objects\objSewerFall2</object>
+          <object>objects\objSewerShadow</object>
+          <object>objects\objCable1</object>
+          <object>objects\objCable2</object>
+          <object>objects\objTag</object>
+          <object>objects\objBigTag</object>
+        </objects>
+        <objects name="Secret Sewer">
+          <object>objects\objSecretSewer</object>
+          <object>objects\objSewerGrate</object>
+          <object>objects\objSecretSewerShadow</object>
+        </objects>
       </objects>
-      <objects name="Idle">
-        <object>objects\objEnemyIdlePee</object>
-        <object>objects\objEnemyIdleSmoke</object>
-        <object>objects\objEnemySit</object>
-        <object>objects\objEnemyIdleGuard</object>
-        <object>objects\objEnemySitDrink</object>
-        <object>objects\objEnemyDrink</object>
-        <object>objects\objEnemyPhone</object>
-        <object>objects\objCellPhone</object>
-        <object>objects\objEnemyIdle</object>
-      </objects>
-      <object>objects\objEnemy</object>
-      <object>objects\objEnemyPatrol</object>
-      <object>objects\objEnemyStationary</object>
-      <object>objects\objEnemyMelee</object>
-      <object>objects\objEnemyMeleeStationary</object>
-      <object>objects\objEHideM16</object>
-      <object>objects\objDogPatrol</object>
-      <object>objects\objEnemyFat</object>
-      <object>objects\objEnemyMobile</object>
-      <object>objects\objKnockedOut</object>
-      <object>objects\objDeadBody</object>
-      <object>objects\objBodyPart</object>
-      <object>objects\objECrawl</object>
-      <object>objects\objDogBite</object>
-      <objects name="Old">
-        <object>objects\objEnemyOld</object>
-        <object>objects\objDogPatrolOld</object>
-        <object>objects\objEnemyStationaryOld</object>
-        <object>objects\objEnemyPatrolOld</object>
-        <object>objects\objEnemyMeleeOld</object>
-        <object>objects\objEnemyMobileOld</object>
-        <object>objects\objEnemyMeleeStationaryOld</object>
-      </objects>
-      <object>objects\objESubwayStatic</object>
-      <object>objects\objSubwayKnockedOut</object>
-      <object>objects\objEGiveUp</object>
     </objects>
-    <objects name="Weapons and Items">
-      <objects name="Items">
+    <objects name="Items">
+      <objects name="Other">
         <objects name="Interactable">
           <object>objects\objBox</object>
           <object>objects\objOpenedBox</object>
@@ -2369,46 +3047,11 @@
       <object>objects\objBullet</object>
       <object>objects\objEBullet</object>
     </objects>
-    <objects name="Effects">
-      <objects name="Gore">
-        <objects name="More Gore">
-          <object>objects\objBulletHit</object>
-          <object>objects\objBloodDrop2</object>
-          <object>objects\objBloodCut</object>
-          <object>objects\objBloodHit</object>
-          <object>objects\objBloodSmoke2</object>
-          <object>objects\objBulleter</object>
-          <object>objects\objBloodSplat2</object>
-          <object>objects\objBrains2</object>
-          <object>objects\objBrainChunk2</object>
-          <object>objects\objGuts2</object>
-          <object>objects\objSkinPiece2</object>
-        </objects>
-        <object>objects\objBloodSmoke</object>
-        <object>objects\objBloodSplat</object>
-        <object>objects\objBloodDrop</object>
-        <object>objects\objBloodPool</object>
-        <object>objects\objBloodSquirt</object>
-        <object>objects\objBrains</object>
+    <objects name="Other">
+      <objects name="Logos">
+        <object>objects\objDevolver</object>
+        <object>objects\objSplash</object>
       </objects>
-      <object>objects\objHit</object>
-      <object>objects\objSmokeHit</object>
-      <object>objects\objShell</object>
-      <object>objects\objDebris</object>
-      <object>objects\objShard</object>
-      <object>objects\objTinyShard</object>
-      <object>objects\objFlies</object>
-      <object>objects\objSteam</object>
-      <object>objects\objPWater</object>
-      <object>objects\objSpark2</object>
-      <object>objects\objSpark1</object>
-      <object>objects\objBombGround</object>
-      <object>objects\objFloatingBottle</object>
-      <object>objects\objClip</object>
-      <object>objects\objDriveSmoke</object>
-      <object>objects\objBrokenBottle</object>
-    </objects>
-    <objects name="UI and miscelaneous">
       <objects name="User interface">
         <object>objects\objTitle</object>
         <object>objects\objPalmTree</object>
@@ -2445,12 +3088,50 @@
         <object>objects\objLetterDone</object>
         <object>objects\objLetterFound</object>
       </objects>
+      <objects name="Effects">
+        <objects name="Gore">
+          <objects name="More Gore">
+            <object>objects\objBulletHit</object>
+            <object>objects\objBloodDrop2</object>
+            <object>objects\objBloodCut</object>
+            <object>objects\objBloodHit</object>
+            <object>objects\objBloodSmoke2</object>
+            <object>objects\objBulleter</object>
+            <object>objects\objBloodSplat2</object>
+            <object>objects\objBrains2</object>
+            <object>objects\objBrainChunk2</object>
+            <object>objects\objGuts2</object>
+            <object>objects\objSkinPiece2</object>
+          </objects>
+          <object>objects\objBloodSmoke</object>
+          <object>objects\objBloodSplat</object>
+          <object>objects\objBloodDrop</object>
+          <object>objects\objBloodPool</object>
+          <object>objects\objBloodSquirt</object>
+          <object>objects\objBrains</object>
+        </objects>
+        <object>objects\objHit</object>
+        <object>objects\objSmokeHit</object>
+        <object>objects\objShell</object>
+        <object>objects\objDebris</object>
+        <object>objects\objShard</object>
+        <object>objects\objTinyShard</object>
+        <object>objects\objFlies</object>
+        <object>objects\objSteam</object>
+        <object>objects\objPWater</object>
+        <object>objects\objSpark2</object>
+        <object>objects\objSpark1</object>
+        <object>objects\objBombGround</object>
+        <object>objects\objFloatingBottle</object>
+        <object>objects\objClip</object>
+        <object>objects\objDriveSmoke</object>
+        <object>objects\objBrokenBottle</object>
+      </objects>
       <object>objects\sxms</object>
       <object>objects\objPathTest</object>
       <object>objects\objShadowH</object>
       <object>objects\objShadowV</object>
       <object>objects\objShootThrough</object>
-      <object>objects\objFurniture</object>
       <object>objects\objPhoneConversation</object>
       <object>objects\objSurfaceReturn</object>
       <object>objects\objTeleporter</object>
@@ -2480,677 +3161,6 @@
       <object>objects\objFocus</object>
       <object>objects\objScanlines</object>
     </objects>
-    <objects name="Furniture">
-      <objects name="Bathroom">
-        <object>objects\objTub</object>
-        <object>objects\objSink</object>
-        <object>objects\objUrinalV</object>
-        <object>objects\objToilet</object>
-        <object>objects\objShowerCurtain</object>
-        <object>objects\objJacuzzi</object>
-        <object>objects\objShowerGlassV</object>
-        <object>objects\objShowerGlassH</object>
-        <object>objects\objShowerGlassDoor</object>
-        <object>objects\objHotelSuiteTub</object>
-        <object>objects\objHotelSink</object>
-        <object>objects\objHotelSuiteToilet</object>
-      </objects>
-      <objects name="Kitchen">
-        <object>objects\objChair</object>
-        <object>objects\objShelves</object>
-        <object>objects\objKitchenSink</object>
-        <object>objects\objStove</object>
-        <object>objects\objTable</object>
-        <object>objects\objMicrowave</object>
-        <object>objects\objFridge</object>
-      </objects>
-      <objects name="General">
-        <objects name="Toys">
-          <object>objects\objToyBall</object>
-          <object>objects\objToyTurtle</object>
-          <object>objects\objToyBear</object>
-          <object>objects\objToyLego</object>
-          <object>objects\objToyM16</object>
-          <object>objects\objToyMP5</object>
-        </objects>
-        <objects name="Plants">
-          <object>objects\objPelletsCorner</object>
-          <object>objects\objPelletsSide</object>
-          <object>objects\objPellets</object>
-          <object>objects\objPelletPlant</object>
-          <object>objects\objPlant</object>
-          <object>objects\objHospitalPlant</object>
-        </objects>
-        <objects name="Trash">
-          <object>objects\objPizza</object>
-          <object>objects\objTrashbag</object>
-          <object>objects\objTrashcan</object>
-          <object>objects\objBurningTrashcan</object>
-          <object>objects\objHomelessBed</object>
-        </objects>
-        <object>objects\objSofaV64</object>
-        <object>objects\objSofaV48</object>
-        <object>objects\objSofaH64</object>
-        <object>objects\objDrawerV24</object>
-        <object>objects\objDrawerH24</object>
-        <object>objects\objSofaH48</object>
-        <object>objects\objShirts</object>
-        <object>objects\objCassetteDeck</object>
-        <object>objects\objComputer</object>
-        <object>objects\objVinylRecord</object>
-        <object>objects\objBigTable</object>
-        <object>objects\objBeds</object>
-        <object>objects\objLamps</object>
-        <object>objects\objJackets</object>
-        <object>objects\objNes</object>
-        <object>objects\objVinylPlayer</object>
-        <object>objects\objSpeaker</object>
-        <object>objects\objTVBlack</object>
-        <object>objects\objTigerCarpet</object>
-        <object>objects\objFountain</object>
-        <object>objects\objBigBed</object>
-        <object>objects\objLeatherCouch</object>
-        <object>objects\objPoolTable</object>
-        <object>objects\objGlassTable</object>
-        <object>objects\objNightStand</object>
-        <object>objects\objTrophyHead</object>
-        <object>objects\objWineRack</object>
-        <object>objects\objCouchCushion</object>
-        <object>objects\objArmchair</object>
-        <object>objects\objRichTable</object>
-        <object>objects\objDiningChair</object>
-        <object>objects\objLaundryBasket</object>
-        <object>objects\objCarBottom</object>
-        <object>objects\objAquarium</object>
-        <object>objects\objAquariumBreak</object>
-        <object>objects\objAquariumWater</object>
-        <object>objects\objPhone</object>
-        <object>objects\objVendingMachine</object>
-        <object>objects\objTVWallMounted</object>
-      </objects>
-      <objects name="Subway">
-        <object>objects\objLockerH</object>
-        <object>objects\objLockerV</object>
-        <object>objects\objSubwayBenchV</object>
-        <object>objects\objSubwayBench</object>
-        <object>objects\objTrain</object>
-        <object>objects\objSubwayDoor</object>
-        <object>objects\objClotheslineH</object>
-        <object>objects\objClotheslineV</object>
-      </objects>
-      <objects name="Jacket's apartment">
-        <object>objects\objAnsweringMachine</object>
-        <object>objects\objPlayerBed1</object>
-        <object>objects\objPlayerBed2</object>
-        <object>objects\objPlayerCouch</object>
-        <object>objects\objPlayerKitchenCounter</object>
-        <object>objects\objPlayerKitchenShelf</object>
-        <object>objects\objPlayerKitchenSink</object>
-        <object>objects\objPlayerLivingRoomTable</object>
-        <object>objects\objPlayerFridge</object>
-        <object>objects\objPlayerTable</object>
-        <object>objects\objVomitBucket</object>
-        <object>objects\objPlayerTub</object>
-      </objects>
-      <objects name="Decadence">
-        <object>objects\objGate</object>
-        <object>objects\objMonitors</object>
-        <object>objects\objPornBed</object>
-        <object>objects\objPornCamera</object>
-        <object>objects\objPornLight</object>
-      </objects>
-      <objects name="Police Station">
-        <object>objects\objPoliceDesk</object>
-        <object>objects\objPoliceDeskPuter</object>
-        <object>objects\objInterrogationTable</object>
-        <object>objects\objSpeakerBooth</object>
-        <object>objects\objPoliceArmchair</object>
-        <object>objects\objPoliceDeskChair</object>
-        <object>objects\objMetalDetector</object>
-        <object>objects\objPaperbin</object>
-        <object>objects\objPoliceSofa</object>
-        <object>objects\objFiles</object>
-        <object>objects\objFileCabinet</object>
-        <object>objects\objPoliceFrontDesk</object>
-        <object>objects\objPoliceEntryDesk</object>
-        <object>objects\objBigPoliceTable</object>
-        <object>objects\objEvidenceTable</object>
-        <object>objects\objSurveillanceCamera</object>
-        <object>objects\objCellBed</object>
-        <object>objects\objCellSink</object>
-        <object>objects\objCellToilet</object>
-        <object>objects\objCellDoor</object>
-        <object>objects\objSurveillanceCenter</object>
-        <object>objects\objBarricade1</object>
-        <object>objects\objBarricade2</object>
-        <object>objects\objCopCar</object>
-        <object>objects\objPhoneRecorder</object>
-        <object>objects\objPhoneTable</object>
-        <object>objects\objPhone1</object>
-        <object>objects\objPhone2</object>
-      </objects>
-      <objects name="Sauna">
-        <object>objects\objTowels</object>
-        <object>objects\objWaterPuddle</object>
-        <object>objects\objBubbleBath</object>
-        <object>objects\objGymLocker</object>
-        <object>objects\objSaunaBench</object>
-        <object>objects\objSunChair</object>
-        <object>objects\objSolarium</object>
-        <object>objects\objSolariumOpen</object>
-        <object>objects\objHeater</object>
-        <object>objects\objGymBench</object>
-        <object>objects\objSaunaSteam</object>
-        <object>objects\objCandleTable</object>
-        <object>objects\objCandleTableBurning</object>
-        <object>objects\objMassageTable</object>
-        <object>objects\objEnormousFountain</object>
-        <object>objects\objSaunaCurtain</object>
-        <object>objects\objSaunaCounter</object>
-        <object>objects\objSaunaFountain</object>
-        <object>objects\objYinYang</object>
-      </objects>
-      <objects name="PhoneHom">
-        <object>objects\objCeoTable</object>
-        <object>objects\objReceptionDesk</object>
-        <object>objects\objPhoneHom</object>
-        <object>objects\objCeoDead</object>
-        <object>objects\objEmployeeDead</object>
-        <object>objects\objEmployeeDeadPiece</object>
-        <object>objects\objEmployeeDeadWall</object>
-        <object>objects\objWorkerdDead</object>
-        <object>objects\objGolfBag</object>
-        <object>objects\objWorker</object>
-        <object>objects\objEmployee</object>
-        <object>objects\objCEO</object>
-        <object>objects\objPhoneHomSafe</object>
-        <object>objects\objPhoneHomPainting</object>
-        <object>objects\objPhoneHomPaintingWall</object>
-        <object>objects\objGolfCourt</object>
-      </objects>
-      <objects name="Niklas">
-        <objects name="Store">
-          <object>objects\objNiklasFridge</object>
-          <object>objects\objFreezer</object>
-          <object>objects\objStoreShelf</object>
-          <object>objects\objStoreFridge</object>
-          <object>objects\objRegister</object>
-          <object>objects\objDoubleFridge</object>
-          <object>objects\objNeonSign</object>
-          <object>objects\objFan</object>
-          <object>objects\objStorePapers</object>
-        </objects>
-        <objects name="Pizza">
-          <object>objects\objPizzaRegister</object>
-          <object>objects\objPizzaOven</object>
-          <object>objects\objPizzaDisplay</object>
-          <object>objects\objPizzaCounter</object>
-          <object>objects\objPizzaTable</object>
-        </objects>
-        <objects name="VHS">
-          <object>objects\sprVHSDoorMat</object>
-          <object>objects\objVHSRackH</object>
-          <object>objects\objVHSRackV</object>
-          <object>objects\objVHSTape</object>
-          <object>objects\objVHSCounter</object>
-          <object>objects\objVHSArchive</object>
-        </objects>
-        <objects name="Bar">
-          <object>objects\objBarPlant</object>
-          <object>objects\objBarBooth</object>
-          <object>objects\objBarStool</object>
-          <object>objects\objBarRegister</object>
-          <object>objects\objBarShelf</object>
-          <object>objects\objJukebox</object>
-          <object>objects\objBarTable</object>
-          <object>objects\objBarPoolTable</object>
-          <object>objects\objPhoneBooth</object>
-        </objects>
-      </objects>
-      <objects name="Hospital">
-        <object>objects\objHospitalChair</object>
-        <object>objects\objHospitalBed</object>
-        <object>objects\objHospitalBedStand</object>
-        <object>objects\objHospitalCouch</object>
-        <object>objects\objHospitalCouch2</object>
-        <object>objects\objWheelChair</object>
-        <object>objects\objHospitalDesk</object>
-        <object>objects\objHospitalCupboard</object>
-        <object>objects\objHospitalCurtains</object>
-        <object>objects\objHospitalLocker</object>
-        <object>objects\objHospitalSofaV</object>
-        <object>objects\objHospitalSofaH</object>
-        <object>objects\objHospitalElevator</object>
-        <object>objects\objWindowOpen</object>
-        <object>objects\objDoctorPatrol</object>
-        <object>objects\objPoliceRead</object>
-        <object>objects\objKeycard</object>
-        <object>objects\objLockedDoor</object>
-        <object>objects\objHandicapToilet</object>
-        <object>objects\objHospitalReception</object>
-        <object>objects\objGargoyle</object>
-        <object>objects\objXray</object>
-        <object>objects\objExamTable</object>
-        <object>objects\objHospitalStaffSofa</object>
-        <object>objects\objHospitalStaffMicro</object>
-        <object>objects\objHospitalStaffTable</object>
-      </objects>
-      <objects name="Hotel">
-        <objects name="Restaurant">
-          <object>objects\objRestaurantChair</object>
-          <object>objects\objWineBottle</object>
-          <object>objects\objBuffe</object>
-          <object>objects\objFoodTray</object>
-          <object>objects\objBuffePlates</object>
-        </objects>
-        <object>objects\objHotelSuiteSofa</object>
-        <object>objects\objHotelSuiteChair</object>
-        <object>objects\objHotelSuiteEntertainment</object>
-        <object>objects\objHotelSimpleBed</object>
-        <object>objects\objRestaurantTable</object>
-        <object>objects\objHotelNightStandLight</object>
-        <object>objects\objHotelNightStand</object>
-        <object>objects\objHotelSuiteBed</object>
-        <object>objects\objMinibar</object>
-        <object>objects\objCleaningCart</object>
-        <object>objects\objHotelCloset</object>
-        <object>objects\objFootstand</object>
-        <object>objects\objHotelChair</object>
-        <object>objects\objWetSpot</object>
-        <object>objects\objWetFloorWarning</object>
-        <object>objects\objPoolTray</object>
-        <object>objects\objPool</object>
-        <object>objects\objPoolChair</object>
-        <object>objects\objFireAxe</object>
-      </objects>
-      <objects name="Highballer">
-        <object>objects\objKaraokeCouchPink</object>
-        <object>objects\objKaraokeCouchBlack</object>
-        <object>objects\objSpeakerTable</object>
-        <object>objects\objKaraokeMachine</object>
-        <object>objects\objHighballBooth</object>
-        <object>objects\objLaneStart</object>
-        <object>objects\objBowlingLane</object>
-        <object>objects\objBowlingEnd</object>
-        <object>objects\objLaptopTable</object>
-        <object>objects\objHighballBoothBlack</object>
-        <object>objects\objHighballChair</object>
-        <object>objects\objSquareTable</object>
-        <object>objects\objHighballCurtain</object>
-        <object>objects\objHighballDiningChair</object>
-        <object>objects\objHighballSign</object>
-        <object>objects\objHighballBar</object>
-        <object>objects\objVenuspatrol</object>
-        <object>objects\objVenuspetrol</object>
-        <object>objects\objVenuspatrolChalk</object>
-        <object>objects\objBrandon</object>
-        <object>objects\objSacrifice</object>
-        <object>objects\objVenusPatrolSmall</object>
-        <object>objects\objVenusCandle</object>
-        <object>objects\objStroller</object>
-      </objects>
-      <objects name="Exposed">
-        <objects name="Logos">
-          <object>objects\objEuroLogo</object>
-          <object>objects\objBallOfDuty</object>
-          <object>objects\objAssassinsBreed</object>
-          <object>objects\object707</object>
-          <object>objects\objRezzed</object>
-          <object>objects\objHotlineLogo</object>
-        </objects>
-        <object>objects\objEuroPodV</object>
-        <object>objects\objEuroPodH</object>
-        <object>objects\objEuroFenceH</object>
-        <object>objects\objEuroFenceV</object>
-        <object>objects\objEuroPillar</object>
-        <object>objects\objEuroIce</object>
-        <object>objects\objEuroTrash</object>
-      </objects>
-      <objects name="Biker's house">
-        <objects name="Bathroom">
-          <object>objects\objPimpToilet</object>
-          <object>objects\objBlackTub</object>
-          <object>objects\objPimpSink</object>
-        </objects>
-        <objects name="Kitchen">
-          <object>objects\objMCKitchenShelf</object>
-          <object>objects\objMCKitchenSink</object>
-        </objects>
-        <object>objects\objMCBed</object>
-        <object>objects\objMCComputer</object>
-        <object>objects\objMCCouch</object>
-        <object>objects\objMCStereo</object>
-        <object>objects\objMCGlassTable</object>
-        <object>objects\objMCKeytar</object>
-        <object>objects\objMCSkateboard</object>
-        <object>objects\objMCStatue</object>
-        <object>objects\objMCStove</object>
-        <object>objects\objMCRecords</object>
-        <object>objects\objUnderwear</object>
-        <object>objects\objShoes</object>
-        <object>objects\objMCTVTable</object>
-        <object>objects\objMCTigerCarpet</object>
-        <object>objects\objMCAquarium</object>
-        <object>objects\objPimpPhone</object>
-        <object>objects\objMCBottle</object>
-      </objects>
-      <objects name="Office">
-        <object>objects\objProjector</object>
-        <object>objects\objProjectorLight</object>
-        <object>objects\objCopyMachine</object>
-        <object>objects\objFileCabinetOffice</object>
-        <object>objects\objConferenceTable</object>
-        <object>objects\objOfficeCouch</object>
-        <object>objects\objOfficeDesk</object>
-        <object>objects\objOfficeCouchSmall</object>
-        <object>objects\objProjectorTable</object>
-        <object>objects\objVan</object>
-        <object>objects\objGlassPanelDestroyedH</object>
-        <object>objects\objGlassPanelDestroyedV</object>
-        <object>objects\objOfficeDoor</object>
-        <object>objects\objVanBottom</object>
-      </objects>
-      <objects name="Tension">
-        <object>objects\objExplosion</object>
-        <object>objects\objBombCables</object>
-        <object>objects\objDestroyedDoor</object>
-        <object>objects\objDoorDebris</object>
-        <object>objects\objWindowExplode</object>
-        <object>objects\objTableBarricade</object>
-      </objects>
-      <objects name="Apartment Furniture">
-        <object>objects\objDennisCouch</object>
-        <object>objects\objAndersBed</object>
-        <object>objects\objAndersCouch</object>
-        <object>objects\objAndersDesk</object>
-        <object>objects\objAndersTable</object>
-        <object>objects\objLitterBox</object>
-        <object>objects\objDennisBed</object>
-        <object>objects\objDennisShelves</object>
-        <object>objects\objDennisTable</object>
-        <object>objects\objPeterCloset</object>
-        <object>objects\objPetersBed</object>
-        <object>objects\objPetersCouch</object>
-        <object>objects\objPetersTub</object>
-        <object>objects\objDennisTVBench</object>
-        <object>objects\objEnvelopes</object>
-        <object>objects\objDennisLivingRoomTable</object>
-        <object>objects\objFloorMail</object>
-        <object>objects\objAndersDrawer</object>
-        <object>objects\objHatRack</object>
-        <object>objects\objMailBoxes</object>
-      </objects>
-      <objects name="Disco">
-        <object>objects\objDanceFloor</object>
-        <object>objects\objDiscoLights</object>
-        <object>objects\objDiscoLight</object>
-        <object>objects\objSpotlight</object>
-        <object>objects\objDiscoBar</object>
-        <object>objects\objDJRecords</object>
-        <object>objects\objDJTable</object>
-        <object>objects\objRecordPlayer</object>
-        <object>objects\objDiscoRoofLight</object>
-      </objects>
-      <objects name="Mansion (Showdown)">
-        <objects name="Old Guy">
-          <object>objects\objOldman</object>
-          <object>objects\objPicture</object>
-          <object>objects\objOldEntertainment</object>
-          <object>objects\objOldFountain</object>
-          <object>objects\objOldCouch</object>
-          <object>objects\objOldBed</object>
-          <object>objects\objOldNightstand</object>
-          <object>objects\objOldPhone</object>
-          <object>objects\objBossgun</object>
-        </objects>
-        <objects name="Cars">
-          <object>objects\objBossCar1</object>
-          <object>objects\objBossCar2</object>
-          <object>objects\objCarLift</object>
-          <object>objects\objTyre</object>
-          <object>objects\objToolTable</object>
-          <object>objects\objWorkTable</object>
-          <object>objects\objBoss4Pool</object>
-        </objects>
-        <object>objects\objGlassFloor</object>
-        <object>objects\objGlassCross</object>
-        <object>objects\objTrophyCabinet1</object>
-        <object>objects\objTrophyCabinet2</object>
-        <object>objects\objBoss4Sofa</object>
-        <object>objects\objCyanPlant</object>
-        <object>objects\objGlimmer</object>
-      </objects>
-      <objects name="Arcade">
-        <object>objects\objArcadeCabinet</object>
-        <object>objects\objHockeyTable</object>
-        <object>objects\objBasketBallGame</object>
-        <object>objects\objArcadeLight1</object>
-        <object>objects\objArcadeLight2</object>
-        <object>objects\objCarcade</object>
-        <object>objects\objClawMachine</object>
-      </objects>
-      <objects name="Chinese Restaurant">
-        <object>objects\objFryingKitchen</object>
-        <object>objects\objWokKitchen</object>
-        <object>objects\objNoodleTable</object>
-        <object>objects\objGoldenCat</object>
-        <object>objects\objBuddha</object>
-        <object>objects\objChineseFishtank</object>
-        <object>objects\objBannerV</object>
-        <object>objects\objGoldenDragon</object>
-        <object>objects\objChineseLight</object>
-        <object>objects\objChineseLightBlue</object>
-      </objects>
-      <objects name="Golden Bar">
-        <object>objects\objGoldenBarBooth</object>
-        <object>objects\objGoldenBar</object>
-        <object>objects\objTruck</object>
-        <object>objects\objTruckFence</object>
-        <object>objects\objModernArt</object>
-        <object>objects\objFancyBar</object>
-        <object>objects\objWhiteBarStool</object>
-        <object>objects\objStage</object>
-        <object>objects\objStatueFence</object>
-        <object>objects\objSmallTable</object>
-        <object>objects\objClubSafe</object>
-        <object>objects\objOwnerDesk</object>
-        <object>objects\objClubSafePapers</object>
-        <object>objects\objClubKeys</object>
-        <object>objects\objClubRegister</object>
-        <object>objects\objPantherStatue</object>
-      </objects>
-      <objects name="Crackdown">
-        <object>objects\objFloorTable</object>
-        <object>objects\objSitCushion</object>
-        <object>objects\objJapaneseTable</object>
-        <object>objects\objJapaneseLiquor</object>
-        <object>objects\objDrugTable</object>
-        <object>objects\objCocaineBox</object>
-        <object>objects\objCocaineCrate</object>
-        <object>objects\objLaser</object>
-        <object>objects\objBrokenWindowH</object>
-        <object>objects\objSwat</object>
-        <object>objects\objSwatOpenDoor</object>
-        <object>objects\objSwatSpawn</object>
-        <object>objects\objSwatVan</object>
-        <object>objects\objSwatFade</object>
-        <object>objects\objSwatKnockedOut</object>
-        <object>objects\objDrugMaterial</object>
-        <object>objects\objDrugSafe</object>
-        <object>objects\objDrugCabinet</object>
-      </objects>
-      <objects name="Shitty Bar">
-        <object>objects\objShittyBar</object>
-        <object>objects\objShittyBarShelf</object>
-        <object>objects\objShittyBarTable</object>
-      </objects>
-      <objects name="Resolution">
-        <object>objects\objLadder</object>
-        <object>objects\objSewerWaterLarge</object>
-        <object>objects\objSewerWaterSmall</object>
-        <object>objects\objSewerWaterMedium</object>
-        <object>objects\objSewerPlans</object>
-        <object>objects\objSewerTapes</object>
-        <object>objects\objSewerForms</object>
-        <object>objects\objSewerMasks</object>
-        <object>objects\objSewerPhones</object>
-        <object>objects\objWater</object>
-        <object>objects\objJanitorPhoneBox</object>
-        <object>objects\objJanitorBucket</object>
-        <object>objects\objManhole</object>
-        <object>objects\objManholeEquipment</object>
-        <object>objects\objJanitorTable</object>
-        <object>objects\objJanitorWorkBench</object>
-        <object>objects\objManholePipe</object>
-        <object>objects\objJanitorComputer</object>
-        <object>objects\objSewerFall1</object>
-        <object>objects\objSewerFall2</object>
-        <object>objects\objSewerShadow</object>
-        <object>objects\objCable1</object>
-        <object>objects\objCable2</object>
-        <object>objects\objTag</object>
-        <object>objects\objBigTag</object>
-      </objects>
-      <objects name="Secret Sewer">
-        <object>objects\objSecretSewer</object>
-        <object>objects\objSewerGrate</object>
-        <object>objects\objSecretSewerShadow</object>
-      </objects>
-    </objects>
-    <objects name="Cutscene characters">
-      <objects name="Niklas">
-        <object>objects\objNicklasStore</object>
-        <object>objects\objNicklasPizza</object>
-        <object>objects\objNicklasVHS</object>
-        <object>objects\objNicklasBar</object>
-        <object>objects\objNicklasStoreSpecial</object>
-        <object>objects\objNickeDead</object>
-        <object>objects\objNickeTiedUp</object>
-      </objects>
-      <objects name="Richter">
-        <object>objects\objPrisoner</object>
-        <object>objects\objAssassinGround</object>
-        <object>objects\objAssassinDie</object>
-        <object>objects\objAssassinPizza</object>
-        <object>objects\objAssassinWait</object>
-        <object>objects\objAssassinSitUzi</object>
-        <object>objects\objAssassinVHS</object>
-        <object>objects\objAssassinBar</object>
-      </objects>
-      <object>objects\objDreamPeople</object>
-      <object>objects\objDreamPlayer</object>
-      <object>objects\objGirlfriendDead</object>
-      <object>objects\objGirlfriendDeadOutline</object>
-      <object>objects\objGirlfriend</object>
-      <object>objects\objGirlfriendBathroom</object>
-      <object>objects\objGirlfriendSit</object>
-      <object>objects\objDoctorTalk</object>
-      <object>objects\objPoliceTalk</object>
-      <object>objects\objHobo</object>
-      <object>objects\objHoboKnockedOut</object>
-      <object>objects\objDeadTable</object>
-      <object>objects\objWileyWiggins</object>
-      <object>objects\objDogPetCorpse</object>
-      <object>objects\objFatCorpseEat</object>
-      <object>objects\objCrocodileMan</object>
-    </objects>
-    <objects name="Boss Fights">
-      <objects name="Boss 1 (Producer)">
-        <object>objects\objBossJacket</object>
-        <object>objects\objBoss1Spawn</object>
-        <object>objects\objBoss1</object>
-        <object>objects\objBoss1Down</object>
-        <object>objects\objBoss1Die</object>
-        <object>objects\objBossChair</object>
-      </objects>
-      <objects name="Boss 2 (Biker)">
-        <object>objects\objBoss2</object>
-        <object>objects\objCleaver</object>
-        <object>objects\objBoss2Pry</object>
-        <object>objects\objBoss2GetUp</object>
-        <object>objects\objBoss2Crawl</object>
-        <object>objects\objPBashBoss2</object>
-      </objects>
-      <objects name="Boss 3 (Van driver)">
-        <object>objects\objBottleExplosion</object>
-        <object>objects\objMolotov</object>
-        <object>objects\objBurningGuy</object>
-        <object>objects\objBoss3</object>
-        <object>objects\objBoss3Kneel</object>
-        <object>objects\objBoss3Dead</object>
-        <object>objects\objDeadBurning</object>
-        <object>objects\objPlayerLighter</object>
-      </objects>
-      <objects name="Boss 4 (The Father)">
-        <object>objects\objBoss4</object>
-        <object>objects\objBoss4Chair</object>
-        <object>objects\objBoss4Desk</object>
-        <object>objects\objBossFountain</object>
-        <object>objects\objBodyguard</object>
-        <object>objects\objPanther</object>
-        <object>objects\objPantherBite</object>
-        <object>objects\objBossPhone</object>
-        <object>objects\objBodyguardCrawl</object>
-        <object>objects\objBodyguardKnife</object>
-      </objects>
-      <objects name="Boss 5 (PhoneHom Jacket)">
-        <object>objects\objPlayerBoss</object>
-      </objects>
-    </objects>
-    <objects name="Cameos / NPCs / Dead Bodies">
-      <objects name="Janitors">
-        <object>objects\objJanitorVacuum</object>
-        <object>objects\objJanitorClean</object>
-        <object>objects\objJanitorNotice</object>
-        <object>objects\objJanitorFlee</object>
-        <object>objects\objJanitor</object>
-        <object>objects\objJanitorDennisDie</object>
-        <object>objects\objJanitorJonatanDie</object>
-      </objects>
-      <objects name="Enemies">
-        <object>objects\objETauntChain</object>
-        <object>objects\objETauntPipe</object>
-        <object>objects\objETauntBat</object>
-        <object>objects\objVictimWall</object>
-        <object>objects\objETauntSmoke</object>
-        <object>objects\objEBombTinker</object>
-        <object>objects\objEStandGuardBomb</object>
-        <object>objects\objBombGuy</object>
-        <object>objects\objBombGuyDie</object>
-      </objects>
-      <objects name="Dead Bodies">
-        <object>objects\objCobraDead</object>
-        <object>objects\objLocustDead</object>
-        <object>objects\objWalrusDead</object>
-      </objects>
-      <objects name="Musicians">
-        <object>objects\objSunAraw</object>
-        <object>objects\objCoconuts</object>
-        <object>objects\objPerturbator</object>
-        <object>objects\objJasper</object>
-        <object>objects\objMoon</object>
-        <object>objects\objElliott</object>
-        <object>objects\objScattle</object>
-        <object>objects\objEirik</object>
-      </objects>
-      <object>objects\objGirlfriendEat</object>
-      <object>objects\objMCDate</object>
-      <object>objects\objLoneSurvivor</object>
-      <object>objects\objBoss2Corpse</object>
-      <object>objects\objDJ</object>
-      <object>objects\objTutorialHobo</object>
-      <object>objects\objOscar</object>
-      <object>objects\objBenjamin</object>
-      <object>objects\objOscarTable</object>
-      <object>objects\objOscarPlate</object>
-      <object>objects\objNigelScream</object>
-      <object>objects\objRasmus</object>
-      <object>objects\objRasmusHat</object>
-    </objects>
-    <objects name="Logos">
-      <object>objects\objDevolver</object>
-      <object>objects\objSplash</object>
-    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Interface">
@@ -3179,7 +3189,7 @@
       </rooms>
     </rooms>
     <rooms name="Levels">
-      <rooms name="Part 1 Phonecalls">
+      <rooms name="Phonecalls">
         <rooms name="The Metro">
           <room>rooms\rmTutorial</room>
           <room>rooms\rmDream1</room>
@@ -3212,7 +3222,7 @@
           <room>rooms\rmBar1</room>
         </rooms>
       </rooms>
-      <rooms name="Part 2 Questions">
+      <rooms name="Questions">
         <rooms name="Tension">
           <room>rooms\rmDream2</room>
           <room>rooms\rmSequence5</room>
@@ -3250,7 +3260,7 @@
           <room>rooms\rmBar2</room>
         </rooms>
       </rooms>
-      <rooms name="Part 3 Visitations">
+      <rooms name="Visitations">
         <rooms name="Push It">
           <room>rooms\rmDream3</room>
           <room>rooms\rmSequence9</room>
@@ -3285,7 +3295,7 @@
           <room>rooms\rmBar3</room>
         </rooms>
       </rooms>
-      <rooms name="Part 4 Connections">
+      <rooms name="Connections">
         <rooms name="Trauma">
           <room>rooms\rmSequence12b</room>
           <room>rooms\rmSequence12bDownstairs</room>
@@ -3316,7 +3326,7 @@
           <room>rooms\rmCredits</room>
         </rooms>
       </rooms>
-      <rooms name="Part 5 Answers">
+      <rooms name="Answers">
         <rooms name="Safehouse">
           <room>rooms\rmRewind</room>
           <room>rooms\rmMCBar</room>
@@ -3342,11 +3352,11 @@
           <room>rooms\rmBikeEnding</room>
         </rooms>
       </rooms>
-      <rooms name="Extra">
-        <rooms name="Highballer (1)">
+      <rooms name="Bonus">
+        <rooms name="Highballer">
           <room>rooms\rmHighballer</room>
         </rooms>
-        <rooms name="Exposed (1)">
+        <rooms name="Exposed">
           <room>rooms\rmEurogamer</room>
         </rooms>
       </rooms>

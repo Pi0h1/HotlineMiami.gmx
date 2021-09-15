@@ -54,7 +54,7 @@ dead=0</string>
 if sprite_index=sprBoss1Beg {
 if !instance_exists(objPhoneConversation) {
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.active=1
 my_id.sprite_index=sprite_index
 my_id.ammo=ammo
@@ -90,8 +90,8 @@ if wait&gt;0 wait-=1
 if speed=0 {
 if wait=0 {
 if sprite_index=sprBoss1Shot {if dead=1 {sprite_index=sprBoss1Beg scrGetMessage(1) image_index=0 
-if instance_exists(objPlayerMouse) {
-with objPlayerMouse {
+if instance_exists(objPlayerJacket) {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.sprite_index=sprite_index

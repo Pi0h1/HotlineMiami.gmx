@@ -56,7 +56,7 @@ global.maskon=1</string>
             <kind>1</kind>
             <string>if hurtindex=11 {
 if image_index=0 {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 if sprite_index=sprPTrophyKill my_id.sprite_index=sprPWalkTrophy
 if sprite_index=sprPBatKill my_id.sprite_index=sprPWalkBat
 if sprite_index=sprPPipeKill my_id.sprite_index=sprPWalkPipe
@@ -89,7 +89,8 @@ global.kills+=1
 ds_list_add(global.bonuslist,"Execution")
 if global.combotime&lt;12 global.combotime=12
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

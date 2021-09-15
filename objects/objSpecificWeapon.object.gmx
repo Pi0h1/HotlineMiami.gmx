@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle=random(360)
+            <string>sprite_index=sprWeapons
+image_angle=random(360)
 ammo=0
 if image_index=0 ammo=24
 if image_index=1 ammo=6
@@ -36,7 +37,8 @@ if image_index=10 ammo=6
 if image_index=11 ammo=20
 if image_index=12 ammo=32
 image_speed=0
-dir=random(360)</string>
+dir=random(360)
+</string>
           </argument>
         </arguments>
       </action>

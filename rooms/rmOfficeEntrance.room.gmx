@@ -109,7 +109,7 @@ global.done=0</code>
     <instance objName="objEnemyStationary" x="432" y="216" name="inst_411064D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyStationary" x="204" y="308" name="inst_121D4AB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMeleeStationary" x="240" y="136" name="inst_2AFE4167" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMouse" x="352" y="0" name="inst_77C4F910" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerJacket" x="352" y="0" name="inst_77C4F910" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerCar" x="208" y="-48" name="inst_8AD35C1B" locked="0" code="image_angle=180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickH" x="96" y="32" name="inst_67BAE0B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickH" x="160" y="32" name="inst_ACD196C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

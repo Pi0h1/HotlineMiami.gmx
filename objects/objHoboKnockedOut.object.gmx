@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objKillable</parentName>
   <maskName>sprMask</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -68,7 +68,7 @@ if place_meeting(x,y,objPlayer) {
 if objPlayer.sprite_index=sprPWalkUnarmed or objPlayer.sprite_index=sprPAttackUnarmed my_id=instance_create(x,y,objPHoboBash)
 if objPlayer.sprite_index=sprPWalkBat or objPlayer.sprite_index=sprPAttackBat my_id=instance_create(x,y,objPHoboBlunt)
 my_id.image_angle=image_angle
-with objPlayerMouse instance_destroy()
+with objPlayerJacket instance_destroy()
 instance_destroy()
 }
 image_xscale=1

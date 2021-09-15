@@ -55,7 +55,7 @@ instance_create(x+lengthdir_x(24,image_angle),y+lengthdir_y(24,image_angle),objB
 my_id=instance_create(x,y,objDeadBody)
 my_id.image_angle=image_angle
 my_id.sprite_index=sprBoss1Dead
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.maskon=global.maskon
 my_id.maskindex=global.maskindex
 instance_destroy()

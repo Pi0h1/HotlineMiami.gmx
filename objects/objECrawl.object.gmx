@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objKillable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -68,7 +68,7 @@ with objDoorH solid=0
 with objDoorV solid=0
 with objShootThrough solid=test
 if !instance_exists(objPlayer) exit
-if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;24 and objPlayer.object_index=objPlayerMouse {
+if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;24 and objPlayer.object_index=objPlayerJacket {
 kill=keyboard_check(vk_space)
 if kill {
 with objPlayer {
@@ -87,7 +87,7 @@ if objPlayer.sprite_index=sprPWalkBag or objPlayer.sprite_index=sprPAttackBag my
 my_id.maskindex=objPlayer.maskindex
 my_id.maskon=1
 my_id.image_angle=image_angle
-with objPlayer {if object_index=objPlayerMouse instance_destroy()}
+with objPlayer {if object_index=objPlayerJacket instance_destroy()}
 
 instance_destroy()
 

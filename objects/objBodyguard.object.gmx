@@ -71,7 +71,7 @@ my_id2.direction=direction+70-random(40)
 my_id2.speed=2+random(1)
 
 instance_destroy()
-with objPlayerMouse instance_destroy()
+with objPlayerJacket instance_destroy()
 }
 }
 }
@@ -98,7 +98,7 @@ objPlayer.myyspeed=0
 if !instance_exists(objPanther) and !instance_exists(objPantherBite) {
 if instance_exists(objPlayer) {
 if wait&gt;0 wait-=1 else {
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -122,7 +122,7 @@ if state=2 {
 if !instance_exists(objPhoneConversation) {
 state=3 
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.dir=dir
 my_id.legindex=legindex
 my_id.image_index=image_index

@@ -13,10 +13,10 @@ drawy+=height
 } else {
 draw_self()
 }
-
+/*
 var name = object_get_name(object_index)
 var letter = string_char_at(name, string_length(name))
-
+*/
 if object_index=objWallShadow exit
 //if letter="V"
 if image_yscale>image_xscale

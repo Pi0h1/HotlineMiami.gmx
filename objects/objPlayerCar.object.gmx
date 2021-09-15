@@ -76,7 +76,7 @@ room=rmPizzaHut3 or
 room=rmVideoStore3 or 
 room=rmBar3 {} else {
     if global.done=0 {mask_index=sprite_index exit}
-    if instance_exists(objPlayerMouse) and global.done=0 {mask_index=sprite_index exit}
+    if instance_exists(objPlayerJacket) and global.done=0 {mask_index=sprite_index exit}
     }
 
 if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;80 {

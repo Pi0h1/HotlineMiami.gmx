@@ -225,7 +225,7 @@ if global.locked=0 {
 if place_meeting(x,y+4,objPlayer) {
 solid=0
 PlaySFX("Pick Up")
-with objPlayerMouse {
+with objPlayerJacket {
 
 if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackUnarmed nothing=1 else {
 my_id=instance_create(objPlayer.x+lengthdir_x(8,objPlayer.dir+90),objPlayer.y+lengthdir_y(8,objPlayer.dir+90),objWeaponThrow)

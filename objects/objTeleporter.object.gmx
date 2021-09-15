@@ -89,7 +89,7 @@ if !place_meeting(x,y,objPlayer) {visible=1 solid=1}
             <string>/*if !instance_exists(objESubwayStatic) {
 if instance_number(objEnemy)+instance_number(objKnockedOut)&gt;0 exit
 }*/
-if other.object_index=objPlayerMouse or other.object_index=objPlayerMouseHouse or other.object_index=objPlayerBiker or other.object_index=objPlayerBikerHouse {
+if other.object_index=objPlayerJacket or other.object_index=objPlayerMouseHouse or other.object_index=objPlayerBiker or other.object_index=objPlayerBikerHouse {
 if objEffector.fade=0 {
 objPlayer.addx=addx*3
 objPlayer.addy=addy*3
@@ -109,7 +109,8 @@ if nextroom=objEffector.nextroom sprite=sprArrowGray
 }
 visible=0
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

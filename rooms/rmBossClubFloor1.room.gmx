@@ -66,7 +66,7 @@
     <instance objName="objDoorV" x="80" y="176" name="inst_4B66E04F" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHorBarrier" x="176" y="48" name="inst_F6323E73" locked="0" code="ylimit=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHorBarrier" x="208" y="48" name="inst_D69A67E4" locked="0" code="ylimit=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMouse" x="208" y="32" name="inst_258E128A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerJacket" x="208" y="32" name="inst_258E128A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCyanPlant" x="296" y="76" name="inst_11128EF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCyanPlant" x="296" y="124" name="inst_29951E6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCyanPlant" x="296" y="172" name="inst_14928602" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

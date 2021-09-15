@@ -266,7 +266,7 @@
     <instance objName="objEnemyStationary" x="1064" y="544" name="inst_A1967030" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyStationary" x="1312" y="480" name="inst_FA4DC51B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyStationary" x="816" y="416" name="inst_B3DB81BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMouse" x="32" y="304" name="inst_A5ED54E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerJacket" x="32" y="304" name="inst_A5ED54E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMelee" x="984" y="304" name="inst_5FFC2173" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMelee" x="1208" y="304" name="inst_89A010BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMeleeStationary" x="600" y="136" name="inst_05412144" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

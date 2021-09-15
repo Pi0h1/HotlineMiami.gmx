@@ -87,7 +87,7 @@ global.done=0</code>
     <instance objName="objHorBarrier" x="288" y="360" name="inst_21B91B5A" locked="0" code="ylimit=-1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objToken" x="168" y="440" name="inst_4A8A7A56" locked="0" code="letter=13" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTag" x="336" y="108" name="inst_805A81F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMouse" x="320" y="472" name="inst_7130AFB4" locked="0" code="image_index=sprPWalkShotgun&#xA;ammo=6&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerJacket" x="320" y="472" name="inst_7130AFB4" locked="0" code="image_index=sprPWalkShotgun&#xA;ammo=6&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTrain" x="104" y="244" name="inst_7AF50989" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTrain" x="504" y="244" name="inst_7FAD8B70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSubwayDoor" x="140" y="300" name="inst_63265675" locked="0" code="on=-1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -120,6 +120,7 @@ global.done=0</code>
     <instance objName="objWallBrickV" x="400" y="448" name="inst_47986D5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="208" y="448" name="inst_600A69B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallSoftV" x="304" y="128" name="inst_A7B251BD" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHeavyV" x="244" y="20" name="inst_63AF8235" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="192" y="192" w="16" h="16" xo="128" yo="48" id="10010546" name="tile_2610D01E" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

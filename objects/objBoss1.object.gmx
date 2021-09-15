@@ -70,8 +70,8 @@ exit
 if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
 if state=0 {
 if objEffector.amount&gt;=180 {
-if instance_exists(objPlayerMouse) {
-with objPlayerMouse {
+if instance_exists(objPlayerJacket) {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.sprite_index=sprite_index
@@ -98,7 +98,7 @@ if state=1 {
 if !instance_exists(objPhoneConversation) {
 state=2
 with objPlayer {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.active=0
 my_id.sprite_index=sprite_index
 my_id.ammo=ammo

@@ -30,6 +30,7 @@ scrInitPlayer();
 
 sprite_index=sprPWalkUnarmed
 pose_index=Pose_PlayerWalkUnarmed
+legsprite=sprPWalkLegs
 </string>
           </argument>
         </arguments>
@@ -226,7 +227,7 @@ y+=lengthdir_y(12,dir)
 with objEnemy {
 if place_meeting(x,y,objPlayer) or place_meeting(x+global.spacex,y+global.spacey,objPlayer) {
 mask_index=sprWeaponMask 
-if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoftH) or object_index=objEnemyFat or object_index=objInspector nothing=1 else {//{mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
+if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoft) or object_index=objEnemyFat or object_index=objInspector nothing=1 else {//{mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
 mask_index=sprMask
 global.shake=7
 my_id=instance_create(x,y-12,objScore)
@@ -441,7 +442,7 @@ with objEnemy {
 if scrCantGetHit(object_index) valid=0 else valid=1
 if (place_meeting(x,y,objPlayer) or place_meeting(x+global.spacex,y+global.spacey,objPlayer)) and valid=1 {
 mask_index=sprWeaponMask 
-if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoftH) {scrMoveSolidOff() mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
+if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoft) {scrMoveSolidOff() mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
 mask_index=sprMask
 edir=point_direction(objPlayer.lastx,objPlayer.lasty,x,y)
 PlaySFX(sndDoorHit)
@@ -1026,7 +1027,7 @@ if sprite_index=last_sprite nothing=1 else {
 scrUpdateMaskPos(sprite_index)
 last_sprite=sprite_index
 }
-legsprite=sprPWalkLegs
+
 draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30+light*2),c_black,0)
 draw_set_blend_mode(bm_normal)
@@ -1087,10 +1088,11 @@ sprite_index=sprPWalkPipe</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>exit
+            <string>//exit
 if keyboard_check(vk_shift) {
 with objEnemy instance_destroy()
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

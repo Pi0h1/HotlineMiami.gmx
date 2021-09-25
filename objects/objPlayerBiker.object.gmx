@@ -155,7 +155,7 @@ y+=lengthdir_y(12,dir)
 with objEnemy {
 if place_meeting(x,y,objPlayer) or place_meeting(x+global.spacex,y+global.spacey,objPlayer) {
 mask_index=sprWeaponMask 
-if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoftH) or object_index=objEnemyFat {mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
+if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoft) or object_index=objEnemyFat {mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
 mask_index=sprMask
 global.shake=7
 my_id=instance_create(x,y-12,objScore)

@@ -56,19 +56,25 @@ if myyspeed<(myspeed) myyspeed+=0.5 else myyspeed=(myspeed)
 
 
 //Default Controls.
-if keyboard_check_direct(ord(global.leftkey)) {
+
+moveleft=keyboard_check_direct(ord(global.leftkey)) || keyboard_check_direct(vk_left)
+moveright=keyboard_check_direct(ord(global.rightkey)) || keyboard_check_direct(vk_right)
+moveup=keyboard_check_direct(ord(global.upkey)) || keyboard_check_direct(vk_up)
+movedown=keyboard_check_direct(ord(global.downkey)) || keyboard_check_direct(vk_down)
+
+if moveleft {
 if myxspeed>-(myspeed) myxspeed-=0.5 else myxspeed=-(myspeed)
 }
 
-if keyboard_check_direct(ord(global.rightkey)) {
+if moveright {
 if myxspeed<(myspeed) myxspeed+=0.5 else myxspeed=(myspeed)
 }
 
-if keyboard_check_direct(ord(global.upkey)) {
+if moveup {
 if myyspeed>-(myspeed) myyspeed-=0.5 else myyspeed=-(myspeed)
 }
 
-if keyboard_check_direct(ord(global.downkey)) {
+if movedown {
 if myyspeed<(myspeed) myyspeed+=0.5 else myyspeed=(myspeed)
 }
 
@@ -76,11 +82,11 @@ if myyspeed<(myspeed) myyspeed+=0.5 else myyspeed=(myspeed)
 
 
 //Adresses conflicts in directions.
-if (!keyboard_check_direct(ord(global.rightkey)) and !keyboard_check_direct(ord(global.leftkey))) {
+if (!moveright and !moveleft) {
 if myxspeed>0 myxspeed-=0.5 else {if myxspeed<-0.5 myxspeed+=0.5 else myxspeed=0}
 }
 
-if (!keyboard_check_direct(ord(global.upkey)) and !keyboard_check_direct(ord(global.downkey))) {
+if (!moveup and !movedown) {
 if myyspeed>0 myyspeed-=0.5 else {if myyspeed<-0.5 myyspeed+=0.5 else myyspeed=0}
 }
 

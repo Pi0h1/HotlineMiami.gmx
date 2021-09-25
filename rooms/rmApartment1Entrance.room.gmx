@@ -56,10 +56,7 @@ global.done=0</code>
     <instance objName="objShadowH" x="416" y="392" name="inst_C5B33070" locked="0" code="image_xscale=112/16&#xA;image_yscale=3.5&#xA;color1=c_gray&#xA;color2=c_black" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfacer" x="336" y="104" name="inst_7AEFDBA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="128" y="32" name="inst_D49BC9F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDoorV" x="224" y="128" name="inst_34439C58" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDoorV" x="224" y="256" name="inst_7FCDE4D0" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTransitioner" x="472" y="420" name="inst_F94FAAB8" locked="0" code="addx=1&#xA;addy=0&#xA;nextroom=room_next(room)&#xA;while place_free(x,y+1) image_yscale+=0.25" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDoorH" x="320" y="448" name="inst_73FBFF86" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMaskMenu" x="288" y="104" name="inst_C6891419" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHorBarrier" x="128" y="24" name="inst_DFBF4AB7" locked="0" code="ylimit=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerJacket" x="144" y="8" name="inst_99DAC12C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -75,6 +72,8 @@ global.done=0</code>
     <instance objName="objWallHeavyV" x="224" y="384" name="inst_AA091354" locked="0" code="" scaleX="45" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="352" y="448" name="inst_C4E31396" locked="0" code="" scaleX="29" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="64" y="448" name="inst_166945F2" locked="0" code="" scaleX="32" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallDoor" x="224" y="128" name="inst_E1C763C0" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
+    <instance objName="objWallDoor" x="320" y="448" name="inst_0F88CD40" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="416" y="384" w="16" h="16" xo="160" yo="96" id="10012212" name="tile_D8685FC9" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

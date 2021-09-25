@@ -1,7 +1,5 @@
 scrDrawWeapons()
-draw_sprite_ext(legsprite,legindex,x+1,y+1,image_xscale,image_yscale,legdir,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale*left,dir,c_black,0.5)
-draw_sprite_ext(pose_index,image_index,x+1,y+1,image_xscale,image_yscale*left,dir,c_black,0.5)
+//shadows were here
 
 draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)

@@ -234,7 +234,7 @@ exit
 global.my_x=other.dirx
 global.my_y=other.diry
 with objEnemy {
-if scrCollisionLineExt(x,y,global.my_id.x,global.my_id.y,4,objSolid,objDoorV,objWallSoftH)=0 {
+if scrCollisionLineExt(x,y,global.my_id.x,global.my_id.y,4,objSolid,objDoorV,objWallSoft)=0 {
 alert=2
 if sprite_index=sprEWalkUnarmed alert=0
 if sprite_index=sprEWalkShotgun or sprite_index=sprEWalkSilencer or sprite_index=sprEWalkDoubleBarrel or sprite_index=sprEWalkSilencer checkreload=50 else checkreload=5

@@ -926,84 +926,81 @@
     <sprites name="Environment">
       <sprites name="Walls">
         <sprite>sprites\repWallHeavy</sprite>
-        <sprite>sprites\sprWallHospital</sprite>
+        <sprite>sprites\repWallHospital</sprite>
         <sprite>sprites\repWallBrick</sprite>
         <sprite>sprites\repWallInvisible</sprite>
         <sprite>sprites\repWallRail</sprite>
+        <sprite>sprites\repWallBalcony</sprite>
         <sprite>sprites\repWallSoft</sprite>
+        <sprite>sprites\repWallSewer</sprite>
+        <sprite>sprites\repDoor</sprite>
         <sprite>sprites\sprWallShadow</sprite>
         <sprites name="Textures">
-          <sprite>sprites\sprWallBrickH</sprite>
+          <sprites name="Corners">
+            <sprite>sprites\sprCorner</sprite>
+            <sprite>sprites\sprNothingCorner</sprite>
+            <sprite>sprites\sprCornerBrick</sprite>
+            <sprite>sprites\sprCornerSewer</sprite>
+            <sprite>sprites\sprCornerHospital</sprite>
+            <sprite>sprites\sprCornerSoft</sprite>
+            <sprite>sprites\sprCornerStair</sprite>
+            <sprite>sprites\sprCornerWoodInterior</sprite>
+            <sprite>sprites\sprCornerWoodRough</sprite>
+            <sprite>sprites\sprCornerCementWall</sprite>
+            <sprite>sprites\sprCornerPrison</sprite>
+            <sprite>sprites\sprCornerFence</sprite>
+            <sprite>sprites\sprCornerPorch</sprite>
+            <sprite>sprites\sprCornerSubwayWindow</sprite>
+            <sprite>sprites\sprCornerBunker</sprite>
+          </sprites>
           <sprite>sprites\sprWallBrickV</sprite>
-          <sprite>sprites\sprWallHeavyH</sprite>
           <sprite>sprites\sprWallHeavyV</sprite>
-          <sprite>sprites\sprWallHospitalH</sprite>
+          <sprite>sprites\sprWallDoor</sprite>
           <sprite>sprites\sprWallHospitalV</sprite>
-          <sprite>sprites\sprBunkerWallH</sprite>
-          <sprite>sprites\sprBunkerWallV</sprite>
-          <sprite>sprites\sprSubwayWallH</sprite>
-          <sprite>sprites\sprSubwayWallV</sprite>
-          <sprite>sprites\sprSubwayWindowH</sprite>
-          <sprite>sprites\sprSubwayWindowV</sprite>
-          <sprite>sprites\sprBoatRailingH</sprite>
-          <sprite>sprites\sprBoatRailingV</sprite>
-          <sprite>sprites\sprWoodWallV</sprite>
-          <sprite>sprites\sprWoodWallH</sprite>
-          <sprite>sprites\sprWoodWallInteriorV</sprite>
-          <sprite>sprites\sprWoodWallInteriorH</sprite>
-          <sprite>sprites\sprCementWallV</sprite>
-          <sprite>sprites\sprCementWallH</sprite>
-          <sprite>sprites\sprPorchWallV</sprite>
-          <sprite>sprites\sprPorchWallH</sprite>
-          <sprite>sprites\sprFenceH</sprite>
-          <sprite>sprites\sprFenceV</sprite>
-          <sprite>sprites\sprWindowLargeV</sprite>
-          <sprite>sprites\sprWindowLargeMirroredV</sprite>
-          <sprite>sprites\sprWindowLargeH</sprite>
-          <sprite>sprites\sprWindowLargeMirroredH</sprite>
-          <sprite>sprites\sprFenceBroken</sprite>
-          <sprite>sprites\sprWalls</sprite>
-          <sprite>sprites\sprWallSoftH</sprite>
           <sprite>sprites\sprWallSoftV</sprite>
-          <sprite>sprites\sprWoodFenceH</sprite>
-          <sprite>sprites\sprWoodFenceV</sprite>
-          <sprite>sprites\sprBalconyH</sprite>
-          <sprite>sprites\sprBalconyV</sprite>
-          <sprite>sprites\sprCellDoor</sprite>
-          <sprite>sprites\sprWindow</sprite>
-          <sprite>sprites\sprWindowDown</sprite>
-          <sprite>sprites\sprWindowExplode</sprite>
-          <sprite>sprites\sprWindowframe</sprite>
-          <sprite>sprites\sprWindowLeft</sprite>
-          <sprite>sprites\sprWindowOpen</sprite>
-          <sprite>sprites\sprWindowRight</sprite>
-          <sprite>sprites\sprWindowSill</sprite>
-          <sprite>sprites\sprWindowUp</sprite>
-          <sprite>sprites\sprBrokenWindow</sprite>
-          <sprite>sprites\sprRailH</sprite>
-          <sprite>sprites\sprRailV</sprite>
-          <sprite>sprites\sprSewerWallH</sprite>
           <sprite>sprites\sprSewerWallV</sprite>
-          <sprite>sprites\sprGlassPanelBrokenH</sprite>
-          <sprite>sprites\sprGlassPanelBrokenV</sprite>
-          <sprite>sprites\sprGlassPanelDestroyedH</sprite>
-          <sprite>sprites\sprGlassPanelDestroyedV</sprite>
-          <sprite>sprites\sprGlassPanelH</sprite>
-          <sprite>sprites\sprGlassPanelV</sprite>
-          <sprite>sprites\sprDoorH</sprite>
-          <sprite>sprites\sprDoorV</sprite>
-          <sprite>sprites\sprDoorH2</sprite>
-          <sprite>sprites\sprDoorV2</sprite>
-          <sprite>sprites\sprCorner</sprite>
-          <sprite>sprites\sprCornerBrick</sprite>
-          <sprite>sprites\sprCornerSewer</sprite>
-          <sprite>sprites\sprCornerSoft</sprite>
-          <sprite>sprites\sprCornerHospital</sprite>
-          <sprite>sprites\sprCornerStair</sprite>
-          <sprite>sprites\sprCellWallH</sprite>
+          <sprite>sprites\sprRailV</sprite>
+          <sprite>sprites\sprBunkerWallV</sprite>
+          <sprite>sprites\sprSubwayWallV</sprite>
+          <sprite>sprites\sprWoodWallV</sprite>
+          <sprite>sprites\sprWoodWallInteriorV</sprite>
+          <sprite>sprites\sprCementWallV</sprite>
           <sprite>sprites\sprCellWallV</sprite>
-          <sprite>sprites\sprHorBarrier</sprite>
-          <sprite>sprites\sprVertBarrier</sprite>
+          <sprite>sprites\sprSubwayWindowV</sprite>
+          <sprite>sprites\sprPorchWallV</sprite>
+          <sprite>sprites\sprFenceV</sprite>
+          <sprite>sprites\sprWoodFenceV</sprite>
+          <sprite>sprites\sprBalconyV</sprite>
+          <sprites name="Other">
+            <sprite>sprites\sprWindowLargeV</sprite>
+            <sprite>sprites\sprWindowLargeMirroredV</sprite>
+            <sprite>sprites\sprWindowLargeH</sprite>
+            <sprite>sprites\sprWindowLargeMirroredH</sprite>
+            <sprite>sprites\sprFenceBroken</sprite>
+            <sprite>sprites\sprCellDoor</sprite>
+            <sprite>sprites\sprWindow</sprite>
+            <sprite>sprites\sprWindowDown</sprite>
+            <sprite>sprites\sprWindowExplode</sprite>
+            <sprite>sprites\sprWindowframe</sprite>
+            <sprite>sprites\sprWindowLeft</sprite>
+            <sprite>sprites\sprWindowOpen</sprite>
+            <sprite>sprites\sprWindowRight</sprite>
+            <sprite>sprites\sprWindowSill</sprite>
+            <sprite>sprites\sprWindowUp</sprite>
+            <sprite>sprites\sprBrokenWindow</sprite>
+            <sprite>sprites\sprGlassPanelBrokenH</sprite>
+            <sprite>sprites\sprGlassPanelBrokenV</sprite>
+            <sprite>sprites\sprGlassPanelDestroyedV</sprite>
+            <sprite>sprites\sprGlassPanelDestroyedH</sprite>
+            <sprite>sprites\sprGlassPanelH</sprite>
+            <sprite>sprites\sprGlassPanelV</sprite>
+            <sprite>sprites\sprDoorH</sprite>
+            <sprite>sprites\sprDoorV</sprite>
+            <sprite>sprites\sprDoorH2</sprite>
+            <sprite>sprites\sprDoorV2</sprite>
+            <sprite>sprites\sprHorBarrier</sprite>
+            <sprite>sprites\sprVertBarrier</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Assault">
@@ -1295,7 +1292,7 @@
       <sprite>sprites\sprCable1</sprite>
       <sprite>sprites\sprCable2</sprite>
       <sprite>sprites\sprCellPhone</sprite>
-      <sprite>sprites\sprChairDown</sprite>
+      <sprite>sprites\sprChair</sprite>
       <sprite>sprites\sprCleaningCart</sprite>
       <sprite>sprites\sprClosetGlow</sprite>
       <sprite>sprites\sprClubSafe</sprite>
@@ -1759,9 +1756,9 @@
         <sprite>sprites\sprLaser</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\sprSpawnPoint</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\tlCorners</background>
     <background>background\tlFloorTiles</background>
     <background>background\tlRoadEnd</background>
     <background>background\tlRoadEnd2</background>
@@ -1773,6 +1770,7 @@
   <scripts name="scripts">
     <scripts name="Player">
       <scripts name="Walking">
+        <script>scripts\scrDrawShadow.gml</script>
         <script>scripts\scrInitPlayer.gml</script>
         <script>scripts\scrPlayerCarInteraction.gml</script>
         <script>scripts\scrEndLevel.gml</script>
@@ -2094,6 +2092,8 @@
     <script>scripts\scrExportSprites.gml</script>
     <script>scripts\scrCenterOn.gml</script>
     <script>scripts\scrGetSongRestart.gml</script>
+    <script>scripts\setChair.gml</script>
+    <script>scripts\LevelSettings.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>
@@ -2403,6 +2403,7 @@
     <objects name="Environment">
       <objects name="Walls">
         <objects name="Doors">
+          <object>objects\objDoor</object>
           <object>objects\objDoorV</object>
           <object>objects\objDoorH</object>
           <object>objects\objDoorV2</object>
@@ -2411,36 +2412,25 @@
         </objects>
         <objects name="Interior">
           <object>objects\objWallHeavyV</object>
+          <object>objects\objWallDoor</object>
+          <object>objects\objWallSoft</object>
           <object>objects\objWallInvisble</object>
-          <object>objects\objWallHeavyH</object>
-          <object>objects\objWallSoftV</object>
-          <object>objects\objWallSoftH</object>
           <object>objects\objSewerWallV</object>
-          <object>objects\objSewerWallH</object>
           <object>objects\objCementWallV</object>
-          <object>objects\objCementWallH</object>
           <object>objects\objCellWallV</object>
-          <object>objects\objCellWallH</object>
           <object>objects\objWoodWallInteriorV</object>
-          <object>objects\objWoodWallInteriorH</object>
           <object>objects\objSubwayWallV</object>
-          <object>objects\objSubwayWallH</object>
-          <object>objects\objPorchWallH</object>
+          <object>objects\objSubwayWindowV</object>
           <object>objects\objPorchWallV</object>
           <object>objects\objWallShadow</object>
         </objects>
         <objects name="Exterior">
           <object>objects\objWallBrickV</object>
-          <object>objects\objWallBrickH</object>
           <object>objects\objWallHospitalV</object>
-          <object>objects\objWallHospitalH</object>
           <object>objects\objWoodWallV</object>
-          <object>objects\objWoodWallH</object>
-          <object>objects\objBunkerWallH</object>
           <object>objects\objBunkerWallV</object>
-          <object>objects\objFenceH</object>
-          <object>objects\objFenceBroken</object>
           <object>objects\objFenceV</object>
+          <object>objects\objFenceBroken</object>
         </objects>
         <objects name="Glass (Breakable &amp; Unbreakable)">
           <object>objects\objGlassPanelV</object>
@@ -2451,23 +2441,15 @@
           <object>objects\objWindowLargeV</object>
           <object>objects\objWindowH</object>
           <object>objects\objWindowLargeH</object>
-          <object>objects\objSubwayWindowV</object>
-          <object>objects\objSubwayWindowH</object>
         </objects>
         <objects name="Railing">
           <object>objects\objRailV</object>
-          <object>objects\objRailH</object>
-          <object>objects\objWoodFenceV</object>
-          <object>objects\objWoodFenceH</object>
           <object>objects\objBalconyV</object>
-          <object>objects\objBalconyH</object>
-          <object>objects\objBoatRailingH</object>
-          <object>objects\objBoatRailingV</object>
+          <object>objects\objWoodFenceV</object>
         </objects>
         <object>objects\objHorBarrier</object>
         <object>objects\objVertBarrier</object>
         <object>objects\objSolid</object>
-        <object>objects\objCorner</object>
         <object>objects\objTransitioner</object>
         <object>objects\objElevator</object>
       </objects>
@@ -3161,6 +3143,10 @@
       <object>objects\objFocus</object>
       <object>objects\objScanlines</object>
     </objects>
+    <object>objects\objTableParent</object>
+    <object>objects\objSpawnpoint</object>
+    <object>objects\objShadow</object>
+    <object>objects\objShadowManager</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Interface">

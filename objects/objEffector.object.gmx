@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alpha=1
+            <string>if !instance_exists(objShadowManager)
+{
+instance_create(x,y,objShadowManager)
+}
+alpha=1
 coldir=0
 amount=0
 fade=0

@@ -68,7 +68,6 @@
     <instance objName="objStoreFridge" x="298" y="114" name="inst_64633AF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStoreFridge" x="296" y="176" name="inst_A19EEA39" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStoreShelf" x="180" y="196" name="inst_E928893F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDoorV" x="384" y="384" name="inst_7806E618" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="160" y="288" name="inst_1D69767B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoubleFridge" x="260" y="114" name="inst_7D521185" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoubleFridge" x="212" y="114" name="inst_FFA4F980" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -83,17 +82,16 @@
     <instance objName="objNeonSign" x="144" y="272" name="inst_3446664B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerCar" x="80" y="352" name="inst_7D59712A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objWallBrickV" x="160" y="320" name="inst_A3698474" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickV" x="160" y="256" name="inst_4585CCB1" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickV" x="160" y="192" name="inst_115AF921" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="384" y="96" name="inst_D46D687B" locked="0" code="" scaleX="1" scaleY="36" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="480" y="288" name="inst_E42E491F" locked="0" code="" scaleX="1" scaleY="17" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="256" y="384" name="inst_823C3BC4" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="objWallBrickV" x="160" y="96" name="inst_084C9DAB" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
+    <instance objName="objWallBrickV" x="160" y="96" name="inst_084C9DAB" locked="0" code="" scaleX="1" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="objEffectorHouse" x="24" y="158" name="inst_D6F70365" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="160" y="96" name="inst_1DE9B5A9" locked="0" code="" scaleX="29" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="384" y="288" name="inst_FE5C55E5" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="160" y="384" name="inst_29BCDB95" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="256" y="416" name="inst_6D762700" locked="0" code="" scaleX="29" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallDoor" x="384" y="384" name="inst_83497BA4" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="400" y="288" w="16" h="16" xo="128" yo="0" id="10059845" name="tile_72D23822" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

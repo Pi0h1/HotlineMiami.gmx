@@ -30,8 +30,9 @@ wait=40
 state=0
 legindex=0
 path=path_add()
-
-pwait=0</string>
+legsprite=sprBodyguardLegs
+pwait=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -270,10 +271,10 @@ sprite_index=sprBodyguardAttack
           <argument>
             <kind>1</kind>
             <string>if speed&gt;0 {
-draw_sprite_ext(sprBodyguardLegs,legindex,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
 }
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)</string>
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+</string>
           </argument>
         </arguments>
       </action>

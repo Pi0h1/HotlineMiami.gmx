@@ -110,7 +110,7 @@ image_speed=0.2</string>
             <string>if !instance_exists(objPlayer) or sprite_index=sprEnemyRise exit
 if reload&gt;0 reload-=1 else {
 if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;220 {
-if !scrCollisionLineExt(x,y,objPlayer.x,objPlayer.y,3,objSolid,objDoorV,objWallSoftH) {
+if !scrCollisionLineExt(x,y,objPlayer.x,objPlayer.y,3,objSolid,objDoorV,objWallSoft) {
 if sprite_index=sprEDrinking {
 image_index=1
 image_speed=0.5
@@ -127,7 +127,8 @@ image_index=1
 image_speed=0.5
 sprite_index=sprEnemyRise
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

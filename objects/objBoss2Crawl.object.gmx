@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>wait=30
-image_speed=0</string>
+image_speed=0
+</string>
           </argument>
         </arguments>
       </action>

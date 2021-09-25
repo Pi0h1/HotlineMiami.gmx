@@ -18,6 +18,7 @@ var name = object_get_name(object_index)
 var letter = string_char_at(name, string_length(name))
 */
 if object_index=objWallShadow exit
+draw_sprite_ext(corner_index,0,x,y,1,1,0,image_blend,image_alpha)
 //if letter="V"
 if image_yscale>image_xscale
 {

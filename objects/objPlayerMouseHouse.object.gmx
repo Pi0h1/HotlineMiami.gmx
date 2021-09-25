@@ -484,7 +484,7 @@ instance_destroy()
 with objEnemy {
 if place_meeting(x,y,objPlayer) {
 mask_index=sprWeaponMask 
-if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoftH) {mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
+if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoft) {mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
 mask_index=sprMask
 my_id=instance_create(x,y-12,objScore)
 if sprite_index=sprEWalkUnarmed {
@@ -605,7 +605,7 @@ with objEnemy {
 if object_index=objDogPatrol valid=0 else valid=1
 if place_meeting(x,y,objPlayer) and valid=1 {
 mask_index=sprWeaponMask 
-if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoftH) {mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
+if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoft) {mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
 mask_index=sprMask
 edir=point_direction(objPlayer.lastx,objPlayer.lasty,x,y)
 PlaySFX(sndDoorHit)

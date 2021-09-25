@@ -34,8 +34,12 @@ dir=point_direction(x+view_xview[0],y+view_yview[0],global.mousex,global.mousey)
 if sprite_index=sprPUnlockDoor dir=90
 draw_sprite_ext(legsprite,legindex,x+1,y+1,image_xscale,image_yscale,legdir,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale*left,dir,c_black,0.5)
+draw_sprite_ext(objPlayer.pose_index,image_index,x+1,y+1,image_xscale,image_yscale*left,dir,c_black,0.5)
+
 draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
+draw_sprite_ext(objPlayer.pose_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
+
 if reload>0 reload-=1
 if light>3 light-=3
 if sprite_index=sprPWalkThrow {

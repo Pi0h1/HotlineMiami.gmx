@@ -182,7 +182,7 @@ instance_destroy()
 PlaySFX("Light Glass")
 exit
 }
-if other.object_index=objWallSoftH or other.object_index=objWallSoftV {
+if other.object_index=objWallSoft {
 move_bounce_all(0)
 speed*=0.3
 PlaySFX(sndHitWall)

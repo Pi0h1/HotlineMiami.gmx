@@ -1,5 +1,4 @@
-with objWallSoftH solid=0
-with objWallSoftV solid=0
+with objWallSoft solid=0
 with objGlassPanelH solid=0
 with objGlassPanelV solid=0
 with objGlassPanelHBroken solid=0

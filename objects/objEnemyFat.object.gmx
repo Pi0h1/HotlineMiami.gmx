@@ -178,7 +178,7 @@ if global.bonustime&lt;12 global.bonustime=12
 global.my_x=other.dirx
 global.my_y=other.diry
 with objEnemy {
-if scrCollisionLineExt(x,y,global.my_id.x,global.my_id.y,4,objSolid,objDoorV,objWallSoftH)=0 {
+if scrCollisionLineExt(x,y,global.my_id.x,global.my_id.y,4,objSolid,objDoorV,objWallSoft)=0 {
 alert=2
 checkreload=50
 reload=10

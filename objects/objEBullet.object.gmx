@@ -71,7 +71,7 @@ image_blend=merge_color(c_white,c_yellow,random(1))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.object_index=objWallSoftH or other.object_index=objWallSoftV {
+            <string>if other.object_index=objWallSoft {
 my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objHit)
 my_id.image_angle=direction
 my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objSmokeHit)
@@ -184,7 +184,7 @@ instance_destroy()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.object_index=objWallSoftH or other.object_index=objWallSoftV {
+            <string>if other.object_index=objWallSoft {
 my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objHit)
 my_id.image_angle=direction
 my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objSmokeHit)
@@ -218,7 +218,8 @@ my_id.direction=direction-140-random(80)
 my_id.speed=random(4)
 }
 
-instance_destroy()</string>
+instance_destroy()
+</string>
           </argument>
         </arguments>
       </action>

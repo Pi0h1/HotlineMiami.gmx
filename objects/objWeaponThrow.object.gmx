@@ -144,7 +144,7 @@ mask_index=sprWeaponMask
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.object_index=objWallSoftH or other.object_index=objWallSoftV {
+            <string>if other.object_index=objWallSoft {
 move_bounce_all(0)
 speed*=0.6
 PlaySFX(sndHitWall)

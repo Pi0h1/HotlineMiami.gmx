@@ -78,7 +78,7 @@ scrPlayerDieMelee()
 if other.object_index=objWallHeavyV {
 if x&gt;room_width/2 image_angle=0 else image_angle=180
 }
-if other.object_index=objWallHeavyH {
+if other.object_index=objWallHeavyV {
 if y&lt;room_height/2 image_angle=90 else image_angle=270
 }
 move_contact_solid(image_angle,speed*5)

@@ -91,7 +91,7 @@ mask_index=sprWeaponMask
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.object_index=objWallSoftH or other.object_index=objWallSoftV {
+            <string>if other.object_index=objWallSoft {
 if speed&gt;0 {
 x-=hspeed
 y-=vspeed

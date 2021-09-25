@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>/// Corner sprite
 scrInitWall(sprCorner,sprWallHeavyV)
-
 </string>
           </argument>
         </arguments>

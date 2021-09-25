@@ -142,7 +142,6 @@ global.done=0</code>
     <instance objName="objEnemyMeleeStationary" x="36" y="416" name="inst_3DA9C1C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerCar" x="212" y="536" name="inst_96686EE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEffector" x="24" y="24" name="inst_5375A8C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCorner" x="416" y="144" name="inst_2DF1EA5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="64" y="224" name="inst_2497AF56" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="160" y="224" name="inst_84563ADF" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="64" y="288" name="inst_5596BB93" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
@@ -185,6 +184,10 @@ global.done=0</code>
     <instance objName="objWallHeavyV" x="608" y="256" name="inst_F58F7091" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="672" y="256" name="inst_6B346385" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="608" y="288" name="inst_381E9975" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHeavyV" x="352" y="80" name="inst_0622C247" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHeavyV" x="352" y="80" name="inst_1E9B5FED" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHeavyV" x="416" y="80" name="inst_79506C40" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHeavyV" x="352" y="144" name="inst_1AA1A8C8" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="288" y="320" w="16" h="16" xo="192" yo="16" id="10035809" name="tile_1DC54900" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

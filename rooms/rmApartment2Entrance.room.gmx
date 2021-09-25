@@ -3,7 +3,7 @@
   <caption></caption>
   <width>640</width>
   <height>512</height>
-  <vsnap>8</vsnap>
+  <vsnap>4</vsnap>
   <hsnap>8</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
@@ -60,7 +60,7 @@ global.done=0</code>
     <instance objName="objSink" x="164" y="186" name="inst_91E55597" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="objSink" x="196" y="186" name="inst_C7A52E53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="objChair" x="148" y="280" name="inst_474B7668" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSofaV64" x="416" y="372" name="inst_AC40FF2A" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSofaV64" x="440" y="372" name="inst_AC40FF2A" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGlassPanelV" x="192" y="256" name="inst_049FFE9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGlassPanelV" x="192" y="288" name="inst_34D8513C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="224" y="448" name="inst_9E967C57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

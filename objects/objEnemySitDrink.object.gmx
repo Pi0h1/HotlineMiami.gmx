@@ -36,7 +36,10 @@ type=choose(objEnemy,objEnemyMeleeStationary)
 if room=rmTrainstationEntrance or room=rmHighballer type=objEnemyMeleeStationary
 if room=rmHotelEntrance type=choose(objEnemy)
 on=0
-alarm[1]=random(250)</string>
+alarm[1]=random(250)
+angle=0
+shake=0
+</string>
           </argument>
         </arguments>
       </action>

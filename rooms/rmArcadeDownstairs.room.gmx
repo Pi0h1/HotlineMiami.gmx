@@ -55,7 +55,7 @@ surface_reset_target()
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="453" hview="255" xport="0" yport="0" wport="1366" hport="768" hborder="160" vborder="120" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="480" hview="270" xport="0" yport="0" wport="1920" hport="1080" hborder="160" vborder="120" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -65,8 +65,8 @@ surface_reset_target()
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objBackgroundColor" x="416" y="548" name="inst_51BFC103" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSurfacer" x="432" y="544" name="inst_36D09DCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBackgroundColor" x="424" y="552" name="inst_51BFC103" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSurfacer" x="448" y="552" name="inst_36D09DCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSink" x="154" y="138" name="inst_68C0EC3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH2" x="352" y="512" name="inst_1102A7F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="288" y="512" name="inst_B5033FEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -143,7 +143,7 @@ surface_reset_target()
     <instance objName="objWallBrickV" x="256" y="0" name="inst_E6482DE3" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="256" y="0" name="inst_503ADF51" locked="0" code="" scaleX="25" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="352" y="512" name="inst_8F4792D1" locked="0" code="" scaleX="29" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objEffector" x="396" y="544" name="inst_F52C7C17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objEffector" x="408" y="560" name="inst_F52C7C17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallDoor" x="576" y="160" name="inst_1992F672" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="64" y="160" name="inst_A07695BC" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="448" y="0" name="inst_C31D79DB" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
@@ -1073,7 +1073,6 @@ surface_reset_target()
     <tile bgName="tlFloorTilesBackUp" x="304" y="512" w="16" h="16" xo="16" yo="64" id="10083455" name="tile_C656D449" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tlFloorTilesBackUp" x="320" y="512" w="16" h="16" xo="16" yo="64" id="10083456" name="tile_D11787F9" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tlFloorTilesBackUp" x="336" y="512" w="16" h="16" xo="16" yo="64" id="10083457" name="tile_B0BC4238" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="&lt;undefined&gt;" x="352" y="64" w="8" h="8" xo="0" yo="0" id="10087411" name="tile_F7CE8A96" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tlFloorTilesBackUp" x="320" y="0" w="16" h="16" xo="224" yo="80" id="10087418" name="tile_512DEA98" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tlFloorTilesBackUp" x="320" y="16" w="16" h="16" xo="224" yo="80" id="10087419" name="tile_E942055B" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tlFloorTilesBackUp" x="320" y="32" w="16" h="16" xo="224" yo="80" id="10087420" name="tile_0569F9E9" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1130,6 +1129,7 @@ surface_reset_target()
     <tile bgName="tlFloorTilesBackUp" x="432" y="16" w="16" h="16" xo="16" yo="16" id="10087478" name="tile_F3280972" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tlFloorTilesBackUp" x="432" y="32" w="16" h="16" xo="16" yo="16" id="10087479" name="tile_98852975" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tlFloorTilesBackUp" x="416" y="32" w="16" h="16" xo="16" yo="16" id="10087480" name="tile_261A58C3" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tlFloorTiles" x="352" y="64" w="16" h="16" xo="384" yo="32" id="10118870" name="inst_D81A2630" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="&lt;undefined&gt;" x="160" y="160" w="8" h="8" xo="0" yo="0" id="10081353" name="tile_68C6472B" depth="-99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="&lt;undefined&gt;" x="352" y="120" w="8" h="8" xo="0" yo="0" id="10081354" name="tile_6337840C" depth="-99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="&lt;undefined&gt;" x="352" y="192" w="8" h="8" xo="0" yo="0" id="10081355" name="tile_7E2AEEF9" depth="-99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

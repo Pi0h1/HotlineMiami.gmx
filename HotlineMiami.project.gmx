@@ -109,6 +109,11 @@
           <sprite>sprites\Pose_PlayerWalkAimGangster</sprite>
           <sprite>sprites\Pose_PlayerWalkMelee</sprite>
           <sprite>sprites\Pose_PlayerWalkMeleeShort</sprite>
+          <sprite>sprites\Pose_PlayerAttackMelee</sprite>
+          <sprite>sprites\Pose_PlayerAttackKnife</sprite>
+          <sprite>sprites\Pose_PlayerAttackGangster</sprite>
+          <sprite>sprites\Pose_PlayerAttackAim</sprite>
+          <sprite>sprites\Pose_PlayerAttackMeleeShort</sprite>
         </sprites>
         <sprites name="Walking">
           <sprite>sprites\sprPWalkAxe</sprite>
@@ -2094,6 +2099,9 @@
     <script>scripts\scrGetSongRestart.gml</script>
     <script>scripts\setChair.gml</script>
     <script>scripts\LevelSettings.gml</script>
+    <script>scripts\scrDrawConversation.gml</script>
+    <script>scripts\scrCutscene.gml</script>
+    <script>scripts\scrGameplay.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>
@@ -3121,7 +3129,6 @@
       <object>objects\objBoss</object>
       <object>objects\objHouseReturn</object>
       <object>objects\objCheckpoint</object>
-      <object>objects\objExporter</object>
       <object>objects\objTrainshake</object>
       <object>objects\objElectricLight</object>
       <object>objects\objHospitalTransition</object>

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alpha=1
+            <string>uzisnd=0
+alpha=1
 coldir=0
 amount=0
 fade=0

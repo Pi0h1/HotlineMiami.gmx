@@ -3,14 +3,14 @@
   <type>0</type>
   <xorig>16</xorig>
   <yorigin>22</yorigin>
-  <colkind>0</colkind>
+  <colkind>1</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>-1</sepmasks>
+  <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>16</bbox_left>
+  <bbox_left>15</bbox_left>
   <bbox_right>23</bbox_right>
-  <bbox_top>26</bbox_top>
-  <bbox_bottom>46</bbox_bottom>
+  <bbox_top>32</bbox_top>
+  <bbox_bottom>42</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>32</width>
-  <height>64</height>
+  <height>44</height>
   <frames>
     <frame index="0">images\sprPWalkBat_0.png</frame>
     <frame index="1">images\sprPWalkBat_1.png</frame>

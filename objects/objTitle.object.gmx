@@ -131,7 +131,7 @@ scrLoadAchievements()
 scrCheckLetters()
 scrCheckGuns()
 scrCheckMasks()
-
+global.cutscene=0
 </string>
           </argument>
         </arguments>

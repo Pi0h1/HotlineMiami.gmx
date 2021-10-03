@@ -71,7 +71,7 @@ vol=1
           <argument>
             <kind>1</kind>
             <string>legindex=image_index*2
-
+angle=direction
 if !instance_exists(objPlayer) {speed=0 state=1000}
 if energie=1 and round(random(120))=2 {
 instance_create(x-10+random(20),y-10+random(20),objBloodSplat)
@@ -342,10 +342,10 @@ draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)
 if sprite_index=sprBoss2Computer nothing=1 else {
-draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
 
 }
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
 draw_set_color(c_white)
 //draw_path(my_path,0,0,1)
 

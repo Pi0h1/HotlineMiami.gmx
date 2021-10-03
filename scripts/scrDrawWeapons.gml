@@ -27,3 +27,30 @@ if  sprite_index=sprPWalkKnife or
     {
     pose_index=Pose_PlayerWalkMeleeShort
     }
+    
+    
+if sprite_index=wpnAttackM16{
+    pose_idnex=Pose_PlayerAttackAim
+    }
+    
+if  sprite_index=sprPAttackBat or
+    sprite_index=sprPAttackPipe or
+    sprite_index=sprPAttackClub or
+    sprite_index=sprPAttackSword or
+    sprite_index=sprPAttackPool
+    {
+    pose_index=Pose_PlayerAttackMelee
+    }
+
+if  sprite_index=sprPAttackMachete or
+    sprite_index=sprPAttackNightStick or
+    sprite_index=sprPAttackPan or
+    sprite_index=sprPAttackPot
+    {
+    pose_index=Pose_PlayerAttackMeleeShort
+    }
+    
+if  sprite_index=sprPAttackKnife
+    {
+    pose_index=Pose_PlayerAttackKnife
+    }

@@ -134,7 +134,8 @@ if room=rmStore1 or room=rmPizzaHut1 or room=rmVideoStore1 or room=rmBar1 or roo
             <string>revisit=0
 if instance_exists(objPlayerMouseHouse) {
 if global.done=1 nextroom=rmChapter else {nextroom=rmInterlude global.interlude=scrCarNextInterlude()}
-} else nextroom=rmChapter</string>
+} else nextroom=rmChapter
+</string>
           </argument>
         </arguments>
       </action>

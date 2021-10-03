@@ -54,7 +54,8 @@ pwait=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=sprBodyguardKnockedOut {
+            <string>angle=direction
+if sprite_index=sprBodyguardKnockedOut {
 if instance_exists(objPlayer) {
 if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;12 {
 my_id=-112345
@@ -271,9 +272,9 @@ sprite_index=sprBodyguardAttack
           <argument>
             <kind>1</kind>
             <string>if speed&gt;0 {
-draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
 }
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
 </string>
           </argument>
         </arguments>

@@ -33,7 +33,9 @@ ammo=0
 path=path_add()
 with instance_nearest(x,y,objToilet) {
 image_index=0
-}</string>
+}
+angle=0
+</string>
           </argument>
         </arguments>
       </action>

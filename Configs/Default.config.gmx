@@ -203,10 +203,7 @@
     <option_androidtv_texture_page>1024</option_androidtv_texture_page>
     <option_androidtv_use_test_ads>false</option_androidtv_use_test_ads>
     <option_argumenterrors>True</option_argumenterrors>
-    <option_audioGroup1_targets>9223372036854775807</option_audioGroup1_targets>
-    <option_audioGroup2_targets>9223372036854775807</option_audioGroup2_targets>
-    <option_audioGroup3_targets>9223372036854775807</option_audioGroup3_targets>
-    <option_audioGroupCount>4</option_audioGroupCount>
+    <option_audioGroupCount>1</option_audioGroupCount>
     <option_author></option_author>
     <option_backimage>nil</option_backimage>
     <option_borderless>False</option_borderless>
@@ -545,8 +542,8 @@
     <option_version>100</option_version>
     <option_version_build>0</option_version_build>
     <option_version_company>Dennaton Games</option_version_company>
-    <option_version_copyright></option_version_copyright>
-    <option_version_description></option_version_description>
+    <option_version_copyright>Dennaton Games</option_version_copyright>
+    <option_version_description>Studio Port by Pi0h1.com</option_version_description>
     <option_version_major>1</option_version_major>
     <option_version_minor>0</option_version_minor>
     <option_version_product>Hotline Miami</option_version_product>
@@ -625,9 +622,9 @@
     <option_windows_alternate_sync_method>True</option_windows_alternate_sync_method>
     <option_windows_build_version>0</option_windows_build_version>
     <option_windows_company_info>Dennaton Games</option_windows_company_info>
-    <option_windows_copyright_info></option_windows_copyright_info>
+    <option_windows_copyright_info>Dennaton Games</option_windows_copyright_info>
     <option_windows_create_textures_on_demand>False</option_windows_create_textures_on_demand>
-    <option_windows_description_info></option_windows_description_info>
+    <option_windows_description_info>Studio Port by Pi0h1.com</option_windows_description_info>
     <option_windows_enable_steam>0</option_windows_enable_steam>
     <option_windows_game_icon>Configs\Default\windows\runner_icon.ico</option_windows_game_icon>
     <option_windows_license>Configs\Default\windows\License.txt</option_windows_license>

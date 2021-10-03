@@ -58,7 +58,8 @@ legsprite=sprEFatLegs
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objPlayer) {speed=0 state=1000}
+            <string>angle=direction
+if !instance_exists(objPlayer) {speed=0 state=1000}
 if sprite_index=sprBoss1Taunt {
 image_speed=0
 if image_index&lt;4 image_index+=0.15 else {sprite_index=sprBoss1Walk}
@@ -267,9 +268,9 @@ hit=1
 draw_circle_color(x,y,48+random(6),make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)
 if sprite_index=sprBoss1Walk {
-draw_sprite_ext(legsprite,image_index*2,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+draw_sprite_ext(legsprite,image_index*2,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
 }
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
 draw_set_color(c_white)
 //draw_path(my_path,0,0,1)
 

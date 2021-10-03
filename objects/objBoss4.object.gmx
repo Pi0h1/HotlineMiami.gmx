@@ -79,7 +79,8 @@ image_speed=0.2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
+            <string>angle=image_angle
+if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
 if sprite_index=sprBoss4Die
 {
 if image_index&gt;12 and suicide=0 {

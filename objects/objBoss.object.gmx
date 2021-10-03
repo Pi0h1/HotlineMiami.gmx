@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>legsprite=sprNothingCorner
 legindex=0
+angle=direction
 </string>
           </argument>
         </arguments>

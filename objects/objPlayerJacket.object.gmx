@@ -750,6 +750,70 @@ image_yscale=1</string>
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="53">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if instance_exists(objPhoneConversation) exit
+if place_meeting(x+lengthdir_x(10,dir),y+lengthdir_y(10,dir),objSecretMask) or place_meeting(x,y,objSecretMask) {
+with objSecretMask {
+global.masks[image_index]=1
+global.newmask[global.newmasks]=image_index
+global.newmasks+=1
+PlaySFX(sndToken)
+my_id=instance_create(x,y,objLetterFound)
+my_id.text='"'+scrMaskGetName(image_index)+'"'
+instance_destroy()
+}
+scrCheckMasks()
+exit
+}
+
+
+if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objAnsweringMachine) {
+if objAnsweringMachine.active=1 {
+scrGetMessage(objAnsweringMachine)
+sprite_index=sprPTakePhone
+image_index=0
+PlaySFX(sndPhone)
+}
+}
+
+if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objBox) {
+if objBox.sprite_index=sprBox {
+objBox.sprite_index=sprBoxOpen
+objBox.image_index=1
+PlaySFX(sndBox)
+} else {
+with objBox {
+PlaySFX("Pick Up")
+scrGetMessage(objOpenedBox)
+my_id=instance_create(x,y,objOpenedBox)
+my_id.image_angle=image_angle
+instance_destroy()
+global.package=1
+global.done=1
+}
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="51">
       <action>
         <libid>1</libid>
@@ -823,47 +887,8 @@ exit
 }
 }
 }
+scrPlayerAttack();
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>scrPlayerAttack</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -1022,7 +1047,12 @@ view_yview[0]=viewy*/
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if persistent=1 exit
+            <string>if sprite_index=sprPTakePhone {
+if !instance_exists(objPhoneConversation) sprite_index=sprPWalkUnarmed else {
+if image_index&lt;3 image_index+=0.15
+}
+}
+if persistent=1 exit
 if sprite_index=last_sprite nothing=1 else {
 scrUpdateMaskPos(sprite_index)
 last_sprite=sprite_index

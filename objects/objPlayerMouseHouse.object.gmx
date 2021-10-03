@@ -60,6 +60,7 @@ global.maskon=1
 }
 
 sprite_index=sprPWalkUnarmed
+pose_index=sprPWalkUnarmed
 </string>
           </argument>
         </arguments>

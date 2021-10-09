@@ -1,5 +1,5 @@
 if argument0=0 return wpnWalkM16
-if argument0=1 return sprPWalkShotgun
+if argument0=1 return wpnWalkShotgun
 if argument0=2 return sprPWalkClub
 if argument0=3 return sprPWalkPipe
 if argument0=4 return sprPWalkBat

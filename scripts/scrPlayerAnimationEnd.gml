@@ -16,7 +16,7 @@ alarm[0]=100
 exit
 }
 if sprite_index=wpnAttackM16 sprite_index=wpnWalkM16
-if sprite_index=sprPAttackShotgun sprite_index=sprPWalkShotgun
+if sprite_index=wpnAttackShotgun sprite_index=wpnWalkShotgun
 if sprite_index=sprPAttackDoubleBarrel1 sprite_index=sprPWalkDoubleBarrel
 if sprite_index=sprPAttackDoubleBarrel2 sprite_index=sprPWalkDoubleBarrel
 if sprite_index=sprPAttackSilencer sprite_index=sprPWalkSilencer

@@ -1,5 +1,5 @@
 if objPlayer.sprite_index=wpnWalkM16 return 0
-if objPlayer.sprite_index=sprPWalkShotgun return 1
+if objPlayer.sprite_index=wpnWalkShotgun return 1
 if objPlayer.sprite_index=sprPWalkPipe return 3 
 if objPlayer.sprite_index=sprPWalkClub return 2
 if objPlayer.sprite_index=sprPWalkBat return 4
@@ -29,7 +29,7 @@ if objPlayer.sprite_index=sprPWalkUnarmed or objPlayer.sprite_index=sprPAttackUn
 
 
 if objPlayer.sprite_index=wpnAttackM16 return 0
-if objPlayer.sprite_index=sprPAttackShotgun return 1
+if objPlayer.sprite_index=wpnAttackShotgun return 1
 if objPlayer.sprite_index=sprPAttackClub return 2
 if objPlayer.sprite_index=sprPAttackPipe return 3 
 if objPlayer.sprite_index=sprPAttackBat return 4

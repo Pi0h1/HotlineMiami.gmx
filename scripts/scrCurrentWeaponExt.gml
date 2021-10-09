@@ -1,5 +1,5 @@
 if argument0=wpnAttackM16 or argument0=sprPoliceWalkM16 or argument0=sprEM16Crouching return 0
-if argument0=sprPAttackShotgun or argument0=sprPoliceWalkShotgun return 1
+if argument0=wpnAttackShotgun or argument0=sprPoliceWalkShotgun return 1
 if argument0=sprPAttackPipe return 3 
 if argument0=sprPAttackClub return 2
 if argument0=sprPAttackBat return 4
@@ -44,7 +44,7 @@ if argument0=sprPHumanShieldScorpionShoot return 11
 if argument0=sprPHumanShieldMP5Shoot return 12
 
 if argument0=wpnWalkM16 return 0
-if argument0=sprPWalkShotgun return 1
+if argument0=wpnWalkShotgun return 1
 if argument0=sprPWalkPipe return 3 
 if argument0=sprPWalkClub return 2
 if argument0=sprPWalkBat return 4

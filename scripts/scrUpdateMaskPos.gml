@@ -538,7 +538,7 @@ maskaddx[1]=0 maskaddy[1]=0
 check=1
 }
 
-if argument0=sprPAttackShotgun {
+if argument0=wpnAttackShotgun {
 maskaddx[0]=0 maskaddy[0]=-1
 maskaddx[1]=0 maskaddy[1]=-1
 maskaddx[2]=0 maskaddy[2]=-1

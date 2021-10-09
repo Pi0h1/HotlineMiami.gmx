@@ -1,16 +1,16 @@
-if  sprite_index=sprPWalkUnarmed {pose_index=Pose_PlayerWalkUnarmed} if sprite_index=sprPAttackUnarmed {pose_index=sprPAttackUnarmed}
+if  sprite_index=sprPWalkUnarmed {pose_index=WalkPlayerUnarmed} if sprite_index=sprPAttackUnarmed {pose_index=sprPAttackUnarmed}
 
-if  sprite_index=sprPWalkShotgun or
+if  sprite_index=wpnWalkShotgun or
     sprite_index=wpnWalkM16 or
     sprite_index=sprPWalkDoubleBarrel
     {
-    pose_index=Pose_PlayerWalkAim
+    pose_index=WalkPlayerAim
     }
     
 if  sprite_index=sprPWalkMP5 or
     sprite_index=sprPWalkUzi
     {
-    pose_index=Pose_PlayerWalkAimGangster
+    pose_index=WalkPlayerGangster
     }
     
 if  sprite_index=sprPWalkBat or
@@ -19,18 +19,22 @@ if  sprite_index=sprPWalkBat or
     sprite_index=sprPWalkSword or
     sprite_index=sprPWalkPool
     {
-    pose_index=Pose_PlayerWalkMelee
+    pose_index=WalkPlayerMelee
     }
 
 if  sprite_index=sprPWalkKnife or
     sprite_index=sprPWalkMachete
     {
-    pose_index=Pose_PlayerWalkMeleeShort
+    pose_index=WalkPlayerMeleeShort
     }
     
     
-if sprite_index=wpnAttackM16{
-    pose_idnex=Pose_PlayerAttackAim
+if  sprite_index=wpnAttackM16{
+    pose_index=AttackPlayerAim
+    }
+
+if  sprite_index=wpnAttackShotgun{
+    pose_index=AttackPlayerShotgun
     }
     
 if  sprite_index=sprPAttackBat or
@@ -39,7 +43,7 @@ if  sprite_index=sprPAttackBat or
     sprite_index=sprPAttackSword or
     sprite_index=sprPAttackPool
     {
-    pose_index=Pose_PlayerAttackMelee
+    pose_index=AttackPlayerMelee
     }
 
 if  sprite_index=sprPAttackMachete or
@@ -47,10 +51,10 @@ if  sprite_index=sprPAttackMachete or
     sprite_index=sprPAttackPan or
     sprite_index=sprPAttackPot
     {
-    pose_index=Pose_PlayerAttackMeleeShort
+    pose_index=AttackPlayerMeleeShort
     }
     
 if  sprite_index=sprPAttackKnife
     {
-    pose_index=Pose_PlayerAttackKnife
+    pose_index=AttackPlayerKnife
     }

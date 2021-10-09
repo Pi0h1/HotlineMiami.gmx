@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>image_speed=0.15
 image_index=1
+angle=0
+shake=0
+legsprite=0
+legindex=0
 </string>
           </argument>
         </arguments>

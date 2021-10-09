@@ -32,6 +32,10 @@ image_speed=0
 alarm[0]=100+random(200)
 global.done=0
 scrInitPathFinding()
+legindex=0
+shake=0
+angle=0
+legsprite=0
 </string>
           </argument>
         </arguments>

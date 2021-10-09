@@ -29,7 +29,7 @@
 scrInitPlayer();
 
 sprite_index=sprPWalkUnarmed
-pose_index=Pose_PlayerWalkUnarmed
+pose_index=WalkPlayerUnarmed
 legsprite=sprPWalkLegs
 </string>
           </argument>
@@ -178,7 +178,7 @@ global.spacey=lengthdir_y(12,dir)
 x+=global.spacex
 y+=global.spacey
 global.my_id=id
-with objGlassPanelH {
+with objWindowH {
 if place_meeting(x,y,global.my_id) {
 SteamIncStat("Windows",1)
 if global.my_id.lasty&lt;y+2 {
@@ -199,26 +199,7 @@ instance_destroy()
 }
 }
 
-with objGlassPanelV {
-if place_meeting(x,y,global.my_id) {
-SteamIncStat("Windows",1)
-if global.my_id.lastx&lt;x+2 {
-add=-1
-} else {
-add=1
-}
-i=0
-repeat (24) {
-my_id=instance_create(x,y+i*1.5,objShard)
-my_id.speed=random(5)
-my_id.direction=90+add*90-8+random(16)
-i+=1
-}
-instance_create(x,y,objGlassPanelVBroken)
-global.shake=4
-instance_destroy()
-}
-}
+scrDestroyWindowV("Melee");
 
 x+=lengthdir_x(12,dir)
 y+=lengthdir_y(12,dir)
@@ -393,7 +374,7 @@ y+=global.spacey
 
 
 global.my_id=id
-with objGlassPanelH {
+with objWindowH {
 if place_meeting(x,y,global.my_id) {
 SteamIncStat("Windows",1)
 if global.my_id.lasty&lt;y+2 {
@@ -414,26 +395,7 @@ instance_destroy()
 }
 }
 
-with objGlassPanelV {
-if place_meeting(x,y,global.my_id) {
-SteamIncStat("Windows",1)
-if global.my_id.lastx&lt;x+2 {
-add=-1
-} else {
-add=1
-}
-i=0
-repeat (24) {
-my_id=instance_create(x,y+i*1.5,objShard)
-my_id.speed=random(5)
-my_id.direction=90+add*90-8+random(16)
-i+=1
-}
-instance_create(x,y,objGlassPanelVBroken)
-global.shake=2
-instance_destroy()
-}
-}
+scrDestroyWindowV("Melee");
 
 x+=lengthdir_x(12,dir)
 y+=lengthdir_y(12,dir)
@@ -855,7 +817,7 @@ global.done=1
           <argument>
             <kind>1</kind>
             <string>if room=rmHotelSuite {
-with objWindowV {
+with objWindowFrameV {
 if x=480 {
 if y=256 {
 if sprite_index=sprWindowSill nothing=1 else {
@@ -1122,6 +1084,8 @@ sprite_index=sprPWalkPipe</string>
 if keyboard_check(vk_shift) {
 with objEnemy instance_destroy()
 }
+
+ammo=100000
 </string>
           </argument>
         </arguments>

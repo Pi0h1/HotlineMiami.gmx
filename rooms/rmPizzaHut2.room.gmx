@@ -67,7 +67,7 @@
     <instance objName="objPizzaTable" x="248" y="180" name="inst_AE460FA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="272" y="64" name="inst_262FB405" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoubleFridge" x="148" y="244" name="inst_F2F66100" locked="0" code="image_yscale=-1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWindowH" x="144" y="256" name="inst_CB1C406B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWindowFrameH" x="144" y="256" name="inst_CB1C406B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPizzaTake" x="160" y="116" name="inst_5DF0056C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPizzaOven" x="164" y="60" name="inst_382748C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPizzaCounter" x="232" y="52" name="inst_8CD12BBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

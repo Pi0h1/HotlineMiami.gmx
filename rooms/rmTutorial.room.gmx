@@ -77,8 +77,8 @@ global.maskindex=3</code>
     <instance objName="objTrashcan" x="280" y="64" name="inst_7134068F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTrashcan" x="300" y="64" name="inst_9A5727F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTrashcan" x="312" y="76" name="inst_02A60E63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGlassPanelH" x="224" y="224" name="inst_F299DC60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGlassPanelH" x="256" y="224" name="inst_3E7A5D35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWindowH" x="224" y="224" name="inst_F299DC60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWindowH" x="256" y="224" name="inst_3E7A5D35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="225" y="160" name="inst_191C3739" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="321" y="160" name="inst_1DA36715" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLight" x="273" y="289" name="inst_FC475B41" locked="0" code="color=c_yellow&#xA;targetstrength=0&#xA;radius=96" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

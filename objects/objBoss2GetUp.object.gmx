@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>wait=100
 image_speed=0
+angle=0
+shake=0
+legsprite=0
+legindex=0
 </string>
           </argument>
         </arguments>

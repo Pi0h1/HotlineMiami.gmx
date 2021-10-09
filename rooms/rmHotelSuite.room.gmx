@@ -59,8 +59,8 @@
     <instance objName="objSurfacer" x="32" y="216" name="inst_6A2F9111" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="224" y="576" name="inst_8A41BA05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="192" y="736" name="inst_F1E686E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWindowH" x="64" y="672" name="inst_5E0752AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWindowH" x="96" y="672" name="inst_A4675225" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWindowFrameH" x="64" y="672" name="inst_5E0752AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWindowFrameH" x="96" y="672" name="inst_A4675225" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="160" y="608" name="inst_A0B870C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="160" y="128" name="inst_EB8A8A5E" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="160" y="224" name="inst_5E936991" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -68,8 +68,8 @@
     <instance objName="objDoorV" x="352" y="128" name="inst_3E98C587" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="352" y="224" name="inst_5F3A26D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="352" y="384" name="inst_4156FBA3" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWindowV" x="480" y="256" name="inst_FB717D2C" locked="0" code="depth=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWindowV" x="480" y="384" name="inst_077ECFA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWindowFrameV" x="480" y="256" name="inst_FB717D2C" locked="0" code="depth=1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWindowFrameV" x="480" y="384" name="inst_077ECFA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJacuzzi" x="80" y="608" name="inst_2C0C6893" locked="0" code="sprite_index=sprHotelSuiteTub" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPool" x="56" y="704" name="inst_428856DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPoolChair" x="88" y="736" name="inst_E889D7A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -88,7 +88,7 @@
     <instance objName="objHotelSuiteChair" x="270" y="686" name="inst_9EEE4267" locked="0" code="image_angle=55" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFootstand" x="286" y="662" name="inst_3280DCE5" locked="0" code="image_angel=-35" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTigerCarpet" x="316" y="636" name="inst_25BC6D08" locked="0" code="sprite_index=sprWhiteTigerCarpet&#xA;image_angle=270" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWindowV" x="448" y="608" name="inst_D4804196" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWindowFrameV" x="448" y="608" name="inst_D4804196" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSunChair" x="480" y="784" name="inst_46CE49CA" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSunChair" x="448" y="784" name="inst_9E3AFE6C" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHotelSimpleBed" x="416" y="228" name="inst_9F2119FA" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -127,9 +127,9 @@
     <instance objName="objShowerGlassV" x="417" y="304" name="inst_D1EA0056" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJanitorVacuum" x="423" y="408" name="inst_00A5EFC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFatmanShit" x="60" y="652" name="inst_2FA52B35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWindowH" x="256" y="736" name="inst_9404934C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWindowH" x="320" y="736" name="inst_C0F086F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWindowH" x="384" y="736" name="inst_83BDAC81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWindowFrameH" x="256" y="736" name="inst_9404934C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWindowFrameH" x="320" y="736" name="inst_C0F086F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWindowFrameH" x="384" y="736" name="inst_83BDAC81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWaterPuddle" x="312" y="400" name="inst_56329BB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWaterPuddle" x="320" y="416" name="inst_E1FCCC5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWaterPuddle" x="308" y="436" name="inst_40040BBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

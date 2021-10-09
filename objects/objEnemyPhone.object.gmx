@@ -32,7 +32,10 @@ alert=0
 direction=random(360)
 ammo=0
 path=path_add()
-on=0</string>
+on=0
+shake=0
+angle=0
+</string>
           </argument>
         </arguments>
       </action>

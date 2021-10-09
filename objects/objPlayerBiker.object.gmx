@@ -108,7 +108,7 @@ global.spacey=lengthdir_y(12,dir)
 x+=global.spacex
 y+=global.spacey
 global.my_id=id
-with objGlassPanelH {
+with objWindowH {
 if place_meeting(x,y,global.my_id) {
 if global.my_id.lasty&lt;y+2 {
 add=-1
@@ -128,25 +128,7 @@ instance_destroy()
 }
 }
 
-with objGlassPanelV {
-if place_meeting(x,y,global.my_id) {
-if global.my_id.lastx&lt;x+2 {
-add=-1
-} else {
-add=1
-}
-i=0
-repeat (24) {
-my_id=instance_create(x,y+i*1.5,objShard)
-my_id.speed=random(5)
-my_id.direction=90+add*90-8+random(16)
-i+=1
-}
-instance_create(x,y,objGlassPanelVBroken)
-global.shake=4
-instance_destroy()
-}
-}
+scrDestroyWindowV("Melee");
 
 x+=lengthdir_x(12,dir)
 y+=lengthdir_y(12,dir)

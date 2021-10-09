@@ -18,7 +18,7 @@ draw_sprite_ext(sprCursorAction,action-1,global.mousex+1,global.mousey+1,1,1,-vi
 draw_sprite_ext(sprCursorAction,action-1,global.mousex,global.mousey,1,1,-view_angle[0],image_blend,1)
 }
 if room=rmHotelSuite {
-with objWindowV {
+with objWindowFrameV {
 if sprite_index=sprWindowSill nothing=1 else {
 if x=480 and y=256 {
 draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,objBackgroundColor.dir*32),y+16,1,1,90,c_white,1)

@@ -23,7 +23,7 @@ if objPlayer.sprite_index=sprPWalkSilencedUzi or objPlayer.sprite_index=sprPAtta
 showammo=1
 maxammo=30
 } 
-if objPlayer.sprite_index=sprPWalkShotgun or objPlayer.sprite_index=sprPAttackShotgun {
+if objPlayer.sprite_index=wpnWalkShotgun or objPlayer.sprite_index=wpnAttackShotgun {
 showammo=1
 maxammo=6
 } 

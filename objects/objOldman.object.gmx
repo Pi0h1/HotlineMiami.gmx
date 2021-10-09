@@ -30,7 +30,12 @@ state=0
 shoot=0
 global.smoke=0
 global.picture=0
-global.throw=0</string>
+global.throw=0
+shake=0
+angle=0
+legindex=0
+legsprite=0
+</string>
           </argument>
         </arguments>
       </action>

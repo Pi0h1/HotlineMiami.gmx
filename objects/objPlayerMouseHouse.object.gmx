@@ -462,7 +462,7 @@ lasty=y
 x+=lengthdir_x(24,dir)
 y+=lengthdir_y(24,dir)
 global.my_id=id
-with objGlassPanelH {
+with objWindowH {
 if place_meeting(x,y,global.my_id) {
 if global.my_id.lasty&lt;y+2 {
 add=-1
@@ -583,7 +583,7 @@ x+=lengthdir_x(12,dir)
 y+=lengthdir_y(12,dir)
 
 global.my_id=id
-with objGlassPanelH {
+with objWindowH {
 if place_meeting(x,y,global.my_id) {
 if global.my_id.lasty&lt;y+2 {
 add=-1

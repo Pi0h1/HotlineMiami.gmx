@@ -241,6 +241,62 @@ sxeasy_play(working_directory+"\Static.mp3")
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objDoorH2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>my_id=instance_create(other.x-32,other.y,objOfficeDoor)
+my_id.direction=point_direction(x,y,other.x-16,other.y)
+my_id.speed=2
+my_id.image_angle=35
+with other instance_destroy()</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objDoorH">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>my_id=instance_create(other.x,other.y,objOfficeDoor)
+my_id.direction=point_direction(x,y,other.x+16,other.y)
+my_id.speed=2
+my_id.image_angle=-35
+with other instance_destroy()
+image_index=1
+PlaySFX(sndBreakDoor)
+global.shake=16
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objGlassPanelHBroken">
       <action>
         <libid>1</libid>
@@ -274,7 +330,7 @@ if global.shake&lt;8 global.shake=8</string>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objGlassPanelH">
+    <event eventtype="4" ename="objWindowH">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -343,7 +399,7 @@ if global.shake&lt;8 global.shake=8</string>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objGlassPanelV">
+    <event eventtype="4" ename="objWindowV">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -374,62 +430,6 @@ i+=1
 instance_create(other.x,other.y,objGlassPanelDestroyedV)
 with other instance_destroy()
 if global.shake&lt;8 global.shake=8
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objDoorH2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>my_id=instance_create(other.x-32,other.y,objOfficeDoor)
-my_id.direction=point_direction(x,y,other.x-16,other.y)
-my_id.speed=2
-my_id.image_angle=35
-with other instance_destroy()</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objDoorH">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>my_id=instance_create(other.x,other.y,objOfficeDoor)
-my_id.direction=point_direction(x,y,other.x+16,other.y)
-my_id.speed=2
-my_id.image_angle=-35
-with other instance_destroy()
-image_index=1
-PlaySFX(sndBreakDoor)
-global.shake=16
 </string>
           </argument>
         </arguments>

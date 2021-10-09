@@ -26,7 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>image_speed=0
-state=0</string>
+state=0
+angle=0
+shake=0
+legindex=0
+legsprite=0
+</string>
           </argument>
         </arguments>
       </action>

@@ -102,7 +102,7 @@ sprite_index=sprBombCablesBroken
 image_speed=0.12
 }
 
-with objWindowV {
+with objWindowFrameV {
 if x=64 and y=224 {
 instance_create(x,y,objWindowExplode)
 instance_destroy()

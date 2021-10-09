@@ -36,6 +36,7 @@ state=0
 wait=30
 hit=0
 legsprite=sprEFatLegs
+legindex=0
 </string>
           </argument>
         </arguments>

@@ -48,6 +48,10 @@ turnwait=0
 wait=700
 attackwait=0
 vol=1
+
+angle=0
+shake=0
+legindex=0
 </string>
           </argument>
         </arguments>

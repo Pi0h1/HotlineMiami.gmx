@@ -37,6 +37,9 @@ checkreload=floor(random(8))
 alert=0
 light=0
 talked=0
+angle=0
+shake=0
+legindex=0
 legsprite=sprEFatLegs
 </string>
           </argument>

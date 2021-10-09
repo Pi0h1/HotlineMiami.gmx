@@ -1,5 +1,5 @@
 if image_index=0 objPlayer.sprite_index=wpnWalkM16
-if image_index=1 objPlayer.sprite_index=sprPWalkShotgun
+if image_index=1 objPlayer.sprite_index=wpnWalkShotgun
 if image_index=2 objPlayer.sprite_index=sprPWalkClub
 if image_index=3 objPlayer.sprite_index=sprPWalkPipe
 if image_index=4 objPlayer.sprite_index=sprPWalkBat

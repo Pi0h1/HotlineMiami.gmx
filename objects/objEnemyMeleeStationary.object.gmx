@@ -66,6 +66,7 @@ start_x=x
 start_y=y
 weaponfind=0
 lastsprite=sprite_index
+angle = 0
 </string>
           </argument>
         </arguments>

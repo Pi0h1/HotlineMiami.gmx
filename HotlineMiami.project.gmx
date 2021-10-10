@@ -3162,6 +3162,7 @@
     <object>objects\objSpawnpoint</object>
     <object>objects\objShadow</object>
     <object>objects\objShadowManager</object>
+    <object>objects\obj_appsurf_dynamic</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Interface">

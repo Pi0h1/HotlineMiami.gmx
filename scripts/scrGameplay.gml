@@ -78,7 +78,7 @@ draw_set_blend_mode(bm_normal)
 if bamount<1 bamount+=0.05
 }
 draw_set_blend_mode(bm_subtract)
-draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24)+24,c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
+draw_circle_colour(view_wview[0]/2,view_hview[0]/2,240+random(24)+48,c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
 draw_set_blend_mode(bm_normal)
 if instance_exists(objPlayerJacket) {
 view_xview[0]=vlastx

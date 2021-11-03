@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objShadowManager){
-instance_create(x,y,objShadowManager)
-}
-alpha=1
+            <string>alpha=1
 coldir=0
 amount=0
 fade=0
@@ -300,7 +297,15 @@ my_id.image_angle=my_id.direction
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objMaskMenu) {if global.maskindex=14 bamount=1}
+            <string>if !instance_exists(objShadowManager){
+instance_create(x,y,objShadowManager)
+}
+
+if !instance_exists(objSurfaceManager){
+instance_create(x,y,objSurfaceManager)
+}
+
+if !instance_exists(objMaskMenu) {if global.maskindex=14 bamount=1}
 scrSaveBonusList()
 i=0
 room_set_persistent(room,true)

@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>resX=453
-resY=255
+            <string>resX=480
+resY=270
 shadowColor = c_black
 shadowAlpha = 0.5
 
-//From 1 to 10
-shadowQuality = 10
+shadowQuality = 3
 
 shadowSurface = surface_create((resX)*shadowQuality,(resY)*shadowQuality);
 shadowOffset1=1
@@ -118,7 +117,9 @@ draw_clear_alpha(c_black,0);
 
 d3d_set_fog(true,shadowColor,0,1);
 
-
+with (objPCrawl) {
+draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,angle,c_black,1)
+}
 
 with (objSolid) {
 draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset2-viewX)*other.shadowQuality,(y+other.shadowOffset2-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,1)
@@ -200,10 +201,10 @@ d3d_set_fog(false,c_white,0,0);
 surface_reset_target();
 
 draw_set_alpha(shadowAlpha);
-//draw_surface(shadowSurface,viewX,viewY);
 if surface_exists(shadowSurface){
-    //draw_surface(shadowSurface,viewX,viewY)
+//texture_set_interpolation(true)
     draw_surface_ext(shadowSurface, viewX, viewY, (1/shadowQuality),  (1/shadowQuality), 0, shadowColor, shadowAlpha);
+//texture_set_interpolation(false)
 }
 draw_set_alpha(1);
 </string>

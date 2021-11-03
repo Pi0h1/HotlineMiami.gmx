@@ -12,4 +12,4 @@ silenced        =   argument4
 CreateBullet       (argument5)
 CreateShell        (argument6)
 
-if silenced=true {scrHearPlayer()}
+if silenced=false {scrHearPlayer()}

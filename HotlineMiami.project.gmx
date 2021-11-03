@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <datafiles number="34" name="datafiles"/>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\NekoPresence</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sounds name="Ambience">
       <sounds name="Vehicle">
@@ -328,6 +330,8 @@
           <sprite>sprites\sprPEnding</sprite>
           <sprite>sprites\sprPKneel</sprite>
           <sprite>sprites\sprPlayerClimbDown</sprite>
+          <sprite>sprites\sprPlayerGetUp</sprite>
+          <sprite>sprites\sprPlayerGetDown</sprite>
           <sprite>sprites\sprShotgunTurn</sprite>
           <sprite>sprites\sprPlayerClimbUp</sprite>
           <sprite>sprites\sprItemJacket</sprite>
@@ -2736,6 +2740,7 @@
         <object>objects\objPlayerMouseHouse</object>
         <object>objects\objPlayerShieldMouse</object>
         <object>objects\objPlayerHospital</object>
+        <object>objects\objPCrawl</object>
         <object>objects\objPlayerCar</object>
         <objects name="Misc">
           <object>objects\objPlayerDead</object>
@@ -3138,8 +3143,8 @@
       <object>objects\objHouseReturn</object>
       <object>objects\objCheckpoint</object>
       <object>objects\objTrainshake</object>
-      <object>objects\objElectricLight</object>
       <object>objects\objHospitalTransition</object>
+      <object>objects\objElectricLight</object>
       <object>objects\objHospitalTalk</object>
       <object>objects\objDizzy</object>
       <object>objects\objEmpty</object>
@@ -3162,7 +3167,10 @@
     <object>objects\objSpawnpoint</object>
     <object>objects\objShadow</object>
     <object>objects\objShadowManager</object>
+    <object>objects\objSurfaceManager</object>
+    <object>objects\objGoreSurface</object>
     <object>objects\obj_appsurf_dynamic</object>
+    <object>objects\objNekoPresenceDemo</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Interface">

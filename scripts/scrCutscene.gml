@@ -186,6 +186,6 @@ draw_rectangle(0,view_hview[0],view_wview[0],view_hview[0]-blackx*1.5,0)
 
 
 draw_set_blend_mode(bm_subtract)
-draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24)+24,c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
+draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24)+48,c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
 draw_set_blend_mode(bm_normal)
 

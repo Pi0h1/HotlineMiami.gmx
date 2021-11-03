@@ -30,7 +30,22 @@ scrInitPlayer();
 
 sprite_index=sprPWalkUnarmed
 pose_index=WalkPlayerUnarmed
+
+
+//Costume Vanilla
 legsprite=sprPWalkLegs
+WalkPlayerAim_index             =   WalkPlayerAim
+WalkPlayerGangster_index        =   WalkPlayerGangster
+WalkPlayerMelee_index           =   WalkPlayerMelee
+WalkPlayerMeleeShort_index      =   WalkPlayerMeleeShort
+WalkPlayerPPoint_index          =   WalkPlayerPPoint
+
+AttackPlayerAim_index           =   AttackPlayerAim
+AttackPlayerShotgun_index       =   AttackPlayerShotgun
+AttackPlayerMelee_index         =   AttackPlayerMelee
+AttackPlayerMeleeShort_index    =   AttackPlayerMeleeShort
+AttackPlayerKnife_index         =   AttackPlayerKnife
+AttackPlayerPPoint_index        =   AttackPlayerPPoint
 </string>
           </argument>
         </arguments>
@@ -1063,34 +1078,6 @@ sprite_index=sprPWalkPipe</string>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="67">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//exit
-if keyboard_check(vk_shift) {
-with objEnemy instance_destroy()
-}
-
-ammo=100000
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
@@ -1150,7 +1137,8 @@ ammo=100000
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>aim=!aim</string>
+            <string>aim=!aim
+</string>
           </argument>
         </arguments>
       </action>
@@ -1173,6 +1161,37 @@ ammo=100000
           <argument>
             <kind>1</kind>
             <string>event_perform(ev_keypress,vk_control)</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="67">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//exit
+instance_destroy();
+instance_create(x,y,objPCrawl)
+
+if keyboard_check(vk_shift) {
+with objEnemy instance_destroy()
+}
+
+ammo=100000
+</string>
           </argument>
         </arguments>
       </action>

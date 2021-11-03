@@ -22,5 +22,6 @@
   <frames>
     <frame index="0">images\sprPAttackScorpion_0.png</frame>
     <frame index="1">images\sprPAttackScorpion_1.png</frame>
+    <frame index="2">images\sprPAttackScorpion_2.png</frame>
   </frames>
 </sprite>

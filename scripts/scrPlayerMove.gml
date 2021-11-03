@@ -13,6 +13,8 @@ factor=1
 //Biker's speed.
 if object_index=objPlayerBiker {myspeed=3.5 factor=1}
 
+if object_index=objPCrawl {myspeed=0.2 factor=1}
+
 if object_index=objPlayerShieldMouse {myspeed=1 factor=1}
 
 //Graham's speed (Walk Fast).

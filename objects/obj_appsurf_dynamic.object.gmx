@@ -84,7 +84,7 @@ video_height = 0
     //draw_set_alpha_test(true)
     
     draw_set_color(c_lime)
-    draw_rectangle(xx, yy, xx + video_width - 1, yy + video_height - 1, true)
+    //draw_rectangle(xx, yy, xx + video_width - 1, yy + video_height - 1, true)
     
 }
 
@@ -98,7 +98,7 @@ text += "#width: " + string(video_width)
 text += "#height: " + string(video_height)
 text += "#updates: " + string(updates)
 
-draw_text(0, 0, text)
+//draw_text(0, 0, text)
 </string>
           </argument>
         </arguments>

@@ -22,26 +22,25 @@ PlaySFX("Strong Glass")
 else
 {
 
-with objWindowV {
 
-if broken=false{
 
-SteamIncStat("Windows",1)
-if hspeed>0 {
-other.add=-1
-} else {
-other.add=1
-}
+
 with other {
-i=0
-
-scrCreateShards();
+if broken=false{
 broken=true
 image_index=1
 global.shake=4
 PlaySFX("Strong Glass")
+
+if other.hspeed>0 {
+add=-1
+} else {
+add=1
 }
-exit
+i=0
+
+scrCreateShards();
+
 }
 }
 

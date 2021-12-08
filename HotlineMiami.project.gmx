@@ -107,6 +107,30 @@
               <sprite>sprites\sprLegsLimp</sprite>
               <sprite>sprites\sprLegsStairs</sprite>
             </sprites>
+            <sprites name="Miscelaneous">
+              <sprites name="Window">
+                <sprite>sprites\sprPClimbLedge</sprite>
+                <sprite>sprites\sprPClimbWindow</sprite>
+              </sprites>
+              <sprite>sprites\sprPEnding</sprite>
+              <sprite>sprites\sprPKneel</sprite>
+              <sprite>sprites\sprPlayerClimbDown</sprite>
+              <sprite>sprites\sprPlayerGetUp</sprite>
+              <sprite>sprites\sprPlayerGetDown</sprite>
+              <sprite>sprites\sprShotgunTurn</sprite>
+              <sprite>sprites\sprPlayerClimbUp</sprite>
+              <sprite>sprites\sprItemJacket</sprite>
+              <sprite>sprites\sprPlayerLighter</sprite>
+              <sprite>sprites\sprItemPants</sprite>
+              <sprite>sprites\sprPLeaveBag</sprite>
+              <sprite>sprites\sprPMaskSlip</sprite>
+              <sprite>sprites\sprPOpenSewer</sprite>
+              <sprite>sprites\sprPStomped</sprite>
+              <sprite>sprites\sprPTakePhone</sprite>
+              <sprite>sprites\sprPThrowMask</sprite>
+              <sprite>sprites\sprPUnlockDoor</sprite>
+              <sprite>sprites\sprPVomit</sprite>
+            </sprites>
             <sprite>sprites\AttackPlayerAim</sprite>
             <sprite>sprites\AttackPlayerGangster</sprite>
             <sprite>sprites\AttackPlayerKnife</sprite>
@@ -118,9 +142,12 @@
             <sprite>sprites\WalkPlayerGangster</sprite>
             <sprite>sprites\WalkPlayerMelee</sprite>
             <sprite>sprites\WalkPlayerMeleeShort</sprite>
+            <sprite>sprites\WalkPlayerMeleeLarge</sprite>
             <sprite>sprites\WalkPlayerPPoint</sprite>
             <sprite>sprites\WalkPlayerUnarmed</sprite>
             <sprite>sprites\AttackPlayerShotgun</sprite>
+            <sprite>sprites\sprPWalkLedge</sprite>
+            <sprite>sprites\sprPCrawl</sprite>
           </sprites>
         </sprites>
         <sprites name="Walking">
@@ -135,7 +162,6 @@
           <sprite>sprites\sprPWalkDrill</sprite>
           <sprite>sprites\sprPWalkGirlfriend</sprite>
           <sprite>sprites\sprPWalkKnife</sprite>
-          <sprite>sprites\sprPWalkLedge</sprite>
           <sprite>sprites\wpnWalkM16</sprite>
           <sprite>sprites\sprPWalkM16Top</sprite>
           <sprite>sprites\sprPWalkMachete</sprite>
@@ -157,7 +183,6 @@
           <sprite>sprites\sprPWalkThrow</sprite>
           <sprite>sprites\sprPWalkTrophy</sprite>
           <sprite>sprites\sprPWalkUnarmed</sprite>
-          <sprite>sprites\sprPCrawl</sprite>
           <sprite>sprites\sprPWalkUzi</sprite>
         </sprites>
         <sprites name="Attacking">
@@ -273,34 +298,7 @@
           <sprite>sprites\sprHumanShield</sprite>
         </sprites>
         <sprites name="Masks">
-          <sprite>sprites\sprMaskDropBack</sprite>
-          <sprite>sprites\sprMaskDropFront</sprite>
-          <sprite>sprites\sprMasksBig</sprite>
-          <sprite>sprites\sprMasks</sprite>
-        </sprites>
-        <sprites name="Car">
-          <sprite>sprites\sprCarMask</sprite>
-          <sprite>sprites\sprCarThrashed</sprite>
-          <sprite>sprites\sprCarThrashedBottom</sprite>
-          <sprite>sprites\sprPlayerCar</sprite>
-        </sprites>
-        <sprites name="Miscelaneous">
-          <sprites name="Hospital">
-            <sprite>sprites\sprEnterWindow</sprite>
-            <sprite>sprites\sprPExitWindow</sprite>
-            <sprite>sprites\sprPHeadExplode</sprite>
-            <sprite>sprites\sprPHospitalHeadache</sprite>
-            <sprite>sprites\sprPKeyLockOpen</sprite>
-            <sprite>sprites\sprPRipPoliceTape</sprite>
-            <sprite>sprites\sprPSleepHospital</sprite>
-            <sprite>sprites\sprPWalkHospital</sprite>
-            <sprite>sprites\sprPWalkWindow</sprite>
-          </sprites>
-          <sprites name="Window">
-            <sprite>sprites\sprPClimbLedge</sprite>
-            <sprite>sprites\sprPClimbWindow</sprite>
-          </sprites>
-          <sprites name="Put on Masks">
+          <sprites name="PutOn">
             <sprite>sprites\sprRoosterMask</sprite>
             <sprite>sprites\sprBatMask</sprite>
             <sprite>sprites\sprCamelMask</sprite>
@@ -327,24 +325,27 @@
             <sprite>sprites\sprPigMask</sprite>
             <sprite>sprites\sprOwlMask</sprite>
           </sprites>
-          <sprite>sprites\sprPEnding</sprite>
-          <sprite>sprites\sprPKneel</sprite>
-          <sprite>sprites\sprPlayerClimbDown</sprite>
-          <sprite>sprites\sprPlayerGetUp</sprite>
-          <sprite>sprites\sprPlayerGetDown</sprite>
-          <sprite>sprites\sprShotgunTurn</sprite>
-          <sprite>sprites\sprPlayerClimbUp</sprite>
-          <sprite>sprites\sprItemJacket</sprite>
-          <sprite>sprites\sprPlayerLighter</sprite>
-          <sprite>sprites\sprItemPants</sprite>
-          <sprite>sprites\sprPLeaveBag</sprite>
-          <sprite>sprites\sprPMaskSlip</sprite>
-          <sprite>sprites\sprPOpenSewer</sprite>
-          <sprite>sprites\sprPStomped</sprite>
-          <sprite>sprites\sprPTakePhone</sprite>
-          <sprite>sprites\sprPThrowMask</sprite>
-          <sprite>sprites\sprPUnlockDoor</sprite>
-          <sprite>sprites\sprPVomit</sprite>
+          <sprite>sprites\sprMaskDropBack</sprite>
+          <sprite>sprites\sprMaskDropFront</sprite>
+          <sprite>sprites\sprMasksBig</sprite>
+          <sprite>sprites\sprMasks</sprite>
+        </sprites>
+        <sprites name="Car">
+          <sprite>sprites\sprCarMask</sprite>
+          <sprite>sprites\sprCarThrashed</sprite>
+          <sprite>sprites\sprCarThrashedBottom</sprite>
+          <sprite>sprites\sprPlayerCar</sprite>
+        </sprites>
+        <sprites name="Hospital">
+          <sprite>sprites\sprEnterWindow</sprite>
+          <sprite>sprites\sprPExitWindow</sprite>
+          <sprite>sprites\sprPHeadExplode</sprite>
+          <sprite>sprites\sprPHospitalHeadache</sprite>
+          <sprite>sprites\sprPKeyLockOpen</sprite>
+          <sprite>sprites\sprPRipPoliceTape</sprite>
+          <sprite>sprites\sprPSleepHospital</sprite>
+          <sprite>sprites\sprPWalkHospital</sprite>
+          <sprite>sprites\sprPWalkWindow</sprite>
         </sprites>
         <sprites name="Collision">
           <sprite>sprites\sprBodyMask</sprite>
@@ -1785,6 +1786,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scrInitGlobals.gml</script>
     <scripts name="Player">
       <scripts name="Walking">
         <script>scripts\scrDrawShadow.gml</script>
@@ -1847,8 +1849,11 @@
         <script>scripts\scrDrawScore.gml</script>
         <script>scripts\scrDrawHUD.gml</script>
         <script>scripts\scrDrawHUDStory.gml</script>
+        <script>scripts\scrDevTxt.gml</script>
         <script>scripts\scrScoreText.gml</script>
         <script>scripts\scrShowDate.gml</script>
+        <script>scripts\scrDrawFilter.gml</script>
+        <script>scripts\scrDrawFilterOscar.gml</script>
       </scripts>
       <script>scripts\scrCarNextRoom.gml</script>
       <script>scripts\scrCheckHitBack.gml</script>
@@ -2117,6 +2122,7 @@
     <script>scripts\scrDrawSpriteAsVertex.gml</script>
     <script>scripts\scrDestroyWindowV.gml</script>
     <script>scripts\scrCreateShards.gml</script>
+    <script>scripts\scrTestLevel.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>
@@ -3171,6 +3177,8 @@
     <object>objects\objGoreSurface</object>
     <object>objects\obj_appsurf_dynamic</object>
     <object>objects\objNekoPresenceDemo</object>
+    <object>objects\objGame</object>
+    <object>objects\objPlaceCharacter</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Interface">

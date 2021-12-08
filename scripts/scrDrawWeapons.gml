@@ -6,6 +6,12 @@ if  sprite_index=sprPWalkSilencer or
     {
     pose_index=WalkPlayerPPoint_index
     }
+
+if  sprite_index=sprPWalkAxe or
+    sprite_index=sprPWalkSledge
+    {
+    pose_index=WalkPlayerMeleeLarge_index
+    }
     
 if  sprite_index=sprPAttackSilencer or
     sprite_index=sprPAttackMagnum or

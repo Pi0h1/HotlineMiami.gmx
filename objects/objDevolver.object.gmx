@@ -110,17 +110,12 @@ draw_set_blend_mode(bm_subtract)
 draw_rectangle_color(-10,-10,view_wview[0]+10,view_hview[0]+10,color2,color1,color1,color2,0)
 draw_set_blend_mode(bm_normal) 
 }
-
-
-draw_set_blend_mode(bm_subtract)
-my_y=random(32)
-draw_sprite_tiled(sprScanlines,0,0,my_y)
-draw_circle_color(view_wview[0]/2,view_hview[0]/2,268+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
-draw_set_blend_mode(bm_normal)
+scrDrawFilter();
 
 draw_set_color(c_black)
 draw_rectangle(-10,-10,room_width+10,15,0)
-draw_rectangle(-10,room_height-15,room_width+10,room_height+10,0)</string>
+draw_rectangle(-10,room_height-15,room_width+10,room_height+10,0)
+</string>
           </argument>
         </arguments>
       </action>

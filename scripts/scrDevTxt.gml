@@ -1,0 +1,7 @@
+draw_set_font(fntDescription) 
+draw_set_halign(fa_left)
+draw_text_colour(argument0,argument1-1,argument2,c_black,c_black,c_black,c_black,1)
+draw_text_colour(argument0,argument1+1,argument2,c_black,c_black,c_black,c_black,1)
+draw_text_colour(argument0-1,argument1,argument2,c_black,c_black,c_black,c_black,1)
+draw_text_colour(argument0+1,argument1,argument2,c_black,c_black,c_black,c_black,1)
+draw_text_colour(argument0,argument1,argument2,c_white,c_white,c_white,c_white,1)

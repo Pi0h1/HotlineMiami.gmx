@@ -38,6 +38,7 @@ draw_surface(surf,0,0)
 draw_set_blend_mode(bm_normal)
 if !instance_exists(objMaskMenu) and !instance_exists(objPhoneConversation) global.time+=1
 scrDrawHUD()
+
 if instance_exists(objMaskMenu) scrDrawMaskMenu() else {
 if leveltitle="" nothing=1 else {
 if levelshow>0 levelshow-=1 else leveltitle=""
@@ -70,16 +71,11 @@ draw_rectangle_color(-10,-10,view_wview[0]+10,view_hview[0]+10,color2,color1,col
 draw_set_blend_mode(bm_normal)
 }
 coldir+=1
-scrDrawPlayer()
-if global.maskindex=14 and global.maskon=1 {
-draw_set_blend_mode(bm_subtract)
-draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24)+24,merge_color(c_black,merge_color(c_white,c_aqua,0.6+lengthdir_x(0.4,global.dir*4)),bamount),merge_color(c_black,c_white,bamount),0)
-draw_set_blend_mode(bm_normal)
-if bamount<1 bamount+=0.05
-}
-draw_set_blend_mode(bm_subtract)
-draw_circle_colour(view_wview[0]/2,view_hview[0]/2,240+random(24)+48,c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
-draw_set_blend_mode(bm_normal)
+
+scrDrawPlayer();
+scrDrawFilterOscar();
+scrDrawFilter();
+
 if instance_exists(objPlayerJacket) {
 view_xview[0]=vlastx
 view_yview[0]=vlasty

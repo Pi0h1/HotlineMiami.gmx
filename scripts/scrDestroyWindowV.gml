@@ -22,9 +22,6 @@ PlaySFX("Strong Glass")
 else
 {
 
-
-
-
 with other {
 if broken=false{
 broken=true
@@ -40,7 +37,6 @@ add=1
 i=0
 
 scrCreateShards();
-
 }
 }
 

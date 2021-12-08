@@ -25,27 +25,56 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objEffector){instance_create(x,y,objEffector)}
+            <string>///Initialize object
+if !instance_exists(objEffector){instance_create(x,y,objEffector)}
 scrInitPlayer();
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sprites
 sprite_index=sprPWalkUnarmed
 pose_index=WalkPlayerUnarmed
 
-
 //Costume Vanilla
 legsprite=sprPWalkLegs
+
+//  Walk
+//      Guns
 WalkPlayerAim_index             =   WalkPlayerAim
 WalkPlayerGangster_index        =   WalkPlayerGangster
+WalkPlayerPPoint_index          =   WalkPlayerPPoint
+//      Melee
 WalkPlayerMelee_index           =   WalkPlayerMelee
 WalkPlayerMeleeShort_index      =   WalkPlayerMeleeShort
-WalkPlayerPPoint_index          =   WalkPlayerPPoint
+WalkPlayerMeleeLarge_index      =   WalkPlayerMeleeLarge
 
+//  Attack
+//      Guns
 AttackPlayerAim_index           =   AttackPlayerAim
 AttackPlayerShotgun_index       =   AttackPlayerShotgun
+AttackPlayerPPoint_index        =   AttackPlayerPPoint
+//      Melee
 AttackPlayerMelee_index         =   AttackPlayerMelee
 AttackPlayerMeleeShort_index    =   AttackPlayerMeleeShort
 AttackPlayerKnife_index         =   AttackPlayerKnife
-AttackPlayerPPoint_index        =   AttackPlayerPPoint
+
 </string>
           </argument>
         </arguments>
@@ -68,7 +97,8 @@ AttackPlayerPPoint_index        =   AttackPlayerPPoint
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !place_meeting(x,y,objPlayerCar) {
+            <string>///Vomit
+if !place_meeting(x,y,objPlayerCar) {
 my_id=instance_create(x,y,objPVomit)
 my_id.image_angle=dir
 instance_destroy()
@@ -95,7 +125,8 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index = sprPWalkBoilingPot 
+            <string>///Movement
+if sprite_index = sprPWalkBoilingPot 
     {
     if round(random(5)) = 2 
     instance_create(x + lengthdir_x(11, dir - 33 * left), y + lengthdir_y(11, dir - 33 * left), objSteam)
@@ -478,7 +509,8 @@ y=lasty
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.shake=10
+            <string>///Collision with Bullet
+global.shake=10
 with other {
 if place_meeting(x,y,objSolid) {
 move_outside_solid(direction-180,speed*2) 
@@ -552,74 +584,6 @@ instance_destroy()
     <event eventtype="6" enumb="57">
       <action>
         <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>release</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>20</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>scrPlayerPickUp</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -634,7 +598,12 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>release=0</string>
+            <string>///Throw Weapon
+if release&lt;20{
+    scrPlayerPickUp();
+    release=0;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -656,7 +625,8 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(global.enemy) { global.enemy=-1234 exit}
+            <string>/// Lock-on
+if instance_exists(global.enemy) { global.enemy=-1234 exit}
 lastx=x
 lasty=y
 x=global.mousex
@@ -722,7 +692,8 @@ x=lastx
 y=lasty
 
 image_xscale=1
-image_yscale=1</string>
+image_yscale=1
+</string>
           </argument>
         </arguments>
       </action>
@@ -744,7 +715,8 @@ image_yscale=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objPhoneConversation) exit
+            <string>///Interact
+if instance_exists(objPhoneConversation) exit
 if place_meeting(x+lengthdir_x(10,dir),y+lengthdir_y(10,dir),objSecretMask) or place_meeting(x,y,objSecretMask) {
 with objSecretMask {
 global.masks[image_index]=1
@@ -808,7 +780,8 @@ global.done=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if release&lt;20 release+=1 else scrPlayerPickUp2()
+            <string>///Drop Weapon
+if release&lt;20 release+=1 else scrPlayerPickUp2()
 </string>
           </argument>
         </arguments>
@@ -831,7 +804,8 @@ global.done=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room=rmHotelSuite {
+            <string>///Attack
+if room=rmHotelSuite {
 with objWindowFrameV {
 if x=480 {
 if y=256 {
@@ -1055,7 +1029,7 @@ if maskon=1 scrDrawMask(0)
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="80">
+    <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1072,50 +1046,9 @@ if maskon=1 scrDrawMask(0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>exit
-sprite_index=sprPWalkPipe</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="32">
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>scrKillShield</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <string>///Executions
+scrKillShield();
+</string>
           </argument>
         </arguments>
       </action>
@@ -1137,7 +1070,9 @@ sprite_index=sprPWalkPipe</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>aim=!aim
+            <string>/// Crawling
+instance_destroy();
+instance_create(x,y,objPCrawl)
 </string>
           </argument>
         </arguments>
@@ -1160,12 +1095,12 @@ sprite_index=sprPWalkPipe</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_keypress,vk_control)</string>
+            <string>/// Look Further
+aim=!aim
+</string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="10" enumb="67">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1182,15 +1117,16 @@ sprite_index=sprPWalkPipe</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//exit
-instance_destroy();
-instance_create(x,y,objPCrawl)
+            <string>///Dev binds
+if global.devmode=0 exit
 
-if keyboard_check(vk_shift) {
+if keyboard_check(ord("C")) {
 with objEnemy instance_destroy()
 }
 
-ammo=100000
+if keyboard_check(ord("Z"))  {
+ammo+=100
+}
 </string>
           </argument>
         </arguments>

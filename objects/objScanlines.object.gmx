@@ -75,7 +75,8 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_blend_mode(bm_subtract)
+            <string>if global.devmode=1 exit
+draw_set_blend_mode(bm_subtract)
 image_xscale=+4
 image_yscale=+4
 draw_sprite_tiled(sprite_index,image_index,0,my_y)

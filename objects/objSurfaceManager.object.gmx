@@ -30,6 +30,9 @@
 if !instance_exists(objGoreSurface){
 instance_create(x,y,objGoreSurface)
 }
+
+if global.devmode=0 exit
+message="Surface destroyed."
 </string>
           </argument>
         </arguments>
@@ -79,15 +82,16 @@ instance_create(x,y,objGoreSurface)
           <argument>
             <kind>1</kind>
             <string>if instance_exists(objPause) exit
-if room=rmScore
-or room=rmMenu
-or !instance_exists(objEffector)
-{
-if !instance_exists(objEffectorHouse)
-{
-instance_destroy()
-show_message("destroyed")
-}
+
+if room=rmScore or room=rmMenu or !instance_exists(objEffector){
+    if !instance_exists(objEffectorHouse){
+    instance_destroy();
+
+    if global.debug = 1 {
+        show_message(message);
+        }
+    
+    }
 }
 </string>
           </argument>

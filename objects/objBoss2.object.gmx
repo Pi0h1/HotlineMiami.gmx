@@ -42,7 +42,9 @@ state=0
 direction=90
 sprite_index=sprBoss2Walk
 attack=0
+if instance_exists(objPlayer){
 pdir=point_direction(objPlayer.x,objPlayer.y,x,y)
+}else {pdir=0}
 diradd=1
 turnwait=0
 wait=700

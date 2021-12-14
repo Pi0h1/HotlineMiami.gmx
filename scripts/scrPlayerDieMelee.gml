@@ -1,3 +1,4 @@
+if global.godmode=1 exit
 global.shake=10
 with objPlayer {
 pdir=point_direction(global.my_id.x,global.my_id.y,x,y)

@@ -96,7 +96,7 @@ global.done=0</code>
     <instance objName="objVinylPlayer" x="349" y="152" name="inst_DE06BF6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpeaker" x="398" y="152" name="inst_3E0EAF64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpeaker" x="433" y="152" name="inst_E5A4ED6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTVBlack" x="417" y="151" name="inst_C6913B88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objTV" x="417" y="151" name="inst_C6913B88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objLamps" x="372" y="152" name="inst_9460AAC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLamps" x="560" y="404" name="inst_93120108" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLamps" x="365" y="526" name="inst_91B61D39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

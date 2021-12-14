@@ -110,7 +110,7 @@
     <instance objName="objLamps" x="84" y="84" name="inst_E4A02B5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLamps" x="116" y="84" name="inst_BC905AEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLamps" x="20" y="244" name="inst_9CEB28F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTVBlack" x="96" y="244" name="inst_3383DAA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="objTV" x="96" y="244" name="inst_3383DAA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objMicrowave" x="52" y="432" name="inst_29E7DFDE" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objFridge" x="24" y="432" name="inst_480CA6C1" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objKitchenSink" x="84" y="436" name="inst_F6EA7E1C" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>

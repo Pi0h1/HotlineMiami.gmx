@@ -25,7 +25,321 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.debug=1;
+            <string>/// Level to test
+testLevel = "TENSION";
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Global Variables
+//All Global variables should be set in this script.
+global.devmode = true;
+global.godmode = 0;
+global.steamon = 0;
+display_set_gui_size(view_wview, view_hview);
+sxeasy_init();
+global.restartedmusic=working_directory+"\Static.mp3"
+
+//Loads Volume.
+global.mvol=1;
+global.svol=1;
+scrLoadVol()
+
+//Colors for Alienware systems.
+global.alienware=0;
+if file_exists(working_directory+"\alienware") {
+global.alienware=1;
+scrAlienWareInit()
+scrAlienWarePink()
+} else global.alienware=0;
+
+//Controller
+global.controllertype=1;
+global.upkey='W';
+global.downkey='S';
+global.leftkey='A';
+global.rightkey='D';
+global.restartkey='R';
+global.controller=0;
+global.maskload=0;
+
+global.shake=0;
+global.cutscene=0;
+
+global.bonuslist=ds_list_create();
+global.bonustime=0;
+global.newmasks=0;
+
+global.talked=1;
+global.i=0;
+global.surfaces=1;
+global.blood=1;
+if file_exists(working_directory+"\blood") global.blood=0;
+if file_exists(working_directory+"\surfaces") global.surfaces=0;
+global.surfacesprites=0;
+
+global.paused=0;
+global.surf1=surface_create(room_width,room_height+64);
+surface_set_target(global.surf1);
+draw_clear_alpha(c_black,0);
+surface_alpha();
+surface_reset_target();
+global.surf2=surface_create(640*3,480*3);
+surface_set_target(global.surf2);
+draw_clear_alpha(c_black,0);
+surface_alpha();
+surface_reset_target();
+global.surf3=surface_create(640*3,480*3);
+surface_set_target(global.surf3);
+draw_clear_alpha(c_black,0);
+surface_alpha();
+surface_reset_target();
+
+global.resetstory=0;
+global.comboflash=0;
+global.parttitle[0]="PART ONE";
+global.parttitle[1]="PHONECALLS";
+global.nextlevel=rmTutorial;
+global.sequence=rmSequence1;
+global.revisit=0;
+global.maskon=1;
+global.maskindex=0;
+scrLoadUnlocked();//
+scrLoadAchievements();
+scrCheckLetters();
+scrCheckGuns();
+scrCheckMasks();
+
+//misc
+scrInitScore();
+global.done=0
+global.title="TEST"
+global.maskindex=0
+global.maskon=0
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Local Variables
+startingRoom = "DEVOLVER";
+song = -1;
+intro = 0;
+last_ammo = 0;
+last_sprite = 0;
+if (global.devmode==1){
+startingRoom = testLevel
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Object Creation
+instance_create(0,0,objScanlines)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Start Room
+//The point of this script is to let you quickly test rooms without having to initialize a bunch of shit
+
+
+switch (startingRoom) {
+    case "DEVOLVER"     : room=rmSplashDevolver         ; break;
+// Phonecalls
+    case "THE METRO"    : scrStartLevel ("THE METRO"    , "PRELUDE"             , rmTrainstationEntrance    , rmSequence1   , "Paris2"              ); break;
+    case "NO TALK"      : scrStartLevel ("NO TALK"      , "FIRST CHAPTER"       , rmApartment1Entrance      , rmSequence2   , "Crystals"            ); break;
+    case "OVERDOSE"     : scrStartLevel ("OVERDOSE"     , "SECOND CHAPTER"      , rmApartment2Entrance      , rmSequence3   , "Hotline"             ); break;
+    case "DECADENCE"    : scrStartLevel ("DECADENCE"    , "THIRD CHAPTER"       , rmHouse1Downstairs        , rmSequence4   , "Hydrogen"            ); break;
+// Questions 
+    case "TENSION"      : scrStartLevel ("TENSION"      , "FOURTH CHAPTER"      , rmHouse5Downstairs        , rmSequence5   , "Paris2"              ); break;
+    case "FULL HOUSE"   : scrStartLevel ("FULL HOUSE"   , "FIFTH CHAPTER"       , rmHouse2Downstairs        , rmSequence6   , "Crystals"            ); break;
+    case "CLEAN HIT"    : scrStartLevel ("CLEAN HIT"    , "SIXTH CHAPTER"       , rmHotelEntrance           , rmSequence7   , "Hotline"             ); break;
+    case "NEIGHBORS"    : scrStartLevel ("NEIGHBORS"    , "SEVENTH CHAPTER"     , rmBuildingFloor1          , rmSequence8   , "Hydrogen"            ); break;
+// Visitations
+    case "PUSH IT"      : scrStartLevel ("PUSH IT"      , "EIGHT CHAPTER"       , rmHouse3Downstairs        , rmSequence9   , "Perturbator"         ); break;
+    case "CRACKDOWN"    : scrStartLevel ("CRACKDOWN"    , "NINTH CHAPTER"       , rmSwatDownstairs          , rmSequence10  , "Crystals"            ); break;
+    case "HOT&amp;HEAVY"    : scrStartLevel ("HOT&amp;HEAVY"    , "TENTH CHAPTER"       , rmHouse4Middle            , rmSequence11  , "Hotline"             ); break;
+    case "DEADLINE"     : scrStartLevel ("DEADLINE"     , "ELEVENTH CHAPTER"    , rmOfficeEntrance          , rmSequence12  , "Hydrogen"            ); break;
+// Connection
+    case "TRAUMA"       : scrStartLevel ("TRAUMA"       , "TWELFTH CHAPTER"     , rmHospitalTitle           , rmSequence12bDownstairs, "Flatline"   ); break;
+    case "ASSAULT"      : scrStartLevel ("ASSAULT"      , "TIRTEENTH CHAPTER"   , rmPoliceHQFloor1          , rmSequence13  , "Knock"               ); break;
+    case "VENGEANCE"    : scrStartLevel ("VENGEANCE"    , "FOURTEENTH CHAPTER"  , rmBossClubFloor1          , rmSequence14  , "InnerAnimal"         ); break;
+    case "SHOWDOWN"     : scrStartLevel ("SHOWDOWN"     , "FINAL CHAPTER"       , rmMansionEntrance         , rmChapter     , "TurfMain"            ); break;
+// Answers
+    case "SAFEHOUSE"    : scrStartLevel ("SAFEHOUSE"    , "SIXTEENTH CHAPTER"   , rmNoodleShop              , rmMCBar       , "ToTheTop"            ); break;
+    case "FUN&amp;GAMES"    : scrStartLevel ("FUN&amp;GAMES"    , "SEVENTEENTH CHAPTER" , rmArcadeDownstairs        , rmMCSequence2 , "Musikk2"             ); break;
+    case "PRANKCALL"    : scrStartLevel ("PRANKCALL"    , "EIGHTEENTH CHAPTER"  , rmPhoneHomEntranceBiker   , rmSequence3   , "Knock"               ); break;
+    case "RESOLUTION"   : scrStartLevel ("RESOLUTION"   , "NINETEENTH CHAPTER"  , rmJanitors                , rmMCSequence4 , "InnerAnimal"         ); break;
+// Bonus
+    case "HIGHBALL"     : scrStartLevel ("HIGHBALL"     , "BONUS CHAPTER"       , rmHighballer              , rmChapter     , "Perturbator"         ); break;
+    case "EXPOSED"      : scrStartLevel ("EXPOSED"      , "SPECIAL CHAPTER"     , rmEurogamer               , rmChapter     , "ToTheTop"            ); break;
+    default: room=startingRoom;
+    }
+
+sxeasy_play(song)
+//scrInitGlobals();
+//global.devmode=1
+//instance_create(x,y,objPlaceCharacter)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Dev Binds
+if (global.devmode == 0) exit
+if (!instance_exists(objEffector)) exit
+
+if keyboard_check_pressed(ord("C")) {
+    with objEnemy instance_destroy();
+}
+
+if keyboard_check_pressed(ord("Z"))  {
+    if instance_exists(objPlayer){
+    objPlayer.ammo += 100;
+    }
+}
+
+if keyboard_check_pressed(ord("E"))  {
+    if instance_exists(objPlayerJacket) and instance_exists(objEffector) {
+        last_ammo=objPlayer.ammo
+        last_sprite=objPlayer.sprite_index
+        global.executionx=objPlayer.x
+        global.executiony=objPlayer.y
+        with objPlayerJacket instance_destroy();
+        my_id=instance_create(objEffector.x,objEffector.y,objPlayerJacket);
+        my_id.ammo=last_ammo
+        my_id.sprite_index=last_sprite
+    }
+}
+
+if keyboard_check_pressed(ord("Q"))  {
+instance_create(objEffector.x,objEffector.y,objWeapon);
+}
+
+if keyboard_check_pressed(ord("G"))  {
+global.godmode=!global.godmode
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="75">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Developer mode UI
+if (global.devmode == true) {
+  scrDevTxt(32,16,
+  
+  "DEV MODE ON"
+  +"#"+
+  string(fps)+"FPS"
+  +"#"+
+  "SHIFT + C = CLEAR AREA"
+  +"#"+
+  "SHIFT + Z = +100 AMMO"
+  +"#"+
+  "SHIFT + E = TELEPORT"
+  +"#"+
+  "[G]od Mode = "+string(global.godmode)
+  
+  )
+}
 </string>
           </argument>
         </arguments>

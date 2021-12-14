@@ -1,3 +1,4 @@
+if global.godmode=1 exit
 with objPlayer {
 image_xscale=1
 image_yscale=1

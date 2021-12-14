@@ -10,9 +10,7 @@
   <persistent>0</persistent>
   <colour>8421440</colour>
   <showcolour>-1</showcolour>
-  <code>global.done=0
-global.done1=0
-global.done2=0</code>
+  <code></code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -125,8 +123,8 @@ global.done2=0</code>
     <instance objName="objDiscoBar" x="536" y="136" name="inst_1A4E3B2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpeakerTable" x="294" y="165" name="inst_BCD54CFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpeakerTable" x="390" y="165" name="inst_E1926DA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTVBlack" x="309" y="180" name="inst_C6FD04B1" locked="0" code="image_angle=30" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTVBlack" x="405" y="180" name="inst_F548D542" locked="0" code="image_angle=150" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTV" x="309" y="180" name="inst_C6FD04B1" locked="0" code="image_angle=30" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTV" x="405" y="180" name="inst_F548D542" locked="0" code="image_angle=150" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objChineseFishtank" x="453" y="105" name="inst_3D3673ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objChineseFishtank" x="453" y="330" name="inst_A2DA8C0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objYinYang" x="162" y="111" name="inst_8D92B045" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

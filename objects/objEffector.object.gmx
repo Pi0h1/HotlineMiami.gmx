@@ -305,6 +305,11 @@ if !instance_exists(objSurfaceManager){
 instance_create(x,y,objSurfaceManager)
 }
 
+if !instance_exists(objSurfaceChecker){
+instance_create(x,y,objSurfaceChecker)
+}
+
+
 if !instance_exists(objMaskMenu) {if global.maskindex=14 bamount=1}
 scrSaveBonusList()
 i=0
@@ -383,7 +388,8 @@ scrCutscene();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gridon=!gridon
+            <string>exit
+gridon=!gridon
 </string>
           </argument>
         </arguments>
@@ -416,31 +422,6 @@ screen_save(working_directory+"\pause.bmp")
 global.sprite=sprite_add(working_directory+"\pause.bmp",0,0,0,0,1)
 room=rmPause
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="69">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if global.debug=0 exit
-
-instance_create(x,y,objWeapon)
 </string>
           </argument>
         </arguments>

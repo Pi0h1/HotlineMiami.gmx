@@ -10,8 +10,7 @@
   <persistent>0</persistent>
   <colour>16777215</colour>
   <showcolour>-1</showcolour>
-  <code>global.maskindex=0
-global.maskon=0</code>
+  <code>if !instance_exists(objGame){ instance_create(x,y,objGame) }</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

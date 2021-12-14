@@ -105,7 +105,7 @@ surface_reset_target()
     <instance objName="objLeatherCouch" x="424" y="144" name="inst_793AA194" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objLeatherCouch" x="580" y="144" name="inst_50F8539C" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="270"/>
     <instance objName="objGlassTable" x="496" y="216" name="inst_46E2420C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="objTVBlack" x="496" y="216" name="inst_F56973D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="objTV" x="496" y="216" name="inst_F56973D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="objBigTable" x="496" y="132" name="inst_CA98D74A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVinylPlayer" x="496" y="132" name="inst_6095C5A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpeaker" x="480" y="132" name="inst_FF88CB7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

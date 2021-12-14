@@ -29,6 +29,8 @@
 rotspeed=(-1+round(random(1))*2)*random(5)
 startspeed=0.1
 done=0
+image_index=random(360)
+image_speed=0.5
 </string>
           </argument>
         </arguments>

@@ -20,8 +20,8 @@
   <width>20</width>
   <height>16</height>
   <frames>
-    <frame index="0">images\sprTVBlack_0.png</frame>
-    <frame index="1">images\sprTVBlack_1.png</frame>
-    <frame index="2">images\sprTVBlack_2.png</frame>
+    <frame index="0">images\sprTV_0.png</frame>
+    <frame index="1">images\sprTV_1.png</frame>
+    <frame index="2">images\sprTV_2.png</frame>
   </frames>
 </sprite>

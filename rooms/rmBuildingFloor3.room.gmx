@@ -65,7 +65,7 @@
     <instance objName="objVinylRecord" x="308" y="116" name="inst_95B254F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLamps" x="320" y="120" name="inst_A4D7E98E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGlassTable" x="280" y="36" name="inst_32E9EC2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTVBlack" x="280" y="36" name="inst_537596C8" locked="0" code="image_angle=180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTV" x="280" y="36" name="inst_537596C8" locked="0" code="image_angle=180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBigTable" x="200" y="116" name="inst_8CC71655" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objComputer" x="192" y="116" name="inst_855A3229" locked="0" code="image_angle=270" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objToilet" x="288" y="136" name="inst_CAD11AA5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

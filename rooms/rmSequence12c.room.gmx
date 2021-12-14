@@ -95,7 +95,7 @@ objEffectorHouse.brus=15</code>
     <instance objName="objNightStand" x="560" y="504" name="inst_45475782" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLamps" x="564" y="504" name="inst_0C1F2962" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPhoneTable" x="212" y="312" name="inst_D196AB5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTVBlack" x="204" y="310" name="inst_3269BB5D" locked="0" code="image_angle=-90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTV" x="204" y="310" name="inst_3269BB5D" locked="0" code="image_angle=-90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objNes" x="224" y="312" name="inst_62D6A594" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShell" x="324" y="386" name="inst_2F9EA1BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShell" x="344" y="386" name="inst_630F45E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -1,4 +1,4 @@
-if global.devmode=1 exit
+if (global.devmode == true) exit
 /*draw_set_blend_mode(bm_subtract)
 my_y=random(32)
 draw_sprite_tiled(sprScanlines,0,0,my_y)*/

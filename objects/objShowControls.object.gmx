@@ -38,6 +38,7 @@ dir=90
 edit=0
 current=0
 fade=0
+angle=0
 c_amount=0
 wait=0
 global.i=0

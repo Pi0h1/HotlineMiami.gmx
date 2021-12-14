@@ -57,7 +57,7 @@ shadowOffset2=3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.devmode=0 exit
+            <string>if (global.devmode==false) exit
 shadowOffset1+=1
 shadowOffset2+=1
 </string>
@@ -82,7 +82,7 @@ shadowOffset2+=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.devmode=0 exit
+            <string>if (global.devmode==false) exit
 shadowOffset1-=1
 shadowOffset2-=1
 </string>
@@ -120,35 +120,44 @@ draw_clear_alpha(c_black,0);
 d3d_set_fog(true,shadowColor,0,1);
 
 with (objPCrawl) {
-draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,angle,c_black,1)
+draw_sprite_ext (
+    sprite_index,
+    image_index,
+    (x + other.shadowOffset1-viewX) * other.shadowQuality,
+    (y + other.shadowOffset1-viewY) * other.shadowQuality,
+    image_xscale * other.shadowQuality,image_yscale * other.shadowQuality,
+    angle,
+    c_black,
+    image_alpha
+)
 }
 
 with (objSolid) {
-draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset2-viewX)*other.shadowQuality,(y+other.shadowOffset2-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,1)
+draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset2-viewX)*other.shadowQuality,(y+other.shadowOffset2-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
 }
 
 with (objShootThrough) {
-draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset2-viewX)*other.shadowQuality,(y+other.shadowOffset2-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,1)
+draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset2-viewX)*other.shadowQuality,(y+other.shadowOffset2-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
 }
 
 with (objWindow) {
-draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset2-viewX)*other.shadowQuality,(y+other.shadowOffset2-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,1)
+draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset2-viewX)*other.shadowQuality,(y+other.shadowOffset2-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
 }
 
 with (objDoor) {
-draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset2-viewX)*other.shadowQuality,(y+other.shadowOffset2-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,1)
+draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset2-viewX)*other.shadowQuality,(y+other.shadowOffset2-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
 }
 
 with (objFurniture) {
-draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,1)
+draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
 }
 
 with (objECrawl) {
-draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,1)
+draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
 }
 
 with (objPlayerCar) {
-draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,1)
+draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
 }
 
 with (objBoss){
@@ -198,7 +207,11 @@ draw_sprite_ext(sprite_index,image_index,(x-viewX+other.shadowOffset1)*other.sha
 draw_sprite_ext(pose_index,image_index,(x-viewX+other.shadowOffset1)*other.shadowQuality,(y-viewY+other.shadowOffset1)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality*left,dir,c_black,1)
 }
 
-
+with (objPlayerMouseHouse){
+draw_sprite_ext(legsprite,legindex,(x-viewX+other.shadowOffset1)*other.shadowQuality,(y-viewY+other.shadowOffset1)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,legdir,c_black,1)
+draw_sprite_ext(sprite_index,image_index,(x-viewX+other.shadowOffset1)*other.shadowQuality,(y-viewY+other.shadowOffset1)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality*left,dir,c_black,1)
+draw_sprite_ext(pose_index,image_index,(x-viewX+other.shadowOffset1)*other.shadowQuality,(y-viewY+other.shadowOffset1)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality*left,dir,c_black,1)
+}
 
 d3d_set_fog(false,c_white,0,0);
 

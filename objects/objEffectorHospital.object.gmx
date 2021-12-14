@@ -110,12 +110,7 @@ if room=rmSequence1 or room=rmSequence2 or room=rmSequence3 or room=rmSequence4 
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_blend_mode(bm_subtract)
-draw_sprite_tiled(sprScanlines,0,x,my_y)
-my_y=random(32)
-draw_set_blend_mode(bm_normal)
-
-if instance_exists(objPlayer) {
+            <string>if instance_exists(objPlayer) {
 width=display_get_width()
 height=display_get_height()
 factor=1

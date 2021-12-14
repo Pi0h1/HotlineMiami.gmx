@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
+            <string>goddir=0
+image_speed=0
 currentweapon=0
 dir=0
 aimon=1
@@ -61,6 +62,54 @@ global.maskon=1
 
 sprite_index=sprPWalkUnarmed
 pose_index=sprPWalkUnarmed
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sprites
+headindex=0
+sprite_index=sprPWalkUnarmed
+pose_index=WalkPlayerUnarmed
+
+//Costume Vanilla
+legsprite=sprPWalkLegs
+
+//  Walk
+//      Guns
+WalkPlayerAim_index             =   WalkPlayerAim
+WalkPlayerGangster_index        =   WalkPlayerGangster
+WalkPlayerPPoint_index          =   WalkPlayerPPoint
+//      Melee
+WalkPlayerMelee_index           =   WalkPlayerMelee
+WalkPlayerMeleeShort_index      =   WalkPlayerMeleeShort
+WalkPlayerMeleeLarge_index      =   WalkPlayerMeleeLarge
+
+//  Attack
+//      Guns
+AttackPlayerAim_index           =   AttackPlayerAim
+AttackPlayerShotgun_index       =   AttackPlayerShotgun
+AttackPlayerPPoint_index        =   AttackPlayerPPoint
+//      Melee
+AttackPlayerMelee_index         =   AttackPlayerMelee
+AttackPlayerMeleeShort_index    =   AttackPlayerMeleeShort
+AttackPlayerKnife_index         =   AttackPlayerKnife
+
 </string>
           </argument>
         </arguments>
@@ -1153,8 +1202,6 @@ if aimon=1 {
 dir=point_direction(x,y,global.mousex,global.mousey)
 }
 if sprite_index=sprPUnlockDoor dir=90
-draw_sprite_ext(legsprite,legindex,x+1,y+1,image_xscale,image_yscale,legdir,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale*left,dir,c_black,0.5)
 draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
 if reload&gt;0 reload-=1
@@ -1165,12 +1212,19 @@ draw_sprite_ext(sprThrowWeapons,throwindex,x+lengthdir_x(throwadd[floor(image_in
 draw_sprite_ext(sprThrowWeapons,throwindex,x+lengthdir_x(throwadd[floor(image_index)],dir-180)+lengthdir_x(8,dir-90),y+lengthdir_y(throwadd[floor(image_index)],dir-180)+lengthdir_y(8,dir-90),image_xscale,image_yscale,dir+lengthdir_x(20,360*(image_index*(1/8))),image_blend,image_alpha)
 }
 //scrDrawMask(set yscale and direction)
+scrDrawPose()
+scrDrawHead(0)
 if maskon=1 scrDrawMask(0)
 if sprite_index=sprPThrowMask {
 if image_index&lt;3 scrDrawMask(0)
 if image_index&gt;=3 and image_index&lt;4 draw_sprite_ext(sprMaskDropBack,global.maskindex,x+lengthdir_x(4,dir),y+lengthdir_y(4,dir),1,1,dir,image_blend,image_alpha)
 if image_index&gt;=4 and image_index&lt;5 draw_sprite_ext(sprMaskDropBack,global.maskindex,x+lengthdir_x(6,dir),y+lengthdir_y(6,dir),1,1,dir,image_blend,image_alpha)
 if image_index&gt;=5 and image_index&lt;16 draw_sprite_ext(sprMaskDropBack,global.maskindex,x+lengthdir_x(7,dir),y+lengthdir_y(7,dir),1,1,dir,image_blend,image_alpha)
+}
+
+if global.godmode=1{
+draw_sprite_ext(sprHalo,headindex,x+maddx+0.5,y+maddy+0.5,image_xscale,image_yscale,dir,c_black,0.2)
+draw_sprite_ext(sprHalo,headindex,x+maddx,y+maddy,image_xscale,image_yscale,dir,image_blend,image_alpha)
 }
 </string>
           </argument>

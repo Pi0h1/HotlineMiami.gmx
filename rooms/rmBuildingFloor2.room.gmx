@@ -73,10 +73,10 @@
     <instance objName="objDrawerH24" x="404" y="312" name="inst_39157BE2" locked="0" code="image_yscale=-1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBigTable" x="548" y="116" name="inst_6B4C5DED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGlassTable" x="560" y="200" name="inst_644346AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTVBlack" x="560" y="200" name="inst_8F30A171" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTV" x="560" y="200" name="inst_8F30A171" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objComputer" x="548" y="116" name="inst_E5614B8A" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBigTable" x="128" y="84" name="inst_99D6E491" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTVBlack" x="128" y="84" name="inst_0857F659" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTV" x="128" y="84" name="inst_0857F659" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBigTable" x="136" y="172" name="inst_46DCE8F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDrawerH24" x="168" y="88" name="inst_D7F85B0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDrawerH24" x="196" y="88" name="inst_B87A988C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

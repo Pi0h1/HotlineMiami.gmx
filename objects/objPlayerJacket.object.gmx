@@ -126,61 +126,44 @@ instance_destroy()
           <argument>
             <kind>1</kind>
             <string>///Movement
-if sprite_index = sprPWalkBoilingPot 
-    {
+if sprite_index = sprPWalkBoilingPot {
     if round(random(5)) = 2 
     instance_create(x + lengthdir_x(11, dir - 33 * left), y + lengthdir_y(11, dir - 33 * left), objSteam)
     }
 
-if room = rmTrainstationDownstairs or room = rmPoliceHQFloor3 or instance_exists(objVan) or room = rmPhoneHomUpstairs
-    {
+if room = rmTrainstationDownstairs or room = rmPoliceHQFloor3 or instance_exists(objVan) or room = rmPhoneHomUpstairs{
     clear = 1
     }
 
-if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objECrawl)+instance_number(objMiscEnemy)+instance_number(objBoss)+instance_number(objEHideM16)+instance_number(objEBullet)=0 
-    {
+if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objECrawl)+instance_number(objMiscEnemy)+instance_number(objBoss)+instance_number(objEHideM16)+instance_number(objEBullet)=0 {
     test = 1
-    
-    if room=rmHotelEntrance 
-        {
-        if objFatmanEating.sprite_index=sprFatmanEating or objFatmanEating.sprite_index=sprFatmanEatingGiveUp or objFatmanTelephone.sprite_index=sprFatmanTelephone or objFatmanTelephone.sprite_index=sprFatmanTelephoneGiveUp 
-            {
+    if room=rmHotelEntrance {
+        if objFatmanEating.sprite_index=sprFatmanEating or objFatmanEating.sprite_index=sprFatmanEatingGiveUp or objFatmanTelephone.sprite_index=sprFatmanTelephone or objFatmanTelephone.sprite_index=sprFatmanTelephoneGiveUp {
             test = 0
             }
         }
-    if room = rmHotelSuite 
-        {
+    if room = rmHotelSuite {
         if objFatmanShit.sprite_index = sprFatmanShit or objFatmanShit.sprite_index = sprFatmanShitGiveUp  test = 0
         }
-    if test = 1 
-        {
-        if clear = 0 and global.done = 0 
-            {
+    if test = 1 {
+        if clear = 0 and global.done = 0 {
             clear = 1
             my_id = instance_create(x,y,objCheckpoint)
             my_id.text = "STAGE CLEAR"
             }
         }
     } else clear = 0
-
 aimfar = keyboard_check_direct(vk_shift)
- 
 global.test = 0
-
-with objWeapon 
-    {
-    if point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 32 
-        {
+with objWeapon {
+    if point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 32 {
         global.test = 2
         }
     }
-
 if place_meeting(x,y,objKnockedOut) global.test = 1
 objEffector.action = global.test
 if throwreload &gt; 0 throwreload -= 1
-
-if aimfar 
-    {
+if aimfar {
     if global.maskindex = 7 factor = 2 else factor = 1
     viewx = objPlayer.x + ((display_mouse_get_x() - display_get_width() * 0.5) * (view_wview[0]/display_get_width()))*factor
     viewy = objPlayer.y + ((display_mouse_get_y() - display_get_height() * 0.5) * (view_hview[0]/display_get_height()))*factor
@@ -191,8 +174,7 @@ if aimfar
     vdist=point_distance(x,y,room_width/2,room_height/2)
     vdir=point_direction(room_width/2,room_height/2,x,y)
     view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
-    } else 
-        {
+    } else {
         viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(24,dir),y+lengthdir_y(24,dir))*0.1
         viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(24,dir),y+lengthdir_y(24,dir))
         view_xview[0]+=lengthdir_x(viewspeed,viewdir)
@@ -201,21 +183,16 @@ if aimfar
         vdir=point_direction(room_width/2,room_height/2,x,y)
         view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
         }
-
 xview=view_xview[0]
 yview=view_yview[0]
-
-if persistent = 1 and objEffector.fade = 1 
-    {
+if persistent = 1 and objEffector.fade = 1 {
     if place_free(x + addx, y) x += addx
     if place_free(x, y + addy) y += addy
     if image_speed = 0 image_index += 0.15
     legindex += 0.4
     exit 
     }
-
 scrPlayerMove()
-
 if (sprite_index=sprPAttackKnife or sprite_index=sprPAttackBat or sprite_index=sprPAttackCrowbar or sprite_index=sprPAttackPan or sprite_index=sprPAttackPot or sprite_index=sprPAttackMachete or sprite_index=sprPAttackSledge or sprite_index=sprPAttackNightStick or sprite_index=sprPAttackPipe or sprite_index=sprPAttackClub or sprite_index=sprPAttackSword or sprite_index=sprPAttackAxe or sprite_index=sprPAttackPool or sprite_index=sprPAttackPoolBroke) or (global.maskindex=2 and sprite_index=sprPAttackUnarmed) {
 lastx=x
 lasty=y
@@ -244,13 +221,9 @@ global.shake=4
 instance_destroy()
 }
 }
-
 scrDestroyWindowV("Melee");
-
 x+=lengthdir_x(12,dir)
 y+=lengthdir_y(12,dir)
-
-
 with objEnemy {
 if place_meeting(x,y,objPlayer) or place_meeting(x+global.spacex,y+global.spacey,objPlayer) {
 mask_index=sprWeaponMask 
@@ -510,6 +483,7 @@ y=lasty
           <argument>
             <kind>1</kind>
             <string>///Collision with Bullet
+if global.godmode=1 exit
 global.shake=10
 with other {
 if place_meeting(x,y,objSolid) {
@@ -904,18 +878,15 @@ scrPlayerAttack();
           <argument>
             <kind>1</kind>
             <string>if persistent=1 {
-
-if move=1 {
-move=0
-x+=movex
-y+=movey
-xview+=movex
-yview+=movey
+    if move=1 {
+        move=0
+        x+=movex
+        y+=movey
+        xview+=movex
+        yview+=movey
+    }
 }
-
-//view_xview[0]=xview
-//view_yview[0]=yview
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -944,21 +915,14 @@ if !instance_exists(objEffector) instance_create(x,y,objEffector)
 if !instance_exists(objBackgroundColor) instance_create(x,y,objBackgroundColor)
 if !instance_exists(objSurfacer) instance_create(x,y,objSurfacer)
 if persistent=1 {
-/*if instance_exists(objElevator) {
-vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-view_xview[0]=x+lengthdir_x(vdist*0.2,vdir-180)-view_wview[0]*0.5
-view_yview[0]=y+lengthdir_y(vdist*0.2,vdir-180)-view_hview[0]*0.5
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
-} else {*/
 view_xview[0]=xview
 view_yview[0]=yview
 with objEffector {
 vlastx=view_xview[0]
 vlasty=view_yview[0]
 }
-//}
 alarm[0]=36
+alarm[1]=2000
 
 }
 else {
@@ -971,12 +935,8 @@ with objEffector {
 vlastx=view_xview[0]
 vlasty=view_yview[0]
 }
-/*
-viewx=objPlayer.x+(display_mouse_get_x()-display_get_width()*0.5)*(view_wview[0]/display_get_width())-view_wview[0]/2
-viewy=objPlayer.y+(display_mouse_get_y()-display_get_height()*0.5)*(view_hview[0]/display_get_height())-view_hview[0]/2
-view_xview[0]=viewx
-view_yview[0]=viewy*/
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -999,10 +959,11 @@ view_yview[0]=viewy*/
           <argument>
             <kind>1</kind>
             <string>if sprite_index=sprPTakePhone {
-if !instance_exists(objPhoneConversation) sprite_index=sprPWalkUnarmed else {
-if image_index&lt;3 image_index+=0.15
+    if !instance_exists(objPhoneConversation) sprite_index=sprPWalkUnarmed else {
+    if image_index&lt;3 image_index+=0.15
+    }
 }
-}
+
 if persistent=1 exit
 if sprite_index=last_sprite nothing=1 else {
 scrUpdateMaskPos(sprite_index)
@@ -1010,7 +971,12 @@ last_sprite=sprite_index
 }
 
 draw_set_blend_mode(bm_add)
-draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30+light*2),c_black,0)
+if light &gt; 3
+{
+draw_circle_color(x, y, 35 + light, make_color_hsv(40, 240, 30 + light * 2), c_black, 0)
+}else{
+draw_circle_color(x, y, 35 + light, make_color_hsv(0, 0, 30 + light * 2), c_black, 0)
+}
 draw_set_blend_mode(bm_normal)
 
 dir=point_direction(x,y,global.mousex,global.mousey)
@@ -1024,6 +990,11 @@ if light&gt;3 light-=3
 scrDrawPose()
 scrDrawHead(0)
 if maskon=1 scrDrawMask(0)
+
+if global.godmode=1{
+draw_sprite_ext(sprHalo,headindex,x+maddx+0.5,y+maddy+0.5,image_xscale,image_yscale,dir,c_black,0.2)
+draw_sprite_ext(sprHalo,headindex,x+maddx,y+maddy,image_xscale,image_yscale,dir,image_blend,image_alpha)
+}
 </string>
           </argument>
         </arguments>
@@ -1071,62 +1042,9 @@ scrKillShield();
           <argument>
             <kind>1</kind>
             <string>/// Crawling
+exit
 instance_destroy();
 instance_create(x,y,objPCrawl)
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="16">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Look Further
-aim=!aim
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Dev binds
-if global.devmode=0 exit
-
-if keyboard_check(ord("C")) {
-with objEnemy instance_destroy()
-}
-
-if keyboard_check(ord("Z"))  {
-ammo+=100
-}
 </string>
           </argument>
         </arguments>

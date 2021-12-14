@@ -101,7 +101,7 @@ global.done=0</code>
     <instance objName="objHospitalCouch" x="56" y="316" name="inst_A1FD173C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objHospitalCouch" x="132" y="316" name="inst_AB04F2B1" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="270"/>
     <instance objName="objGlassTable" x="80" y="360" name="inst_64210710" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="objTVBlack" x="80" y="356" name="inst_4FA788B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
+    <instance objName="objTV" x="80" y="356" name="inst_4FA788B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objWindowFrameV" x="0" y="320" name="inst_EDF6723D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowFrameV" x="0" y="416" name="inst_733D9CC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowFrameV" x="736" y="192" name="inst_302F55E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

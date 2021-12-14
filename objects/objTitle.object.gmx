@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrInitGlobals(); //Initiates the global variables used by the game.
+            <string>//scrInitGlobals(); //Initiates the global variables used by the game.
 wait = 0; //Used for general commands.
 coldir = 0; //Determinated variable used for switching colors.
 //Sets the default x,y coordinates for the menu.

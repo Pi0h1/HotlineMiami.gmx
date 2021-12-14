@@ -99,6 +99,7 @@
       <sprites name="Jacket">
         <sprite>sprites\Player_Jacket</sprite>
         <sprite>sprites\sprPlayerHead</sprite>
+        <sprite>sprites\sprHalo</sprite>
         <sprites name="Costumes">
           <sprites name="Vanilla">
             <sprites name="Legs">
@@ -131,23 +132,31 @@
               <sprite>sprites\sprPUnlockDoor</sprite>
               <sprite>sprites\sprPVomit</sprite>
             </sprites>
+            <sprite>sprites\AttackPlayerUnarmed</sprite>
             <sprite>sprites\AttackPlayerAim</sprite>
             <sprite>sprites\AttackPlayerGangster</sprite>
-            <sprite>sprites\AttackPlayerKnife</sprite>
-            <sprite>sprites\AttackPlayerMelee</sprite>
-            <sprite>sprites\AttackPlayerMeleeShort</sprite>
             <sprite>sprites\AttackPlayerPPoint</sprite>
-            <sprite>sprites\AttackPlayerUnarmed</sprite>
+            <sprite>sprites\AttackPlayerShotgun</sprite>
+            <sprite>sprites\AttackPlayerKnife</sprite>
+            <sprite>sprites\AttackPlayerMeleeShort</sprite>
+            <sprite>sprites\AttackPlayerMelee</sprite>
+            <sprite>sprites\AttackPlayerMeleeHeavy</sprite>
+            <sprite>sprites\AttackPlayerMeleeHeaviest</sprite>
+            <sprite>sprites\AttackPlayerGunSpecial</sprite>
+            <sprite>sprites\AttackPlayerGunDBShotgun</sprite>
+            <sprite>sprites\AttackPlayerHold</sprite>
+            <sprite>sprites\AttackPlayerThrow</sprite>
             <sprite>sprites\WalkPlayerAim</sprite>
             <sprite>sprites\WalkPlayerGangster</sprite>
             <sprite>sprites\WalkPlayerMelee</sprite>
-            <sprite>sprites\WalkPlayerMeleeShort</sprite>
             <sprite>sprites\WalkPlayerMeleeLarge</sprite>
+            <sprite>sprites\WalkPlayerMeleeShort</sprite>
             <sprite>sprites\WalkPlayerPPoint</sprite>
             <sprite>sprites\WalkPlayerUnarmed</sprite>
-            <sprite>sprites\AttackPlayerShotgun</sprite>
-            <sprite>sprites\sprPWalkLedge</sprite>
+            <sprite>sprites\WalkPlayerHold</sprite>
+            <sprite>sprites\WalkPlayerCarrying</sprite>
             <sprite>sprites\sprPCrawl</sprite>
+            <sprite>sprites\sprPWalkLedge</sprite>
           </sprites>
         </sprites>
         <sprites name="Walking">
@@ -188,8 +197,6 @@
         <sprites name="Attacking">
           <sprite>sprites\sprPAttackAxe</sprite>
           <sprite>sprites\sprPAttackBag</sprite>
-          <sprite>sprites\sprPAttackBash</sprite>
-          <sprite>sprites\sprPAttackBashPolice</sprite>
           <sprite>sprites\sprPAttackBat</sprite>
           <sprite>sprites\sprPAttackBoilingPot</sprite>
           <sprite>sprites\sprPAttackBossgun</sprite>
@@ -221,7 +228,6 @@
           <sprite>sprites\sprPAttackThrow</sprite>
           <sprite>sprites\sprPAttackTrophy</sprite>
           <sprite>sprites\sprPAttackUzi</sprite>
-          <sprite>sprites\sprPAxeKill</sprite>
         </sprites>
         <sprites name="Dead">
           <sprite>sprites\sprPBackBlunt</sprite>
@@ -257,6 +263,7 @@
           <sprite>sprites\sprPKillDrill</sprite>
           <sprite>sprites\sprPKillHammer</sprite>
           <sprite>sprites\sprPKillMachete</sprite>
+          <sprite>sprites\sprPAxeKill</sprite>
           <sprite>sprites\sprPKillPan</sprite>
           <sprite>sprites\sprPKillPot</sprite>
           <sprite>sprites\sprPKillSledgeHammer</sprite>
@@ -268,6 +275,8 @@
           <sprite>sprites\sprPNightStickKill</sprite>
           <sprite>sprites\sprPTrophyKill</sprite>
           <sprite>sprites\sprPSwordKill</sprite>
+          <sprite>sprites\sprPAttackBash</sprite>
+          <sprite>sprites\sprPAttackBashPolice</sprite>
         </sprites>
         <sprites name="Human shield">
           <sprites name="Walking">
@@ -1518,7 +1527,7 @@
       <sprite>sprites\sprTruckFence</sprite>
       <sprite>sprites\sprTub</sprite>
       <sprite>sprites\sprTurd</sprite>
-      <sprite>sprites\sprTVBlack</sprite>
+      <sprite>sprites\sprTV</sprite>
       <sprite>sprites\sprTVSet</sprite>
       <sprite>sprites\sprTVWallMounted</sprite>
       <sprite>sprites\sprTyre</sprite>
@@ -1704,7 +1713,6 @@
         <sprite>sprites\sprSpread</sprite>
         <sprite>sprites\sprWave</sprite>
         <sprite>sprites\sprScanlines</sprite>
-        <sprite>sprites\sprHLM1Scanlines</sprite>
         <sprite>sprites\sprMaskMenu</sprite>
         <sprite>sprites\sprBackgroundColor</sprite>
         <sprite>sprites\sprSurface</sprite>
@@ -1786,7 +1794,6 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scrInitGlobals.gml</script>
     <scripts name="Player">
       <scripts name="Walking">
         <script>scripts\scrDrawShadow.gml</script>
@@ -2019,8 +2026,7 @@
     <script>scripts\scrDrawWall.gml</script>
     <script>scripts\scrDrawHead.gml</script>
     <script>scripts\scrDrawPose.gml</script>
-    <script>scripts\scrDrawWeapons.gml</script>
-    <script>scripts\scrDrawWeapon.gml</script>
+    <script>scripts\scrPlayerPoses.gml</script>
     <script>scripts\scrInitWall.gml</script>
     <script>scripts\scrInitPathFinding.gml</script>
     <script>scripts\scrChasePlayer.gml</script>
@@ -2123,6 +2129,8 @@
     <script>scripts\scrDestroyWindowV.gml</script>
     <script>scripts\scrCreateShards.gml</script>
     <script>scripts\scrTestLevel.gml</script>
+    <script>scripts\scrSimpleShadow.gml</script>
+    <script>scripts\scrStartLevel.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>
@@ -2267,7 +2275,7 @@
           <object>objects\objNes</object>
           <object>objects\objVinylPlayer</object>
           <object>objects\objSpeaker</object>
-          <object>objects\objTVBlack</object>
+          <object>objects\objTV</object>
           <object>objects\objTigerCarpet</object>
           <object>objects\objFountain</object>
           <object>objects\objBigBed</object>
@@ -3174,6 +3182,7 @@
     <object>objects\objShadow</object>
     <object>objects\objShadowManager</object>
     <object>objects\objSurfaceManager</object>
+    <object>objects\objSurfaceChecker</object>
     <object>objects\objGoreSurface</object>
     <object>objects\obj_appsurf_dynamic</object>
     <object>objects\objNekoPresenceDemo</object>
@@ -3181,31 +3190,7 @@
     <object>objects\objPlaceCharacter</object>
   </objects>
   <rooms name="rooms">
-    <rooms name="Interface">
-      <rooms name="Splash">
-        <room>rooms\rmDevolver</room>
-        <room>rooms\rmDennatonSplash</room>
-      </rooms>
-      <room>rooms\rmMenu</room>
-      <room>rooms\rmLevelSelect</room>
-      <room>rooms\rmControls</room>
-      <room>rooms\rmPart</room>
-      <room>rooms\rmInterlude</room>
-      <room>rooms\rmPause</room>
-      <rooms name="Chapter Title">
-        <room>rooms\rmChapter</room>
-        <room>rooms\rmMCChapter</room>
-        <room>rooms\rmHospitalTitle</room>
-        <room>rooms\rmBandCredits</room>
-      </rooms>
-      <rooms name="Unlockables">
-        <room>rooms\rmScore</room>
-        <room>rooms\rmScoreDetails</room>
-        <room>rooms\rmUnlock</room>
-        <room>rooms\rmWeaponUnlock</room>
-        <room>rooms\rmNewWeapon</room>
-      </rooms>
-    </rooms>
+    <room>rooms\rmInit</room>
     <rooms name="Levels">
       <rooms name="Phonecalls">
         <rooms name="The Metro">
@@ -3250,6 +3235,7 @@
           <room>rooms\rmStore2</room>
         </rooms>
         <rooms name="Full House">
+          <room>rooms\rmTest</room>
           <room>rooms\rmSequence6</room>
           <room>rooms\rmSequence6Downstairs</room>
           <room>rooms\rmHouse2Downstairs</room>
@@ -3295,7 +3281,7 @@
           <room>rooms\rmSwatUpstairs</room>
           <room>rooms\rmPizzaHut3</room>
         </rooms>
-        <rooms name="Hot &amp; Heavy">
+        <rooms name="Hot&amp;Heavy">
           <room>rooms\rmSequence11</room>
           <room>rooms\rmSequence11Downstairs</room>
           <room>rooms\rmHouse4Left</room>
@@ -3350,7 +3336,7 @@
           <room>rooms\rmMCBar</room>
           <room>rooms\rmNoodleShop</room>
         </rooms>
-        <rooms name="Fun &amp; Games">
+        <rooms name="Fun&amp;Games">
           <room>rooms\rmMCSequence2</room>
           <room>rooms\rmMCSequence2Downstairs</room>
           <room>rooms\rmArcadeDownstairs</room>
@@ -3377,6 +3363,33 @@
         <rooms name="Exposed">
           <room>rooms\rmEurogamer</room>
         </rooms>
+      </rooms>
+    </rooms>
+    <rooms name="Interface">
+      <rooms name="Splash">
+        <room>rooms\rmSplashDevolver</room>
+        <room>rooms\rmSplashDennaton</room>
+      </rooms>
+      <rooms name="Titlecards">
+        <room>rooms\rmChapter</room>
+        <room>rooms\rmMCChapter</room>
+        <room>rooms\rmHospitalTitle</room>
+        <room>rooms\rmBandCredits</room>
+        <room>rooms\rmPart</room>
+        <room>rooms\rmInterlude</room>
+      </rooms>
+      <rooms name="Unlockables">
+        <room>rooms\rmScore</room>
+        <room>rooms\rmScoreDetails</room>
+        <room>rooms\rmUnlock</room>
+        <room>rooms\rmWeaponUnlock</room>
+        <room>rooms\rmNewWeapon</room>
+      </rooms>
+      <rooms name="Menus">
+        <room>rooms\rmMenu</room>
+        <room>rooms\rmLevelSelect</room>
+        <room>rooms\rmControls</room>
+        <room>rooms\rmPause</room>
       </rooms>
     </rooms>
   </rooms>

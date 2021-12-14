@@ -1,9 +1,28 @@
-scrDrawWeapons()
+scrPlayerPoses()
 //shadows were here
 
 draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
 draw_sprite_ext(pose_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
+
+if global.godmode=1{
+d3d_set_fog(true,c_aqua,0,1)
+draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,c_black,0.2)
+d3d_set_fog(0,0,0,0)
+
+d3d_set_fog(true,c_white,0,0)
+draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,c_black,0.1+lengthdir_x(0.1,goddir))
+d3d_set_fog(0,0,0,0)
+
+d3d_set_fog(true,c_aqua,0,1)
+draw_sprite_ext(pose_index,image_index,x,y,image_xscale,(image_yscale)*left,dir,c_black,0.2)
+d3d_set_fog(0,0,0,0)
+
+d3d_set_fog(true,c_white,0,0)
+draw_sprite_ext(pose_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,0.1+lengthdir_x(0.1,goddir))
+d3d_set_fog(0,0,0,0)
+}
+goddir+=4
 
 if sprite_index=sprPWalkThrow {
 left=1

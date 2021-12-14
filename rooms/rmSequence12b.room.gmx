@@ -96,7 +96,7 @@ global.revisit=0</code>
     <instance objName="objNightStand" x="560" y="424" name="inst_BA4E1CAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLamps" x="564" y="424" name="inst_B0CC2DCA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPhoneTable" x="212" y="232" name="inst_1CBB5851" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTVBlack" x="204" y="230" name="inst_3E08588F" locked="0" code="image_angle=-90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTV" x="204" y="230" name="inst_3E08588F" locked="0" code="image_angle=-90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objNes" x="224" y="232" name="inst_A7F9C1D6" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShell" x="324" y="306" name="inst_184FB1D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShell" x="344" y="306" name="inst_536A40ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

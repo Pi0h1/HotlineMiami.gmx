@@ -1,5 +1,7 @@
 //  Initializes player.
 //  ANY player.
+armlength=0
+goddir=0
 active=1
 headindex=0
 weaponx=0

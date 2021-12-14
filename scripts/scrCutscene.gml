@@ -1,8 +1,3 @@
-draw_set_blend_mode(bm_subtract)
-draw_sprite_tiled(sprScanlines,0,x,my_y)
-my_y=random(32)
-draw_set_blend_mode(bm_normal)
-
 if instance_exists(objPlayer) {
 width=display_get_width()
 height=display_get_height()

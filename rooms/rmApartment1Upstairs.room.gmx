@@ -98,7 +98,7 @@
     <instance objName="objJackets" x="504" y="192" name="inst_0797CA9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShirts" x="496" y="176" name="inst_759B812A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBigTable" x="404" y="272" name="inst_2D7ECEAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="objTVBlack" x="408" y="272" name="inst_1C6CDA4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTV" x="408" y="272" name="inst_1C6CDA4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objNes" x="404" y="308" name="inst_8B4BF985" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVinylPlayer" x="88" y="432" name="inst_2CC53A20" locked="0" code="image_angle=random(360)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVinylRecord" x="84" y="404" name="inst_2CA8C356" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

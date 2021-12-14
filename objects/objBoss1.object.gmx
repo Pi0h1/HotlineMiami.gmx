@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
+            <string>angle=0
+image_speed=0
 image_index=random(1000)
 energie=2
 scrInitPathFinding()

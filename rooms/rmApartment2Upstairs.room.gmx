@@ -123,7 +123,7 @@
     <instance objName="objSpeaker" x="346" y="360" name="inst_FCE92622" locked="0" code="image_angle=-10+random(20)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpeaker" x="312" y="364" name="inst_66BA8F84" locked="0" code="image_angle=-10+random(20)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVinylPlayer" x="328" y="366" name="inst_802F174D" locked="0" code="image_angle=-10+random(20)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTVBlack" x="376" y="436" name="inst_A41214B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTV" x="376" y="436" name="inst_A41214B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFridge" x="404" y="52" name="inst_38711FB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objKitchenSink" x="376" y="56" name="inst_F8B8B73C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objKitchenSink" x="144" y="212" name="inst_E361583D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

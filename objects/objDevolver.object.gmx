@@ -102,7 +102,7 @@ draw_set_blend_mode(bm_normal)
 
 if fade=1 {
 if amount&gt;0 amount-=10 else {
-room_goto_next()
+room_goto(rmSplashDennaton)
 }
 color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,amount)),0.5+lengthdir_x(0.5,amount))
 if amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,amount))),abs(lengthdir_y(1,amount))) else color2=c_white

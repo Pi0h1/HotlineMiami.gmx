@@ -68,8 +68,3 @@ draw_text_transformed_colour(
     view_wview[0] - 18 - string_width(scorestring) * 0.5 + lengthdir_x(1, dir - 180), 20 + lengthdir_y(1, dir - 180), scorestring, 1, 1, lengthdir_x(2, dir * 1.34 - 10),
     color2,color2,color2,color2,1
 )
-
-if global.devmode=1 {
-  scrDevTxt(32,16,"Developer mode on")
-  scrDevTxt(32,32,string(fps)+"fps") 
-}

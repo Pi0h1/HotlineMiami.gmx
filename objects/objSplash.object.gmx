@@ -42,6 +42,8 @@ factor4=0
 alpha=1
 wait=50
 wait2=20
+
+nextRoom=rmMenu
 </string>
           </argument>
         </arguments>
@@ -164,7 +166,7 @@ draw_sprite_tiled(sprNoise,index2*2.5,0,0)
 draw_set_color(c_black)
 draw_rectangle(-1,-1,view_wview[0]+1,7.5,0)
 draw_rectangle(-1,view_hview[0]+1,view_wview[0]+1,view_hview[0]-7.5,0)
-if wait2&gt;0 wait2-=1 else {audio_stop_sound(sndNoise) room_goto_next()}
+if wait2&gt;0 wait2-=1 else {audio_stop_sound(sndNoise) room_goto(nextRoom)}
 }
 }
 
@@ -172,8 +174,6 @@ if wait2&gt;0 wait2-=1 else {audio_stop_sound(sndNoise) room_goto_next()}
 
 d3d_set_projection_ortho(0,0,view_wview[0]*2,view_hview[0]*2,0)
 draw_set_blend_mode(bm_subtract)
-my_y=random(32)
-draw_sprite_tiled(sprScanlines,0,0,my_y)
 draw_circle_color(view_wview[0],view_hview[0],240+random(24)+24,c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
 draw_set_blend_mode(bm_normal)
 </string>

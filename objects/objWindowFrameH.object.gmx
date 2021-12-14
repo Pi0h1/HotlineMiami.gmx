@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if y&gt;room_height/2 sprite_index=sprWindowDown
+            <string>angle=image_angle
+if y&gt;room_height/2 sprite_index=sprWindowDown
 image_speed=0
 image_index=0
 </string>

@@ -92,7 +92,7 @@
     <instance objName="objLamps" x="276" y="148" name="inst_69BCAD4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLamps" x="208" y="308" name="inst_050C91BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLeatherCouch" x="496" y="416" name="inst_46D38B89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTVBlack" x="564" y="416" name="inst_1C3CAE73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTV" x="564" y="416" name="inst_1C3CAE73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpeaker" x="564" y="396" name="inst_7E166DFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="objSpeaker" x="564" y="436" name="inst_8CCDA92A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="objNightStand" x="176" y="144" name="inst_E6F67066" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

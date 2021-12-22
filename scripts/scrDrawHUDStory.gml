@@ -46,7 +46,7 @@ maxammo=32
 if showammo=1 ammostring=string(objPlayer.ammo)+"/"+string(maxammo)+"rnds" else ammostring="NO GUN!"
 if instance_exists(objPlayerBiker) or instance_exists(objPlayerBikerHouse) {
 if room=rmHideout or room=rmJanitors nothing=1 else {
-if objPlayer.ammo>0 and (instance_exists(objEnemy) or instance_exists(objECrawl) or instance_exists(objBoss) or instance_exists(objKnockedOut)) {showammo=1 ammostring=string(objPlayer.ammo)+" KNIVES"} else {ammostring="NO KNIVES!" showammo=0}
+if objPlayer.ammo>0 and (instance_exists(objEnemy) or instance_exists(objEnemyCrawl) or instance_exists(objBoss) or instance_exists(objKnockedOut)) {showammo=1 ammostring=string(objPlayer.ammo)+" KNIVES"} else {ammostring="NO KNIVES!" showammo=0}
 }
 }
 }

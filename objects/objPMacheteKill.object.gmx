@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objPlayer</parentName>
+  <parentName>objExecution</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -29,7 +29,9 @@
 bled=0
 scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
-ammo=0</string>
+ammo=0
+enemy=sprPKillMachete
+</string>
           </argument>
         </arguments>
       </action>

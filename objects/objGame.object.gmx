@@ -132,6 +132,7 @@ global.done=0
 global.title="TEST"
 global.maskindex=0
 global.maskon=0
+global.depthDeath=0
 </string>
           </argument>
         </arguments>
@@ -294,7 +295,8 @@ if keyboard_check_pressed(ord("E"))  {
 }
 
 if keyboard_check_pressed(ord("Q"))  {
-instance_create(objEffector.x,objEffector.y,objWeapon);
+my_id=instance_create(objEffector.x,objEffector.y,objEnemyCrawl);
+my_id.image_angle=random(360)
 }
 
 if keyboard_check_pressed(ord("G"))  {
@@ -336,7 +338,9 @@ if (global.devmode == true) {
   +"#"+
   "SHIFT + E = TELEPORT"
   +"#"+
-  "[G]od Mode = "+string(global.godmode)
+  "SHIFT + Q = SPAWN WEAPON"
+  +"#"+
+  "[G]OD MODE = "+string(global.godmode)
   
   )
 }

@@ -26,8 +26,37 @@
           <argument>
             <kind>1</kind>
             <string>image_speed=0
-sprite_index=choose(sprPlant1,sprPlant2)
-image_angle=random(360)</string>
+image_index1=floor(random(2))
+image_index2=floor(random(2))
+image_angle1=random(360)
+image_angle2=random(360)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_sprite_ext(sprite_index,image_index1,x+1,y+1,image_xscale,image_yscale,image_angle1-lengthdir_x(0.5,global.dir*4) ,c_black,0.5)
+draw_sprite_ext(sprite_index,image_index1,x,y,image_xscale,image_yscale,image_angle1-lengthdir_x(0.5,global.dir*4),image_blend,image_alpha)
+draw_sprite_ext(sprite_index,image_index2,x-1,y-1,image_xscale,image_yscale,image_angle2+lengthdir_x(1,global.dir*1),c_black,0.5)
+draw_sprite_ext(sprite_index,image_index2,x,y,image_xscale,image_yscale,image_angle2+lengthdir_x(1,global.dir*1),image_blend,image_alpha)
+</string>
           </argument>
         </arguments>
       </action>

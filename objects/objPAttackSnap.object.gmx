@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objPlayer</parentName>
+  <parentName>objExecution</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,7 +31,9 @@ ammo=0
 bled=0
 scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
-bag=0</string>
+bag=0
+enemy=sprEMafiaDieNeckBreak
+</string>
           </argument>
         </arguments>
       </action>
@@ -67,10 +69,10 @@ global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
 ds_list_add(global.bonuslist,"Mercy Kill")
-my_id=instance_create(myx,myy,objBloodPool)
+//my_id=instance_create(myx,myy,objBloodPool)
 my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprEFrontSnap//Snapped
-my_id.image_index=random(4)
+my_id.sprite_index=sprEMafiaDieNeckBreak//Snapped
+my_id.image_index=12
 my_id.image_angle=image_angle
 global.angle=image_angle-180
 my_id=instance_create(x,y,objPlayerJacket)
@@ -138,10 +140,13 @@ view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
             <string>draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6),make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
+
 dir=point_direction(x,y,mouse_x,mouse_y)
+
+draw_sprite_ext(enemy,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-if maskon=1 scrDrawMask(1)</string>
+if maskon=1 scrDrawMask(1)
+</string>
           </argument>
         </arguments>
       </action>

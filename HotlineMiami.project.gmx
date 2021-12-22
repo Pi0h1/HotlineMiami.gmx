@@ -172,7 +172,6 @@
           <sprite>sprites\sprPWalkGirlfriend</sprite>
           <sprite>sprites\sprPWalkKnife</sprite>
           <sprite>sprites\wpnWalkM16</sprite>
-          <sprite>sprites\sprPWalkM16Top</sprite>
           <sprite>sprites\sprPWalkMachete</sprite>
           <sprite>sprites\sprPWalkMagnum</sprite>
           <sprite>sprites\sprPWalkMP5</sprite>
@@ -225,6 +224,7 @@
           <sprite>sprites\sprPAttackSword</sprite>
           <sprite>sprites\sprPAttackTaser</sprite>
           <sprite>sprites\sprPAttackThroat</sprite>
+          <sprite>sprites\sprEMafiaDieThroat</sprite>
           <sprite>sprites\sprPAttackThrow</sprite>
           <sprite>sprites\sprPAttackTrophy</sprite>
           <sprite>sprites\sprPAttackUzi</sprite>
@@ -491,6 +491,9 @@
             <sprite>sprites\sprEAttackShotgun</sprite>
           </sprites>
           <sprites name="Dead">
+            <sprite>sprites\sprEMafiaDieNeckBreak</sprite>
+            <sprite>sprites\sprEMafiaDieLean</sprite>
+            <sprite>sprites\sprEMafiaDieKnife</sprite>
             <sprite>sprites\sprEAxeKill</sprite>
             <sprite>sprites\sprEBackBashed</sprite>
             <sprite>sprites\sprEBackBlunt</sprite>
@@ -500,7 +503,6 @@
             <sprite>sprites\sprEBackHeadbutt</sprite>
             <sprite>sprites\sprEBackHeadJerk</sprite>
             <sprite>sprites\sprEBackHeadshot</sprite>
-            <sprite>sprites\sprEBackKicked</sprite>
             <sprite>sprites\sprEBackMachinegun</sprite>
             <sprite>sprites\sprEBackScissor</sprite>
             <sprite>sprites\sprEBackShieldSnap</sprite>
@@ -2128,8 +2130,6 @@
     <script>scripts\scrDrawSpriteAsVertex.gml</script>
     <script>scripts\scrDestroyWindowV.gml</script>
     <script>scripts\scrCreateShards.gml</script>
-    <script>scripts\scrTestLevel.gml</script>
-    <script>scripts\scrSimpleShadow.gml</script>
     <script>scripts\scrStartLevel.gml</script>
   </scripts>
   <fonts name="fonts">
@@ -2159,6 +2159,7 @@
     <font>fonts\fntWarning</font>
   </fonts>
   <objects name="objects">
+    <object>objects\objExecution</object>
     <objects name="Environment">
       <objects name="Walls">
         <objects name="Interior">
@@ -2211,6 +2212,7 @@
       </objects>
       <objects name="Furniture">
         <object>objects\objFurniture</object>
+        <object>objects\objTableParent</object>
         <objects name="Bathroom">
           <object>objects\objTub</object>
           <object>objects\objSink</object>
@@ -2247,8 +2249,8 @@
             <object>objects\objPelletsCorner</object>
             <object>objects\objPelletsSide</object>
             <object>objects\objPellets</object>
-            <object>objects\objPelletPlant</object>
             <object>objects\objPlant</object>
+            <object>objects\objPelletPlant</object>
             <object>objects\objHospitalPlant</object>
           </objects>
           <objects name="Trash">
@@ -2924,7 +2926,7 @@
         <object>objects\objKnockedOut</object>
         <object>objects\objDeadBody</object>
         <object>objects\objBodyPart</object>
-        <object>objects\objECrawl</object>
+        <object>objects\objEnemyCrawl</object>
         <object>objects\objDogBite</object>
         <objects name="Old">
           <object>objects\objEnemyOld</object>
@@ -3091,6 +3093,8 @@
         <object>objects\objWave</object>
         <object>objects\objCredits</object>
         <object>objects\objSpread</object>
+        <object>objects\objScanlines</object>
+        <object>objects\objSunSparkle</object>
       </objects>
       <objects name="Lighting">
         <object>objects\objLightingEngine</object>
@@ -3143,11 +3147,10 @@
         <object>objects\objClip</object>
         <object>objects\objDriveSmoke</object>
         <object>objects\objBrokenBottle</object>
+        <object>objects\objShadowH</object>
+        <object>objects\objShadowV</object>
       </objects>
-      <object>objects\sxms</object>
       <object>objects\objPathTest</object>
-      <object>objects\objShadowH</object>
-      <object>objects\objShadowV</object>
       <object>objects\objShootThrough</object>
       <object>objects\objPhoneConversation</object>
       <object>objects\objSurfaceReturn</object>
@@ -3169,25 +3172,23 @@
       <object>objects\objTutorialLight</object>
       <object>objects\objGoToCar</object>
       <object>objects\objScoreDetails</object>
-      <object>objects\objSunSparkle</object>
       <object>objects\objDateRewind</object>
       <object>objects\objFinalDialogue</object>
       <object>objects\objFinalDialogue2</object>
       <object>objects\objAlienWare</object>
       <object>objects\objFocus</object>
-      <object>objects\objScanlines</object>
+      <object>objects\objPlaceCharacter</object>
     </objects>
-    <object>objects\objTableParent</object>
+    <objects name="Managers">
+      <object>objects\objGame</object>
+      <object>objects\objShadow</object>
+      <object>objects\objShadowManager</object>
+      <object>objects\objSurfaceManager</object>
+      <object>objects\objSurfaceChecker</object>
+      <object>objects\objGoreSurface</object>
+      <object>objects\obj_appsurf_dynamic</object>
+    </objects>
     <object>objects\objSpawnpoint</object>
-    <object>objects\objShadow</object>
-    <object>objects\objShadowManager</object>
-    <object>objects\objSurfaceManager</object>
-    <object>objects\objSurfaceChecker</object>
-    <object>objects\objGoreSurface</object>
-    <object>objects\obj_appsurf_dynamic</object>
-    <object>objects\objNekoPresenceDemo</object>
-    <object>objects\objGame</object>
-    <object>objects\objPlaceCharacter</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmInit</room>

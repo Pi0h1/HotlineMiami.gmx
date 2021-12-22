@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objPlayer</parentName>
+  <parentName>objExecution</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -32,6 +32,7 @@ image_speed=0
 ammo=0
 scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
+enemy=sprPAttackBash
 </string>
           </argument>
         </arguments>

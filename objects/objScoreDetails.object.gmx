@@ -166,7 +166,7 @@ ii=0
 repeat (times) {
 draw_set_color(merge_color(merge_color(c_white,c_aqua,0.5+lengthdir_x(0.5,cdir+i*20)),c_teal,0.5+lengthdir_x(0.5,cdir+i*30)))
 mystring=ds_list_find_value(global.bonuslist,i)
-draw_text(floor((350-string_width(mystring)*0.5+lengthdir_x(3,cdir+i*40))/400)*room_width,190-ii*(12),mystring)
+draw_text(floor(((350-string_width(mystring)*0.5+lengthdir_x(3,cdir+i*40))/400)*room_width),190-ii*(12),mystring)
 i-=1
 ii+=1
 }
@@ -177,7 +177,7 @@ i=0
 draw_set_font(fntChapter)
 repeat (times) {
 draw_set_color(merge_color(merge_color(c_olive,c_orange,0.5+lengthdir_x(0.5,cdir*3)),merge_color(c_yellow,c_white,0.75+lengthdir_x(0.25,cdir*2)),1*(times/20)))
-draw_text_transformed(floor((350*0.325)/400)*room_width-string_width(mystring),210+i*0.1,mystring,0.65+i*0.005,1+i*0.025,0)
+draw_text_transformed(floor(((350-string_width(mystring)*0.325)/400)*room_width),210+i*0.1,mystring,0.65+i*0.005,1+i*0.025,0)
 i+=1
 }
 } else {
@@ -185,7 +185,7 @@ if gradex&lt;280 gradex+=10 else {if gradeon=0 {gradeon=1 if grade="A+" SteamSet
 draw_set_font(fntGrading)
 mystring="GRADE:"
 draw_set_color(merge_color(c_yellow,c_white,0.5+lengthdir_x(0.5,cdir*3)))
-draw_text_transformed((gradex-string_width(mystring)*0.5/400)*room_width,215,mystring,1,1,0)
+draw_text_transformed(floor(((gradex-string_width(mystring)*0.5)/400)*room_width),215,mystring,1,1,0)
 if gradeon=1 {
 draw_set_font(fntGrade)
 amount=-1+lengthdir_x(2,cdir)

@@ -152,11 +152,16 @@ with (objFurniture) {
 draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
 }
 
-with (objECrawl) {
+with (objEnemyCrawl) {
 draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
 }
 
 with (objPlayerCar) {
+draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
+}
+
+with (objExecution) {
+draw_sprite_ext(enemy,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
 draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
 }
 

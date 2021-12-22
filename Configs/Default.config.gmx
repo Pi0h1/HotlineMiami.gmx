@@ -495,7 +495,12 @@
     <option_textureGroup7_parent>&lt;none&gt;</option_textureGroup7_parent>
     <option_textureGroup7_scaled>0</option_textureGroup7_scaled>
     <option_textureGroup7_targets>9223372036854775807</option_textureGroup7_targets>
-    <option_textureGroup_count>8</option_textureGroup_count>
+    <option_textureGroup8_border>2</option_textureGroup8_border>
+    <option_textureGroup8_nocropping>0</option_textureGroup8_nocropping>
+    <option_textureGroup8_parent>&lt;none&gt;</option_textureGroup8_parent>
+    <option_textureGroup8_scaled>0</option_textureGroup8_scaled>
+    <option_textureGroup8_targets>9223372036854775807</option_textureGroup8_targets>
+    <option_textureGroup_count>9</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Player</option_textureGroups1>
     <option_textureGroups2>NPCs</option_textureGroups2>
@@ -504,6 +509,7 @@
     <option_textureGroups5>Fonts</option_textureGroups5>
     <option_textureGroups6>Walls</option_textureGroups6>
     <option_textureGroups7>UI</option_textureGroups7>
+    <option_textureGroups8>Weapons</option_textureGroups8>
     <option_tizen_app_id>http://yourdomain/HotlineMiamiStudio</option_tizen_app_id>
     <option_tizen_build_version>0</option_tizen_build_version>
     <option_tizen_display_name>HotlineMiamiStudio</option_tizen_display_name>
@@ -543,7 +549,7 @@
     <option_version_build>0</option_version_build>
     <option_version_company>Dennaton Games</option_version_company>
     <option_version_copyright>Dennaton Games</option_version_copyright>
-    <option_version_description>Studio Port by Pi0h1.com</option_version_description>
+    <option_version_description>Hotline Miami (Pi0h1.com)</option_version_description>
     <option_version_major>1</option_version_major>
     <option_version_minor>0</option_version_minor>
     <option_version_product>Hotline Miami</option_version_product>
@@ -624,7 +630,7 @@
     <option_windows_company_info>Dennaton Games</option_windows_company_info>
     <option_windows_copyright_info>Dennaton Games</option_windows_copyright_info>
     <option_windows_create_textures_on_demand>False</option_windows_create_textures_on_demand>
-    <option_windows_description_info>Studio Port by Pi0h1.com</option_windows_description_info>
+    <option_windows_description_info>Hotline Miami (Pi0h1.com)</option_windows_description_info>
     <option_windows_enable_steam>0</option_windows_enable_steam>
     <option_windows_game_icon>Configs\Default\windows\runner_icon.ico</option_windows_game_icon>
     <option_windows_license>Configs\Default\windows\License.txt</option_windows_license>

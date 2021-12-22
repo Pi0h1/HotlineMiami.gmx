@@ -49,7 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>if room=rmTrainstationDownstairs or room=rmPoliceHQFloor3 or instance_exists(objVan) clear=1
-if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objECrawl)+instance_number(objMiscEnemy)+instance_number(objBoss)=0 {
+if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objEnemyCrawl)+instance_number(objMiscEnemy)+instance_number(objBoss)=0 {
 test=1
 if test=1 {
 if clear=0 and global.done=0 {

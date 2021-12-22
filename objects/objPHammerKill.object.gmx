@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objPlayer</parentName>
+  <parentName>objExecution</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,7 +31,9 @@ hurtindex=0
 targetindex=0
 scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
-ammo=0</string>
+ammo=0
+enemy=sprPKillHammer
+</string>
           </argument>
         </arguments>
       </action>

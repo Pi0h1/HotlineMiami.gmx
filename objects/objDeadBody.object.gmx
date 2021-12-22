@@ -3,7 +3,7 @@
   <spriteName>sprEBackBlunt</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>2</depth>
+  <depth>100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,15 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
+            <string>global.depthDeath+=1
+image_speed=0
 friction=0.1
-image_yscale=-1+round(random(1))*2
+//image_yscale=-1+round(random(1))*2
 bled=0
 wait=500
 life=100+random(60)
 SteamIncStat("Kills",1)
 done=0
 donetimer=60*10
+depth=depth-global.depthDeath
 </string>
           </argument>
         </arguments>
@@ -181,7 +183,7 @@ if sprite_index=sprEBackShotgun or sprite_index=sprPoliceBackShotgun or sprite_i
 if sprite_index=sprEBackMachinegun or sprite_index=sprWaiterDeadShotgun or sprite_index=sprWaiterDeadMachinegun or sprite_index=sprPoliceBackMachinegun or sprite_index=sprEFrontMachinegun or sprite_index=sprPoliceFrontMachinegun repeat(2+random(2)) instance_create(x+lengthdir_x(length,image_angle)-2+random(4),y+lengthdir_y(length,image_angle)-2+random(4),objBloodPool)
 if sprite_index=sprDogDeadCut or sprite_index=sprDogDeadShot or sprite_index=sprDogDeadBlunt repeat (1+random(2)) instance_create(x+lengthdir_x(2,image_angle)-2+random(4),y+lengthdir_y(2,image_angle),objBloodPool)
 
-if sprite_index=sprEBackKicked {
+if sprite_index=sprEMafiaDieLean {
 repeat (2+random(3)) {
 dir=image_angle
 my_id=instance_create(x,y,objBloodSquirt)

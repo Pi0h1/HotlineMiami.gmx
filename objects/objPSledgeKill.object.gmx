@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objPlayer</parentName>
+  <parentName>objExecution</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,7 +31,9 @@ hurtindex=0
 targetindex=0
 scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
-ammo=0</string>
+ammo=0
+enemy=sprEHeadStomp
+</string>
           </argument>
         </arguments>
       </action>
@@ -120,8 +122,8 @@ my_id.image_angle=my_id.direction
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprEHeadStomp,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprEHeadStomp,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+            <string>draw_sprite_ext(enemy,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
+draw_sprite_ext(enemy,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 scrDrawMask(1)

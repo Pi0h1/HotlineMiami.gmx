@@ -67,9 +67,10 @@ if image_index=0 {
 if reload&gt;0 {reload-=1 exit}
 shake=1
 reload=2
-my_id=instance_create(x+lengthdir_x(24,direction),y+lengthdir_y(24,direction),objEBullet)
-my_id.direction=direction-4+random(8)
-my_id.speed=16
+my_id=instance_create(x+lengthdir_x(8,direction),y+lengthdir_y(8,direction),objEBullet)
+my_id.direction=direction-10+random(20)
+my_id.image_angle=my_id.direction
+my_id.speed=10+random(5)
 PlaySFX(sndEM16)
 }
 </string>
@@ -276,14 +277,15 @@ instance_destroy()
           <argument>
             <kind>1</kind>
             <string>if image_index=0 {
-draw_sprite_ext(sprEM16CourchingLegs,image_index,x,y,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprEM16CourchingLegs,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+//draw_sprite_ext(sprEM16CourchingLegs,image_index,x,y,image_xscale,image_yscale,direction,c_black,0.5)
+//draw_sprite_ext(sprEM16CourchingLegs,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
 draw_sprite_ext(sprEWalkM16,image_index,x-shake+random(shake*0.5),y-shake+random(shake*0.5),image_xscale,image_yscale,direction,c_black,0.5)
 draw_sprite_ext(sprEWalkM16,image_index,x-shake+random(shake*0.5),y-shake+random(shake*0.5),image_xscale,image_yscale,direction,image_blend,image_alpha)
 } else {
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

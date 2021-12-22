@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objPlayer</parentName>
+  <parentName>objExecution</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -33,6 +33,7 @@ scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
 ammo=0
 PlaySFX(sndDrill)
+enemy=sprPKillDrill
 </string>
           </argument>
         </arguments>

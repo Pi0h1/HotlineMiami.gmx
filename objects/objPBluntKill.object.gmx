@@ -72,7 +72,7 @@ my_id.maskon=global.maskon
 my_id.maskindex=global.maskindex
 my_id=instance_create(x+lengthdir_x(11,image_angle),y+lengthdir_y(11,image_angle),objBloodPool)
 my_id=instance_create(x,y,objDeadBody)
-if bottom=sprEBluntKill my_id.sprite_index=sprEBluntKill else my_id.sprite_index=sprPoliceBluntKill
+if enemy=sprEBluntKill my_id.sprite_index=sprEBluntKill else my_id.sprite_index=sprPoliceBluntKill
 my_id.image_index=11
 my_id.image_angle=image_angle
 

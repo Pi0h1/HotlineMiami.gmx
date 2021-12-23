@@ -1785,6 +1785,8 @@
     </sprites>
     <sprite>sprites\sprSpawnPoint</sprite>
     <sprite>sprites\sprGlassSurface</sprite>
+    <sprite>sprites\sprMissing</sprite>
+    <sprite>sprites\sprEraser</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tlFloorTiles</background>
@@ -2159,57 +2161,44 @@
     <font>fonts\fntWarning</font>
   </fonts>
   <objects name="objects">
-    <object>objects\objExecution</object>
-    <objects name="Environment">
-      <objects name="Walls">
-        <objects name="Interior">
-          <object>objects\objWallHeavyV</object>
-          <object>objects\objWallDoor</object>
-          <object>objects\objWallSoft</object>
-          <object>objects\objWallInvisble</object>
-          <object>objects\objSewerWallV</object>
-          <object>objects\objRailV</object>
-          <object>objects\objBalconyV</object>
-          <object>objects\objCementWallV</object>
-          <object>objects\objCellWallV</object>
-          <object>objects\objWoodWallInteriorV</object>
-          <object>objects\objSubwayWallV</object>
-          <object>objects\objSubwayWindowV</object>
-          <object>objects\objPorchWallV</object>
-          <object>objects\objWallShadow</object>
-          <object>objects\objWoodFenceV</object>
-          <object>objects\objWindowV</object>
-          <object>objects\objWindowH</object>
+    <objects name="Items">
+      <object>objects\objWeapon</object>
+      <object>objects\objSpecificWeapon</object>
+      <object>objects\objWeaponThrow</object>
+      <object>objects\objThrowingWeapon</object>
+      <object>objects\objBullet</object>
+      <object>objects\objEBullet</object>
+      <objects name="Other">
+        <objects name="Interactable">
+          <object>objects\objBox</object>
+          <object>objects\objOpenedBox</object>
+          <object>objects\objDumpster</object>
+          <object>objects\objInvestigationFileSpread</object>
+          <object>objects\objPlayerForm</object>
+          <object>objects\objMCForm</object>
+          <object>objects\objBedClip</object>
+          <object>objects\objKitchenShelfClip</object>
+          <object>objects\objLivingRoomClip1</object>
+          <object>objects\objLivingRoomClip2</object>
+          <object>objects\objTableClip</object>
+          <object>objects\objKitchenCounterClip1</object>
+          <object>objects\objKitchenCounterClip3</object>
+          <object>objects\objKitchenCounterClip2</object>
         </objects>
-        <objects name="Exterior">
-          <object>objects\objWallBrickV</object>
-          <object>objects\objWallHospitalV</object>
-          <object>objects\objWoodWallV</object>
-          <object>objects\objBunkerWallV</object>
-          <object>objects\objFenceV</object>
-          <object>objects\objFenceBroken</object>
-          <object>objects\objWindowFrameV</object>
-          <object>objects\objWindowFrameH</object>
-          <object>objects\objWindowLargeV</object>
-          <object>objects\objWindowLargeH</object>
-        </objects>
-        <objects name="Doors">
-          <object>objects\objDoor</object>
-          <object>objects\objDoorV</object>
-          <object>objects\objDoorH</object>
-          <object>objects\objDoorV2</object>
-          <object>objects\objDoorH2</object>
-          <object>objects\objHospitalEntranceDoors</object>
-        </objects>
-        <object>objects\objVertBarrier</object>
-        <object>objects\objHorBarrier</object>
-        <object>objects\objGlassPanelVBroken</object>
-        <object>objects\objGlassPanelHBroken</object>
-        <object>objects\objWindow</object>
-        <object>objects\objSolid</object>
-        <object>objects\objTransitioner</object>
-        <object>objects\objElevator</object>
+        <object>objects\objBriefcase</object>
+        <object>objects\objVHSTake</object>
+        <object>objects\objPizzaTake</object>
+        <object>objects\objDrink</object>
+        <object>objects\objSixpack</object>
+        <object>objects\objChipsBag</object>
+        <object>objects\objKeys</object>
+        <object>objects\objItemJacket</object>
+        <object>objects\objItemPants</object>
+        <object>objects\objToken</object>
+        <object>objects\objSecretMask</object>
       </objects>
+    </objects>
+    <objects name="Environment">
       <objects name="Furniture">
         <object>objects\objFurniture</object>
         <object>objects\objTableParent</object>
@@ -2749,6 +2738,55 @@
           <object>objects\objSecretSewerShadow</object>
         </objects>
       </objects>
+      <objects name="Walls">
+        <objects name="Interior">
+          <object>objects\objWallHeavyV</object>
+          <object>objects\objWallDoor</object>
+          <object>objects\objWallSoft</object>
+          <object>objects\objWallInvisble</object>
+          <object>objects\objSewerWallV</object>
+          <object>objects\objRailV</object>
+          <object>objects\objBalconyV</object>
+          <object>objects\objCementWallV</object>
+          <object>objects\objCellWallV</object>
+          <object>objects\objWoodWallInteriorV</object>
+          <object>objects\objSubwayWallV</object>
+          <object>objects\objSubwayWindowV</object>
+          <object>objects\objPorchWallV</object>
+          <object>objects\objWallShadow</object>
+          <object>objects\objWoodFenceV</object>
+          <object>objects\objWindowV</object>
+          <object>objects\objWindowH</object>
+        </objects>
+        <objects name="Exterior">
+          <object>objects\objWallBrickV</object>
+          <object>objects\objWallHospitalV</object>
+          <object>objects\objWoodWallV</object>
+          <object>objects\objBunkerWallV</object>
+          <object>objects\objFenceV</object>
+          <object>objects\objFenceBroken</object>
+          <object>objects\objWindowFrameV</object>
+          <object>objects\objWindowFrameH</object>
+          <object>objects\objWindowLargeV</object>
+          <object>objects\objWindowLargeH</object>
+        </objects>
+        <objects name="Doors">
+          <object>objects\objDoor</object>
+          <object>objects\objDoorV</object>
+          <object>objects\objDoorH</object>
+          <object>objects\objDoorV2</object>
+          <object>objects\objDoorH2</object>
+          <object>objects\objHospitalEntranceDoors</object>
+        </objects>
+        <object>objects\objVertBarrier</object>
+        <object>objects\objHorBarrier</object>
+        <object>objects\objGlassPanelVBroken</object>
+        <object>objects\objGlassPanelHBroken</object>
+        <object>objects\objWindow</object>
+        <object>objects\objSolid</object>
+        <object>objects\objTransitioner</object>
+        <object>objects\objElevator</object>
+      </objects>
     </objects>
     <objects name="Player">
       <objects name="Jacket">
@@ -2778,6 +2816,7 @@
           <object>objects\objPlayerClimbUp</object>
         </objects>
         <objects name="Executions">
+          <object>objects\objExecution</object>
           <object>objects\objEnemyBash</object>
           <object>objects\objPAttackThroat</object>
           <object>objects\objEnemyHeadKick</object>
@@ -3028,43 +3067,6 @@
           <object>objects\objMCDate</object>
         </objects>
       </objects>
-    </objects>
-    <objects name="Items">
-      <objects name="Other">
-        <objects name="Interactable">
-          <object>objects\objBox</object>
-          <object>objects\objOpenedBox</object>
-          <object>objects\objDumpster</object>
-          <object>objects\objInvestigationFileSpread</object>
-          <object>objects\objPlayerForm</object>
-          <object>objects\objMCForm</object>
-          <object>objects\objBedClip</object>
-          <object>objects\objKitchenShelfClip</object>
-          <object>objects\objLivingRoomClip1</object>
-          <object>objects\objLivingRoomClip2</object>
-          <object>objects\objTableClip</object>
-          <object>objects\objKitchenCounterClip1</object>
-          <object>objects\objKitchenCounterClip3</object>
-          <object>objects\objKitchenCounterClip2</object>
-        </objects>
-        <object>objects\objBriefcase</object>
-        <object>objects\objVHSTake</object>
-        <object>objects\objPizzaTake</object>
-        <object>objects\objDrink</object>
-        <object>objects\objSixpack</object>
-        <object>objects\objChipsBag</object>
-        <object>objects\objKeys</object>
-        <object>objects\objItemJacket</object>
-        <object>objects\objItemPants</object>
-        <object>objects\objToken</object>
-        <object>objects\objSecretMask</object>
-      </objects>
-      <object>objects\objWeapon</object>
-      <object>objects\objSpecificWeapon</object>
-      <object>objects\objWeaponThrow</object>
-      <object>objects\objThrowingWeapon</object>
-      <object>objects\objBullet</object>
-      <object>objects\objEBullet</object>
     </objects>
     <objects name="Other">
       <objects name="Logos">

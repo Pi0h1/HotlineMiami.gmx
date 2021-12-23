@@ -29,7 +29,9 @@
 shake=0
 image_index=5
 energie=0
-ammo=20</string>
+ammo=20
+fire_index=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -279,8 +281,9 @@ instance_destroy()
             <string>if image_index=0 {
 //draw_sprite_ext(sprEM16CourchingLegs,image_index,x,y,image_xscale,image_yscale,direction,c_black,0.5)
 //draw_sprite_ext(sprEM16CourchingLegs,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
-draw_sprite_ext(sprEWalkM16,image_index,x-shake+random(shake*0.5),y-shake+random(shake*0.5),image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprEWalkM16,image_index,x-shake+random(shake*0.5),y-shake+random(shake*0.5),image_xscale,image_yscale,direction,image_blend,image_alpha)
+draw_sprite_ext(sprEAttackM16,fire_index,x-shake+random(shake*0.5),y-shake+random(shake*0.5),image_xscale,image_yscale,direction,c_black,0.5)
+draw_sprite_ext(sprEAttackM16,fire_index,x-shake+random(shake*0.5),y-shake+random(shake*0.5),image_xscale,image_yscale,direction,image_blend,image_alpha)
+fire_index+=0.75
 } else {
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)

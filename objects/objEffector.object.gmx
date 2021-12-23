@@ -196,6 +196,45 @@ view_angle[0]+=-global.shake*0.33+random(global.shake*0.66)
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="57">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.devmode=0 exit
+
+if keyboard_check(vk_control){
+
+var inst = noone
+var dis = 8
+with all {
+  var mydis = point_distance( x, y, other.x, other.y )
+
+if id!=other.id &amp;&amp; mydis &lt; dis {
+    dis = mydis   
+    inst = id
+  }
+}
+instance_destroy(inst)
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="53">
       <action>
         <libid>1</libid>
@@ -297,7 +336,9 @@ my_id.image_angle=my_id.direction
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objShadowManager){
+            <string>global.depthDeath=0 // Reset the global.depth for dead bodies to prevent them from starting to pile up on top of stuff like furniture.
+
+if !instance_exists(objShadowManager){
 instance_create(x,y,objShadowManager)
 }
 

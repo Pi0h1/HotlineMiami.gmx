@@ -69,7 +69,7 @@ my_id.image_angle=angle
 my_id1=instance_create(x+lengthdir_x(22,my_id.image_angle),y+lengthdir_x(22,my_id.image_angle),objPoliceHat)
 my_id1.direction=my_id.image_angle-10+random(20)
 my_id1.speed=1+random(2)
-my_id.bottom=sprPoliceBluntKill 
+my_id.enemy=sprPoliceBluntKill 
 my_id.sprite_index=sprPNightStickKill
 }
 }

@@ -1129,7 +1129,7 @@ surface_reset_target()
     <tile bgName="tlFloorTilesBackUp" x="432" y="16" w="16" h="16" xo="16" yo="16" id="10087478" name="tile_F3280972" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tlFloorTilesBackUp" x="432" y="32" w="16" h="16" xo="16" yo="16" id="10087479" name="tile_98852975" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tlFloorTilesBackUp" x="416" y="32" w="16" h="16" xo="16" yo="16" id="10087480" name="tile_261A58C3" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tlFloorTiles" x="352" y="64" w="16" h="16" xo="384" yo="32" id="10118870" name="inst_D81A2630" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tlStudio2" x="352" y="64" w="16" h="16" xo="384" yo="32" id="10118870" name="inst_D81A2630" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="&lt;undefined&gt;" x="160" y="160" w="8" h="8" xo="0" yo="0" id="10081353" name="tile_68C6472B" depth="-99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="&lt;undefined&gt;" x="352" y="120" w="8" h="8" xo="0" yo="0" id="10081354" name="tile_6337840C" depth="-99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="&lt;undefined&gt;" x="352" y="192" w="8" h="8" xo="0" yo="0" id="10081355" name="tile_7E2AEEF9" depth="-99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -168,6 +168,9 @@ preview_angle=0
 preview_index=0
 preview_count=sprite_get_number(object_get_sprite(global.spawnObject))
 eraser_index=0
+
+temp1=120
+temp2=120
 </string>
           </argument>
         </arguments>
@@ -365,6 +368,12 @@ PlaySFX(sndHitWall)
 if keyboard_check_pressed(ord("G"))  {
 global.godmode=!global.godmode
 }
+
+if keyboard_check_pressed(ord("U"))  {
+with objFurniture {
+instance_destroy();
+}
+}
 </string>
           </argument>
         </arguments>
@@ -400,6 +409,13 @@ if preview_index &gt;= preview_count {
  if preview_index &lt;= 0 {
         preview_index = preview_count-1
     }
+}
+
+exit
+if keyboard_check(vk_control){
+temp1-=1
+}else{
+temp2-=1
 }
 </string>
           </argument>
@@ -437,6 +453,13 @@ if preview_index &gt;= preview_count {
         preview_index = preview_count-1
     }
 }
+
+exit
+if keyboard_check(vk_control){
+temp1+=1
+}else{
+temp2+=1
+}
 </string>
           </argument>
         </arguments>
@@ -460,11 +483,36 @@ if preview_index &gt;= preview_count {
           <argument>
             <kind>1</kind>
             <string>/// Developer mode UI
+
+// Draw Background
 draw_set_blend_mode(bm_subtract)
 draw_rectangle_colour(32-8,16,128,128,c_dkgray,c_dkgray,c_ltgray,c_ltgray,0)
 draw_set_blend_mode(bm_normal)
 
+
+// Draw Object Preview
+if object_get_sprite(global.spawnObject) &gt; -1
+{
+preview = object_get_sprite(global.spawnObject)
+} else {
+preview = sprMissing
+
+}
+var scale=0.5;
+
+draw_sprite_ext(preview,preview_index,(32+temp1+1)*scale,(64+temp2+1)*scale,scale,scale,preview_angle,c_black,0.5)
+draw_sprite_ext(preview,preview_index,(32+temp1)*scale,(64+temp2)*scale,scale,scale,preview_angle,c_white,1)
+
+
+// Draw Text
 var frameCounter = 0
+var godToggle = "OFF"
+
+if global.godmode &gt; 0 {
+godToggle = "ON"
+}else{
+godToggle = "OFF"
+}
 
 if preview_count&gt;1{
 frameCounter="("+ string(preview_index+1) +"/"+ string(preview_count) + ")"
@@ -487,21 +535,13 @@ if (global.devmode == true) {
   +"#"+
   "SHIFT + E = TELEPORT"
   +"#"+
-  "SHIFT + Q = SPAWN " + string_delete(object_get_name(global.spawnObject) + " " + frameCounter,1,3) 
+  "SHIFT + G = GOD MODE "+ godToggle
   +"#"+
-  "[G]OD MODE = "+string(global.godmode)
-  
+  "SHIFT + U = DELETE ALL FURNITURE"
+  +"#"+
+  "SHIFT + Q = SPAWN " + string_upper(string_delete(object_get_name(global.spawnObject) + " " + frameCounter,1,3))
   )
 }
-
-if object_get_sprite(global.spawnObject) &gt; -1
-{
-preview = object_get_sprite(global.spawnObject)
-} else {
-preview = sprMissing
-}
-var scale=0.5;
-draw_sprite_ext(preview,preview_index,(32+string_width("SHIFT + Q = SPAWN"+object_get_name(global.spawnObject)))*scale,64,0.5,0.5,preview_angle,c_white,1)
 </string>
           </argument>
         </arguments>
@@ -525,16 +565,18 @@ draw_sprite_ext(preview,preview_index,(32+string_width("SHIFT + Q = SPAWN"+objec
           <argument>
             <kind>1</kind>
             <string>if !instance_exists(objEffector) exit
-if global.devmode=false exit
+if global.devmode=true{
 view_angle=0
 draw_sprite_ext(preview,preview_index,objEffector.x,objEffector.y,1,1,preview_angle,c_white,0.5)
 
-if keyboard_check(vk_control) {
-    if mouse_check_button(mb_right) {
-    draw_sprite_ext(sprEraser,eraser_index,objEffector.x,objEffector.y,0.5,0.5,0,c_white,1)
-    }
+scrDevTxt(objEffector.x,objEffector.y,
+
+"temp1 = " + string(temp1)
++"#"+
+"temp2 = " + string(temp2)
+)
+
 }
-eraser_index+=0.2
 </string>
           </argument>
         </arguments>

@@ -1789,7 +1789,8 @@
     <sprite>sprites\sprEraser</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\tlFloorTiles</background>
+    <background>background\tlStudio2</background>
+    <background>background\tlStudio1</background>
     <background>background\tlRoadEnd</background>
     <background>background\tlRoadEnd2</background>
     <backgrounds name="Hotline Miami">
@@ -2201,6 +2202,7 @@
     <objects name="Environment">
       <objects name="Furniture">
         <object>objects\objFurniture</object>
+        <object>objects\objAboveFurniture</object>
         <object>objects\objTableParent</object>
         <objects name="Bathroom">
           <object>objects\objTub</object>

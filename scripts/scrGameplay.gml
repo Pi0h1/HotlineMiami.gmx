@@ -26,10 +26,20 @@ draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,objBackgroundColor.dir*32),y+16,1,
 }
 }
 }
+
+//Actually draws the cursor
 draw_sprite_ext(sprite_index,image_index,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
 draw_set_blend_mode(bm_add)
 draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_white,1)
 draw_set_blend_mode(bm_normal)
+
+if keyboard_check(vk_control) {
+    if mouse_check_button(mb_right) {
+    draw_sprite_ext(sprEraser,eraser_index,objEffector.x,objEffector.y,0.5,0.5,0,c_white,1)
+    }
+}
+eraser_index+=0.2
+
 with objDiscoLights {
 d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 draw_set_blend_mode(bm_subtract)

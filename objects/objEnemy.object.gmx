@@ -76,7 +76,6 @@ if global.maskindex=10 ammo=ceil(ammo*1.33)
             <kind>1</kind>
             <string>///Initialize
 scrERandomInit()
-
 image_speed=0
 image_index=random(1000)
 angle=random(360)
@@ -148,7 +147,8 @@ if speed=0 image_index=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if x&lt;0 hspeed=abs(hspeed)
+            <string>dir=angle
+if x&lt;0 hspeed=abs(hspeed)
 if x&gt;room_width hspeed=-abs(hspeed)
 if y&lt;0 vspeed=abs(vspeed)
 if y&gt;room_height vspeed=-abs(vspeed)
@@ -197,7 +197,8 @@ scrERandomStep()
 
 friction=0
 
-scrMoveSolidOff()</string>
+scrMoveSolidOff()
+</string>
           </argument>
         </arguments>
       </action>

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
+            <string>if !instance_exists(objDizzy) {instance_create(x,y,objDizzy)}
+image_speed=0
 currentweapon=0
 dir=0
 viewspeed=0

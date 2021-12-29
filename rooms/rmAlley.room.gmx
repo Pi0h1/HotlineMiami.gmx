@@ -97,12 +97,12 @@ global.package=0</code>
     <instance objName="objHorBarrier" x="104" y="48" name="inst_3ACAD631" locked="0" code="ylimit=1" scaleX="2.75" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerJacket" x="152" y="16" name="inst_A96DAD2B" locked="0" code="sprite_index=sprPWalkBag" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerCar" x="152" y="-28" name="inst_8F4E1317" locked="0" code="image_angle=180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objClotheslineV" x="160" y="360" name="inst_309056ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objClotheslineV" x="288" y="360" name="inst_85F78F97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objClotheslineH" x="8" y="296" name="inst_B879270D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objClotheslineH" x="104" y="144" name="inst_CD6C870F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objClotheslineH" x="104" y="88" name="inst_B9957A94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objClotheslineV" x="520" y="360" name="inst_BD3352FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objClothesline" x="160" y="400" name="inst_309056ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objClothesline" x="288" y="400" name="inst_85F78F97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="8" y="296" name="inst_B879270D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="104" y="144" name="inst_CD6C870F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="104" y="88" name="inst_B9957A94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objClothesline" x="520" y="404" name="inst_BD3352FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="96" y="32" name="inst_D77B42E6" locked="0" code="" scaleX="1" scaleY="17" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="0" y="160" name="inst_DC4F362E" locked="0" code="" scaleX="1" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="192" y="32" name="inst_86B7C1BB" locked="0" code="" scaleX="1" scaleY="29" colour="4294967295" rotation="0"/>
@@ -126,6 +126,9 @@ global.package=0</code>
     <instance objName="objWallDoor" x="120" y="256" name="inst_D1FA01D1" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallDoor" x="608" y="64" name="inst_B8C357D0" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objWallDoor" x="536" y="352" name="inst_360C42E4" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objClothesline" x="148" y="88" name="inst_E52F9764" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objClothesline" x="148" y="144" name="inst_2302DFE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objClothesline" x="53" y="296" name="inst_FA5EE236" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="256" y="128" w="16" h="16" xo="48" yo="208" id="10017296" name="tile_10BA6423" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

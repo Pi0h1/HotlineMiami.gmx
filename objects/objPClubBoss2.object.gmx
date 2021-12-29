@@ -34,7 +34,9 @@ scrUpdateMaskPos(sprite_index)
 ammo=0
 global.maskon=1
 maskon=1
-maskindex=global.maskindex</string>
+maskindex=global.maskindex
+enemy=sprite_index
+</string>
           </argument>
         </arguments>
       </action>

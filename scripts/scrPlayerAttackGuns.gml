@@ -1,7 +1,10 @@
 if ammo<1 exit
 mask_index=sprBullet
 image_angle=dir
-//Shoot (Sound, Speed, Delay, Screenshake, Silenced, Go through enemies, Type)
+
+/* sprite_index = Weapon Sprite
+                                        armlength = Pixel distance from the origin point of the sprite at which the bullet shell will be ejected.
+                                                        Shoot (Sound,Speed,Delay,Screenshake,Silenced,Go through enemies,Type)*/
 if sprite_index=wpnWalkM16              {armlength=5    Shoot(sndM16,0.5,2,3,false,false,      sprM16Shell) }
 if sprite_index=wpnWalkShotgun          {armlength=5    ShootShotgun()                                      }
 if sprite_index=sprPWalkDoubleBarrel    {armlength=5    ShootDoubleBarrelShotgun()                          }

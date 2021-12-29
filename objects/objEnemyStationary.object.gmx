@@ -143,6 +143,7 @@ image_angle=floor(random(4))*90</string>
           <argument>
             <kind>1</kind>
             <string>if sprite_index=sprEWalkUnarmed nothing=0 else global.factor+=sign(alert)
+dir=angle
 scrMoveSolidOn()
 if sprite_index=sprEWalkUnarmed scrGoGetWeapon()
 if !place_free(x+hspeed*3,y+vspeed*3) {
@@ -156,59 +157,7 @@ if path_position=1 path_end()
 scrMoveSolidOff()
 if !instance_exists(objPlayer) {alert=0 speed=0 exit}
 
-scrEStaticStep()</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if scrIsSearching(sprite_index) {
-sprite_index=scrStopSearch(sprite_index)
-image_speed=0
-}</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Ammo
-if sprite_index=sprEWalkShotgun ammo=6
-if sprite_index=sprEWalkDoubleBarrel ammo=2
-if sprite_index=sprEWalkSilencer ammo=13
-if sprite_index=sprEWalkM16 ammo=24
-if global.maskindex=10 ammo=ceil(ammo*1.33)
+scrEStaticStep()
 </string>
           </argument>
         </arguments>

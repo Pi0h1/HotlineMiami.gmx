@@ -14,3 +14,8 @@ speed=1
 turn=0
 diradd=1
 alertwait=-1
+
+//CreateBullet variables
+left=0
+dir=0
+armlength=0

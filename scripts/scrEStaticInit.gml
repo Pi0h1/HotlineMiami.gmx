@@ -13,3 +13,8 @@ turn=0
 diradd=0
 angle=random(360)
 alertwait=-1
+
+//CreateBullet variables
+left=0
+dir=0
+armlength=0

@@ -9,7 +9,7 @@ global.shake    =   argument3
 ammo-=1
 light           =   12
 silenced        =   argument4
-CreateBullet       (argument5)
+CreateBullet       (objBullet,argument5)
 CreateShell        (argument6)
 
 if silenced=false {scrHearPlayer()}

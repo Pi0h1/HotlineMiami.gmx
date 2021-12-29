@@ -35,7 +35,7 @@ draw_set_blend_mode(bm_normal)
 
 if keyboard_check(vk_control) {
     if mouse_check_button(mb_right) {
-    draw_sprite_ext(sprEraser,eraser_index,objEffector.x,objEffector.y,0.5,0.5,0,c_white,1)
+    draw_sprite_ext(sprUIEraser,eraser_index,objEffector.x,objEffector.y,0.5,0.5,0,c_white,1)
     }
 }
 eraser_index+=0.2

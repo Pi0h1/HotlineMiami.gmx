@@ -76,7 +76,7 @@ global.revisit=0</code>
     <instance objName="objDoorH" x="448" y="320" name="inst_B54F09C1" locked="0" code="image_angle=-34" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowFrameV" x="576" y="352" name="inst_567C78CC" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowFrameV" x="576" y="416" name="inst_42C74914" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTub" x="296" y="424" name="inst_861DE6E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTub" x="328" y="437" name="inst_861DE6E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowFrameH" x="416" y="448" name="inst_E8A2B51F" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowFrameH" x="512" y="448" name="inst_5C1B34BA" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRailV" x="400" y="80" name="inst_B54396FA" locked="0" code="" scaleX="17" scaleY="1" colour="4294967295" rotation="0"/>

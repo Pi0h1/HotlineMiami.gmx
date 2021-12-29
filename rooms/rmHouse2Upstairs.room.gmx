@@ -98,7 +98,7 @@
     <instance objName="objPlant" x="344" y="108" name="inst_41320501" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlant" x="564" y="108" name="inst_4A4A535D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlant" x="564" y="84" name="inst_A536C8FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTub" x="256" y="72" name="inst_EA429B6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="objTub" x="243" y="104" name="inst_EA429B6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="objToilet" x="296" y="72" name="inst_810DF2B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBigBed" x="96" y="160" name="inst_A8EAD6CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objSofaH64" x="40" y="84" name="inst_DDB5259E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -93,6 +93,9 @@
       <sound>sound\sndToken</sound>
       <sound>sound\sndHitWall</sound>
     </sounds>
+    <sound>sound\sndTeleport</sound>
+    <sound>sound\CbarHit1</sound>
+    <sound>sound\CbarHit2</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
@@ -276,6 +279,7 @@
           <sprite>sprites\sprPTrophyKill</sprite>
           <sprite>sprites\sprPSwordKill</sprite>
           <sprite>sprites\sprPAttackBash</sprite>
+          <sprite>sprites\sprEMafiaDieBash</sprite>
           <sprite>sprites\sprPAttackBashPolice</sprite>
         </sprites>
         <sprites name="Human shield">
@@ -1222,18 +1226,14 @@
         <sprite>sprites\sprOldPhone</sprite>
       </sprites>
       <sprites name="The Metro">
-        <sprite>sprites\sprClosedLockerH</sprite>
-        <sprite>sprites\sprClosedLockerV</sprite>
-        <sprite>sprites\sprSubwayBenchH</sprite>
-        <sprite>sprites\sprSubwayBenchV</sprite>
+        <sprite>sprites\sprClosedLocker</sprite>
+        <sprite>sprites\sprSubwayBench</sprite>
         <sprite>sprites\sprSubwayDoor</sprite>
         <sprite>sprites\sprSubwayTrain</sprite>
         <sprite>sprites\sprTag</sprite>
         <sprite>sprites\sprLockerDoor</sprite>
         <sprite>sprites\sprLockerOpen</sprite>
         <sprite>sprites\sprDumpster</sprite>
-        <sprite>sprites\sprClotheslineH1</sprite>
-        <sprite>sprites\sprClotheslineH2</sprite>
         <sprite>sprites\sprClotheslineV2</sprite>
         <sprite>sprites\sprClotheslineV1</sprite>
         <sprite>sprites\sprBurningTrashcan</sprite>
@@ -1786,7 +1786,8 @@
     <sprite>sprites\sprSpawnPoint</sprite>
     <sprite>sprites\sprGlassSurface</sprite>
     <sprite>sprites\sprMissing</sprite>
-    <sprite>sprites\sprEraser</sprite>
+    <sprite>sprites\sprUIEraser</sprite>
+    <sprite>sprites\sprUIRectangle</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tlStudio2</background>
@@ -1854,23 +1855,33 @@
         <script>scripts\scrPlayerShieldDieMelee.gml</script>
         <script>scripts\scrPlayerDropShield.gml</script>
       </scripts>
-      <scripts name="HUD">
-        <script>scripts\scrDrawCombo.gml</script>
-        <script>scripts\scrDrawAmmo.gml</script>
-        <script>scripts\scrDrawTutorial.gml</script>
-        <script>scripts\scrDrawScore.gml</script>
-        <script>scripts\scrDrawHUD.gml</script>
-        <script>scripts\scrDrawHUDStory.gml</script>
-        <script>scripts\scrDevTxt.gml</script>
-        <script>scripts\scrScoreText.gml</script>
-        <script>scripts\scrShowDate.gml</script>
-        <script>scripts\scrDrawFilter.gml</script>
-        <script>scripts\scrDrawFilterOscar.gml</script>
+      <scripts name="Effector">
+        <scripts name="HUD">
+          <script>scripts\scrDrawCombo.gml</script>
+          <script>scripts\scrDrawAmmo.gml</script>
+          <script>scripts\scrDrawTutorial.gml</script>
+          <script>scripts\scrDrawScore.gml</script>
+          <script>scripts\scrDrawHUD.gml</script>
+          <script>scripts\scrDrawHUDStory.gml</script>
+          <script>scripts\scrDevTxt.gml</script>
+          <script>scripts\scrScoreText.gml</script>
+          <script>scripts\scrShowDate.gml</script>
+          <script>scripts\scrDrawFilter.gml</script>
+          <script>scripts\scrDrawFilterOscar.gml</script>
+        </scripts>
+        <script>scripts\scrCutscene.gml</script>
+        <script>scripts\scrGameplay.gml</script>
+        <script>scripts\scrDrawConversation.gml</script>
+        <script>scripts\scrSetMessage.gml</script>
       </scripts>
       <script>scripts\scrCarNextRoom.gml</script>
       <script>scripts\scrCheckHitBack.gml</script>
       <script>scripts\scrPlayerPickUp2.gml</script>
       <script>scripts\SetHealth.gml</script>
+      <script>scripts\scrDrawHead.gml</script>
+      <script>scripts\scrDrawPose.gml</script>
+      <script>scripts\scrPlayerPoses.gml</script>
+      <script>scripts\scrDrawUIRectangle.gml</script>
     </scripts>
     <scripts name="Enemies">
       <scripts name="Police">
@@ -2025,13 +2036,7 @@
         </scripts>
       </scripts>
     </scripts>
-    <scripts name="Dialogues">
-      <script>scripts\scrSetMessage.gml</script>
-    </scripts>
     <script>scripts\scrDrawWall.gml</script>
-    <script>scripts\scrDrawHead.gml</script>
-    <script>scripts\scrDrawPose.gml</script>
-    <script>scripts\scrPlayerPoses.gml</script>
     <script>scripts\scrInitWall.gml</script>
     <script>scripts\scrInitPathFinding.gml</script>
     <script>scripts\scrChasePlayer.gml</script>
@@ -2106,7 +2111,6 @@
     <script>scripts\scrPolicePatrolStep2.gml</script>
     <script>scripts\scrDogChaseSearch.gml</script>
     <script>scripts\scrEnemyIsAttacking.gml</script>
-    <script>scripts\scrRevertToMaxAmmo.gml</script>
     <script>scripts\scrMaskGetName.gml</script>
     <script>scripts\scrLevelGetPuzzle.gml</script>
     <script>scripts\scrCreateLetters.gml</script>
@@ -2127,9 +2131,6 @@
     <script>scripts\scrGetSongRestart.gml</script>
     <script>scripts\setChair.gml</script>
     <script>scripts\LevelSettings.gml</script>
-    <script>scripts\scrDrawConversation.gml</script>
-    <script>scripts\scrCutscene.gml</script>
-    <script>scripts\scrGameplay.gml</script>
     <script>scripts\scrDrawSpriteAsVertex.gml</script>
     <script>scripts\scrDestroyWindowV.gml</script>
     <script>scripts\scrCreateShards.gml</script>
@@ -2292,14 +2293,11 @@
           <object>objects\objTVWallMounted</object>
         </objects>
         <objects name="Subway">
-          <object>objects\objLockerH</object>
-          <object>objects\objLockerV</object>
-          <object>objects\objSubwayBenchV</object>
+          <object>objects\objLocker</object>
           <object>objects\objSubwayBench</object>
           <object>objects\objTrain</object>
           <object>objects\objSubwayDoor</object>
-          <object>objects\objClotheslineH</object>
-          <object>objects\objClotheslineV</object>
+          <object>objects\objClothesline</object>
         </objects>
         <objects name="Jacket's apartment">
           <object>objects\objAnsweringMachine</object>
@@ -2969,15 +2967,6 @@
         <object>objects\objBodyPart</object>
         <object>objects\objEnemyCrawl</object>
         <object>objects\objDogBite</object>
-        <objects name="Old">
-          <object>objects\objEnemyOld</object>
-          <object>objects\objDogPatrolOld</object>
-          <object>objects\objEnemyStationaryOld</object>
-          <object>objects\objEnemyPatrolOld</object>
-          <object>objects\objEnemyMeleeOld</object>
-          <object>objects\objEnemyMobileOld</object>
-          <object>objects\objEnemyMeleeStationaryOld</object>
-        </objects>
         <object>objects\objESubwayStatic</object>
         <object>objects\objSubwayKnockedOut</object>
         <object>objects\objEGiveUp</object>

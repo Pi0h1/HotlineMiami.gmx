@@ -71,15 +71,15 @@ global.done=0</code>
     <instance objName="objUrinalV" x="200" y="144" name="inst_AF15F45B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTransitioner" x="388" y="160" name="inst_CD0D21C6" locked="0" code="while place_free(x+1,y) image_xscale+=0.25&#xA;nextroom=room_next(room)&#xA;addy=-1&#xA;addx=0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="256" y="192" name="inst_21CD048C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSubwayBenchV" x="212" y="280" name="inst_98D91E21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSubwayBenchV" x="404" y="280" name="inst_AE0D912D" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSubwayBenchV" x="404" y="324" name="inst_8AA95D4D" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSubwayBenchV" x="212" y="328" name="inst_C51FB1A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="212" y="280" name="inst_98D91E21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="404" y="280" name="inst_AE0D912D" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="404" y="324" name="inst_8AA95D4D" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="212" y="328" name="inst_C51FB1A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="288" y="352" name="inst_F395E05E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSubwayBenchV" x="196" y="384" name="inst_365F4FF3" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSubwayBenchV" x="420" y="384" name="inst_35D692DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSubwayBenchV" x="196" y="428" name="inst_B756E2E0" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSubwayBenchV" x="420" y="428" name="inst_81CB07BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="196" y="384" name="inst_365F4FF3" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="420" y="384" name="inst_35D692DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="196" y="428" name="inst_B756E2E0" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="420" y="428" name="inst_81CB07BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyIdlePee" x="220" y="124" name="inst_01493483" locked="0" code="direction=180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyIdleSmoke" x="308" y="336" name="inst_348B091B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHorBarrier" x="288" y="360" name="inst_21B91B5A" locked="0" code="ylimit=-1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -117,6 +117,14 @@ global.done=0</code>
     <instance objName="objWallSoft" x="304" y="128" name="inst_A7B251BD" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpawnpoint" x="312" y="464" name="inst_30014145" locked="0" code="LevelSettings(true,objPlayerJacket)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallInvisble" x="464" y="32" name="inst_7FEF921F" locked="0" code="" scaleX="1" scaleY="53" colour="4294967295" rotation="0"/>
+    <instance objName="objSubwayBench" x="212" y="328" name="inst_8A9D8F94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objSubwayBench" x="212" y="280" name="inst_2227BF27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objSubwayBench" x="420" y="384" name="inst_7C99E6BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objSubwayBench" x="421" y="428" name="inst_61063988" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objSubwayBench" x="196" y="384" name="inst_017B7DD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="objSubwayBench" x="196" y="427" name="inst_23BFD92F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="objSubwayBench" x="404" y="328" name="inst_04BDFC81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="objSubwayBench" x="404" y="280" name="inst_37F07756" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="192" y="192" w="16" h="16" xo="128" yo="48" id="10010546" name="tile_2610D01E" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

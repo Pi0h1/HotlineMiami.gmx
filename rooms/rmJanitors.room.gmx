@@ -72,8 +72,8 @@ global.lastgrade=0</code>
     <instance objName="objJanitorTable" x="208" y="200" name="inst_460D7CA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJanitorBucket" x="268" y="192" name="inst_07FABFF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJanitorWorkBench" x="392" y="328" name="inst_DEE523EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLockerV" x="188" y="260" name="inst_CA7701C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLockerV" x="188" y="240" name="inst_BBC56746" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLocker" x="188" y="260" name="inst_CA7701C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLocker" x="188" y="240" name="inst_BBC56746" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFan" x="220" y="192" name="inst_4A07C71A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMCBike" x="464" y="-4" name="inst_C871BDD2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJanitorNotice" x="492" y="288" name="inst_4A15CF05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

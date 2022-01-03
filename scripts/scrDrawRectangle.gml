@@ -31,10 +31,11 @@ argument0, argument1, //x1,y1
 argument2, argument3, //x2,y2
 argument4,argument4,argument4,argument4,0
 )
-draw_set_blend_mode(bm_subtract)
+
+/*draw_set_blend_mode(bm_subtract)
 draw_rectangle_colour(
 argument0, argument1, //x1,y1
 argument2, argument3, //x2,y2
 c_black,c_black,c_ltgray,c_ltgray,0
 )
-draw_set_blend_mode(bm_normal)
+draw_set_blend_mode(bm_normal)*/

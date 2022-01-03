@@ -96,6 +96,7 @@ WalkPlayerAim_index             =   WalkPlayerAim
 WalkPlayerGangster_index        =   WalkPlayerGangster
 WalkPlayerPPoint_index          =   WalkPlayerPPoint
 //      Melee
+WalkPlayerMeleeUnarmed_index    =   WalkPlayerUnarmed
 WalkPlayerMelee_index           =   WalkPlayerMelee
 WalkPlayerMeleeShort_index      =   WalkPlayerMeleeShort
 WalkPlayerMeleeLarge_index      =   WalkPlayerMeleeLarge

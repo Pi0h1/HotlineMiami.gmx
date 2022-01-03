@@ -157,7 +157,7 @@ global.depthDeath=0
             <kind>1</kind>
             <string>/// Local Variables
 projectTitle=game_display_name+" (version "+string(GM_version)+")"
-
+messageAlpha=0;
 song = -1;
 intro = 0;
 dir=0
@@ -640,6 +640,8 @@ object_get_name(global.spawnObject)
     ,fntDate    //Font 
     ,0.25       // Scale
   )
+  
+txtMessage(room_width/2,room_height/2,"Surface sucessfully destroyed.",fntHelvetica,1,messageAlpha)
 </string>
           </argument>
         </arguments>
@@ -663,6 +665,7 @@ object_get_name(global.spawnObject)
           <argument>
             <kind>1</kind>
             <string>///Functionality
+if messageAlpha&gt;0 messageAlpha-=0.01
 
 if !instance_exists(objEffector) exit
 if global.devmode=false exit
@@ -672,6 +675,7 @@ view_angle=0
 draw_sprite_ext(preview,preview_index,objEffector.x,objEffector.y,1,1,preview_angle,c_white,0.5)
 color1 = merge_color(c_black,merge_color(merge_color(c_fuchsia,c_aqua,0.5+lengthdir_x(0.5,dir*3.12)),c_red,0.125+lengthdir_y(0.125,dir*1.73)),0.75+lengthdir_y(0.25,dir*1.73))
 dir+=0.25;
+
 </string>
           </argument>
         </arguments>

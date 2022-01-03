@@ -115,7 +115,7 @@ if room=rmScore or room=rmMenu or !instance_exists(objEffector){
     instance_destroy();
 
 if (global.devmode == true) {
-        show_message(message);
+        objGame.messageAlpha=5;
         }
     }
 }

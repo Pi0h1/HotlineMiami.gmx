@@ -42,6 +42,7 @@ start_y=y
 weaponfind=0
 diradd=1
 findwall=0
+
 </string>
           </argument>
         </arguments>

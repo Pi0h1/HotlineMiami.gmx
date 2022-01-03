@@ -93,7 +93,9 @@
       <sound>sound\sndToken</sound>
       <sound>sound\sndHitWall</sound>
     </sounds>
-    <sound>sound\sndTeleport</sound>
+    <sounds name="Dev Menu">
+      <sound>sound\sndTeleport</sound>
+    </sounds>
     <sound>sound\CbarHit1</sound>
     <sound>sound\CbarHit2</sound>
   </sounds>
@@ -102,6 +104,7 @@
       <sprites name="Jacket">
         <sprite>sprites\Player_Jacket</sprite>
         <sprite>sprites\sprPlayerHead</sprite>
+        <sprite>sprites\sprTwoHead</sprite>
         <sprite>sprites\sprHalo</sprite>
         <sprites name="Costumes">
           <sprites name="Vanilla">
@@ -160,6 +163,9 @@
             <sprite>sprites\WalkPlayerCarrying</sprite>
             <sprite>sprites\sprPCrawl</sprite>
             <sprite>sprites\sprPWalkLedge</sprite>
+          </sprites>
+          <sprites name="Two">
+            <sprite>sprites\P2_WalkPlayerUnarmed</sprite>
           </sprites>
         </sprites>
         <sprites name="Walking">
@@ -279,7 +285,6 @@
           <sprite>sprites\sprPTrophyKill</sprite>
           <sprite>sprites\sprPSwordKill</sprite>
           <sprite>sprites\sprPAttackBash</sprite>
-          <sprite>sprites\sprEMafiaDieBash</sprite>
           <sprite>sprites\sprPAttackBashPolice</sprite>
         </sprites>
         <sprites name="Human shield">
@@ -495,6 +500,8 @@
             <sprite>sprites\sprEAttackShotgun</sprite>
           </sprites>
           <sprites name="Dead">
+            <sprite>sprites\sprEMafiaDieBash</sprite>
+            <sprite>sprites\sprEMafiaDieDrill</sprite>
             <sprite>sprites\sprEMafiaDieNeckBreak</sprite>
             <sprite>sprites\sprEMafiaDieLean</sprite>
             <sprite>sprites\sprEMafiaDieKnife</sprite>
@@ -533,7 +540,6 @@
             <sprite>sprites\sprEFrontBlunt</sprite>
             <sprite>sprites\sprEFrontMachinegun</sprite>
             <sprite>sprites\sprEFrontShotgun</sprite>
-            <sprite>sprites\sprEFrontSlit</sprite>
             <sprite>sprites\sprEFrontSnap</sprite>
             <sprite>sprites\sprEGroundBoiling</sprite>
             <sprite>sprites\sprEGroundBottle</sprite>
@@ -1783,11 +1789,13 @@
         <sprite>sprites\sprLaser</sprite>
       </sprites>
     </sprites>
+    <sprites name="Dev Menu">
+      <sprite>sprites\sprUIRectangle</sprite>
+      <sprite>sprites\sprMissing</sprite>
+      <sprite>sprites\sprUIEraser</sprite>
+    </sprites>
     <sprite>sprites\sprSpawnPoint</sprite>
     <sprite>sprites\sprGlassSurface</sprite>
-    <sprite>sprites\sprMissing</sprite>
-    <sprite>sprites\sprUIEraser</sprite>
-    <sprite>sprites\sprUIRectangle</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tlStudio2</background>
@@ -1800,6 +1808,19 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="Text Effects">
+      <script>scripts\txtDev.gml</script>
+      <script>scripts\txtConversation.gml</script>
+      <script>scripts\txtScore.gml</script>
+      <script>scripts\txtHotline2.gml</script>
+    </scripts>
+    <scripts name="Dev Menu">
+      <script>scripts\scrStartLevel.gml</script>
+      <script>scripts\devDrawWindow.gml</script>
+      <script>scripts\scrDrawRectangle.gml</script>
+      <script>scripts\devPlaySFX.gml</script>
+      <script>scripts\devSwitchPlayers.gml</script>
+    </scripts>
     <scripts name="Player">
       <scripts name="Walking">
         <script>scripts\scrDrawShadow.gml</script>
@@ -1857,13 +1878,12 @@
       </scripts>
       <scripts name="Effector">
         <scripts name="HUD">
-          <script>scripts\scrDrawCombo.gml</script>
-          <script>scripts\scrDrawAmmo.gml</script>
-          <script>scripts\scrDrawTutorial.gml</script>
-          <script>scripts\scrDrawScore.gml</script>
+          <script>scripts\logicCombo.gml</script>
+          <script>scripts\logicAmmo.gml</script>
+          <script>scripts\logicTutorial.gml</script>
+          <script>scripts\logicScore.gml</script>
           <script>scripts\scrDrawHUD.gml</script>
           <script>scripts\scrDrawHUDStory.gml</script>
-          <script>scripts\scrDevTxt.gml</script>
           <script>scripts\scrScoreText.gml</script>
           <script>scripts\scrShowDate.gml</script>
           <script>scripts\scrDrawFilter.gml</script>
@@ -1881,7 +1901,6 @@
       <script>scripts\scrDrawHead.gml</script>
       <script>scripts\scrDrawPose.gml</script>
       <script>scripts\scrPlayerPoses.gml</script>
-      <script>scripts\scrDrawUIRectangle.gml</script>
     </scripts>
     <scripts name="Enemies">
       <scripts name="Police">
@@ -1908,8 +1927,12 @@
       <script>scripts\scrSeePlayerStationary.gml</script>
       <script>scripts\scrEMeleeInit.gml</script>
       <script>scripts\scrEMeleeStep.gml</script>
+      <script>scripts\scrEMeleeRandomInit.gml</script>
+      <script>scripts\scrEMeleeRandomStep.gml</script>
       <script>scripts\scrEMeleeStationaryInit.gml</script>
       <script>scripts\scrEMeleeStationaryStep.gml</script>
+      <script>scripts\scrERandomInit.gml</script>
+      <script>scripts\scrERandomStep.gml</script>
       <script>scripts\scrDogInit.gml</script>
       <script>scripts\scrDogStep.gml</script>
       <script>scripts\scrSearch.gml</script>
@@ -1929,8 +1952,6 @@
       <script>scripts\scrFindWeapon.gml</script>
       <script>scripts\scrPatrol.gml</script>
       <script>scripts\scrFollowWall.gml</script>
-      <script>scripts\scrERandomInit.gml</script>
-      <script>scripts\scrERandomStep.gml</script>
       <script>scripts\scrBounce.gml</script>
       <script>scripts\scrSeeThroughCollision.gml</script>
       <script>scripts\scrDogSearch.gml</script>
@@ -2134,7 +2155,8 @@
     <script>scripts\scrDrawSpriteAsVertex.gml</script>
     <script>scripts\scrDestroyWindowV.gml</script>
     <script>scripts\scrCreateShards.gml</script>
-    <script>scripts\scrStartLevel.gml</script>
+    <script>scripts\scrPlayerLight.gml</script>
+    <script>scripts\scrPlayerMove2.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>
@@ -2791,6 +2813,7 @@
     <objects name="Player">
       <objects name="Jacket">
         <object>objects\objPlayerJacket</object>
+        <object>objects\objPlayerTwo</object>
         <object>objects\objPlayerMouseHouse</object>
         <object>objects\objPlayerShieldMouse</object>
         <object>objects\objPlayerHospital</object>
@@ -2957,6 +2980,7 @@
         <object>objects\objEnemyPatrol</object>
         <object>objects\objEnemyStationary</object>
         <object>objects\objEnemyMelee</object>
+        <object>objects\objEnemyMeleeRandom</object>
         <object>objects\objEnemyMeleeStationary</object>
         <object>objects\objEHideM16</object>
         <object>objects\objDogPatrol</object>
@@ -3173,13 +3197,15 @@
       <object>objects\objPlaceCharacter</object>
     </objects>
     <objects name="Managers">
-      <object>objects\objGame</object>
       <object>objects\objShadow</object>
       <object>objects\objShadowManager</object>
       <object>objects\objSurfaceManager</object>
       <object>objects\objSurfaceChecker</object>
       <object>objects\objGoreSurface</object>
       <object>objects\obj_appsurf_dynamic</object>
+    </objects>
+    <objects name="Dev Menu">
+      <object>objects\objGame</object>
     </objects>
     <object>objects\objSpawnpoint</object>
   </objects>
@@ -3386,6 +3412,7 @@
         <room>rooms\rmPause</room>
       </rooms>
     </rooms>
+    <room>rooms\rmDownUnder</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

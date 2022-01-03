@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Level to test
-testLevel = "FULL HOUSE";
+testLevel = "TENSION";
 </string>
           </argument>
         </arguments>
@@ -53,6 +53,7 @@ global.devmode = true;
 global.spawnObject = 0;
 global.godmode = 0;
 global.steamon = 0;
+global.playerIndex=0
 display_set_gui_size(view_wview, view_hview);
 sxeasy_init();
 global.restartedmusic=working_directory+"\Static.mp3"
@@ -155,62 +156,29 @@ global.depthDeath=0
           <argument>
             <kind>1</kind>
             <string>/// Local Variables
-startingRoom = "DEVOLVER";
+projectTitle=game_display_name+" (version "+string(GM_version)+")"
+
 song = -1;
 intro = 0;
+dir=0
 last_ammo = 0;
 last_sprite = 0;
+
+startingRoom = "DEVOLVER";
 if (global.devmode==1){
 startingRoom = testLevel
 }
+
 preview_name="objUndefined"
 preview=0
 preview_angle=0
 preview_index=0
 preview_count=sprite_get_number(object_get_sprite(global.spawnObject))
 eraser_index=0
-
-player_index=0
+color1=0
 
 temp1=120
 temp2=120
-dir=0
-
-// THIS IS THE MOST HORRENDOUS AND VILE SHIT I'VE EVER WRITTEN
-preview_name = string_upper(string_delete(
-string_replace(string_replace(string_replace(string_replace(string_replace(string_replace(
-string_replace(string_replace(string_replace(string_replace(string_replace(string_replace(
-string_replace(string_replace(string_replace(string_replace(string_replace(string_replace(
-string_replace(string_replace(string_replace(string_replace(string_replace(string_replace(
-string_replace(string_replace(
-object_get_name(global.spawnObject)
-,"A"," A")
-,"B"," B")
-,"C"," C")
-,"D"," D")
-,"E"," E")
-,"F"," F")
-,"G"," G")
-,"H"," H")
-,"I"," I")
-,"J"," J")
-,"K"," K")
-,"L"," L")
-,"M"," M")
-,"N"," N")
-,"O"," O")
-,"P"," P")
-,"Q"," Q")
-,"R"," R")
-,"S"," S")
-,"T"," T")
-,"U"," U")
-,"V"," V")
-,"W"," W")
-,"X"," X")
-,"Y"," Y")
-,"Z"," Z")
-,1,3))
 </string>
           </argument>
         </arguments>
@@ -253,7 +221,7 @@ instance_create(0,0,objScanlines)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Start Room
+            <string>/// Start a Room
 //The point of this script is to let you quickly test rooms without having to initialize a bunch of shit
 
 
@@ -302,6 +270,29 @@ game_save("restart.dat")
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Player Indexes
+if instance_exists(objPlayerJacket) global.playerIndex=0
+if instance_exists(objPlayerBiker)  global.playerIndex=1
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="5" enumb="17">
       <action>
@@ -320,18 +311,15 @@ game_save("restart.dat")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Dev Binds
+            <string>///Key Combinations
 if keyboard_check(vk_shift) exit
-
-
-
 
 if keyboard_check_pressed(ord("Q"))  {
     preview_index-=1
     if preview_index &lt;= 0 {
         preview_index = preview_count-1
     }
-    PlaySFX(sndPickUp)
+    devPlaySFX(sndPickUp)
 }
 
 if keyboard_check_pressed(ord("E"))  {
@@ -339,19 +327,7 @@ if keyboard_check_pressed(ord("E"))  {
     if preview_index &gt;= preview_count {
         preview_index=0
     }
-    last_ammo=objPlayer.ammo
-    last_sprite=objPlayer.sprite_index
-    PlaySFX(sndPickUp)
-}
-
-if keyboard_check_pressed(ord("1"))  {
-    player_index-=1
-    PlaySFX(sndPickUp)
-}
-
-if keyboard_check_pressed(ord("3"))  {
-    player_index+=1
-    PlaySFX(sndPickUp)
+    devPlaySFX(sndPickUp)
 }
 
 /*
@@ -380,7 +356,7 @@ y=floor( y / 16 ) * 16
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Dev Binds
+            <string>///Key Combinations
 if (global.devmode == 0) exit
 if (!instance_exists(objEffector)) exit
 
@@ -391,21 +367,21 @@ if keyboard_check_pressed(ord("C")) {
 if keyboard_check_pressed(ord("Z"))  {
     if instance_exists(objPlayer){
     objPlayer.ammo += 100;
-    PlaySFX(sndPickUp)
+    devPlaySFX(sndPickUp)
     }
 }
 
 if keyboard_check_pressed(ord("E"))  {
     if instance_exists(objPlayerJacket) and instance_exists(objEffector) {
-        last_ammo=objPlayer.ammo
-        last_sprite=objPlayer.sprite_index
+        last_ammo=objPlayerJacket.ammo
+        last_sprite=objPlayerJacket.sprite_index
         global.executionx=objPlayer.x
         global.executiony=objPlayer.y
         with objPlayerJacket instance_destroy();
         my_id=instance_create(objEffector.x,objEffector.y,objPlayerJacket);
         my_id.ammo=last_ammo
         my_id.sprite_index=last_sprite
-        PlaySFX(sndTeleport)
+        devPlaySFX(sndTeleport)
         effect_create_below(ef_ellipse, objEffector.x, objEffector.y, 1, c_aqua);
     }
 }
@@ -418,7 +394,7 @@ if global.spawnObject&gt;0{
     my_id.image_index=preview_index
 }
 
-PlaySFX(sndHitWall)
+devPlaySFX(sndHitWall)
 }
 
 if keyboard_check_pressed(ord("G"))  {
@@ -457,7 +433,8 @@ with all game_end();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(vk_shift){
+            <string>/// Forward
+if keyboard_check(vk_shift){
 preview_angle+=10
 }
 else{
@@ -500,7 +477,8 @@ temp2-=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(vk_shift){
+            <string>/// Back
+if keyboard_check(vk_shift){
 preview_angle-=10
 }
 else{
@@ -543,44 +521,23 @@ temp2+=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//scrDrawUIRectangle(sprUIRectangle,30,50,global.mousex,global.mousey)
-
-//draw_sprite(sprCursor,0,global.mousex,global.mousey)
-
-
-
-/// Developer mode UI
+            <string>/// User Interface
 if (global.devmode == false) exit 
-// Draw Background
-//draw_set_blend_mode(bm_subtract)
-//draw_rectangle_colour(32-8,16,128,128,c_dkgray,c_dkgray,c_ltgray,c_ltgray,0)
 
+//  Draw Background.
+devDrawWindow(sprUIRectangle,24,16,128,128)
+//scrDrawRectangle(24,16,128,218,c_teal,true)
 
-//Hour
-            
-//store the current time
-t = date_current_datetime();
-
-//get the hour portion of that time
-h = date_get_hour(t);
-
-//get the minute portion of the time.
-m = date_get_minute(t);
-
-//get the second potion of the time
-s = date_get_second(t);
-
-//show the time
+//  Time          .  
+t = date_current_datetime();    //  Store the current time.
+h = date_get_hour(t);           //  Get the hour portion of that time.
+m = date_get_minute(t);         //  Get the minute portion of the time.
+s = date_get_second(t);         //  Get the second potion of the time.
 time = string(h) + ":" + string(m) + ":" + string(s);
+date = string(current_day) + "/" + string (current_month) + "/" + string(current_year) +". "
+frameRate= string(fps) + " fps" +" | "+string(fps_real) + "framerate"
 
-
-
-
-scrDrawUIRectangle(sprUIRectangle,24,16,128,128)
-
-
-
-// Draw Object Preview
+//  Draw Object Preview Begins.
 if object_get_sprite(global.spawnObject) &gt; -1
 {
 preview = object_get_sprite(global.spawnObject)
@@ -592,16 +549,13 @@ var scale=0.5;
 
 draw_sprite_ext(preview,preview_index,(32+temp1+1)*scale,(64+temp2+1)*scale,scale,scale,preview_angle,c_black,0.5)
 draw_sprite_ext(preview,preview_index,(32+temp1)*scale,(64+temp2)*scale,scale,scale,preview_angle,c_white,1)
+//  Draw Object Preview Ends.
 
+//  All text related stuff begins here.
+var frameCounter = 0 // frameCounter displays the current frame of the object you're about to place.
+var godToggle = "OFF" // Initializes variable godToggle
 
-
-//scrDrawUIRectangle(sprUIRectangle,64+32-8+128,128,128,128)
-
-// Draw Text
-var frameCounter = 0
-var godToggle = "OFF"
-
-if global.godmode &gt; 0 {
+if global.godmode &gt; 0 { // If God Mode is not 0 that means god mode is on. as such godToggle should display equal to "ON",
 godToggle = "ON"
 }else{
 godToggle = "OFF"
@@ -613,6 +567,12 @@ frameCounter="("+ string(preview_index+1) +"/"+ string(preview_count) + ")"
 frameCounter="1"
 }
 
+/*  
+    If a letter is uppercase add a space before it.
+    Remove the first tree letters of the object name.
+    Make resulting text all text uppercase. 
+    The end result is: if an object is called something like "objAcidBath"; it will be displayed as "ACID BATH" by the Dev Menu.
+*/
 preview_name = string_upper(string_delete(
 string_replace(string_replace(string_replace(string_replace(string_replace(string_replace(
 string_replace(string_replace(string_replace(string_replace(string_replace(string_replace(
@@ -648,39 +608,37 @@ object_get_name(global.spawnObject)
 ,"Z"," Z")
 ,1,3))
 
+//  Draw Text.
 
-  scrDevTxt(32+8,24,"Dev Menu",fntMenu,0.50)
-  scrDevTxt(32,24+16,
+    //  Title.
+    txtHotline2(40,24,"DevMenu",fntPointShow,0.50,c_aqua,c_red)
+    /*txtDev(
+    40, 24      // Position
+    ,"Dev Menu" // String
+    ,fntMenu    // Font
+    ,0.50       // Scale
+    )*/
   
-  "________________________________________________"
-  +"#"+
-  "Today is " + string(current_day) + "/" + string (current_month) + "/" + string(current_year) +". " + time 
-  +"#"+
-  string(fps) + " game fps"
-  +"#"+
-  string(fps_real) + "fps"
-  +"#"+
-  "________________________________________________"
-  +"#"+
-  "SHIFT + C = CLEAR AREA"
-  +"#"+
-  "SHIFT + Z = +100 AMMO"
-  +"#"+
-  "SHIFT + E = TELEPORT"
-  +"#"+
-  "SHIFT + G = GOD MODE "+ godToggle
-  +"#"+
-  "SHIFT + U = DELETE ALL FURNITURE"
-  +"#"+
-  "________________________________________________"
-  +"#"+
-  "SHIFT + Q = SPAWN" + preview_name
-  +"#"+
-  "FRAME = " + frameCounter
-  +"#"+
-  "________________________________________________"
-  
-  ,fntDate,0.25
+    //  Information.
+    txtDev(
+    32,40,      // Position
+    "________________________________________________" // String
+    +"#"+projectTitle
+    +"#"+"Today is " + date + time 
+    +"#"+frameRate
+    +"#"+"________________________________________________"
+    +"#"+"Room: "+room_get_name(room)
+    +"#"+"SHIFT + C = CLEAR AREA"
+    +"#"+"SHIFT + Z = +100 AMMO"
+    +"#"+"SHIFT + E = TELEPORT"
+    +"#"+"SHIFT + G = GOD MODE "+ godToggle
+    +"#"+"SHIFT + U = DELETE ALL FURNITURE"
+    +"#"+"________________________________________________"
+    +"#"+"SHIFT + Q = SPAWN" + preview_name
+    +"#"+"FRAME = " + frameCounter
+    +"#"+"________________________________________________"
+    ,fntDate    //Font 
+    ,0.25       // Scale
   )
 </string>
           </argument>
@@ -704,44 +662,46 @@ object_get_name(global.spawnObject)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objEffector) exit
+            <string>///Functionality
+
+if !instance_exists(objEffector) exit
 if global.devmode=false exit
 
+// Draw Object Preview
 view_angle=0
 draw_sprite_ext(preview,preview_index,objEffector.x,objEffector.y,1,1,preview_angle,c_white,0.5)
 color1 = merge_color(c_black,merge_color(merge_color(c_fuchsia,c_aqua,0.5+lengthdir_x(0.5,dir*3.12)),c_red,0.125+lengthdir_y(0.125,dir*1.73)),0.75+lengthdir_y(0.25,dir*1.73))
 dir+=0.25;
-
-if player_index=1
-{
-if instance_exists(objPlayerBiker)
-    {
-    my_id=instance_create(objPlayer.x,objPlayer.y,objPlayerJacket)
-    my_id.ammo=last_ammo
-    my_id.sprite_index=last_sprite
-    }
-with objPlayerBiker instance_destroy();
-}
-if player_index=2
-{
-if instance_exists(objPlayerJacket)
-    {
-    instance_create(objPlayer.x,objPlayer.y,objPlayerBiker)
-    }
-with objPlayerJacket instance_destroy();
-}
-
-if player_index&gt;2 player_index=2
-if player_index&lt;1 player_index=1
-/*
-scrDevTxt(objEffector.x,objEffector.y,
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///"Temporary" variables
+// This are intended for help with positioning UI elements.
+exit
+txtDev(objEffector.x,objEffector.y,
 "temp1 = " + string(temp1)
 +"#"+
 "temp2 = " + string(temp2)
+,fntDate
+,0.5
 )
-*/
-
 </string>
           </argument>
         </arguments>

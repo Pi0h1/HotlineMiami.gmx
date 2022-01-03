@@ -295,6 +295,7 @@ if select&gt;masks-1 select=0
             <kind>1</kind>
             <string>if global.masks[select]=0 exit
 if on=0 exit
+if !instance_exists(objPlayer) exit
 on=0
 with objPlayer {
 reload=30

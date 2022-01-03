@@ -33,7 +33,7 @@ scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
 ammo=0
 PlaySFX(sndDrill)
-enemy=sprPKillDrill
+enemy=sprEMafiaDieDrill
 </string>
           </argument>
         </arguments>
@@ -60,10 +60,10 @@ enemy=sprPKillDrill
 instance_create(x+lengthdir_x(24,image_angle),y+lengthdir_y(24,image_angle),objBloodPool)
 my_id=instance_create(x,y,objDeadBody)
 my_id.image_angle=image_angle
-my_id.sprite_index=sprEBackDrill
+my_id.sprite_index=sprEMafiaDieDrill
 if sprite_index=sprPDrillKillPolice my_id.sprite_index=sprPoliceDeadDrill
 my_id.image_yscale=1
-my_id.image_index=3
+my_id.image_index=18
 my_id=instance_create(x,y,objPlayerJacket)
 my_id.sprite_index=sprPWalkDrill
 my_id.maskon=global.maskon
@@ -129,9 +129,10 @@ my_id.image_angle=my_id.direction
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
+            <string>draw_sprite_ext(enemy,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-if global.maskon scrDrawMask(1)</string>
+if global.maskon scrDrawMask(1)
+</string>
           </argument>
         </arguments>
       </action>

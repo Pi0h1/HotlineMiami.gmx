@@ -1193,19 +1193,21 @@ if sprite_index=last_sprite nothing=1 else {
 scrUpdateMaskPos(sprite_index)
 last_sprite=sprite_index
 }
-draw_set_blend_mode(bm_add)
-draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30+light*2),c_black,0)
-draw_set_blend_mode(bm_normal)
+
+scrPlayerLight();
+
 legsprite=sprPWalkLegs
 if sprite_index=sprPWalkHospital legsprite=sprLegsHospital
 if aimon=1 {
 dir=point_direction(x,y,global.mousex,global.mousey)
 }
 if sprite_index=sprPUnlockDoor dir=90
+
 draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
-if reload&gt;0 reload-=1
-if light&gt;3 light-=3
+
+
+
 if sprite_index=sprPWalkThrow {
 left=1
 draw_sprite_ext(sprThrowWeapons,throwindex,x+lengthdir_x(throwadd[floor(image_index)],dir-180)+lengthdir_x(8,dir-90)+1,y+1+lengthdir_y(throwadd[floor(image_index)],dir-180)+lengthdir_y(8,dir-90),image_xscale,image_yscale,dir+(image_index-3)*5,c_black,0.5)

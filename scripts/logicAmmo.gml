@@ -73,7 +73,7 @@ if instance_exists(objPlayer) {
 } else {
     if instance_exists(objPlayerDead) {
         scorestring = "YOU'RE DEAD!"
-        ammostring = global.restartkey + " TO RESTART!"
+        ammostring = "PRESS " + global.restartkey + " TO RESTART"
         if ammoy < 20 ammoy += 1
         else ammoy = 20
     }

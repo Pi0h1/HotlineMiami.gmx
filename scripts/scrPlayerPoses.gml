@@ -1,5 +1,5 @@
 //  WALK
-if  sprite_index=sprPWalkUnarmed {pose_index=WalkPlayerUnarmed} if sprite_index=sprPAttackUnarmed {pose_index=AttackPlayerUnarmed}
+if  sprite_index=sprPWalkUnarmed {pose_index=WalkPlayerMeleeUnarmed_index} if sprite_index=sprPAttackUnarmed {pose_index=AttackPlayerUnarmed}
 
 if sprite_index=sprPWalkGirlfriend {pose_index=WalkPlayerCarrying}
 
@@ -42,7 +42,8 @@ if  sprite_index=sprPWalkBat            or
 if  sprite_index=sprPWalkKnife          or
     sprite_index=sprPWalkMachete        or
     sprite_index=sprPWalkNightStick     or
-    sprite_index=sprPWalkCrowbar{
+    sprite_index=sprPWalkCrowbar        or
+    sprite_index=sprPWalkDrill{
         pose_index=WalkPlayerMeleeShort_index
     }
 
@@ -75,7 +76,8 @@ if  sprite_index=sprPAttackMachete      or
     sprite_index=sprPAttackNightStick   or
     sprite_index=sprPAttackPan          or
     sprite_index=sprPAttackPot          or
-    sprite_index=sprPAttackCrowbar{
+    sprite_index=sprPAttackCrowbar      or
+    sprite_index=sprPAttackDrill{
         pose_index=AttackPlayerMeleeShort_index
     }
     

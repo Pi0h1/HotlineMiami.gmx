@@ -42,6 +42,7 @@ ammoy=-32
 next=0
 showfinished=0
 image_speed=0.4
+gridon=0
 action=0
 wait=0
 phonex=0
@@ -149,6 +150,29 @@ room_persistent=true
 global.paused=0
 if room=rmTutorial scrInitPathFinding()
 if room=rmSequence1 or room=rmSequence2 or room=rmSequence3 or room=rmSequence4 or room=rmSequence5 or room=rmSequence6 or room=rmSequence7 or room=rmSequence8 or room=rmSequence9 {if !instance_exists(objPlayer) instance_create(336,268,objPlayerMouseHouse)}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Nothing
 </string>
           </argument>
         </arguments>

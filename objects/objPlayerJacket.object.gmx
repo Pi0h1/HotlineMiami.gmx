@@ -61,6 +61,7 @@ WalkPlayerAim_index             =   WalkPlayerAim
 WalkPlayerGangster_index        =   WalkPlayerGangster
 WalkPlayerPPoint_index          =   WalkPlayerPPoint
 //      Melee
+WalkPlayerMeleeUnarmed_index    =   WalkPlayerUnarmed
 WalkPlayerMelee_index           =   WalkPlayerMelee
 WalkPlayerMeleeShort_index      =   WalkPlayerMeleeShort
 WalkPlayerMeleeLarge_index      =   WalkPlayerMeleeLarge
@@ -975,22 +976,13 @@ scrUpdateMaskPos(sprite_index)
 last_sprite=sprite_index
 }
 
-draw_set_blend_mode(bm_add)
-if light &gt; 3
-{
-draw_circle_color(x, y, 35 + light, make_color_hsv(40, 240, 30 + light * 2), c_black, 0)
-}else{
-draw_circle_color(x, y, 35 + light, make_color_hsv(0, 0, 30 + light * 2), c_black, 0)
-}
-draw_set_blend_mode(bm_normal)
+scrPlayerLight();
 
 dir=point_direction(x,y,global.mousex,global.mousey)
+
 if sprite_index=sprPLeaveBag {
 dir=point_direction(x,y,objDumpster.x+20,objDumpster.y+12)
 }
-
-if reload&gt;0 reload-=1
-if light&gt;3 light-=3
 
 scrDrawPose()
 scrDrawHead(0)

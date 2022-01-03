@@ -98,15 +98,6 @@ if image_speed&lt;0.2 image_speed=0.2
 if alert=0 and path_position=1 path_end()
 } else {
 if image_speed&lt;1 image_speed=speed*0.1
-/*if !place_free(x,y) {
-tempdir=direction
-i=1
-while (!place_free(x+lengthdir_x(4+i/20,tempdir),y+lengthdir_y(4+i/20,tempdir))) and i&lt;100 {
-tempdir+=18
-i+=1
-}
-if i&lt;100 move_outside_solid(tempdir,4+i/20)
-}*/
 
 }
 angle=direction
@@ -121,7 +112,8 @@ speed=0
 }
 
 scrEMeleeStationaryStep()
-scrMoveSolidOff()</string>
+scrMoveSolidOff()
+</string>
           </argument>
         </arguments>
       </action>

@@ -179,6 +179,8 @@ color1=0
 
 temp1=120
 temp2=120
+
+devmenu=false
 </string>
           </argument>
         </arguments>
@@ -312,6 +314,7 @@ if instance_exists(objPlayerBiker)  global.playerIndex=1
           <argument>
             <kind>1</kind>
             <string>///Key Combinations
+if devmenu=false exit
 if keyboard_check(vk_shift) exit
 
 if keyboard_check_pressed(ord("Q"))  {
@@ -357,11 +360,12 @@ y=floor( y / 16 ) * 16
           <argument>
             <kind>1</kind>
             <string>///Key Combinations
+if devmenu=false exit
 if (global.devmode == 0) exit
 if (!instance_exists(objEffector)) exit
 
 if keyboard_check_pressed(ord("C")) {
-    with objEnemy instance_destroy();
+    with objKillable instance_destroy();
 }
 
 if keyboard_check_pressed(ord("Z"))  {
@@ -434,6 +438,7 @@ with all game_end();
           <argument>
             <kind>1</kind>
             <string>/// Forward
+if devmenu=false exit
 if keyboard_check(vk_shift){
 preview_angle+=10
 }
@@ -478,6 +483,7 @@ temp2-=1
           <argument>
             <kind>1</kind>
             <string>/// Back
+if devmenu=false exit
 if keyboard_check(vk_shift){
 preview_angle-=10
 }
@@ -521,7 +527,12 @@ temp2+=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// User Interface
+            <string>if devmenu=false{
+txtDev(8,8,"Press [1] to open Dev Menu",fntDescription,0.5)
+}
+
+if devmenu=false exit
+/// User Interface
 if (global.devmode == false) exit 
 
 //  Draw Background.
@@ -612,12 +623,6 @@ object_get_name(global.spawnObject)
 
     //  Title.
     txtHotline2(40,24,"DevMenu",fntPointShow,0.50,c_aqua,c_red)
-    /*txtDev(
-    40, 24      // Position
-    ,"Dev Menu" // String
-    ,fntMenu    // Font
-    ,0.50       // Scale
-    )*/
   
     //  Information.
     txtDev(
@@ -665,13 +670,17 @@ txtMessage(room_width/2,room_height/2,"Surface sucessfully destroyed.",fntHelvet
           <argument>
             <kind>1</kind>
             <string>///Functionality
+
 if messageAlpha&gt;0 messageAlpha-=0.01
 
-if !instance_exists(objEffector) exit
 if global.devmode=false exit
+view_angle=0
+
+if !instance_exists(objEffector) exit
+if devmenu=false exit
 
 // Draw Object Preview
-view_angle=0
+
 draw_sprite_ext(preview,preview_index,objEffector.x,objEffector.y,1,1,preview_angle,c_white,0.5)
 color1 = merge_color(c_black,merge_color(merge_color(c_fuchsia,c_aqua,0.5+lengthdir_x(0.5,dir*3.12)),c_red,0.125+lengthdir_y(0.125,dir*1.73)),0.75+lengthdir_y(0.25,dir*1.73))
 dir+=0.25;
@@ -706,6 +715,29 @@ txtDev(objEffector.x,objEffector.y,
 ,fntDate
 ,0.5
 )
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="49">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>devmenu=!devmenu
 </string>
           </argument>
         </arguments>

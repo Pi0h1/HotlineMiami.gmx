@@ -52,9 +52,7 @@ scrUpdateMaskPos(sprite_index)</string>
             <kind>1</kind>
             <string>if image_index&lt;29 image_index+=0.15 else {
 instance_create(x+lengthdir_x(24,image_angle),y+lengthdir_y(24,image_angle),objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.image_angle=image_angle
-my_id.sprite_index=sprBoss1Dead
+createDeadBody(false,0,sprBoss1Dead,image_angle)
 my_id=instance_create(x,y,objPlayerJacket)
 my_id.maskon=global.maskon
 my_id.maskindex=global.maskindex

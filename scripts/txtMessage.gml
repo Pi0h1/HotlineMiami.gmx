@@ -1,4 +1,4 @@
-//txtMessage(room_width/2,room_height/2,"Surface sucessfully destroyed.",fntDate,1,messageAlpha)
+///txtMessage(x,y,string,font,scale,alpha)
 var scale=argument4;
 var angle=0;
 

@@ -1,4 +1,4 @@
-//txtHotline2(x,y,"Text",fntMenu,1,c_aqua,c_red)
+/// txtHotline2(x,y,string,font,scale,c_front,c_back)
 var xPos=argument0;
 var yPos=argument1;
 var txt=argument2;

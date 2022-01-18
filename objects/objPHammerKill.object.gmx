@@ -57,10 +57,7 @@ enemy=sprPKillHammer
             <kind>1</kind>
             <string>if image_index&lt;13 image_index+=0.15 else {
 instance_create(x+lengthdir_x(24,image_angle),y+lengthdir_y(24,image_angle),objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.image_angle=image_angle
-my_id.sprite_index=sprEDeadHammer
-my_id.image_index=floor(random(2))
+createDeadBody(false,0,sprEDeadHammer,image_angle)
 my_id=instance_create(x,y,objPlayerJacket)
 global.angle=image_angle-180
 my_id.reload=30

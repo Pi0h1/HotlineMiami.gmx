@@ -156,7 +156,9 @@ scrMoveSolidOff()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if object_get_parent(object_index)=objEnemyIdle energie=0
+            <string>var dead = false;
+
+if object_get_parent(object_index)=objEnemyIdle energie=0
 global.my_id=id
 image_xscale=1.5
 image_yscale=1.5
@@ -204,9 +206,9 @@ my_id.direction=my_id.image_angle
 my_id.speed=2+random(1)
 my_id.friction=0.15
 }
-if bullets&gt;1 or round(random(1)) or energie&lt;0 {
-if sprite_index=sprPoliceWalkUnarmed noweapon=1 else noweapon=0
-scrIdleGetEnemy()
+if bullets&gt;1 or round(random(1)) or energie&lt;0 {dead=true}
+
+if dead {
 global.punchonly=0
 if noweapon=1 factor=0.5 else factor=1
 my_id=instance_create(x,y-12,objScore)
@@ -220,45 +222,10 @@ global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
 global.gunkill+=1
-my_id=instance_create(x,y,objDeadBody)
-if bullets&gt;1 my_id.sprite_index=choose(sprPoliceBackShotgun,sprPoliceBackShotgun,sprPoliceFrontShotgun) else my_id.sprite_index=choose(sprPoliceBackMachinegun,sprPoliceBackMachinegun,sprPoliceFrontMachinegun)
-my_id.image_index=1+floor(random(4))
-my_id.direction=edir
-my_id.speed=1.5+random(1)+bullets*0.15
-my_id.image_angle=my_id.direction
-
-if my_id.sprite_index=sprPoliceFrontMachinegun scrGoreShot(x,y,other.direction-180,other.x,other.y,0)
-if my_id.sprite_index=sprPoliceBackShotgun {
-if my_id.image_index=0 scrGoreShotgun(x,y,other.direction-180,0,0,0,0,0,1)
-if my_id.image_index=1 scrGoreShotgun(x,y,other.direction-180,0,0,0,0,0,1)
-if my_id.image_index=2 scrGoreShotgun(x,y,other.direction-180,1,x+lengthdir_x(18,my_id.direction+20*my_id.image_yscale),y+lengthdir_y(18,my_id.direction+20*my_id.image_yscale),my_id.direction-90*my_id.image_yscale,0,0)
-if my_id.image_index=3 scrGoreShotgun(x,y,other.direction-180,1,x+lengthdir_x(23,my_id.direction),y+lengthdir_y(23,my_id.direction),my_id.direction,1,0)
-}
-if my_id.sprite_index=sprPoliceFrontShotgun {
-if my_id.image_index=0 scrGoreShotgun(x,y,other.direction-180,0,0,0,0,0,0)
-if my_id.image_index=1 scrGoreShotgun(x,y,other.direction-180,0,0,0,0,0,1)
-if my_id.image_index=2 scrGoreShotgun(x,y,other.direction-180,0,0,0,0,0,0)
-if my_id.image_index=3 scrGoreShotgun(x,y,other.direction-180,1,x+lengthdir_x(23,my_id.direction),y+lengthdir_y(23,my_id.direction),my_id.direction,1,0)
-}
-
-
-my_id=instance_create(x,y,objPoliceHat)
-my_id.direction=edir-10+random(20)
-my_id.speed=1+random(2)
-
-
-
-
-
-if noweapon=0 {
-my_id=instance_create(x,y,objWeaponThrow)
-my_id.image_index=scrCurrentWeaponExt(sprite_index)
-my_id.direction=other.direction-70+random(40)
-my_id.speed=2+random(2)
-my_id.ammo=ammo
-}
+if bullets&gt;1 createDeadBody(false,1.5,sprPoliceBackShotgun,edir) else createDeadBody(false,1.5,sprPoliceBackMachinegun,edir)
 instance_destroy()
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

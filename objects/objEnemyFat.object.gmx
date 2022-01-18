@@ -82,12 +82,7 @@ instance_create(x-8+random(16),y-8+random(16),objBloodSplat)
 }
 if blood&lt;=0 or hits&gt;6 {
 if speed&gt;0 {
-my_id=instance_create(x,y,objDeadBody)
-my_id.direction=direction
-my_id.speed=speed
-my_id.sprite_index=sprEFatDead
-if shotgunned=1 my_id.image_index=floor(random(2)) else my_id.image_index=2+floor(random(2))
-my_id.image_angle=my_id.direction
+if shotgunned=1 createDeadBody(false,0,sprEFatDead,direction) else createDeadBody(false,0,sprEFatDead,direction)
 instance_destroy()
 } else {
 sprite_index=sprEFatDie
@@ -149,7 +144,8 @@ if scrIsSearching(sprite_index) scrStopSearch(sprite_index)
 global.my_id=id
 scrPlayerDieMelee()
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -264,22 +260,17 @@ my_id.friction=0.15
             <kind>1</kind>
             <string>update=0
 if sprite_index=sprEFatDie {
-my_id=instance_create(x,y,objDeadBody)
-my_id.direction=direction-180
-my_id.speed=0.5
-my_id.sprite_index=sprEFatDead
-if shotgunned=1 my_id.image_index=floor(random(2)) else my_id.image_index=2+floor(random(2))
-my_id.image_angle=my_id.direction
+if shotgunned=1 createDeadBody(false,0,sprEFatDead,direction-180) else createDeadBody(false,0,sprEFatDead,direction-180)
 instance_destroy()
 exit
 }
-
 if sprite_index=sprEFatAttack {sprite_index=sprEFatWalk update=1}
 if sprite_index=sprESearchFat {sprite_index=sprEFatWalk image_speed=0}
 if update=1 {
 image_speed=0
 image_yscale=-image_yscale
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

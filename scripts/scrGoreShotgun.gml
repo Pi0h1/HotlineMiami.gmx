@@ -1,3 +1,4 @@
+/// scrGoreShotgun(x,y,direction,skin,skinx,skiny,skindir,brains,guts)
 var tempid;
 if global.maskindex=22 {
 repeat (18) {

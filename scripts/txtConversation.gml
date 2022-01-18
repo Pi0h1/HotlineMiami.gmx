@@ -1,13 +1,4 @@
-/*
-txtConversation(
-17,
-view_hview[0]-57,
-string_upper(objPhoneConversation.line1[objPhoneConversation.current]),
-string_upper(objPhoneConversation.line2[objPhoneConversation.current]),
-objPhoneConversation.reload*0.1,
-fntScore
-);
-*/
+///txtConversation(x,y,string1,string2,alpha,font)
 var xPos = argument0;
 var yPos = argument1;
 var txt1 = argument2;

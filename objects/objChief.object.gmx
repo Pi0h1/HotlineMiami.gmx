@@ -315,13 +315,8 @@ my_id.friction=0.15
           <argument>
             <kind>1</kind>
             <string>if sprite_index=sprChiefDie {
-my_id=instance_create(x,y,objDeadBody)
-my_id.direction=direction-180
-my_id.speed=0.5
-my_id.sprite_index=sprChiefDead
-my_id.image_angle=my_id.direction
+createDeadBody(false,0,sprChiefDead,direction-180)
 instance_destroy()
-
 exit
 }
 
@@ -329,7 +324,8 @@ if sprite_index=sprChiefArm {
 sprite_index=sprChiefShoot
 image_index=16
 image_speed=0
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

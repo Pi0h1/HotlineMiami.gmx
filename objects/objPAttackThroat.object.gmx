@@ -74,10 +74,7 @@ global.kills+=1
 ds_list_add(global.bonuslist,"Execution")
 if global.combotime&lt;12 global.combotime=12
 my_id=instance_create(myx,myy,objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprEBackThroat
-my_id.image_speed=.15
-my_id.image_angle=image_angle
+createDeadBody(false,0,sprEBackThroat,image_angle)
 with my_id {
 dir=image_angle+image_yscale*12
 my_id=instance_create(x+lengthdir_x(19,dir),y+lengthdir_y(19,dir),objBloodSquirt)

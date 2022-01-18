@@ -70,12 +70,7 @@ with my_id move_outside_solid(global.angle,16)
 my_id.maskon=global.maskon
 my_id.maskindex=global.maskindex
 my_id=instance_create(x+lengthdir_x(11,image_angle),y+lengthdir_y(11,image_angle),objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-if bottom=sprEBluntKill my_id.sprite_index=sprEBluntKill else my_id.sprite_index=sprPoliceBluntKill
-if bottom=sprBodyguardBlunt my_id.sprite_index=sprBodyguardBlunt
-my_id.image_index=12
-my_id.image_angle=image_angle
-
+createDeadBody(false,0,sprBodyguardBlunt,image_angle)
 instance_destroy()
 my_id=instance_create(x,y-12,objScore)
 my_id.text="+"+string((600)+400*(global.factor))+"pts"

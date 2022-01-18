@@ -71,9 +71,7 @@ global.kills+=1
 ds_list_add(global.bonuslist,"Execution")
 if global.combotime&lt;12 global.combotime=12
 my_id=instance_create(myx,myy,objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprEMafiaDieLean
-my_id.image_angle=image_angle
+createDeadBody(false,0,sprEMafiaDieLean,image_angle)
 global.angle=image_angle-180
 my_id=instance_create(x,y,objPlayerJacket)
 if bag=1 my_id.sprite_index=sprPWalkBag

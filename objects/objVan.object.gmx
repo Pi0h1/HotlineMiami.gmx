@@ -85,11 +85,7 @@ objPlayer.persistent=test
 if place_meeting(x,y,objPlayerJacket) {
 global.dir=point_direction(x,y,objPlayer.x,objPlayer.y)
 with objPlayer {
-my_id=instance_create(x,y,objPlayerDead)
-my_id.sprite_index=sprPBackCar
-my_id.image_angle=global.dir
-my_id.speed=3
-my_id.direction=global.dir
+createDeadBody(true,3,sprPBackCar,global.dir)
 instance_destroy()
 }
 }

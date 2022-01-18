@@ -5,7 +5,7 @@
   </Configs>
   <datafiles number="34" name="datafiles"/>
   <NewExtensions>
-    <extension index="0">extensions\NekoPresence</extension>
+    <extension index="0">extensions\HotTextEffects</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="Ambience">
@@ -104,6 +104,7 @@
       <sprites name="Jacket">
         <sprite>sprites\Player_Jacket</sprite>
         <sprite>sprites\sprPlayerHead</sprite>
+        <sprite>sprites\sprSnakeHead</sprite>
         <sprite>sprites\sprTwoHead</sprite>
         <sprite>sprites\sprHalo</sprite>
         <sprites name="Costumes">
@@ -166,6 +167,10 @@
           </sprites>
           <sprites name="Two">
             <sprite>sprites\P2_WalkPlayerUnarmed</sprite>
+          </sprites>
+          <sprites name="Snake">
+            <sprite>sprites\Snake_WalkPlayerUnarmed</sprite>
+            <sprite>sprites\Snake_sprPLegs</sprite>
           </sprites>
         </sprites>
         <sprites name="Walking">
@@ -510,6 +515,7 @@
             <sprite>sprites\sprEBackBlunt</sprite>
             <sprite>sprites\sprEBackCracked</sprite>
             <sprite>sprites\sprEBackCut</sprite>
+            <sprite>sprites\sprEThrownKnife</sprite>
             <sprite>sprites\sprEBackDrill</sprite>
             <sprite>sprites\sprEBackHeadbutt</sprite>
             <sprite>sprites\sprEBackHeadJerk</sprite>
@@ -1808,7 +1814,8 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="Text Effects">
+    <scripts name="HotTextEffects">
+      <script>scripts\scrDrawRectangle.gml</script>
       <script>scripts\txtDev.gml</script>
       <script>scripts\txtMessage.gml</script>
       <script>scripts\txtConversation.gml</script>
@@ -1818,7 +1825,6 @@
     <scripts name="Dev Menu">
       <script>scripts\scrStartLevel.gml</script>
       <script>scripts\devDrawWindow.gml</script>
-      <script>scripts\scrDrawRectangle.gml</script>
       <script>scripts\devPlaySFX.gml</script>
       <script>scripts\devSwitchPlayers.gml</script>
     </scripts>
@@ -2058,6 +2064,7 @@
         </scripts>
       </scripts>
     </scripts>
+    <script>scripts\scrHighlight.gml</script>
     <script>scripts\scrDrawWall.gml</script>
     <script>scripts\scrInitWall.gml</script>
     <script>scripts\scrInitPathFinding.gml</script>
@@ -2158,6 +2165,9 @@
     <script>scripts\scrCreateShards.gml</script>
     <script>scripts\scrPlayerLight.gml</script>
     <script>scripts\scrPlayerMove2.gml</script>
+    <script>scripts\createDeadBody.gml</script>
+    <script>scripts\createBlood.gml</script>
+    <script>scripts\enemyDropWeapon.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>
@@ -2185,6 +2195,7 @@
     <font>fonts\fntTopic</font>
     <font>fonts\fntUnlock</font>
     <font>fonts\fntWarning</font>
+    <font>fonts\fntHD</font>
   </fonts>
   <objects name="objects">
     <objects name="Items">
@@ -2815,7 +2826,6 @@
     <objects name="Player">
       <objects name="Jacket">
         <object>objects\objPlayerJacket</object>
-        <object>objects\objPlayerTwo</object>
         <object>objects\objPlayerMouseHouse</object>
         <object>objects\objPlayerShieldMouse</object>
         <object>objects\objPlayerHospital</object>

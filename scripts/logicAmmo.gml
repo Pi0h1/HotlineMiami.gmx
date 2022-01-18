@@ -71,10 +71,12 @@ if instance_exists(objPlayer) {
         else ammoy = 20
     }
 } else {
-    if instance_exists(objPlayerDead) {
+    if instance_exists(objDeadBody) {
+    if objDeadBody.isPlayer = true {
         scorestring = "YOU'RE DEAD!"
         ammostring = "PRESS " + global.restartkey + " TO RESTART"
         if ammoy < 20 ammoy += 1
         else ammoy = 20
+        }
     }
 }

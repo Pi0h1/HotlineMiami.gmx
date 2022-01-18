@@ -65,10 +65,7 @@ global.angle=image_angle-180
 my_id.reload=10
 with my_id move_outside_solid(global.angle,16)
 my_id=instance_create(x+lengthdir_x(11,image_angle),y+lengthdir_y(11,image_angle),objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprEBrickKill
-my_id.image_index=15
-my_id.image_angle=image_angle
+createDeadBody(false,0,sprEBrickKill,image_angle)
 
 instance_destroy()
 my_id=instance_create(x,y-12,objScore)

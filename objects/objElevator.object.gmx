@@ -85,13 +85,13 @@ image_index=index
 }
 if room=rmHotelEntrance {
 test=1
-if objFatmanEating.sprite_index=sprFatmanEating or objFatmanEating.sprite_index=sprFatmanEatingGiveUp or objFatmanTelephone.sprite_index=sprFatmanTelephone or objFatmanTelephone.sprite_index=sprFatmanTelephoneGiveUp test=0
+if instance_exists(objFatmanEating) and instance_exists(objFatmanTelephone) if (objFatmanEating.sprite_index=sprFatmanEating or objFatmanEating.sprite_index=sprFatmanEatingGiveUp or objFatmanTelephone.sprite_index=sprFatmanTelephone or objFatmanTelephone.sprite_index=sprFatmanTelephoneGiveUp) test=0
 if test=0 exit
 }
 
 if room=rmHotelSuite {
 test=1
-if objFatmanShit.sprite_index=sprFatmanShit or objFatmanShit.sprite_index=sprFatmanShitGiveUp test=0
+if (objFatmanShit.sprite_index=sprFatmanShit or objFatmanShit.sprite_index=sprFatmanShitGiveUp) test=0
 if test=0 exit
 }
 

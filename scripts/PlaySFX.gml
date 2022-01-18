@@ -1,4 +1,4 @@
-//This script plays sound effects!
+/// This script plays sound effects!
 if is_string(argument0){
 if argument0 = "Pick Up"            {audio_play(sndPickUp)                                                              }
 if argument0 = "Strong Punch"       {audio_play(sndDoorHit) audio_play(sndPunch)                                        }

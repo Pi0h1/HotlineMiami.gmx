@@ -58,12 +58,7 @@ enemy=sprEMafiaDieDrill
             <kind>1</kind>
             <string>if image_index&lt;19 image_index+=0.2 else {
 instance_create(x+lengthdir_x(24,image_angle),y+lengthdir_y(24,image_angle),objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.image_angle=image_angle
-my_id.sprite_index=sprEMafiaDieDrill
-if sprite_index=sprPDrillKillPolice my_id.sprite_index=sprPoliceDeadDrill
-my_id.image_yscale=1
-my_id.image_index=18
+createDeadBody(false,0,sprEMafiaDieDrill,image_angle)
 my_id=instance_create(x,y,objPlayerJacket)
 my_id.sprite_index=sprPWalkDrill
 my_id.maskon=global.maskon

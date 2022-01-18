@@ -1,3 +1,4 @@
+///txtDev(x,y,string,font,scale)
 var scale=argument4;
 var angle=0;
 

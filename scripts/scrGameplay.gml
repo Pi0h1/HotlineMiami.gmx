@@ -14,18 +14,6 @@ global.mousey=global.enemy.y
 } else global.enemy=-1234
 }
 
-if room=rmHotelSuite {
-with objWindowFrameV {
-if sprite_index=sprWindowSill nothing=1 else {
-if x=480 and y=256 {
-draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,objBackgroundColor.dir*32),y+16,1,1,90,c_white,1)
-}
-}
-}
-}
-
-//Cursor was here
-
 if keyboard_check(vk_control) {
     if mouse_check_button(mb_right) {
     draw_sprite_ext(sprUIEraser,eraser_index,objEffector.x,objEffector.y,0.5,0.5,0,c_white,1)
@@ -97,6 +85,3 @@ if instance_exists(objPlayerJacket) {
 view_xview[0]=vlastx
 view_yview[0]=vlasty
 }
-
-
-

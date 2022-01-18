@@ -69,11 +69,7 @@ global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
 ds_list_add(global.bonuslist,"Mercy Kill")
-//my_id=instance_create(myx,myy,objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprEMafiaDieNeckBreak//Snapped
-my_id.image_index=12
-my_id.image_angle=image_angle
+createDeadBody(false,0,sprEMafiaDieNeckBreak,image_angle) //Snapped
 global.angle=image_angle-180
 my_id=instance_create(x,y,objPlayerJacket)
 my_id.reload=30

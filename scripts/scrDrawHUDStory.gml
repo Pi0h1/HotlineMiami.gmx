@@ -51,11 +51,13 @@ if objPlayer.ammo>0 and (instance_exists(objEnemy) or instance_exists(objEnemyCr
 }
 }
 scorestring=global.drawscore
-if instance_exists(objPlayerDead) {
+if instance_exists(objDeadBody) {
+if objDeadBody.isPlayer=true{
 if room=rmSequence12b or room=rmSequence12c nothing=1 else {
 ammostring=global.restartkey+" TO RESTART!" 
 scorestring="YOU'RE DEAD!"
 showammo=1
+}
 }
 }
 if showammo=1 {

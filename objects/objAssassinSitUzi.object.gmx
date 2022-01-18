@@ -139,18 +139,21 @@ draw_sprite_ext(sprRatMask,0,x,y,image_xscale,image_yscale,direction,image_blend
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objPlayerDead) {
-if objEffector.fade=0 {
-objEffector.fade=1
-objEffector.next=1
-objEffector.nextroom=rmSequence12c
-objEffector.newsong=1
-objEffector.song=working_directory+"\SilverLights.mp3"
-global.playerx=objPlayerDead.x
-global.playery=objPlayerDead.y
-global.playerangle=objPlayerDead.image_angle
+            <string>if instance_exists(objDeadBody) {
+    if objDeadBody.isPlayer=true{
+        if objEffector.fade=0 {
+        objEffector.fade=1
+        objEffector.next=1
+        objEffector.nextroom=rmSequence12c
+        objEffector.newsong=1
+        objEffector.song=working_directory+"\SilverLights.mp3"
+        global.playerx=objDeadBody.x
+        global.playery=objDeadBody.y
+        global.playerangle=objDeadBody.image_angle
+        }
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>

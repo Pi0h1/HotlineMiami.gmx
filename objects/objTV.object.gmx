@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
+            <string>image_speed=0.5
 light = 3
 </string>
           </argument>
@@ -50,7 +50,7 @@ light = 3
           <argument>
             <kind>1</kind>
             <string>draw_set_blend_mode(bm_add)
-draw_circle_color(x - lengthdir_x(5, image_angle), y, 15, make_color_hsv(120, 240, 180 + light * 2), c_black, 0)
+draw_circle_colour(x - lengthdir_x(10, image_angle), y, 15, make_color_hsv(120, 240, 180 + light * 2), c_black, 0)
 draw_set_blend_mode(bm_normal)
 
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)

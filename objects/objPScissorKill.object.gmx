@@ -54,10 +54,7 @@ enemy=sprPScissorKill
           <argument>
             <kind>1</kind>
             <string>if image_index&lt;10 image_index+=0.15 else {
-my_id=instance_create(x,y,objDeadBody)
-my_id.image_angle=image_angle
-my_id.sprite_index=sprEBackScissor
-my_id.image_speed=0.2
+createDeadBody(false,0,sprEBackScissor,image_angle)
 my_id=instance_create(x,y,objPlayerJacket)
 my_id.sprite_index=sprPWalkThrow
 my_id.throwindex=0

@@ -178,7 +178,7 @@ amount+=5
 if fade=1 {
 if amount&gt;0  {
 amount-=10
-if restart=1 or newsong=1 or (room=rmSwatUpstairs and instance_exists(objSwat) and instance_exists(objPlayerDead)) {
+if restart=1 or newsong=1 or (room=rmSwatUpstairs and instance_exists(objSwat) and (instance_exists(objDeadBody)) and objDeadBody.isPlayer=true) {
 sxeasy_setVolume(amount*(1/180))
 }
 } else {fade=0 if restart=1 {if file_exists(working_directory+"\restartmusic") file_delete(working_directory+"\restartmusic") sxeasy_stop(1) sxeasy_setVolume(0) bgm_Close() game_restart() //sxeasy_play(working_directory+"\HorseSteppin.mp3"); room=rmMenu

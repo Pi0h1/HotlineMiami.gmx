@@ -57,10 +57,7 @@ enemy=sprESwordKill
             <kind>1</kind>
             <string>if image_index&lt;15 image_index+=0.15 else {
 instance_create(x+lengthdir_x(24,image_angle),y+lengthdir_y(24,image_angle),objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.image_angle=image_angle
-my_id.sprite_index=sprESwordKill
-my_id.image_index=3
+createDeadBody(false,0,sprESwordKill,image_angle)
 my_id=instance_create(x,y,objPlayerJacket)
 my_id.sprite_index=sprPWalkSword
 my_id.maskon=global.maskon

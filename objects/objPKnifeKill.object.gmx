@@ -57,10 +57,7 @@ enemy=sprEMafiaDieKnife
             <kind>1</kind>
             <string>if image_index&lt;7 image_index+=0.15 else {
 //instance_create(x+lengthdir_x(24,image_angle),y+lengthdir_y(24,image_angle),objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.image_angle=image_angle
-my_id.sprite_index=sprEMafiaDieKnife
-my_id.image_index=7
+createDeadBody(false,0,sprEMafiaDieKnife,image_angle)
 my_id=instance_create(x,y,objPlayerJacket)
 my_id.sprite_index=sprPWalkKnife
 my_id.maskon=global.maskon

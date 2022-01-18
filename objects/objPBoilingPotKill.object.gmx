@@ -56,11 +56,7 @@ enemy=sprEGroundBoiling
           <argument>
             <kind>1</kind>
             <string>if image_index&lt;13 image_index+=0.15 else {
-my_id=instance_create(x,y,objDeadBody)
-my_id.image_angle=image_angle
-my_id.sprite_index=sprEDeadBoiling
-my_id.image_index=0
-my_id.image_speed=0.15
+createDeadBody(false,0,sprEDeadBoiling,image_angle)
 my_id=instance_create(x,y,objPlayerJacket)
 my_id.sprite_index=sprPWalkPot
 my_id.maskon=global.maskon

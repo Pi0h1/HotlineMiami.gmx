@@ -69,10 +69,7 @@ instance_create(x,y,objLevelComplete)
 my_id.maskon=global.maskon
 my_id.maskindex=global.maskindex
 my_id=instance_create(x+lengthdir_x(11,image_angle),y+lengthdir_y(11,image_angle),objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprHoboGround
-my_id.image_index=3
-my_id.image_angle=image_angle
+createDeadBody(false,0,sprHoboGround,image_angle)
 global.done=1
 instance_destroy()
 my_id=instance_create(x,y-12,objScore)

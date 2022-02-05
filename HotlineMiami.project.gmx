@@ -1814,20 +1814,8 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="HotTextEffects">
-      <script>scripts\scrDrawRectangle.gml</script>
-      <script>scripts\txtDev.gml</script>
-      <script>scripts\txtMessage.gml</script>
-      <script>scripts\txtConversation.gml</script>
-      <script>scripts\txtScore.gml</script>
-      <script>scripts\txtHotline2.gml</script>
-    </scripts>
-    <scripts name="Dev Menu">
-      <script>scripts\scrStartLevel.gml</script>
-      <script>scripts\devDrawWindow.gml</script>
-      <script>scripts\devPlaySFX.gml</script>
-      <script>scripts\devSwitchPlayers.gml</script>
-    </scripts>
+    <script>scripts\GameInformation.gml</script>
+    <script>scripts\GameInfoTranslated.gml</script>
     <scripts name="Player">
       <scripts name="Walking">
         <script>scripts\scrDrawShadow.gml</script>
@@ -1837,6 +1825,7 @@
         <script>scripts\scrPlayerMove.gml</script>
         <script>scripts\scrIsWalking.gml</script>
         <script>scripts\scrPlayerPickUp.gml</script>
+        <script>scripts\scrPlayerHospitalMove.gml</script>
       </scripts>
       <scripts name="Attacking">
         <scripts name="Executions">
@@ -1871,7 +1860,6 @@
         </scripts>
         <script>scripts\scrInitMaskPos.gml</script>
         <script>scripts\scrDrawMask.gml</script>
-        <script>scripts\scrDrawMaskMenu.gml</script>
         <script>scripts\scrDrawPlayer.gml</script>
         <script>scripts\scrUpdateMaskPos.gml</script>
         <script>scripts\scrDrawMaskLedge.gml</script>
@@ -1901,6 +1889,7 @@
         <script>scripts\scrDrawConversation.gml</script>
         <script>scripts\scrSetMessage.gml</script>
       </scripts>
+      <script>scripts\scrCheckMissionComplete.gml</script>
       <script>scripts\scrCarNextRoom.gml</script>
       <script>scripts\scrCheckHitBack.gml</script>
       <script>scripts\scrPlayerPickUp2.gml</script>
@@ -1908,8 +1897,28 @@
       <script>scripts\scrDrawHead.gml</script>
       <script>scripts\scrDrawPose.gml</script>
       <script>scripts\scrPlayerPoses.gml</script>
+      <script>scripts\scrGetWeapon.gml</script>
+      <script>scripts\scrCurrentWeapon.gml</script>
+      <script>scripts\scrCurrentWeaponExt.gml</script>
+      <script>scripts\scrPlayerLight.gml</script>
+      <script>scripts\scrPlayerMove2.gml</script>
+      <script>scripts\scrGetRoom.gml</script>
+      <script>scripts\scrGetMaskPowers.gml</script>
+      <script>scripts\scrLoadMask.gml</script>
+      <script>scripts\scrPlayerDiePantherBite.gml</script>
+      <script>scripts\scrInitDistortion.gml</script>
+      <script>scripts\scrIndexToWeapon.gml</script>
+      <script>scripts\scrCarNextInterlude.gml</script>
+      <script>scripts\scrResetStory.gml</script>
+      <script>scripts\scrInitThrowPos.gml</script>
+      <script>scripts\scrKillShield.gml</script>
+      <script>scripts\scrGetAmmo.gml</script>
     </scripts>
     <scripts name="Enemies">
+      <script>scripts\scrChasePlayer.gml</script>
+      <script>scripts\scrInitPathFinding.gml</script>
+      <script>scripts\scrHoboStep.gml</script>
+      <script>scripts\scrHoboGetWeapon.gml</script>
       <scripts name="Police">
         <script>scripts\scrPolicePatrolStep.gml</script>
         <script>scripts\scrPolicePatrolInit.gml</script>
@@ -1924,7 +1933,13 @@
         <script>scripts\scrPoliceMeleeStationaryInit.gml</script>
         <script>scripts\scrPoliceMeleeStationaryStep.gml</script>
       </scripts>
+      <scripts name="Swat">
+        <script>scripts\scrSwatFollowWall.gml</script>
+        <script>scripts\scrESwatStep.gml</script>
+        <script>scripts\scrESwatInit.gml</script>
+      </scripts>
       <script>scripts\scrEStaticInit.gml</script>
+      <script>scripts\scrIdleGetEnemy.gml</script>
       <script>scripts\scrEStaticStep.gml</script>
       <script>scripts\scrEPatrolInit.gml</script>
       <script>scripts\scrEPatrolStep.gml</script>
@@ -1976,198 +1991,195 @@
       <script>scripts\scrDogChasePlayer.gml</script>
       <script>scripts\scrRotate.gml</script>
       <script>scripts\scrHearPlayer.gml</script>
+      <script>scripts\scrEnemyShoot.gml</script>
+      <script>scripts\enemyDropWeapon.gml</script>
+      <script>scripts\createDeadBody.gml</script>
+      <script>scripts\createBlood.gml</script>
+      <script>scripts\scrEnemyDieMelee.gml</script>
+      <script>scripts\scrEPatrolStep3.gml</script>
+      <script>scripts\scrPolicePatrolStep2.gml</script>
+      <script>scripts\scrEnemyIsAttacking.gml</script>
+      <script>scripts\scrDogChaseSearch.gml</script>
+      <script>scripts\scrMoveSolidOn.gml</script>
+      <script>scripts\scrMoveSolidOff.gml</script>
+      <script>scripts\scrGoGetWeapon.gml</script>
+      <script>scripts\scrGetAttack.gml</script>
+      <script>scripts\scrEMeleeStep2.gml</script>
+      <script>scripts\scrReturnToStart.gml</script>
+      <script>scripts\scrKnifeThrowHits.gml</script>
+      <script>scripts\scrCollisionLine.gml</script>
+      <script>scripts\scrCollisionLineExt.gml</script>
+      <script>scripts\scrChaseWall.gml</script>
+      <script>scripts\scrCollisionLineDouble.gml</script>
     </scripts>
-    <scripts name="Surfaces">
-      <script>scripts\addToSurface.gml</script>
-      <script>scripts\scrResetSurfaces.gml</script>
-      <script>scripts\scrSaveSurface.gml</script>
-      <script>scripts\scrFreeSurfaces.gml</script>
-      <script>scripts\scrSurfaceTiles.gml</script>
-      <script>scripts\scrSaveTiles.gml</script>
-      <scripts name="cleanmem">
-        <script>scripts\cleanmem_init.gml</script>
-        <script>scripts\cleanmem.gml</script>
-        <script>scripts\cleanmem_get_mem.gml</script>
+    <scripts name="Visuals">
+      <scripts name="HotTextEffects">
+        <script>scripts\scrDrawRectangle.gml</script>
+        <script>scripts\txtDev.gml</script>
+        <script>scripts\txtMessage.gml</script>
+        <script>scripts\txtConversation.gml</script>
+        <script>scripts\txtScore.gml</script>
+        <script>scripts\txtHotline2.gml</script>
       </scripts>
-    </scripts>
-    <scripts name="Steam">
-      <scripts name="Achievements">
-        <scripts name="Check">
-          <script>scripts\scrCheckGrades.gml</script>
-          <script>scripts\scrCheckMasks.gml</script>
-          <script>scripts\scrCheckGuns.gml</script>
-          <script>scripts\scrCheckLetters.gml</script>
-          <script>scripts\scrCheckUsedKills.gml</script>
-          <script>scripts\scrCheckUsedMasks.gml</script>
-          <script>scripts\scrCheckUsedGuns.gml</script>
-          <script>scripts\scrCheckUsedMelee.gml</script>
-          <script>scripts\scrCheckUsedThrows.gml</script>
-          <script>scripts\SteamCheckFinal.gml</script>
-        </scripts>
-        <script>scripts\scrLoadAchievements.gml</script>
-        <script>scripts\scrSaveAchievements.gml</script>
+      <scripts name="Dev Menu">
+        <script>scripts\scrStartLevel.gml</script>
+        <script>scripts\devDrawWindow.gml</script>
+        <script>scripts\devPlaySFX.gml</script>
+        <script>scripts\devSwitchPlayers.gml</script>
       </scripts>
-      <script>scripts\steamdll_init.gml</script>
-      <script>scripts\steamdll_free.gml</script>
-      <script>scripts\SteamInit.gml</script>
-      <script>scripts\SteamShutdown.gml</script>
-      <script>scripts\SteamSetAchievement.gml</script>
-      <script>scripts\SteamFindLeaderboard.gml</script>
-      <script>scripts\SteamSetLeaderboardScore.gml</script>
-      <script>scripts\SteamRunCallbacks.gml</script>
-      <script>scripts\SteamGetRankScore.gml</script>
-      <script>scripts\SteamGetRankName.gml</script>
-      <script>scripts\SteamDownloadScores.gml</script>
-      <script>scripts\SteamSetStat.gml</script>
-      <script>scripts\SteamGetGlobalRank.gml</script>
-      <script>scripts\SteamSetFloatStat.gml</script>
-      <script>scripts\SteamStoreStats.gml</script>
-      <script>scripts\SteamResetStats.gml</script>
-      <script>scripts\SteamIncStat.gml</script>
-    </scripts>
-    <scripts name="Alienware">
-      <script>scripts\scrAlienWareInit.gml</script>
-      <script>scripts\scrAlienWareFree.gml</script>
-      <script>scripts\scrAlienWarePink.gml</script>
-      <script>scripts\scrAlienWareYellow.gml</script>
-      <script>scripts\scrAlienWareRed.gml</script>
-    </scripts>
-    <scripts name="Audio">
-      <scripts name="Internal">
-        <script>scripts\audio_play.gml</script>
-        <script>scripts\PlaySFX.gml</script>
-        <script>scripts\PlayBGM.gml</script>
+      <scripts name="Interface">
+        <script>scripts\scrDrawMaskMenu.gml</script>
+        <script>scripts\scrGetMessage.gml</script>
+        <script>scripts\scrMaskGetName.gml</script>
+        <script>scripts\scrHighlight.gml</script>
+        <script>scripts\scrDialogueGetAnswers.gml</script>
+        <script>scripts\scrGetMessageFrench.gml</script>
       </scripts>
-      <scripts name="External">
-        <scripts name="bgm">
-          <script>scripts\bgm_Close.gml</script>
-          <script>scripts\bgm_Unload.gml</script>
-          <script>scripts\bgm_SetAttr.gml</script>
-          <script>scripts\bgm_vol.gml</script>
+      <scripts name="Optimization">
+        <scripts name="Surfaces">
+          <script>scripts\addToSurface.gml</script>
+          <script>scripts\scrResetSurfaces.gml</script>
+          <script>scripts\scrSaveSurface.gml</script>
+          <script>scripts\scrFreeSurfaces.gml</script>
+          <script>scripts\scrSurfaceTiles.gml</script>
+          <script>scripts\scrSaveTiles.gml</script>
+          <scripts name="cleanmem">
+            <script>scripts\cleanmem_init.gml</script>
+            <script>scripts\cleanmem.gml</script>
+            <script>scripts\cleanmem_get_mem.gml</script>
+          </scripts>
         </scripts>
-        <scripts name="Sxeasy">
-          <script>scripts\sxeasy_init.gml</script>
-          <script>scripts\sxeasy_play.gml</script>
-          <script>scripts\sxeasy_stop.gml</script>
-          <script>scripts\sxeasy_setVolume.gml</script>
-          <script>scripts\sxeasy_close.gml</script>
+        <script>scripts\scrDrawWall.gml</script>
+        <script>scripts\scrInitWall.gml</script>
+      </scripts>
+      <script>scripts\scrDrawSpriteAsVertex.gml</script>
+      <script>scripts\scrCreateShards.gml</script>
+      <script>scripts\scrDrawDistortion.gml</script>
+      <script>scripts\scrPointsDraw.gml</script>
+      <script>scripts\scrDestroyWindowV.gml</script>
+    </scripts>
+    <scripts name="Systems">
+      <scripts name="Audio">
+        <scripts name="Internal">
+          <script>scripts\audio_play.gml</script>
+          <script>scripts\PlaySFX.gml</script>
+          <script>scripts\PlayBGM.gml</script>
         </scripts>
-        <scripts name="oddio">
-          <script>scripts\oddio_init.gml</script>
-          <script>scripts\oddio_free.gml</script>
-          <script>scripts\oddio_loadbin.gml</script>
-          <script>scripts\oddio_loopbin.gml</script>
-          <script>scripts\oddio_freetrack.gml</script>
-          <script>scripts\oddio_play.gml</script>
-          <script>scripts\oddio_stop.gml</script>
-          <script>scripts\oddio_setvolume.gml</script>
+        <scripts name="External">
+          <scripts name="bgm">
+            <script>scripts\bgm_Close.gml</script>
+            <script>scripts\bgm_Unload.gml</script>
+            <script>scripts\bgm_SetAttr.gml</script>
+            <script>scripts\bgm_vol.gml</script>
+          </scripts>
+          <scripts name="Sxeasy">
+            <script>scripts\sxeasy_init.gml</script>
+            <script>scripts\sxeasy_play.gml</script>
+            <script>scripts\sxeasy_stop.gml</script>
+            <script>scripts\sxeasy_setVolume.gml</script>
+            <script>scripts\sxeasy_close.gml</script>
+          </scripts>
+          <scripts name="oddio">
+            <script>scripts\oddio_init.gml</script>
+            <script>scripts\oddio_free.gml</script>
+            <script>scripts\oddio_loadbin.gml</script>
+            <script>scripts\oddio_loopbin.gml</script>
+            <script>scripts\oddio_freetrack.gml</script>
+            <script>scripts\oddio_play.gml</script>
+            <script>scripts\oddio_stop.gml</script>
+            <script>scripts\oddio_setvolume.gml</script>
+          </scripts>
         </scripts>
       </scripts>
+      <scripts name="Steam">
+        <scripts name="Achievements">
+          <scripts name="Check">
+            <script>scripts\scrCheckGrades.gml</script>
+            <script>scripts\scrCheckMasks.gml</script>
+            <script>scripts\scrCheckGuns.gml</script>
+            <script>scripts\scrCheckLetters.gml</script>
+            <script>scripts\scrCheckUsedKills.gml</script>
+            <script>scripts\scrCheckUsedMasks.gml</script>
+            <script>scripts\scrCheckUsedGuns.gml</script>
+            <script>scripts\scrCheckUsedMelee.gml</script>
+            <script>scripts\scrCheckUsedThrows.gml</script>
+            <script>scripts\SteamCheckFinal.gml</script>
+          </scripts>
+          <script>scripts\scrLoadAchievements.gml</script>
+          <script>scripts\scrSaveAchievements.gml</script>
+        </scripts>
+        <script>scripts\steamdll_init.gml</script>
+        <script>scripts\steamdll_free.gml</script>
+        <script>scripts\SteamInit.gml</script>
+        <script>scripts\SteamShutdown.gml</script>
+        <script>scripts\SteamSetAchievement.gml</script>
+        <script>scripts\SteamFindLeaderboard.gml</script>
+        <script>scripts\SteamSetLeaderboardScore.gml</script>
+        <script>scripts\SteamRunCallbacks.gml</script>
+        <script>scripts\SteamGetRankScore.gml</script>
+        <script>scripts\SteamGetRankName.gml</script>
+        <script>scripts\SteamDownloadScores.gml</script>
+        <script>scripts\SteamSetStat.gml</script>
+        <script>scripts\SteamGetGlobalRank.gml</script>
+        <script>scripts\SteamSetFloatStat.gml</script>
+        <script>scripts\SteamStoreStats.gml</script>
+        <script>scripts\SteamResetStats.gml</script>
+        <script>scripts\SteamIncStat.gml</script>
+      </scripts>
+      <scripts name="Alienware">
+        <script>scripts\scrAlienWareInit.gml</script>
+        <script>scripts\scrAlienWareFree.gml</script>
+        <script>scripts\scrAlienWarePink.gml</script>
+        <script>scripts\scrAlienWareYellow.gml</script>
+        <script>scripts\scrAlienWareRed.gml</script>
+      </scripts>
+      <script>scripts\LevelSettings.gml</script>
+      <script>scripts\scrInitScore.gml</script>
+      <script>scripts\scrResetScore.gml</script>
+      <script>scripts\scrInitControls.gml</script>
+      <script>scripts\scrLoadUnlocked.gml</script>
+      <script>scripts\scrSaveUnlocked.gml</script>
+      <script>scripts\scrSaveBonusList.gml</script>
+      <script>scripts\scrLoadBonusList.gml</script>
+      <script>scripts\scrCompileBonusList.gml</script>
+      <script>scripts\scrCheckBack.gml</script>
+      <script>scripts\scrCreateBonusList.gml</script>
+      <script>scripts\scrGetSong.gml</script>
+      <script>scripts\scrCheckpoint.gml</script>
+      <script>scripts\scrExportRoom.gml</script>
+      <script>scripts\scrGetSequenceOld.gml</script>
+      <script>scripts\scrCountMobilityScore.gml</script>
+      <script>scripts\scrInstanceNearest.gml</script>
+      <script>scripts\scrSaveVol.gml</script>
+      <script>scripts\scrLoadVol.gml</script>
+      <script>scripts\scrLevelGetMask.gml</script>
+      <script>scripts\scrLevelGetPuzzle.gml</script>
+      <script>scripts\scrCreateLetters.gml</script>
+      <script>scripts\scrGetLetterSprite.gml</script>
+      <script>scripts\scrGetGlowSprite.gml</script>
+      <script>scripts\scrInitLetters.gml</script>
+      <script>scripts\scrSetPort.gml</script>
+      <script>scripts\scrGetTokenLetter.gml</script>
+      <script>scripts\scrLoadKeys.gml</script>
+      <script>scripts\scrSaveKeys.gml</script>
+      <script>scripts\scrGunIndexGetAmmo.gml</script>
+      <script>scripts\scrGetSequence.gml</script>
+      <script>scripts\surface_alpha.gml</script>
+      <script>scripts\scrCountSpritesSize.gml</script>
+      <script>scripts\scrGetCurrentLevel.gml</script>
+      <script>scripts\scrNth.gml</script>
+      <script>scripts\scrMeetDoor.gml</script>
+      <script>scripts\scrGetMaxpoints.gml</script>
+      <script>scripts\scrGradeToNumber.gml</script>
+      <script>scripts\scrGetCurrentLevel2.gml</script>
+      <script>scripts\scrNumberToGrade.gml</script>
+      <script>scripts\scrCountFlexibilityScore.gml</script>
+      <script>scripts\scrInstanceNearestExt.gml</script>
+      <script>scripts\scrExportSprites.gml</script>
+      <script>scripts\scrCenterOn.gml</script>
+      <script>scripts\scrGetSongRestart.gml</script>
+      <script>scripts\setChair.gml</script>
     </scripts>
-    <script>scripts\scrHighlight.gml</script>
-    <script>scripts\scrDrawWall.gml</script>
-    <script>scripts\scrInitWall.gml</script>
-    <script>scripts\scrInitPathFinding.gml</script>
-    <script>scripts\scrChasePlayer.gml</script>
-    <script>scripts\scrReturnToStart.gml</script>
-    <script>scripts\scrGetWeapon.gml</script>
-    <script>scripts\scrCurrentWeapon.gml</script>
-    <script>scripts\scrKnifeThrowHits.gml</script>
-    <script>scripts\scrEnemyShoot.gml</script>
-    <script>scripts\scrCollisionLine.gml</script>
-    <script>scripts\scrPointsDraw.gml</script>
-    <script>scripts\scrCurrentWeaponExt.gml</script>
-    <script>scripts\scrGetAttack.gml</script>
-    <script>scripts\scrGoGetWeapon.gml</script>
-    <script>scripts\scrInstanceNearest.gml</script>
-    <script>scripts\scrCollisionLineExt.gml</script>
-    <script>scripts\scrMoveSolidOn.gml</script>
-    <script>scripts\scrMoveSolidOff.gml</script>
-    <script>scripts\scrChaseWall.gml</script>
-    <script>scripts\scrCollisionLineDouble.gml</script>
-    <script>scripts\scrInitThrowPos.gml</script>
-    <script>scripts\scrEnemyDieMelee.gml</script>
-    <script>scripts\scrGetMessage.gml</script>
-    <script>scripts\scrCheckMissionComplete.gml</script>
-    <script>scripts\scrResetStory.gml</script>
-    <script>scripts\scrGetSequenceOld.gml</script>
-    <script>scripts\scrGetSong.gml</script>
-    <script>scripts\scrInitScore.gml</script>
-    <script>scripts\scrCountMobilityScore.gml</script>
-    <script>scripts\scrResetScore.gml</script>
-    <script>scripts\scrIdleGetEnemy.gml</script>
-    <script>scripts\scrCheckpoint.gml</script>
-    <script>scripts\scrExportRoom.gml</script>
-    <script>scripts\scrGetSequence.gml</script>
-    <script>scripts\scrInitControls.gml</script>
-    <script>scripts\scrLoadUnlocked.gml</script>
-    <script>scripts\scrSaveUnlocked.gml</script>
-    <script>scripts\scrKillShield.gml</script>
-    <script>scripts\scrCarNextInterlude.gml</script>
-    <script>scripts\scrHoboStep.gml</script>
-    <script>scripts\scrHoboGetWeapon.gml</script>
-    <script>scripts\scrInitDistortion.gml</script>
-    <script>scripts\scrDrawDistortion.gml</script>
-    <script>scripts\scrPlayerHospitalMove.gml</script>
-    <script>scripts\surface_alpha.gml</script>
-    <script>scripts\scrCountSpritesSize.gml</script>
-    <script>scripts\scrSaveBonusList.gml</script>
-    <script>scripts\scrLoadBonusList.gml</script>
-    <script>scripts\scrCompileBonusList.gml</script>
-    <script>scripts\scrCheckBack.gml</script>
-    <script>scripts\scrCreateBonusList.gml</script>
-    <script>scripts\scrPlayerDiePantherBite.gml</script>
-    <script>scripts\scrLoadMask.gml</script>
-    <script>scripts\scrGetRoom.gml</script>
-    <script>scripts\scrGetMaskPowers.gml</script>
-    <script>scripts\scrIndexToWeapon.gml</script>
-    <script>scripts\scrGetAmmo.gml</script>
-    <script>scripts\scrGetMessageFrench.gml</script>
-    <script>scripts\scrGetCurrentLevel.gml</script>
-    <script>scripts\scrSwatFollowWall.gml</script>
-    <script>scripts\scrESwatStep.gml</script>
-    <script>scripts\scrESwatInit.gml</script>
-    <script>scripts\scrNth.gml</script>
-    <script>scripts\scrMeetDoor.gml</script>
-    <script>scripts\scrDialogueGetAnswers.gml</script>
-    <script>scripts\scrEMeleeStep2.gml</script>
-    <script>scripts\scrGetMaxpoints.gml</script>
-    <script>scripts\scrGradeToNumber.gml</script>
-    <script>scripts\scrGetCurrentLevel2.gml</script>
-    <script>scripts\scrNumberToGrade.gml</script>
-    <script>scripts\scrLevelGetMask.gml</script>
-    <script>scripts\scrEPatrolStep3.gml</script>
-    <script>scripts\scrPolicePatrolStep2.gml</script>
-    <script>scripts\scrDogChaseSearch.gml</script>
-    <script>scripts\scrEnemyIsAttacking.gml</script>
-    <script>scripts\scrMaskGetName.gml</script>
-    <script>scripts\scrLevelGetPuzzle.gml</script>
-    <script>scripts\scrCreateLetters.gml</script>
-    <script>scripts\scrGetLetterSprite.gml</script>
-    <script>scripts\scrGetGlowSprite.gml</script>
-    <script>scripts\scrInitLetters.gml</script>
-    <script>scripts\scrGetTokenLetter.gml</script>
-    <script>scripts\scrSetPort.gml</script>
-    <script>scripts\scrGunIndexGetAmmo.gml</script>
-    <script>scripts\scrLoadKeys.gml</script>
-    <script>scripts\scrSaveKeys.gml</script>
-    <script>scripts\scrCountFlexibilityScore.gml</script>
-    <script>scripts\scrInstanceNearestExt.gml</script>
-    <script>scripts\scrLoadVol.gml</script>
-    <script>scripts\scrSaveVol.gml</script>
-    <script>scripts\scrExportSprites.gml</script>
-    <script>scripts\scrCenterOn.gml</script>
-    <script>scripts\scrGetSongRestart.gml</script>
-    <script>scripts\setChair.gml</script>
-    <script>scripts\LevelSettings.gml</script>
-    <script>scripts\scrDrawSpriteAsVertex.gml</script>
-    <script>scripts\scrDestroyWindowV.gml</script>
-    <script>scripts\scrCreateShards.gml</script>
-    <script>scripts\scrPlayerLight.gml</script>
-    <script>scripts\scrPlayerMove2.gml</script>
-    <script>scripts\createDeadBody.gml</script>
-    <script>scripts\createBlood.gml</script>
-    <script>scripts\enemyDropWeapon.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>

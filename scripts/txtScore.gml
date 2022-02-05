@@ -1,6 +1,7 @@
 ///  txtScore(x,y,string,font,scale)
 
 //  Variables.
+var align = fa_center;
 var font = argument3;
 draw_set_font(font)
 var scale = argument4;
@@ -14,8 +15,8 @@ var angle = lengthdir_x(2, dir * 1.34 + 90) ;
 var rectangleWidth=(string_width(argument2)*0.375)+(32*scale);
 var rectangleHeight=12.5;
 
-draw_set_halign(fa_center)
-draw_set_valign(fa_center)
+draw_set_halign(align)
+draw_set_valign(align)
 
 scrDrawRectangle(
 argument0 - (rectangleWidth), argument1 + (rectangleHeight), //x1,y1
@@ -27,11 +28,11 @@ false
 //  back      //
 draw_text_transformed_colour(
 argument0 + modifier_x, argument1 + modifier_y, argument2, scale, scale, angle,
-color1,color1,merge_colour(color1,c_black,0.5),merge_colour(color1,c_black,0.5),1
+color1,color1,merge_colour(color1,color1,0.5),merge_colour(color1,color1,0.5),1
 )
 
 //  front      //
 draw_text_transformed_colour(
 argument0 + frontModifier_x, argument1 + frontModifier_y, argument2, scale, scale, angle,
-color2,color2,merge_colour(color2,c_black,0.5),merge_colour(color2,c_black,0.5),1
+color2,color2,merge_colour(color2,color2,0.5),merge_colour(color2,color2,0.5),1
 )

@@ -936,10 +936,6 @@ if global.godmode=1{
 draw_sprite_ext(sprHalo,headindex,x+maddx+0.5,y+maddy+0.5,image_xscale,image_yscale,dir,c_black,0.2)
 draw_sprite_ext(sprHalo,headindex,x+maddx,y+maddy,image_xscale,image_yscale,dir,image_blend,image_alpha)
 }
-
-texture_set_interpolation(true)
-txtDev(x,y,"I am HD text!#I go hard! :)",fntHD,0.1)
-texture_set_interpolation(false)
 </string>
           </argument>
         </arguments>

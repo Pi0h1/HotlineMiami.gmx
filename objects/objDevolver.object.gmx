@@ -32,7 +32,7 @@ scrSetPort()
 global.mvol=1
 scrLoadVol()
 if file_exists(working_directory+"\skip") {
-global.currentsong=""
+global.currentsong=0
 sxeasy_init();
 sxeasy_play(working_directory+"\HorseSteppin.mp3");
 room_goto(rmMenu)

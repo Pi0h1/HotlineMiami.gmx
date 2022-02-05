@@ -186,9 +186,9 @@ global.maskload=0
           <argument>
             <kind>1</kind>
             <string>/// Interaction
-var menuUp      = keyboard_check_pressed(ord(global.upkey)) || mouse_wheel_up();
-var menuDown    = keyboard_check_pressed(ord(global.downkey)) || mouse_wheel_down();
-var menuConfirm = keyboard_check_pressed(vk_enter) || mouse_check_button_pressed(mb_left);
+var menuUp      = keyboard_check_pressed(ord(global.upkey))     || mouse_wheel_up();
+var menuDown    = keyboard_check_pressed(ord(global.downkey))   || mouse_wheel_down();
+var menuConfirm = keyboard_check_pressed(vk_enter)              || mouse_check_button_pressed(mb_left);
 
 if wait&gt;0 wait-=1
 

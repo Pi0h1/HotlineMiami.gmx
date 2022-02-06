@@ -55,7 +55,7 @@
     <instance objName="objSink" x="313" y="208" name="inst_55F18983" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="256" y="160" name="inst_3075EC05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objToilet" x="292" y="167" name="inst_FFCAFEEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTub" x="231" y="233" name="inst_60E4BCB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTub" x="264" y="245" name="inst_60E4BCB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objArmchair" x="192" y="80" name="inst_DD0E0DD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="310"/>
     <instance objName="objArmchair" x="272" y="48" name="inst_1115DE4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objArmchair" x="352" y="80" name="inst_63216C9E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="230"/>

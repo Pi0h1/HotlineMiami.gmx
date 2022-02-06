@@ -59,7 +59,7 @@ surface_reset_target()</code>
     <instance objName="objSink" x="313" y="208" name="inst_7C539219" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="256" y="160" name="inst_71CDE78F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objToilet" x="292" y="167" name="inst_2DF2B536" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTub" x="231" y="233" name="inst_A7764407" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTub" x="264" y="245" name="inst_A7764407" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objArmchair" x="192" y="80" name="inst_DD2D76D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="310"/>
     <instance objName="objArmchair" x="272" y="48" name="inst_901F0ED6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objLight" x="192" y="80" name="inst_9FC39CC5" locked="0" code="color=c_aqua&#xA;targetstrength=0&#xA;radius=96" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -48,10 +48,13 @@
           <argument>
             <kind>1</kind>
             <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-draw_set_blend_mode(bm_add)
+
+draw_set_blend_mode(bm_add);
 draw_sprite_ext(sprSignGlow,index,x,y,image_xscale,image_yscale,image_angle,merge_color(c_ltgray,c_white,random(1)),image_alpha)
 index+=0.2
-draw_set_blend_mode(bm_normal)</string>
+draw_circle_colour(x, y, 20+random(1), make_color_rgb(255, 0, 30), c_black, 0)
+draw_set_blend_mode(bm_normal);
+</string>
           </argument>
         </arguments>
       </action>

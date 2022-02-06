@@ -103,7 +103,7 @@ shadowOffset2-=1
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>objShadowManager</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -135,7 +135,11 @@ draw_sprite_ext (
 }
 
 with (objSolid) {
+
+if object_index!=objRailV{
 draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset2-viewX)*other.shadowQuality,(y+other.shadowOffset2-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
+}
+
 }
 
 with (objShootThrough) {

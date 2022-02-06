@@ -5,6 +5,8 @@
 ### **This is not an open-source project.**
 **You are not allowed** to use any of the code found within this repository for any type of commercial gain. You can not sell projects made using code from this repository. Anything made using this source code must be available for free and for free only and remain that way without the possibility of gaining any kind of monetary compensation.
 
+[Check Trello for progress](https://trello.com/b/E42sa2qE/hotline-miami-studio "Check Trello for progress")
+
 **you can:**
 - ✅ use this code for recreational or educational use.
 - ✅ distribute compiled projects using this code for free.

@@ -49,7 +49,7 @@ testLevel = "FULL HOUSE";
             <kind>1</kind>
             <string>/// Global Variables
 //All Global variables should be set in this script.
-global.devmode = true;
+global.devmode = false;
 global.spawnObject = 0;
 global.godmode = 0;
 global.steamon = 0;

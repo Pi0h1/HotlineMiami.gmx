@@ -96,14 +96,18 @@ global.maskindex=3</code>
     <instance objName="objWallHospitalV" x="128" y="128" name="inst_C2F4DC6F" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
     <instance objName="objWallHospitalV" x="224" y="192" name="inst_3ACE8191" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHospitalV" x="224" y="192" name="inst_8A08C51D" locked="0" code="" scaleX="1" scaleY="21" colour="4294967295" rotation="0"/>
-    <instance objName="objWallHospitalV" x="320" y="224" name="inst_D0D6DC75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWallHospitalV" x="320" y="128" name="inst_F44E39AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHospitalV" x="320" y="224" name="inst_D0D6DC75" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHospitalV" x="320" y="128" name="inst_F44E39AC" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTutorialLight" x="368" y="80" name="inst_9D8417D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEffectorHouse" x="96" y="356" name="inst_01EA6019" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHospitalV" x="320" y="0" name="inst_DBEE737F" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
     <instance objName="objWallHospitalV" x="224" y="0" name="inst_0AAD2178" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
     <instance objName="objWallHospitalV" x="320" y="192" name="inst_04E20B8C" locked="0" code="" scaleX="1" scaleY="21" colour="4294967295" rotation="0"/>
     <instance objName="objWallHospitalV" x="416" y="128" name="inst_94C01F89" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHospitalV" x="128" y="128" name="inst_F6E0B71E" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHospitalV" x="128" y="224" name="inst_F31D1E88" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHospitalV" x="224" y="0" name="inst_7D573CFB" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHospitalV" x="224" y="352" name="inst_CBD5A99B" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="320" y="128" w="16" h="16" xo="16" yo="272" id="10082935" name="tile_91ACA3EE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

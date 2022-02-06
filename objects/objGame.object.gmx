@@ -527,13 +527,14 @@ temp2+=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if devmenu=false{
+            <string>if (global.devmode == false) exit 
+if devmenu=false{
 txtDev(8,8,"Press [1] to open Dev Menu",fntDescription,0.5)
 }
 
 if devmenu=false exit
 /// User Interface
-if (global.devmode == false) exit 
+
 
 //  Draw Background.
 devDrawWindow(sprUIRectangle,24,16,128,128)

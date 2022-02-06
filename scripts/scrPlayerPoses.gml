@@ -3,6 +3,8 @@ if  sprite_index=sprPWalkUnarmed {pose_index=WalkPlayerMeleeUnarmed_index} if sp
 
 if sprite_index=sprPWalkGirlfriend {pose_index=WalkPlayerCarrying}
 
+if sprite_index=sprPTakePhone {pose_index=sprPTakePhone}
+
 if  sprite_index=sprPWalkSilencer       or
     sprite_index=sprPWalkMagnum         or
     sprite_index=sprPWalkScorpion{

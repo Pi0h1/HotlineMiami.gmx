@@ -115,8 +115,8 @@ surface_reset_target();
 
 global.resetstory=0;
 global.comboflash=0;
-global.parttitle[0]="PART ONE";
-global.parttitle[1]="PHONECALLS";
+global.parttitle[0]="PART ONE.";
+global.parttitle[1]="PHONECALLS.";
 global.nextlevel=rmTutorial;
 global.sequence=rmSequence1;
 global.revisit=0;

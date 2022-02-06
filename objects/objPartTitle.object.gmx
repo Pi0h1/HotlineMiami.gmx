@@ -26,8 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>letter=-1
-//text[0]="PART ONE"
-//text[1]="PHONECALLS"
 texts=1
 
 i=0
@@ -55,7 +53,8 @@ i+=1
 }
 
 fade=0
-c_amount=0</string>
+c_amount=0
+</string>
           </argument>
         </arguments>
       </action>

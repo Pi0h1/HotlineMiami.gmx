@@ -2,10 +2,14 @@
 >Copyright 2012 Dennaton Games. All rights reserved.
 ------------
 
-### **This is not an open-source project.**
-**You are not allowed** to use any of the code found within this repository for any type of commercial gain. You can not sell projects made using code from this repository. Anything made using this source code must be available for free and for free only and remain that way without the possibility of gaining any kind of monetary compensation.
+Repository mantained by [Pi0h1.com](https://pi0h1.com/)
+
+![YouTube](https://img.shields.io/youtube/channel/subscribers/UCBiNWVcdD-LMhVKh1ndDRDw?style=social) ![Reddit](https://img.shields.io/reddit/subreddit-subscribers/HotlineMiami?style=social) ![Twitter](https://img.shields.io/twitter/follow/Pi0h1?style=social) ![Discord](https://img.shields.io/discord/649425678206369821?logo=Discord&logoColor=white&style=plastic)
 
 [Check Trello for progress](https://trello.com/b/E42sa2qE/hotline-miami-studio "Check Trello for progress")
+
+### **This is not an open-source project.**
+**You are not allowed** to use any of the code found within this repository for any type of commercial gain. You can not sell projects made using code from this repository. Anything made using this source code must be available for free and for free only and remain that way without the possibility of gaining any kind of monetary compensation.
 
 **you can:**
 - ✅ use this code for recreational or educational use.

@@ -6,6 +6,7 @@
   <datafiles number="34" name="datafiles"/>
   <NewExtensions>
     <extension index="0">extensions\HotTextEffects</extension>
+    <extension index="1">extensions\PushEd</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="Ambience">
@@ -1801,6 +1802,26 @@
     </sprites>
     <sprite>sprites\sprSpawnPoint</sprite>
     <sprite>sprites\sprGlassSurface</sprite>
+    <sprites name="PushEd">
+      <sprites name="GUI">
+        <sprite>sprites\PEd_guiSprCheckbox</sprite>
+        <sprite>sprites\PEd_guiSprIcons</sprite>
+        <sprite>sprites\PEd_guiSprInput</sprite>
+        <sprite>sprites\PEd_guiSprMisc</sprite>
+        <sprite>sprites\PEd_guiSprPanel</sprite>
+        <sprite>sprites\PEd_guiSprRectangle</sprite>
+        <sprite>sprites\PEd_guiSprRoll</sprite>
+        <sprite>sprites\PEd_guiSprScrollbarHor</sprite>
+        <sprite>sprites\PEd_guiSprScrollbarVer</sprite>
+        <sprite>sprites\PEd_guiSprShadow</sprite>
+        <sprite>sprites\PEd_guiSprWarning</sprite>
+        <sprite>sprites\PEd_guiSprWindowCross</sprite>
+      </sprites>
+      <sprite>sprites\PEd_sprDummy2D</sprite>
+    </sprites>
+    <sprites name="Example">
+      <sprite>sprites\sprSmiley</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\tlStudio2</background>
@@ -1810,11 +1831,15 @@
     <backgrounds name="Hotline Miami">
       <background>background\tlFloorTilesBackUp</background>
     </backgrounds>
+    <backgrounds name="PushEd">
+      <background>background\PEd_bgrDef</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\GameInformation.gml</script>
     <script>scripts\GameInfoTranslated.gml</script>
+    <script>scripts\GlobalVariables.gml</script>
     <scripts name="Player">
       <scripts name="Walking">
         <script>scripts\scrDrawShadow.gml</script>
@@ -2179,7 +2204,678 @@
       <script>scripts\scrGetSongRestart.gml</script>
       <script>scripts\setChair.gml</script>
     </scripts>
+    <scripts name="PushEd">
+      <scripts name="Actions">
+        <script>scripts\PEd_actClearRoom.gml</script>
+        <script>scripts\PEd_actClearSelection.gml</script>
+        <script>scripts\PEd_actCloseWindow.gml</script>
+        <script>scripts\PEd_actCopySelectedObjects.gml</script>
+        <script>scripts\PEd_actCreateEmptyRoom.gml</script>
+        <script>scripts\PEd_actDestroySelectedObjects.gml</script>
+        <script>scripts\PEd_actEmpty.gml</script>
+        <script>scripts\PEd_actExit.gml</script>
+        <script>scripts\PEd_actExportRoom.gml</script>
+        <script>scripts\PEd_actHideSelectedObjects.gml</script>
+        <script>scripts\PEd_actImportRoom.gml</script>
+        <script>scripts\PEd_actInstallMap.gml</script>
+        <script>scripts\PEd_actMovePivotHere.gml</script>
+        <script>scripts\PEd_actMoveTool.gml</script>
+        <script>scripts\PEd_actOpenRoom.gml</script>
+        <script>scripts\PEd_actPlayRoom.gml</script>
+        <script>scripts\PEd_actRotateTool.gml</script>
+        <script>scripts\PEd_actSaveRoom.gml</script>
+        <script>scripts\PEd_actSaveRoomAs.gml</script>
+        <script>scripts\PEd_actScaleTool.gml</script>
+        <script>scripts\PEd_actShowInfo.gml</script>
+        <script>scripts\PEd_actSwitchDebug.gml</script>
+        <script>scripts\PEd_actSwitchEditMode.gml</script>
+        <script>scripts\PEd_actSwitchFloor.gml</script>
+        <script>scripts\PEd_actSwitchGrid.gml</script>
+        <script>scripts\PEd_actSwitchTo2D.gml</script>
+        <script>scripts\PEd_actSwitchTo3D.gml</script>
+        <script>scripts\PEd_actSwitchToObjectMode.gml</script>
+        <script>scripts\PEd_actSwitchTool.gml</script>
+        <script>scripts\PEd_actSwitchToTileMode.gml</script>
+      </scripts>
+      <scripts name="Editor">
+        <scripts name="Camera">
+          <script>scripts\PEd_cameraControl.gml</script>
+          <script>scripts\PEd_cameraGetDirVec3.gml</script>
+          <script>scripts\PEd_cameraGetPosVec3.gml</script>
+          <script>scripts\PEd_cameraGetRightVec3.gml</script>
+          <script>scripts\PEd_cameraGetTanFovY.gml</script>
+          <script>scripts\PEd_cameraGetUpVec3.gml</script>
+          <script>scripts\PEd_cameraSetProjection.gml</script>
+          <script>scripts\PEd_cameraUnprojectVec2.gml</script>
+          <script>scripts\PEd_cameraScreenToPlaneXY.gml</script>
+        </scripts>
+        <scripts name="DrawingModes">
+          <script>scripts\PEd_end3D.gml</script>
+          <script>scripts\PEd_start3D.gml</script>
+          <script>scripts\PEd_switchMode.gml</script>
+        </scripts>
+        <script>scripts\PEd_codeProcess.gml</script>
+        <script>scripts\PEd_deselectObject.gml</script>
+        <script>scripts\PEd_dragAndDrop.gml</script>
+        <script>scripts\PEd_getCurrentRoom.gml</script>
+        <script>scripts\PEd_getMouseWorldPosition.gml</script>
+        <script>scripts\PEd_getSelectedObject.gml</script>
+        <script>scripts\PEd_instanceEdit2D.gml</script>
+        <script>scripts\PEd_instanceEdit3D.gml</script>
+        <script>scripts\PEd_instanceSelecting.gml</script>
+        <script>scripts\PEd_savePivotOffsets.gml</script>
+        <script>scripts\PEd_selectObject.gml</script>
+        <script>scripts\PEd_tileEdit.gml</script>
+      </scripts>
+      <scripts name="GUI">
+        <scripts name="Canvas">
+          <scripts name="Getters">
+            <script>scripts\PEd_guiCanvasGetBackground.gml</script>
+            <script>scripts\PEd_guiCanvasGetSurface.gml</script>
+          </scripts>
+          <scripts name="Setters">
+            <script>scripts\PEd_guiCanvasSetBackground.gml</script>
+            <script>scripts\PEd_guiCanvasSetSurface.gml</script>
+          </scripts>
+          <script>scripts\PEd_guiBeginFill.gml</script>
+          <script>scripts\PEd_guiCanvasCleanUp.gml</script>
+          <script>scripts\PEd_guiCanvasDraw.gml</script>
+          <script>scripts\PEd_guiCreateCanvas.gml</script>
+          <script>scripts\PEd_guiEndFill.gml</script>
+        </scripts>
+        <scripts name="CompoundShape">
+          <scripts name="Getters">
+            <script>scripts\PEd_guiCompoundShapeGetItems.gml</script>
+          </scripts>
+          <script>scripts\PEd_guiAddItem.gml</script>
+          <script>scripts\PEd_guiCompoundShapeCleanUp.gml</script>
+          <script>scripts\PEd_guiCompoundShapeUpdate.gml</script>
+          <script>scripts\PEd_guiCreateCompoundShape.gml</script>
+          <script>scripts\PEd_guiDrawItem.gml</script>
+          <script>scripts\PEd_guiMatrixPush.gml</script>
+          <script>scripts\PEd_guiMatrixRestore.gml</script>
+          <script>scripts\PEd_guiMatrixSet.gml</script>
+          <script>scripts\PEd_guiMoveItemToTop.gml</script>
+        </scripts>
+        <scripts name="Container">
+          <scripts name="Getters">
+            <script>scripts\PEd_guiContainerGetContent.gml</script>
+            <script>scripts\PEd_guiContainerGetContentHeight.gml</script>
+            <script>scripts\PEd_guiContainerGetContentWidth.gml</script>
+          </scripts>
+          <scripts name="Setters">
+            <script>scripts\PEd_guiContainerSetContent.gml</script>
+            <script>scripts\PEd_guiContainerSetContentHeight.gml</script>
+            <script>scripts\PEd_guiContainerSetContentWidth.gml</script>
+          </scripts>
+          <script>scripts\PEd_guiContainerDraw.gml</script>
+          <script>scripts\PEd_guiContainerUpdate.gml</script>
+          <script>scripts\PEd_guiCreateContainer.gml</script>
+        </scripts>
+        <scripts name="Contents">
+          <script>scripts\PEd_guiContentColourPicker.gml</script>
+          <script>scripts\PEd_guiContentContentBrowser.gml</script>
+          <script>scripts\PEd_guiContentDetails.gml</script>
+          <script>scripts\PEd_guiContentInfo.gml</script>
+          <script>scripts\PEd_guiContentSceneOutline.gml</script>
+          <script>scripts\PEd_guiContentStatusBar.gml</script>
+          <script>scripts\PEd_guiContentTitleBar.gml</script>
+          <script>scripts\PEd_guiContentTitleBarContentBrowser.gml</script>
+          <script>scripts\PEd_guiContentTitleBarSceneOutline.gml</script>
+          <script>scripts\PEd_guiContentTitleBarWindow.gml</script>
+          <script>scripts\PEd_guiContentToolbar.gml</script>
+          <script>scripts\PEd_guiContentTools.gml</script>
+        </scripts>
+        <scripts name="ContextMenu">
+          <script>scripts\PEd_guiCanShowContextMenu.gml</script>
+          <script>scripts\PEd_guiContextMenuDraw.gml</script>
+          <script>scripts\PEd_guiContextMenuUpdate.gml</script>
+          <script>scripts\PEd_guiCreateContextMenu.gml</script>
+          <script>scripts\PEd_guiShowContextMenu.gml</script>
+        </scripts>
+        <scripts name="ContextMenuContents">
+          <script>scripts\PEd_guiMenuFile.gml</script>
+          <script>scripts\PEd_guiMenuHelp.gml</script>
+          <script>scripts\PEd_guiMenuInput.gml</script>
+          <script>scripts\PEd_guiMenuObjectEdit.gml</script>
+          <script>scripts\PEd_guiMenuPlay.gml</script>
+        </scripts>
+        <scripts name="ContextMenuItem">
+          <script>scripts\PEd_guiContextMenuItemDraw.gml</script>
+          <script>scripts\PEd_guiContextMenuItemUpdate.gml</script>
+          <script>scripts\PEd_guiCreateContextMenuItem.gml</script>
+        </scripts>
+        <scripts name="Dock">
+          <script>scripts\PEd_guiCreateDock.gml</script>
+          <script>scripts\PEd_guiDockDraw.gml</script>
+          <script>scripts\PEd_guiDockUpdate.gml</script>
+        </scripts>
+        <scripts name="Draw">
+          <scripts name="Items">
+            <scripts name="Getters">
+              <script>scripts\PEd_guiAlphaMixGetHeight.gml</script>
+              <script>scripts\PEd_guiColourMixGetHeight.gml</script>
+            </scripts>
+            <script>scripts\PEd_guiDecodeID.gml</script>
+            <script>scripts\PEd_guiDrawAlphaMix.gml</script>
+            <script>scripts\PEd_guiDrawBackgroundInput.gml</script>
+            <script>scripts\PEd_guiDrawColourInput.gml</script>
+            <script>scripts\PEd_guiDrawColourMix.gml</script>
+            <script>scripts\PEd_guiDrawCheckbox.gml</script>
+            <script>scripts\PEd_guiDrawListItem.gml</script>
+            <script>scripts\PEd_guiDrawListItemEye.gml</script>
+            <script>scripts\PEd_guiDrawObjectInput.gml</script>
+            <script>scripts\PEd_guiDrawSection.gml</script>
+            <script>scripts\PEd_guiDrawSpriteClickable.gml</script>
+            <script>scripts\PEd_guiEncodeID.gml</script>
+          </scripts>
+          <scripts name="PopupMessage">
+            <script>scripts\PEd_guiDrawPopupMessage.gml</script>
+            <script>scripts\PEd_guiShowPopupMessage.gml</script>
+          </scripts>
+          <script>scripts\PEd_guiDrawRectangle.gml</script>
+          <script>scripts\PEd_guiDrawShadow.gml</script>
+          <script>scripts\PEd_guiDrawTextBold.gml</script>
+          <script>scripts\PEd_guiDrawTextPart.gml</script>
+          <script>scripts\PEd_guiDrawTextShadow.gml</script>
+          <script>scripts\PEd_guiDrawTooltip.gml</script>
+        </scripts>
+        <scripts name="Input">
+          <script>scripts\PEd_guiDrawInput.gml</script>
+          <script>scripts\PEd_guiInputCopy.gml</script>
+          <script>scripts\PEd_guiInputCut.gml</script>
+          <script>scripts\PEd_guiInputDelete.gml</script>
+          <script>scripts\PEd_guiInputDeleteSelectedPart.gml</script>
+          <script>scripts\PEd_guiInputPaste.gml</script>
+          <script>scripts\PEd_guiInputSelectAll.gml</script>
+        </scripts>
+        <scripts name="KeyboardShortcut">
+          <script>scripts\PEd_guiAddKeyboardShortcut.gml</script>
+          <script>scripts\PEd_guiCreateKeyboardShortcut.gml</script>
+          <script>scripts\PEd_guiKeyboardShorcutAddKey.gml</script>
+          <script>scripts\PEd_guiKeyboardShortcutToString.gml</script>
+          <script>scripts\PEd_guiKeyboardShortcutUpdate.gml</script>
+        </scripts>
+        <scripts name="MenuBar">
+          <script>scripts\PEd_guiCreateMenuBar.gml</script>
+          <script>scripts\PEd_guiMenuBarAddItem.gml</script>
+          <script>scripts\PEd_guiMenuBarDraw.gml</script>
+          <script>scripts\PEd_guiMenuBarUpdate.gml</script>
+        </scripts>
+        <scripts name="MenuBarItem">
+          <script>scripts\PEd_guiCreateMenuBarItem.gml</script>
+          <script>scripts\PEd_guiMenuBarItemDraw.gml</script>
+          <script>scripts\PEd_guiMenuBarItemUpdate.gml</script>
+        </scripts>
+        <scripts name="Panel">
+          <scripts name="Getters">
+            <script>scripts\PEd_guiPanelGetContainer.gml</script>
+            <script>scripts\PEd_guiPanelGetTitleBar.gml</script>
+          </scripts>
+          <scripts name="Setters">
+            <script>scripts\PEd_guiPanelSetTitleBar.gml</script>
+            <script>scripts\PEd_guiPanelSetContent.gml</script>
+          </scripts>
+          <script>scripts\PEd_guiCreatePanel.gml</script>
+          <script>scripts\PEd_guiPanelDraw.gml</script>
+        </scripts>
+        <scripts name="Scrollbar">
+          <script>scripts\PEd_guiCreateScrollbar.gml</script>
+          <script>scripts\PEd_guiScrollbarCalcJumpAndThumbSize.gml</script>
+          <script>scripts\PEd_guiScrollbarGetScroll.gml</script>
+          <script>scripts\PEd_guiScrollbarIsVisible.gml</script>
+          <script>scripts\PEd_guiScrollbarSetScroll.gml</script>
+          <script>scripts\PEd_guiScrollbarUpdate.gml</script>
+        </scripts>
+        <scripts name="ScrollbarHor">
+          <script>scripts\PEd_guiCreateScrollbarHor.gml</script>
+          <script>scripts\PEd_guiScrollbarHorDraw.gml</script>
+          <script>scripts\PEd_guiScrollbarHorUpdate.gml</script>
+        </scripts>
+        <scripts name="ScrollbarVer">
+          <script>scripts\PEd_guiCreateScrollbarVer.gml</script>
+          <script>scripts\PEd_guiScrollbarVerDraw.gml</script>
+          <script>scripts\PEd_guiScrollbarVerUpdate.gml</script>
+        </scripts>
+        <scripts name="Shape">
+          <scripts name="Getters">
+            <script>scripts\PEd_guiShapeGetDelegate.gml</script>
+            <script>scripts\PEd_guiShapeGetDepth.gml</script>
+            <script>scripts\PEd_guiShapeGetHeight.gml</script>
+            <script>scripts\PEd_guiShapeGetRedraw.gml</script>
+            <script>scripts\PEd_guiShapeGetTooltip.gml</script>
+            <script>scripts\PEd_guiShapeGetType.gml</script>
+            <script>scripts\PEd_guiShapeGetWidth.gml</script>
+            <script>scripts\PEd_guiShapeGetX.gml</script>
+            <script>scripts\PEd_guiShapeGetY.gml</script>
+          </scripts>
+          <scripts name="Setters">
+            <script>scripts\PEd_guiShapeSetDelegate.gml</script>
+            <script>scripts\PEd_guiShapeSetDepth.gml</script>
+            <script>scripts\PEd_guiShapeSetHeight.gml</script>
+            <script>scripts\PEd_guiShapeSetPosition.gml</script>
+            <script>scripts\PEd_guiShapeSetRectangle.gml</script>
+            <script>scripts\PEd_guiShapeSetRedraw.gml</script>
+            <script>scripts\PEd_guiShapeSetSize.gml</script>
+            <script>scripts\PEd_guiShapeSetTooltip.gml</script>
+            <script>scripts\PEd_guiShapeSetType.gml</script>
+            <script>scripts\PEd_guiShapeSetWidth.gml</script>
+            <script>scripts\PEd_guiShapeSetX.gml</script>
+            <script>scripts\PEd_guiShapeSetY.gml</script>
+          </scripts>
+          <script>scripts\PEd_guiCreateShape.gml</script>
+          <script>scripts\PEd_guiDestroyShape.gml</script>
+          <script>scripts\PEd_guiRequestRedraw.gml</script>
+          <script>scripts\PEd_guiRequestRedrawAll.gml</script>
+          <script>scripts\PEd_guiShapeCleanUp.gml</script>
+          <script>scripts\PEd_guiShapeDelegatesRecursive.gml</script>
+          <script>scripts\PEd_guiShapeExists.gml</script>
+          <script>scripts\PEd_guiShapeIsActive.gml</script>
+          <script>scripts\PEd_guiShapeIsHovered.gml</script>
+          <script>scripts\PEd_guiShapeIsSelected.gml</script>
+          <script>scripts\PEd_guiShapeUpdate.gml</script>
+        </scripts>
+        <scripts name="ShapeManager">
+          <script>scripts\PEd_guiCleanUp.gml</script>
+          <script>scripts\PEd_guiDestroy.gml</script>
+          <script>scripts\PEd_guiDraw.gml</script>
+          <script>scripts\PEd_guiFindShape.gml</script>
+          <script>scripts\PEd_guiGetActiveShape.gml</script>
+          <script>scripts\PEd_guiGetHoveredShape.gml</script>
+          <script>scripts\PEd_guiGetSelectedShape.gml</script>
+          <script>scripts\PEd_guiInit.gml</script>
+          <script>scripts\PEd_guiLogKey.gml</script>
+          <script>scripts\PEd_guiPushMouseCoordinates.gml</script>
+          <script>scripts\PEd_guiUpdate.gml</script>
+        </scripts>
+        <scripts name="ToolbarButton">
+          <script>scripts\PEd_guiCreateToolbarButton.gml</script>
+          <script>scripts\PEd_guiToolbarButtonDraw.gml</script>
+          <script>scripts\PEd_guiToolbarButtonUpdate.gml</script>
+        </scripts>
+        <scripts name="Viewport">
+          <scripts name="Getters">
+            <script>scripts\PEd_guiViewportGetTitleBar.gml</script>
+          </scripts>
+          <script>scripts\PEd_guiCreateViewport.gml</script>
+          <script>scripts\PEd_guiViewportDraw.gml</script>
+          <script>scripts\PEd_guiViewportUpdate.gml</script>
+        </scripts>
+        <scripts name="Window">
+          <scripts name="Getters">
+            <script>scripts\PEd_guiWindowGetContainer.gml</script>
+            <script>scripts\PEd_guiWindowGetContent.gml</script>
+            <script>scripts\PEd_guiWindowGetTitleBar.gml</script>
+          </scripts>
+          <scripts name="Setters">
+            <script>scripts\PEd_guiWindowSetContent.gml</script>
+          </scripts>
+          <script>scripts\PEd_guiCreateWindow.gml</script>
+          <script>scripts\PEd_guiRedrawWindow.gml</script>
+          <script>scripts\PEd_guiWindowDraw.gml</script>
+          <script>scripts\PEd_guiWindowUpdate.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Math">
+        <scripts name="DistanceFunctions">
+          <script>scripts\PEd_pointDistPlane.gml</script>
+        </scripts>
+        <scripts name="Matrix">
+          <script>scripts\PEd_matrix.gml</script>
+          <script>scripts\PEd_matrixDeterminant.gml</script>
+          <script>scripts\PEd_matrixIdentity.gml</script>
+          <script>scripts\PEd_matrixInverse.gml</script>
+          <script>scripts\PEd_matrixLookAt.gml</script>
+          <script>scripts\PEd_matrixPerspectiveFov.gml</script>
+          <script>scripts\PEd_matrixPrint.gml</script>
+          <script>scripts\PEd_matrixRotToEuler.gml</script>
+          <script>scripts\PEd_matrixScale.gml</script>
+          <script>scripts\PEd_matrixTranspose.gml</script>
+        </scripts>
+        <scripts name="Ray">
+          <script>scripts\PEd_mouseRay3D.gml</script>
+          <script>scripts\PEd_rayPlaneIntersect.gml</script>
+        </scripts>
+        <scripts name="Vec2">
+          <script>scripts\PEd_vec2.gml</script>
+          <script>scripts\PEd_vec2Abs.gml</script>
+          <script>scripts\PEd_vec2Add.gml</script>
+          <script>scripts\PEd_vec2Clone.gml</script>
+          <script>scripts\PEd_vec2Dot.gml</script>
+          <script>scripts\PEd_vec2Equals.gml</script>
+          <script>scripts\PEd_vec2Length.gml</script>
+          <script>scripts\PEd_vec2LengthSq.gml</script>
+          <script>scripts\PEd_vec2Lerp.gml</script>
+          <script>scripts\PEd_vec2Normalize.gml</script>
+          <script>scripts\PEd_vec2Reflect.gml</script>
+          <script>scripts\PEd_vec2Scale.gml</script>
+          <script>scripts\PEd_vec2Subtract.gml</script>
+        </scripts>
+        <scripts name="Vec3">
+          <script>scripts\PEd_vec3.gml</script>
+          <script>scripts\PEd_vec3Abs.gml</script>
+          <script>scripts\PEd_vec3Add.gml</script>
+          <script>scripts\PEd_vec3Clone.gml</script>
+          <script>scripts\PEd_vec3Cross.gml</script>
+          <script>scripts\PEd_vec3Dot.gml</script>
+          <script>scripts\PEd_vec3Equals.gml</script>
+          <script>scripts\PEd_vec3Length.gml</script>
+          <script>scripts\PEd_vec3LengthSq.gml</script>
+          <script>scripts\PEd_vec3Lerp.gml</script>
+          <script>scripts\PEd_vec3Normalize.gml</script>
+          <script>scripts\PEd_vec3Project.gml</script>
+          <script>scripts\PEd_vec3Reflect.gml</script>
+          <script>scripts\PEd_vec3Scale.gml</script>
+          <script>scripts\PEd_vec3Subtract.gml</script>
+        </scripts>
+        <scripts name="Vec4">
+          <script>scripts\PEd_vec4.gml</script>
+          <script>scripts\PEd_vec4Abs.gml</script>
+          <script>scripts\PEd_vec4Add.gml</script>
+          <script>scripts\PEd_vec4Clone.gml</script>
+          <script>scripts\PEd_vec4Dot.gml</script>
+          <script>scripts\PEd_vec4Equals.gml</script>
+          <script>scripts\PEd_vec4Length.gml</script>
+          <script>scripts\PEd_vec4LengthSq.gml</script>
+          <script>scripts\PEd_vec4Lerp.gml</script>
+          <script>scripts\PEd_vec4Normalize.gml</script>
+          <script>scripts\PEd_vec4Scale.gml</script>
+          <script>scripts\PEd_vec4Subtract.gml</script>
+          <script>scripts\PEd_vec4Transform.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Mesh">
+        <script>scripts\PEd_meshCreate.gml</script>
+        <script>scripts\PEd_meshDestroy.gml</script>
+        <script>scripts\PEd_meshInit.gml</script>
+        <script>scripts\PEd_meshLoadFromObj.gml</script>
+        <script>scripts\PEd_meshToModelD3D.gml</script>
+        <script>scripts\PEd_meshToVBuffer.gml</script>
+      </scripts>
+      <scripts name="Miscellaneous">
+        <script>scripts\PEd_argbToAlpha.gml</script>
+        <script>scripts\PEd_argbToColour.gml</script>
+        <script>scripts\PEd_assignVariable.gml</script>
+        <script>scripts\PEd_colourAlphaToArgb.gml</script>
+        <script>scripts\PEd_dsListAddList.gml</script>
+        <script>scripts\PEd_dsListAddMap.gml</script>
+        <script>scripts\PEd_dsListAddUnique.gml</script>
+        <script>scripts\PEd_dsListInsertList.gml</script>
+        <script>scripts\PEd_dsListInsertMap.gml</script>
+        <script>scripts\PEd_dsListInsertUnique.gml</script>
+        <script>scripts\PEd_getFloat.gml</script>
+        <script>scripts\PEd_checkSurface.gml</script>
+        <script>scripts\PEd_keyToString.gml</script>
+        <script>scripts\PEd_removeFromStr.gml</script>
+        <script>scripts\PEd_rgbToBgr.gml</script>
+        <script>scripts\PEd_stringSplitOnFirst.gml</script>
+      </scripts>
+      <scripts name="Objects">
+        <scripts name="Instance">
+          <scripts name="Getters">
+            <script>scripts\PEd_instanceGetAlpha.gml</script>
+            <script>scripts\PEd_instanceGetCode.gml</script>
+            <script>scripts\PEd_instanceGetColour.gml</script>
+            <script>scripts\PEd_instanceGetColourARGB.gml</script>
+            <script>scripts\PEd_instanceGetMatrix.gml</script>
+            <script>scripts\PEd_instanceGetName.gml</script>
+            <script>scripts\PEd_instanceGetObjectName.gml</script>
+            <script>scripts\PEd_instanceGetPosVec2.gml</script>
+            <script>scripts\PEd_instanceGetPosVec3.gml</script>
+            <script>scripts\PEd_instanceGetPosX.gml</script>
+            <script>scripts\PEd_instanceGetPosY.gml</script>
+            <script>scripts\PEd_instanceGetPosZ.gml</script>
+            <script>scripts\PEd_instanceGetRotX.gml</script>
+            <script>scripts\PEd_instanceGetRotY.gml</script>
+            <script>scripts\PEd_instanceGetRotZ.gml</script>
+            <script>scripts\PEd_instanceGetScaleVec2.gml</script>
+            <script>scripts\PEd_instanceGetScaleVec3.gml</script>
+            <script>scripts\PEd_instanceGetScaleX.gml</script>
+            <script>scripts\PEd_instanceGetScaleY.gml</script>
+            <script>scripts\PEd_instanceGetScaleZ.gml</script>
+          </scripts>
+          <scripts name="Setters">
+            <script>scripts\PEd_instanceSetAlpha.gml</script>
+            <script>scripts\PEd_instanceSetCode.gml</script>
+            <script>scripts\PEd_instanceSetColour.gml</script>
+            <script>scripts\PEd_instanceSetColourARGB.gml</script>
+            <script>scripts\PEd_instanceSetName.gml</script>
+            <script>scripts\PEd_instanceSetObjectName.gml</script>
+            <script>scripts\PEd_instanceSetPosVec2.gml</script>
+            <script>scripts\PEd_instanceSetPosVec3.gml</script>
+            <script>scripts\PEd_instanceSetPosX.gml</script>
+            <script>scripts\PEd_instanceSetPosY.gml</script>
+            <script>scripts\PEd_instanceSetPosZ.gml</script>
+            <script>scripts\PEd_instanceSetRotX.gml</script>
+            <script>scripts\PEd_instanceSetRotY.gml</script>
+            <script>scripts\PEd_instanceSetRotZ.gml</script>
+            <script>scripts\PEd_instanceSetScaleVec2.gml</script>
+            <script>scripts\PEd_instanceSetScaleVec3.gml</script>
+            <script>scripts\PEd_instanceSetScaleX.gml</script>
+            <script>scripts\PEd_instanceSetScaleY.gml</script>
+            <script>scripts\PEd_instanceSetScaleZ.gml</script>
+          </scripts>
+          <script>scripts\PEd_instanceAddRotX.gml</script>
+          <script>scripts\PEd_instanceAddRotY.gml</script>
+          <script>scripts\PEd_instanceAddRotZ.gml</script>
+          <script>scripts\PEd_instanceAddScaleX.gml</script>
+          <script>scripts\PEd_instanceAddScaleY.gml</script>
+          <script>scripts\PEd_instanceAddScaleZ.gml</script>
+          <script>scripts\PEd_instanceAutocompleteCode.gml</script>
+          <script>scripts\PEd_instanceCopy.gml</script>
+          <script>scripts\PEd_instanceCreate.gml</script>
+          <script>scripts\PEd_instanceDestroy.gml</script>
+          <script>scripts\PEd_instanceGenerateName.gml</script>
+        </scripts>
+        <scripts name="Tile">
+          <scripts name="Getters">
+            <script>scripts\PEd_tileGetAlpha.gml</script>
+            <script>scripts\PEd_tileGetBlend.gml</script>
+            <script>scripts\PEd_tileGetColourARGB.gml</script>
+            <script>scripts\PEd_tileGetDepth.gml</script>
+            <script>scripts\PEd_tileGetPosVec2.gml</script>
+            <script>scripts\PEd_tileGetPosX.gml</script>
+            <script>scripts\PEd_tileGetPosY.gml</script>
+            <script>scripts\PEd_tileGetScaleVec2.gml</script>
+            <script>scripts\PEd_tileGetScaleX.gml</script>
+            <script>scripts\PEd_tileGetScaleY.gml</script>
+          </scripts>
+          <scripts name="Setters">
+            <script>scripts\PEd_tileSetScaleY.gml</script>
+            <script>scripts\PEd_tileSetBlend.gml</script>
+            <script>scripts\PEd_tileSetPosX.gml</script>
+            <script>scripts\PEd_tileSetAlpha.gml</script>
+            <script>scripts\PEd_tileSetColourARGB.gml</script>
+            <script>scripts\PEd_tileSetDepth.gml</script>
+            <script>scripts\PEd_tileSetPosVec2.gml</script>
+            <script>scripts\PEd_tileSetPosY.gml</script>
+            <script>scripts\PEd_tileSetScaleVec2.gml</script>
+            <script>scripts\PEd_tileSetScaleX.gml</script>
+          </scripts>
+          <script>scripts\PEd_createTile.gml</script>
+          <script>scripts\PEd_tileCopy.gml</script>
+          <script>scripts\PEd_tileDelete.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="SaveSystem">
+        <scripts name="Background">
+          <script>scripts\PEd_backgroundGetImage.gml</script>
+          <script>scripts\PEd_backgroundGetSpeedHor.gml</script>
+          <script>scripts\PEd_backgroundGetSpeedVer.gml</script>
+          <script>scripts\PEd_backgroundGetStretch.gml</script>
+          <script>scripts\PEd_backgroundGetTiledHor.gml</script>
+          <script>scripts\PEd_backgroundGetTiledVer.gml</script>
+          <script>scripts\PEd_backgroundGetVisible.gml</script>
+          <script>scripts\PEd_backgroundGetX.gml</script>
+          <script>scripts\PEd_backgroundGetY.gml</script>
+          <script>scripts\PEd_backgroundIsForeground.gml</script>
+          <script>scripts\PEd_backgroundSetAsForeground.gml</script>
+          <script>scripts\PEd_backgroundSetImage.gml</script>
+          <script>scripts\PEd_backgroundSetSpeedHor.gml</script>
+          <script>scripts\PEd_backgroundSetSpeedVer.gml</script>
+          <script>scripts\PEd_backgroundSetStretch.gml</script>
+          <script>scripts\PEd_backgroundSetTiledHor.gml</script>
+          <script>scripts\PEd_backgroundSetTiledVer.gml</script>
+          <script>scripts\PEd_backgroundSetVisible.gml</script>
+          <script>scripts\PEd_backgroundSetX.gml</script>
+          <script>scripts\PEd_backgroundSetY.gml</script>
+          <script>scripts\PEd_createBackground.gml</script>
+        </scripts>
+        <scripts name="CustomData">
+          <script>scripts\PEd_addCustomData.gml</script>
+          <script>scripts\PEd_createCustomDataContainer.gml</script>
+          <script>scripts\PEd_getCustomData.gml</script>
+          <script>scripts\PEd_getRoomCustomData.gml</script>
+          <script>scripts\PEd_getTileCustomData.gml</script>
+          <script>scripts\PEd_registerCustomDataContainer.gml</script>
+        </scripts>
+        <scripts name="Objects">
+          <script>scripts\PEd_objectGetIndex.gml</script>
+          <script>scripts\PEd_objectListGetItem.gml</script>
+          <script>scripts\PEd_objectListGetSize.gml</script>
+        </scripts>
+        <scripts name="PhysicsWorld">
+          <script>scripts\PEd_createPhysicsWorld.gml</script>
+          <script>scripts\PEd_physicsWorldGetEnabled.gml</script>
+          <script>scripts\PEd_physicsWorldGetGravityX.gml</script>
+          <script>scripts\PEd_physicsWorldGetGravityY.gml</script>
+          <script>scripts\PEd_physicsWorldGetPxToM.gml</script>
+          <script>scripts\PEd_physicsWorldSetEnabled.gml</script>
+          <script>scripts\PEd_physicsWorldSetGravityX.gml</script>
+          <script>scripts\PEd_physicsWorldSetGravityY.gml</script>
+          <script>scripts\PEd_physicsWorldSetPxToM.gml</script>
+        </scripts>
+        <scripts name="Room">
+          <scripts name="Getters">
+            <script>scripts\PEd_roomGetBackground.gml</script>
+            <script>scripts\PEd_roomGetCaption.gml</script>
+            <script>scripts\PEd_roomGetCode.gml</script>
+            <script>scripts\PEd_roomGetColour.gml</script>
+            <script>scripts\PEd_roomGetColourARGB.gml</script>
+            <script>scripts\PEd_roomGetFromId.gml</script>
+            <script>scripts\PEd_roomGetGrid.gml</script>
+            <script>scripts\PEd_roomGetHeight.gml</script>
+            <script>scripts\PEd_roomGetId.gml</script>
+            <script>scripts\PEd_roomGetInstances.gml</script>
+            <script>scripts\PEd_roomGetName.gml</script>
+            <script>scripts\PEd_roomGetPersistent.gml</script>
+            <script>scripts\PEd_roomGetPhysicsWorld.gml</script>
+            <script>scripts\PEd_roomGetShowColour.gml</script>
+            <script>scripts\PEd_roomGetSnapD.gml</script>
+            <script>scripts\PEd_roomGetSnapH.gml</script>
+            <script>scripts\PEd_roomGetSnapV.gml</script>
+            <script>scripts\PEd_roomGetSpeed.gml</script>
+            <script>scripts\PEd_roomGetTiles.gml</script>
+            <script>scripts\PEd_roomGetViewport.gml</script>
+            <script>scripts\PEd_roomGetWidth.gml</script>
+          </scripts>
+          <scripts name="Setters">
+            <script>scripts\PEd_roomSetCaption.gml</script>
+            <script>scripts\PEd_roomSetCode.gml</script>
+            <script>scripts\PEd_roomSetColour.gml</script>
+            <script>scripts\PEd_roomSetColourARGB.gml</script>
+            <script>scripts\PEd_roomSetGrid.gml</script>
+            <script>scripts\PEd_roomSetHeight.gml</script>
+            <script>scripts\PEd_roomSetName.gml</script>
+            <script>scripts\PEd_roomSetPersistent.gml</script>
+            <script>scripts\PEd_roomSetShowColour.gml</script>
+            <script>scripts\PEd_roomSetSnapD.gml</script>
+            <script>scripts\PEd_roomSetSnapH.gml</script>
+            <script>scripts\PEd_roomSetSnapV.gml</script>
+            <script>scripts\PEd_roomSetSpeed.gml</script>
+            <script>scripts\PEd_roomSetWidth.gml</script>
+          </scripts>
+          <script>scripts\PEd_createRoom.gml</script>
+          <script>scripts\PEd_loadRoomFromBBMAP.gml</script>
+          <script>scripts\PEd_loadRoomFromBBMAP2.gml</script>
+          <script>scripts\PEd_loadRoomFromBBMAPAuto.gml</script>
+          <script>scripts\PEd_loadRoomFromGMX.gml</script>
+          <script>scripts\PEd_loadRoomFromPEd.gml</script>
+          <script>scripts\PEd_roomApplySettings.gml</script>
+          <script>scripts\PEd_roomCopy.gml</script>
+          <script>scripts\PEd_roomDestroy.gml</script>
+          <script>scripts\PEd_roomSaveToBBMAP2.gml</script>
+          <script>scripts\PEd_roomSaveToGMX.gml</script>
+          <script>scripts\PEd_roomSaveToPEd.gml</script>
+        </scripts>
+        <scripts name="SaveInstance">
+          <script>scripts\PEd_createSaveInstance.gml</script>
+        </scripts>
+        <scripts name="SaveTile">
+          <script>scripts\PEd_createSaveTile.gml</script>
+        </scripts>
+        <scripts name="Viewport">
+          <script>scripts\PEd_createViewport.gml</script>
+          <script>scripts\PEd_viewportGetBorderHor.gml</script>
+          <script>scripts\PEd_viewportGetBorderVer.gml</script>
+          <script>scripts\PEd_viewportGetHeight.gml</script>
+          <script>scripts\PEd_viewportGetObject.gml</script>
+          <script>scripts\PEd_viewportGetPortHeight.gml</script>
+          <script>scripts\PEd_viewportGetPortWidth.gml</script>
+          <script>scripts\PEd_viewportGetPortX.gml</script>
+          <script>scripts\PEd_viewportGetPortY.gml</script>
+          <script>scripts\PEd_viewportGetSpeedHor.gml</script>
+          <script>scripts\PEd_viewportGetSpeedVer.gml</script>
+          <script>scripts\PEd_viewportGetVisible.gml</script>
+          <script>scripts\PEd_viewportGetWidth.gml</script>
+          <script>scripts\PEd_viewportGetX.gml</script>
+          <script>scripts\PEd_viewportGetY.gml</script>
+          <script>scripts\PEd_viewportSetBorderHor.gml</script>
+          <script>scripts\PEd_viewportSetBorderVer.gml</script>
+          <script>scripts\PEd_viewportSetHeight.gml</script>
+          <script>scripts\PEd_viewportSetObject.gml</script>
+          <script>scripts\PEd_viewportSetPortHeight.gml</script>
+          <script>scripts\PEd_viewportSetPortWidth.gml</script>
+          <script>scripts\PEd_viewportSetPortX.gml</script>
+          <script>scripts\PEd_viewportSetPortY.gml</script>
+          <script>scripts\PEd_viewportSetSpeedHor.gml</script>
+          <script>scripts\PEd_viewportSetSpeedVer.gml</script>
+          <script>scripts\PEd_viewportSetVisible.gml</script>
+          <script>scripts\PEd_viewportSetWidth.gml</script>
+          <script>scripts\PEd_viewportSetX.gml</script>
+          <script>scripts\PEd_viewportSetY.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="XML">
+        <scripts name="Element">
+          <script>scripts\PEd_xmlAddChildElement.gml</script>
+          <script>scripts\PEd_xmlCreateElement.gml</script>
+          <script>scripts\PEd_xmlDestroyElement.gml</script>
+          <script>scripts\PEd_xmlFindAllElements.gml</script>
+          <script>scripts\PEd_xmlFindFirstElementAttribute.gml</script>
+          <script>scripts\PEd_xmlFindNextElementAttribute.gml</script>
+          <script>scripts\PEd_xmlFindElement.gml</script>
+          <script>scripts\PEd_xmlGetChildElement.gml</script>
+          <script>scripts\PEd_xmlGetNumberOfChildElements.gml</script>
+          <script>scripts\PEd_xmlGetNumberOfElementAttributes.gml</script>
+          <script>scripts\PEd_xmlGetElementAttribute.gml</script>
+          <script>scripts\PEd_xmlGetElementName.gml</script>
+          <script>scripts\PEd_xmlGetElementParent.gml</script>
+          <script>scripts\PEd_xmlGetElementValue.gml</script>
+          <script>scripts\PEd_xmlRemoveElementAttribute.gml</script>
+          <script>scripts\PEd_xmlSetElementAttribute.gml</script>
+          <script>scripts\PEd_xmlSetElementName.gml</script>
+          <script>scripts\PEd_xmlSetElementValue.gml</script>
+          <script>scripts\PEd_xmlElementHasAttribute.gml</script>
+          <script>scripts\PEd_xmlElementHasValue.gml</script>
+        </scripts>
+        <scripts name="Miscellaneous">
+          <script>scripts\PEd_xmlParse.gml</script>
+          <script>scripts\PEd_xmlString.gml</script>
+        </scripts>
+        <script>scripts\PEd_xmlInit.gml</script>
+        <script>scripts\PEd_xmlRead.gml</script>
+        <script>scripts\PEd_xmlWrite.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shaders name="PushEd">
+      <shader type="GLSLES">shaders\PEd_shInstSelect.shader</shader>
+      <shader type="GLSLES">shaders\PEd_shInstHighlight.shader</shader>
+      <shader type="GLSLES">shaders\PEd_shOutline.shader</shader>
+    </shaders>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>
     <font>fonts\fntBands</font>
@@ -2207,6 +2903,10 @@
     <font>fonts\fntUnlock</font>
     <font>fonts\fntWarning</font>
     <font>fonts\fntHD</font>
+    <fonts name="PushEd">
+      <font>fonts\PEd_fntBold</font>
+      <font>fonts\PEd_fntNormal</font>
+    </fonts>
   </fonts>
   <objects name="objects">
     <objects name="Items">
@@ -3230,8 +3930,21 @@
       <object>objects\objGame</object>
     </objects>
     <object>objects\objSpawnpoint</object>
+    <objects name="PushEd">
+      <object>objects\PEd_oEditor</object>
+      <object>objects\PEd_oObject</object>
+      <object>objects\PEd_oObject2D</object>
+      <object>objects\PEd_oObject3D</object>
+      <object>objects\PEd_oPivot</object>
+      <object>objects\PEd_oPlay</object>
+    </objects>
+    <object>objects\objCursorMouse</object>
   </objects>
   <rooms name="rooms">
+    <rooms name="PushEd">
+      <room>rooms\PEd_rmEditor</room>
+      <room>rooms\PEd_rmPlay</room>
+    </rooms>
     <room>rooms\rmInit</room>
     <rooms name="Levels">
       <rooms name="Phonecalls">

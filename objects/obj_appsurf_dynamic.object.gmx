@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>override_application_surface = true
+            <string>override_application_surface = true;
 backbuffer_color = c_black // (the "black bars" behind the game)
 
 updates = 0

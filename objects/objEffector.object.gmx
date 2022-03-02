@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>eraser_index=0
+            <string>window_set_cursor(cr_none);
+display_set_gui_size(view_wview, view_hview);
+eraser_index=0
 alpha=1
 coldir=0
 amount=0
@@ -380,7 +382,8 @@ if global.paused=0 {scrInitPathFinding() if !instance_exists(objMaskMenu) scrChe
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.cutscene=0{
+            <string>display_set_gui_size(view_wview, view_hview);
+if global.cutscene=0{
 scrGameplay();
 }else{
 scrCutscene();

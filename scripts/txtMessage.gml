@@ -33,3 +33,7 @@ draw_set_halign(fa_center)
 draw_set_valign(fa_center)
 draw_text_transformed_colour(argument0,argument1+4,argument2, scale*0.25, scale*0.25, angle, c_black,c_black,c_black,c_black,argument5)
 texture_set_interpolation(false)
+
+
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)

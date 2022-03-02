@@ -36,3 +36,7 @@ draw_text_transformed_colour(
 argument0 + frontModifier_x, argument1 + frontModifier_y, argument2, scale, scale, angle,
 color2,color2,merge_colour(color2,color2,0.5),merge_colour(color2,color2,0.5),1
 )
+
+
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)

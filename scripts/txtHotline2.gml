@@ -20,5 +20,4 @@ draw_text_transformed_colour(xPos+(2*scale)                 , yPos+(2*scale)    
 draw_text_transformed_colour(xPos+(1*scale)                 , yPos+(1*scale)                    , txt,    scale, scale, angle,  c_back  ,c_back ,merge_colour(c_back,c_outline,0.5) ,merge_colour(c_back,c_outline,0.5)      ,alpha);
 draw_text_transformed_colour(xPos-(movement*scale)          , yPos-(movement*scale)             , txt,    scale, scale, angle,  c_front ,c_front ,merge_colour(c_front,c_outline,0.5) ,merge_colour(c_front,c_outline,0.5)   ,alpha);
 
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
+scrDefaultText();

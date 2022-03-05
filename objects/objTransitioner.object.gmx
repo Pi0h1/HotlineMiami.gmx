@@ -48,7 +48,8 @@ sprite=sprGoArrow</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objPlayer) exit
+            <string>if room=PEd_rmPlay {instance_destroy();}
+if !instance_exists(objPlayer) exit
 if room=rmTrainstationEntrance {
 if objTrain.visible=1 {
 if !place_meeting(x,y,objPlayer) solid=1 visible=0
@@ -60,7 +61,8 @@ solid=0
 if objPlayer.persistent=1 {
 if !place_meeting(x,y,objPlayer) {visible=1 solid=1}
 } else visible=1
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

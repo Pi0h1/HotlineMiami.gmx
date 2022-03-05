@@ -25,5 +25,4 @@ draw_text_transformed_colour(xPos+1.5,(yPos+18)+1.5,txt2,scale,scale,angle,c_bac
 draw_text_transformed_colour((xPos)-modifier,(yPos+18)-modifier,txt2,scale,scale,angle,c_front,c_front,c_front,c_front,alpha)
 
 
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
+scrDefaultText();

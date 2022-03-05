@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10001</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -86,6 +86,10 @@ PEd_guiShowPopupMessage("Press F10 to go back to the editor.", 8000);
           <argument>
             <kind>1</kind>
             <string>/// Draw popup message
+display_set_gui_size(-1,-1);
+draw_set_font(PEd_fntNormal);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
 if (guiPopupMessage != "")
 {
     if (current_time - guiPopupTimer &lt; guiPopupDuration)

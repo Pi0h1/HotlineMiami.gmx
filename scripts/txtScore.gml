@@ -38,5 +38,4 @@ color2,color2,merge_colour(color2,color2,0.5),merge_colour(color2,color2,0.5),1
 )
 
 
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
+scrDefaultText();

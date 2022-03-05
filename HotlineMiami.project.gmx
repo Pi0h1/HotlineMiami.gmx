@@ -2057,6 +2057,7 @@
     </scripts>
     <scripts name="Visuals">
       <scripts name="HotTextEffects">
+        <script>scripts\scrDefaultText.gml</script>
         <script>scripts\scrDrawRectangle.gml</script>
         <script>scripts\txtDev.gml</script>
         <script>scripts\txtMessage.gml</script>

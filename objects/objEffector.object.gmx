@@ -77,6 +77,7 @@ if global.sequence=rmSequence11 leveltitle="East 7th St"
 if global.sequence=rmSequence12 leveltitle="South East 24th St"
 if global.sequence=rmSequence13 leveltitle="West 25th St"
 if global.sequence=rmSequence14 leveltitle="South 86th St"
+if room=PEd_rmPlay {leveltitle=""}
 }
 if instance_exists(objPlayerBiker) {
 if room=rmNoodleShop leveltitle="North East 56th St"

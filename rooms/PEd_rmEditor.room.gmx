@@ -13,7 +13,8 @@
   <code>GlobalVariables();
 window_set_cursor(cr_default);
 draw_set_halign(fa_left)
-draw_set_valign(fa_top)</code>
+draw_set_valign(fa_top)
+window_resize_fix_init();</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

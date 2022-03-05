@@ -193,7 +193,9 @@ if global.shake&gt;0 {
 global.shake-=0.5
 //view_xview[0]+=-global.shake*0.33+random(global.shake*0.66)
 //view_yview[0]+=-global.shake*0.33+random(global.shake*0.66)
+if global.devmode=0{
 view_angle[0]+=-global.shake*0.33+random(global.shake*0.66)
+}
 }
 </string>
           </argument>

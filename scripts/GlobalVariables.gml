@@ -1,20 +1,23 @@
 /// Global Variables
-//All Global variables should be set in this script.
+// Original variables original to this project (Not present in vanilla Hotline Miami)
 global.devmode = true;
 global.spawnObject = 0;
+global.playerIndex = 0;
+global.depthDeath = 0;
+
+// All Global variables should be set in this script.
 global.godmode = 0;
 global.steamon = 0;
-global.playerIndex=0
 display_set_gui_size(view_wview, view_hview);
 sxeasy_init();
 global.restartedmusic=working_directory+"\Static.mp3"
 
-//Loads Volume.
+// Loads Volume.
 global.mvol=1;
 global.svol=1;
 scrLoadVol()
 
-//Colors for Alienware systems.
+// Colors for Alienware systems.
 global.alienware=0;
 if file_exists(working_directory+"\alienware") {
 global.alienware=1;
@@ -22,7 +25,7 @@ scrAlienWareInit()
 scrAlienWarePink()
 } else global.alienware=0;
 
-//Controller
+// Controller
 global.controllertype=1;
 global.upkey='W';
 global.downkey='S';
@@ -73,16 +76,15 @@ global.sequence=rmSequence1;
 global.revisit=0;
 global.maskon=1;
 global.maskindex=0;
-scrLoadUnlocked();//
+scrLoadUnlocked();
 scrLoadAchievements();
 scrCheckLetters();
 scrCheckGuns();
 scrCheckMasks();
 
-//misc
+// Misc
 scrInitScore();
-global.done=0
-global.title="TEST"
-global.maskindex=0
-global.maskon=0
-global.depthDeath=0
+global.done=0;
+global.title="TEST";
+global.maskindex=0;
+global.maskon=0;

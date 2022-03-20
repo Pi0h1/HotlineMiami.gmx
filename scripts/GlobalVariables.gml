@@ -1,18 +1,20 @@
 /// Global Variables
-// Original variables original to this project (Not present in vanilla Hotline Miami)
+// All Global variables should be set in this script.
+
+// These are variables original to this repo; Not present in vanilla Hotline Miami.
 global.devmode = true;
 global.spawnObject = 0;
 global.playerIndex = 0;
 global.depthDeath = 0;
 
-// All Global variables should be set in this script.
+// Hotline Miami's Global Variables
 global.godmode = 0;
 global.steamon = 0;
 display_set_gui_size(view_wview, view_hview);
 sxeasy_init();
 global.restartedmusic=working_directory+"\Static.mp3"
 
-// Loads Volume.
+// Volume.
 global.mvol=1;
 global.svol=1;
 scrLoadVol()

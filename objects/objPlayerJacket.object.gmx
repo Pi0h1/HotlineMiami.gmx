@@ -479,33 +479,6 @@ instance_destroy()
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="57">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Throw Weapon
-if release&lt;20{
-    scrPlayerPickUp();
-    release=0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="55">
       <action>
         <libid>1</libid>
@@ -596,6 +569,35 @@ image_yscale=1
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="54">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Throw Weapon
+if !keyboard_check(vk_alt){
+    if release&lt;20{
+        scrPlayerPickUp();
+        release=0;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="53">
       <action>
         <libid>1</libid>
@@ -679,7 +681,9 @@ global.done=1
           <argument>
             <kind>1</kind>
             <string>///Drop Weapon
-if release&lt;20 release+=1 else scrPlayerPickUp2()
+if keyboard_check(vk_alt){
+    if release&lt;20 release+=1 else scrPlayerPickUp2()
+}
 </string>
           </argument>
         </arguments>

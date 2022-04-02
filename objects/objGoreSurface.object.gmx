@@ -82,16 +82,15 @@ groundobjects[i++] = objTrashbag
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !surface_exists(surf) {
-    surf = surface_create(room_width * scale, room_height * scale)
-    surface_set_target(surf)
+            <string>if !surface_exists(groundsurf) {
+    groundsurf = surface_create(room_width * scale, room_height * scale)
+    surface_set_target(groundsurf)
     draw_clear_alpha(0,0)
     surface_reset_target();
     if instance_exists(objSurfaceManager) {
-        ds_list_add(objSurfaceManager.surflist, surf)
+        ds_list_add(objSurfaceManager.surflist, groundsurf)
     }
 }
-//------------------------
 
 surface_set_target(groundsurf);
 
@@ -111,6 +110,16 @@ for (var i=0; i&lt;array_length_1d(groundobjects); i++) {
 }
 
 surface_reset_target();
+
+if !surface_exists(surf) {
+    surf = surface_create(room_width * scale, room_height * scale)
+    surface_set_target(surf)
+    draw_clear_alpha(0,0)
+    surface_reset_target();
+    if instance_exists(objSurfaceManager) {
+        ds_list_add(objSurfaceManager.surflist, surf)
+    }
+}
 
 surface_set_target(surf);
 

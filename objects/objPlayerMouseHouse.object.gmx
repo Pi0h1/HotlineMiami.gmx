@@ -25,6 +25,28 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Load character sprites
+charJacket();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>goddir=0
 image_speed=0
 currentweapon=0
@@ -62,55 +84,6 @@ global.maskon=1
 
 sprite_index=sprPWalkUnarmed
 pose_index=sprPWalkUnarmed
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Sprites
-headindex=0
-sprite_index=sprPWalkUnarmed
-pose_index=WalkPlayerUnarmed
-
-//Costume Vanilla
-legsprite=sprPWalkLegs
-
-//  Walk
-//      Guns
-WalkPlayerAim_index             =   WalkPlayerAim
-WalkPlayerGangster_index        =   WalkPlayerGangster
-WalkPlayerPPoint_index          =   WalkPlayerPPoint
-//      Melee
-WalkPlayerMeleeUnarmed_index    =   WalkPlayerUnarmed
-WalkPlayerMelee_index           =   WalkPlayerMelee
-WalkPlayerMeleeShort_index      =   WalkPlayerMeleeShort
-WalkPlayerMeleeLarge_index      =   WalkPlayerMeleeLarge
-
-//  Attack
-//      Guns
-AttackPlayerAim_index           =   AttackPlayerAim
-AttackPlayerShotgun_index       =   AttackPlayerShotgun
-AttackPlayerPPoint_index        =   AttackPlayerPPoint
-//      Melee
-AttackPlayerMelee_index         =   AttackPlayerMelee
-AttackPlayerMeleeShort_index    =   AttackPlayerMeleeShort
-AttackPlayerKnife_index         =   AttackPlayerKnife
-
 </string>
           </argument>
         </arguments>

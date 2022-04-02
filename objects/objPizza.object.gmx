@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-image_angle=random(360)
-image_index=floor(random(5))</string>
+            <string>image_speed=0;
+image_angle=random(360);
+image_index=floor(random(5));
+</string>
           </argument>
         </arguments>
       </action>

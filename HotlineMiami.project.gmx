@@ -124,7 +124,6 @@
       <sprites name="Jacket">
         <sprite>sprites\Player_Jacket</sprite>
         <sprite>sprites\sprPlayerHead</sprite>
-        <sprite>sprites\sprSnakeHead</sprite>
         <sprite>sprites\sprTwoHead</sprite>
         <sprite>sprites\sprHalo</sprite>
         <sprites name="Costumes">
@@ -159,6 +158,7 @@
               <sprite>sprites\sprPUnlockDoor</sprite>
               <sprite>sprites\sprPVomit</sprite>
             </sprites>
+            <sprite>sprites\sprPKillArms</sprite>
             <sprite>sprites\AttackPlayerUnarmed</sprite>
             <sprite>sprites\AttackPlayerAim</sprite>
             <sprite>sprites\AttackPlayerGangster</sprite>
@@ -189,6 +189,7 @@
             <sprite>sprites\P2_WalkPlayerUnarmed</sprite>
           </sprites>
           <sprites name="Snake">
+            <sprite>sprites\sprSnakeHead</sprite>
             <sprite>sprites\Snake_WalkPlayerUnarmed</sprite>
             <sprite>sprites\Snake_sprPLegs</sprite>
           </sprites>
@@ -1860,6 +1861,10 @@
     <script>scripts\Game_Info_Translated.gml</script>
     <script>scripts\GlobalVariables.gml</script>
     <scripts name="Player">
+      <scripts name="Character Sprites">
+        <script>scripts\charJacket.gml</script>
+        <script>scripts\charSnake.gml</script>
+      </scripts>
       <scripts name="Walking">
         <script>scripts\scrDrawShadow.gml</script>
         <script>scripts\scrInitPlayer.gml</script>
@@ -2064,6 +2069,8 @@
         <script>scripts\txtConversation.gml</script>
         <script>scripts\txtScore.gml</script>
         <script>scripts\txtHotline2.gml</script>
+        <script>scripts\txtWarning.gml</script>
+        <script>scripts\txtSimple.gml</script>
       </scripts>
       <scripts name="Dev Menu">
         <script>scripts\scrStartLevel.gml</script>
@@ -3963,10 +3970,6 @@
     <object>objects\objCursorMouse</object>
   </objects>
   <rooms name="rooms">
-    <rooms name="PushEd">
-      <room>rooms\PEd_rmEditor</room>
-      <room>rooms\PEd_rmPlay</room>
-    </rooms>
     <room>rooms\rmInit</room>
     <rooms name="Levels">
       <rooms name="Phonecalls">
@@ -4170,6 +4173,10 @@
       </rooms>
     </rooms>
     <room>rooms\rmDownUnder</room>
+    <rooms name="PushEd">
+      <room>rooms\PEd_rmEditor</room>
+      <room>rooms\PEd_rmPlay</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

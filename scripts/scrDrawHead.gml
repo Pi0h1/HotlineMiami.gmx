@@ -1,4 +1,4 @@
-var head=sprPlayerHead;
+var head=head_index;
 
 if argument0
 {

@@ -29,7 +29,7 @@
 amount=0
 alarm[0]=110
 scrSetPort()
-global.mvol=1
+global.musicVolume=1
 scrLoadVol()
 if file_exists(working_directory+"\skip") {
 global.currentsong=0

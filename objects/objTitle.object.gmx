@@ -25,23 +25,72 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//scrInitGlobals(); //Initiates the global variables used by the game.
-wait = 0; //Used for general commands.
-coldir = 0; //Determinated variable used for switching colors.
-//Sets the default x,y coordinates for the menu.
+            <string>/// Text strings.
+text_EmptySpace = " "
+
+text_OptionStart            = "START GAME"
+text_OptionLevels           = "CONTINUE"
+text_OptionLevelsDone       = "CHAPTERS"
+text_OptionSettings         = "OPTIONS"
+text_OptionQuit             = "EXIT GAME"
+
+text_OptionController       = "360 GAMEPAD"
+text_OptionBinds            = "KEY BINDS"
+text_OptionVolume           = "VOLUME"
+text_OptionAdvanced         = "ADVANCED"
+text_OptionBack             = "BACK"
+
+text_OptionYes              = "YES"
+text_OptionNo               = "NO"
+
+text_OptionOn               = "ON"
+text_OptionOff              = "OFF"
+
+text_OptionMusic            = "MUSIC"
+text_OptionSurface          = "SURFACES"
+text_OptionBlood            = "clear blood"
+text_OptionAlienware        = "Alienware"
+
+text_Warning                = "WARNING!"
+text_ControllerWarning      = "PLEASE UPDATE YOUR GAMEPAD DRIVERS#BEFORE ENABLING THIS FEATURE!#ARE YOU SURE YOU WANT TO PROCEED?";
+text_ControllerWarningNote  = "THE LATEST GAMEPAD DRIVERS CAN BE#DOWNLOADED FREE AT MICROSOFT.COM!";
+text_SurfaceWarning         = "TURN OFF IF YOU ARE GETTING STUCK#BETWEEN FLOORS AND CAN'T PROGRESS";
+text_WarningRAM             = "YOUR SYSTEM IS#OUT OF VIDEO MEMORY#PLEASE RESTART THE GAME!";
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>wait = 0; // Used for general commands.
+coldir = 0; // Determinated variable used for switching colors.
+// Sets the default x,y coordinates for the menu.
 x = room_width / 2;
 y = room_height / 3 - 12;
 dir = random(10000);
 repeats = 1;
-
-alt[0] = "START GAME" //Alt is an array. It contains the options in the main menu.
-//scrLoadUnlocked()
-alt[1] = "CONTINUE" //Level Select option, if the game has not been beaten it'll be called "Continue", otherwise "Chapters".
+// Alt is an array. It contains the options in the main menu.
+alt[0] = text_OptionStart 
+alt[1] = text_OptionLevels
 i=0 repeat (20) {if global.levels[i]=1 i+=1}
-if i=20 alt[1]="CHAPTERS"
+if i=20 alt[1]=text_OptionLevelsDone
 i=0
-alt[2] = "OPTIONS"
-alt[3] = "EXIT GAME"
+alt[2] = text_OptionSettings
+alt[3] = text_OptionQuit
 
 nextlevel = rmTutorial // Level that will play ''START GAME'' is selected.
 level = 0;
@@ -108,200 +157,185 @@ alarm[0]=45</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if wait&gt;0 wait-=1
+            <string>if wait &gt; 0 wait -= 1
 if !surface_exists(global.surf1) {
-global.surf1=surface_create(room_width,room_height)
-if surface_exists(global.surf1) {
-surface_set_target(global.surf1)
-draw_clear_alpha(c_black,0)
-surface_reset_target()
-}
+        global.surf1 = surface_create(room_width, room_height)
+        if surface_exists(global.surf1) {
+                surface_set_target(global.surf1)
+                draw_clear_alpha(c_black, 0)
+                surface_reset_target()
+        }
 }
 //Keyboard Behaviour
-if keyboard_check_pressed(ord(global.upkey)) event_perform(ev_keypress,ord('W'))
-if keyboard_check_pressed(ord(global.downkey)) event_perform(ev_keypress,ord('S'))
-if keyboard_check_pressed(ord(global.rightkey)) event_perform(ev_keypress,ord('D'))
-if keyboard_check_pressed(ord(global.leftkey)) event_perform(ev_keypress,ord('A'))
-//if checkbutton(0,getid(5)) room=rmControllerTest
+if keyboard_check_pressed(ord(global.upkey))    event_perform(ev_keypress, ord('W'));
+if keyboard_check_pressed(ord(global.downkey))  event_perform(ev_keypress, ord('S'));
+if keyboard_check_pressed(ord(global.rightkey)) event_perform(ev_keypress, ord('D'));
+if keyboard_check_pressed(ord(global.leftkey))  event_perform(ev_keypress, ord('A'));
+
 if !surface_exists(global.surf1) exit
 surface_set_target(global.surf1)
-draw_clear_alpha(c_black,0)
+draw_clear_alpha(c_black, 0)
 draw_set_halign(fa_center)
 draw_set_valign(fa_center)
-i=0
-ii=0
+i = 0
+ii = 0
 //Main menu font
 draw_set_font(fntMenu)
-if level=3 {
-amount=0.5+lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(x+1,y+56,"WARNING!")
-amount=0.5-lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(x,y+56,"WARNING!")
-draw_set_font(fntWarning)
-draw_set_color(c_black)
-draw_text(x+1,y+86,"PLEASE UPDATE YOUR GAMEPAD DRIVERS#BEFORE ENABLING THIS FEATURE!#ARE YOU SURE YOU WANT TO PROCEED?")
-draw_text_color(x,y+85,"PLEASE UPDATE YOUR GAMEPAD DRIVERS#BEFORE ENABLING THIS FEATURE!#ARE YOU SURE YOU WANT TO PROCEED?",merge_color(c_white,c_yellow,0.5+lengthdir_x(0.5,dir*10)),merge_color(c_white,c_yellow,0.5+lengthdir_x(0.5,dir*10+90)),merge_color(c_white,c_yellow,0.5+lengthdir_x(0.5,dir*10+180)),merge_color(c_white,c_yellow,0.5+lengthdir_x(0.5,dir*10+270)),1)
-draw_set_color(c_black)
-draw_text(x+1,215,"THE LATEST GAMEPAD DRIVERS CAN BE#DOWNLOADED FREE AT MICROSOFT.COM!")
-draw_set_color(c_white)
-draw_text(x,214,"THE LATEST GAMEPAD DRIVERS CAN BE#DOWNLOADED FREE AT MICROSOFT.COM!")
-draw_set_font(fntMenu)
-start_x=160
-repeat (2) {
-if select=i {
-repeats=6+lengthdir_x(5,dir*10)
-repeat (repeats) {
-draw_set_color(merge_color(c_fuchsia,c_white,ii*0.085))
-draw_text(start_x+ii,y+56+60,alt[i])
-ii+=1
+if level = 3 {
+        amount = 0.5 + lengthdir_x(0.5, dir * 10)
+        draw_set_color(merge_color(c_white, c_aqua, amount))
+        
+        draw_text(x + 1, y + 56, text_Warning)
+        amount = 0.5 - lengthdir_x(0.5, dir * 10)
+        draw_set_color(merge_color(c_white, c_aqua, amount))
+        draw_text(x, y + 56, text_Warning)
+        txtWarning(x,y+85,text_ControllerWarning, text_ControllerWarningNote,fntWarning,true)
+        draw_set_font(fntMenu)
+        start_x = 160
+        repeat(2) {
+                if select = i {
+                        repeats = 6 + lengthdir_x(5, dir * 10)
+                        repeat(repeats) {
+                                draw_set_color(merge_color(c_fuchsia, c_white, ii * 0.085))
+                                draw_text(start_x + ii, y + 56 + 60, alt[i])
+                                ii += 1
+                        }
+                } else {
+                        amount = 0.5 + lengthdir_x(0.5, dir * 10)
+                        draw_set_color(merge_color(c_white, c_aqua, amount))
+                        draw_text(start_x + 1, y + 56 + 60 + 1, alt[i])
+                        amount = 0.5 - lengthdir_x(0.5, dir * 10)
+                        draw_set_color(merge_color(c_white, c_aqua, amount))
+                        draw_text(start_x, y + 56 + 60, alt[i])
+                }
+                i += 1
+                start_x += 80
+        }
 }
-} else {
-amount=0.5+lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(start_x+1,y+56+60+1,alt[i])
-amount=0.5-lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(start_x,y+56+60,alt[i])
-}
-i+=1
-start_x+=80
-}
-}
-
-
 
 //Music slider
-if level=2 {
-alt[0]="MUSIC "+string(round(global.mvol*100))+"%"
-repeat (2) {
-if select=i {
-repeats=6+lengthdir_x(5,dir*10)
-repeat (repeats) {
-draw_set_color(merge_color(c_fuchsia,c_white,ii*0.085))
-draw_text(x+ii,y+56+i*20,alt[i])
-ii+=1
-}
-} else {
-amount=0.5+lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(x+1,y+56+i*20+1,alt[i])
-amount=0.5-lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(x,y+56+i*20,alt[i])
-}
-i+=1
-}
-}
-
-if level=1 {
-repeat (5) {
-if select=i {
-repeats=6+lengthdir_x(5,dir*10)
-repeat (repeats) {
-draw_set_color(merge_color(c_fuchsia,c_white,ii*0.085))
-draw_text(x+ii,y+56+i*20,alt[i])
-ii+=1
-}
-} else {
-amount=0.5+lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(x+1,y+56+i*20+1,alt[i])
-amount=0.5-lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(x,y+56+i*20,alt[i])
-}
-i+=1
-}
+if level = 2 {
+        alt[0] = "MUSIC " + string(round(global.musicVolume * 100)) + "%"
+        repeat(2) {
+                if select = i {
+                        repeats = 6 + lengthdir_x(5, dir * 10)
+                        repeat(repeats) {
+                                draw_set_color(merge_color(c_fuchsia, c_white, ii * 0.085))
+                                draw_text(x + ii, y + 56 + i * 20, alt[i])
+                                ii += 1
+                        }
+                } else {
+                        amount = 0.5 + lengthdir_x(0.5, dir * 10)
+                        draw_set_color(merge_color(c_white, c_aqua, amount))
+                        draw_text(x + 1, y + 56 + i * 20 + 1, alt[i])
+                        amount = 0.5 - lengthdir_x(0.5, dir * 10)
+                        draw_set_color(merge_color(c_white, c_aqua, amount))
+                        draw_text(x, y + 56 + i * 20, alt[i])
+                }
+                i += 1
+        }
 }
 
-if level=0 {
-repeat (4) {
-if select=i {
-repeats=6+lengthdir_x(5,dir*10)
-repeat (repeats) {
-draw_set_color(merge_color(c_fuchsia,c_white,ii*0.085))
-draw_text(x+ii,y+56+i*20,alt[i])
-ii+=1
-}
-} else {
-amount=0.5+lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(x+1,y+56+i*20+1,alt[i])
-amount=0.5-lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(x,y+56+i*20,alt[i])
-}
-i+=1
-}
+if level = 1 {
+        repeat(5) {
+                if select = i {
+                        repeats = 6 + lengthdir_x(5, dir * 10)
+                        repeat(repeats) {
+                                draw_set_color(merge_color(c_fuchsia, c_white, ii * 0.085))
+                                draw_text(x + ii, y + 56 + i * 20, alt[i])
+                                ii += 1
+                        }
+                } else {
+                        amount = 0.5 + lengthdir_x(0.5, dir * 10)
+                        draw_set_color(merge_color(c_white, c_aqua, amount))
+                        draw_text(x + 1, y + 56 + i * 20 + 1, alt[i])
+                        amount = 0.5 - lengthdir_x(0.5, dir * 10)
+                        draw_set_color(merge_color(c_white, c_aqua, amount))
+                        draw_text(x, y + 56 + i * 20, alt[i])
+                }
+                i += 1
+        }
 }
 
-if level=4 {
-start_y=0
+if level = 0 {
+        repeat(4) {
+                if select = i {
+                        repeats = 6 + lengthdir_x(5, dir * 10)
+                        repeat(repeats) {
+                                draw_set_color(merge_color(c_fuchsia, c_white, ii * 0.085))
+                                draw_text(x + ii, y + 56 + i * 20, alt[i])
+                                ii += 1
+                        }
+                } else {
+                        amount = 0.5 + lengthdir_x(0.5, dir * 10)
+                        draw_set_color(merge_color(c_white, c_aqua, amount))
+                        draw_text(x + 1, y + 56 + i * 20 + 1, alt[i])
+                        amount = 0.5 - lengthdir_x(0.5, dir * 10)
+                        draw_set_color(merge_color(c_white, c_aqua, amount))
+                        draw_text(x, y + 56 + i * 20, alt[i])
+                }
+                i += 1
+        }
+}
 
-draw_set_font(fntWarning)
-draw_set_color(c_black)
-draw_text(x+1,y+80,"TURN OFF IF YOU ARE GETTING STUCK#BETWEEN FLOORS AND CAN'T PROGRESS")
-draw_text_color(x,y+80,"TURN OFF IF YOU ARE GETTING STUCK#BETWEEN FLOORS AND CAN'T PROGRESS",merge_color(c_white,c_yellow,0.5+lengthdir_x(0.5,dir*10)),merge_color(c_white,c_yellow,0.5+lengthdir_x(0.5,dir*10+90)),merge_color(c_white,c_yellow,0.5+lengthdir_x(0.5,dir*10+180)),merge_color(c_white,c_yellow,0.5+lengthdir_x(0.5,dir*10+270)),1)
-draw_set_font(fntMenu)
-
-repeat (4) {
-if i==1 start_y+=28
-if select=i {
-repeats=6+lengthdir_x(5,dir*10)
-repeat (repeats) {
-draw_set_color(merge_color(c_fuchsia,c_white,ii*0.085))
-draw_text(x+ii,y+56+i*20+start_y,alt[i])
-ii+=1
-}
-} else {
-if i=1 and global.surfaces=1 {
-amount=0.5+lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_gray,c_dkgray,amount))
-draw_text(x+1,y+56+i*20+1+start_y,alt[i])
-amount=0.5-lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_gray,c_dkgray,amount))
-draw_text(x,y+56+i*20+start_y,alt[i])
-} else {
-amount=0.5+lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(x+1,y+56+i*20+1+start_y,alt[i])
-amount=0.5-lengthdir_x(0.5,dir*10)
-draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(x,y+56+i*20+start_y,alt[i])
-}
-}
-i+=1
-}
+if level = 4 {
+        start_y = 0
+        txtWarning(x,y+80,text_SurfaceWarning,"",fntWarning,false)
+        draw_set_font(fntMenu)
+        repeat(4) {
+                if i == 1 start_y += 28
+                if select = i {
+                        repeats = 6 + lengthdir_x(5, dir * 10)
+                        repeat(repeats) {
+                                draw_set_color(merge_color(c_fuchsia, c_white, ii * 0.085))
+                                draw_text(x + ii, y + 56 + i * 20 + start_y, alt[i])
+                                ii += 1
+                        }
+                } else {
+                        if i = 1 and global.surfaces = 1 {
+                                amount = 0.5 + lengthdir_x(0.5, dir * 10)
+                                draw_set_color(merge_color(c_gray, c_dkgray, amount))
+                                draw_text(x + 1, y + 56 + i * 20 + 1 + start_y, alt[i])
+                                amount = 0.5 - lengthdir_x(0.5, dir * 10)
+                                draw_set_color(merge_color(c_gray, c_dkgray, amount))
+                                draw_text(x, y + 56 + i * 20 + start_y, alt[i])
+                        } else {
+                                amount = 0.5 + lengthdir_x(0.5, dir * 10)
+                                draw_set_color(merge_color(c_white, c_aqua, amount))
+                                draw_text(x + 1, y + 56 + i * 20 + 1 + start_y, alt[i])
+                                amount = 0.5 - lengthdir_x(0.5, dir * 10)
+                                draw_set_color(merge_color(c_white, c_aqua, amount))
+                                draw_text(x, y + 56 + i * 20 + start_y, alt[i])
+                        }
+                }
+                i += 1
+        }
 }
 
 draw_set_blend_mode(bm_normal)
 
+if coldir &gt; 90 {
+        i = 0
+        times = lengthdir_x(40, dir * 12)
+        if times &lt; 1 times = 1
+        repeat(1 + (coldir - 90) * 0.4) {
 
-if coldir&gt;90 {
-i=0
-times=lengthdir_x(40,dir*12)
-if times&lt;1 times=1
-repeat (1+(coldir-90)*0.4) {
+                //Colours of the text.
+                color2 = merge_color(c_fuchsia, color, i * 0.025)
+                color9 = merge_color(c_red, c_white, i * 0.025)
 
-//Colours of the text.
-color2=merge_color(c_fuchsia,color,i*0.025)
-color9=merge_color(c_red,c_white,i*0.025)
+                //Draws 3D Logo.
+                draw_sprite_ext(sprTitle, 0, lengthdir_x(i * 0.25, dir * 4 + 180) + x + lengthdir_x(i * 0.5, dir * 4), lengthdir_y(i * 0.25, dir * 4 + 180) + y + lengthdir_y(i * 0.5, dir * 4), 1, 1, lengthdir_y(5, dir * 4), color2, 1)
+                if i &lt; times draw_sprite_ext(sprTitle, 1, lengthdir_x(i * 0.25, dir * 4 + 180) + x + lengthdir_x(i * 0.5, dir * 4), lengthdir_y(i * 0.25, dir * 4 + 180) + y + lengthdir_y(i * 0.5, dir * 4), 1, 1, lengthdir_y(5, dir * 4), color9, 1)
 
-//Draws 3D Logo.
-draw_sprite_ext(sprTitle,0,lengthdir_x(i*0.25,dir*4+180)+x+lengthdir_x(i*0.5,dir*4),lengthdir_y(i*0.25,dir*4+180)+y+lengthdir_y(i*0.5,dir*4),1,1,lengthdir_y(5,dir*4),color2,1)
-if i&lt;times draw_sprite_ext(sprTitle,1,lengthdir_x(i*0.25,dir*4+180)+x+lengthdir_x(i*0.5,dir*4),lengthdir_y(i*0.25,dir*4+180)+y+lengthdir_y(i*0.5,dir*4),1,1,lengthdir_y(5,dir*4),color9,1)
-
-
-/*draw_set_color(merge_color(c_fuchsia,color,i*0.025))
-draw_text_transformed(x+lengthdir_x(i*0.5,dir*4),y+lengthdir_y(i*0.5,dir*4),title,1,1.5,lengthdir_y(5,dir*4))*/
-i+=1
-}
+                /*draw_set_color(merge_color(c_fuchsia,color,i*0.025))
+                draw_text_transformed(x+lengthdir_x(i*0.5,dir*4),y+lengthdir_y(i*0.5,dir*4),title,1,1.5,lengthdir_y(5,dir*4))*/
+                i += 1
+        }
 } else {
-//draw_set_color(color)
-draw_sprite_ext(sprTitle,0,x,y,1,1,lengthdir_y(5,dir*4),c_fuchsia,1)
-//draw_text_transformed(x,y,title,1,1.5,lengthdir_y(5,dir*4))
+        //draw_set_color(color)
+        draw_sprite_ext(sprTitle, 0, x, y, 1, 1, lengthdir_y(5, dir * 4), c_fuchsia, 1)
+        //draw_text_transformed(x,y,title,1,1.5,lengthdir_y(5,dir*4))
 }
 surface_alpha()
 surface_reset_target()
@@ -327,13 +361,12 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-if level=2 {
+            <string>if level=2 {
 if fade=1 or wait&gt;0 exit
 wait=2
-if select=0 {if global.mvol&lt;1 global.mvol+=0.01 sxeasy_setVolume(1)}
-}</string>
+if select=0 {if global.musicVolume&lt;1 global.musicVolume+=0.01 sxeasy_setVolume(1)}
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -355,14 +388,12 @@ if select=0 {if global.mvol&lt;1 global.mvol+=0.01 sxeasy_setVolume(1)}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-
-if level=2 {
+            <string>if level=2 {
 if fade=1 or wait&gt;0 exit
 wait=2
-if select=0 {if global.mvol&gt;0 global.mvol-=0.01 sxeasy_setVolume(1)}
-}</string>
+if select=0 {if global.musicVolume&gt;0 global.musicVolume-=0.01 sxeasy_setVolume(1)}
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -532,16 +563,7 @@ draw_surface_ext(global.surf1,1,0,1,1,0,c_black,1)
 draw_surface_ext(global.surf1,2,2,1,1,0,c_black,0.5)
 draw_surface_ext(global.surf1,0,0,1,1,0,c_white,1)
 } else {
-draw_set_font(fntScore) 
-draw_set_valign(fa_top)
-draw_set_halign(fa_center)
-draw_set_color(c_black)
-draw_text(x-1,y,"YOUR SYSTEM IS#OUT OF VIDEO MEMORY#PLEASE RESTART THE GAME!")
-draw_text(x+1,y,"YOUR SYSTEM IS#OUT OF VIDEO MEMORY#PLEASE RESTART THE GAME!")
-draw_text(x,y+1,"YOUR SYSTEM IS#OUT OF VIDEO MEMORY#PLEASE RESTART THE GAME!")
-draw_text(x,y-1,"YOUR SYSTEM IS#OUT OF VIDEO MEMORY#PLEASE RESTART THE GAME!")
-draw_set_color(c_white)
-draw_text(x,y,"YOUR SYSTEM IS#OUT OF VIDEO MEMORY#PLEASE RESTART THE GAME!")
+    txtSimple(x,y,text_WarningRAM,fntScore,true);
 }
 view_angle[0]=lengthdir_y(3,dir*3.33)
 
@@ -851,32 +873,32 @@ select=3
 }
 if level=1 {
 select=0
-alt[0]="START GAME"
-alt[1]="CONTINUE"
+alt[0]=text_OptionStart
+alt[1]=text_OptionLevels
 i=0 repeat (20) {if global.levels[i]=1 i+=1}
-if i=20 alt[1]="CHAPTERS"
+if i=20 alt[1]=text_OptionLevelsDone
 i=0
-alt[2]="OPTIONS"
-alt[3]="EXIT GAME"
+alt[2]=text_OptionSettings
+alt[3]=text_OptionQuit
 level=0
 }
 
 if level=2 or level=3 {
-alt[0]="360 PAD "
-alt[1]="CONTROLS"
-alt[2]="VOLUME"
-alt[3]="ADVANCED"
-alt[4]="BACK"
+alt[0]=text_OptionController + text_EmptySpace
+alt[1]=text_OptionBinds
+alt[2]=text_OptionVolume
+alt[3]=text_OptionAdvanced
+alt[4]=text_OptionBack
 select=0
 level=1
 }
 
 if level=4 {
-alt[0]="360 PAD "
-alt[1]="CONTROLS"
-alt[2]="VOLUME"
-alt[3]="ADVANCED"
-alt[4]="BACK"
+alt[0]=text_OptionController + text_EmptySpace
+alt[1]=text_OptionBinds
+alt[2]=text_OptionVolume
+alt[3]=text_OptionAdvanced
+alt[4]=text_OptionBack
 select=0
 level=1
 }
@@ -916,11 +938,11 @@ scrInitScore()
 if select=2 {
 level=1
 select=0
-alt[0]="360 GAMEPAD"
-alt[1]="CONTROLS"
-alt[2]="VOLUME"
-alt[3]="ADVANCED"
-alt[4]="BACK"
+alt[0]=text_OptionController 
+alt[1]=text_OptionBinds  
+alt[2]=text_OptionVolume
+alt[3]=text_OptionAdvanced
+alt[4]=text_OptionBack
 exit
 }
 if select=3 {fade=1 file_delete(working_directory+"\skip")}
@@ -928,8 +950,8 @@ if select=3 {fade=1 file_delete(working_directory+"\skip")}
 
 if level=1 {
 if select=0 {
-alt[0]="YES"
-alt[1]="NO"
+alt[0]=text_OptionYes
+alt[1]=text_OptionNo   
 level=3
 select=1
 exit
@@ -942,32 +964,32 @@ fade=1
 if select=2 {
 level=2
 select=0
-alt[0]="MUSIC "+string(round(global.mvol*100))+"%"
-alt[1]="BACK"
+alt[0]=text_OptionMusic+" "+string(round(global.musicVolume*100))+"%"
+alt[1]=text_OptionBack 
 exit
 }
 if select=3 {
 level=4
 select=0
-alt[0]="SURFACES "
-if global.surfaces=1 alt[0]+="ON" else alt[0]+="OFF"
-alt[1]="clear blood "
-if global.blood=0 alt[1]+="on" else alt[1]+="off"
-alt[2]="AlienWare "
-if global.alienware=1 alt[2]+="ON" else alt[2]+="OFF"
-alt[3]="BACK"
+alt[0]=text_OptionSurface + text_EmptySpace
+if global.surfaces=1 alt[0]+=text_OptionOn else alt[0]+=text_OptionOff
+alt[1]=text_OptionBlood + text_EmptySpace
+if global.blood=0 alt[1]+=string_lower(text_OptionOn) else alt[1]+=string_lower(text_OptionOff)
+alt[2]=text_OptionAlienware + text_EmptySpace
+if global.alienware=1 alt[2]+=text_OptionOn else alt[2]+=text_OptionOff
+alt[3]=text_OptionBack
 exit
 }
 
 if select=4 {
 select=0
-alt[0]="START GAME"
-alt[1]="CONTINUE"
+alt[0]=text_OptionStart
+alt[1]=text_OptionLevels
 i=0 repeat (20) {if global.levels[i]=1 i+=1}
-if i=20 alt[1]="CHAPTERS"
+if i=20 alt[1]=text_OptionLevelsDone 
 i=0
-alt[2]="OPTIONS"
-alt[3]="EXIT GAME"
+alt[2]=text_OptionSettings
+alt[3]=text_OptionQuit
 level=0
 exit
 }
@@ -978,20 +1000,20 @@ if select=1 {
 scrSaveVol()
 level=1
 select=0
-alt[0]="360 GAMEPAD"
-alt[1]="CONTROLS"
-alt[2]="VOLUME"
-alt[3]="ADVANCED"
-alt[4]="BACK"
+alt[0]=text_OptionController
+alt[1]=text_OptionBinds
+alt[2]=text_OptionVolume
+alt[3]=text_OptionAdvanced
+alt[4]=text_OptionBack
 }
 }
 
 if level=3 {
-alt[0]="360 GAMEPAD "
-alt[1]="CONTROLS"
-alt[2]="VOLUME"
-alt[3]="ADVANCED"
-alt[4]="BACK"
+alt[0]=text_OptionController
+alt[1]=text_OptionBinds
+alt[2]=text_OptionVolume
+alt[3]=text_OptionAdvanced
+alt[4]=text_OptionBack
 level=1
 select=0
 }
@@ -1018,21 +1040,21 @@ file=file_text_open_write(working_directory+"\blood") file_text_close(file)
 }
 }
 if select=2 global.alienware=!global.alienware
-alt[0]="SURFACES "
-if global.surfaces=1 alt[0]+="ON" else alt[0]+="OFF"
-alt[1]="clear blood "
-if global.blood=0 alt[1]+="on" else alt[1]+="off"
-alt[2]="AlienWare "
-if global.alienware=1 alt[2]+="ON" else alt[2]+="OFF"
-alt[3]="BACK"
+alt[0]=text_OptionSurface + text_EmptySpace
+if global.surfaces=1 alt[0]+=text_OptionOn else alt[0]+=text_OptionOff
+alt[1]=text_OptionBlood + text_EmptySpace
+if global.blood=0 alt[1]+=string_lower(text_OptionOn) else alt[1]+=string_lower(text_OptionOff)
+alt[2]=text_OptionAlienware + text_EmptySpace
+if global.alienware=1 alt[2]+=text_OptionOn else alt[2]+=text_OptionOff
+alt[3]=text_OptionBack
 if select=3 {
 level=1
 select=0
-alt[0]="360 GAMEPAD"
-alt[1]="CONTROLS"
-alt[2]="VOLUME"
-alt[3]="ADVANCED"
-alt[4]="BACK"
+alt[0]=text_OptionController
+alt[1]=text_OptionBinds
+alt[2]=text_OptionVolume
+alt[3]=text_OptionAdvanced
+alt[4]=text_OptionBack
 exit
 }
 }

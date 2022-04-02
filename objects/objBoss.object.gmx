@@ -28,6 +28,7 @@
             <string>legsprite=sprNothingCorner
 legindex=0
 angle=direction
+hasLegs=true;
 </string>
           </argument>
         </arguments>

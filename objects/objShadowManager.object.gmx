@@ -176,7 +176,9 @@ draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.sha
 }
 
 with (objBoss){
+if objBoss.hasLegs=true{
 draw_sprite_ext(legsprite,legindex,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,angle,c_black,1)
+}
 draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,angle,c_black,1)
 }
 

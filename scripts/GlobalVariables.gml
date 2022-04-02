@@ -6,11 +6,13 @@
 /*  The following variables are original to https://github.com/Pi0h1/HotlineMiami.gmx;
     Therefore not present in vanilla Hotline Miami. */
 //  --------------------------------------- //
-    global.devmode      = false;
+    global.devmode      = true;
     global.spawnObject  = 0;
     global.playerIndex  = 0;
     global.depthDeath   = 0;
     global.godmode      = 0;
+    global.cutscene     = 0;
+    global.restartedmusic = working_directory+"\Static.mp3"
     window_set_cursor(cr_none);
 //  --------------------------------------- //
     /*  End of original variables.  */
@@ -21,7 +23,6 @@
 global.steamon = 0;
 display_set_gui_size(view_wview, view_hview);
 sxeasy_init();
-global.restartedmusic=working_directory+"\Static.mp3"
 
 // Volume.
 global.musicVolume = 1;
@@ -49,7 +50,6 @@ global.controller       =   0   ;
 global.maskload         =   0   ;
 
 global.shake        =   0;
-global.cutscene     =   0;
 
 global.bonuslist    =   ds_list_create();
 global.bonustime    =   0;

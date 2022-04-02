@@ -31,6 +31,7 @@ angle=0
 shake=0
 legsprite=0
 legindex=0
+hasLegs=false;
 </string>
           </argument>
         </arguments>
@@ -53,7 +54,8 @@ legindex=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wait-=1
+            <string>angle=image_angle
+wait-=1
 if wait&lt;=0 {
 if !instance_exists(objPhoneConversation) image_index+=0.15
 if sprite_index=sprBoss2CrawlStart {

@@ -95,7 +95,7 @@ global.done=0</code>
     <instance objName="objWallBrickV" x="352" y="32" name="inst_77A135A0" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="416" y="32" name="inst_5DBF0814" locked="0" code="" scaleX="25" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="32" y="96" name="inst_52CE17DB" locked="0" code="" scaleX="25" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWallHeavyV" x="224" y="40" name="inst_7BF94C85" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHeavyV" x="224" y="32" name="inst_7BF94C85" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="224" y="96" name="inst_92612BF6" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="128" y="192" name="inst_6CE74457" locked="0" code="" scaleX="21" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="128" y="256" name="inst_22D85332" locked="0" code="" scaleX="21" scaleY="1" colour="4294967295" rotation="0"/>

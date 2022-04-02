@@ -31,6 +31,7 @@ angle=0
 shake=0
 legsprite=0
 legindex=0
+hasLegs=false;
 </string>
           </argument>
         </arguments>
@@ -53,14 +54,14 @@ legindex=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if objPlayer.sprite_index=sprPAttackClub {
+            <string>angle=image_angle
+if objPlayer.sprite_index=sprPAttackClub {
 global.test=0
 with objPlayer {
 if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),objBoss2Pry) global.test=1
 }
 if global.test=1 {
-PlaySFX(sndHit)
-PlaySFX(sndHitWall)
+PlaySFX("Blunt")
 global.shake=5
 if energie&gt;=2 {
 my_id=instance_create(x+lengthdir_x(14,image_angle+135),y+lengthdir_y(14,image_angle+135),objBoss2GetUp)
@@ -148,6 +149,29 @@ instance_destroy()
 my_id.state=3
 my_id.energie=energie
 instance_destroy()</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+</string>
           </argument>
         </arguments>
       </action>

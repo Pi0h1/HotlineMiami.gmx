@@ -54,6 +54,7 @@ vol=1
 angle=0
 shake=0
 legindex=0
+hasLegs=true;
 </string>
           </argument>
         </arguments>
@@ -76,7 +77,13 @@ legindex=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>legindex=image_index*2
+            <string>if sprite_index=sprBoss2Computer{
+hasLegs=false;
+}else{
+hasLegs=true;
+}
+
+legindex=image_index*2
 angle=direction
 if !instance_exists(objPlayer) {speed=0 state=1000}
 if energie=1 and round(random(120))=2 {

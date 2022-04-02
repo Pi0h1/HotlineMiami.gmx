@@ -80,7 +80,7 @@
     <instance objName="objDoorH" x="320" y="320" name="inst_3F596A75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="448" y="320" name="inst_6E15D7D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objToilet" x="488" y="328" name="inst_EDB4B255" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTub" x="392" y="360" name="inst_A1D5C372" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTub" x="424" y="373" name="inst_A1D5C372" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSofaV64" x="228" y="372" name="inst_12C6E3C2" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowFrameV" x="64" y="384" name="inst_91EC2CDC" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTransitioner" x="484" y="420" name="inst_C951B552" locked="0" code="addx=-1&#xA;addy=0&#xA;nextroom=room_previous(room)&#xA;while place_free(x,y+1) image_yscale+=0.25" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

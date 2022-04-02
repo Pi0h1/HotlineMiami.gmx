@@ -1,4 +1,4 @@
-headindex = 0
+head_FrameIndex = 0
 ///Sprites
 sprite_index=sprPWalkUnarmed
 pose_index=WalkPlayerUnarmed

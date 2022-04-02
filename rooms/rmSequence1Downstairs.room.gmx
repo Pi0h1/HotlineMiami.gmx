@@ -59,7 +59,7 @@
     <instance objName="objDoorV" x="576" y="192" name="inst_A27F0BA5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="288" y="128" name="inst_0A75CF73" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="416" y="256" name="inst_24B9CDC3" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerCar" x="656" y="156" name="inst_88957179" locked="0" code="nextroom=rmTrainstationEntrance&#xA;nextroom=rmApartment1Entrance&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objPlayerCar" x="656" y="156" name="inst_88957179" locked="0" code="nextroom=rmTrainstationEntrance&#xA;nextroom=rmApartment1Entrance" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objWallHeavyV" x="288" y="32" name="inst_090619F6" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="576" y="32" name="inst_0178CE2B" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="288" y="160" name="inst_549BC3A8" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>

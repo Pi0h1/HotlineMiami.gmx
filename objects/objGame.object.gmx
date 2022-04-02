@@ -166,7 +166,7 @@ switch (startingRoom) {
 // Answers
     case "SAFEHOUSE"    : scrStartLevel ("SAFEHOUSE"    , "SIXTEENTH CHAPTER"   , rmNoodleShop              , rmMCBar       , "ToTheTop"            ); break;
     case "FUN&amp;GAMES"    : scrStartLevel ("FUN&amp;GAMES"    , "SEVENTEENTH CHAPTER" , rmArcadeDownstairs        , rmMCSequence2 , "Musikk2"             ); break;
-    case "PRANKCALL"    : scrStartLevel ("PRANKCALL"    , "EIGHTEENTH CHAPTER"  , rmPhoneHomEntranceBiker   , rmSequence3   , "Knock"               ); break;
+    case "PRANKCALL"    : scrStartLevel ("PRANKCALL"    , "EIGHTEENTH CHAPTER"  , rmPhoneHomEntranceBiker   , rmMCSequence3   , "Knock"               ); break;
     case "RESOLUTION"   : scrStartLevel ("RESOLUTION"   , "NINETEENTH CHAPTER"  , rmJanitors                , rmMCSequence4 , "InnerAnimal"         ); break;
 // Bonus
     case "HIGHBALL"     : scrStartLevel ("HIGHBALL"     , "BONUS CHAPTER"       , rmHighballer              , rmChapter     , "Perturbator"         ); break;

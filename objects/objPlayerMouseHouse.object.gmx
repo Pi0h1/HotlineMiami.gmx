@@ -1120,8 +1120,8 @@ if image_index&gt;=5 and image_index&lt;16 draw_sprite_ext(sprMaskDropBack,globa
 }
 
 if global.godmode=1{
-draw_sprite_ext(sprHalo,headindex,x+maddx+0.5,y+maddy+0.5,image_xscale,image_yscale,dir,c_black,0.2)
-draw_sprite_ext(sprHalo,headindex,x+maddx,y+maddy,image_xscale,image_yscale,dir,image_blend,image_alpha)
+draw_sprite_ext(sprHalo,head_FrameIndex,x+maddx+0.5,y+maddy+0.5,image_xscale,image_yscale,dir,c_black,0.2)
+draw_sprite_ext(sprHalo,head_FrameIndex,x+maddx,y+maddy,image_xscale,image_yscale,dir,image_blend,image_alpha)
 }
 </string>
           </argument>

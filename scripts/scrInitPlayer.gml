@@ -3,7 +3,7 @@
 armlength=0
 goddir=0
 active=1
-headindex=0
+head_FrameIndex=0
 weaponx=0
 if room = rmTutorial {global.maskindex=3 global.maskon=1 global.done=1}
 SetHealth("Random")

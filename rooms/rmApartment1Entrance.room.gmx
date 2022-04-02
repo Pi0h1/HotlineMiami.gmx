@@ -10,7 +10,8 @@
   <persistent>-1</persistent>
   <colour>8421440</colour>
   <showcolour>-1</showcolour>
-  <code>if global.resetstory exit
+  <code>if instance_exists(objEffectorHouse) with objEffectorHouse instance_destroy();
+if global.resetstory exit
 global.done=0</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -66,7 +67,6 @@ global.done=0</code>
     <instance objName="objWallHeavyV" x="224" y="160" name="inst_DD584761" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="224" y="288" name="inst_63510C74" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="576" y="384" name="inst_47DAD925" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
-    <instance objName="objEffector" x="376" y="112" name="inst_51942857" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="64" y="32" name="inst_C53F213E" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="160" y="32" name="inst_E636A662" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="224" y="384" name="inst_AA091354" locked="0" code="" scaleX="45" scaleY="1" colour="4294967295" rotation="0"/>

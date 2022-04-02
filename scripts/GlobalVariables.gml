@@ -11,6 +11,7 @@
     global.playerIndex  = 0;
     global.depthDeath   = 0;
     global.godmode      = 0;
+    window_set_cursor(cr_none);
 //  --------------------------------------- //
     /*  End of original variables.  */
 

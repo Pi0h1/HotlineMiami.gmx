@@ -18,8 +18,7 @@ global.level=rmApartment1Entrance
 global.pretitle="FIRST CHAPTER"
 global.title="NO TALK"
 global.sequence=rmSequence2
-global.revisit=0
-global.cutscene=1</code>
+global.revisit=0</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -60,7 +59,7 @@ global.cutscene=1</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objBackgroundColor" x="52" y="20" name="inst_C82BA211" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBackgroundColor" x="48" y="16" name="inst_C82BA211" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShadowH" x="400" y="40" name="inst_A5777E27" locked="0" code="image_xscale=128/16&#xA;image_yscale=44/16&#xA;color1=c_ltgray&#xA;color2=c_gray&#xA;add=0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShadowH" x="400" y="100" name="inst_7E177695" locked="0" code="image_xscale=128/16&#xA;image_yscale=44/16&#xA;color1=c_black&#xA;color2=c_gray&#xA;add=0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfacer" x="24" y="16" name="inst_A8B88D7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -106,7 +105,6 @@ global.cutscene=1</code>
     <instance objName="objWallHeavyV" x="416" y="192" name="inst_8B02829A" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="576" y="32" name="inst_FE55C569" locked="0" code="" scaleX="1" scaleY="53" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerMouseHouse" x="528" y="384" name="inst_2B47C1F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objEffector" x="184" y="376" name="inst_28951C0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRailV" x="400" y="96" name="inst_1FCED086" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRailV" x="400" y="136" name="inst_4C91DE04" locked="0" code="" scaleX="23" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRailV" x="520" y="80" name="inst_407D4669" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
@@ -120,6 +118,7 @@ global.cutscene=1</code>
     <instance objName="objWallHeavyV" x="352" y="320" name="inst_CB727E0E" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="480" y="320" name="inst_D759C083" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="288" y="448" name="inst_D2E1E0CA" locked="0" code="" scaleX="37" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objEffectorHouse" x="80" y="24" name="inst_EB0E2645" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="288" y="256" w="16" h="16" xo="128" yo="16" id="10018332" name="tile_16E258D6" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

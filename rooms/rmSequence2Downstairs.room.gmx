@@ -51,7 +51,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objBackgroundColor" x="52" y="20" name="inst_5630CF40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBackgroundColor" x="48" y="16" name="inst_5630CF40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShadowH" x="400" y="40" name="inst_B36E63AA" locked="0" code="image_xscale=128/16&#xA;image_yscale=44/16&#xA;color1=c_black&#xA;color2=c_gray&#xA;add=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShadowH" x="544" y="192" name="inst_88C76802" locked="0" code="image_xscale=2&#xA;image_yscale=2&#xA;color1=c_black&#xA;color2=c_dkgray" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfacer" x="24" y="16" name="inst_C22EB264" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -59,12 +59,11 @@
     <instance objName="objDoorV" x="576" y="192" name="inst_B926E24C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="288" y="128" name="inst_7903508C" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="416" y="256" name="inst_AE8C04B7" locked="0" code="solid=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerCar" x="656" y="156" name="inst_D6D8B350" locked="0" code="nextroom=rmTrainstationEntrance&#xA;nextroom=rmApartment1Entrance&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objPlayerCar" x="656" y="156" name="inst_D6D8B350" locked="0" code="nextroom=rmTrainstationEntrance&#xA;nextroom=rmApartment1Entrance" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objWallHeavyV" x="288" y="32" name="inst_07733643" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="576" y="32" name="inst_B3A01238" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="288" y="160" name="inst_F6E7062B" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="576" y="224" name="inst_174BBA14" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="objEffectorHouse" x="96" y="36" name="inst_7D8855E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="288" y="32" name="inst_CF8AE1D8" locked="0" code="" scaleX="37" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="288" y="256" name="inst_9D19A6C9" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="448" y="256" name="inst_210D9B9F" locked="0" code="" scaleX="17" scaleY="1" colour="4294967295" rotation="0"/>
@@ -73,6 +72,7 @@
     <instance objName="objRailV" x="528" y="144" name="inst_C04E985C" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRailV" x="536" y="224" name="inst_4D19354B" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRailV" x="536" y="184" name="inst_9E725749" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objEffectorHouse" x="80" y="24" name="inst_0341BD21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="288" y="80" w="16" h="16" xo="416" yo="192" id="10020426" name="tile_B7533E8A" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

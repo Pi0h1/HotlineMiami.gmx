@@ -374,7 +374,6 @@ draw_rectangle(0,0,view_wview[0],blackx,0)
 draw_rectangle(0,view_hview[0],view_wview[0],view_hview[0]-blackx*1.5,0)
 }
 scrDrawFilter();
-
 </string>
           </argument>
         </arguments>

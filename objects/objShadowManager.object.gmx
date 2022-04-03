@@ -155,7 +155,9 @@ draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset2-viewX)*other.sha
 }
 
 with (objFurniture) {
-draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,image_alpha)
+if (objFurniture.visible=true){
+draw_sprite_ext(sprite_index,image_index,(x+other.shadowOffset1-viewX)*other.shadowQuality,(y+other.shadowOffset1-viewY)*other.shadowQuality,image_xscale*other.shadowQuality,image_yscale*other.shadowQuality,image_angle,c_black,objFurniture.image_alpha)
+}
 }
 
 with (objAboveFurniture) {

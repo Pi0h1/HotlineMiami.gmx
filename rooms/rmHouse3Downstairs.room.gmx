@@ -131,7 +131,7 @@ global.done=0</code>
     <instance objName="objLamps" x="22" y="56" name="inst_E53833E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLamps" x="592" y="56" name="inst_FA959A15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCassetteDeck" x="24" y="80" name="inst_561564E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objComputer" x="592" y="76" name="inst_F078861D" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objComputer" x="592" y="76" name="inst_F078861D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="416" y="384" name="inst_EA1F8220" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTransitioner" x="436" y="504" name="inst_8BF2D90C" locked="0" code="while place_free(x+1,y) image_xscale+=0.25&#xA;addx=0&#xA;addy=1&#xA;nextroom=room_previous(room)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="160" y="384" name="inst_50024A54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

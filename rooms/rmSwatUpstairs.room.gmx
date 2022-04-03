@@ -67,7 +67,7 @@ global.done=0</code>
     <instance objName="objDoorH" x="160" y="448" name="inst_9989328A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="32" y="320" name="inst_98F71D78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHotelSink" x="14" y="168" name="inst_91075D0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTub" x="8" y="104" name="inst_74DB4270" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTub" x="40" y="116" name="inst_74DB4270" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHotelSuiteToilet" x="112" y="118" name="inst_7D7D7B5A" locked="0" code="image_angle=270" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorH" x="64" y="192" name="inst_F0090569" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowH" x="288" y="192" name="inst_8059549D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

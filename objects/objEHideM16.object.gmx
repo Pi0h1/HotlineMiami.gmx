@@ -79,6 +79,8 @@ my_id.image_angle=my_id.direction
 my_id.speed=10+random(5)
 PlaySFX(sndEM16)
 }
+
+speed=0;
 </string>
           </argument>
         </arguments>

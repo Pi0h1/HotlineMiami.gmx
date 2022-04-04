@@ -114,13 +114,14 @@ if room=rmScore or room=rmMenu or !instance_exists(objEffector){
     if !instance_exists(objEffectorHouse){
     instance_destroy();
 
+/*
 if (global.devmode == true) {
         if instance_exists(objGame){
             objGame.messageAlpha=5;
             }
         }
     }
-}
+}*/
 </string>
           </argument>
         </arguments>

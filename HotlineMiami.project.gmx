@@ -3968,6 +3968,7 @@
     </objects>
     <object>objects\objSpawnpoint</object>
     <object>objects\objCursorMouse</object>
+    <object>objects\objTest</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmInit</room>

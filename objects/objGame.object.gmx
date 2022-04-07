@@ -118,7 +118,7 @@ devmenu=false
           <argument>
             <kind>1</kind>
             <string>/// Create persistent objects
-instance_create(0,0,objScanlines)
+object_create(objScanlines)
 </string>
           </argument>
         </arguments>
@@ -205,8 +205,8 @@ game_save("restart.dat")
           <argument>
             <kind>1</kind>
             <string>/// Player Indexes
-if instance_exists(objPlayerJacket) global.playerIndex=0
-if instance_exists(objPlayerBiker)  global.playerIndex=1
+if instance_exists(objPlayerJacket  )   global.playerIndex=0
+if instance_exists(objPlayerBiker   )   global.playerIndex=1
 </string>
           </argument>
         </arguments>
@@ -228,14 +228,10 @@ if instance_exists(objPlayerBiker)  global.playerIndex=1
           <argument>
             <kind>1</kind>
             <string>/// Discord Variables
-discordState = "Playing "+gameTitle;
-discordDetails = room_get_name(room);
-discordId = "";
 
-var file = file_text_open_read("discordId.txt");
-if file &lt; 0 exit;
-discordId = file_text_read_string(file);
-file_text_close(file);
+discordState    = "Playing "+gameTitle;
+discordDetails  = room_get_name(room);
+discordId       = "";
 </string>
           </argument>
         </arguments>
@@ -258,6 +254,31 @@ file_text_close(file);
             <kind>1</kind>
             <string>/// Discord Rich Presence - Initialize
 np_initdiscord(discordId, false, 0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Load discordId from text file if one exists.
+var file = file_text_open_read("discordId.txt");
+if file &lt; 0 exit;
+discordId = file_text_read_string(file);
+file_text_close(file);
 </string>
           </argument>
         </arguments>
@@ -547,6 +568,7 @@ temp2+=1
           <argument>
             <kind>1</kind>
             <string>/// User Interface
+display_set_gui_size(view_wview[0]*2,view_hview[0]*2);
 if (global.devmode == false) exit 
 if devmenu=false{
 txtDev(8,8,"Press [1] to open Dev Menu",fntDescription,0.5)

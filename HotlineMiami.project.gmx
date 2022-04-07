@@ -2914,6 +2914,7 @@
       <script>scripts\setChair.gml</script>
     </scripts>
     <script>scripts\DiscordUpdateInfo.gml</script>
+    <script>scripts\object_create.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PushEd">

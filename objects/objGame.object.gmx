@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Level to test
+            <string>/// If dev mode is active; what level should be tested?
 testLevel = "TENSION";
 </string>
           </argument>
@@ -47,7 +47,7 @@ testLevel = "TENSION";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Global Variables
+            <string>/// Initialize Global Variables
 GlobalVariables();
 </string>
           </argument>
@@ -69,8 +69,10 @@ GlobalVariables();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Local Variables
+            <string>/// Initialize Local Variables
 projectTitle=game_display_name+" (version "+string(GM_version)+")"
+gameTitle=game_display_name
+discordId = "";
 messageAlpha=0;
 song = -1;
 intro = 0;
@@ -115,7 +117,7 @@ devmenu=false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Object Creation
+            <string>/// Create persistent objects
 instance_create(0,0,objScanlines)
 </string>
           </argument>
@@ -205,6 +207,76 @@ game_save("restart.dat")
             <string>/// Player Indexes
 if instance_exists(objPlayerJacket) global.playerIndex=0
 if instance_exists(objPlayerBiker)  global.playerIndex=1
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Discord Variables
+discordState = "Playing "+gameTitle;
+discordDetails = room_get_name(room);
+DiscordSetId(); // Set your game's Discord Rich Presence ID inside of this script!
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Discord Rich Presence - Initialize
+np_initdiscord(discordId, false, 0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Discord Rich Presence - Update
+np_update();
 </string>
           </argument>
         </arguments>
@@ -424,6 +496,34 @@ temp2+=1
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>np_setpresence (
+    discordState,
+    discordDetails, 
+    "default",
+    ""
+    )
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="75">
       <action>
         <libid>1</libid>
@@ -441,16 +541,15 @@ temp2+=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.devmode == false) exit 
+            <string>/// User Interface
+if (global.devmode == false) exit 
 if devmenu=false{
 txtDev(8,8,"Press [1] to open Dev Menu",fntDescription,0.5)
 }
 
 if devmenu=false exit
-/// User Interface
 
-
-//  Draw Background.
+// Draw Background.
 devDrawWindow(sprUIRectangle,24,16,128,128)
 //scrDrawRectangle(24,16,128,218,c_teal,true)
 
@@ -584,7 +683,7 @@ txtMessage(room_width/2,room_height/2,"Surface sucessfully destroyed.",fntHelvet
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Functionality
+            <string>/// Functionality
 
 if messageAlpha&gt;0 messageAlpha-=0.01
 

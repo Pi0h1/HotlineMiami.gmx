@@ -26,6 +26,7 @@
     <extension index="0">extensions\HotTextEffects</extension>
     <extension index="1">extensions\PushEd</extension>
     <extension index="2">extensions\window_resize_fix</extension>
+    <extension index="3">extensions\NekoPresence</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="Ambience">
@@ -2895,6 +2896,8 @@
       <script>scripts\scrGetSongRestart.gml</script>
       <script>scripts\setChair.gml</script>
     </scripts>
+    <script>scripts\DiscordUpdateInfo.gml</script>
+    <script>scripts\DiscordSetId.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PushEd">

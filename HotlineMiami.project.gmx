@@ -1878,6 +1878,11 @@
     <script>scripts\Game_Information.gml</script>
     <script>scripts\Game_Info_Translated.gml</script>
     <script>scripts\GlobalVariables.gml</script>
+    <script>scripts\DiscordUpdateInfo.gml</script>
+    <scripts name="Generic Scripts">
+      <script>scripts\draw_sprite_shadow.gml</script>
+      <script>scripts\object_create.gml</script>
+    </scripts>
     <scripts name="Player">
       <scripts name="Character Sprites">
         <script>scripts\charJacket.gml</script>
@@ -2913,8 +2918,6 @@
       <script>scripts\scrGetSongRestart.gml</script>
       <script>scripts\setChair.gml</script>
     </scripts>
-    <script>scripts\DiscordUpdateInfo.gml</script>
-    <script>scripts\object_create.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PushEd">

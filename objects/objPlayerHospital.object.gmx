@@ -72,9 +72,10 @@ alarm[1]=2
             <kind>1</kind>
             <string>global.loaded=1
 with objEffector {global.amount=amount amount=0}
-game_save(working_directory+"\tempsave.sav")
+SaveGameState();
 with objEffector {amount=global.amount}
-global.loaded=0</string>
+global.loaded=0
+</string>
           </argument>
         </arguments>
       </action>

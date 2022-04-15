@@ -218,7 +218,7 @@ if kSelect{
             }
         } 
     if select=1 {on=2 state=1} // Puzzle
-    if select=2 {game_load("restart.dat")} // Restart
+    if select=2 {ReloadCurrentLevel();} // Restart (level)
     if select=3 {if on=1 fade=1} // Quit 
     }
 }

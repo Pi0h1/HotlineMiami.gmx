@@ -185,7 +185,7 @@ if restart=1 or newsong=1 or (room=rmSwatUpstairs and instance_exists(objSwat) a
 sxeasy_setVolume(amount*(1/180))
 }
 } else {fade=0 if restart=1 {if file_exists(working_directory+"\restartmusic") file_delete(working_directory+"\restartmusic") sxeasy_stop(1) sxeasy_setVolume(0) bgm_Close() game_restart() //sxeasy_play(working_directory+"\HorseSteppin.mp3"); room=rmMenu
-} else {if next=1 {if file_exists(working_directory+"\restartmusic") file_delete(working_directory+"\restartmusic") if newsong=1 {sxeasy_stop(1) sxeasy_setVolume(0) sxeasy_play(song);} room=nextroom} else {if room=rmSwatUpstairs and file_exists(working_directory+"\restarmusic") {sxeasy_stop(1) bgm_Unload(global.currentsong)} scrResetSurfaces() game_load(working_directory+"\tempsave.sav")}}}
+} else {if next=1 {if file_exists(working_directory+"\restartmusic") file_delete(working_directory+"\restartmusic") if newsong=1 {sxeasy_stop(1) sxeasy_setVolume(0) sxeasy_play(song);} room=nextroom} else {if room=rmSwatUpstairs and file_exists(working_directory+"\restarmusic") {sxeasy_stop(1) bgm_Unload(global.currentsong)} scrResetSurfaces() LoadGameState()}}}
 }
 vlastx=view_xview[0]
 vlasty=view_yview[0]

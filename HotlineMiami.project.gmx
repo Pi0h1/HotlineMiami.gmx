@@ -2969,6 +2969,10 @@
       <script>scripts\scrGetSongRestart.gml</script>
       <script>scripts\setChair.gml</script>
     </scripts>
+    <script>scripts\SaveGameState.gml</script>
+    <script>scripts\LoadGameState.gml</script>
+    <script>scripts\SaveCurrentLevel.gml</script>
+    <script>scripts\ReloadCurrentLevel.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PushEd">

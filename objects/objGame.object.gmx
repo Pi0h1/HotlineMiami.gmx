@@ -190,7 +190,7 @@ sxeasy_play(song)
 //instance_create(x,y,objPlaceCharacter)
 
 if global.devmode=true{
-game_save("restart.dat")
+SaveCurrentLevel();
 }
 </string>
           </argument>

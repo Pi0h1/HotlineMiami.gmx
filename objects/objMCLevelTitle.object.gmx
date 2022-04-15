@@ -230,7 +230,7 @@ if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(l
 draw_set_blend_mode(bm_subtract)
 draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0)
 draw_set_blend_mode(bm_normal)
-} else {room_goto(global.level) game_save("restart.dat")}
+} else {room_goto(global.level) SaveCurrentLevel();}
 }
 scrDrawFilter();
 </string>

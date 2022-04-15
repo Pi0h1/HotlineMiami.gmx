@@ -54,8 +54,9 @@ dir=0
             <kind>1</kind>
             <string>objPlayer.persistent=0
 global.loaded=1
-game_save(working_directory+"\tempsave.sav")
-global.loaded=0</string>
+SaveGameState();
+global.loaded=0
+</string>
           </argument>
         </arguments>
       </action>

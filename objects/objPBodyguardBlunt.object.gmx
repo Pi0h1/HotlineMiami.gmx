@@ -59,7 +59,7 @@ global.maskon=1
 if image_index=0 {
 my_id=instance_create(x,y,objPlayerJacket)
 if sprite_index=sprPTrophyKill my_id.sprite_index=sprPWalkTrophy
-if sprite_index=sprPBatKill my_id.sprite_index=sprPWalkBat
+if sprite_index=sprPBatKill my_id.sprite_index=wpnWalkBat
 if sprite_index=sprPPipeKill my_id.sprite_index=sprPWalkPipe
 if sprite_index=sprPClubKill my_id.sprite_index=sprPWalkClub
 if sprite_index=sprPBagKill my_id.sprite_index=sprPWalkBag

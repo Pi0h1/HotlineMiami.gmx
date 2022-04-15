@@ -479,7 +479,7 @@ exit
 
 if active=1 scrPlayerMove()
 
-if sprite_index=sprPAttackKnife or sprite_index=sprPAttackBat or sprite_index=sprPAttackPipe or sprite_index=sprPAttackClub or sprite_index=sprPAttackSword {
+if sprite_index=sprPAttackKnife or sprite_index=wpnAttackBat or sprite_index=sprPAttackPipe or sprite_index=sprPAttackClub or sprite_index=sprPAttackSword {
 lastx=x
 lasty=y
 x+=lengthdir_x(24,dir)

@@ -500,7 +500,7 @@ maskaddx[8]=0 maskaddy[8]=-1
 check=1
 }
 
-if argument0=sprPAttackPipe or argument0=sprPAttackClub or argument0=sprPAttackBat or sprite_index=sprPAttackCrowbar {
+if argument0=sprPAttackPipe or argument0=sprPAttackClub or argument0=wpnAttackBat or sprite_index=sprPAttackCrowbar {
 maskaddx[0]=0 maskaddy[0]=2
 maskaddx[1]=0 maskaddy[1]=0
 maskaddx[2]=0 maskaddy[2]=-1

@@ -2,7 +2,7 @@ if objPlayer.sprite_index=wpnWalkM16 return 0
 if objPlayer.sprite_index=wpnWalkShotgun return 1
 if objPlayer.sprite_index=sprPWalkPipe return 3 
 if objPlayer.sprite_index=sprPWalkClub return 2
-if objPlayer.sprite_index=sprPWalkBat return 4
+if objPlayer.sprite_index=wpnWalkBat return 4
 if objPlayer.sprite_index=sprPWalkKnife return 5
 if objPlayer.sprite_index=sprPWalkDoubleBarrel return 6
 if objPlayer.sprite_index=sprPWalkSilencer return 7
@@ -32,7 +32,7 @@ if objPlayer.sprite_index=wpnAttackM16 return 0
 if objPlayer.sprite_index=wpnAttackShotgun return 1
 if objPlayer.sprite_index=sprPAttackClub return 2
 if objPlayer.sprite_index=sprPAttackPipe return 3 
-if objPlayer.sprite_index=sprPAttackBat return 4
+if objPlayer.sprite_index=wpnAttackBat return 4
 if objPlayer.sprite_index=sprPAttackKnife return 5
 if objPlayer.sprite_index=sprPAttackDoubleBarrel1 or objPlayer.sprite_index=sprPAttackDoubleBarrel2 return 6
 if objPlayer.sprite_index=sprPAttackSilencer return 7

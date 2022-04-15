@@ -65,7 +65,7 @@ if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),global.my_id) globa
 if sprite_index=sprPAttackSword or sprite_index=sprPAttackKnife {
 if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),global.my_id) global.test=2
 }
-if sprite_index=sprPAttackBat or sprite_index=sprPAttackClub or sprite_index=sprPAttackPipe {
+if sprite_index=wpnAttackBat or sprite_index=sprPAttackClub or sprite_index=sprPAttackPipe {
 if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),global.my_id) global.test=1
 }
 }

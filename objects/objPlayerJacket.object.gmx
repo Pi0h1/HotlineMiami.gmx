@@ -176,7 +176,7 @@ if persistent = 1 and objEffector.fade = 1 {
   exit
 }
 scrPlayerMove()
-if (sprite_index = sprPAttackKnife or sprite_index = sprPAttackBat or sprite_index = sprPAttackCrowbar or sprite_index = sprPAttackPan or sprite_index = sprPAttackPot or sprite_index = sprPAttackMachete or sprite_index = sprPAttackSledge or sprite_index = sprPAttackNightStick or sprite_index = sprPAttackPipe or sprite_index = sprPAttackClub or sprite_index = sprPAttackSword or sprite_index = sprPAttackAxe or sprite_index = sprPAttackPool or sprite_index = sprPAttackPoolBroke) or(global.maskindex = 2 and sprite_index = sprPAttackUnarmed) {
+if (sprite_index = sprPAttackKnife or sprite_index = wpnAttackBat or sprite_index = sprPAttackCrowbar or sprite_index = sprPAttackPan or sprite_index = sprPAttackPot or sprite_index = sprPAttackMachete or sprite_index = sprPAttackSledge or sprite_index = sprPAttackNightStick or sprite_index = sprPAttackPipe or sprite_index = sprPAttackClub or sprite_index = sprPAttackSword or sprite_index = sprPAttackAxe or sprite_index = sprPAttackPool or sprite_index = sprPAttackPoolBroke) or(global.maskindex = 2 and sprite_index = sprPAttackUnarmed) {
   lastx = x
   lasty = y
   global.spacex = lengthdir_x(12, dir)
@@ -249,7 +249,7 @@ if (sprite_index = sprPAttackKnife or sprite_index = sprPAttackBat or sprite_ind
         createBlood(edir);
         
         if  objPlayer.sprite_index = sprPAttackClub         or
-            objPlayer.sprite_index = sprPAttackBat          or
+            objPlayer.sprite_index = wpnAttackBat          or
             objPlayer.sprite_index = sprPAttackCrowbar      or
             objPlayer.sprite_index = sprPAttackPan          or
             objPlayer.sprite_index = sprPAttackPot          or

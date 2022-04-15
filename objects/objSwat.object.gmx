@@ -99,7 +99,7 @@ instance_destroy()
 }
 
 if !instance_exists(objPlayer) {alert=0 direction=round(direction*(1/10))*10 exit} else {
-if objPlayer.sprite_index=sprPAttackUnarmed or objPlayer.sprite_index=sprPAttackClub or objPlayer.sprite_index=sprPAttackBat or objPlayer.sprite_index=sprPAttackKnife or objPlayer.sprite_index=sprPAttackPipe or objPlayer.sprite_index=sprPAttackPool or objPlayer.sprite_index=sprPAttackAxe or objPlayer.sprite_index=sprPAttackSword or objPlayer.sprite_index=sprPAttackSledge or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackDrill {
+if objPlayer.sprite_index=sprPAttackUnarmed or objPlayer.sprite_index=sprPAttackClub or objPlayer.sprite_index=wpnAttackBat or objPlayer.sprite_index=sprPAttackKnife or objPlayer.sprite_index=sprPAttackPipe or objPlayer.sprite_index=sprPAttackPool or objPlayer.sprite_index=sprPAttackAxe or objPlayer.sprite_index=sprPAttackSword or objPlayer.sprite_index=sprPAttackSledge or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackDrill {
 if place_meeting(x-lengthdir_x(24,objPlayer.dir),y-lengthdir_y(24,objPlayer.dir),objPlayer) or place_meeting(x,y,objPlayer) {
 my_id=instance_create(x,y,objSwatKnockedOut)
 my_id.direction=point_direction(objPlayer.x,objPlayer.y,x,y)

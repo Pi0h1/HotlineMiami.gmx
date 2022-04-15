@@ -36,7 +36,7 @@ if sprite_index=sprPAttackBoilingPot {sprite_index=sprPWalkPot left=-left}
 if sprite_index=sprPAttackMachete {sprite_index=sprPWalkMachete left=-left}
 if sprite_index=sprPAttackKnife {sprite_index=sprPWalkKnife left=-left}
 if sprite_index=sprPAttackSword {sprite_index=sprPWalkSword left=-left}
-if sprite_index=sprPAttackBat {sprite_index=sprPWalkBat left=-left}
+if sprite_index=wpnAttackBat {sprite_index=wpnWalkBat left=-left}
 if sprite_index=sprPAttackClub {sprite_index=sprPWalkClub left=-left}
 if sprite_index=sprPAttackPipe {sprite_index=sprPWalkPipe left=-left}
 if sprite_index=sprPAttackUnarmed {sprite_index=sprPWalkUnarmed left=-left}

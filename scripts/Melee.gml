@@ -1,7 +1,8 @@
 /// Melee(speed,delay,sfx for hitting wall) 
 if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objSolid) or place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objDoorV) {
 
-if argument2=CbarHit1 or argument2=CbarHit2 {scrHearPlayer() global.shake=10}
+if argument2=CbarHit1 or argument2=CbarHit2 {//scrHearPlayer() global.shake=10
+}
 PlaySFX(argument2)
 my_id=instance_create(x,y,objSmokeHit)
 my_id.image_angle=image_angle

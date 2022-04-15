@@ -62,7 +62,7 @@ my_id.alarm[2]=160
 global.angle=image_angle-180
 my_id.reload=10
 with my_id move_outside_solid(global.angle,16)
-if sprite_index=sprPBatKill my_id.sprite_index=sprPWalkBat
+if sprite_index=sprPBatKill my_id.sprite_index=wpnWalkBat
 PlaySFX(sndComplete)
 sxeasy_play(working_directory+"\Static.mp3")
 instance_create(x,y,objLevelComplete)

@@ -66,7 +66,7 @@ image_xscale=2
 image_yscale=2
 if place_meeting(x,y,objPlayer) {
 if objPlayer.sprite_index=sprPWalkUnarmed or objPlayer.sprite_index=sprPAttackUnarmed my_id=instance_create(x,y,objPHoboBash)
-if objPlayer.sprite_index=sprPWalkBat or objPlayer.sprite_index=sprPAttackBat my_id=instance_create(x,y,objPHoboBlunt)
+if objPlayer.sprite_index=wpnWalkBat or objPlayer.sprite_index=wpnAttackBat my_id=instance_create(x,y,objPHoboBlunt)
 my_id.image_angle=image_angle
 with objPlayerJacket instance_destroy()
 instance_destroy()

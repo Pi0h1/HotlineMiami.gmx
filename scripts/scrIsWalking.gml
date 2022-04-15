@@ -7,7 +7,7 @@ switch (argument0){
     // Jacket
     case sprPWalkUnarmed:       return true; break;
     case sprPWalkKnife:         return true; break;
-    case sprPWalkBat:           return true; break;
+    case wpnWalkBat:           return true; break;
     case sprPWalkDrill:         return true; break;
     case sprPWalkPipe:          return true; break;
     case sprPWalkClub:          return true; break;

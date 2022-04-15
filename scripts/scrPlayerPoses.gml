@@ -33,7 +33,7 @@ if  sprite_index=sprPWalkMP5            or
         pose_index=WalkPlayerGangster_index
     }
     
-if  sprite_index=sprPWalkBat            or
+if  sprite_index=wpnWalkBat            or
     sprite_index=sprPWalkPipe           or
     sprite_index=sprPWalkClub           or
     sprite_index=sprPWalkSword          or
@@ -66,7 +66,7 @@ if  sprite_index=sprPAttackDoubleBarrel1 or sprite_index=sprPAttackDoubleBarrel2
         pose_index=AttackPlayerGunDBShotgun
     }
     
-if  sprite_index=sprPAttackBat          or
+if  sprite_index=wpnAttackBat         or
     sprite_index=sprPAttackPipe         or
     sprite_index=sprPAttackClub         or
     sprite_index=sprPAttackSword        or

@@ -58,7 +58,7 @@ if sprite_index=sprEGetUp or sprite_index=sprPoliceGetUp my_id=instance_create(x
 if sprite_index=sprEGetUpLean {my_id=instance_create(x,y,objEnemyHeadKick) if objPlayer.sprite_index=sprPWalkBag or objPlayer.sprite_index=sprPAttackBag my_id.bag=1 else my_id.bag=0 global.test=1}
 if my_id.object_index=objPBluntKill {
 if objPlayer.sprite_index=sprPWalkCrowbar or objPlayer.sprite_index=sprPAttackCrowbar {global.usedkill[9]=1 my_id.sprite_index=sprPKillCrowbar}
-if objPlayer.sprite_index=sprPWalkBat or objPlayer.sprite_index=sprPAttackBat {global.usedkill[2]=1 my_id.sprite_index=sprPBatKill}
+if objPlayer.sprite_index=wpnWalkBat or objPlayer.sprite_index=wpnAttackBat {global.usedkill[2]=1 my_id.sprite_index=sprPBatKill}
 if objPlayer.sprite_index=sprPWalkPipe or objPlayer.sprite_index=sprPAttackPipe {global.usedkill[1]=1 my_id.sprite_index=sprPPipeKill}
 if objPlayer.sprite_index=sprPWalkClub or objPlayer.sprite_index=sprPAttackClub {global.usedkill[0]=1 my_id.sprite_index=sprPClubKill}
 if objPlayer.sprite_index=sprPWalkBag or objPlayer.sprite_index=sprPAttackBag my_id.sprite_index=sprPBagKill

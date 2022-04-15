@@ -112,7 +112,7 @@ instance_destroy()
 
 if instance_exists(objPlayer) {
 global.test=0
-with objPlayer {if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),objHobo) {if sprite_index=sprPAttackUnarmed global.test=2 if sprite_index=sprPAttackBat global.test=1}}
+with objPlayer {if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),objHobo) {if sprite_index=sprPAttackUnarmed global.test=2 if sprite_index=wpnAttackBat global.test=1}}
 if global.test=1 {
 pdir=point_direction(objPlayer.x,objPlayer.y,x,y)
 repeat (8) {

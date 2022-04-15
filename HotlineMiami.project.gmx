@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="38" name="datafiles">
+  <datafiles number="40" name="datafiles">
     <datafile>
       <name>window_resize_fix.html</name>
       <exists>-1</exists>
@@ -37,6 +37,40 @@
         </Config>
       </ConfigOptions>
       <filename>discordId.txt</filename>
+    </datafile>
+    <datafile>
+      <name>DBGHELP.dll</name>
+      <exists>-1</exists>
+      <size>83439</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>DBGHELP.dll</filename>
+    </datafile>
+    <datafile>
+      <name>winspool.drv</name>
+      <exists>-1</exists>
+      <size>83439</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>winspool.drv</filename>
     </datafile>
     <datafile>
       <name>DiscordImage.png</name>
@@ -232,7 +266,7 @@
         <sprites name="Walking">
           <sprite>sprites\sprPWalkAxe</sprite>
           <sprite>sprites\sprPWalkBag</sprite>
-          <sprite>sprites\sprPWalkBat</sprite>
+          <sprite>sprites\wpnWalkBat</sprite>
           <sprite>sprites\sprPWalkBoilingPot</sprite>
           <sprite>sprites\sprPWalkBossgun</sprite>
           <sprite>sprites\sprPWalkClub</sprite>
@@ -266,7 +300,7 @@
         <sprites name="Attacking">
           <sprite>sprites\sprPAttackAxe</sprite>
           <sprite>sprites\sprPAttackBag</sprite>
-          <sprite>sprites\sprPAttackBat</sprite>
+          <sprite>sprites\wpnAttackBat</sprite>
           <sprite>sprites\sprPAttackBoilingPot</sprite>
           <sprite>sprites\sprPAttackBossgun</sprite>
           <sprite>sprites\sprPAttackClub</sprite>

@@ -1,7 +1,7 @@
 if sprite_index=sprShieldSnapUzi or sprite_index=sprShieldSnapMP5 or sprite_index=sprShieldSnapDoubleBarrel or sprite_index=sprShieldSnapSilencer or sprite_index=sprShieldSnapScorpion or sprite_index=sprShieldSnapMagnum exit
 if reset=1 exit
 if energie<8 {
-    createDeadBody(false,2,sprEBackMachineGun,dir)
+    createDeadBody(false,2,sprEBackMachinegun,dir)
     //my_id.type=objEnemy
     my_id=instance_create(x,y,objPlayerJacket)
     my_id.ammo=ammo

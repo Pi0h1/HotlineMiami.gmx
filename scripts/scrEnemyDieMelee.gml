@@ -25,12 +25,12 @@ global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
 
-if noweapon=0 {
+/*if noweapon=0 {
 my_id=instance_create(x,y,objWeaponThrow)
 my_id.direction=pdir-25+random(50)
 my_id.speed=2+random(1)
 my_id.image_index=scrCurrentWeaponExt(sprite_index)
 my_id.ammo=ammo
-}
+}*/
 
 instance_destroy()

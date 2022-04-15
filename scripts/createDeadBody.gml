@@ -5,7 +5,8 @@ var travelDistance = argument1;
 var deathSprite = argument2;
 var deathFrame = floor(random(sprite_get_number(deathSprite)));
 
-deadBody = instance_create(x, y, objDeadBody)
+deadBody = instance_create(x, y, objDeadBody);
+
 if instance_exists(deadBody) {
     deadBody.image_index = deathFrame
     deadBody.isPlayer = argument0
@@ -220,7 +221,4 @@ if instance_exists(deadBody) {
         }
     }
 }
-
-if (instance_exists(objPAttackThroat) and global.maskindex=11){} else{
 enemyDropWeapon();
-}

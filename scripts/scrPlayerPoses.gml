@@ -1,6 +1,8 @@
 //  WALK
 if  sprite_index=sprPWalkUnarmed {pose_index=WalkPlayerMeleeUnarmed_index} if sprite_index=sprPAttackUnarmed {pose_index=AttackPlayerUnarmed}
 
+if  sprite_index=sprPWalkBag {pose_index=WalkPlayerMeleeUnarmed_index}
+
 if sprite_index=sprPWalkGirlfriend {pose_index=WalkPlayerCarrying}
 
 if sprite_index=sprPTakePhone {pose_index=sprPTakePhone}

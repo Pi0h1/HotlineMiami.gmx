@@ -68,6 +68,7 @@ start_y=y
 stopchase=0
 weaponfind=0
 lastsprite=sprite_index
+shake = 0;
 </string>
           </argument>
         </arguments>

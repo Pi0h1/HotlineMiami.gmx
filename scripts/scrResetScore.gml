@@ -1,4 +1,3 @@
-//global.level=0
 global.drawscore=0
 global.myscore=0
 global.combotime=0
@@ -9,7 +8,6 @@ global.timescore=0
 global.flexibilityscore=0
 global.mobilityscore=0
 global.specialscore=0
-//global.totalscore=0
 global.noguns=1
 global.switchweapon=1
 global.neverseen=1

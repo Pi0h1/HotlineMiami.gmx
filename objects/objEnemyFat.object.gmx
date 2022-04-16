@@ -48,7 +48,9 @@ weaponfind=0
 hits=0
 blood=120
 wait=0
-shotgunned=0</string>
+shotgunned=0
+shake = 0;
+</string>
           </argument>
         </arguments>
       </action>

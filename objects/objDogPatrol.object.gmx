@@ -42,7 +42,11 @@ start_y=y
 stopchase=0
 add=1
 
-gotowall=0</string>
+gotowall=0
+shake = 0;
+angle = 0;
+weaponfind = 0;
+</string>
           </argument>
         </arguments>
       </action>

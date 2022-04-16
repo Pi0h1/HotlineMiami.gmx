@@ -1933,6 +1933,7 @@
     <scripts name="Generic Scripts">
       <script>scripts\draw_sprite_shadow.gml</script>
       <script>scripts\object_create.gml</script>
+      <script>scripts\object_destroy.gml</script>
     </scripts>
     <scripts name="Player">
       <scripts name="Character Sprites">
@@ -2145,6 +2146,7 @@
         <script>scripts\txtHotline2.gml</script>
         <script>scripts\txtWarning.gml</script>
         <script>scripts\txtSimple.gml</script>
+        <script>scripts\txtDebug.gml</script>
       </scripts>
       <scripts name="Dev Menu">
         <script>scripts\scrStartLevel.gml</script>
@@ -2969,10 +2971,34 @@
       <script>scripts\scrGetSongRestart.gml</script>
       <script>scripts\setChair.gml</script>
     </scripts>
-    <script>scripts\SaveGameState.gml</script>
-    <script>scripts\LoadGameState.gml</script>
-    <script>scripts\SaveCurrentLevel.gml</script>
-    <script>scripts\ReloadCurrentLevel.gml</script>
+    <scripts name="Saving and Loading">
+      <scripts name="What to save">
+        <script>scripts\SaveState_Furniture.gml</script>
+        <script>scripts\LoadState_Furniture.gml</script>
+        <script>scripts\SaveState_Enemies.gml</script>
+        <script>scripts\LoadState_Enemies.gml</script>
+        <script>scripts\SaveState_Player.gml</script>
+        <script>scripts\LoadState_Player.gml</script>
+        <script>scripts\SaveState_Effector.gml</script>
+        <script>scripts\LoadState_Effector.gml</script>
+        <script>scripts\SaveState_Surface.gml</script>
+        <script>scripts\LoadState_Surface.gml</script>
+        <script>scripts\SaveState_Score.gml</script>
+        <script>scripts\LoadState_Score.gml</script>
+        <script>scripts\SaveState_Weapons.gml</script>
+        <script>scripts\LoadState_Weapons.gml</script>
+      </scripts>
+      <scripts name="What to destroy">
+        <script>scripts\DestroyTheseObjects.gml</script>
+      </scripts>
+      <script>scripts\SaveGameState.gml</script>
+      <script>scripts\LoadGameState.gml</script>
+      <script>scripts\SaveCurrentLevel.gml</script>
+      <script>scripts\ReloadCurrentLevel.gml</script>
+      <script>scripts\SaveStringToFile.gml</script>
+      <script>scripts\LoadJSONFromFile.gml</script>
+    </scripts>
+    <script>scripts\DrawObjectsVariables.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PushEd">
@@ -3014,8 +3040,11 @@
       <font>fonts\fntWarning</font>
     </fonts>
     <font>fonts\fntHD</font>
+    <font>fonts\fntDebug</font>
   </fonts>
   <objects name="objects">
+    <object>objects\Effects</object>
+    <object>objects\SaveThisObject</object>
     <objects name="Items">
       <object>objects\objWeapon</object>
       <object>objects\objSpecificWeapon</object>
@@ -4044,6 +4073,7 @@
       <object>objects\objFocus</object>
       <object>objects\objPlaceCharacter</object>
     </objects>
+    <object>objects\game</object>
     <object>objects\objSpawnpoint</object>
     <object>objects\objCursorMouse</object>
     <object>objects\objTest</object>

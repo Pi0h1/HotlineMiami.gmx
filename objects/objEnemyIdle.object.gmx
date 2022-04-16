@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>angle=0
+energie=0
 </string>
           </argument>
         </arguments>

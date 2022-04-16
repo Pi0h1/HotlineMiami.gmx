@@ -37,6 +37,7 @@ shake=0
 angle=0
 legsprite=0
 legindex=0
+energie=0
 </string>
           </argument>
         </arguments>

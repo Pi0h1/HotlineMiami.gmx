@@ -36,6 +36,7 @@ image_index=0
 }
 angle=0
 shake=0
+energie=0
 </string>
           </argument>
         </arguments>

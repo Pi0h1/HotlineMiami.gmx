@@ -35,6 +35,7 @@ direction=random(360)
 ammo=0
 path=path_add()
 shake=0
+energie=0
 </string>
           </argument>
         </arguments>

@@ -35,6 +35,7 @@ path=path_add()
 on=0
 shake=0
 angle=0
+energie=0
 </string>
           </argument>
         </arguments>

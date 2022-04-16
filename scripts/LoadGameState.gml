@@ -1,3 +1,4 @@
+var file = working_directory+"\tempsave.sav"
 if (global.useJson){
     LoadState_Furniture();
     LoadState_Enemies();
@@ -8,5 +9,6 @@ if (global.useJson){
     LoadState_Weapons();
     DestroyTheseObjects();
 } else {
-    game_load(working_directory+"\tempsave.sav"); // This is vanilla Hotline Miami's method
+    game_load(file); // This is vanilla Hotline Miami's method
+    show_debug_message("Loaded game state using game_load from " + string(file))
 }

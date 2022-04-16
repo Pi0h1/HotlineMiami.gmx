@@ -2,7 +2,7 @@ var Name = "Player";
 var Extension = ".sav";
 var file = (Name + Extension);
 
-var debugMessage = "State of "+ Name +" loaded";
+var debugMessage = "State of "+ Name +" saved";
 
 // Create a root list
 var _root_list = ds_list_create();

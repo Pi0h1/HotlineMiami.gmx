@@ -1,3 +1,5 @@
+if (!global.devmode) exit;
+
 /// txtSimple(x,y,string,outline)
 /// txtSimple(x,y,text_WarningRAM,fntScore,true)
 var outline = argument3;

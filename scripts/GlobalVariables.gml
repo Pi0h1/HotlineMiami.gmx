@@ -6,7 +6,7 @@
 /*  The following variables are original to https://github.com/Pi0h1/HotlineMiami.gmx;
     Therefore not present in vanilla Hotline Miami. */
 //======================================================================================//
-    global.devmode      = false;
+    global.devmode      = true;
     global.spawnObject  = 0;
     global.playerIndex  = 0;
     global.depthDeath   = 0;
@@ -15,7 +15,7 @@
     global.restartedmusic = working_directory+"\Static.mp3"
     
     // Enables using JSON for the restart mechanic, disable this to use game_save (Warning: game_save is not compatible with GMS2!)
-    global.useJson      = false;
+    global.useJson      = true;
     window_set_cursor(cr_none);
 
 //======================================================================================//

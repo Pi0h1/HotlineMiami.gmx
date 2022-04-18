@@ -1,10 +1,10 @@
 //  Initializes player.
 //  ANY player.
-armlength=0
-goddir=0
-active=1
-head_FrameIndex=0
-weaponx=0
+armlength = 0
+goddir = 0
+active = 1
+head_FrameIndex = 0
+weaponx = 0
 if room = rmTutorial {global.maskindex=3 global.maskon=1 global.done=1}
 SetHealth("Random")
 image_speed = 0

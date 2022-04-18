@@ -59,10 +59,10 @@ if myyspeed<(myspeed) myyspeed+=0.5 else myyspeed=(myspeed)
 
 //Default Controls.
 
-moveleft=keyboard_check_direct(ord(global.leftkey)) || keyboard_check_direct(vk_left)
-moveright=keyboard_check_direct(ord(global.rightkey)) || keyboard_check_direct(vk_right)
-moveup=keyboard_check_direct(ord(global.upkey)) || keyboard_check_direct(vk_up)
-movedown=keyboard_check_direct(ord(global.downkey)) || keyboard_check_direct(vk_down)
+moveleft = keyboard_check_direct(ord(global.leftkey)) || keyboard_check_direct(vk_left)
+moveright = keyboard_check_direct(ord(global.rightkey)) || keyboard_check_direct(vk_right)
+moveup = keyboard_check_direct(ord(global.upkey)) || keyboard_check_direct(vk_up)
+movedown = keyboard_check_direct(ord(global.downkey)) || keyboard_check_direct(vk_down)
 
 if moveleft {
 if myxspeed>-(myspeed) myxspeed-=0.5 else myxspeed=-(myspeed)

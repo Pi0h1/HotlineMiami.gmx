@@ -5,7 +5,7 @@ lastweapon=scrCurrentWeapon()
 lastammo=ammo
 global.exposed=0
 release=0
-
+               
 
 if sprite_index=sprPWalkUnarmed nothing=1 else {
 my_id=instance_create(objPlayer.x+lengthdir_x(8,objPlayer.dir+90),objPlayer.y+lengthdir_y(8,objPlayer.dir+90),objWeaponThrow)

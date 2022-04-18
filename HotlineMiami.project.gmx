@@ -3003,6 +3003,8 @@
       <script>scripts\LoadJSONFromFile.gml</script>
     </scripts>
     <script>scripts\DrawObjectsVariables.gml</script>
+    <script>scripts\QuitGame.gml</script>
+    <script>scripts\EraseFile.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PushEd">

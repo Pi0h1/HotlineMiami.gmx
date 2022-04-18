@@ -854,6 +854,7 @@ txtDev(objEffector.x,objEffector.y,
           <argument>
             <kind>1</kind>
             <string>global.devmode=!global.devmode;
+event_perform(ev_create,0)
 </string>
           </argument>
         </arguments>

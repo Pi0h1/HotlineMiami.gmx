@@ -38,7 +38,9 @@ text_OptionController       = "360 GAMEPAD"
 text_OptionBinds            = "KEY BINDS"
 text_OptionVolume           = "VOLUME"
 text_OptionAdvanced         = "ADVANCED"
+text_OptionMusicCredits     = "MUSIC CREDITS"
 text_OptionBack             = "BACK"
+
 
 text_OptionYes              = "YES"
 text_OptionNo               = "NO"
@@ -236,7 +238,7 @@ if level = 2 {
 }
 
 if level = 1 {
-        repeat(5) {
+        repeat(6) {
                 if select = i {
                         repeats = 6 + lengthdir_x(5, dir * 10)
                         repeat(repeats) {
@@ -637,7 +639,7 @@ draw_set_blend_mode(bm_normal)
 sxeasy_stop() sxeasy_setVolume(0) //sxeasy_play(working_directory+"\ItsSafeNow.mp3") 
 sxeasy_play(working_directory+"\Static.mp3")
 room=nextlevel} if select=1 and level=1 room=rmControls//sxeasy_play(working_directory+choose("\Knock.mp3","\InnerAnimal.mp3","\Hotline.mp3","\Hydrogen.mp3","\Crystals.mp3")) room=rmChapter
-if select=1 and level=0 room=rmLevelSelect if select=3 room=rmBandCredits
+if select=1 and level=0 room=rmLevelSelect if select=3 QuitGame();
 }
 }
 }
@@ -681,7 +683,7 @@ if level=0 {
 if select&gt;0 select-=1 else select=3
 }
 if level=1 {
-if select&gt;0 select-=1 else select=4
+if select&gt;0 select-=1 else select=5
 }
 if level=2 {
 if select&gt;0 select-=1 else select=1
@@ -689,7 +691,8 @@ if select&gt;0 select-=1 else select=1
 if level=4 {
 if select&gt;0 select-=1 else select=3
 if select=1 and global.surfaces=1 select=0
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -718,7 +721,7 @@ if level=0 {
 if select&lt;3 select+=1 else select=0
 }
 if level=1 {
-if select&lt;4 select+=1 else select=0
+if select&lt;5 select+=1 else select=0
 }
 if level=2 {
 if select&lt;1 select+=1 else select=0
@@ -726,7 +729,8 @@ if select&lt;1 select+=1 else select=0
 if level=4 {
 if select&lt;3 select+=1 else select=0
 if select=1 and global.surfaces=1 select=2
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -987,7 +991,8 @@ alt[0]=text_OptionController
 alt[1]=text_OptionBinds  
 alt[2]=text_OptionVolume
 alt[3]=text_OptionAdvanced
-alt[4]=text_OptionBack
+alt[4]=text_OptionMusicCredits
+alt[5]=text_OptionBack
 exit
 }
 if select=3 {fade=1 file_delete(working_directory+"\skip")}
@@ -1027,6 +1032,10 @@ exit
 }
 
 if select=4 {
+room_goto(rmBandCredits);
+}
+
+if select=5 {
 select=0
 alt[0]=text_OptionStart
 alt[1]=text_OptionLevels
@@ -1049,7 +1058,8 @@ alt[0]=text_OptionController
 alt[1]=text_OptionBinds
 alt[2]=text_OptionVolume
 alt[3]=text_OptionAdvanced
-alt[4]=text_OptionBack
+alt[4]=text_OptionMusicCredits
+alt[5]=text_OptionBack
 }
 }
 
@@ -1058,7 +1068,8 @@ alt[0]=text_OptionController
 alt[1]=text_OptionBinds
 alt[2]=text_OptionVolume
 alt[3]=text_OptionAdvanced
-alt[4]=text_OptionBack
+alt[4]=text_OptionMusicCredits
+alt[5]=text_OptionBack
 level=1
 select=0
 }
@@ -1099,7 +1110,8 @@ alt[0]=text_OptionController
 alt[1]=text_OptionBinds
 alt[2]=text_OptionVolume
 alt[3]=text_OptionAdvanced
-alt[4]=text_OptionBack
+alt[4]=text_OptionMusicCredits
+alt[5]=text_OptionBack
 exit
 }
 }

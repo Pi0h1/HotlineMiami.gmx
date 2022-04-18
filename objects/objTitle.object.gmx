@@ -92,7 +92,7 @@ i=0
 alt[2] = text_OptionSettings
 alt[3] = text_OptionQuit
 
-nextlevel = rmTutorial // Level that will play ''START GAME'' is selected.
+nextlevel = rmTutorial // Level that will play when ''START GAME'' is selected.
 level = 0;
 select = 0; // Select is which option is currently being hovered on.
 rdir = 0;
@@ -104,13 +104,12 @@ pressup = 0;
 pressdown = 0;
 pindex = 0;
 alarm[0] = 45;
-quit=0
+quit = 0;
 repeat (10) {
-my_id=instance_create(x,y,objPalmTree) //Generates ten palm trees.
+my_id=instance_create(x,y,objPalmTree) // Generates ten palm trees.
 with my_id {repeat (global.i*45) amount*=1.01}
 global.i+=1
 }
-
 </string>
           </argument>
         </arguments>
@@ -442,6 +441,52 @@ if select=0 {if global.musicVolume&gt;0 global.musicVolume-=0.01 sxeasy_setVolum
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="61">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_perform(ev_keypress, ord("S"))
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="60">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_perform(ev_keypress, ord("W"))
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="53">
       <action>
         <libid>1</libid>
@@ -550,8 +595,8 @@ draw_set_blend_mode(bm_add)
 
 //Sets the size of the palm trees
 with objPalmTree {
-draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2+amount,room_height*0.7-(320*(amount/240)),amount/240,(amount/120),0,global.color3,global.color3,c_black,c_black,1)
-draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2-amount-(amount/240)*82,room_height*0.7-(320*(amount/240)),-amount/240,amount/120,0,global.color3,global.color3,c_black,c_black,1)
+draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2+amount,room_height*0.7-(320*(amount/240)),amount/240,(amount/120),0,global.color3,global.color3,c_black,c_black,image_alpha)
+draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2-amount-(amount/240)*82,room_height*0.7-(320*(amount/240)),-amount/240,amount/120,0,global.color3,global.color3,c_black,c_black,image_alpha)
 }
 
 draw_set_blend_mode(bm_normal)

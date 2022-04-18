@@ -29,7 +29,12 @@
 amount2=8
 if room=rmLevelSelect {amount=5 amount2=4}
 image_speed=0
-image_index=random(1000)</string>
+image_index=random(1000)
+
+image_alpha=0
+
+alphaSpeed=0.1
+</string>
           </argument>
         </arguments>
       </action>
@@ -53,7 +58,12 @@ image_index=random(1000)</string>
             <kind>1</kind>
             <string>amount*=1.01
 amount2*=1.0125
-if amount&gt;240 instance_destroy()</string>
+if amount&gt;240 instance_destroy()
+
+
+if image_alpha &lt; 1 {image_alpha+=alphaSpeed}
+if image_alpha &gt; 1 {image_alpha=1;}
+</string>
           </argument>
         </arguments>
       </action>

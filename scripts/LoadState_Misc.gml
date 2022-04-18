@@ -1,10 +1,10 @@
-var Name = "Furniture";
+var Name = "Misc";
 var Extension = ".sav";
 var file = (Name + Extension);
 
 var debugMessage = "State of "+ Name +" loaded";
 
-with (objFurniture) instance_destroy();
+with (SaveThisObject) instance_destroy();
 
 if (file_exists(file))
 {

@@ -1,10 +1,10 @@
-var Name = "Furniture";
+var Name = "SurfaceManager";
 var Extension = ".sav";
 var file = (Name + Extension);
 
 var debugMessage = "State of "+ Name +" loaded";
 
-with (objFurniture) instance_destroy();
+with (objSurfaceManager) instance_destroy();
 
 if (file_exists(file))
 {
@@ -18,14 +18,15 @@ if (file_exists(file))
         var _obj = _map[? "obj"]
         with (instance_create(0,0,asset_get_index(_obj)))
         {
-            x = _map[? "x"];
-            y = _map[? "y"];
-            image_blend = _map[? "image_blend"];
+            x = objPlayer.x;
+            y = objPlayer.y;
+            sprite_index = _map[? "sprite_index"];
             image_index = _map[? "image_index"];
+            image_blend = _map[? "image_blend"];
             image_angle = _map[? "image_angle"];
             image_xscale= _map[? "image_xscale"];
             image_yscale= _map[? "image_yscale"];
-        
+            image_alpha = _map[? "image_alpha"]; 
         }
     }
     

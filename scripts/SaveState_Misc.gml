@@ -1,4 +1,4 @@
-var Name = "Furniture";
+var Name = "Misc";
 var Extension = ".sav";
 var file = (Name + Extension);
 
@@ -8,7 +8,7 @@ var debugMessage = "State of "+ Name +" saved";
 var _root_list = ds_list_create();
 
 // For every instance, create a map
-with (objFurniture)
+with (SaveThisObject)
 {
     var _map = ds_map_create();
     ds_list_add(_root_list,_map);

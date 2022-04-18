@@ -2974,17 +2974,21 @@
     <scripts name="Saving and Loading">
       <scripts name="What to save">
         <script>scripts\SaveState_Furniture.gml</script>
+        <script>scripts\SaveState_Misc.gml</script>
         <script>scripts\SaveState_Enemies.gml</script>
         <script>scripts\SaveState_Player.gml</script>
         <script>scripts\SaveState_Effector.gml</script>
         <script>scripts\SaveState_Surface.gml</script>
+        <script>scripts\SaveState_SurfaceManager.gml</script>
         <script>scripts\SaveState_Score.gml</script>
         <script>scripts\SaveState_Weapons.gml</script>
         <script>scripts\LoadState_Furniture.gml</script>
+        <script>scripts\LoadState_Misc.gml</script>
         <script>scripts\LoadState_Enemies.gml</script>
         <script>scripts\LoadState_Player.gml</script>
         <script>scripts\LoadState_Effector.gml</script>
         <script>scripts\LoadState_Surface.gml</script>
+        <script>scripts\LoadState_SurfaceManager.gml</script>
         <script>scripts\LoadState_Score.gml</script>
         <script>scripts\LoadState_Weapons.gml</script>
       </scripts>

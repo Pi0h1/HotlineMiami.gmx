@@ -2147,6 +2147,8 @@
         <script>scripts\txtWarning.gml</script>
         <script>scripts\txtSimple.gml</script>
         <script>scripts\txtDebug.gml</script>
+        <script>scripts\txtMenu.gml</script>
+        <script>scripts\txtImportantWarning.gml</script>
       </scripts>
       <scripts name="Dev Menu">
         <script>scripts\scrStartLevel.gml</script>
@@ -2178,6 +2180,12 @@
         </scripts>
         <script>scripts\scrDrawWall.gml</script>
         <script>scripts\scrInitWall.gml</script>
+      </scripts>
+      <scripts name="Main Menu">
+        <script>scripts\MenuOptions.gml</script>
+        <script>scripts\MenuOptionsHorizontal.gml</script>
+        <script>scripts\SurfaceSettings.gml</script>
+        <script>scripts\draw3Dlogo.gml</script>
       </scripts>
       <script>scripts\scrDrawSpriteAsVertex.gml</script>
       <script>scripts\scrCreateShards.gml</script>

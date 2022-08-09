@@ -10,7 +10,7 @@ add=1
 }
 i=0
 
-scrCreateShards();
+scrCreateShards("VerticalWindow");
 broken=true;
 image_index=1
 global.shake=4
@@ -36,7 +36,7 @@ add=1
 }
 i=0
 
-scrCreateShards();
+scrCreateShards("VerticalWindow");
 }
 }
 

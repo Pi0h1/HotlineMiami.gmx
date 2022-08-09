@@ -14,7 +14,6 @@ switch (argument0) {
     case sprPAttackAxe         : return true ; break;
     case sprPAttackPool        : return true ; break;
     case sprPAttackPoolBroke   : return true ; break;
-    case sprPAttackDrill       : return true break;
-    case sprPAttackUnarmed     : return true break;
+    case sprPAttackUnarmed     : if global.maskindex=2 return true ; break;
     default: return false;
 }

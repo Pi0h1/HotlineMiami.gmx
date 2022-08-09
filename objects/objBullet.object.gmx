@@ -136,27 +136,7 @@ diry=y-lengthdir_y(16,direction)
 exit
 }
 
-if other.object_index=objWindowH {
-SteamIncStat("Windows",1)
-if vspeed&gt;0 {
-other.add=-1
-} else {
-other.add=1
-}
-with other {
-i=0
-repeat (24) {
-my_id=instance_create(x+i*1.5,y,objShard)
-my_id.speed=random(5)
-my_id.direction=add*90-8+random(16)
-i+=1
-}
-instance_create(x,y,objGlassPanelHBroken)
-instance_destroy()
-}
-exit
-}
-
+scrDestroyWindowH("Object")
 scrDestroyWindowV("Object")
 </string>
           </argument>

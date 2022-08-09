@@ -15,7 +15,7 @@
     global.restartedmusic = working_directory+"\Static.mp3"
     
     // Enables using JSON for the restart mechanic, disable this to use game_save (Warning: game_save is not compatible with GMS2!)
-    global.useJson      = true;
+    global.useJson      = false;
     window_set_cursor(cr_none);
 
 //======================================================================================//
@@ -61,7 +61,7 @@ global.controller       =   0   ;
 // Visuals
 //======================================================================================//
 display_set_gui_size(view_wview, view_hview);
-global.shake        =   0;
+global.shake        =   0; // Note: This not only controls how much the screen shakes, but also gamepad rumble.
 global.surfaces =   1;
 global.blood    =   1;
 if file_exists(working_directory+"\blood")      global.blood=0;

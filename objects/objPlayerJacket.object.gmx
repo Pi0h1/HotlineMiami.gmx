@@ -72,12 +72,13 @@ charJacket();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Vomit
-if !place_meeting(x,y,objPlayerCar) {
-my_id=instance_create(x,y,objPVomit)
-my_id.image_angle=dir
-instance_destroy()
-}
+            <string>/// Vomit
+if !place_meeting(x,y,objPlayerCar)
+    {
+    my_id = instance_create(x, y, objPVomit);
+    my_id.image_angle = dir;
+    instance_destroy();
+    }
 </string>
           </argument>
         </arguments>
@@ -100,291 +101,31 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Movement
-if sprite_index = sprPWalkBoilingPot {
-  if round(random(5)) = 2
-  instance_create(x + lengthdir_x(11, dir - 33 * left), y + lengthdir_y(11, dir - 33 * left), objSteam)
-}
+            <string>/// Logic
+playerEffects();
+checkAreaClear();
 
-if room = rmTrainstationDownstairs or room = rmPoliceHQFloor3 or instance_exists(objVan) or room = rmPhoneHomUpstairs {
-  clear = 1
-}
+isLookingFuther = keyLookFurther;
 
-if instance_number(objEnemy) + instance_number(objKnockedOut) + instance_number(objEnemyCrawl) + instance_number(objMiscEnemy) + instance_number(objBoss) + instance_number(objEHideM16) + instance_number(objEBullet) = 0 {
-  test = 1
-  if room = rmHotelEntrance {
-    if instance_exists(objFatmanEating) or instance_exists(objFatmanTelephone) {
-      if objFatmanEating.sprite_index = sprFatmanEating or objFatmanEating.sprite_index = sprFatmanEatingGiveUp or objFatmanTelephone.sprite_index = sprFatmanTelephone or objFatmanTelephone.sprite_index = sprFatmanTelephoneGiveUp {
-        test = 0
-      }
-    }
-  }
-  if room = rmHotelSuite {
-    if objFatmanShit.sprite_index = sprFatmanShit or objFatmanShit.sprite_index = sprFatmanShitGiveUp test = 0
-  }
-  if test = 1 {
-    if clear = 0 and global.done = 0 {
-      clear = 1
-      my_id = instance_create(x, y, objCheckpoint)
-      my_id.text = "STAGE CLEAR"
-    }
-  }
-} else clear = 0
-aimfar = keyboard_check_direct(vk_shift)
-global.test = 0
+global.test = 0;
+
 with objWeapon {
   if point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 32 {
-    global.test = 2
+    global.test = 2; 
   }
 }
-if place_meeting(x, y, objKnockedOut) global.test = 1
-objEffector.action = global.test
-if throwreload &gt; 0 throwreload -= 1
-if aimfar {
-  if global.maskindex = 7 factor = 2
-  else factor = 1
-  viewx = objPlayer.x + ((display_mouse_get_x() - display_get_width() * 0.5) * (view_wview[0] / display_get_width())) * factor
-  viewy = objPlayer.y + ((display_mouse_get_y() - display_get_height() * 0.5) * (view_hview[0] / display_get_height())) * factor
-  viewspeed = point_distance(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, viewx, viewy) * 0.1
-  viewdir = point_direction(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, viewx, viewy)
-  view_xview[0] += lengthdir_x(viewspeed, viewdir)
-  view_yview[0] += lengthdir_y(viewspeed, viewdir)
-  vdist = point_distance(x, y, room_width / 2, room_height / 2)
-  vdir = point_direction(room_width / 2, room_height / 2, x, y)
-  if global.devmode = 0 {
-    view_angle[0] = lengthdir_y(vdist * (1 / 160), vdir * 2)
-  }
-} else {
-  viewspeed = point_distance(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, x + lengthdir_x(24, dir), y + lengthdir_y(24, dir)) * 0.1
-  viewdir = point_direction(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, x + lengthdir_x(24, dir), y + lengthdir_y(24, dir))
-  view_xview[0] += lengthdir_x(viewspeed, viewdir)
-  view_yview[0] += lengthdir_y(viewspeed, viewdir)
-  vdist = point_distance(x, y, room_width / 2, room_height / 2)
-  vdir = point_direction(room_width / 2, room_height / 2, x, y)
 
-  if global.devmode = 0 {
-    view_angle[0] = lengthdir_y(vdist * (1 / 160), vdir * 2)
-  }
-}
-xview = view_xview[0]
-yview = view_yview[0]
-if persistent = 1 and objEffector.fade = 1 {
-  if place_free(x + addx, y) x += addx
-  if place_free(x, y + addy) y += addy
-  if image_speed = 0 image_index += 0.15
-  legindex += 0.4
-  exit
-}
-scrPlayerMove()
-if (sprite_index = sprPAttackKnife or sprite_index = wpnAttackBat or sprite_index = sprPAttackCrowbar or sprite_index = sprPAttackPan or sprite_index = sprPAttackPot or sprite_index = sprPAttackMachete or sprite_index = sprPAttackSledge or sprite_index = sprPAttackNightStick or sprite_index = sprPAttackPipe or sprite_index = sprPAttackClub or sprite_index = sprPAttackSword or sprite_index = sprPAttackAxe or sprite_index = sprPAttackPool or sprite_index = sprPAttackPoolBroke) or(global.maskindex = 2 and sprite_index = sprPAttackUnarmed) {
-  lastx = x
-  lasty = y
-  global.spacex = lengthdir_x(12, dir)
-  global.spacey = lengthdir_y(12, dir)
-  x += global.spacex
-  y += global.spacey
-  global.my_id = id
-  with objWindowH {
-    if place_meeting(x, y, global.my_id) {
-      SteamIncStat("Windows", 1)
-      if global.my_id.lasty &lt; y + 2 {
-        add = -1
-      } else {
-        add = 1
-      }
-      i = 0
-      repeat(24) {
-        my_id = instance_create(x + i * 1.5, y, objShard)
-        my_id.speed = random(5)
-        my_id.direction = add * 90 - 8 + random(16)
-        i += 1
-      }
-      instance_create(x, y, objGlassPanelHBroken)
-      global.shake = 4
-      instance_destroy()
-    }
-  }
-  scrDestroyWindowV("Melee");
-  x += lengthdir_x(12, dir)
-  y += lengthdir_y(12, dir)
-  with objEnemy {
-    if place_meeting(x, y, objPlayer) or place_meeting(x + global.spacex, y + global.spacey, objPlayer) {
-      mask_index = sprWeaponMask
-      if scrCollisionLineExt(x, y, objPlayer.lastx, objPlayer.lasty, 4, objSolid, objDoorV, objWallSoft) or object_index = objEnemyFat or object_index = objInspector nothing = 1
-      else {
-        mask_index = sprMask
-        global.shake = 7
-        my_id = instance_create(x, y - 12, objScore)
-        if object_get_parent(object_index) = objEnemyIdle {
-          if room = rmTrainstationEntrance sprite_index = sprEWalkKnife
-          else sprite_index = choose(sprEWalkShotgun, sprEWalkM16)
-        }
-        if sprite_index = sprEWalkUnarmed or sprite_index = sprPoliceWalkUnarmed {
-          my_id.text = "+" + string((100) + 100 * global.factor) + "pts"
-          global.myscore += (100) + 100 * global.factor
-          global.boldscore = 100 * global.factor
-          global.killscore += 100
-          global.combo += 1
-          global.combotime = 240
-          global.killx[global.kills] = x
-          global.killy[global.kills] = y
-          global.kills += 1
-        } else {
-          my_id.text = "+" + string((200) + 200 * global.factor) + "pts"
-          global.myscore += (200) + 200 * global.factor
-          global.killscore += 200
-          global.boldscore += 200 * global.factor
-          global.combo += 1
-          global.combotime = 240
-          global.killx[global.kills] = x
-          global.killy[global.kills] = y
-          global.kills += 1
-          if global.bonustime &lt; 12 + global.factor * 4 global.bonustime = 12 + global.factor * 4
-          if global.factor = 2 ds_list_add(global.bonuslist, "Exposure")
-          if global.factor = 3 ds_list_add(global.bonuslist, "Double Exposure")
-          if global.factor = 4 ds_list_add(global.bonuslist, "Triple Exposure")
-          if global.factor &gt; 4 ds_list_add(global.bonuslist, "Severe Exposure")
-        }
-        edir = point_direction(objPlayer.lastx, objPlayer.lasty, x, y)
-        createBlood(edir);
-        
-        if  objPlayer.sprite_index = sprPAttackClub         or
-            objPlayer.sprite_index = wpnAttackBat          or
-            objPlayer.sprite_index = sprPAttackCrowbar      or
-            objPlayer.sprite_index = sprPAttackPan          or
-            objPlayer.sprite_index = sprPAttackPot          or
-            objPlayer.sprite_index = sprPAttackSledge       or
-            objPlayer.sprite_index = sprPAttackPipe         or
-            objPlayer.sprite_index = sprPAttackPool         or
-            objPlayer.sprite_index = sprPAttackNightStick   or
-            objPlayer.sprite_index = sprPAttackUnarmed 
-            {
-            if objPlayer.sprite_index = sprPAttackPool {objPlayer.sprite_index = sprPWalkPoolBroke}
-            PlaySFX("Blunt") 
-            if object_index = objDogPatrol  {   createDeadBody(false,1.5,sprDogDeadBlunt,edir)      } else  {
-            if scrIsPolice(object_index)    {   createDeadBody(false,1.5,sprPoliceBackBlunt,edir)   } else  {
-            /*Enemy_Mafia*/                     createDeadBody(false,1.5,sprEBackBlunt,edir)        }       }
-        }
+if place_meeting(x, y, objKnockedOut) global.test = 1;
 
-        if objPlayer.sprite_index = sprPAttackKnife {
-            PlaySFX("Light Cut") 
-            if object_index = objDogPatrol {createDeadBody(false,2,sprDogDeadCut,edir)}else{
-            createDeadBody(false,2,sprEBackCut,edir)
-            }
-        }
-        
-        if objPlayer.sprite_index = sprPAttackPoolBroke {
-        if object_index = objDogPatrol {createDeadBody(false,1.5,sprDogDeadBlunt,edir)}else{
-            objPlayer.sprite_index = sprPWalkUnarmed objPlayer.image_speed = 0
-            createDeadBody(false,2,sprEDeadBackPool,edir)
-            }
-            PlaySFX("Light Cut") 
-            
-          }
-        
-        if objPlayer.sprite_index = sprPAttackSword or
-        objPlayer.sprite_index = sprPAttackAxe or
-        objPlayer.sprite_index = sprPAttackMachete {
-        if object_index = objDogPatrol {createDeadBody(false,1.5,sprDogDeadCut,edir)}else{
-            createDeadBody(false,0,sprEBackSlashed,edir)
-            }
-            PlaySFX("Cut")
-          }
-        instance_destroy()
-      }
-    }
-  }
-  x = lastx
-  y = lasty
-}
+objEffector.action = global.test;
 
-if sprite_index = sprPAttackUnarmed or sprite_index = sprPAttackBag or sprite_index = sprPAttackDrill {
-  lastx = x
-  lasty = y
-  global.spacex = lengthdir_x(12, dir)
-  global.spacey = lengthdir_y(12, dir)
-  x += global.spacex
-  y += global.spacey
+if throwreload &gt; 0 throwreload -= 1;
 
-  global.my_id = id
-  with objWindowH {
-    if place_meeting(x, y, global.my_id) {
-      SteamIncStat("Windows", 1)
-      if global.my_id.lasty &lt; y + 2 {
-        add = -1
-      } else {
-        add = 1
-      }
-      i = 0
-      repeat(24) {
-        my_id = instance_create(x + i * 1.5, y, objShard)
-        my_id.speed = random(5)
-        my_id.direction = add * 90 - 8 + random(16)
-        i += 1
-      }
-      instance_create(x, y, objGlassPanelHBroken)
-      global.shake = 2
-      instance_destroy()
-    }
-  }
-
-  scrDestroyWindowV("Melee");
-
-  x += lengthdir_x(12, dir)
-  y += lengthdir_y(12, dir)
-
-  with objEnemy {
-    if scrCantGetHit(object_index) valid = 0
-    else valid = 1
-    if (place_meeting(x, y, objPlayer) or place_meeting(x + global.spacex, y + global.spacey, objPlayer)) and valid = 1 {
-      mask_index = sprWeaponMask
-      if scrCollisionLineExt(x, y, objPlayer.lastx, objPlayer.lasty, 4, objSolid, objDoorV, objWallSoft) {
-        scrMoveSolidOff() mask_index = sprMask objPlayer.x = objPlayer.lastx objPlayer.y = objPlayer.lasty exit
-      }
-      mask_index = sprMask
-      edir = point_direction(objPlayer.lastx, objPlayer.lasty, x, y)
-      PlaySFX(sndDoorHit)
-      global.shake = 3
-      my_id = instance_create(x, y, objKnockedOut)
-      my_id.type = object_index
-      if scrIsPolice(object_index) my_id.sprite_index = sprPoliceGetUp
-      my_id.direction = edir - 10 + random(20)
-      my_id.angle = my_id.direction
-      with my_id move_outside_solid(angle - 180, 16)
-      my_id.speed = 3
-      scrIdleGetEnemy()
-      if sprite_index = sprEWalkUnarmed or sprite_index = sprPoliceWalkUnarmed noweapon = 1
-      else noweapon = 0
-      if noweapon = 0 {
-        global.test = 0
-        with objEnemy
-        if alert = 1 global.test += 1
-        my_id = instance_create(x, y - 12, objScore)
-        my_id.text = "+" + string(200 + 400 * global.factor) + "pts"
-        global.myscore += 200 + 400 * global.factor
-        global.boldscore += 200 + 400 * global.factor
-        global.combotime += 100
-        global.killx[global.kills] = x
-        global.killy[global.kills] = y
-        global.kills += 1
-        my_id = instance_create(x, y, objWeaponThrow)
-        my_id.direction = direction - 70 + random(40)
-        my_id.image_index = scrCurrentWeaponExt(sprite_index)
-        my_id.speed = 2 + random(2)
-        my_id.ammo = ammo
-      }
-      instance_destroy()
-    }
-  }
-  x = lastx
-  y = lasty
-}
+gameplayCamera();
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="4" ename="objEBullet">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -401,66 +142,75 @@ if sprite_index = sprPAttackUnarmed or sprite_index = sprPAttackBag or sprite_in
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Collision with Bullet
-if global.godmode=1 exit
-global.shake=10
-with other {
-if place_meeting(x,y,objSolid) {
-move_outside_solid(direction-180,speed*2) 
-if !place_meeting(x,y,objPlayer) exit
+            <string>/// Movement
+scrPlayerMove();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Attacking (Melee)
+if scrIsSwinging(sprite_index) {            // If the player swings a melee weapon:
+    lastx = x;                              // - Store initial player position.
+    lasty = y;
+    global.spacex = lengthdir_x(12, dir);   // - Set the distance the player is going to move.
+    global.spacey = lengthdir_y(12, dir);
+    x += global.spacex;                     // - Move forward to attack.
+    y += global.spacey;
+    global.my_id = id;
+    scrDestroyWindowH("Melee");             // - At this distance destroy windows.
+    scrDestroyWindowV("Melee");
+    x += global.spacex;                     // - Move even further.
+    y += global.spacey;
+    if scrIsLethal(sprite_index) {          // - At this distance attack the enemy.
+        scrKillEnemy();
+    } else {
+        scrKnockEnemyOut();
+    }
+    x = lastx;                              // - Immediately, before any of this can be rendered, move the player back to the initial position.
+    y = lasty;
+}                                           // And that's how Hotline Miami handles the attack collision.
+
+if keyboard_check_pressed(vk_space){        // Executing an enemy.
+    scrKillShield();
 }
-}
-global.my_id=id
-image_xscale=1.5
-image_yscale=1.5
-bullets=0
-energie-=1
-with objEBullet {
-if place_meeting(x,y,global.my_id) {
-my_id=instance_create(x,y,objBloodSmoke)
-my_id.direction=direction-170+random(10)
-my_id.speed=1
-my_id.image_angle=my_id.direction
-my_id.image_xscale=0.8+random(0.2)
-my_id.image_yscale=my_id.image_xscale
-instance_destroy()
-global.my_id.bullets+=1
-}
-}
-image_xscale=1
-image_yscale=1
-edir=other.direction
-test=0
-repeat (2*bullets) {
-my_id=instance_create(x-3+random(6)+lengthdir_x(8,edir),y-3+random(6)+lengthdir_y(8,edir),objBloodDrop)
-my_id.image_xscale=1-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=point_direction(x+lengthdir_x(8,edir),y+lengthdir_y(8,edir),my_id.x,my_id.y)
-my_id.sprite_index=sprBloodSplatSmall
-my_id.direction=my_id.image_angle
-my_id.speed=2+random(4)
-}
-repeat (1+random(bullets)) {
-my_id=instance_create(x-3+random(6)+lengthdir_x(8,edir),y-3+random(6)+lengthdir_y(8,edir),objBloodDrop)
-my_id.image_xscale=1-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=point_direction(x+lengthdir_x(8,edir),y+lengthdir_y(8,edir),my_id.x,my_id.y)
-my_id.direction=my_id.image_angle
-my_id.speed=1+random(5)
-}
-repeat (bullets) {
-my_id=instance_create(x-3+random(6)+lengthdir_x(16,edir),y-3+random(6)+lengthdir_y(16,edir),objBloodSmoke)
-my_id.image_xscale=1.2-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=edir-20+random(40)
-my_id.direction=my_id.image_angle
-my_id.speed=2+random(1)
-my_id.friction=0.15
-}
-if bullets&gt;1 or round(random(1)) or energie&lt;0 {
-if bullets&gt;1 createDeadBody(true,1.5+bullets*0.15,sprPBackShotgun,edir) else createDeadBody(true,1.5+bullets*0.15,sprPBackMachinegun,edir)
-instance_destroy()
-}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Collision with Bullets
+bulletCollision(Death_Machinegun,Death_Shotgun);
 </string>
           </argument>
         </arguments>
@@ -903,56 +653,6 @@ if global.godmode=1{
 draw_sprite_ext(sprHalo,head_FrameIndex,x+maddx+0.5,y+maddy+0.5,image_xscale,image_yscale,dir,c_black,0.2)
 draw_sprite_ext(sprHalo,head_FrameIndex,x+maddx,y+maddy,image_xscale,image_yscale,dir,image_blend,image_alpha)
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="32">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Executions
-scrKillShield();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="17">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Crawling
-exit
-instance_destroy();
-instance_create(x,y,objPCrawl)
 </string>
           </argument>
         </arguments>

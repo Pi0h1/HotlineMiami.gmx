@@ -1,5 +1,6 @@
 //  Initializes player.
 //  ANY player.
+keyLookFurther = keyboard_check_direct(vk_shift);
 armlength = 0
 goddir = 0
 active = 1
@@ -54,3 +55,5 @@ if !place_free(x,y)
     x = global.executionx
     y = global.executiony
     }
+    
+isLethal = false;

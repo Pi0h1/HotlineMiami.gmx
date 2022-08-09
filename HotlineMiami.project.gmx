@@ -1955,6 +1955,10 @@
           <script>scripts\scrGetKill.gml</script>
           <script>scripts\scrMCKill.gml</script>
         </scripts>
+        <script>scripts\checkAreaClear.gml</script>
+        <script>scripts\bulletCollision.gml</script>
+        <script>scripts\gameplayCamera.gml</script>
+        <script>scripts\playerEffects.gml</script>
         <script>scripts\Melee.gml</script>
         <script>scripts\Shoot.gml</script>
         <script>scripts\ShootShotgun.gml</script>
@@ -1968,7 +1972,10 @@
         <script>scripts\scrThrowWater.gml</script>
         <script>scripts\scrPlayerAnimationEnd.gml</script>
         <script>scripts\scrIsSwinging.gml</script>
+        <script>scripts\scrIsLethal.gml</script>
         <script>scripts\scrThroatEnemy.gml</script>
+        <script>scripts\scrKnockEnemyOut.gml</script>
+        <script>scripts\scrKillEnemy.gml</script>
       </scripts>
       <scripts name="Die">
         <script>scripts\scrPlayerDieDogBite.gml</script>
@@ -2192,6 +2199,7 @@
       <script>scripts\scrDrawDistortion.gml</script>
       <script>scripts\scrPointsDraw.gml</script>
       <script>scripts\scrDestroyWindowV.gml</script>
+      <script>scripts\scrDestroyWindowH.gml</script>
     </scripts>
     <scripts name="Systems">
       <scripts name="Audio">

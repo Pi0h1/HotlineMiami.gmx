@@ -11,7 +11,7 @@ EraseFile("Score.sav");
 EraseFile("Weapons.sav");
 
 // Hotline Miami Files
-// ===============================
+// =============================== //
 EraseFile("xbox");
 EraseFile("steamon");
 EraseFile("steamoff");

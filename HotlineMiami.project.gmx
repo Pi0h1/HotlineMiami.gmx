@@ -3020,6 +3020,7 @@
     </scripts>
     <script>scripts\DrawObjectsVariables.gml</script>
     <script>scripts\QuitGame.gml</script>
+    <script>scripts\scrPoliceInit.gml</script>
     <script>scripts\EraseFile.gml</script>
   </scripts>
   <shaders name="shaders">

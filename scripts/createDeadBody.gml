@@ -145,7 +145,7 @@ if instance_exists(deadBody) {
         else scrGoreBash(x, y, argument3 - 180, 0, 0)
     }
     if (deathSprite == sprPoliceBackBlunt) {
-        if (deathFrame == 6 or deathFrame == 12 or deathFramex == 14)   {scrGoreBash(x, y, argument3 - 180, 1, 1)}
+        if (deathFrame == 6 or deathFrame == 12 or deathFrame == 14)   {scrGoreBash(x, y, argument3 - 180, 1, 1)}
         else scrGoreBash(x, y, argument3 - 180, 0, 0)
     }
     if (deathSprite == sprPoliceFrontBlunt) {
@@ -199,7 +199,7 @@ if instance_exists(deadBody) {
     if scrIsPolice(object_index) {
         //deadBody.sprite_index=sprPoliceBackBlunt
         hat = instance_create(x, y, objPoliceHat)
-        hat.direction = pdir - 10 + random(20)
+        hat.direction = random(360) // pdir - 10 + random(20)
         hat.speed = 1 + random(2)
     }
     

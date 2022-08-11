@@ -172,6 +172,7 @@
     <instance objName="objWallDoor" x="64" y="32" name="inst_F957AACB" locked="0" code="" scaleX="64" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallDoor" x="608" y="96" name="inst_3B659809" locked="0" code="" scaleX="1" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objWallDoor" x="32" y="96" name="inst_1C95F8F2" locked="0" code="" scaleX="1" scaleY="16" colour="4294967295" rotation="0"/>
+    <instance objName="objWallHeavyV" x="320" y="256" name="inst_A886B1FA" locked="0" code="" scaleX="1" scaleY="17" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="32" y="96" w="16" h="16" xo="640" yo="192" id="10039479" name="tile_E8118D2E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -1,5 +1,5 @@
 /// bulletCollision(machine gun death sprite, shotgun death sprite)
-if place_meeting(x,y,objBullet){
+if place_meeting(x,y,objEBullet){
     if global.godmode = 1 exit
     global.shake = 10
     

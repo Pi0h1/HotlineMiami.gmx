@@ -17,6 +17,8 @@
     // Enables using JSON for the restart mechanic, disable this to use game_save (Warning: game_save is not compatible with GMS2!)
     global.useJson      = false;
     window_set_cursor(cr_none);
+    
+    scrInitLevelTitles();
 
 //======================================================================================//
 /*  End of original variables.  */

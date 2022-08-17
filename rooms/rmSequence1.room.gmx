@@ -10,15 +10,7 @@
   <persistent>-1</persistent>
   <colour>4194368</colour>
   <showcolour>-1</showcolour>
-  <code>if global.resetstory exit
-global.done=0
-global.phone=0
-global.package=0
-global.level=rmTrainstationEntrance
-global.pretitle="PRELUDE"
-global.title="THE METRO"
-global.sequence=rmSequence1
-global.revisit=0</code>
+  <code>scrInitSequence(0, rmTrainstationEntrance);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

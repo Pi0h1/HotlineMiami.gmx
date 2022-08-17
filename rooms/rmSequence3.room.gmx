@@ -10,15 +10,7 @@
   <persistent>-1</persistent>
   <colour>4194368</colour>
   <showcolour>-1</showcolour>
-  <code>if global.resetstory exit
-global.done=0
-global.phone=0
-global.package=0
-global.level=rmApartment2Entrance
-global.pretitle="SECOND CHAPTER"
-global.title="OVERDOSE"
-global.sequence=rmSequence3
-global.revisit=0</code>
+  <code>scrInitSequence(2, rmApartment2Entrance);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

@@ -10,15 +10,7 @@
   <persistent>-1</persistent>
   <colour>4194368</colour>
   <showcolour>-1</showcolour>
-  <code>if global.resetstory exit
-global.done=0
-global.phone=1
-global.package=1
-global.level=rmBossClubFloor1
-global.pretitle="FOURTEENTH CHAPTER"
-global.title="VENGEANCE"
-global.sequence=rmSequence14
-global.revisit=0</code>
+  <code>scrInitSequence(14, rmBossClubFloor1);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

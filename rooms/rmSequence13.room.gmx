@@ -10,15 +10,7 @@
   <persistent>-1</persistent>
   <colour>8112332</colour>
   <showcolour>-1</showcolour>
-  <code>if global.resetstory exit
-global.done=0
-global.phone=0
-global.package=0
-global.level=rmPoliceHQFloor1
-global.pretitle="THIRTEENTH CHAPTER"
-global.title="Assault"
-global.sequence=rmSequence13
-global.revisit=0</code>
+  <code>scrInitSequence(13, rmPoliceHQFloor1);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

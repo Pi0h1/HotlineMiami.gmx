@@ -56,7 +56,7 @@ level[18]=sprPhoneLevel
 level[19]=sprBossClub2
 level[20]=sprVenusLevel
 level[21]=sprEurogamerLogo
-title[0]="THE METRO"
+/*title[0]="THE METRO"
 title[1]="NO TALK"
 title[2]="OVERDOSE"
 title[3]="DECADENCE"
@@ -99,7 +99,7 @@ chapter[17]="CHAPTER SEVENTEEN"
 chapter[18]="CHAPTER EIGHTEEN"
 chapter[19]="CHAPTER NINETEEN"
 chapter[20]="BONUS CHAPTER"
-chapter[21]="SPECIAL CHAPTER"
+chapter[21]="SPECIAL CHAPTER"*/
 if global.levels[15]=1 {if file_exists(working_directory+"\exposed.lvl") levels=21 else levels=20} else levels=15
 select=0
 repeats=16
@@ -120,7 +120,7 @@ i+=1
 
 i=0
 repeat (20) {
-if global.levels[i]=0 {if select=0 and global.levels[1]=1 select=i-1 title[i]="LOCKED"}
+if global.levels[i]=0 {if select=0 and global.levels[1]=1 select=i-1 global.levelTitle[i]="LOCKED"}
 i+=1
 }
 
@@ -212,7 +212,7 @@ dist=point_distance(x,y,mouse_x,mouse_y)*0.01
 if dist&gt;1 dist=1
 if state=1 {if addx&gt;-96 addx-=8} else {if addx&lt;0 addx+=8}
 repeat (myrepeats) {
-if title[select]="LOCKED" color=merge_color(c_dkgray,c_black,i*(1/sprite_get_number(sprite_index))) else color=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.12)),c_white,i*(1/sprite_get_number(sprite_index)))
+if global.levelTitle[select]="LOCKED" color=merge_color(c_dkgray,c_black,i*(1/sprite_get_number(sprite_index))) else color=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.12)),c_white,i*(1/sprite_get_number(sprite_index)))
 draw_sprite_ext(sprite_index,i,x+addx*0.75,y-i*0.6,1+i*0.01,1+i*0.01,mapdir,color,1) 
 i+=1
 }
@@ -272,7 +272,7 @@ if texts&gt;22 texts=22
 i=0
 repeat (texts) {
 draw_set_color(merge_color(merge_color(c_lime,c_yellow,0.5+lengthdir_x(0.5,dir*3.232)),c_white,i*(1/22)))
-draw_text_transformed(room_width/2,room_height*0.28-i*0.5,chapter[select],1+i*0.01,1+i*0.01,0)
+draw_text_transformed(room_width/2,room_height*0.28-i*0.5,global.chapterTitle[select],1+i*0.01,1+i*0.01,0)
 i+=1
 }
 
@@ -282,7 +282,7 @@ if texts&gt;22 texts=22
 i=0
 repeat (texts) {
 draw_set_color(merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.232)),c_white,i*(1/22)))
-draw_text_transformed(room_width/2,room_height-room_height*0.28+i*0.5,title[select],1+i*0.01,1+i*0.01,0)
+draw_text_transformed(room_width/2,room_height-room_height*0.28+i*0.5,global.levelTitle[select],1+i*0.01,1+i*0.01,0)
 i+=1
 }
 surface_alpha()
@@ -384,33 +384,33 @@ if global.levels[select]=1 fade=1 else exit
 
 switch (select) {
 // Phonecalls
-    case 0 : scrStartLevel ("THE METRO"    , "PRELUDE"             , rmTrainstationEntrance    , rmSequence1   , "Paris2"              ); break;
-    case 1 : scrStartLevel ("NO TALK"      , "FIRST CHAPTER"       , rmApartment1Entrance      , rmSequence2   , "Crystals"            ); break;
-    case 2 : scrStartLevel ("OVERDOSE"     , "SECOND CHAPTER"      , rmApartment2Entrance      , rmSequence3   , "Hotline"             ); break;
-    case 3 : scrStartLevel ("DECADENCE"    , "THIRD CHAPTER"       , rmHouse1Downstairs        , rmSequence4   , "Hydrogen"            ); break;
+    case 0: scrStartLevel(0, rmTrainstationEntrance  , rmSequence1   , "Paris2"              ); break;
+    case 1: scrStartLevel(1, rmApartment1Entrance    , rmSequence2   , "Crystals"            ); break;
+    case 2: scrStartLevel(2, rmApartment2Entrance    , rmSequence3   , "Hotline"             ); break;
+    case 3: scrStartLevel(3, rmHouse1Downstairs      , rmSequence4   , "Hydrogen"            ); break;
 // Questions 
-    case 4 : scrStartLevel ("TENSION"      , "FOURTH CHAPTER"      , rmHouse5Downstairs        , rmSequence5   , "Paris2"              ); break;
-    case 5 : scrStartLevel ("FULL HOUSE"   , "FIFTH CHAPTER"       , rmHouse2Downstairs        , rmSequence6   , "Crystals"            ); break;
-    case 6 : scrStartLevel ("CLEAN HIT"    , "SIXTH CHAPTER"       , rmHotelEntrance           , rmSequence7   , "Hotline"             ); break;
-    case 7 : scrStartLevel ("NEIGHBORS"    , "SEVENTH CHAPTER"     , rmBuildingFloor1          , rmSequence8   , "Hydrogen"            ); break;
+    case 4: scrStartLevel(4, rmHouse5Downstairs      , rmSequence5   , "Paris2"              ); break;
+    case 5: scrStartLevel(5, rmHouse2Downstairs      , rmSequence6   , "Crystals"            ); break;
+    case 6: scrStartLevel(6, rmHotelEntrance         , rmSequence7   , "Hotline"             ); break;
+    case 7: scrStartLevel(7, rmBuildingFloor1        , rmSequence8   , "Hydrogen"            ); break;
 // Visitations
-    case 8 : scrStartLevel ("PUSH IT"      , "EIGHT CHAPTER"       , rmHouse3Downstairs        , rmSequence9   , "Perturbator"         ); break;
-    case 9 : scrStartLevel ("CRACKDOWN"    , "NINTH CHAPTER"       , rmSwatDownstairs          , rmSequence10  , "Crystals"            ); break;
-    case 10: scrStartLevel ("HOT&amp;HEAVY"    , "TENTH CHAPTER"       , rmHouse4Middle            , rmSequence11  , "Hotline"             ); break;
-    case 11: scrStartLevel ("DEADLINE"     , "ELEVENTH CHAPTER"    , rmOfficeEntrance          , rmSequence12  , "Hydrogen"            ); break;
+    case 8: scrStartLevel(8, rmHouse3Downstairs      , rmSequence9   , "Perturbator"         ); break;
+    case 9: scrStartLevel(9, rmSwatDownstairs        , rmSequence10  , "Crystals"            ); break;
+    case 10: scrStartLevel(10, rmHouse4Middle         , rmSequence11  , "Hotline"             ); break;
+    case 11: scrStartLevel(11, rmOfficeEntrance       , rmSequence12  , "Hydrogen"            ); break;
 // Connection
-    case 12: scrStartLevel ("TRAUMA"       , "TWELFTH CHAPTER"     , rmHospitalTitle           , rmSequence12bDownstairs, "Flatline"   ); break;
-    case 13: scrStartLevel ("ASSAULT"      , "TIRTEENTH CHAPTER"   , rmPoliceHQFloor1          , rmSequence13  , "Knock"               ); break;
-    case 14: scrStartLevel ("VENGEANCE"    , "FOURTEENTH CHAPTER"  , rmBossClubFloor1          , rmSequence14  , "InnerAnimal"         ); break;
-    case 15: scrStartLevel ("SHOWDOWN"     , "FINAL CHAPTER"       , rmMansionEntrance         , rmChapter     , "TurfMain"            ); break;
+    case 12: scrStartLevel(12, rmHospitalTitle        , rmSequence12bDownstairs, "Flatline"   ); break;
+    case 13: scrStartLevel(13, rmPoliceHQFloor1       , rmSequence13  , "Knock"               ); break;
+    case 14: scrStartLevel(14, rmBossClubFloor1       , rmSequence14  , "InnerAnimal"         ); break;
+    case 15: scrStartLevel(15, rmMansionEntrance      , rmChapter     , "TurfMain"            ); break;
 // Answers
-    case 16: scrStartLevel ("SAFEHOUSE"    , "SIXTEENTH CHAPTER"   , rmNoodleShop              , rmMCBar       , "ToTheTop"            ); break;
-    case 17: scrStartLevel ("FUN&amp;GAMES"    , "SEVENTEENTH CHAPTER" , rmArcadeDownstairs        , rmMCSequence2 , "Musikk2"             ); break;
-    case 18: scrStartLevel ("PRANKCALL"    , "EIGHTEENTH CHAPTER"  , rmPhoneHomEntranceBiker   , rmMCSequence3 , "Knock"               ); break;
-    case 19: scrStartLevel ("RESOLUTION"   , "NINETEENTH CHAPTER"  , rmJanitors                , rmMCSequence4 , "InnerAnimal"         ); break;
+    case 16: scrStartLevel(16, rmNoodleShop           , rmMCBar       , "ToTheTop"            ); break;
+    case 17: scrStartLevel(17, rmArcadeDownstairs     , rmMCSequence2 , "Musikk2"             ); break;
+    case 18: scrStartLevel(18, rmPhoneHomEntranceBiker, rmMCSequence3 , "Knock"               ); break;
+    case 19: scrStartLevel(19, rmJanitors             , rmMCSequence4 , "InnerAnimal"         ); break;
 // Bonus
-    case 20: scrStartLevel ("HIGHBALL"     , "BONUS CHAPTER"       , rmHighballer              , rmChapter     , "Perturbator"         ); break;
-    case 21: scrStartLevel ("EXPOSED"      , "SPECIAL CHAPTER"     , rmEurogamer               , rmChapter     , "ToTheTop"            ); break;
+    case 20: scrStartLevel(20, rmHighballer           , rmChapter     , "Perturbator"         ); break;
+    case 21: scrStartLevel(21, rmEurogamer            , rmChapter     , "ToTheTop"            ); break;
 }
 
 if intro=1 {mylevel=global.level if select=15 mylevel=rmChapter}

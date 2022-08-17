@@ -4,7 +4,7 @@ global.phone=0
 global.package=0
 global.level=rmNoodleShop
 global.pretitle="SIXTEENTH CHAPTER"
-global.title="SAFEHOUSE"
+global.title=global.levelTitle[16]
 global.sequence=rmMCBar
 global.revisit=0
 return rmMCChapter

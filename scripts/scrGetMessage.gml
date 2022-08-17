@@ -1,9 +1,12 @@
+var faceScale = 1.5;
+var phoneScale = 1;
+
 if global.maskindex=19 and global.maskon=1 {
 scrGetMessageFrench(argument0)
 } else {
 my_id=instance_create(x,y,objPhoneConversation)
-objEffector.image_xscale=1
-objEffector.image_yscale=1
+objEffector.image_xscale=phoneScale
+objEffector.image_yscale=phoneScale
 if room=rmSequence1 {
 if argument0=objAnsweringMachine {
 my_id.sprite=sprFacePhone
@@ -25,6 +28,8 @@ global.phone=1
 }
 if argument0=objOpenedBox {
 my_id.sprite=sprFaceMaskLetter
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceMaskLetter
 my_id.line1[0]="The target is a briefcase."
 my_id.line2[0]="Discretion is of essence."
@@ -63,8 +68,8 @@ global.done=1
 }
 if argument0=1 {
 my_id.sprite=sprFaceForms
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceForms
 my_id.line1[0]="Thank you for subscribing"
 my_id.line2[0]="to our newsletter!"
@@ -103,8 +108,8 @@ global.done=1
 
 if argument0=1 {
 my_id.sprite=sprFaceForms
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceForms
 my_id.line1[0]="Thank you for subscribing"
 my_id.line2[0]="to our newsletter!"
@@ -165,8 +170,8 @@ global.done=1
 if room=rmSequence14
  {
 my_id.sprite=sprFaceFilesBig 
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceFilesBig
 my_id.line1[0]="...SUSPECTS CLAIM TO HAVE"
 my_id.line2[0]="BEEN THREATENED INTO..."
@@ -189,8 +194,8 @@ global.done=1
 if room=rmHighballer {
 if argument0=0 {
 my_id.sprite=sprFaceBrandon
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceBrandon
 my_id.line1[0]="...OH DARK LORD, GRANT"
 my_id.line2[0]="US YOUR ETERNAL POWER..."
@@ -198,8 +203,8 @@ my_id.messages=0
 }
 if argument0=1 {
 my_id.sprite=sprFaceWiley
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceWiley
 my_id.line1[0]="HEY BRANDON?"
 my_id.line2[0]="..."
@@ -209,8 +214,8 @@ my_id.messages=1
 }
 if argument0=2 {
 my_id.sprite=sprFaceBrandon
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceBrandon
 my_id.line1[0]="SHUT UP, WILEY!"
 my_id.line2[0]="NOT WHILE I'M CHANTING!"
@@ -222,8 +227,8 @@ my_id.messages=0
 
 if room=rmSecretSewer {
 my_id.sprite=sprFaceCrocodile
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceCrocodile
 my_id.line1[0]="HEY... *COUGH*"
 my_id.line2[0]="I THINK I GET IT NOW..."
@@ -244,8 +249,8 @@ if room=rmJanitors {
 if argument0=0 {
 my_id.sprite=sprFaceDennis
 my_id.indexspeed=0
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceDennis
 my_id.line1[0]="..."
 my_id.line2[0]=""
@@ -254,8 +259,8 @@ my_id.messages=0
 if argument0=1 {
 my_id.sprite=sprFaceBiker
 my_id.indexspeed=0
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceBiker
 my_id.line1[0]="..."
 my_id.line2[0]=""
@@ -268,8 +273,8 @@ my_id.messages=2
 if argument0=2 {
 my_id.sprite=sprFaceBiker
 my_id.indexspeed=0
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceBiker
 my_id.line1[0]="..."
 my_id.line2[0]=""
@@ -294,8 +299,8 @@ my_id.messages=7
 if room=rmPhoneHomUpstairsBiker {
 if argument0=0 {
 my_id.sprite=sprFaceCEO
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceCEO
 my_id.line1[0]="STAY AWAY FROM ME!"
 my_id.line2[0]="..."
@@ -309,8 +314,8 @@ my_id.messages=3
 }
 if argument0=1 {
 my_id.sprite=sprFaceBiker
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceBiker
 my_id.line1[0]="GET OUT OF HERE IF YOU"
 my_id.line2[0]="DON'T WANT TO DIE!"
@@ -322,8 +327,8 @@ my_id.messages=2
 }
 if argument0=2 {
 my_id.sprite=sprFaceBiker
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceBiker
 my_id.line1[0]="..."
 my_id.line2[0]=""
@@ -337,8 +342,8 @@ my_id.messages=3
 }
 if argument0=3 {
 my_id.sprite=sprFaceBiker
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceBiker
 my_id.line1[0]="YOU HAD YOUR CHANCE"
 my_id.line2[0]="..."
@@ -349,8 +354,8 @@ my_id.messages=0
 if room=rmMCBar {
 if argument0=0 {
 my_id.sprite=sprFaceBiker
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceBiker
 my_id.line1[0]="YOU THINK I'M STUPID?"
 my_id.line2[0]="HUH? I LOOK STUPID TO YOU?"
@@ -371,8 +376,8 @@ my_id.messages=6
 
 if argument0=1 {
 my_id.sprite=sprFaceBartender
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceBartender
 my_id.line1[0]="ALRIGHT, ALRIGHT!"
 my_id.line2[0]="CALM DOWN, MAN!"
@@ -396,8 +401,8 @@ my_id.messages=6
 if room=rmNoodleShop {
 if argument0=0 {
 my_id.sprite=sprFaceBiker
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceBiker
 my_id.line1[0]="LOOK HERE, PUNK! I'VE GOT"
 my_id.line2[0]="SOME THINGS I NEED TO KNOW."
@@ -414,8 +419,8 @@ my_id.messages=4
 
 if argument0=1 {
 my_id.sprite=sprFaceSushiGuy
-objEffector.image_xscale=1.5
-objEffector.image_yscale=1.5
+objEffector.image_xscale=faceScale
+objEffector.image_yscale=faceScale
 with objEffector sprite=sprFaceSushiGuy
 my_id.line1[0]="I'LL TELL YOU WHAT I KNOW!"
 my_id.line2[0]="JUST DON'T HURT ME!"
@@ -484,7 +489,7 @@ global.done=1
 
 if argument0=1 {
 my_id.sprite=sprClueBig
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprClueBig}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprClueBig}
 my_id.line1[0]="...ANOTHER MASSACRE HAS BEEN"
 my_id.line2[0]="REPORTED ON NW 184th St..."
 my_id.line1[1]="...STRING OF GANG RELATED"
@@ -520,7 +525,7 @@ global.done=1
 
 if argument0=1 {
 my_id.sprite=sprClueBig
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprClueBig}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprClueBig}
 my_id.line1[0]="...MOVIE PRODUCER FOUND "
 my_id.line2[0]="DEAD IN VILLA LAST NIGHT..."
 my_id.line1[1]="...SURVEILLANCE TAPE REVEALS"
@@ -534,7 +539,7 @@ my_id.messages=2
 if room=rmSequence7Downstairs {
 my_id.sprite=sprFaceDennis
 my_id.indexspeed=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceDennis}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceDennis}
 my_id.line1[0]="..."
 my_id.line2[0]=""
 my_id.messages=0
@@ -543,7 +548,7 @@ my_id.messages=0
 if room=rmHotelSuite {
 my_id.sprite=sprFaceJonatan
 my_id.indexspeed=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceJonatan}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceJonatan}
 my_id.line1[0]="..."
 my_id.line2[0]=""
 my_id.messages=0
@@ -570,7 +575,7 @@ global.done=1
 }
 if argument0=1 {
 my_id.sprite=sprClueBig
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprClueBig}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprClueBig}
 my_id.line1[0]="...BOMB BLAST HEARD ALL THE"
 my_id.line2[0]="WAY DOWN TOWN..."
 my_id.line1[1]="...CASUALTIES STILL UNKNOWN."
@@ -602,7 +607,7 @@ global.done=1
 }
 if argument0=1 {
 my_id.sprite=sprClueBig
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprClueBig}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprClueBig}
 my_id.line1[0]="...MASK MURDERS CONTINUES."
 my_id.line2[0]="LAST NIGHT A DOZEN BODIES..."
 my_id.line1[1]="...AGAIN CONNECTIONS TO THE"
@@ -613,7 +618,7 @@ my_id.messages=2
 }
 if argument0=2 {
 my_id.sprite=sprClueBig
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprClueBig}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprClueBig}
 my_id.line1[0]="...MAYOR OF MIAMI SUGGESTS"
 my_id.line2[0]="CURFEW IN MIAMI..."
 my_id.line1[1]="...'WE'RE BASICALLY IN A"
@@ -644,7 +649,7 @@ global.done=1
 }
 if argument0=1 {
 my_id.sprite=sprClueBig
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprClueBig}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprClueBig}
 my_id.line1[0]="...SHOOT OUT AT HOTEL BLUE"
 my_id.line2[0]="EARLY LAST EVENING..."
 my_id.line1[1]="...THREE POLITICIANS AMONG"
@@ -679,7 +684,7 @@ global.done=1
 }
 if argument0=1 {
 my_id.sprite=sprClueBig
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprClueBig}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprClueBig}
 my_id.line1[0]="...SIX BODIES FOUND ON"
 my_id.line2[0]="East 7th St..."
 my_id.line1[1]="...POLICE SUSPECTS TIES TO"
@@ -688,7 +693,7 @@ my_id.messages=1
 }
 if argument0=2 {
 my_id.sprite=sprClueBig
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprClueBig}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprClueBig}
 my_id.line1[0]="...WITNESS CLAIMS SEEING"
 my_id.line2[0]="MONSTER LEAVING THE SCENE..."
 my_id.messages=0
@@ -764,7 +769,7 @@ global.done=1
 if argument0=1 {
 my_id.sprite=sprFaceFatCorpse
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceFatCorpse}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceFatCorpse}
 my_id.line1[0]="Get out of my face,"
 my_id.line2[0]="asshole!"
 my_id.line1[1]="*Cough*"
@@ -777,7 +782,7 @@ if room=rmSequence12b  {
 if argument0=0 {
 my_id.sprite=sprFaceRatMask
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceRatMask}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceRatMask}
 my_id.line1[0]="Ah, there you are!"
 my_id.line2[0]="..."
 my_id.line1[1]="I was wondering when"
@@ -789,7 +794,7 @@ my_id.messages=2
 if argument0=1 {
 my_id.sprite=sprFaceGirlfriendDead
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceGirlfriendDead}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceGirlfriendDead}
 my_id.line1[0]="..."
 my_id.line2[0]=""
 my_id.messages=0
@@ -801,7 +806,7 @@ if room=rmOfficeEntrance  {
 if argument0=0 {
 my_id.sprite=sprFaceBoss3
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceBoss3}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceBoss3}
 if argument0=0 {
 my_id.line1[0]="I give up! You win!"
 my_id.line2[0]="..."
@@ -819,7 +824,7 @@ my_id.index=0
 with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamHorse}
 my_id.line1[0]="AND WHO DO WE HAVE HERE?"
 my_id.line2[0]=""
 my_id.line1[1]="OH, YOU DON'T KNOW"
@@ -834,7 +839,7 @@ my_id.index=0
 with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamRooster}
 my_id.line1[0]="BUT I KNOW YOU."
 my_id.line2[0]=""
 my_id.line1[1]="Look at my face."
@@ -849,7 +854,7 @@ my_id.index=0
 with objLight {
 if color=c_red targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamOwl}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamOwl}
 my_id.line1[0]="I don't know you!"
 my_id.line2[0]=""
 my_id.line1[1]="Why are you here?"
@@ -864,7 +869,7 @@ my_id.index=0
 with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamHorse}
 my_id.line1[0]="Do you really want me to"
 my_id.line2[0]="reveal who you are?"
 my_id.line1[1]="Knowing oneself means"
@@ -880,7 +885,7 @@ my_id.index=0
 with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamRooster}
 my_id.line1[0]="You don't remember me?"
 my_id.line2[0]="I'll give you a clue..."
 my_id.line1[1]="Does April the 3rd mean"
@@ -905,7 +910,7 @@ my_id.index=0
 with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamHorse}
 my_id.line1[0]="Oh, it's you again..."
 my_id.line2[0]=""
 my_id.line1[1]="It looks like you've been"
@@ -918,7 +923,7 @@ my_id.index=0
 with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamRooster}
 my_id.line1[0]="I see that you remember me"
 my_id.line2[0]="now. Don't you?"
 my_id.line1[1]="But you still don't know"
@@ -933,7 +938,7 @@ my_id.index=0
 with objLight {
 if color=c_red targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamOwl}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamOwl}
 my_id.line1[0]="Why did you come back here?"
 my_id.line2[0]=""
 my_id.line1[1]="You're not a nice person, "
@@ -948,7 +953,7 @@ my_id.index=0
 with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamHorse}
 my_id.line1[0]="A picture is starting to"
 my_id.line2[0]="take form here..."
 my_id.line1[1]="I wonder if it's accurate."
@@ -966,7 +971,7 @@ my_id.index=0
 with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamRooster}
 my_id.line1[0]="I think our time is up..."
 my_id.line2[0]="But we'll meet again."
 my_id.line1[1]="Before you go, here's"
@@ -1006,7 +1011,7 @@ with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
 
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamHorse}
 my_id.line1[0]="So, you came back?"
 my_id.line2[0]=""
 my_id.line1[1]="How are you feeling?"
@@ -1021,7 +1026,7 @@ my_id.index=0
 with objLight {
 if color=c_red targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamOwl}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamOwl}
 my_id.line1[0]="I told you not to come"
 my_id.line2[0]="back here!"
 my_id.line1[1]="I see that my opinion of"
@@ -1037,7 +1042,7 @@ with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
 
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamRooster}
 my_id.line1[0]="Have you thought about"
 my_id.line2[0]="what I asked you last time?"
 my_id.line1[1]="I'm not here to give you"
@@ -1052,7 +1057,7 @@ my_id.index=0
 with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamHorse}
 my_id.line1[0]="If you're not feeling well,"
 my_id.line2[0]="maybe you should rest?"
 my_id.line1[1]="Some things work out best"
@@ -1070,7 +1075,7 @@ my_id.index=0
 with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceDreamRooster}
 
 my_id.line1[0]="Next time we meet will"
 my_id.line2[0]="be the last. "
@@ -1097,7 +1102,7 @@ if argument0=0 {
 my_id.sprite=sprFaceRooster
 my_id.index=0
 my_id.indexspeed=0
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceRooster}
+with objEffector {image_xscale=faceScale image_yscale=faceScale  sprite=sprFaceRooster}
 my_id.line1[0]="Looks like it's only"
 my_id.line2[0]="you and me left now..."
 my_id.line1[1]="I'm sure you know by now,"
@@ -1149,7 +1154,7 @@ if room=rmPhoneHomUpstairs {
 if argument0=0 {
 my_id.sprite=sprFaceBiker
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceBiker}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceBiker}
 my_id.line1[0]="YOU'RE DEAD MEAT"
 my_id.line2[0]="..."
 my_id.messages=0
@@ -1157,7 +1162,7 @@ my_id.messages=0
 if argument0=1 {
 my_id.sprite=sprFaceBikerHurt
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceBikerHurt}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceBikerHurt}
 my_id.line1[0]="THIS... THIS CAN'T BE"
 my_id.line2[0]="HAPPENING..."
 my_id.line1[1]="IT CAN'T END NOW."
@@ -1172,7 +1177,7 @@ if room=rmBossClubFloor3 {
 if argument0=0 {
 my_id.sprite=sprFaceClubOwner
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceClubOwner}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceClubOwner}
 my_id.line1[0]="Look man, I don't want"
 my_id.line2[0]="no trouble here..."
 my_id.line1[1]="The safe is open, just take"
@@ -1188,7 +1193,7 @@ my_id.messages=4
 if argument0=1 {
 my_id.sprite=sprFaceClubOwnerScared
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceClubOwnerScared}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceClubOwnerScared}
 my_id.line1[0]="ALRIGHT! ALRIGHT! "
 my_id.line2[0]="I'LL GIVE YOU HIS ADDRESS!"
 my_id.line1[1]="JUST... PLEASE DON'T"
@@ -1203,7 +1208,7 @@ if room=rmStore1 {
 if argument0=0 {
 my_id.sprite=sprFaceNicklas
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceNicklasStore}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceNicklasStore}
 my_id.line1[0]="Hi there, man! "
 my_id.line2[0]="Haven't seen you around."
 my_id.line1[1]="Thought something might"
@@ -1230,7 +1235,7 @@ if room=rmPizzaHut1 {
 if argument0=0 {
 my_id.sprite=sprFaceNicklasPizza
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceNicklasPizza}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceNicklasPizza}
 my_id.line1[0]="Hi there, welcome!"
 my_id.line2[0]=""
 my_id.line1[1]="Oh, you don't need to order,"
@@ -1249,7 +1254,7 @@ if room=rmVideoStore1 {
 if argument0=0 {
 my_id.sprite=sprFaceNicklasVideo
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceNicklasVideo}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceNicklasVideo}
 my_id.line1[0]="Hey dude!"
 my_id.line2[0]="Good to see you again!"
 my_id.line1[1]="Did you hear about the"
@@ -1274,7 +1279,7 @@ if room=rmBar1 {
 if argument0=0 {
 my_id.sprite=sprFaceNicklasBar
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceNicklasBar}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceNicklasBar}
 my_id.line1[0]="Hi there, welcome!"
 my_id.line2[0]="..."
 my_id.line1[1]="You don't look well, sir."
@@ -1295,7 +1300,7 @@ if room=rmTutorial {
 if argument0=0 {
 my_id.sprite=sprFaceHobo
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceHobo}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceHobo}
 my_id.line1[0]="I'm here to tell you how"
 my_id.line2[0]="to kill people."
 my_id.line1[1]="This game is controlled with"
@@ -1341,7 +1346,7 @@ my_id.messages=6
 if argument0=2 {
 my_id.sprite=sprFaceHobo
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceHobo}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceHobo}
 my_id.line1[0]="Alright, now you should try"
 my_id.line2[0]="killing the next guy."
 my_id.line1[1]="But use the bat in the"
@@ -1362,7 +1367,7 @@ my_id.messages=6
 if argument0=4 {
 my_id.sprite=sprFaceHobo
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceHobo}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceHobo}
 my_id.line1[0]="Well done! so let's get"
 my_id.line2[0]="to the guns, shall we?"
 my_id.line1[1]="You go and get the shotgun"
@@ -1392,7 +1397,7 @@ my_id.messages=10
 if argument0=7 {
 my_id.sprite=sprFaceHobo
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceHobo}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceHobo}
 my_id.line1[0]="Alright, that about sums"
 my_id.line2[0]="up the basics. However..."
 my_id.line1[1]="There's always more tricks"
@@ -1419,7 +1424,7 @@ if room=rmPoliceHQFloor3 {
 if argument0=0 {
 my_id.sprite=sprFaceChief
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceChief}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceChief}
 my_id.line1[0]="Ok, boys! The bastard will"
 my_id.line2[0]="be here any second now."
 my_id.line1[1]="It's time for us to show"
@@ -1433,7 +1438,7 @@ my_id.messages=3
 if argument0=1 {
 my_id.sprite=sprFaceRat
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceRat}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceRat}
 my_id.line1[0]="YOU GOTTA BE SHITTING ME!"
 my_id.line2[0]="WHY ARE YOU..?"
 my_id.line1[1]="..."
@@ -1453,7 +1458,7 @@ if argument0=2 {
 my_id.sprite=sprFaceRatBruised
 my_id.index=1
 with objFiles on=1
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceRatBruised}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceRatBruised}
 my_id.line1[0]="Damn, that hurt."
 my_id.line2[0]="... *Cough*"
 my_id.line1[1]="You know, we might not be"
@@ -1479,7 +1484,7 @@ if argument0=3 {
 my_id.sprite=sprFaceRat
 my_id.index=2
 with objFiles on=1
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceRat}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceRat}
 my_id.line1[0]="Damn, that hurt."
 my_id.line2[0]="... *Cough*"
 my_id.line1[1]="You know, I think we might not"
@@ -1509,7 +1514,7 @@ if room=rmStore2 {
 if argument0=0 {
 my_id.sprite=sprFaceNicklasStore
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceNicklasStore}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceNicklasStore}
 my_id.line1[0]="Oh, hi there!"
 my_id.line2[0]="Good to see you!"
 my_id.line1[1]="I was a bit worried"
@@ -1530,7 +1535,7 @@ if room=rmPizzaHut2 {
 if argument0=0 {
 my_id.sprite=sprFaceNicklasPizza
 my_id.index=1
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceNicklasPizza}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceNicklasPizza}
 my_id.line1[0]="Good evening!"
 my_id.line2[0]="How are you doing?"
 my_id.line1[1]="You look a bit distracted,"
@@ -1555,7 +1560,7 @@ if room=rmAlley {
 if argument0=0 {
 my_id.sprite=sprFaceHobo
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceHobo}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceHobo}
 my_id.line1[0]="Who's there? I can hear"
 my_id.line2[0]="you! I know you're there!"
 my_id.messages=0
@@ -1566,7 +1571,7 @@ if room=rmHospitalTopFloor or room=rmHospitalEntrance {
 if argument0=0 {
 my_id.sprite=sprFaceDoctor
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceDoctor}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceDoctor}
 my_id.line1[0]="Hey! Hold it right there!"
 my_id.line2[0]="You're not allowed out here."
 my_id.line1[1]="Get back to your room, now!"
@@ -1576,7 +1581,7 @@ my_id.messages=1
 if argument0=1 {
 my_id.sprite=sprFacePolice
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFacePolice}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFacePolice}
 my_id.line1[0]="Hey! Where do you think"
 my_id.line2[0]="you're going, prick?"
 my_id.line1[1]="I guess we better put"
@@ -1591,7 +1596,7 @@ if room=rmHospitalCutscene {
 if argument0=0 {
 my_id.sprite=sprFacePolice
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFacePolice}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFacePolice}
 my_id.line1[0]="Hey, doc! When's this"
 my_id.line2[0]="bastard going to wake up?"
 my_id.messages=0
@@ -1599,7 +1604,7 @@ my_id.messages=0
 if argument0=1 {
 my_id.sprite=sprFaceDoctor
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceDoctor}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceDoctor}
 my_id.line1[0]="I don't know... He's been"
 my_id.line2[0]="in a coma for weeks now."
 my_id.messages=0
@@ -1607,7 +1612,7 @@ my_id.messages=0
 if argument0=2 {
 my_id.sprite=sprFacePolice
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFacePolice}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFacePolice}
 my_id.line1[0]="But he is going to"
 my_id.line2[0]="wake up... right?"
 my_id.line1[1]="This guy is a prime suspect"
@@ -1617,7 +1622,7 @@ my_id.messages=1
 if argument0=3 {
 my_id.sprite=sprFaceDoctor
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceDoctor}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceDoctor}
 my_id.line1[0]="Look, my guess is as good"
 my_id.line2[0]="as yours!"
 my_id.line1[1]="Though I can say that it"
@@ -1629,7 +1634,7 @@ my_id.messages=2
 if argument0=4 {
 my_id.sprite=sprFacePolice
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFacePolice}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFacePolice}
 my_id.line1[0]="Is there nothing you can"
 my_id.line2[0]="do? We need this guy!"
 my_id.line1[1]="You people weren't able to"
@@ -1643,7 +1648,7 @@ my_id.messages=3
 if argument0=5 {
 my_id.sprite=sprFaceDoctor
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceDoctor}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceDoctor}
 my_id.line1[0]="And what makes you think"
 my_id.line2[0]="this guy will..?"
 my_id.messages=0
@@ -1655,7 +1660,7 @@ if room=rmVideoStore2 {
 if argument0=0 {
 my_id.sprite=sprFaceNicklasVideo
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceNicklasVideo}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceNicklasVideo}
 my_id.line1[0]="Hey, my man!"
 my_id.line2[0]="Boy, am I glad to see you!"
 my_id.line1[1]="Have you been following the"
@@ -1686,7 +1691,7 @@ if room=rmBar2 {
 if argument0=0 {
 my_id.sprite=sprFaceNicklasBar
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceNicklasBar}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceNicklasBar}
 my_id.line1[0]="Welcome back, sir!"
 my_id.line2[0]="..."
 my_id.line1[1]="How are you tonight?"
@@ -1714,7 +1719,7 @@ if room=rmStore3 {
 if argument0=0 {
 my_id.sprite=sprFaceNicklasStore
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceNicklasStore}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceNicklasStore}
 my_id.line1[0]="Hey, man! I gotta tell ya"
 my_id.line2[0]="something important..."
 my_id.line1[1]="This... All of this is"
@@ -1727,7 +1732,7 @@ my_id.messages=2
 if argument0=1 {
 my_id.sprite=sprFaceBikerDestroyed
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceBikerDestroyed}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceBikerDestroyed}
 my_id.line1[0]="*GURGLE* *GURGLE*"
 my_id.line2[0]="..."
 my_id.messages=0
@@ -1736,7 +1741,7 @@ my_id.messages=0
 if argument0=2 {
 my_id.sprite=sprFaceNicklasStore
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceNicklasStore}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceNicklasStore}
 my_id.line1[0]="What you saw just now,"
 my_id.line2[0]="did not actually happen."
 my_id.line1[1]="You don't look like you"
@@ -1749,7 +1754,7 @@ my_id.messages=2
 if argument0=3 {
 my_id.sprite=sprFaceNicklasStore
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceNicklasStore}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceNicklasStore}
 my_id.line1[0]="Hey man! Nice to see"
 my_id.line2[0]="you..."
 my_id.line1[1]="Friendly faces are few and"
@@ -1766,7 +1771,7 @@ if room=rmPizzaHut3 {
 if argument0=0 {
 my_id.sprite=sprFaceRatBloody
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceRatBloody}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceRatBloody}
 my_id.line1[0]="What do you want?"
 my_id.line2[0]="..."
 my_id.line1[1]="Could you hurry up?"
@@ -1776,7 +1781,7 @@ my_id.messages=1
 if argument0=1 {
 my_id.sprite=sprFaceDogCorpse
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceDogCorpse}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceDogCorpse}
 my_id.line1[0]="We don't like strangers"
 my_id.line2[0]="around here..."
 my_id.line1[1]="Ain't that right, parker?"
@@ -1786,7 +1791,7 @@ my_id.messages=1
 if argument0=2 {
 my_id.sprite=sprFaceDog
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceDog}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceDog}
 my_id.line1[0]="GHRRRURRR!"
 my_id.line2[0]=""
 my_id.messages=0
@@ -1796,7 +1801,7 @@ my_id.messages=0
 if room=rmVideoStore3 {
 my_id.sprite=sprFaceRatBloody
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceRatBloody}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceRatBloody}
 if argument0=0 {
 my_id.line1[0]="What're you looking at?"
 my_id.line2[0]="..."
@@ -1812,7 +1817,7 @@ if room=rmBar3 {
 if argument0=0 {
 my_id.sprite=sprFaceRatBloody
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceRatBloody}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceRatBloody}
 my_id.line1[0]="Hey you!"
 my_id.line2[0]="..."
 my_id.line1[1]="VIPS only tonight!"
@@ -1823,7 +1828,7 @@ my_id.messages=1
 if argument0=1 {
 my_id.sprite=sprFaceDeadGuy
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceDeadGuy}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceDeadGuy}
 my_id.line1[0]="What the fuck are "
 my_id.line2[0]="you looking at?"
 my_id.line1[1]="*Cough*"
@@ -1837,7 +1842,7 @@ if room=rmMansionMainHall {
 if argument0=0 {
 my_id.sprite=sprFaceBoss4
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceBoss4}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceBoss4}
 my_id.line1[0]="AND WHO DO WE HAVE HERE?"
 my_id.line2[0]="..."
 my_id.line1[1]="YOU MUST BE ONE OF THE"
@@ -1852,7 +1857,7 @@ my_id.messages=3
 if argument0=1 {
 my_id.sprite=sprFaceBoss4
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceBoss4}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceBoss4}
 my_id.line1[0]="I GUESS IT'S JUST YOU"
 my_id.line2[0]="AND ME LEFT NOW."
 my_id.line1[1]="NOT BAD!"
@@ -1869,7 +1874,7 @@ my_id.messages=4
 if argument0=2 {
 my_id.sprite=sprFaceBodyguard
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceBodyguard}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceBodyguard}
 my_id.line1[0]="LEAVE HIM TO ME"
 my_id.line2[0]="..."
 my_id.messages=0
@@ -1878,7 +1883,7 @@ my_id.messages=0
 if argument0=3 {
 my_id.sprite=sprFaceBoss4Crazy
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceBoss4Crazy}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceBoss4Crazy}
 my_id.line1[0]="I CAN SEE WHERE THIS"
 my_id.line2[0]="IS GOING... HEH!*"
 my_id.line1[1]="I'LL SPARE YOU"
@@ -1913,7 +1918,7 @@ if room=rmMansionBalcony {
 if argument0=0 {
 my_id.sprite=sprFaceOldman
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceOldman}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceOldman}
 my_id.line1[0]="AH, SO YOU'RE THE ONE"
 my_id.line2[0]="CAUSING THE RUCKUS?"
 my_id.line1[1]="WHAT'S YOUR BUSINESS HERE?"
@@ -1936,7 +1941,7 @@ if room=rmHouse1Downstairs {
 if argument0=0 {
 my_id.sprite=sprFaceBlackGuy
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceBlackGuy}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceBlackGuy}
 my_id.line1[0]="GOTTA DO EVERYTHING BY"
 my_id.line2[0]="MYSELF, HUH..."
 my_id.messages=0
@@ -1944,7 +1949,7 @@ my_id.messages=0
 if argument0=1 {
 my_id.sprite=sprFaceBlackGuyHurt
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceBlackGuyHurt}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceBlackGuyHurt}
 my_id.line1[0]="OH GOD... *COUGH*"
 my_id.line2[0]="PLEASE, DON'T!"
 my_id.messages=0
@@ -1953,7 +1958,7 @@ my_id.messages=0
 if argument0=2 {
 my_id.sprite=sprFaceGirlfriend
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceGirlfriend}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceGirlfriend}
 my_id.line1[0]="HEY... ASSHOLE..."
 my_id.line2[0]="YOU CAN'T JUST..."
 my_id.line1[1]="*COUGH* LEAVE ME"
@@ -1968,7 +1973,7 @@ my_id.messages=3
 if argument0=3 {
 my_id.sprite=sprFaceGirlfriend
 my_id.index=0
-with objEffector {image_xscale=1.5 image_yscale=1.5 sprite=sprFaceGirlfriend}
+with objEffector {image_xscale=faceScale image_yscale=faceScale sprite=sprFaceGirlfriend}
 my_id.line1[0]="YEAH... JUST GET IT"
 my_id.line2[0]="OVER WITH..."
 my_id.line1[1]="I KNEW IT WOULD END"

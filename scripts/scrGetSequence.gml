@@ -12,7 +12,7 @@ if argument0=rmSequence11 {global.sequence=rmSequence12 return rmVideoStore3}
 if argument0=rmSequence12 {global.parttitle[0]="PART FOUR." global.parttitle[1]="CONNECTIONS." global.nextlevel=rmSequence12bDownstairs global.sequence=rmPart return rmBar3}
 if argument0=rmSequence12bDownstairs {global.sequence=rmSequence13Downstairs song=working_directory+"\DeepCover.mp3" return global.sequence}
 if argument0=rmSequence13 {global.sequence=rmSequence14 song=working_directory+"\DeepCover.mp3" return global.sequence}
-if argument0=rmSequence14 {global.sequence=rmChapter global.level=rmMansionEntrance global.pretitle="FINAL CHAPTER" global.title="SHOWDOWN" song="TurfMain.mp3" return global.sequence}
+if argument0=rmSequence14 {global.sequence=rmChapter global.level=rmMansionEntrance global.pretitle="FINAL CHAPTER" global.title=global.levelTitle[15] song="TurfMain.mp3" return global.sequence}
 if argument0=rmMCBar {global.sequence=rmMCSequence2 song="ItsSafeNow.mp3" return global.sequence}
 if argument0=rmMCSequence2 {global.sequence=rmMCSequence3 song="ItsSafeNow.mp3" return global.sequence}
 if argument0=rmMCSequence3 {global.sequence=rmMCSequence4 song="ItsSafeNow.mp3" return global.sequence}

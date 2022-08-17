@@ -10,14 +10,7 @@
   <persistent>-1</persistent>
   <colour>4194368</colour>
   <showcolour>-1</showcolour>
-  <code>if global.resetstory exit
-global.done=0
-global.phone=0
-global.level=rmPhoneHomEntranceBiker
-global.pretitle="EIGHTEENTH CHAPTER"
-global.title="PRANKCALL"
-global.sequence=rmMCSequence3
-global.revisit=0</code>
+  <code>scrInitSequence(18, rmPhoneHomEntranceBiker);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

@@ -152,46 +152,39 @@ object_create(objScanlines)
             <kind>1</kind>
             <string>/// Start a Room
 switch (startingRoom) {
-    case "DEVOLVER"     : room=rmSplashDevolver         ; break;
+    case "DEVOLVER"  : room=rmSplashDevolver ; break;
 // Phonecalls
-    case "THE METRO"    : scrStartLevel ("THE METRO"    , "PRELUDE"             , rmTrainstationEntrance    , rmSequence1   , "Paris2"              ); break;
-    case "NO TALK"      : scrStartLevel ("NO TALK"      , "FIRST CHAPTER"       , rmApartment1Entrance      , rmSequence2   , "Crystals"            ); break;
-    case "OVERDOSE"     : scrStartLevel ("OVERDOSE"     , "SECOND CHAPTER"      , rmApartment2Entrance      , rmSequence3   , "Hotline"             ); break;
-    case "DECADENCE"    : scrStartLevel ("DECADENCE"    , "THIRD CHAPTER"       , rmHouse1Downstairs        , rmSequence4   , "Hydrogen"            ); break;
+    case "THE METRO" : scrStartLevel(0, rmTrainstationEntrance  , rmSequence1   , "Paris2"              ); break;
+    case "NO TALK"   : scrStartLevel(1, rmApartment1Entrance    , rmSequence2   , "Crystals"            ); break;
+    case "OVERDOSE"  : scrStartLevel(2, rmApartment2Entrance    , rmSequence3   , "Hotline"             ); break;
+    case "DECADENCE" : scrStartLevel(3, rmHouse1Downstairs      , rmSequence4   , "Hydrogen"            ); break;
 // Questions 
-    case "TENSION"      : scrStartLevel ("TENSION"      , "FOURTH CHAPTER"      , rmHouse5Downstairs        , rmSequence5   , "Paris2"              ); break;
-    case "FULL HOUSE"   : scrStartLevel ("FULL HOUSE"   , "FIFTH CHAPTER"       , rmHouse2Downstairs        , rmSequence6   , "Crystals"            ); break;
-    case "CLEAN HIT"    : scrStartLevel ("CLEAN HIT"    , "SIXTH CHAPTER"       , rmHotelEntrance           , rmSequence7   , "Hotline"             ); break;
-    case "NEIGHBORS"    : scrStartLevel ("NEIGHBORS"    , "SEVENTH CHAPTER"     , rmBuildingFloor1          , rmSequence8   , "Hydrogen"            ); break;
+    case "TENSION"   : scrStartLevel(4, rmHouse5Downstairs      , rmSequence5   , "Paris2"              ); break;
+    case "FULL HOUSE": scrStartLevel(5, rmHouse2Downstairs      , rmSequence6   , "Crystals"            ); break;
+    case "CLEAN HIT" : scrStartLevel(6, rmHotelEntrance         , rmSequence7   , "Hotline"             ); break;
+    case "NEIGHBORS" : scrStartLevel(7, rmBuildingFloor1        , rmSequence8   , "Hydrogen"            ); break;
 // Visitations
-    case "PUSH IT"      : scrStartLevel ("PUSH IT"      , "EIGHT CHAPTER"       , rmHouse3Downstairs        , rmSequence9   , "Perturbator"         ); break;
-    case "CRACKDOWN"    : scrStartLevel ("CRACKDOWN"    , "NINTH CHAPTER"       , rmSwatDownstairs          , rmSequence10  , "Crystals"            ); break;
-    case "HOT&amp;HEAVY"    : scrStartLevel ("HOT&amp;HEAVY"    , "TENTH CHAPTER"       , rmHouse4Middle            , rmSequence11  , "Hotline"             ); break;
-    case "DEADLINE"     : scrStartLevel ("DEADLINE"     , "ELEVENTH CHAPTER"    , rmOfficeEntrance          , rmSequence12  , "Hydrogen"            ); break;
+    case "PUSH IT"   : scrStartLevel(8, rmHouse3Downstairs      , rmSequence9   , "Perturbator"         ); break;
+    case "CRACKDOWN" : scrStartLevel(9, rmSwatDownstairs        , rmSequence10  , "Crystals"            ); break;
+    case "HOT&amp;HEAVY" : scrStartLevel(10, rmHouse4Middle         , rmSequence11  , "Hotline"             ); break;
+    case "DEADLINE"  : scrStartLevel(11, rmOfficeEntrance       , rmSequence12  , "Hydrogen"            ); break;
 // Connection
-    case "TRAUMA"       : scrStartLevel ("TRAUMA"       , "TWELFTH CHAPTER"     , rmHospitalTitle           , rmSequence12bDownstairs, "Flatline"   ); break;
-    case "ASSAULT"      : scrStartLevel ("ASSAULT"      , "TIRTEENTH CHAPTER"   , rmPoliceHQFloor1          , rmSequence13  , "Knock"               ); break;
-    case "VENGEANCE"    : scrStartLevel ("VENGEANCE"    , "FOURTEENTH CHAPTER"  , rmBossClubFloor1          , rmSequence14  , "InnerAnimal"         ); break;
-    case "SHOWDOWN"     : scrStartLevel ("SHOWDOWN"     , "FINAL CHAPTER"       , rmMansionEntrance         , rmChapter     , "TurfMain"            ); break;
+    case "TRAUMA"    : scrStartLevel(12, rmHospitalTitle        , rmSequence12bDownstairs, "Flatline"   ); break;
+    case "ASSAULT"   : scrStartLevel(13, rmPoliceHQFloor1       , rmSequence13  , "Knock"               ); break;
+    case "VENGEANCE" : scrStartLevel(14, rmBossClubFloor1       , rmSequence14  , "InnerAnimal"         ); break;
+    case "SHOWDOWN"  : scrStartLevel(15, rmMansionEntrance      , rmChapter     , "TurfMain"            ); break;
 // Answers
-    case "SAFEHOUSE"    : scrStartLevel ("SAFEHOUSE"    , "SIXTEENTH CHAPTER"   , rmNoodleShop              , rmMCBar       , "ToTheTop"            ); break;
-    case "FUN&amp;GAMES"    : scrStartLevel ("FUN&amp;GAMES"    , "SEVENTEENTH CHAPTER" , rmArcadeDownstairs        , rmMCSequence2 , "Musikk2"             ); break;
-    case "PRANKCALL"    : scrStartLevel ("PRANKCALL"    , "EIGHTEENTH CHAPTER"  , rmPhoneHomEntranceBiker   , rmMCSequence3   , "Knock"               ); break;
-    case "RESOLUTION"   : scrStartLevel ("RESOLUTION"   , "NINETEENTH CHAPTER"  , rmJanitors                , rmMCSequence4 , "InnerAnimal"         ); break;
+    case "SAFEHOUSE" : scrStartLevel(16, rmNoodleShop           , rmMCBar       , "ToTheTop"            ); break;
+    case "FUN&amp;GAMES" : scrStartLevel(17, rmArcadeDownstairs     , rmMCSequence2 , "Musikk2"             ); break;
+    case "PRANKCALL" : scrStartLevel(18, rmPhoneHomEntranceBiker, rmMCSequence3 , "Knock"               ); break;
+    case "RESOLUTION": scrStartLevel(19, rmJanitors             , rmMCSequence4 , "InnerAnimal"         ); break;
 // Bonus
-    case "HIGHBALL"     : scrStartLevel ("HIGHBALL"     , "BONUS CHAPTER"       , rmHighballer              , rmChapter     , "Perturbator"         ); break;
-    case "EXPOSED"      : scrStartLevel ("EXPOSED"      , "SPECIAL CHAPTER"     , rmEurogamer               , rmChapter     , "ToTheTop"            ); break;
-    default: room=startingRoom;
-    }
-
-sxeasy_play(song)
-//scrInitGlobals();
-//global.devmode=1
-//instance_create(x,y,objPlaceCharacter)
-
-if global.devmode=true{
-SaveCurrentLevel();
+    case "HIGHBALL"  : scrStartLevel(20, rmHighballer           , rmChapter     , "Perturbator"         ); break;
+    case "EXPOSED"   : scrStartLevel(21, rmEurogamer            , rmChapter     , "ToTheTop"            ); break;
+    default: room = startingRoom;
 }
+sxeasy_play(song)
+if (global.devmode) { SaveCurrentLevel(); }
 </string>
           </argument>
         </arguments>

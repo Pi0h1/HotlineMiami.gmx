@@ -10,15 +10,7 @@
   <persistent>-1</persistent>
   <colour>4194368</colour>
   <showcolour>-1</showcolour>
-  <code>if global.resetstory exit
-global.done=0
-global.phone=0
-global.package=0
-global.level=rmHouse4Middle
-global.pretitle="TENTH CHAPTER"
-global.title="HOT&amp;HEAVY"
-global.sequence=rmSequence11
-global.revisit=0</code>
+  <code>scrInitSequence(10, rmHouse4Middle);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

@@ -538,7 +538,10 @@
       <sprite>sprites\sprFaceDoctor</sprite>
       <sprite>sprites\sprFaceDog</sprite>
       <sprite>sprites\sprFaceDogCorpse</sprite>
-      <sprite>sprites\sprFaceDreamPeople</sprite>
+      <sprite>sprites\sprFaceDreamRooster</sprite>
+      <sprite>sprites\sprFaceDreamHorse</sprite>
+      <sprite>sprites\sprFaceDreamOwl</sprite>
+      <sprite>sprites\sprFaceRooster</sprite>
       <sprite>sprites\sprFaceFatCorpse</sprite>
       <sprite>sprites\sprFaceFilesBig</sprite>
       <sprite>sprites\sprFaceForms</sprite>

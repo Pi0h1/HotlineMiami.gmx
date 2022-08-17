@@ -324,12 +324,12 @@ my_id.messages=0
 if room=rmDream1 {
 my_id.indexspeed=0
 if argument0=0 {
-my_id.sprite=sprFaceDreamPeople
-my_id.index=1
+my_id.sprite=sprFaceDreamHorse
+my_id.index=0
 with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
 my_id.line1[0]="AND WHO DO WE HAVE HERE?"
 my_id.line2[0]=""
 my_id.line1[1]="OH, YOU DON'T KNOW"
@@ -339,12 +339,12 @@ my_id.line2[2]="IT THAT WAY?"
 my_id.messages=2
 }
 if argument0=1 {
-my_id.sprite=sprFaceDreamPeople
+my_id.sprite=sprFaceDreamRooster
 my_id.index=0
 with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
 my_id.line1[0]="BUT I KNOW YOU."
 my_id.line2[0]=""
 my_id.line1[1]="Look at my face."
@@ -354,12 +354,12 @@ my_id.line2[2]=""
 my_id.messages=2
 }
 if argument0=2 {
-my_id.sprite=sprFaceDreamPeople
-my_id.index=2
+my_id.sprite=sprFaceDreamOwl
+my_id.index=0
 with objLight {
 if color=c_red targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamOwl}
 my_id.line1[0]="I don't know you!"
 my_id.line2[0]=""
 my_id.line1[1]="Why are you here?"
@@ -369,12 +369,12 @@ my_id.line2[2]="of mine!"
 my_id.messages=2
 }
 if argument0=3 {
-my_id.sprite=sprFaceDreamPeople
-my_id.index=1
+my_id.sprite=sprFaceDreamHorse
+my_id.index=0
 with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
 my_id.line1[0]="Do you really want me to"
 my_id.line2[0]="reveal who you are?"
 my_id.line1[1]="Knowing oneself means"
@@ -385,12 +385,12 @@ my_id.messages=2
 }
 
 if argument0=4 {
-my_id.sprite=sprFaceDreamPeople
+my_id.sprite=sprFaceDreamRooster
 my_id.index=0
 with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
 my_id.line1[0]="You don't remember me?"
 my_id.line2[0]="I'll give you a clue..."
 my_id.line1[1]="Does April the 3rd mean"
@@ -410,12 +410,12 @@ my_id.messages=4
 if room=rmDream2 {
 my_id.indexspeed=0
 if argument0=0 {
-my_id.sprite=sprFaceDreamPeople
-my_id.index=1
+my_id.sprite=sprFaceDreamHorse
+my_id.index=0
 with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
 my_id.line1[0]="Oh, it's you again..."
 my_id.line2[0]=""
 my_id.line1[1]="It looks like you've been"
@@ -423,12 +423,12 @@ my_id.line2[1]="busy since we last met."
 my_id.messages=1
 }
 if argument0=1 {
-my_id.sprite=sprFaceDreamPeople
+my_id.sprite=sprFaceDreamRooster
 my_id.index=0
 with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
 my_id.line1[0]="I see that you remember me"
 my_id.line2[0]="now. Don't you?"
 my_id.line1[1]="But you still don't know"
@@ -438,12 +438,12 @@ my_id.line2[2]="introduced us, do you?"
 my_id.messages=2
 }
 if argument0=2 {
-my_id.sprite=sprFaceDreamPeople
-my_id.index=2
+my_id.sprite=sprFaceDreamOwl
+my_id.index=0
 with objLight {
 if color=c_red targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamOwl}
 my_id.line1[0]="Why did you come back here?"
 my_id.line2[0]=""
 my_id.line1[1]="You're not a nice person, "
@@ -453,12 +453,12 @@ my_id.line2[2]=""
 my_id.messages=2
 }
 if argument0=3 {
-my_id.sprite=sprFaceDreamPeople
-my_id.index=1
+my_id.sprite=sprFaceDreamHorse
+my_id.index=0
 with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
 my_id.line1[0]="A picture is starting to"
 my_id.line2[0]="take form here..."
 my_id.line1[1]="I wonder if it's accurate."
@@ -471,12 +471,12 @@ my_id.messages=3
 }
 
 if argument0=4 {
-my_id.sprite=sprFaceDreamPeople
+my_id.sprite=sprFaceDreamRooster
 my_id.index=0
 with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
 my_id.line1[0]="I think our time is up..."
 my_id.line2[0]="But we'll meet again."
 my_id.line1[1]="Before you go, here's"
@@ -487,7 +487,7 @@ my_id.line1[3]="Do you like hurting other"
 my_id.line2[3]="people?"
 my_id.line1[4]="Question number two:"
 my_id.line2[4]=""
-my_id.line1[5]="Who are leaving messages"
+my_id.line1[5]="Who is leaving messages"
 my_id.line2[5]="on your answering machine?"
 my_id.line1[6]="Question number three:"
 my_id.line2[6]=""
@@ -510,13 +510,13 @@ my_id.messages=10
 if room=rmDream3 {
 my_id.indexspeed=0
 if argument0=0 {
-my_id.sprite=sprFaceDreamPeople
-my_id.index=1
+my_id.sprite=sprFaceDreamHorse
+my_id.index=0
 with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
 
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
 my_id.line1[0]="So, you came back?"
 my_id.line2[0]=""
 my_id.line1[1]="How are you feeling?"
@@ -526,12 +526,12 @@ my_id.line2[2]="a doctor?"
 my_id.messages=2
 }
 if argument0=1 {
-my_id.sprite=sprFaceDreamPeople
-my_id.index=2
+my_id.sprite=sprFaceDreamOwl
+my_id.index=0
 with objLight {
 if color=c_red targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamOwl}
 my_id.line1[0]="I told you not to come"
 my_id.line2[0]="back here!"
 my_id.line1[1]="I see that my opinion of"
@@ -541,13 +541,13 @@ my_id.line2[2]="here, then I should leave!"
 my_id.messages=2
 }
 if argument0=2 {
-my_id.sprite=sprFaceDreamPeople
+my_id.sprite=sprFaceDreamRooster
 my_id.index=0
 with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
 
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
 my_id.line1[0]="Have you thought about"
 my_id.line2[0]="what I asked you last time?"
 my_id.line1[1]="I'm not here to give you"
@@ -557,12 +557,12 @@ my_id.line2[2]="to offer a man like you."
 my_id.messages=2
 }
 if argument0=3 {
-my_id.sprite=sprFaceDreamPeople
-my_id.index=1
+my_id.sprite=sprFaceDreamHorse
+my_id.index=0
 with objLight {
 if color=c_aqua targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamHorse}
 my_id.line1[0]="If you're not feeling well,"
 my_id.line2[0]="maybe you should rest?"
 my_id.line1[1]="Some things work out best"
@@ -575,12 +575,12 @@ my_id.messages=3
 }
 
 if argument0=4 {
-my_id.sprite=sprFaceDreamPeople
+my_id.sprite=sprFaceDreamRooster
 my_id.index=0
 with objLight {
 if color=c_yellow targetstrength=1 else targetstrength=0
 }
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamRooster}
 
 my_id.line1[0]="Next time we meet will"
 my_id.line2[0]="be the last. "
@@ -604,10 +604,10 @@ my_id.messages=6
 
 if room=rmSequence12c {
 if argument0=0 {
+my_id.sprite=sprFaceRooster
+my_id.index=0
 my_id.indexspeed=0
-my_id.sprite=sprFaceDreamPeople
-my_id.index=3
-with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceDreamPeople}
+with objEffector {image_xscale=1.5 image_yscale=1.5  sprite=sprFaceRooster}
 my_id.line1[0]="Looks like it's only"
 my_id.line2[0]="you and me left now..."
 my_id.line1[1]="I'm sure you know by now,"

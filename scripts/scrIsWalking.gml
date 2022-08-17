@@ -1,8 +1,8 @@
 switch (argument0){
     // Biker
-    case sprBoss2WalkCleaver:   return true; break;
-    case sprBoss2Walk:          return true; break;
-    case sprMCWalkNoHelmet:     return true; break;
+    case sprBikerWalkCleaver:   return true; break;
+    case sprBikerWalkUnarmed:          return true; break;
+    case sprBikerWalkNoHelmet:     return true; break;
     
     // Jacket
     case sprPWalkUnarmed:       return true; break;

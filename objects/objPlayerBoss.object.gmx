@@ -159,7 +159,7 @@ image_speed=speed*0.1
 if state=2 or state=3 {
 global.my_id=id
 with objPlayer {
-if sprite_index=sprBoss2AttackCleaver {
+if sprite_index=sprBikerAttackCleaver {
 if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),global.my_id) global.test=1
 }
 }

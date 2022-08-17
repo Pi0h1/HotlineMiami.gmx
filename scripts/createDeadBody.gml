@@ -20,9 +20,9 @@ if instance_exists(deadBody) {
     if argument0=true 
         {
         if object_index=objPlayerBiker or object_index=objMCChopKill or object_index=objMCKnifeKill or object_index=objMCStompKill or object_index=objPlayerBikerHouse {
-        if deadBody.sprite_index=sprPBackBlunt  deadBody.sprite_index=sprMCBackBlunt
-        if deadBody.sprite_index=sprPFrontBlunt deadBody.sprite_index=sprMCFrontBlunt
-        if deadBody.sprite_index=sprPBackCut    deadBody.sprite_index=sprMCBackCut
+        if deadBody.sprite_index=sprPBackBlunt  deadBody.sprite_index=sprBikerBackBlunt
+        if deadBody.sprite_index=sprPFrontBlunt deadBody.sprite_index=sprBikerFrontBlunt
+        if deadBody.sprite_index=sprPBackCut    deadBody.sprite_index=sprBikerBackCut
             helmet=instance_create(x+lengthdir_x(24,argument3),y+lengthdir_y(24,argument3),objMCHelmet)
             helmet.direction=argument3-40+random(80)
             helmet.speed=1.5+random(1)

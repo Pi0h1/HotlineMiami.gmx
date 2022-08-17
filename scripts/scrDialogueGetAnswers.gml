@@ -8,9 +8,9 @@ line1[1]="And you're one of our"
 line2[1]="pawns aren't you?"
 line1[2]="I guess this means"
 line2[2]="game over..."
-face[0]=sprJonatanFace
-face[1]=sprDennisFace
-face[2]=sprJonatanFace
+face[0]=sprFaceJonatan
+face[1]=sprFaceDennis
+face[2]=sprFaceJonatan
 messages=2
 } 
 
@@ -23,10 +23,10 @@ line1[2]="Make a guess, asshole!"
 line2[2]=""
 line1[3]="Not that it makes any"
 line2[3]="difference now, does it?"
-face[0]=sprDennisFace
-face[1]=sprJonatanFace
-face[2]=sprDennisFace
-face[3]=sprJonatanFace
+face[0]=sprFaceDennis
+face[1]=sprFaceJonatan
+face[2]=sprFaceDennis
+face[3]=sprFaceJonatan
 messages=3
 }
 
@@ -39,9 +39,9 @@ line1[1]="We're independent,"
 line2[1]="we did it all ourselves!"
 line1[2]="Hard to believe isn't it?"
 line2[2]=""
-face[0]=sprDennisFace
-face[1]=sprJonatanFace
-face[2]=sprDennisFace
+face[0]=sprFaceDennis
+face[1]=sprFaceJonatan
+face[2]=sprFaceDennis
 message=2
 }
 
@@ -54,9 +54,9 @@ line1[1]="What does it look like"
 line2[1]="to you, asshole?"
 line1[2]="You don't know anything,"
 line2[2]="do you?"
-face[0]=sprJonatanFace
-face[1]=sprDennisFace
-face[2]=sprJonatanFace
+face[0]=sprFaceJonatan
+face[1]=sprFaceDennis
+face[2]=sprFaceJonatan
 messages=2
 }
 
@@ -69,9 +69,9 @@ line1[1]="You mean you haven't"
 line2[1]="enjoyed it?"
 line1[2]="That's a shame, haha!"
 line2[2]=""
-face[0]=sprJonatanFace
-face[1]=sprDennisFace
-face[2]=sprJonatanFace
+face[0]=sprFaceJonatan
+face[1]=sprFaceDennis
+face[2]=sprFaceJonatan
 messages=2
 }
 
@@ -84,10 +84,10 @@ line1[2]="You've done far worse things"
 line2[2]="than we have, haven't you?"
 line1[3]="Besides, Do you know how"
 line2[3]="much money we're making?"
-face[0]=sprDennisFace
-face[1]=sprJonatanFace
-face[2]=sprJonatanFace
-face[3]=sprDennisFace
+face[0]=sprFaceDennis
+face[1]=sprFaceJonatan
+face[2]=sprFaceJonatan
+face[3]=sprFaceDennis
 messages=3
 }
 
@@ -100,9 +100,9 @@ line1[1]="They were all scum anyway,"
 line2[1]="weren't they?"
 line1[2]="You think they deserved"
 line2[2]="to live? Do you?"
-face[0]=sprDennisFace
-face[1]=sprJonatanFace
-face[2]=sprDennisFace
+face[0]=sprFaceDennis
+face[1]=sprFaceJonatan
+face[2]=sprFaceDennis
 messages=2
 }
 
@@ -113,9 +113,9 @@ line1[1]="If you don't understand"
 line2[1]="why we're doing this..."
 line1[2]="Then why should we tell you?"
 line2[2]=""
-face[0]=sprJonatanFace
-face[1]=sprDennisFace
-face[2]=sprDennisFace
+face[0]=sprFaceJonatan
+face[1]=sprFaceDennis
+face[2]=sprFaceDennis
 messages=2
 }
 
@@ -128,10 +128,10 @@ line1[2]="I think we're through"
 line2[2]="with your questions!"
 line1[3]="Yeah, your move, creep!"
 line2[3]=""
-face[0]=sprDennisFace
-face[1]=sprJonatanFace
-face[2]=sprJonatanFace
-face[3]=sprDennisFace
+face[0]=sprFaceDennis
+face[1]=sprFaceJonatan
+face[2]=sprFaceJonatan
+face[3]=sprFaceDennis
 messages=3
 }
 
@@ -140,7 +140,7 @@ line1[0]="How about 'fuck you'?"
 line2[0]=""
 line1[1]="Yeah, fuck you!"
 line2[1]=""
-face[0]=sprDennisFace
-face[1]=sprJonatanFace
+face[0]=sprFaceDennis
+face[1]=sprFaceJonatan
 messages=1
 }

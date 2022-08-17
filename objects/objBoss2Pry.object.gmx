@@ -82,7 +82,7 @@ else {
 my_id=instance_create(x+lengthdir_x(14,image_angle+135),y+lengthdir_y(14,image_angle+135),objBoss2Crawl)
 my_id.image_angle=image_angle
 my_id2=instance_create(x,y,objMCHelmet)
-my_id2.sprite_index=sprHelmetBroken
+my_id2.sprite_index=sprBikerHelmetBroken
 if objPlayer.left=1 my_id2.direction=image_angle+70+random(40) else my_id2.direction=image_angle-70-random(40)
 my_id2.speed=2+random(1)
 

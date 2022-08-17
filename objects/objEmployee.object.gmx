@@ -131,7 +131,7 @@ direction=scrRotate(direction,point_direction(x,y,objPlayer.x,objPlayer.y),6)
 global.my_id=id
 global.test=0
 with objPlayer {
-if sprite_index=sprBoss2AttackCleaver {
+if sprite_index=sprBikerAttackCleaver {
 if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),global.my_id) or place_meeting(x,y,global.my_id) global.test=1
 }
 }

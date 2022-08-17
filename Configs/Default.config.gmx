@@ -500,9 +500,14 @@
     <option_textureGroup8_parent>&lt;none&gt;</option_textureGroup8_parent>
     <option_textureGroup8_scaled>0</option_textureGroup8_scaled>
     <option_textureGroup8_targets>9223372036854775807</option_textureGroup8_targets>
-    <option_textureGroup_count>9</option_textureGroup_count>
+    <option_textureGroup9_border>2</option_textureGroup9_border>
+    <option_textureGroup9_nocropping>0</option_textureGroup9_nocropping>
+    <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
+    <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
+    <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
+    <option_textureGroup_count>10</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
-    <option_textureGroups1>Player</option_textureGroups1>
+    <option_textureGroups1>Player_Jacket</option_textureGroups1>
     <option_textureGroups2>NPCs</option_textureGroups2>
     <option_textureGroups3>Faces</option_textureGroups3>
     <option_textureGroups4>Backgrounds</option_textureGroups4>
@@ -510,6 +515,7 @@
     <option_textureGroups6>Walls</option_textureGroups6>
     <option_textureGroups7>UI</option_textureGroups7>
     <option_textureGroups8>Weapons</option_textureGroups8>
+    <option_textureGroups9>Player_Biker</option_textureGroups9>
     <option_tizen_app_id>http://yourdomain/HotlineMiamiStudio</option_tizen_app_id>
     <option_tizen_build_version>0</option_tizen_build_version>
     <option_tizen_display_name>HotlineMiamiStudio</option_tizen_display_name>

@@ -3,6 +3,7 @@ switch (argument0) {
     case wpnAttackBat          : return true ; break;
     case sprPAttackCrowbar     : return true ; break;
     case sprPAttackPan         : return true ; break;
+    // case sprPAttackBag         : return true ; break;
     case sprPAttackPot         : return true ; break;
     case sprPAttackBoilingPot  : return true ; break;
     case sprPAttackMachete     : return true ; break;

@@ -33,7 +33,7 @@ phonex=0
 blackx=15
 line1x=0
 line2x=0
-index=sprBiker
+index=sprFaceBiker
 start=0
 stop=0
 question=1
@@ -51,7 +51,7 @@ currentquestion=0
 
 fade=0
 
-sprite=sprDialogueFaces
+sprite=sprFaceDialogue
 change=0
 current=0
 select=-1
@@ -83,7 +83,7 @@ image_yscale=1.5
             <kind>1</kind>
             <string>if stop=1 {
 if blackx&gt;15 {blackx-=2.5} else 
-{objEffector.blackx=blackx with objPlayerBiker {my_id=instance_create(x,y,objPlayerBiker) my_id.sprite_index=sprBoss2Walk instance_destroy()} global.done=1 instance_create(x,y,objLevelComplete)  instance_destroy()}
+{objEffector.blackx=blackx with objPlayerBiker {my_id=instance_create(x,y,objPlayerBiker) my_id.sprite_index=sprBikerWalkUnarmed instance_destroy()} global.done=1 instance_create(x,y,objLevelComplete)  instance_destroy()}
 }
 </string>
           </argument>
@@ -155,7 +155,7 @@ mousey=display_mouse_get_y()*(256/display_get_height())
 
 if change=1 {
 if phonex&gt;0 phonex-=10 else {
-if question=1 index=sprBiker else {
+if question=1 index=sprFaceBiker else {
 index=face[current]
 }
 change=0

@@ -87,7 +87,7 @@ if room=rmJanitors leveltitle="North 87th Place"
 }
 
 //Cutscenes
-sprite=sprPhone
+sprite=sprFacePhone
 if room=rmSequence1 or room=rmSequence2 or room=rmSequence3 or room=rmSequence4 or room=rmSequence5 or room=rmSequence6 or room=rmSequence7 or room=rmSequence8 or room=rmSequence9 or room=rmSequence10 or room=rmSequence11 or room=rmSequence12 or room=rmSequence14 or room=rmHospitalTopFloor or room=rmMCBar or room=rmMCSequence2 or room=rmMCSequence3 or room=rmMCSequence4 {scrShowDate(room) start=1} else start=0
 if room=rmSequence13Downstairs start=1
 lastbrus=0

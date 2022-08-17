@@ -98,7 +98,7 @@ global.revisit=0</code>
     <instance objName="objWindowFrameH" x="128" y="32" name="inst_BDE60F65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowFrameH" x="160" y="32" name="inst_E9EB5C24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTransitioner" x="392" y="316" name="inst_DE00BA2F" locked="0" code="addx=-1&#xA;addy=0&#xA;nextroom=room_next(room)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerBikerHouse" x="144" y="88" name="inst_4C4F43FB" locked="0" code="sprite_index=sprMCWalkNoHelmet" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerBikerHouse" x="144" y="88" name="inst_4C4F43FB" locked="0" code="sprite_index=sprBikerWalkNoHelmet&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCyanPlant" x="336" y="152" name="inst_B2BF787D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objWallHeavyV" x="320" y="32" name="inst_C44C1F10" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="288" y="160" name="inst_CFF3D05C" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>

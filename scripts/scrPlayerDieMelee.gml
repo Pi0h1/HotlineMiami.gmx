@@ -18,7 +18,7 @@ switch (global.my_id.sprite_index){
     case sprEAttackKnife:       dieFromCut = true; break;
     case sprPantherHitback:     dieFromCut = true; break;
     case sprBodyguardAttack:    dieFromCut = true; break;
-    case sprBoss2AttackCleaver: dieFromCut = true; break;
+    case sprBikerAttackCleaver: dieFromCut = true; break;
     case sprPInspectorAttack:   dieFromElectricity = true; break;
     default: dieFromBlunt = true;
 }

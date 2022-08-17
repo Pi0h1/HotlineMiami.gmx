@@ -53,7 +53,7 @@ global.executiony=y</string>
           <argument>
             <kind>1</kind>
             <string>if state=0 {
-if image_index&lt;9 image_index+=0.2 else {state=1 sprite_index=sprBoss2Walk}
+if image_index&lt;9 image_index+=0.2 else {state=1 sprite_index=sprBikerWalkUnarmed}
 if image_index&gt;=5 {
 with objPlayerBoss {
 if state=5 {
@@ -88,7 +88,7 @@ legindex=0
 
 if state=2 {
 if !instance_exists(objPhoneConversation) {
-if sprite_index=sprBoss2Walk {
+if sprite_index=sprBikerWalkUnarmed {
 sprite_index=sprBikerKick
 image_index=0
 }

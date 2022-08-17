@@ -75,7 +75,7 @@ global.talked=0</string>
 if place_meeting(x+lengthdir_x(32,90),y+lengthdir_y(32,90),objPlayer){
 objPlayer.image_index=0
 objPlayer.active=0
-objPlayer.sprite_index=sprMCPickUpPhone
+objPlayer.sprite_index=sprBikerPickUpPhone
 sprite_index=sprPimpPhoneOff
 scrGetMessage(0)
 global.talked=1

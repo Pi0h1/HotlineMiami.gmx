@@ -86,7 +86,7 @@ scrMoveSolidOff()
 exit
 }
 if instance_exists(objPlayer) {
-if objPlayer.sprite_index=sprPAttackClub or objPlayer.sprite_index=sprPAttackCrowbar or objPlayer.sprite_index=sprPAttackSledge or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprBoss2AttackCleaver or objPlayer.sprite_index=sprPAttackSledge or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=wpnAttackBat or objPlayer.sprite_index=sprPAttackPipe or objPlayer.sprite_index=sprPAttackKnife or objPlayer.sprite_index=sprPAttackSword {
+if objPlayer.sprite_index=sprPAttackClub or objPlayer.sprite_index=sprPAttackCrowbar or objPlayer.sprite_index=sprPAttackSledge or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprBikerAttackCleaver or objPlayer.sprite_index=sprPAttackSledge or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=wpnAttackBat or objPlayer.sprite_index=sprPAttackPipe or objPlayer.sprite_index=sprPAttackKnife or objPlayer.sprite_index=sprPAttackSword {
 addx=lengthdir_x(12,objPlayer.dir)
 addy=lengthdir_y(12,objPlayer.dir)
 objPlayer.x+=addx

@@ -10,8 +10,8 @@
   <persistent>-1</persistent>
   <colour>8421440</colour>
   <showcolour>-1</showcolour>
-  <code>if instance_exists(objEffectorHouse) with objEffectorHouse instance_destroy();
-if global.resetstory exit
+  <code>//if instance_exists(objEffectorHouse) with objEffectorHouse instance_destroy();
+//if global.resetstory exit
 global.done=0</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>

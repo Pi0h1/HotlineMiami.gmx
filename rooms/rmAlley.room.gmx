@@ -10,7 +10,7 @@
   <persistent>-1</persistent>
   <colour>8421440</colour>
   <showcolour>-1</showcolour>
-  <code>if global.resetstory exit
+  <code>//if global.resetstory exit
 global.done=0
 global.phone=0
 global.package=0</code>

@@ -1,7 +1,7 @@
 if isLookingFuther {
-    // George Mask (lets you look twice as further)
-    if global.maskindex = 7 factor = 2;
-    else factor = 1;
+
+    if global.maskindex = 7 {factor = 2} // George Mask multiplier
+    else {factor = 1;} // regular
   
     viewx = objPlayer.x + ((display_mouse_get_x() - display_get_width() * 0.5) * (view_wview[0] / display_get_width())) * factor;
     viewy = objPlayer.y + ((display_mouse_get_y() - display_get_height() * 0.5) * (view_hview[0] / display_get_height())) * factor;
@@ -30,6 +30,7 @@ if isLookingFuther {
         view_angle[0] = lengthdir_y(vdist * (1 / 160), vdir * 2);
     }  
 }
+
 xview = view_xview[0];
 yview = view_yview[0];
 

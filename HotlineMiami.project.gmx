@@ -1713,6 +1713,7 @@
       <sprite>sprites\sprCleaverDrop</sprite>
       <sprite>sprites\sprBigWeapons</sprite>
       <sprite>sprites\sprWeapons</sprite>
+      <sprite>sprites\sprWeaponsOld</sprite>
       <sprite>sprites\sprThrowWeapons</sprite>
       <sprite>sprites\sprCellKeys</sprite>
       <sprite>sprites\sprKeycard</sprite>
@@ -1929,8 +1930,8 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\Credits.gml</script>
     <script>scripts\Game_Information.gml</script>
-    <script>scripts\Game_Info_Translated.gml</script>
     <script>scripts\GlobalVariables.gml</script>
     <script>scripts\DiscordUpdateInfo.gml</script>
     <scripts name="Generic Scripts">
@@ -2053,6 +2054,7 @@
       <script>scripts\scrHoboStep.gml</script>
       <script>scripts\scrHoboGetWeapon.gml</script>
       <scripts name="Police">
+        <script>scripts\scrPoliceInit.gml</script>
         <script>scripts\scrPolicePatrolStep.gml</script>
         <script>scripts\scrPolicePatrolInit.gml</script>
         <script>scripts\scrIsPolice.gml</script>
@@ -2203,8 +2205,11 @@
       <script>scripts\scrPointsDraw.gml</script>
       <script>scripts\scrDestroyWindowV.gml</script>
       <script>scripts\scrDestroyWindowH.gml</script>
+      <script>scripts\DrawObjectsVariables.gml</script>
     </scripts>
     <scripts name="Systems">
+      <script>scripts\scrInitLevelTitles.gml</script>
+      <script>scripts\scrInitSequence.gml</script>
       <scripts name="Audio">
         <scripts name="Internal">
           <script>scripts\audio_play.gml</script>
@@ -3020,13 +3025,9 @@
       <script>scripts\ReloadCurrentLevel.gml</script>
       <script>scripts\SaveStringToFile.gml</script>
       <script>scripts\LoadJSONFromFile.gml</script>
+      <script>scripts\QuitGame.gml</script>
+      <script>scripts\EraseFile.gml</script>
     </scripts>
-    <script>scripts\DrawObjectsVariables.gml</script>
-    <script>scripts\QuitGame.gml</script>
-    <script>scripts\scrPoliceInit.gml</script>
-    <script>scripts\scrInitSequence.gml</script>
-    <script>scripts\scrInitLevelTitles.gml</script>
-    <script>scripts\EraseFile.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PushEd">

@@ -1,3 +1,4 @@
+/*
 global.roomlist=ds_list_create()
 ds_list_add(global.roomlist,rmSequence1)
 ds_list_add(global.roomlist,rmSequence1Downstairs)
@@ -9,3 +10,4 @@ ds_list_add(global.roomlist,rmApartment2Entrance)
 ds_list_add(global.roomlist,rmApartment2Upstairs)
 draw_clear(c_black)
 room=ds_list_find_value(global.roomlist,0)
+*/

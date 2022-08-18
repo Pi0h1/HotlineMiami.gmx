@@ -1,5 +1,5 @@
 /// scrInitSequence(chapter, level)
-if global.resetstory exit
+//if global.resetstory exit
 
 var whatLevelIsThis = argument0;
 

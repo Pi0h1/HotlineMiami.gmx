@@ -104,7 +104,7 @@ if !place_meeting(x,y,objPlayerCar)
             <string>/// Logic
 playerEffects();
 checkAreaClear();
-
+keyLookFurther = keyboard_check_direct(vk_shift);
 isLookingFuther = keyLookFurther;
 
 global.test = 0;

@@ -145,7 +145,7 @@ draw_circle_color(view_wport/2,view_hport/2,view_wport*0.75,c_black,make_color_h
 
 draw_set_blend_mode(bm_add)
 noiseindex+=0.25
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
+d3d_set_projection_ortho(0,0,400,256,0)
 draw_sprite_ext(sprNoise,noiseindex,0,0,1,1,0,merge_color(c_black,c_ltgray,dizziness*0.5),1)
 draw_set_blend_mode(bm_normal)
 with objEffectorHospital {
@@ -262,7 +262,7 @@ draw_text(view_wview[0]/2+1,view_hview[0]/2+1,text)
 draw_set_color(c_white)
 draw_text(view_wview[0]/2,view_hview[0]/2,text)
 draw_set_alpha(1)
-//d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
+d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 }
 scrDrawFilter();
 }

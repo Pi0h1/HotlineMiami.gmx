@@ -52,7 +52,6 @@
   </views>
   <instances>
     <instance objName="objPlayerJacket" x="256" y="256" name="inst_3E9988E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMaskMenu" x="32" y="-32" name="inst_5A3061A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfacer" x="64" y="-32" name="inst_C0A6DD8D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="0" y="128" name="inst_518F1529" locked="0" code="" scaleX="21" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="0" y="0" name="inst_0CEF804D" locked="0" code="" scaleX="1" scaleY="57" colour="4294967295" rotation="0"/>
@@ -78,6 +77,7 @@
     <instance objName="objWallBrickV" x="960" y="608" name="inst_ABDC9A57" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="864" y="704" name="inst_CE17A593" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallBrickV" x="704" y="704" name="inst_E4105FAD" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWaterShaderTest" x="168" y="552" name="inst_D82403C4" locked="0" code="" scaleX="16.25" scaleY="6.5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlStudio1" x="112" y="224" w="16" h="16" xo="820" yo="28" id="10126531" name="inst_74E5F0EF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

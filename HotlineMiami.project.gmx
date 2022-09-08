@@ -260,6 +260,8 @@
           <sprites name="Snake">
             <sprite>sprites\sprSnakeHead</sprite>
             <sprite>sprites\Snake_WalkPlayerUnarmed</sprite>
+            <sprite>sprites\Snake_WalkPlayerAim</sprite>
+            <sprite>sprites\Snake_WalkPlayerGangster</sprite>
             <sprite>sprites\Snake_sprPLegs</sprite>
           </sprites>
         </sprites>
@@ -1915,6 +1917,9 @@
     <sprites name="Example">
       <sprite>sprites\sprSmiley</sprite>
     </sprites>
+    <sprite>sprites\bgWater</sprite>
+    <sprite>sprites\bgWaterMap</sprite>
+    <sprite>sprites\sprWaterPlacementMaskA</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tlStudio2</background>
@@ -3038,6 +3043,7 @@
       <shader type="GLSLES">shaders\PEd_shInstHighlight.shader</shader>
       <shader type="GLSLES">shaders\PEd_shOutline.shader</shader>
     </shaders>
+    <shader type="GLSLES">shaders\shdWater.shader</shader>
   </shaders>
   <fonts name="fonts">
     <fonts name="PushEd">
@@ -4111,6 +4117,8 @@
     <object>objects\objTest</object>
     <object>objects\objCurrentRoom</object>
     <object>objects\objInitError</object>
+    <object>objects\objWaterShaderTest</object>
+    <object>objects\objWaterSkewedRect</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmInit</room>

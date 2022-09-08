@@ -1,4 +1,6 @@
 ///txtMessage(x,y,string,font,scale,alpha)
+var enableRound=0;
+var rectangleAlpha=1;
 var scale=argument4;
 var angle=0;
 
@@ -10,14 +12,14 @@ scrDrawRectangle(
 argument0 - (rectangleWidth*0.75), argument1 + (rectangleHeight), //x1,y1
 argument0 + (rectangleWidth*0.75), argument1 - (rectangleHeight), //x2,y2
 c_black,
-false
+false,enableRound,rectangleAlpha
 )
 
 scrDrawRectangle(
 argument0 - (rectangleWidth*0.75), argument1 + (rectangleHeight), //x1,y1
 argument0 + (rectangleWidth*0.75), argument1 - (rectangleHeight*0.5), //x2,y2
 c_ltgray,
-false
+false,enableRound,rectangleAlpha
 )
 draw_set_alpha(1)
 

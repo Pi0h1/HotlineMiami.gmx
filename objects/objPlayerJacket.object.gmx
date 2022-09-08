@@ -49,7 +49,7 @@ scrInitPlayer();
           <argument>
             <kind>1</kind>
             <string>/// Load character sprites
-charSnake();
+charJacket();
 </string>
           </argument>
         </arguments>

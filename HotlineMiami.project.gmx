@@ -3082,6 +3082,7 @@
     </fonts>
     <font>fonts\fntHD</font>
     <font>fonts\fntDebug</font>
+    <font>fonts\fntRoboto</font>
   </fonts>
   <objects name="objects">
     <objects name="NPCs">

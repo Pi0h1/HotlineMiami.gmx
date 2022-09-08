@@ -1927,6 +1927,7 @@
     <backgrounds name="PushEd">
       <background>background\PEd_bgrDef</background>
     </backgrounds>
+    <background>background\bgGrass</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -2023,6 +2024,7 @@
         <script>scripts\scrDrawConversation.gml</script>
         <script>scripts\scrSetMessage.gml</script>
       </scripts>
+      <script>scripts\scrRestart.gml</script>
       <script>scripts\scrCheckMissionComplete.gml</script>
       <script>scripts\scrCarNextRoom.gml</script>
       <script>scripts\scrCheckHitBack.gml</script>
@@ -3028,6 +3030,7 @@
       <script>scripts\QuitGame.gml</script>
       <script>scripts\EraseFile.gml</script>
     </scripts>
+    <script>scripts\restartPlayerPosition.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PushEd">
@@ -4106,6 +4109,8 @@
     <object>objects\objSpawnpoint</object>
     <object>objects\objCursorMouse</object>
     <object>objects\objTest</object>
+    <object>objects\objCurrentRoom</object>
+    <object>objects\objInitError</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmInit</room>
@@ -4315,6 +4320,7 @@
       <room>rooms\PEd_rmEditor</room>
       <room>rooms\PEd_rmPlay</room>
     </rooms>
+    <room>rooms\rmConstruct</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

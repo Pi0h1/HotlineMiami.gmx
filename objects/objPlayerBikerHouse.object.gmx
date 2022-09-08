@@ -109,7 +109,7 @@ legindex+=0.4
 exit 
 }
 
-scrPlayerMove()
+scrPlayerMove(3.5,1,1)
 }
 
 if sprite_index=sprBikerWalkNoHelmet and global.done=1 {

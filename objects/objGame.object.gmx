@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// If dev mode is active; what level should be tested?
-testLevel = "FULL HOUSE";
+testLevel = rmConstruct;
 </string>
           </argument>
         </arguments>

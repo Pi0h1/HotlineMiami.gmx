@@ -53,6 +53,7 @@
   <instances>
     <instance objName="obj_appsurf_dynamic" x="-16" y="-16" name="inst_203B256A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGame" x="32" y="80" name="inst_50D26D1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objInitError" x="192" y="112" name="inst_4090F03D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

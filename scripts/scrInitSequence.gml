@@ -1,5 +1,5 @@
 /// scrInitSequence(chapter, level)
-//if global.resetstory exit
+if global.resetstory exit
 
 var whatLevelIsThis = argument0;
 
@@ -15,5 +15,5 @@ global.title    = global.levelTitle[whatLevelIsThis];
 if room = rmSequence12b {
     global.sequence = rmSequence12;
 } else {
-    global.sequence = room_get_name(room);
+    global.sequence = room;
 }

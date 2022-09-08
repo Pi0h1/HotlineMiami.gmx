@@ -6,7 +6,9 @@
 /*  The following variables are original to https://github.com/Pi0h1/HotlineMiami.gmx;
     Therefore not present in vanilla Hotline Miami. */
 //======================================================================================//
-    global.devmode      = false;
+    global.PlayerStartingPointX = 0;
+    global.PlayerStartingPointY = 0;
+    global.devmode      = true;
     global.spawnObject  = 0;
     global.playerIndex  = 0;
     global.depthDeath   = 0;

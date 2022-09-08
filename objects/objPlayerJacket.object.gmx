@@ -143,7 +143,14 @@ gameplayCamera();
           <argument>
             <kind>1</kind>
             <string>/// Movement
-scrPlayerMove();
+
+if global.maskindex=5               {playerSpeed = 3.5} // Graham mask
+if global.maskindex=16              {playerSpeed = 4} // Brandon mask
+if global.maskindex=20              {playerMoveScale=-1} // Nigel mask
+if sprite_index=sprPWalkHospital    {playerSpeed = 1.5}
+if sprite_index=sprPWalkGirlfriend  {playerSpeed = 1.5}
+
+scrPlayerMove(playerSpeed,playerFactor,playerMoveScale);
 </string>
           </argument>
         </arguments>
@@ -577,7 +584,7 @@ scrPlayerAttack();
 if room=rmTutorial clear = 1
 if global.paused=1 { exit}
 if !instance_exists(objEffector) instance_create(x,y,objEffector)
-if !instance_exists(objBackgroundColor) instance_create(x,y,objBackgroundColor)
+//if !instance_exists(objBackgroundColor) instance_create(x,y,objBackgroundColor)
 if !instance_exists(objSurfacer) instance_create(x,y,objSurfacer)
 if persistent=1 {
 view_xview[0]=xview

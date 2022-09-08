@@ -1,5 +1,11 @@
 //  Initializes player.
 //  ANY player.
+global.PlayerStartingPointX = x;
+global.PlayerStartingPointY = y;
+
+playerSpeed = 3
+playerFactor = 1
+playerMoveScale = 1
 keyLookFurther = keyboard_check_direct(vk_shift);
 armlength = 0
 goddir = 0

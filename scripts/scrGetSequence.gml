@@ -1,3 +1,6 @@
+/// scrGetSequence(sequence)
+
+// To do: For the love of god turn this into a switch statement.
 if argument0=rmSequence1 {global.sequence=rmSequence2 return rmStore1}
 if argument0=rmSequence2 {global.sequence=rmSequence3 return rmPizzaHut1}
 if argument0=rmSequence3 {global.sequence=rmSequence4 return rmVideoStore1}
@@ -18,4 +21,4 @@ if argument0=rmMCSequence2 {global.sequence=rmMCSequence3 song="ItsSafeNow.mp3" 
 if argument0=rmMCSequence3 {global.sequence=rmMCSequence4 song="ItsSafeNow.mp3" return global.sequence}
 if argument0=rmMCSequence4 {global.sequence=rmBikeEnding song="ANewMorning.mp3" return global.sequence}
 if argument0=rmChapter {global.sequence=rmMenu song=working_directory+"\HorseSteppin.mp3" return global.sequence}
-//if argument0=rmChapter {global.sequence=rmMenu song=working_directory+"\HorseSteppin.mp3" return global.sequence}
+return rmConstruct;

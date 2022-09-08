@@ -247,7 +247,7 @@ draw_set_blend_mode(bm_subtract)
 draw_rectangle_color(-10,-10,view_wview[0]+10,view_hview[0]+10,color2,color1,color1,color2,0)
 draw_set_blend_mode(bm_normal)
 } else {fade=0 if restart=1 {sxeasy_stop(1) sxeasy_setVolume(0) game_restart()//sxeasy_play(working_directory+"\HorseSteppin.mp3"); room=rmMenu
-} else {if next=1 {if newsong=1 {sxeasy_stop(1) if room=rmDream1 sxeasy_setVolume(0) sxeasy_play(song);} room=nextroom} else {LoadGameState()}}}
+} else {if next=1 {if newsong=1 {sxeasy_stop(1) if room=rmDream1 sxeasy_setVolume(0) sxeasy_play(song);} room=nextroom} else {scrRestart();}}}
 }
 coldir+=1
 if show_date=1 {

@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if surface_exists(global.surf1) surface_free(global.surf1)
+            <string>thingHasUnlocked=false;
+gunHasUnlocked=false;
+if surface_exists(global.surf1) surface_free(global.surf1)
 global.surf1=-1
 song=working_directory+"\Daisuke.mp3"
 bonuses=""
@@ -241,7 +243,7 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>/// D3D Projection Init
 dir2+=0.25
 color2=make_color_hsv(0,255,15)
 color1=merge_color(c_yellow,merge_color(merge_color(c_fuchsia,c_red,0.5+lengthdir_x(0.5,dir2*3.12)),c_maroon,0.125+lengthdir_y(0.125,dir2*1.73)),0.5+lengthdir_y(0.5,dir2*1.73))
@@ -286,43 +288,89 @@ draw_set_alpha(1)
 
 d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 view_angle[0]=lengthdir_y(2,dir*2.33)
-if fade=0 {
-if c_amount&lt;180 {
-c_amount+=10
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color1,color2,color2,color1,0)
-draw_set_blend_mode(bm_normal)
-}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Fading
+if fade = 0 {
+    if c_amount &lt; 180 {
+        c_amount += 10;
+        color1 = merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
+        if c_amount &gt; 90 color2 = merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
+        draw_set_blend_mode(bm_subtract)
+        draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color1,color2,color2,color1,0)
+        draw_set_blend_mode(bm_normal)
+    }
 }
 
 if fade=1 {
-if c_amount&gt;0  {
-if (global.myscore&gt;=real(string_digits(parscore)) and global.masks[global.currentmask]=0) or global.newguns&gt;0 or global.newmasks&gt;0 nothing=1 else sxeasy_setVolume(c_amount*(1/180))
-c_amount-=5
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0)
-draw_set_blend_mode(bm_normal)
-} else {
-global.levels[scrGetCurrentLevel()]=1
-if (global.myscore&gt;=real(string_digits(parscore)) and global.masks[global.currentmask]=0 and scrGradeToNumber(lastgrade)&gt;=7) or global.newmasks&gt;0 {next=rmUnlock} else {if global.newguns&gt;0 next=rmWeaponUnlock else next=scrGetSequence(global.sequence)}
-ds_list_clear(global.bonuslist)
-if next=rmUnlock or next=rmWeaponUnlock nothing=1 else {
-sxeasy_stop(1) 
-sxeasy_setVolume(0) 
-sxeasy_play(song)
-scrResetScore() 
-scrSaveUnlocked()
+    if c_amount &gt; 0  {
+        if (global.myscore&gt;=real(string_digits(parscore)) and global.masks[global.currentmask] = 0) or global.newguns &gt; 0 or global.newmasks &gt; 0 nothing = 1 else sxeasy_setVolume(c_amount*(1/180))
+        c_amount-=5
+        color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
+        if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
+        draw_set_blend_mode(bm_subtract);
+        draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0);
+        draw_set_blend_mode(bm_normal);
+    } else {
+        global.levels[scrGetCurrentLevel()]=1;
+        if (global.myscore &gt;= real(string_digits(parscore)) and global.masks[global.currentmask]=0 and scrGradeToNumber(lastgrade) &gt;= 7){
+            thingHasUnlocked=true;
+        }
+        if global.newmasks &gt; 0 {thingHasUnlocked=true;}
+        if global.newguns &gt; 0 {gunHasUnlocked=true;}
+        next=scrGetSequence(global.sequence);
+        if thingHasUnlocked {next=rmUnlock;}
+        if gunHasUnlocked {next=rmWeaponUnlock;}
+        ds_list_clear(global.bonuslist);
+        if next=rmUnlock or next=rmWeaponUnlock {} else {
+            sxeasy_stop(1) ;
+            sxeasy_setVolume(0);
+            sxeasy_play(song);
+            scrResetScore();
+            scrSaveUnlocked();
+        }
+        room_goto(next);
+    }
 }
-room_goto(next)
-}
-
-}
-
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// D3D Projection ends
 
 d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 draw_set_color(c_black)

@@ -10,6 +10,7 @@ if (global.useJson){
     LoadState_Weapons();
     LoadState_Misc();
     DestroyTheseObjects();
+    show_debug_message("Loaded game state from JSON files")
 } else {
     game_load(file); // This is vanilla Hotline Miami's method
     show_debug_message("Loaded game state using game_load from " + string(file))

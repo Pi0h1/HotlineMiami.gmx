@@ -117,6 +117,7 @@ global.done=0</code>
     <instance objName="objSubwayBench" x="196" y="427" name="inst_23BFD92F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="objSubwayBench" x="404" y="328" name="inst_04BDFC81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="objSubwayBench" x="404" y="280" name="inst_37F07756" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="objBackgroundColor" x="8" y="16" name="inst_CC1B9CDF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTilesBackUp" x="192" y="192" w="16" h="16" xo="128" yo="48" id="10010546" name="tile_2610D01E" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

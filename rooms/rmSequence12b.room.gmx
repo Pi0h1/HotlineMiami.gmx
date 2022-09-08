@@ -55,7 +55,7 @@
     <instance objName="objShadowH" x="400" y="40" name="inst_E4CCFEB5" locked="0" code="image_xscale=128/16&#xA;image_yscale=44/16&#xA;color1=c_ltgray&#xA;color2=c_gray&#xA;add=0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShadowH" x="400" y="100" name="inst_EDAC3754" locked="0" code="image_xscale=128/16&#xA;image_yscale=44/16&#xA;color1=c_black&#xA;color2=c_gray&#xA;add=0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfacer" x="24" y="16" name="inst_34A301C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGirlfriendDead" x="356" y="374" name="inst_29108001" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGirlfriendDead" x="320" y="376" name="inst_29108001" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="objSink" x="376" y="364" name="inst_A871986D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLaundryBasket" x="372" y="344" name="inst_887EF3C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objChair" x="552" y="248" name="inst_08F16CC3" locked="0" code="image_angle=random(20)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

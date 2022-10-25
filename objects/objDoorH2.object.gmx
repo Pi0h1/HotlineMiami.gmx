@@ -70,6 +70,38 @@ if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objPlayer">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*if abs(swingspeed)&gt;0 exit
+if image_angle&lt;-1 {swingspeed=1 exit}
+if image_angle&gt;1 {swingspeed=-1 exit}*/
+if solid=1 exit
+swinger=1
+if abs(swingspeed)&gt;3.5 exit
+if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
+if x&lt;other.x and other.y&lt;y {swingspeed=8 exit}
+if x&lt;other.x and other.y&gt;y {swingspeed=-8 exit}
+if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=8 else swingspeed=-8
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objEnemy">
       <action>
         <libid>1</libid>
@@ -151,38 +183,6 @@ if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
 if x&lt;other.x and other.y&lt;y {swingspeed=8 exit}
 if x&lt;other.x and other.y&gt;y {swingspeed=-8 exit}
 if other.y&lt;y+lengthdir_y(32,image_angle-180) swingspeed=8 else swingspeed=-8
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objPlayer">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if abs(swingspeed)&gt;0 exit
-if image_angle&lt;-1 {swingspeed=1 exit}
-if image_angle&gt;1 {swingspeed=-1 exit}*/
-if solid=1 exit
-swinger=1
-if abs(swingspeed)&gt;3.5 exit
-if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
-if x&lt;other.x and other.y&lt;y {swingspeed=8 exit}
-if x&lt;other.x and other.y&gt;y {swingspeed=-8 exit}
-if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=8 else swingspeed=-8
 </string>
           </argument>
         </arguments>

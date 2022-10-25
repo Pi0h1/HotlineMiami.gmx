@@ -1,5 +1,5 @@
 /// Shoot(sound, speed, delay, screenshake, silenced?, go through enemies?, type)
-
+var deltaTime = (delta_time / 1000000) * 60;
 sprite_index    =   asset_get_index(string_replace(sprite_get_name(sprite_index),"Walk","Attack"));
 
 /*  The attack sprites always have the exact same name as the walk sprites but
@@ -13,9 +13,9 @@ sprite_index    =   asset_get_index(string_replace(sprite_get_name(sprite_index)
 
 image_index     =   0;              // Start the animation at frame 0
 
-image_speed     =   argument1;      // Speed for the animation will play at
+image_speed     =   (argument1)*deltaTime;      // Speed for the animation will play at
 
-reload          =   argument2;      // Delay when using the weapon
+reload          =   (argument2)*deltaTime;      // Delay when using the weapon
 
 global.shake    =   argument3;      // Screenshake
 

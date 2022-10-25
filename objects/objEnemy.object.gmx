@@ -160,44 +160,13 @@ if !place_free(x+hspeed*3,y) hspeed=-hspeed
 if !place_free(x,y+vspeed*3) vspeed=-vspeed
 }
 if path_index&gt;0 {
-image_speed=0.2
-if path_position=1 path_end()
+image_speed = 0.2
+if path_position = 1 path_end()
 } else image_speed=speed*0.1
 scrMoveSolidOff()
 if !instance_exists(objPlayer) {alert=0 speed=0 exit}
 
 scrERandomStep()
-
-
-
-
-
-
-/*
-if x&lt;0 hspeed=abs(hspeed)
-if x&gt;room_width hspeed=-abs(hspeed)
-if y&lt;0 vspeed=abs(vspeed)
-if y&gt;room_height vspeed=-abs(vspeed)
-if sprite_index=sprEWalkUnarmed nothing=0 else global.factor+=sign(alert)
-if room=rmTutorial exit
-scrMoveSolidOn()
-if path_index&gt;0 {
-image_speed=0.1
-if path_position=1 path_end()
-} else {
-if image_speed&lt;1 image_speed=speed*0.1
-if !place_free(x+hspeed*4,y) hspeed=-hspeed
-if !place_free(x,y+vspeed*4) vspeed=-vspeed
-}
-
-
-if !instance_exists(objPlayer) {alert=0 scrMoveSolidOff() exit}
-
-scrERandomStep()
-
-friction=0
-
-scrMoveSolidOff()
 </string>
           </argument>
         </arguments>

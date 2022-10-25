@@ -40,7 +40,7 @@ dir = 0
 ammoy = -32
 next = 0
 showfinished = 0
-image_speed = 0.4
+cursor_speed = 0.4 // sets the speed of the cursor animation
 action = 0
 wait = 0
 phonex = 0
@@ -171,7 +171,11 @@ brus=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if uzisnd=1 {uzisnd=0PlaySFX(sndUzi)}
+            <string>var deltaTime = (delta_time / 1000000) * 60;
+
+image_speed = (cursor_speed)*deltaTime
+
+if uzisnd=1 {uzisnd=0PlaySFX(sndUzi)}
 if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
 SteamRunCallbacks()
 if global.maskload=1 {

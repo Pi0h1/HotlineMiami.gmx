@@ -115,3 +115,4 @@ global.done         =   0;
 global.title        =   "TEST";
 global.maskindex    =   0;
 global.maskon       =   0;
+global.factor       =   0;

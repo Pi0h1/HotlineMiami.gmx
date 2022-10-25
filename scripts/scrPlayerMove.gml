@@ -1,7 +1,8 @@
 /// scrPlayerMove(player speed, factor, moveScale)
+var deltaTime = (delta_time / 1000000) * 60;
 var allowMovement = true;
 var levelLimits = 64;
-var acceleration = 0.5;
+var acceleration = (0.5)*deltaTime;
 var moveScale = argument2
 
 if instance_exists(objMaskMenu)             allowMovement = false; else allowMovement=true;
@@ -12,8 +13,9 @@ with objElevator
 if touch = 1 global.test = 1
 if persistent = 1 and global.test = 1 nothing = 1
 else {
-    myspeed = argument0
-    factor = argument1
+    myspeed = (argument0)*deltaTime;
+    factor = (argument1)*deltaTime;
+    magicNumber = (0.98)*deltaTime;
 
     moveleft    = keyboard_check_direct(ord(global.leftkey))    || keyboard_check_direct(vk_left)
     moveright   = keyboard_check_direct(ord(global.rightkey))   || keyboard_check_direct(vk_right)
@@ -57,8 +59,8 @@ else {
     
         scrMoveSolidOn()
         while (abs(myxspeed) + abs(myyspeed)) > myspeed + 2 {
-            myxspeed *= 0.98
-            myyspeed *= 0.98
+            myxspeed *= magicNumber
+            myyspeed *= magicNumber
         }
         
         if abs(myxspeed) = 0 and abs(myyspeed) = 0 legindex = 0

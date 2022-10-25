@@ -74,6 +74,83 @@ if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objPlayer">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*if abs(swingspeed)&gt;0 exit
+if image_angle&lt;-1 {swingspeed=1 exit}
+if image_angle&gt;1 {swingspeed=-1 exit}*/
+if solid=1 exit
+swinger=1
+if abs(swingspeed)&gt;3.5 exit
+if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
+if y&gt;other.y and other.x&lt;x {swingspeed=8 exit}
+if y&gt;other.y and other.x&gt;x {swingspeed=-8 exit}
+if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objSwat">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string> /*if abs(swingspeed)&gt;0 exit
+if image_angle&lt;-1 {swingspeed=1 exit}
+if image_angle&gt;1 {swingspeed=-1 exit}*/
+if solid=1 exit
+
+if abs(swingspeed)&gt;3.5 {
+if other.sprite_index=sprSwatStumble exit
+if swinger=1 or swinger=0 {
+if other.x&lt;x {other.hspeed=-1 other.angle=0}
+if other.x&gt;=x {other.hspeed=1 other.angle=180}
+other.vspeed=0
+other.image_index=0
+other.image_speed=0.2
+other.sprite_index=sprSwatStumble
+PlaySFX(sndDoorHit)
+}
+exit
+}
+swinger=2
+if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
+if y&gt;other.y and other.x&lt;x {swingspeed=8 exit}
+if y&gt;other.y and other.x&gt;x {swingspeed=-8 exit}
+if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objJanitorFlee">
       <action>
         <libid>1</libid>
@@ -178,83 +255,6 @@ my_id.ammo=other.ammo
 my_id.image_index=scrCurrentWeaponExt(other.sprite_index)
 }
 with other instance_destroy()
-}
-exit
-}
-swinger=2
-if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
-if y&gt;other.y and other.x&lt;x {swingspeed=8 exit}
-if y&gt;other.y and other.x&gt;x {swingspeed=-8 exit}
-if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objPlayer">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if abs(swingspeed)&gt;0 exit
-if image_angle&lt;-1 {swingspeed=1 exit}
-if image_angle&gt;1 {swingspeed=-1 exit}*/
-if solid=1 exit
-swinger=1
-if abs(swingspeed)&gt;3.5 exit
-if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
-if y&gt;other.y and other.x&lt;x {swingspeed=8 exit}
-if y&gt;other.y and other.x&gt;x {swingspeed=-8 exit}
-if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objSwat">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string> /*if abs(swingspeed)&gt;0 exit
-if image_angle&lt;-1 {swingspeed=1 exit}
-if image_angle&gt;1 {swingspeed=-1 exit}*/
-if solid=1 exit
-
-if abs(swingspeed)&gt;3.5 {
-if other.sprite_index=sprSwatStumble exit
-if swinger=1 or swinger=0 {
-if other.x&lt;x {other.hspeed=-1 other.angle=0}
-if other.x&gt;=x {other.hspeed=1 other.angle=180}
-other.vspeed=0
-other.image_index=0
-other.image_speed=0.2
-other.sprite_index=sprSwatStumble
-PlaySFX(sndDoorHit)
 }
 exit
 }

@@ -1923,6 +1923,7 @@
     <sprite>sprites\sprWaterPlacementMaskA</sprite>
     <sprite>sprites\sprBeard</sprite>
     <sprite>sprites\sprBeardLegs</sprite>
+    <sprite>sprites\sprRichterLegs</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tlStudio2</background>
@@ -3085,6 +3086,13 @@
     <font>fonts\fntRoboto</font>
   </fonts>
   <objects name="objects">
+    <objects name="Custom NPCs">
+      <object>objects\npcJacket</object>
+      <object>objects\npcBiker</object>
+      <object>objects\npcBeard</object>
+      <object>objects\npcGirlfriend</object>
+      <object>objects\npcRichter</object>
+    </objects>
     <objects name="NPCs">
       <object>objects\objKillable</object>
       <objects name="Hostile">
@@ -3179,10 +3187,6 @@
         <object>objects\objEGiveUp</object>
       </objects>
       <objects name="Friendly">
-        <objects name="Custom">
-          <object>objects\objBeard</object>
-          <object>objects\objGfriend</object>
-        </objects>
         <objects name="Mafia">
           <object>objects\objETauntChain</object>
           <object>objects\objETauntPipe</object>

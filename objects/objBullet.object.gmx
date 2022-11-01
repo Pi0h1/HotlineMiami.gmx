@@ -32,7 +32,7 @@ if objPlayer.sprite_index=sprPAttackDoubleBarrel1 or objPlayer.sprite_index=sprP
     PlaySFX(sndDoubleBarrel)
     }
 }
-image_speed=0.5
+bulletImageSpeed = 0.5;
 image_blend=merge_color(c_white,c_yellow,random(1))
 passed=0
 caliber=0
@@ -89,7 +89,9 @@ my_id.image_alpha=0.02
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_blend=merge_color(c_white,c_yellow,random(1))</string>
+            <string>image_speed = bulletImageSpeed * delta;
+image_blend=merge_color(c_white,c_yellow,random(1))
+</string>
           </argument>
         </arguments>
       </action>

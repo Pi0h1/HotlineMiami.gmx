@@ -17,4 +17,4 @@ if objPlayer.throwindex=5 {global.usedkill[19]=1 return objPHammerKill}
 if objPlayer.throwindex=3 {global.usedkill[18]=1 return objPBrickKill}
 }
 global.test=1
-return objEnemyBash
+return objPKillBash;

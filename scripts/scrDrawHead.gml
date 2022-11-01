@@ -11,7 +11,7 @@ maddy=lengthdir_y(dist,maskdir)
 draw_sprite_ext(head,head_FrameIndex,x+maddx,y+maddy,image_xscale,image_yscale,dir,image_blend,image_alpha)
 
 
-head_FrameIndex+=0.2
+head_FrameIndex+=0.2*delta;
 
 if global.godmode=1{
 d3d_set_fog(true,c_aqua,0,1)

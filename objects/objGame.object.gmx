@@ -25,7 +25,46 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// If dev mode is active; what level should be tested?
+            <string>/// What is this object?
+/*==============================
+
+objGame is a persistent game object to aid in developing and
+debugging Hotline Miami mods.
+
+It holds global variables used by the game and renders the
+user interface.
+
+You can use it to bind development keys (for example, set a
+key that deletes all enemies), display information about the game
+or hold important global variables.
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Level to test
+/*=================
+
+This event sets what level should be tested if
+global.devmode is set to true.
+*/
+
 testLevel = "FULL HOUSE";
 </string>
           </argument>
@@ -319,6 +358,30 @@ text_WarningMenuName = "Dev Menu";
 text_WarningOpenMenu = "Press [F3] to open Dev Menu";
 text_WarningInstructions = ""; // The info here is dynamic; as such you can find it in the step event.
 text_WarningMessage  = "Surface sucessfully destroyed.";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Delta
+delta = min(1, (delta_time / (1000000/60)));
 </string>
           </argument>
         </arguments>
@@ -730,7 +793,8 @@ temp2+=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Draw User Interface
+            <string>draw_text(32,32,string(room_speed)+" room speed")
+/// Draw User Interface
 if (global.devmode == false) exit //    if we're not in dev move, don't do any of the following. 
 display_set_gui_size(view_wview[0]/(uiScale),view_hview[0]/(uiScale)); //   Set the scale for the interface.
 

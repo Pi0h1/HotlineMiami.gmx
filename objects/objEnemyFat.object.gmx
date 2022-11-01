@@ -28,8 +28,8 @@
             <string>scrEFatInit()
 image_speed=0
 image_index=random(1000)
-speed=1
-image_speed=0.1
+speed=1*delta
+image_speed=0.1*delta
 energie=round(random(1))
 
 path=path_add()
@@ -89,7 +89,7 @@ instance_destroy()
 } else {
 sprite_index=sprEFatDie
 image_index=1
-image_speed=0.15
+image_speed=0.15*delta
 speed=0
 if global.enemy=id global.enemy=-1234
 }
@@ -121,15 +121,15 @@ exit
 
 if reload&gt;0 reload-=1
 if path_index&gt;0 {
-if image_speed&lt;1 image_speed=0.2
+if image_speed&lt;(1*delta) image_speed=0.2*delta
 if alert=0 and path_position=1 path_end()
 } else {
-if image_speed&lt;1 image_speed=speed*0.1
+if image_speed&lt;(1*delta) image_speed=(speed*0.1)*delta
 if !place_free(x,y) {
 tempdir=direction
 i=1
 while (!place_free(x+lengthdir_x(4+i/20,tempdir),y+lengthdir_y(4+i/20,tempdir))) and i&lt;100 {
-tempdir+=18
+tempdir+=(18*delta)
 i+=1
 }
 if i&lt;100 move_outside_solid(tempdir,4+i/20)
@@ -185,7 +185,7 @@ chasey=global.my_y
 }
 }
 }
-if speed&gt;0.2 speed-=0.2
+if speed&gt;(0.2*delta) speed-=(0.2*delta)
 image_xscale=1.5
 image_yscale=1.5
 bullets=0
@@ -193,7 +193,7 @@ with objBullet {
 if place_meeting(x,y,global.my_id) {
 my_id=instance_create(x,y,objBloodSmoke)
 my_id.direction=direction-170+random(10)
-my_id.speed=1
+my_id.speed=1*delta
 my_id.image_angle=my_id.direction
 my_id.image_xscale=0.8+random(0.2)
 my_id.image_yscale=my_id.image_xscale
@@ -218,7 +218,7 @@ my_id.image_yscale=my_id.image_xscale
 my_id.image_angle=point_direction(x+lengthdir_x(8,edir),y+lengthdir_y(8,edir),my_id.x,my_id.y)
 my_id.sprite_index=sprBloodSplatSmall
 my_id.direction=my_id.image_angle
-my_id.speed=2+random(4)
+my_id.speed=(2+random(4))*delta
 }
 repeat (1+random(bullets)) {
 my_id=instance_create(x-3+random(6)+lengthdir_x(8,edir),y-3+random(6)+lengthdir_y(8,edir),objBloodDrop)
@@ -226,7 +226,7 @@ my_id.image_xscale=1-random(0.2)
 my_id.image_yscale=my_id.image_xscale
 my_id.image_angle=point_direction(x+lengthdir_x(8,edir),y+lengthdir_y(8,edir),my_id.x,my_id.y)
 my_id.direction=my_id.image_angle
-my_id.speed=1+random(5)
+my_id.speed=(1+random(5))*delta
 }
 repeat (bullets) {
 my_id=instance_create(x-3+random(6)+lengthdir_x(16,edir),y-3+random(6)+lengthdir_y(16,edir),objBloodSmoke)
@@ -234,7 +234,7 @@ my_id.image_xscale=1.2-random(0.2)
 my_id.image_yscale=my_id.image_xscale
 my_id.image_angle=edir-20+random(40)
 my_id.direction=my_id.image_angle
-my_id.speed=2+random(1)
+my_id.speed=(2+random(1))*delta
 my_id.friction=0.15
 }
 

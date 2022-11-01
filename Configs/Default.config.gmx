@@ -206,7 +206,7 @@
     <option_audioGroupCount>1</option_audioGroupCount>
     <option_author></option_author>
     <option_backimage>nil</option_backimage>
-    <option_borderless>True</option_borderless>
+    <option_borderless>False</option_borderless>
     <option_changed>false</option_changed>
     <option_changeresolution>false</option_changeresolution>
     <option_closeesc>true</option_closeesc>

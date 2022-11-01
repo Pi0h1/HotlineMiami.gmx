@@ -110,7 +110,7 @@ if (path_index &gt; 0) {
     }
 } else {
     if (image_speed &lt; 1) {
-        image_speed = speed * 0.1;
+        image_speed = (speed * 0.1)*delta;
     }
 }
 

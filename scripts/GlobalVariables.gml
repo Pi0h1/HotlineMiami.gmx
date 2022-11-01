@@ -6,6 +6,8 @@
 /*  The following variables are original to https://github.com/Pi0h1/HotlineMiami.gmx;
     Therefore not present in vanilla Hotline Miami. */
 //======================================================================================//
+    global.RunningOnStudio2 = false; // Code also needs to be uncommented in objWaterShaderTest
+    globalvar delta; delta = 1;
     global.PlayerStartingPointX = 0;
     global.PlayerStartingPointY = 0;
     global.devmode      = true;
@@ -17,7 +19,11 @@
     global.restartedmusic = working_directory+"\Static.mp3"
     
     // Enables using JSON for the restart mechanic, disable this to use game_save (Warning: game_save is not compatible with GMS2!)
-    global.useJson      = false;
+    global.useJson      = true;
+    
+    if global.RunningOnStudio2 {
+    global.useJson      = true;
+    }
     window_set_cursor(cr_none);
     
     scrInitLevelTitles();
@@ -32,24 +38,25 @@
 
 // Steam
 //======================================================================================//
-global.steamon = 0;
+    global.steamon = 0;
 
 // Volume
 //======================================================================================//
-sxeasy_init();
-global.musicVolume = 1;
-global.soundVolume = 1;
-scrLoadVol()
+    sxeasy_init();
+    global.musicVolume = 1;
+    global.soundVolume = 1;
+    scrLoadVol()
 
 // Alienware
 //======================================================================================//
-global.alienware=0;
-if file_exists(working_directory+"\alienware") {
-    global.alienware=1;
-    scrAlienWareInit()
-    scrAlienWarePink()
-    } else {
     global.alienware=0;
+    if file_exists(working_directory+"\alienware") {
+        global.alienware=1;
+        scrAlienWareInit()
+        scrAlienWarePink()
+    } 
+    else {
+        global.alienware=0;
     }
 
 // Controller
@@ -65,7 +72,7 @@ global.controller       =   0   ;
 // Visuals
 //======================================================================================//
 display_set_gui_size(view_wview, view_hview);
-global.shake        =   0; // Note: This not only controls how much the screen shakes, but also gamepad rumble.
+global.shake    =   0; // This variable controls screenshake and controller vibration.
 global.surfaces =   1;
 global.blood    =   1;
 if file_exists(working_directory+"\blood")      global.blood=0;

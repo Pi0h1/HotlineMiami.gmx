@@ -148,7 +148,7 @@ sprite_index=sprPThrowMask
 global.maskon=0
 maskon=0
 if image_index&lt;20.85 image_index+=0.15 else {objOldman.wait=30 objOldman.state=6 objPlayer.sprite_index=sprPEnding objPlayer.image_index=0}
-if global.drop=0 and image_index&gt;16 {my_id=instance_create(x-12,y,objMaskDrop) my_id.direction=180+random(10) my_id.speed=3 my_id.image_angle=270 my_id.sprite_index=sprMaskDropBack global.drop=1}
+if global.drop=0 and image_index&gt;16 {my_id=instance_create(x-12,y,objMaskDrop) my_id.direction=180+random(10) my_id.speed=3*delta my_id.image_angle=270 my_id.sprite_index=sprMaskDropBack global.drop=1}
 }
 }
 }

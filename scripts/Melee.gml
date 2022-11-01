@@ -1,5 +1,4 @@
 /// Melee(speed,delay,sfx for hitting wall)
-var deltaTime = (delta_time / 1000000) * 60;
 
 if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objSolid) or place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objDoorV) {
 
@@ -23,5 +22,5 @@ my_id1.speed=random(2)
 PlaySFX(choose(sndSwing1,sndSwing2))
 sprite_index    =   asset_get_index(string_replace(sprite_get_name(sprite_index),"Walk","Attack"))
 image_index     =   1
-image_speed     =   (argument0)*deltaTime
-reload          =   (argument1)*deltaTime
+image_speed     =   (argument0)*delta
+reload          =   (argument1)

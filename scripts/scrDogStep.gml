@@ -1,4 +1,4 @@
-image_speed=speed*0.1
+image_speed=(speed*0.1)
 if alert=0 {
     if instance_exists(objPlayer) {if global.maskindex=8 nothing=1 else scrDogSearch(objPlayer.x,objPlayer.y,4)}
     if alertwait>0 alertwait=0

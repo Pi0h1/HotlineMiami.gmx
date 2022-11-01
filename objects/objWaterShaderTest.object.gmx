@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>infinity = 20000; // Comment out this line if in GMS2
+            <string>/// Initialize Variables
+infinity = 20000; // Comment out this line if in GMS2
 
 // Create
 image_speed = 0;
@@ -75,14 +76,13 @@ u_pAppSurf = shader_get_sampler_index( shdWater, "u_pAppSurf" );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Uncomment this if in GMS2
-
+            <string>/// GameMaker Studio 2 Code
 /*
 texture_set_repeat = gpu_set_texrepeat;
 texture_set_interpolation = gpu_set_texfilter;
 texture_set_repeat_ext = gpu_set_texrepeat_ext;
 texture_set_interpolation_ext = gpu_set_texfilter_ext;
-*/
+/*
 </string>
           </argument>
         </arguments>
@@ -105,18 +105,18 @@ texture_set_interpolation_ext = gpu_set_texfilter_ext;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Clean Up
+            <string>/// Clean Up
 
 if !( surf &lt; 0 )
 {
-	surface_free( surf );
-	surf = -1;
+surface_free( surf );
+surf = -1;
 }
 
 if !( global.water_appsurf &lt; 0 )
 {
-	surface_free( global.water_appsurf );
-	global.water_appsurf = -1;
+surface_free( global.water_appsurf );
+global.water_appsurf = -1;
 }
 
 </string>
@@ -141,7 +141,7 @@ if !( global.water_appsurf &lt; 0 )
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///@desc DRAW OVERRIDE
+            <string>/// Draw Override
 draw_self();
 </string>
           </argument>
@@ -165,7 +165,7 @@ draw_self();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Pre-Draw
+            <string>/// Pre Draw
 global.water_appsurf_redraw = true;
 
 </string>
@@ -190,7 +190,7 @@ global.water_appsurf_redraw = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Draw
+            <string>/// Draw
 //gpu_push_state();
 //gpu_set_cullmode( cull_noculling );
 aWaterColor[0] = color_get_red( water_blend ) / 255

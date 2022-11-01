@@ -65,7 +65,7 @@ repeat (16) {
 my_id=instance_create(x+lengthdir_x(16,dir-7-3),y+lengthdir_y(16,dir-7-3),objBullet)
 if instance_exists(my_id) {
 my_id.direction=dir-10+random(20)
-my_id.speed=16-random(6)
+my_id.speed=(16-random(6))*delta
 my_id.image_angle=my_id.direction
 }
 }

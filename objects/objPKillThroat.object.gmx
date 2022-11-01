@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index=0
+            <string>animationEnd = 10.25;
+animationSpeed = 0.25;
+
+image_index=0
 image_speed=0
 ammo=0
 bled=0
@@ -58,7 +61,7 @@ enemy=sprEMafiaDieThroat
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;10.25 image_index+=0.25 else {
+            <string>if image_index&lt;animationEnd image_index+=animationSpeed * delta else {
 myx=x+lengthdir_x(7,image_angle)
 myy=y+lengthdir_y(7,image_angle)
 my_id=instance_create(x,y-12,objScore)
@@ -97,7 +100,7 @@ repeat (8) {
 dir=random(360)
 my_id=instance_create(myx+lengthdir_x(5,dir),myy+lengthdir_y(5,dir),objBloodSmoke)
 my_id.direction=dir
-my_id.speed=2+random(1)
+my_id.speed=(2+random(1)) * delta
 my_id.friction=0.1
 }
 }

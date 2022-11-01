@@ -181,7 +181,7 @@ instance_destroy()
 maskon=0
 my_id=instance_create(x,y,objMaskDrop)
 my_id.direction=direction-20+random(90)
-my_id.speed=3
+my_id.speed=3*delta
 state=5
 }
 }

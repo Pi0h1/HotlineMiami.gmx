@@ -35,7 +35,7 @@ with objEnemy {
             my_id = instance_create(x, y, objWeaponThrow)
             my_id.direction = direction - 70 + random(40)
             my_id.image_index = scrCurrentWeaponExt(sprite_index)
-            my_id.speed = 2 + random(2)
+            my_id.speed = (2 + random(2)) * delta
             my_id.ammo = ammo
         }
         instance_destroy();

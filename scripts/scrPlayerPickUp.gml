@@ -126,7 +126,7 @@ global.dir=dir
 my_id=instance_create(x,y,objWeaponThrow)
 with my_id move_contact_solid(global.dir,12)
 PlaySFX(sndThrow)
-my_id.speed=8
+my_id.speed=8 * delta
 my_id.direction=dir-5+random(10)
 my_id.ammo=lastammo
 my_id.image_index=lastweapon
@@ -138,7 +138,7 @@ global.dir=dir
 my_id=instance_create(x,y,objWeaponThrow)
 with my_id move_contact_solid(global.dir,12)
 PlaySFX(sndThrow)
-my_id.speed=8
+my_id.speed=8 * delta
 my_id.direction=dir-5+random(10)
 my_id.ammo=lastammo
 my_id.image_index=lastweapon

@@ -28,8 +28,8 @@
             <string>scrDogInit()
 image_speed=0
 image_index=random(1000)
-speed=1
-image_speed=0.1
+speed=1*delta
+image_speed=0.1*delta
 energie=round(random(1))
 
 checkreload=floor(random(30))
@@ -72,12 +72,12 @@ weaponfind = 0;
 global.factor+=sign(alert)
 scrMoveSolidOn()
 if path_index&gt;=0 {
-if image_speed&lt;0.3 image_speed=0.3
+if image_speed&lt;(0.3*delta) image_speed=(0.3*delta)
 if path_position=1 {path_end()
 if alert=3 alert=0
 }
 } else {
-image_speed=speed*0.1
+image_speed=(speed*0.1)*delta
 if !place_free(x,y) and alert=0 {
 tempdir=direction
 i=1
@@ -91,7 +91,7 @@ if i&lt;100 move_outside_solid(tempdir,4+i/20)
 
 
 
-if speed&gt;1 {
+if speed&gt;(1*delta) {
 if place_meeting(x,y,objPlayer) {
 global.my_id=id
 if objPlayer.object_index=objPlayerShieldMouse scrPlayerShieldDieDogBite() else scrPlayerDieDogBite()
@@ -99,7 +99,8 @@ instance_destroy()
 }
 }
 scrDogStep()
-scrMoveSolidOff()</string>
+scrMoveSolidOff()
+</string>
           </argument>
         </arguments>
       </action>

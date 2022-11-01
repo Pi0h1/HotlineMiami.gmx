@@ -78,8 +78,8 @@ if global.maskindex=10 ammo=ceil(ammo*1.33)
 scrEPatrolInit()
 image_speed=0
 image_index=random(1000)
-speed=1
-image_speed=0.1
+speed=(1)*delta
+image_speed=(0.1)*delta
 energie=round(random(1))
 
 checkreload=floor(random(30))
@@ -118,16 +118,16 @@ shake=0
 scrMoveSolidOn()
 if sprite_index=sprEWalkUnarmed nothing=0 else global.factor+=sign(alert)
 if path_index&gt;0 {
-image_speed=0.1
+image_speed=(0.1)*delta
 if path_position=1 {path_end() direction=round(direction*0.1)*10}
 } else {
-if image_speed&lt;1 image_speed=speed*0.1
+if image_speed&lt;1 image_speed=(speed*0.1)*delta
 if !place_free(x,y) {
 tempdir=direction
 i=1
 while (!place_free(x+lengthdir_x(4+i/20,tempdir),y+lengthdir_y(4+i/20,tempdir))) and i&lt;100 {
-tempdir+=18
-i+=1
+tempdir+=18*delta
+i+=1*delta
 }
 if i&lt;100 move_outside_solid(tempdir,4+i/20)
 }

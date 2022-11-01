@@ -1960,6 +1960,8 @@
         <script>scripts\scrPlayerCarInteraction.gml</script>
         <script>scripts\scrEndLevel.gml</script>
         <script>scripts\scrPlayerMove.gml</script>
+        <script>scripts\newMovement.gml</script>
+        <script>scripts\oldMovement.gml</script>
         <script>scripts\scrIsWalking.gml</script>
         <script>scripts\scrPlayerPickUp.gml</script>
         <script>scripts\scrPlayerHospitalMove.gml</script>
@@ -3086,6 +3088,7 @@
     <font>fonts\fntRoboto</font>
   </fonts>
   <objects name="objects">
+    <object>objects\objEnemyCrawl</object>
     <objects name="Custom NPCs">
       <object>objects\npcJacket</object>
       <object>objects\npcBiker</object>
@@ -3180,7 +3183,6 @@
         <object>objects\objKnockedOut</object>
         <object>objects\objDeadBody</object>
         <object>objects\objBodyPart</object>
-        <object>objects\objEnemyCrawl</object>
         <object>objects\objDogBite</object>
         <object>objects\objESubwayStatic</object>
         <object>objects\objSubwayKnockedOut</object>
@@ -3929,8 +3931,8 @@
         </objects>
         <objects name="Executions">
           <object>objects\objExecution</object>
-          <object>objects\objEnemyBash</object>
-          <object>objects\objPAttackThroat</object>
+          <object>objects\objPKillBash</object>
+          <object>objects\objPKillThroat</object>
           <object>objects\objEnemyHeadKick</object>
           <object>objects\objPBrickKill</object>
           <object>objects\objPAttackSnap</object>

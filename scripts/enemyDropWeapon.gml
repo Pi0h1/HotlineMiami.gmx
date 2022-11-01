@@ -13,7 +13,7 @@ or object_index=objKnockedOut
 or object_index=objEnemyFat
 or object_index=objESubwayStatic
 or object_get_parent(object_index)=npcJacket
-or (instance_exists(objPAttackThroat) and global.maskindex = 11)
+or (instance_exists(objPKillThroat) and global.maskindex = 11)
 or object_get_parent(object_index)=objExecution {
     noweapon=1 
 }
@@ -25,6 +25,6 @@ if noweapon=0 {
 my_id=instance_create(x,y,objWeaponThrow)
 my_id.image_index=scrCurrentWeaponExt(sprite_index)
 my_id.direction=other.direction-70+random(40)
-my_id.speed=2+random(2)
+my_id.speed=(2+random(2))* delta
 my_id.ammo=ammo
 }

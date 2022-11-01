@@ -31,7 +31,7 @@ if instance_exists(objDeadBody){
             else {
                 mask=instance_create(x+lengthdir_x(24,argument3),y+lengthdir_y(24,argument3),objMaskDrop)
                 mask.direction=argument3-40+random(80)
-                mask.speed=argument1+random(1)
+                mask.speed=(argument1+random(1))*delta;
             }
         }
         

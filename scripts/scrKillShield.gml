@@ -74,7 +74,7 @@ my_id.sprite_index=sprPNightStickKill
 }
 }
 my_id.image_angle=angle
-if my_id.object_index=objEnemyBash and sprite_index=sprPoliceGetUp {
+if my_id.object_index=objPKillBash and sprite_index=sprPoliceGetUp {
 my_id1=instance_create(x+lengthdir_x(22,my_id.image_angle),y+lengthdir_x(22,my_id.image_angle),objPoliceHat)
 my_id1.direction=my_id.image_angle-10+random(20)
 my_id1.speed=1+random(2)
@@ -103,7 +103,7 @@ if sprite_index=sprPWalkUnarmed or sprite_index=sprPWalkBag or sprite_index=sprP
 my_id=instance_create(objPlayer.x+lengthdir_x(8,objPlayer.dir+90),objPlayer.y+lengthdir_y(8,objPlayer.dir+90),objWeaponThrow)
 my_id.image_index=lastweapon
 my_id.direction=dir+70+random(40)
-my_id.speed=1+random(2)
+my_id.speed=(1+random(2))* delta
 my_id.ammo=lastammo
 }
 instance_destroy()

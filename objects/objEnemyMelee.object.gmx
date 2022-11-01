@@ -51,8 +51,8 @@ ammo=0
             <string>scrEMeleeInit()
 image_speed=0
 image_index=random(1000)
-speed=1
-image_speed=0.1
+speed=1*delta
+image_speed=(0.1)*delta
 energie=round(random(1))
 
 my_path=path_add()
@@ -92,23 +92,23 @@ shake = 0;
           <argument>
             <kind>1</kind>
             <string>if x&lt;0 hspeed=abs(hspeed)
-if x&gt;room_width hspeed=-abs(hspeed)
+if x&gt;room_width hspeed=-abs(hspeed*delta)
 if y&lt;0 vspeed=abs(vspeed)
-if y&gt;room_height vspeed=-abs(vspeed)
+if y&gt;room_height vspeed=-abs(vspeed*delta)
 scrMoveSolidOn()
 if reload&gt;0 reload-=1
 if sprite_index=sprEWalkUnarmed nothing=0 else global.factor+=sign(alert)
 if path_index&gt;0 {
-if image_speed&lt;1 image_speed=0.2
+if image_speed&lt;1 image_speed=(0.2)*delta
 if alert=0 and path_position=1 path_end()
 } else {
-if image_speed&lt;1 image_speed=speed*0.1
+if image_speed&lt;1 image_speed=(speed*0.1)*delta
 if !place_free(x,y) {
 tempdir=direction
 i=1
 while (!place_free(x+lengthdir_x(4+i/20,tempdir),y+lengthdir_y(4+i/20,tempdir))) and i&lt;100 {
-tempdir+=18
-i+=1
+tempdir+=18*delta
+i+=1*delta
 }
 if i&lt;100 move_outside_solid(tempdir,4+i/20)
 }
@@ -125,7 +125,8 @@ sprite_index=scrGetAttack(sprite_index)
 scrPlayerDieMelee()
 speed=0
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -183,7 +184,7 @@ image_speed=0
           <argument>
             <kind>1</kind>
             <string>if sprite_index=sprite0 sprite_index=lastsprite
-if light&gt;0 light-=1
+if light&gt;0 light-=1*delta
 draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)

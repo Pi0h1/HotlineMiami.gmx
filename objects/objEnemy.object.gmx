@@ -81,10 +81,10 @@ image_index=random(1000)
 angle=random(360)
 
 direction=angle
-speed=round(random(1))
+speed = round(random(1))*delta
 if room=rmTutorial {image_index=0 speed=0 direction=point_direction(x,y,objPlayer.x,objPlayer.y)}
 image_speed=speed*0.1
-alarm[0]=60+random(60)
+alarm[0]=(60+random(60))*delta
 energie=round(random(1))
 
 checkreload=floor(random(30))
@@ -120,12 +120,13 @@ shake=0
             <string>if room=rmTutorial exit
 if path_index&gt;0 or scrIsSearching(sprite_index) {alarm[0]=5 exit}
 if alert=1 {alarm[0]=5 exit}
-alarm[0]=60+random(60)
+alarm[0]=(60+random(60))*delta
 angle=random(360)
-speed=round(random(1))
-image_speed=speed*0.1
+speed=(round(random(1)))*delta
+image_speed=(speed*0.1)*delta
 direction=angle
-if speed=0 image_index=0</string>
+if speed=0 image_index=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -156,13 +157,13 @@ if sprite_index=sprEWalkUnarmed nothing=0 else global.factor+=sign(alert)
 scrMoveSolidOn()
 if sprite_index=sprEWalkUnarmed scrGoGetWeapon()
 if !place_free(x+hspeed*3,y+vspeed*3) {
-if !place_free(x+hspeed*3,y) hspeed=-hspeed
-if !place_free(x,y+vspeed*3) vspeed=-vspeed
+if !place_free(x+hspeed*3,y) hspeed=-(hspeed)*delta
+if !place_free(x,y+vspeed*3) vspeed=-(vspeed)*delta
 }
 if path_index&gt;0 {
-image_speed = 0.2
+image_speed = (0.2)*delta
 if path_position = 1 path_end()
-} else image_speed=speed*0.1
+} else image_speed=(speed*0.1)*delta
 scrMoveSolidOff()
 if !instance_exists(objPlayer) {alert=0 speed=0 exit}
 

@@ -10,6 +10,6 @@ else {
         }
     }
 }
-if instance_number(objEnemy) + instance_number(objEnemyBash) = 0 update = 1
+if instance_number(objEnemy) + instance_number(objPKillBash) = 0 update = 1
 if !instance_exists(objPlayer) update = 1
 scorestring = string(global.drawscore) + "pts"

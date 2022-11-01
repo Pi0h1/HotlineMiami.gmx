@@ -31,7 +31,6 @@ with (objEnemy)
     ds_map_add (_map, "ammo", ammo);
     ds_map_add (_map, "energie", energie);
     
-    
 }
 
 // Wrap the root LIST up in a MAP

@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Init
+dogIndex=0;
 isPlayer=false
 if isPlayer=true{
     image_speed=0
@@ -495,7 +496,14 @@ if round(random(20))=2 image_speed=0
             <string>if isPlayer {
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
 }
+
 draw_self();
+
+if sprite_index=sprPBackEaten {
+draw_sprite_ext(sprDogEat,dogIndex,x+1,y+1,1,1,image_angle,c_black,0.5)
+draw_sprite_ext(sprDogEat,dogIndex,x,y,1,1,image_angle,c_white,1)
+dogIndex+=0.2;
+}
 </string>
           </argument>
         </arguments>

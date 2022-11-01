@@ -4,7 +4,12 @@ var file = (Name + Extension);
 
 var debugMessage = "State of "+ Name +" loaded";
 
-with (objEnemy) instance_destroy();
+with (objEnemy) {
+    if path_index > 0{
+        path_delete(path);
+    }
+    instance_destroy();
+}
 
 if (file_exists(file))
 {

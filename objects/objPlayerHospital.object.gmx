@@ -467,14 +467,14 @@ view_yview[0]=y-view_hview[0]/2
             <kind>1</kind>
             <string>with objWindowFrameV {
 if x=32 and y=352 {
-draw_sprite_ext(sprArrow,0,x+12+lengthdir_x(3,global.dir*8),y+16,1,1,270,c_white,1)
+drawArrow(270,false);
 }
 }
 
 if global.locked=0 {
 with objLockedDoor {
 if solid=1 {
-draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,global.dir*8),y+16,1,1,90,c_white,1)
+drawArrow(90,false);
 }
 }
 }

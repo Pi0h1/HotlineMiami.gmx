@@ -228,28 +228,28 @@ if !instance_exists(objPlayer) test=0
 if instance_exists(objPlayerMouseHouse) {if objPlayer.aimon=0 test=0}
 if instance_exists(objPhoneConversation) or instance_exists(objFinalDialogue) or instance_exists(objFinalDialogue2) test=0 
 if test=1 {
-draw_sprite_ext(sprite_index,image_index,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
+draw_sprite_ext(sprite_index,secUnit(.4),global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
 draw_set_blend_mode(bm_add)
-draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_white,1)
+draw_sprite_ext(sprite_index,secUnit(.4),global.mousex,global.mousey,1,1,-view_angle[0],c_white,1)
 draw_set_blend_mode(bm_normal)
 }
 with objAnsweringMachine {
-if active=1 and sprite_index=sprDrawersH24Phone draw_sprite(sprArrow,image_index*2,x,y-16+lengthdir_x(3,global.dir*6))
+if active=1 and sprite_index=sprDrawersH24Phone drawArrow(0,true);
 }
 with objPhone {
-if called=1 and answered=0 draw_sprite_ext(sprArrow,0,x,y-12+lengthdir_x(3,dir*2),1,1,0,c_white,1)
+if called=1 and answered=0 drawArrow(0,false);
 }
 
 with objBox {
-if global.phone=1 draw_sprite(sprArrow,global.dir,x,y-16+lengthdir_x(3,global.dir*6))
+if global.phone=1 drawArrow(0,true);
 }
 
 
 if room=rmMansionMainHall {
 if instance_exists(objBoss) {
 with objSpecificWeapon {
-if image_index=20 and instance_exists(objBodyguard) draw_sprite(sprArrow,global.dir,x,y-16+lengthdir_x(3,global.dir*6))
-if image_index=34 and !instance_exists(objBodyguard) and !instance_exists(objPBodyguardBash) and !instance_exists(objBodyguardCrawl) and !instance_exists(objPKillBodyguard) draw_sprite(sprArrow,global.dir,x,y-16+lengthdir_x(3,global.dir*6))
+if image_index=20 and instance_exists(objBodyguard) drawArrow(0,false);
+if image_index=34 and !instance_exists(objBodyguard) and !instance_exists(objPBodyguardBash) and !instance_exists(objBodyguardCrawl) and !instance_exists(objPKillBodyguard) drawArrow(0,false);
 }
 }
 }

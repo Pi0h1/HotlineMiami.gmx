@@ -37,14 +37,14 @@ draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_a
 draw_set_blend_mode(bm_normal)
 }
 with objAnsweringMachine {
-if active=1 and sprite_index=sprDrawersH24Phone draw_sprite(sprArrow,image_index*2,x,y-16+lengthdir_x(3,global.dir*6))
+if active=1 and sprite_index=sprDrawersH24Phone drawArrow(0,true);
 }
 with objPhone {
-if called=1 and answered=0 draw_sprite_ext(sprArrow,0,x,y-12+lengthdir_x(3,dir*2),1,1,0,c_white,1)
+if called=1 and answered=0 drawArrow(0,true);
 }
 
 with objBox {
-if global.phone=1 draw_sprite(sprArrow,global.dir,x,y-16+lengthdir_x(3,global.dir*6))
+if global.phone=1 drawArrow(0,true);
 }
 
 

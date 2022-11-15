@@ -364,7 +364,7 @@ draw_set_color(c_white)
 //draw_path(my_path,0,0,1)
 
 with objWeapon {
-draw_sprite_ext(sprArrow,0,x,y-8+lengthdir_x(4,dir*2),1,1,0,c_white,1)
+drawArrow(image_angle,false);
 }
 </string>
           </argument>

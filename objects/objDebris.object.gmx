@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>friction=0.15
-rotspeed=(-1+round(random(1))*2)*random(8)
+            <string>friction=0.15*delta
+rotspeed=((-1+round(random(1))*2)*random(8))*delta
 startspeed=0
 image_speed=0
 image_angle=random(360)

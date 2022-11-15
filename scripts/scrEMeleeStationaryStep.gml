@@ -17,7 +17,7 @@ if alert=0 {                                                                    
         }
     
     if scrIsSearching(sprite_index)  {speed=0 image_speed=0.15 exit}                        // If the enemy is searching, mstop moving and set the searching animation speed.
-    if scrEnemyIsAttacking(sprite_index) {image_speed=1}                                    // If the enemy is attacking, set the animation speed.
+    if scrEnemyIsAttacking(sprite_index) {image_speed=1*delta}                                    // If the enemy is attacking, set the animation speed.
     if point_distance(x,y,startx,starty)>4 scrReturn(path)                                  // If the enemy is 4 pixels away from his spawn poisition, go back to it.
 }
 if !instance_exists(objPlayer) {alert=0 scrMoveSolidOff() exit}
@@ -29,7 +29,7 @@ if alert<2 and alert>0{                                                         
             if scrIsSearching(sprite_index) sprite_index=scrStopSearch(sprite_index)                // If the enemy is currently searching, stop searching, because the player is right in front of you.
             sprite_index=scrGetAttack(sprite_index)                                                 // Set current sprite to the attack sprite.
             image_index=1                                                                           // Set beginning frame of animation.
-            image_speed=1                                                                           // Set animation speed.
+            image_speed=1*delta                                                                           // Set animation speed.
             reload=30                                                                               // Set weapon delay.
         }
     }

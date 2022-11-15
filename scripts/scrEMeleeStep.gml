@@ -8,8 +8,8 @@ if alert=0 {
     if alertwait>-1 {alertwait-=1 if alertwait=0 {path_end() alert=1}}
     if scrIsSearching(sprite_index) {image_speed=0.2*delta speed=0}
     if scrEnemyIsAttacking(sprite_index) {image_speed=1*delta}
-    if returning=0 {speed=1 direction=round(direction*0.1)*10 scrPatrol()} else {//if point_distance(x,y,startx,starty)>4 scrReturn(path) else {
-    returning=0 speed=1 direction=round(direction*0.1)*10//direction=startdir//}
+    if returning=0 {speed=1*delta direction=round(direction*0.1)*10 scrPatrol()} else {//if point_distance(x,y,startx,starty)>4 scrReturn(path) else {
+    returning=0 speed=1*delta direction=round(direction*0.1)*10//direction=startdir//}
     }
 }
 if !instance_exists(objPlayer) {alertwait=-1*delta alert=0 scrMoveSolidOff() exit}
@@ -21,7 +21,7 @@ if scrIsSearching(sprite_index) sprite_index=scrStopSearch(sprite_index)
 PlaySFX(choose(sndSwing1,sndSwing2))
 sprite_index=scrGetAttack(sprite_index)
 image_index=1
-image_speed=1
+image_speed=1*delta
 reload=30
 }
 }

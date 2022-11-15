@@ -342,20 +342,21 @@ global.time=0</string>
 if state=3 {
 with objWeapon {
 if image_index=4
-draw_sprite_ext(sprArrow,0,x,y-6+lengthdir_x(3,global.dir*8),1,1,0,c_white,1)
+drawArrow(0,false);
 }
 }
 if state=5 {
 with objWeapon {
 if image_index=1
-draw_sprite_ext(sprArrow,0,x,y-6+lengthdir_x(3,global.dir*8),1,1,0,c_white,1)
+drawArrow(0,false);
 }
 }
 if state=6 {
 with objEnemy {
-draw_sprite_ext(sprArrow,0,x,208+lengthdir_x(3,global.dir*8),1,1,0,c_white,1)
+drawArrow(0,false);
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

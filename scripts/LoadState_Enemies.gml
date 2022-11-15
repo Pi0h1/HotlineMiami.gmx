@@ -23,21 +23,23 @@ if (file_exists(file))
         var _obj = _map[? "obj"]
         with (instance_create(0,0,asset_get_index(_obj)))
         {
-            x = _map[? "x"];
-            y = _map[? "y"];
-            sprite_index= _map[? "sprite_index"];
-            image_index = _map[? "image_index"];
-            image_blend = _map[? "image_blend"];
-            image_angle = _map[? "image_angle"];
-            image_xscale= _map[? "image_xscale"];
-            image_yscale= _map[? "image_yscale"];
-            image_alpha = _map[? "image_alpha"];
-            direction   = _map[? "direction"];
-            speed       = _map[? "speed"];
+            loadVariableState(_map,"x");
+            loadVariableState(_map,"y");
+            loadVariableState(_map,"sprite_index");
+            loadVariableState(_map,"image_index");
+            loadVariableState(_map,"image_blend");
+            loadVariableState(_map,"image_angle");
+            loadVariableState(_map,"image_xscale");
+            loadVariableState(_map,"image_yscale");
+            loadVariableState(_map,"image_alpha");
+            loadVariableState(_map,"direction");
+            loadVariableState(_map,"speed");
             
             //Custom Variables
-            ammo = _map[? "ammo"];
-            energie = _map[? "energie"];
+            loadVariableState(_map,"ammo");
+            loadVariableState(_map,"energie");
+            loadVariableState(_map,"startx");
+            loadVariableState(_map,"starty");
         }
     }
     

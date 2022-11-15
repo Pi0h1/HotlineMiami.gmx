@@ -61,10 +61,10 @@ speed=0
 
 if alert=0 or alert=2 {
 direction=scrRotate(direction,point_direction(x,y,objPlayer.x,objPlayer.y),10)
-if image_index&gt;0 {direction=dir image_index-=0.25}
+if image_index&gt;0 {direction=dir image_index-=(0.25*delta)}
 } else {
 reload=20
-if image_index&lt;5 image_index+=0.25
+if image_index&lt;5 image_index+=(0.25*delta)
 direction=dir
 }
 
@@ -76,7 +76,7 @@ reload=2
 my_id=instance_create(x+lengthdir_x(8,direction),y+lengthdir_y(8,direction),objEBullet)
 my_id.direction=direction-10+random(20)
 my_id.image_angle=my_id.direction
-my_id.speed=10+random(5)
+my_id.speed=(10+random(5))*delta
 PlaySFX(sndEM16)
 }
 

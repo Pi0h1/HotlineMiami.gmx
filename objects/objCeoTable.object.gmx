@@ -158,8 +158,7 @@ active=0
             <kind>1</kind>
             <string>if room=rmPhoneHomUpstairsBiker {
 if !instance_exists(objCEO) and active=1 {
-draw_sprite_ext(sprArrow,0,x+12,y-20+lengthdir_x(3,dir),1,1,0,c_white,1)
-dir+=3
+drawArrow(0,false);
 }
 }
 draw_self();

@@ -3,8 +3,8 @@ if alert=0 {
     if instance_exists(objPlayer) {if global.maskindex=8 nothing=1 else scrDogSearch(objPlayer.x,objPlayer.y,4)}
     if alertwait>0 alertwait=0
     if alertwait>-1 {if alertwait=0 {path_end() alert=1}  alertwait-=1}
-    if findwall=0 {if speed=0 {speed=1 direction=round(direction*0.1)*10 findwall=1 turn=0} scrFollowWall()} else {
-    speed=1 
+    if findwall=0 {if speed=0 {speed=1*delta direction=round(direction*0.1)*10 findwall=1 turn=0} scrFollowWall()} else {
+    speed=1*delta 
     turn=0
     direction=round(direction*0.1)*10
     if abs(frac(direction*(1/90)))>0 direction+=diradd*10

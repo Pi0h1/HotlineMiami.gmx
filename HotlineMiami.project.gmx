@@ -3042,6 +3042,10 @@
       <script>scripts\EraseFile.gml</script>
     </scripts>
     <script>scripts\restartPlayerPosition.gml</script>
+    <script>scripts\saveVariableState.gml</script>
+    <script>scripts\loadVariableState.gml</script>
+    <script>scripts\drawArrow.gml</script>
+    <script>scripts\secUnit.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PushEd">

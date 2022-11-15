@@ -14,7 +14,7 @@ if instance_exists(objDeadBody){
         deadBody.sprite_index = deathSprite
         deadBody.direction = argument3
         deadBody.image_angle = deadBody.direction
-        if travelDistance > 0 {deadBody.speed = travelDistance + random(1)}
+        if travelDistance > 0 {deadBody.speed = (travelDistance*delta) + random(1)}
         deadBody.image_angle = deadBody.direction
         
         // Biker
@@ -26,12 +26,12 @@ if instance_exists(objDeadBody){
             if deadBody.sprite_index=sprPBackCut    deadBody.sprite_index=sprBikerBackCut
                 helmet=instance_create(x+lengthdir_x(24,argument3),y+lengthdir_y(24,argument3),objMCHelmet)
                 helmet.direction=argument3-40+random(80)
-                helmet.speed=1.5+random(1)
+                helmet.speed=(1.5+random(1))*delta
             }
             else {
                 mask=instance_create(x+lengthdir_x(24,argument3),y+lengthdir_y(24,argument3),objMaskDrop)
                 mask.direction=argument3-40+random(80)
-                mask.speed=(argument1+random(1))*delta;
+                mask.speed=(argument1*delta)+random(1);
             }
         }
         

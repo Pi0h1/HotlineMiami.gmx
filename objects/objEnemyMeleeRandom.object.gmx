@@ -51,8 +51,8 @@ ammo=0
             <string>scrEMeleeRandomInit()
 image_speed=0
 image_index=random(1000)
-speed=1
-image_speed=0.1
+speed=1*delta
+image_speed=0.1*delta
 energie=round(random(1))
 
 my_path=path_add()

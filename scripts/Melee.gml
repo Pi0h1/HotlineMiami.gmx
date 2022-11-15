@@ -14,8 +14,8 @@ move_contact_solid(global.dir,16)
 
 repeat (2) {
 my_id1=instance_create(x,y,objDebris)
-my_id1.direction=random(360)
-my_id1.speed=random(2)
+my_id1.direction=random(360)*delta
+my_id1.speed=random(2)*delta
 }
 }
 
@@ -23,4 +23,4 @@ PlaySFX(choose(sndSwing1,sndSwing2))
 sprite_index    =   asset_get_index(string_replace(sprite_get_name(sprite_index),"Walk","Attack"))
 image_index     =   1
 image_speed     =   (argument0)*delta
-reload          =   (argument1)
+reload          =   (argument1)*delta

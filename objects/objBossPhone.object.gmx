@@ -189,8 +189,7 @@ draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_ang
 draw_sprite_ext(sprite_index,image_index,x-1,y-1,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 
 if instance_exists(objEmpty) and talked=0 and called=1 {
-draw_sprite_ext(sprArrow,0,x,y+12+lengthdir_x(3,dir),1,1,180,c_white,1)
-dir+=4
+drawArrow(180,false);
 }
 
 if instance_number(objBossgun)=1 {

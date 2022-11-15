@@ -227,7 +227,7 @@ sxeasy_setVolume(amount*(1/180))
 vlastx=view_xview[0]
 vlasty=view_yview[0]
 if global.shake&gt;0 {
-global.shake-=0.5
+global.shake-=(0.5)*delta
 //view_xview[0]+=-global.shake*0.33+random(global.shake*0.66)
 //view_yview[0]+=-global.shake*0.33+random(global.shake*0.66)
 if global.devmode=0{

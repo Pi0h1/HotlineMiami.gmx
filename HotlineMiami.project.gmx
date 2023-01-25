@@ -3093,15 +3093,16 @@
   </fonts>
   <objects name="objects">
     <object>objects\objEnemyCrawl</object>
-    <objects name="Custom NPCs">
-      <object>objects\npcJacket</object>
-      <object>objects\npcBiker</object>
-      <object>objects\npcBeard</object>
-      <object>objects\npcGirlfriend</object>
-      <object>objects\npcRichter</object>
-    </objects>
     <objects name="NPCs">
+      <objects name="Custom">
+        <object>objects\npcJacket</object>
+        <object>objects\npcBiker</object>
+        <object>objects\npcBeard</object>
+        <object>objects\npcGirlfriend</object>
+        <object>objects\npcRichter</object>
+      </objects>
       <object>objects\objKillable</object>
+      <object>objects\objActor</object>
       <objects name="Hostile">
         <objects name="Boss Fights">
           <objects name="Boss 1 (Producer)">

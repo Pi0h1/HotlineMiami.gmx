@@ -25,9 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.15
+            <string>event_inherited();
+animSpeed=0.15
 dir=random(360)
-talked=0</string>
+talked=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,7 +51,9 @@ talked=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if talked=1 {
+            <string>event_inherited();
+
+if talked=1 {
 if !instance_exists(objPhoneConversation) {
 if objBoss2Corpse.state=0 {
 objBoss2Corpse.state=1

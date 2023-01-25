@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objActor</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,9 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>smirked=0
-image_speed=0.125
-vol=1</string>
+            <string>event_inherited();
+smirked=0
+animSpeed=0.125
+vol=1
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,24 +51,15 @@ vol=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if smirked=0 {
+            <string>event_inherited();
+
+if smirked=0 {
 if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;80 {
 scrGetMessage(1)
 smirked=1
 }
 }
-/*
-if smirked=1 {
-if instance_exists(objPhoneConversation) {
-if vol&gt;0.35 vol-=0.01
-sxeasy_setVolume(vol)
-} else {
-if vol&lt;1 {
-vol+=0.05
-sxeasy_setVolume(vol)
-}
-}
-}*/</string>
+</string>
           </argument>
         </arguments>
       </action>

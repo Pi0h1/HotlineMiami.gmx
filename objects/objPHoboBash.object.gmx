@@ -197,7 +197,7 @@ my_id=instance_create(myx,myy,objBloodPool)
 createDeadBody(false,0,sprHoboBashed,image_angle)
 my_id=instance_create(x,y,objPlayerJacket)
 my_id.reload=30
-my_id.alarm[2]=180
+my_id.alarm[2]=180 * delta
 global.dir=image_angle-180
 with my_id move_outside_solid(global.dir,16)
 instance_destroy()

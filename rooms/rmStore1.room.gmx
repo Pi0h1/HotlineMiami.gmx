@@ -61,12 +61,12 @@
     <instance objName="objFreezer" x="284" y="180" name="inst_173951A7" locked="0" code="image_index=1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFreezer" x="284" y="268" name="inst_23E42A0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStoreShelf" x="296" y="252" name="inst_09641920" locked="0" code="image_index=2" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objStoreShelf" x="372" y="164" name="inst_E0FFBF50" locked="0" code="image_index=1&#xA;" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objStoreShelf" x="372" y="280" name="inst_A6CED8DE" locked="0" code="image_xscale=-1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStoreShelf" x="372" y="164" name="inst_E0FFBF50" locked="0" code="image_index=1" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStoreShelf" x="372" y="280" name="inst_A6CED8DE" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStoreFridge" x="350" y="114" name="inst_F46D7A72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStoreFridge" x="324" y="114" name="inst_F05221FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStoreFridge" x="298" y="114" name="inst_64633AF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objStoreFridge" x="296" y="176" name="inst_A19EEA39" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStoreFridge" x="296" y="176" name="inst_A19EEA39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objStoreShelf" x="180" y="196" name="inst_E928893F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="160" y="288" name="inst_1D69767B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoubleFridge" x="260" y="114" name="inst_7D521185" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -77,7 +77,7 @@
     <instance objName="objStorePapers" x="176" y="354" name="inst_FF65ADD2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objNicklasStore" x="338" y="384" name="inst_C164A980" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLoneSurvivor" x="350" y="164" name="inst_6C660C0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSixpack" x="182" y="208" name="inst_4F8890B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSixpack" x="181" y="208" name="inst_4F8890B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerMouseHouse" x="138" y="304" name="inst_E49AF721" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objNeonSign" x="144" y="272" name="inst_3446664B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerCar" x="80" y="352" name="inst_7D59712A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>

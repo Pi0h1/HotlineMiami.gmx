@@ -55,8 +55,9 @@ if global.phone=1 {
 d3d_set_fog(true,c_white,0,0)
 draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
 d3d_set_fog(0,0,0,0)
-dir+=4
-}</string>
+dir+=(4) * delta
+}
+</string>
           </argument>
         </arguments>
       </action>

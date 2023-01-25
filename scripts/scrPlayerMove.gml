@@ -2,7 +2,7 @@
 // Initializing variables
 var allowMovement = true;
 var levelLimits = 64;   // This is how far away Jacket can get from the bounds of a room (64 pixels)
-var acceleration = 0.5 * delta;
+var acceleration = 0.5;
 var moveScale = argument2 // This variable defines wether controls are inverted or not.
 var dizzyTimer = 0.01; // How much it takes for Jacket to get dizzy when walking in Trauma.
 //End of initialiazing variables
@@ -20,8 +20,8 @@ with objElevator
 if touch = 1 global.test = 1
 if persistent = 1 and global.test = 1 nothing = 1
 else {
-    myspeed = argument0 * delta;
-    factor = argument1 * delta;
+    myspeed = argument0;
+    factor = argument1;
     magicNumber = (0.98);
 
     moveleft    = keyboard_check_direct(ord(global.leftkey))    || keyboard_check_direct(vk_left)
@@ -31,35 +31,35 @@ else {
     
     if allowMovement {
         if moveleft {
-            if myxspeed > -(myspeed) myxspeed -= (acceleration) * moveScale
+            if myxspeed > -(myspeed) myxspeed -= ((acceleration) * moveScale) * delta
             else myxspeed = (-(myspeed)) * moveScale
         }
         if moveright {
-            if myxspeed < (myspeed) myxspeed += (acceleration) * moveScale
+            if myxspeed < (myspeed) myxspeed += ((acceleration) * moveScale) * delta
             else myxspeed = (myspeed) * moveScale
         }
         if moveup {
-            if myyspeed > -(myspeed) myyspeed -= (acceleration) * moveScale
+            if myyspeed > -(myspeed) myyspeed -= ((acceleration) * moveScale) * delta
             else myyspeed = (-(myspeed)) * moveScale
         }
         if movedown {
-            if myyspeed < (myspeed) myyspeed += (acceleration) * moveScale
+            if myyspeed < (myspeed) myyspeed += ((acceleration) * moveScale) * delta
             else myyspeed = (myspeed) * moveScale
         }
     
         //Adresses conflicts in directions.
         if (!moveright and!moveleft) {
-            if myxspeed > 0 myxspeed -= (acceleration)
+            if myxspeed > 0 myxspeed -= (acceleration) * delta
             else {
-                if myxspeed < -acceleration myxspeed += (acceleration)
+                if myxspeed < -acceleration myxspeed += (acceleration) * delta
                 else myxspeed = 0
             }
         }
     
         if (!moveup and!movedown) {
-            if myyspeed > 0 myyspeed -= acceleration
+            if myyspeed > 0 myyspeed -= acceleration * delta
             else {
-                if myyspeed < -acceleration myyspeed += (acceleration)
+                if myyspeed < -acceleration myyspeed += (acceleration) * delta
                 else myyspeed = 0
             }
         }
@@ -72,22 +72,22 @@ else {
         
         if abs(myxspeed) = 0 and abs(myyspeed) = 0 legindex = 0
         else {
-            //legindex += (abs(myxspeed) + abs(myyspeed)) * (0.1) * factor // Leg index.
-            legindex += (abs(myxspeed) + abs (myyspeed)) * (0.1)
+            legindex += ((abs(myxspeed) + abs(myyspeed)) * (0.1) * factor) * delta // Leg index.
+            //legindex += ((abs(myxspeed) + abs (myyspeed)) * (0.1)) * delta
             with objDizzy {
-                if dizziness < 1 dizziness += (dizzyTimer)
-            } // Trauma's dizziness effect.
-            if scrIsWalking(sprite_index) image_index += ((abs(myxspeed) + abs(myyspeed)) * 0.05) // Animate the player sprite if the player is walking.
+                if dizziness < 1 dizziness += (dizzyTimer) // Trauma's dizziness effect.
+            } 
+            if scrIsWalking(sprite_index) image_index += ((abs(myxspeed) + abs(myyspeed)) * 0.05) * delta // Animate the player sprite if the player is walking.
         }
     
         legdir = point_direction(0, 0, myxspeed, myyspeed)
         if abs(myxspeed) > 0 {
-            if place_free(x + myxspeed, y) x += (myxspeed)
+            if place_free(x + myxspeed * delta, y) x += (myxspeed) * delta
             else {
                 if myyspeed = 0 {
-                    if place_free(x + myxspeed, y - 8) y -= (myspeed)
+                    if place_free(x + myxspeed * delta, y - 8) y -= (myspeed) * delta
                     else {
-                        if place_free(x + myxspeed, y + 8) y += (myspeed)
+                        if place_free(x + myxspeed * delta, y + 8) y += (myspeed) * delta
                         else {
                             move_contact_solid(90 - sign(myxspeed) * 90, abs(myxspeed))
                             myxspeed = 0
@@ -97,12 +97,12 @@ else {
             }
         }
         if abs(myyspeed) > 0 {
-            if place_free(x, y + myyspeed) y += (myyspeed)
+            if place_free(x, y + myyspeed * delta) y += (myyspeed) * delta
             else {
                 if myxspeed = 0 {
-                    if place_free(x - 8, y + myyspeed) x -= (myspeed)
+                    if place_free(x - 8, y + myyspeed * delta) x -= (myspeed) * delta
                     else {
-                        if place_free(x + 8, y + myyspeed) x += (myspeed)
+                        if place_free(x + 8, y + myyspeed * delta) x += (myspeed) * delta
                         else {
                             move_contact_solid(-sign(myyspeed) * 90, abs(myyspeed))
                             myyspeed = 0

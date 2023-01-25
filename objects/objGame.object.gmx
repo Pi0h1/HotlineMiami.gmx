@@ -65,7 +65,7 @@ This event sets what level should be tested if
 global.devmode is set to true.
 */
 
-testLevel = rmTutorial;
+testLevel = rmSequence2;
 </string>
           </argument>
         </arguments>
@@ -793,7 +793,7 @@ temp2+=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>txtDev(32,32,string(room_speed)+" room speed",fntDate,1);
+            <string>txtDev(32,32,string(delta),fntDate,1);
 /// Draw User Interface
 if (global.devmode == false) exit //    if we're not in dev move, don't do any of the following. 
 display_set_gui_size(view_wview[0]/(uiScale),view_hview[0]/(uiScale)); //   Set the scale for the interface.

@@ -14,8 +14,8 @@ global.mousey=global.enemy.y
 }
 if !instance_exists(objMaskMenu) and !instance_exists(objPhoneConversation) global.time+=1
 if instance_exists(objDizzy) exit
-if blackx<15 blackx+=1
-global.dir+=1
+if blackx<15 blackx += 1 * delta
+global.dir += (1) * delta
 if action>0 {image_blend=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,global.dir*3.27)),c_white,0.5+lengthdir_y(0.5,global.dir*1.97))
 test=1
 if !instance_exists(objPlayer) test=0

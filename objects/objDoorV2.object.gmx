@@ -50,10 +50,10 @@ swinger=0</string>
           <argument>
             <kind>1</kind>
             <string>if abs(swingspeed)&gt;0 {
-image_angle+=swingspeed
+image_angle+=(swingspeed) * delta
 if place_meeting(x,y,objFurniture) {
-image_angle-=swingspeed
-swingspeed*=-0.5
+image_angle-=(swingspeed) * delta
+swingspeed*=-(0.5) * delta
 }
 if image_angle&lt;-135 {image_angle=-135 swingspeed=abs(swingspeed)}
 if image_angle&gt;135 {image_angle=135 swingspeed=-abs(swingspeed)}
@@ -62,10 +62,11 @@ if abs(swingspeed)&lt;3.5 {
 if image_angle&gt;-6 and image_angle&lt;6 {swingspeed=0 image_angle=0 exit}
 }
 
-if swingspeed&gt;0.25 swingspeed-=0.25 else {
-if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
+if swingspeed&gt;0.25 swingspeed-=(0.25) * delta else {
+if swingspeed&lt;0 swingspeed+=(0.25) * delta else {swinger=0 swingspeed=0}
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

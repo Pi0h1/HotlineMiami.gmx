@@ -54,11 +54,11 @@ global.package=0</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objBackgroundColor" x="40" y="28" name="inst_6CCC7738" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBackgroundColor" x="40" y="32" name="inst_6CCC7738" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShadowV" x="608" y="144" name="inst_D53876E0" locked="0" code="" scaleX="20" scaleY="2" colour="4294967295" rotation="180"/>
     <instance objName="objShadowV" x="200" y="112" name="inst_54CFA273" locked="0" code="" scaleX="5.5" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objShadowV" x="544" y="320" name="inst_F1CF4C3C" locked="0" code="color2=c_ltgray&#xA;color1=c_black&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objSurfacer" x="60" y="32" name="inst_2E272EA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSurfacer" x="64" y="32" name="inst_2E272EA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTrashbag" x="464" y="288" name="inst_E856830B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTrashbag" x="472" y="304" name="inst_AA68012A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTrashbag" x="472" y="288" name="inst_81AE64FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -92,7 +92,7 @@ global.package=0</code>
     <instance objName="objRailV" x="536" y="320" name="inst_03AA83EC" locked="0" code="image_index=1&#xA;" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objWoodFenceV" x="0" y="344" name="inst_2D2D6E46" locked="0" code="image_index=1" scaleX="1" scaleY="14" colour="4294967295" rotation="0"/>
     <instance objName="objWoodFenceV" x="480" y="352" name="inst_08897416" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
-    <instance objName="objDumpster" x="391" y="230" name="inst_56DE4707" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDumpster" x="417" y="254" name="inst_56DE4707" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHomelessBed" x="64" y="184" name="inst_81E4DFC7" locked="0" code="image_angle=-5+random(10)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHorBarrier" x="104" y="48" name="inst_3ACAD631" locked="0" code="ylimit=1" scaleX="2.75" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerJacket" x="152" y="16" name="inst_A96DAD2B" locked="0" code="sprite_index=sprPWalkBag" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

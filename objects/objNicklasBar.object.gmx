@@ -25,10 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.1
+            <string>event_inherited();
+animSpeed=0.1
 dir=random(360)
 talked=0
-served=0</string>
+served=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,7 +52,9 @@ served=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if talked=1 and !instance_exists(objPhoneConversation) {
+            <string>event_inherited();
+
+if talked=1 and !instance_exists(objPhoneConversation) {
 if served=0 {
 served=1 {sprite_index=sprNicklasServe image_index=0}
 }

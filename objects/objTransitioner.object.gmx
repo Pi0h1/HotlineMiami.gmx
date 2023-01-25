@@ -129,7 +129,7 @@ visible=0
             <string>if instance_exists(objPlayerMouseHouse) or instance_exists(objPlayerBikerHouse) {
 if room=rmSequence13 {if global.done=0 exit} else exit
 }
-dir+=8
+dir+=8*delta;
 if sprite=sprGoArrow {
 index=0
 if addx=1 index=0
@@ -150,7 +150,8 @@ draw_sprite_ext(sprite,dir*(1/16),x,y+lengthdir_x(4,dir),1,1,0,c_white,1)
 }
 if addy=-1 {
 draw_sprite_ext(sprite,dir*(1/16),x,y+lengthdir_x(4,dir),1,1,180,c_white,1)
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

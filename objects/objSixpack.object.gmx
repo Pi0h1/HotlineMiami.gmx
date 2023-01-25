@@ -132,7 +132,7 @@ if on draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+length
 d3d_set_fog(0,0,0,0)
 if on {
 drawArrow(-90,false);
-dir+=4
+dir+= (4) * delta;
 }
 </string>
           </argument>

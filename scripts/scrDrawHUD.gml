@@ -1,6 +1,6 @@
 var scale = 1;
-dir += 1 + update * 7
-global.dir += 1
+dir += (1 + update * 7) * delta
+global.dir += 1 * delta
 logicCombo    ();
 logicScore    ();
 logicAmmo     ();

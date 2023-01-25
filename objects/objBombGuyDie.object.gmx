@@ -47,7 +47,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;4 image_index+=1</string>
+            <string>if image_index&lt;4 image_index+=1*delta;
+</string>
           </argument>
         </arguments>
       </action>

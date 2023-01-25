@@ -94,9 +94,7 @@
     <instance objName="objDoubleFridge" x="356" y="52" name="inst_B01992CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLeatherCouch" x="160" y="144" name="inst_4C22C0D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGlassTable" x="192" y="144" name="inst_756283B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTV" x="192" y="160" name="inst_8018EF2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTV" x="192" y="142" name="inst_26425E3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTV" x="192" y="124" name="inst_1B2075FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowFrameH" x="288" y="320" name="inst_AEA2FC1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowFrameH" x="352" y="320" name="inst_57448108" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWindowFrameH" x="128" y="320" name="inst_5DE11684" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

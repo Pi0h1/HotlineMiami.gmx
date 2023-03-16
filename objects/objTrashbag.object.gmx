@@ -3,7 +3,7 @@
   <spriteName>sprTrashbag</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,15 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0;
-image_angle=random(360);
-image_index=floor(random(3));
-
+            <string>image_speed=0
+image_angle=random(360)
+image_index=floor(random(3))
 if round(random(3))=2 {
 sprite_index=sprOpenTrashbag
 image_speed=0.25
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

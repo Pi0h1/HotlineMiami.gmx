@@ -80,8 +80,8 @@ if alert=0 or alert=2 {
 direction=scrRotate(direction,point_direction(x,y,objPlayer.x,objPlayer.y),10)
 
 if state=0 {
-if instance_exists(objPlayerJacket) {
-with objPlayerJacket {
+if instance_exists(objPlayerMouse) {
+with objPlayerMouse {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.sprite_index=sprite_index
@@ -106,7 +106,7 @@ if !instance_exists(objPhoneConversation) {
 if wait&gt;0 wait-=1 else {
 state=2
 with objPlayer {
-my_id=instance_create(x,y,objPlayerJacket)
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.active=1
 my_id.sprite_index=sprite_index
 my_id.ammo=ammo
@@ -130,14 +130,15 @@ view_yview[0]=viewy
 }
 
 if !instance_exists(objPlayer) exit
-if objPlayer.sprite_index=sprPAttackNightStick or objPlayer.sprite_index=sprPAttackUnarmed {
+if objPlayer.sprite_index=sprPAttackNightStick or objPlayer.sprite_index=sprPAttackPunch {
 global.test=0 
 with objPlayer {
 if place_meeting(objPlayer.x+lengthdir_x(12,objPlayer.dir),objPlayer.y+lengthdir_y(12,objPlayer.dir),objPrisoner) global.test=1
 }
 if global.test=1 {
 global.shake=7
-PlaySFX("Blunt")
+audio_play_sound(sndHit,0,false)
+audio_play_sound(sndPunch,0,false)
 pdir=point_direction(global.my_id.x,global.my_id.y,x,y)
 repeat (8) {
 my_id=instance_create(x-3+random(6)+lengthdir_x(8,pdir),y-3+random(6)+lengthdir_y(8,pdir),objBloodDrop)
@@ -245,6 +246,36 @@ my_id.direction=edir
 my_id.speed=1
 my_id.sprite_index=sprAssassinTalkShot
 instance_destroy()</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if sprite_index=sprChiefDie {
+my_id=instance_create(x,y,objDeadBody)
+my_id.direction=direction-180
+my_id.speed=0.5
+my_id.sprite_index=sprChiefDead
+my_id.image_angle=my_id.direction
+instance_destroy()
+exit
+}</string>
           </argument>
         </arguments>
       </action>

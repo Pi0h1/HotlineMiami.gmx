@@ -51,7 +51,7 @@ on=0</string>
           <argument>
             <kind>1</kind>
             <string>on=1
-PlaySFX("Glass")
+audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
 speed=0
 </string>
           </argument>

@@ -30,12 +30,7 @@ state=0
 shoot=0
 global.smoke=0
 global.picture=0
-global.drop=0
-shake=0
-angle=0
-legindex=0
-legsprite=0
-</string>
+global.throw=0</string>
           </argument>
         </arguments>
       </action>
@@ -62,7 +57,7 @@ if image_index&lt;18 image_index+=0.5
 }
 if state=0 {
 if objPlayer.y&lt;224 {
-with objPlayerJacket {
+with objPlayerMouse {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.image_index=image_index
 my_id.dir=dir
@@ -119,7 +114,7 @@ if objPlayer.image_index&gt;9 and shoot=0 {
 shoot=1 
 with objPlayer {
 my_id=instance_create(x+lengthdir_x(24,dir),y+lengthdir_y(24,dir),objBullet)
-PlaySFX(sndMagnum)
+audio_play_sound(sndMagnum,0,false)
 my_id.direction=dir
 my_id.speed=12
 my_id.image_angle=dir
@@ -148,7 +143,7 @@ sprite_index=sprPThrowMask
 global.maskon=0
 maskon=0
 if image_index&lt;20.85 image_index+=0.15 else {objOldman.wait=30 objOldman.state=6 objPlayer.sprite_index=sprPEnding objPlayer.image_index=0}
-if global.drop=0 and image_index&gt;16 {my_id=instance_create(x-12,y,objMaskDrop) my_id.direction=180+random(10) my_id.speed=3 my_id.image_angle=270 my_id.sprite_index=sprMaskDropBack global.drop=1}
+if global.throw=0 and image_index&gt;16 {my_id=instance_create(x-12,y,objMaskDrop) my_id.direction=180+random(10) my_id.speed=3 my_id.image_angle=270 my_id.sprite_index=sprMaskDropBack global.throw=1}
 }
 }
 }
@@ -159,7 +154,7 @@ if wait&gt;0 {objPlayer.image_index=0 objPlayer.legindex=0 wait-=1} else {
 objPlayer.sprite_index=sprPEnding
 with objPlayer {
 if image_index&lt;160 image_index+=0.15
-if image_index&gt;=13 and image_index-0.15&lt;13 PlaySFX(sndLighter)
+if image_index&gt;=13 and image_index-0.15&lt;13 audio_play_sound(sndLighter,0,false)
 if image_index&gt;52 and global.smoke=0 {global.smoke=1 my_id=instance_create(x+lengthdir_x(8,dir),y+lengthdir_y(8,dir),objSmokeHit) my_id.depth=-1 my_id.image_angle=dir my_id.image_speed=0.15}
 if image_index&gt;92 and global.smoke=1 {global.smoke=2 my_id=instance_create(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objSmokeHit) my_id.depth=-1 my_id.image_angle=dir my_id.image_speed=0.15}
 if image_index&gt;122 and global.picture=0 {global.picture=1 my_id=instance_create(x-7,y-13,objPicture) my_id.direction=90 my_id.speed=1.5}

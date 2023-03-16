@@ -75,9 +75,9 @@ with objDoorV solid=0
 with objShootThrough solid=test
 if !instance_exists(objPlayer) exit
 if wait&gt;0 wait-=1 else {
-if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;12 and objPlayer.object_index=objPlayerJacket {
+if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;12 and objPlayer.object_index=objPlayerMouse {
 with objPlayer {
-if sprite_index=sprPWalkUnarmed or sprite_index=sprPWalkBag or sprite_index=sprPAttackUnarmed nothing=1 else {
+if sprite_index=sprPWalkUnarmed or sprite_index=sprPWalkBag or sprite_index=sprPAttackPunch nothing=1 else {
 my_id=instance_create(objPlayer.x+lengthdir_x(8,objPlayer.dir-90),objPlayer.y+lengthdir_y(8,objPlayer.dir-90),objWeaponThrow)
 my_id.image_index=scrCurrentWeaponExt(sprite_index)
 my_id.direction=dir-70-random(40)
@@ -94,11 +94,10 @@ my_id=instance_create(x,y,objPBodyguardBash)
 my_id.maskindex=objPlayer.maskindex
 my_id.maskon=1
 my_id.image_angle=image_angle
-with objPlayer {if object_index=objPlayerJacket instance_destroy()}
+with objPlayer {if object_index=objPlayerMouse or object_index=objPlayerController instance_destroy()}
 instance_destroy()
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

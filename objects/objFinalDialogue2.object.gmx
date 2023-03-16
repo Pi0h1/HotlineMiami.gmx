@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_y=0
+            <string>if global.xbox=1 scrInitXboxButtons()
+my_y=0
 dir=0
 dir=0
 wait=0
@@ -33,7 +34,7 @@ phonex=0
 blackx=15
 line1x=0
 line2x=0
-index=sprFaceBiker
+index=sprBiker
 start=0
 stop=0
 
@@ -42,8 +43,8 @@ line2[0]="your operations, huh?"
 line1[1]="infiltrating the enemy..."
 line2[1]="How clever of you."
 
-face[0]=sprFaceBiker
-face[1]=sprFaceBiker
+face[0]=sprBiker
+face[1]=sprBiker
 
 
 line1[2]="You're the asshole from"
@@ -51,8 +52,8 @@ line2[2]="phonehom last night..?"
 line1[3]="What do you want?"
 line2[3]="..."
 
-face[2]=sprFaceJonatan
-face[3]=sprFaceDennis
+face[2]=sprJonatanFace
+face[3]=sprDennisFace
 
 line1[4]="I looked through your computer"
 line2[4]="upstairs..."
@@ -61,27 +62,27 @@ line2[5]="a little talk about your..."
 line1[6]="'line of Work'"
 line2[6]="..."
 
-face[4]=sprFaceBiker
-face[5]=sprFaceBiker
-face[6]=sprFaceBiker
+face[4]=sprBiker
+face[5]=sprBiker
+face[6]=sprBiker
 
 line1[7]="You don't know shit. Our"
 line2[7]="system is password protected."
 line1[8]="No one knows the password but"
 line2[8]="the two of us."
 
-face[7]=sprFaceDennis
-face[8]=sprFaceJonatan
+face[7]=sprDennisFace
+face[8]=sprJonatanFace
 
 line1[9]="'I was born in the usa'?"
 line2[9]=""
 
-face[9]=sprFaceBiker
+face[9]=sprBiker
 
 line1[10]="How the hell did you figure"
 line2[10]="that out?"
 
-face[10]=sprFaceDennisStraight
+face[10]=sprDennisStraightFace
 
 line1[11]="Let's just say I used a little"
 line2[11]="magic..."
@@ -92,10 +93,10 @@ line2[13]="doing your dirtywork."
 line1[14]="And this whole thing is a"
 line2[14]="two man operation?"
 
-face[11]=sprFaceBiker
-face[12]=sprFaceBiker
-face[13]=sprFaceBiker
-face[14]=sprFaceBiker
+face[11]=sprBiker
+face[12]=sprBiker
+face[13]=sprBiker
+face[14]=sprBiker
 
 
 line1[15]="You could say that, though we"
@@ -107,15 +108,15 @@ line2[17]="just the tip of the iceberg."
 line1[18]="We're setting up operations"
 line2[18]="all over the country."
 
-face[15]=sprFaceDennisStraight
-face[16]=sprFaceJonatanStraight
-face[17]=sprFaceJonatanStraight
-face[18]=sprFaceDennisStraight
+face[15]=sprDennisStraightFace
+face[16]=sprJonatanStraightFace
+face[17]=sprJonatanStraightFace
+face[18]=sprDennisStraightFace
 
 line1[19]="How did you come up with this"
 line2[19]="crazy scheme?"
 
-face[19]=sprFaceBiker
+face[19]=sprBiker
 
 line1[20]="Crazy..? What you need to"
 line2[20]="realize is that-"
@@ -126,15 +127,15 @@ line2[22]="be consequences if they don't."
 line1[23]="It's a principle our whole"
 line2[23]="society is built upon."
 
-face[20]=sprFaceDennisStraight
-face[21]=sprFaceJonatanStraight
-face[22]=sprFaceJonatanStraight
-face[23]=sprFaceDennisStraight
+face[20]=sprDennisStraightFace
+face[21]=sprJonatanStraightFace
+face[22]=sprJonatanStraightFace
+face[23]=sprDennisStraightFace
 
 line1[24]="So it's ok to threaten people"
 line2[24]="into killing each other?"
 
-face[24]=sprFaceBiker
+face[24]=sprBiker
 
 line1[25]="Wake up, man. Don't you see"
 line2[25]="this is a country at war?"
@@ -147,19 +148,19 @@ line2[28]="for the sake of our nation."
 line1[29]="You might remember this,"
 line2[29]="you're a member too, right?"
 
-face[25]=sprFaceJonatanStraight
-face[26]=sprFaceDennisStraight
-face[27]=sprFaceDennisStraight
-face[28]=sprFaceDennisStraight
-face[29]=sprFaceJonatanStraight
+face[25]=sprJonatanStraightFace
+face[26]=sprDennisStraightFace
+face[27]=sprDennisStraightFace
+face[28]=sprDennisStraightFace
+face[29]=sprJonatanStraightFace
 
 line1[30]="And you expect to topple the"
 line2[30]="ruso-american coalition..."
 line1[31]="Using methods like this?"
 line2[31]="..."
 
-face[30]=sprFaceBiker
-face[31]=sprFaceBiker
+face[30]=sprBiker
+face[31]=sprBiker
 
 line1[32]="Oh, don't you worry "
 line2[32]="about that."
@@ -172,11 +173,11 @@ line2[35]="You'll understand in time."
 line1[36]="We've got some very powerful"
 line2[36]="people on our side."
 
-face[32]=sprFaceJonatanStraight
-face[33]=sprFaceDennisStraight
-face[34]=sprFaceDennisStraight
-face[35]=sprFaceJonatanStraight
-face[36]=sprFaceDennisStraight
+face[32]=sprJonatanStraightFace
+face[33]=sprDennisStraightFace
+face[34]=sprDennisStraightFace
+face[35]=sprJonatanStraightFace
+face[36]=sprDennisStraightFace
 
 line1[37]="You know what?"
 line2[37]="I think I've heard enough now."
@@ -185,20 +186,19 @@ line2[38]="politics..."
 line1[39]="You people have wasted enough"
 line2[39]="of my time already."
 
-face[37]=sprFaceBiker
-face[38]=sprFaceBiker
-face[39]=sprFaceBiker
+face[37]=sprBiker
+face[38]=sprBiker
+face[39]=sprBiker
 
 messages=39
 
-sprite=sprFaceDialogue
+sprite=sprDialogueFaces
 change=0
 current=0
 select=-1
 reload=0
 image_xscale=1.5
-image_yscale=1.5
-</string>
+image_yscale=1.5</string>
           </argument>
         </arguments>
       </action>
@@ -220,11 +220,19 @@ image_yscale=1.5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if stop=1 {
-if blackx&gt;15 {blackx-=2.5} else 
-{objEffector.blackx=blackx with objPlayerBiker {my_id=instance_create(x,y,objPlayerBiker) my_id.sprite_index=sprBikerWalkUnarmed instance_destroy()} global.done=1 instance_create(x,y,objLevelComplete)  instance_destroy()}
+            <string>if global.xbox=1 {
+if checkbutton(0,getid(5)) or checkbutton(0,getid(11)) {
+if presstart=0 {
+presstart=1
+scrXboxEndingDialogue2Start()
+} 
+} else presstart=0
 }
-</string>
+
+if stop=1 {
+if blackx&gt;15 {blackx-=2.5} else 
+{objEffector.blackx=blackx with objPlayerBiker {my_id=instance_create(x,y,objPlayerBiker) my_id.sprite_index=sprBoss2Walk instance_destroy()} global.done=1 instance_create(x,y,objLevelComplete)  instance_destroy()}
+}</string>
           </argument>
         </arguments>
       </action>
@@ -246,12 +254,12 @@ if blackx&gt;15 {blackx-=2.5} else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if reload&gt;0 exit
+            <string>if global.xbox=1 exit
+if reload&gt;0 exit
 reload=2
 if current&lt;messages {if face[current]&gt;face[current+1] change=1 if face[current]&lt;face[current+1] change=1 current+=1} else {
 stop=1
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -342,6 +350,14 @@ draw_sprite_ext(index,dir*0.1,view_wview[0]-phonex+128,view_hview[0]/2,image_xsc
 }
 }
 dir+=1
+exit
+draw_set_blend_mode(bm_subtract)
+//draw_sprite_tiled(sprScanlines,0,0,my_y)
+my_y=random(32)
+draw_set_blend_mode(bm_subtract)
+draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
+draw_set_blend_mode(bm_normal)
+
 </string>
           </argument>
         </arguments>

@@ -63,7 +63,8 @@ my_id2.speed=2+random(1)
 if image_index&gt;=3 {
 if bled=0 {
 bled=1
-PlaySFX("Cut")
+audio_play_sound(sndHit,0,false)
+audio_play_sound(sndCut1,0,false)
 repeat (5) {
 my_id=instance_create(x+lengthdir_x(11,image_angle-10),y+lengthdir_y(11,image_angle-10),objBloodSquirt)
 my_id.image_angle=image_angle-120+random(60)

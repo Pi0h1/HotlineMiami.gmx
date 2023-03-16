@@ -1,4 +1,4 @@
-/// scrSearch(goalx,goaly,precision)
+//scrSearch(goalx,goaly,precision)
 if checkreload>0 checkreload-=1 else {
 if global.maskindex=18 dist=100 else dist=220
 if point_distance(x,y,argument0,argument1)<dist or path_index>=0 or speed>0 {

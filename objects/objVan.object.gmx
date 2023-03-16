@@ -33,7 +33,7 @@ with objDoorH image_angle=0
 with objDoorH2 image_angle=0
 image_angle=270
 image_yscale=2
-PlaySFX(sndCarThrottle)
+audio_play_sound(sndCarThrottle,0,false)
 brake=0
 sxeasy_play(working_directory+"\Release.mp3")
 doorangle=0
@@ -55,7 +55,7 @@ objPlayer.persistent=0
 thrown=0
 global.loaded=1
 objEffectorHouse.amount=0
-SaveGameState();
+game_save(working_directory+"\tempsave.sav")
 global.loaded=0
 objEffectorHouse.amount=180
 objPlayer.persistent=test
@@ -81,11 +81,16 @@ objPlayer.persistent=test
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
-if place_meeting(x,y,objPlayerJacket) {
+            <string>if global.xbox=1 scrXboxRestart()
+if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
+if place_meeting(x,y,objPlayerMouse) {
 global.dir=point_direction(x,y,objPlayer.x,objPlayer.y)
 with objPlayer {
-createDeadBody(true,3,sprPBackCar,global.dir)
+my_id=instance_create(x,y,objPlayerDead)
+my_id.sprite_index=sprPBackCar
+my_id.image_angle=global.dir
+my_id.speed=3
+my_id.direction=global.dir
 instance_destroy()
 }
 }
@@ -103,7 +108,7 @@ if tile_exists(tile) tile_delete(tile)
 }
 }
 if y&gt;216 {
-if brake=0 {brake=1 PlaySFX(sndCarSkid) audio_stop_sound(sndCarThrottle)}
+if brake=0 {brake=1 audio_play_sound(sndCarSkid,0,false) audio_stop_sound(sndCarThrottle)}
 friction=0.38
 direction+=speed*0.4
 image_angle+=speed*0.45
@@ -134,7 +139,7 @@ if objPlayer.y&gt;384 {
 if objPlayer.y&lt;448 {
 if reload&gt;0 reload-=1 else {
 reload=2
-PlaySFX(sndM16)
+audio_play_sound(sndM16,0,false)
 headx=lengthdir_x(30.2,325.8+image_angle)
 heady=lengthdir_y(30.2,325.8+image_angle)
 my_id=instance_create(x+headx,y+heady+9,objEBullet)
@@ -207,7 +212,7 @@ my_id.direction=90
 
 
 if state=5 {
-if instance_exists(objPlayerJacket) {
+if instance_exists(objPlayerMouse) {
 if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objBurningGuy)=0 {
 objEffector.brus=10
 with objBottleExplosion {my_id=instance_create(x,y,objBombGround) my_id.image_angle=random(360) instance_destroy()}
@@ -216,7 +221,7 @@ my_id=instance_create(x+lengthdir_x(24,image_angle+90),y+lengthdir_y(24,image_an
 my_id.direction=90
 viewx=view_xview[0]
 viewy=view_yview[0]
-with objPlayerJacket {
+with objPlayerMouse {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.dir=dir
 my_id.maskon=1
@@ -270,6 +275,44 @@ if global.shake&lt;8 global.shake=8</string>
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objGlassPanelH">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other {
+i=0
+repeat (16) {
+my_id=instance_create(x+i*2,y+4,objShard)
+my_id.direction=point_direction(x+16,y-8,my_id.x,my_id.y)
+my_id.speed=random(4)
+my_id=instance_create(x+i*2,y+4,choose(objDebris,objDoorDebris))
+my_id.direction=point_direction(x+16,y-8,my_id.x,my_id.y)
+my_id.speed=random(4)
+i+=1
+}
+audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
+}
+instance_create(other.x,other.y,objGlassPanelDestroyedH)
+with other instance_destroy()
+if global.shake&lt;8 global.shake=8
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objGlassPanelVBroken">
       <action>
         <libid>1</libid>
@@ -298,6 +341,43 @@ i+=1
 instance_create(other.x,other.y,objGlassPanelDestroyedV)
 with other instance_destroy()
 if global.shake&lt;8 global.shake=8</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objGlassPanelV">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>i=0
+repeat (16) {
+my_id=instance_create(other.x+3,other.y+i*2,objShard)
+if other.x&lt;x my_id.direction=point_direction(other.x+8,other.y+16,my_id.x,my_id.y) else my_id.direction=point_direction(other.x-8,other.y+16,my_id.x,my_id.y)
+my_id.speed=random(4)
+my_id=instance_create(other.x,other.y+i*2,choose(objDebris,objDoorDebris))
+if other.x&lt;x my_id.direction=point_direction(other.x+8,other.y+16,my_id.x,my_id.y) else my_id.direction=point_direction(other.x-8,other.y+16,my_id.x,my_id.y)
+my_id.speed=random(4)
+i+=1
+
+}
+audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
+instance_create(other.x,other.y,objGlassPanelDestroyedV)
+with other instance_destroy()
+if global.shake&lt;8 global.shake=8
+</string>
           </argument>
         </arguments>
       </action>
@@ -351,81 +431,8 @@ my_id.speed=2
 my_id.image_angle=-35
 with other instance_destroy()
 image_index=1
-PlaySFX(sndBreakDoor)
+audio_play_sound(sndBreakDoor,0,false)
 global.shake=16
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objWindowH">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with other {
-i=0
-repeat (16) {
-my_id=instance_create(x+i*2,y+4,objShard)
-my_id.direction=point_direction(x+16,y-8,my_id.x,my_id.y)
-my_id.speed=random(4)
-my_id=instance_create(x+i*2,y+4,choose(objDebris,objDoorDebris))
-my_id.direction=point_direction(x+16,y-8,my_id.x,my_id.y)
-my_id.speed=random(4)
-i+=1
-}
-}
-instance_create(other.x,other.y,objGlassPanelDestroyedH)
-with other instance_destroy()
-if global.shake&lt;8 global.shake=8
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objWindowV">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>i=0
-repeat (16) {
-my_id=instance_create(other.x+3,other.y+i*2,objShard)
-if other.x&lt;x my_id.direction=point_direction(other.x+8,other.y+16,my_id.x,my_id.y) else my_id.direction=point_direction(other.x-8,other.y+16,my_id.x,my_id.y)
-my_id.speed=random(4)
-my_id=instance_create(other.x,other.y+i*2,choose(objDebris,objDoorDebris))
-if other.x&lt;x my_id.direction=point_direction(other.x+8,other.y+16,my_id.x,my_id.y) else my_id.direction=point_direction(other.x-8,other.y+16,my_id.x,my_id.y)
-my_id.speed=random(4)
-i+=1
-
-}
-instance_create(other.x,other.y,objGlassPanelDestroyedV)
-with other instance_destroy()
-if global.shake&lt;8 global.shake=8
 </string>
           </argument>
         </arguments>

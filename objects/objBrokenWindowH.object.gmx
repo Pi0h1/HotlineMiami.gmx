@@ -32,10 +32,7 @@ my_id=instance_create(x+i*2,y+1,objShard)
 my_id.direction=90-10+random(20)
 my_id.speed=random(3)
 i+=1
-}
-
-PlaySFX("Strong Glass")
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

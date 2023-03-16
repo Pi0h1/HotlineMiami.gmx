@@ -50,7 +50,9 @@ dir=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if abs(swingspeed)&gt;0 {
+            <string>if global.xbox=1 scrXboxPrisonDoor()
+
+if abs(swingspeed)&gt;0 {
 image_angle+=swingspeed
 if place_meeting(x,y,objFurniture) {
 image_angle-=swingspeed
@@ -66,8 +68,7 @@ if image_angle&gt;-6 and image_angle&lt;6 {swingspeed=0 image_angle=0 exit}
 if swingspeed&gt;0.25 swingspeed-=0.25 else {
 if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -95,7 +96,7 @@ if image_angle&gt;1 {swingspeed=-1 exit}*/
 if solid=1 exit
 if other.object_index=objDogPatrol or other.object_index=objEnemyFat {
 swinger=2
-if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
+if abs(swingspeed)&lt;2 audio_play_sound(sndDoorOpen,0,false)
 if x&gt;other.x and other.y&lt;y {swingspeed=-8 exit}
 if x&gt;other.x and other.y&gt;y {swingspeed=8 exit}
 if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=-8 else swingspeed=8
@@ -113,7 +114,7 @@ if sprite_index=sprEWalkShotgun ammo=6
 if sprite_index=sprEWalkM16 ammo=24
 }
 }
-PlaySFX(sndDoorHit)
+audio_play_sound(sndDoorHit,0,false)
 global.shake=6
 my_id=instance_create(other.x,other.y,objKnockedOut)
 my_id.type=other.object_index
@@ -143,7 +144,7 @@ with other instance_destroy()
 exit
 }
 swinger=2
-if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
+if abs(swingspeed)&lt;2 audio_play_sound(sndDoorOpen,0,false)
 if x&gt;other.x and other.y&lt;y {swingspeed=-8 exit}
 if x&gt;other.x and other.y&gt;y {swingspeed=8 exit}
 if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=-8 else swingspeed=8
@@ -169,10 +170,13 @@ if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=-8 else swingspeed=8
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if solid=1 exit
+            <string>/*if abs(swingspeed)&gt;0 exit
+if image_angle&lt;-1 {swingspeed=1 exit}
+if image_angle&gt;1 {swingspeed=-1 exit}*/
+if solid=1 exit
 swinger=1
 if abs(swingspeed)&gt;3.5 exit
-if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
+if abs(swingspeed)&lt;2 audio_play_sound(sndDoorOpen,0,false)
 if x&gt;other.x and other.y&lt;y {swingspeed=-7 exit}
 if x&gt;other.x and other.y&gt;y {swingspeed=7 exit}
 if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=-7 else swingspeed=7
@@ -224,10 +228,10 @@ if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=-7 else swingspeed=7
 if global.locked=0 {
 if place_meeting(x,y+4,objPlayer) {
 solid=0
-PlaySFX("Pick Up")
-with objPlayerJacket {
+audio_play_sound(sndPickupWeapon,0,false)
+with objPlayerMouse {
 
-if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackUnarmed nothing=1 else {
+if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackPunch nothing=1 else {
 my_id=instance_create(objPlayer.x+lengthdir_x(8,objPlayer.dir+90),objPlayer.y+lengthdir_y(8,objPlayer.dir+90),objWeaponThrow)
 my_id.image_index=scrCurrentWeaponExt(sprite_index)
 my_id.direction=dir+70+random(40)

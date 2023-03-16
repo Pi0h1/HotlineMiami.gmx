@@ -8,33 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Bottom
-color1=c_black
-
-//Top
-color2=c_gray
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -52,12 +25,9 @@ color2=c_gray
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*draw_set_blend_mode(bm_subtract)
+            <string>draw_set_blend_mode(bm_subtract)
 draw_rectangle_color(x,y,x+16*image_xscale,y+16*image_yscale,color1,color1,color2,color2,0)
-draw_set_blend_mode(bm_normal)
-*/
-draw_self();
-</string>
+draw_set_blend_mode(bm_normal)</string>
           </argument>
         </arguments>
       </action>

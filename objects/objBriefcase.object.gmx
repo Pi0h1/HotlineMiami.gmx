@@ -29,7 +29,7 @@
 image_speed=0
 dir=random(360)
 angle_speed=-1+round(random(1))*2
-</string>
+if global.xbox=1 scrInitXboxButtons()</string>
           </argument>
         </arguments>
       </action>
@@ -53,7 +53,7 @@ angle_speed=-1+round(random(1))*2
             <kind>1</kind>
             <string>if !place_free(x,y) speed=0
 image_angle+=angle_speed*speed*3
-</string>
+if global.xbox=1 scrXboxBag()</string>
           </argument>
         </arguments>
       </action>
@@ -75,13 +75,15 @@ image_angle+=angle_speed*speed*3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x,y,objPlayerShieldMouse) {
-with objPlayerShieldMouse {scrPlayerDropShield()}
-}
-
-if place_meeting(x,y,objPlayerJacket)  {
+            <string>
+if place_meeting(x,y,objPlayer)  {
+/*with objPlayer {
+instance_destroy()
+instance_create(x,y,objPlayerMouseHouse)
+}*/
 with objPlayer {
-if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackUnarmed or sprite_index=sprPAttackBash {} else {
+if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackPunch or sprite_index=sprPAttackBash noweapon=1 else noweapon=0
+if noweapon=0 {
 my_id=instance_create(x,y,objWeaponThrow)
 my_id.direction=random(360)
 my_id.speed=2+random(1)
@@ -95,8 +97,7 @@ my_id.text="STAGE CLEAR"
 instance_destroy()
 global.done=1
 instance_create(x,y,objTrainshake)
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objExecution</parentName>
+  <parentName>objPlayer</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,9 +31,7 @@ hurtindex=0
 targetindex=0
 scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
-ammo=0
-enemy=sprEMafiaDieKnife
-</string>
+ammo=0</string>
           </argument>
         </arguments>
       </action>
@@ -56,9 +54,12 @@ enemy=sprEMafiaDieKnife
           <argument>
             <kind>1</kind>
             <string>if image_index&lt;7 image_index+=0.15 else {
-//instance_create(x+lengthdir_x(24,image_angle),y+lengthdir_y(24,image_angle),objBloodPool)
-createDeadBody(false,0,sprEMafiaDieKnife,image_angle)
-my_id=instance_create(x,y,objPlayerJacket)
+instance_create(x+lengthdir_x(24,image_angle),y+lengthdir_y(24,image_angle),objBloodPool)
+my_id=instance_create(x,y,objDeadBody)
+my_id.image_angle=image_angle
+my_id.sprite_index=sprEFrontSlit
+my_id.image_index=floor(random(2))
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.sprite_index=sprPWalkKnife
 my_id.maskon=global.maskon
 my_id.maskindex=global.maskindex
@@ -84,7 +85,8 @@ if image_index&gt;=4 and bled=0 {
 bled=1
 hurtindex=1
 targetindex=3
-PlaySFX("Cut")
+audio_play_sound(choose(sndCut1,sndCut2),0,false)
+audio_play_sound(sndHit,0,false)
 repeat (2+random(2)) {
 my_id=instance_create(x+lengthdir_x(18,image_angle)-1+random(2),y+lengthdir_y(18,image_angle)-1+random(2),objBloodSquirt)
 my_id.image_angle=image_angle-110+random(20)
@@ -114,10 +116,9 @@ my_id.image_angle=image_angle-110+random(20)
           <argument>
             <kind>1</kind>
             <string>if hurtindex&lt;targetindex hurtindex+=0.2
-draw_sprite_ext(enemy,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-if global.maskon scrDrawMask(1)
-</string>
+if global.maskon scrDrawMask(1)</string>
           </argument>
         </arguments>
       </action>

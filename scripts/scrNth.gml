@@ -1,15 +1,31 @@
-switch (argument0){
-    case "1": return "st"; break;
-    case "2": return "nd"; break;
-    case "3": return "rd"; break;
-    
-    case "21": return "st"; break;
-    case "22": return "nd"; break;
-    case "23": return "rd"; break;
-     
-    case "31": return "st"; break;
-    case "32": return "nd"; break;
-    case "33": return "rd"; break;
-    
-    default: return "th"; break;
-    }
+if argument0="1" return "st"
+if argument0="2" return "nd"
+if argument0="3" return "rd"
+if argument0="4" return "th"
+if argument0="5" return "th"
+if argument0="6" return "th"
+if argument0="7" return "th"
+if argument0="8" return "th"
+if argument0="9" return "th"
+if argument0="10" return "th"
+if argument0="11" return "th"
+if argument0="12" return "th"
+if argument0="13" return "th"
+if argument0="14" return "th"
+if argument0="15" return "th"
+if argument0="16" return "th"
+if argument0="17" return "th"
+if argument0="18" return "th"
+if argument0="19" return "th"
+if argument0="20" return "th"
+if argument0="21" return "st"
+if argument0="22" return "nd"
+if argument0="23" return "rd"
+if argument0="24" return "th"
+if argument0="25" return "th"
+if argument0="26" return "th"
+if argument0="27" return "th"
+if argument0="28" return "th"
+if argument0="29" return "th"
+if argument0="30" return "th"
+if argument0="31" return "st"

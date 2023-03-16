@@ -33,6 +33,8 @@ draw_text(view_wview[0]/2+1,view_hview[0]/2+1,text)
 draw_set_color(merge_color(c_black,c_white,i*(1/60)))
 draw_text(view_wview[0]/2,view_hview[0]/2,text)
 if i<60 i+=1
+sleep(1000/60)
+screen_refresh()
 }
 }
 show_date=1

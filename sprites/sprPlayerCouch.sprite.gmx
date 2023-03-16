@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>64</width>
-  <height>27</height>
+  <height>60</height>
   <frames>
     <frame index="0">images\sprPlayerCouch_0.png</frame>
     <frame index="1">images\sprPlayerCouch_1.png</frame>

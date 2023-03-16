@@ -81,7 +81,7 @@ with global.my_id {
 direction=direction+160+random(40)
 speed*=0.3
 }
-PlaySFX(sndDoorHit)
+audio_play_sound(sndDoorHit,0,false)
 my_id=instance_create(x,y,objKnockedOut)
 global.shake=5
 my_id.type=object_index
@@ -113,8 +113,8 @@ exit
 }
 
 if (global.my_id.image_index=3 or global.my_id.image_index=5) {
-PlaySFX(sndDoorHit)
-PlaySFX(sndHit)
+audio_play_sound(sndDoorHit,0,false)
+audio_play_sound(sndHit,0,false)
 global.my_id.hits+=1
 scrEnemyDieMelee(global.my_id.hits)
 global.shake=6
@@ -179,17 +179,17 @@ mask_index=sprWeaponMask
             <string>if image_index=1 {
 my_id=instance_create(x,y,objBrokenBottle)
 instance_destroy()
-PlaySFX("Light Glass")
+audio_play_sound(sndGlass1,0,false)
 exit
 }
-if other.object_index=objWallSoft {
+if other.object_index=objWallSoftH or other.object_index=objWallSoftV {
 move_bounce_all(0)
 speed*=0.3
-PlaySFX(sndHitWall)
+audio_play_sound(sndHitWall,0,false)
 bounce=1
 }
 
-if other.object_index=objWindowH {
+if other.object_index=objGlassPanelH {
 if vspeed&gt;0 {
 other.add=-1
 } else {
@@ -205,11 +205,34 @@ i+=1
 }
 instance_create(x,y,objGlassPanelHBroken)
 instance_destroy()
+audio_play_sound(sndGlass1,0,false)
+audio_play_sound(sndGlass2,0,false)
+audio_play_sound(sndWeaponHit,0,false)
 }
 exit
 }
 
-scrDestroyWindowV("Object")
+if other.object_index=objGlassPanelV {
+if hspeed&gt;0 {
+other.add=-1
+} else {
+other.add=1
+}
+with other {
+i=0
+repeat (24) {
+my_id=instance_create(x,y+i*1.5,objShard)
+my_id.speed=random(5)
+my_id.direction=90+add*90-8+random(16)
+i+=1
+}
+instance_create(x,y,objGlassPanelVBroken)
+instance_destroy()
+audio_play_sound(sndGlass1,0,false)
+audio_play_sound(sndGlass2,0,false)
+}
+exit
+}
 </string>
           </argument>
         </arguments>
@@ -234,14 +257,14 @@ scrDestroyWindowV("Object")
             <kind>1</kind>
             <string>if image_index=1 {
 my_id=instance_create(x,y,objBrokenBottle)
-PlaySFX("Light Glass")
+audio_play_sound(sndGlass1,0,false)
 instance_destroy()
 exit
 }
 bounce=1
 move_bounce_all(0)
 speed*=0.3
-PlaySFX(sndHitWall)
+audio_play_sound(sndHitWall,0,false)
 </string>
           </argument>
         </arguments>
@@ -267,11 +290,12 @@ PlaySFX(sndHitWall)
             <string>if image_index=1 {
 my_id=instance_create(x,y,objBrokenBottle)
 instance_destroy()
+audio_play_sound(sndGlass1,0,false)
 exit
 }
 move_bounce_all(0)
 speed*=0.3
-PlaySFX(sndHitWall)
+audio_play_sound(sndHitWall,0,false)
 bounce=1
 </string>
           </argument>

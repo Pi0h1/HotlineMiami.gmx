@@ -57,7 +57,8 @@ x-=hspeed
 y-=vspeed
 instance_create(x,y,objBottleExplosion)
 instance_destroy()
-PlaySFX("Molotov")
+audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
+audio_play_sound(sndMolotov,0,false)
 }
 </string>
           </argument>

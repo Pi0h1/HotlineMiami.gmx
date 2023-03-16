@@ -75,26 +75,19 @@ scrPlayerDieMelee()
           <argument>
             <kind>1</kind>
             <string>if speed&lt;=0 exit
-
-if (other.object_index == objWallHeavyV) {
-    // Vertical collision
-    if (other.image_yscale &gt; other.image_xscale) {
-    if x&gt;room_width/2 image_angle=0 else image_angle=180
-    }
-    
-    // Horizontal collision
-    if (other.image_yscale &lt; other.image_xscale) {
-    if y&lt;room_height/2 image_angle=90 else image_angle=270
-    }
+if other.object_index=objWallHeavyV {
+if x&gt;room_width/2 image_angle=0 else image_angle=180
 }
-
+if other.object_index=objWallHeavyH {
+if y&lt;room_height/2 image_angle=90 else image_angle=270
+}
 move_contact_solid(image_angle,speed*5)
 mask_index=sprBoss2PryMask
-//if !place_free(x,y) {PlaySFX(sndKnifeWall) move_bounce_solid(0) speed*=0.5 friction=0.5 bounced=1} else {
-PlaySFX(sndHitWall)
+if !place_free(x,y) {audio_play_sound(sndKnifeWall,0,false) move_bounce_solid(0) speed*=0.5 friction=0.5 bounced=1} else {
+audio_play_sound(sndHitWall,0,false)
 speed=0
 global.shake=2
-//}
+}
 mask_index=sprite_index
 </string>
           </argument>
@@ -125,7 +118,7 @@ x+=lengthdir_x(2,image_angle)
 y+=lengthdir_y(2,image_angle)
 speed=0
 global.shake=2
-PlaySFX(sndHitWall)
+audio_play_sound(sndHitWall,0,false)
 </string>
           </argument>
         </arguments>
@@ -155,7 +148,7 @@ x+=lengthdir_x(2,image_angle)
 y+=lengthdir_y(2,image_angle)
 speed=0
 global.shake=2
-PlaySFX(sndHitWall)
+audio_play_sound(sndHitWall,0,false)
 </string>
           </argument>
         </arguments>

@@ -50,7 +50,8 @@ state=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
+            <string>if global.xbox=1 scrXboxAssassinRestart()
+if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
 if !instance_exists(objPlayer) alert=1 else {
 alert=scrLook(objPlayer.x,objPlayer.y,4)
 if point_distance(x,y,objPlayer.x,objPlayer.y)&gt;100 alert=1
@@ -62,14 +63,14 @@ scrGetMessage(0)
 with objPlayer active=0
 } 
 if state=1 {
-if !instance_exists(objPhoneConversation) {PlaySFX("Pick Up") state=2}
+if !instance_exists(objPhoneConversation) {audio_play_sound(sndPickupWeapon,0,false) state=2}
 }
 if state=2 {
 direction=scrRotate(direction,point_direction(x,y,objPlayer.x,objPlayer.y),10)
 if wait&gt;0 wait-=1 else {
 if instance_exists(objPlayer) {
 wait=2
-PlaySFX(sndSilencer)
+audio_play_sound(sndSilencer,0,false)
 my_id=instance_create(x+lengthdir_x(16,direction),y+lengthdir_y(16,direction),objBullet)
 my_id.direction=direction-2+random(4)
 my_id.image_angle=my_id.direction
@@ -139,21 +140,18 @@ draw_sprite_ext(sprRatMask,0,x,y,image_xscale,image_yscale,direction,image_blend
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objDeadBody) {
-    if objDeadBody.isPlayer=true{
-        if objEffector.fade=0 {
-        objEffector.fade=1
-        objEffector.next=1
-        objEffector.nextroom=rmSequence12c
-        objEffector.newsong=1
-        objEffector.song=working_directory+"\SilverLights.mp3"
-        global.playerx=objDeadBody.x
-        global.playery=objDeadBody.y
-        global.playerangle=objDeadBody.image_angle
-        }
-    }
+            <string>if instance_exists(objPlayerDead) {
+if objEffector.fade=0 {
+objEffector.fade=1
+objEffector.next=1
+objEffector.nextroom=rmSequence12c
+objEffector.newsong=1
+objEffector.song=working_directory+"\SilverLights.mp3"
+global.playerx=objPlayerDead.x
+global.playery=objPlayerDead.y
+global.playerangle=objPlayerDead.image_angle
 }
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

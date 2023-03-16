@@ -1,8 +1,8 @@
-if image_index=0 objPlayer.sprite_index=wpnWalkM16
-if image_index=1 objPlayer.sprite_index=wpnWalkShotgun
+if image_index=0 objPlayer.sprite_index=sprPWalkM16
+if image_index=1 objPlayer.sprite_index=sprPWalkShotgun
 if image_index=2 objPlayer.sprite_index=sprPWalkClub
 if image_index=3 objPlayer.sprite_index=sprPWalkPipe
-if image_index=4 objPlayer.sprite_index=wpnWalkBat
+if image_index=4 objPlayer.sprite_index=sprPWalkBat
 if image_index=5 objPlayer.sprite_index=sprPWalkKnife
 if image_index=6 objPlayer.sprite_index=sprPWalkDoubleBarrel
 if image_index=7 objPlayer.sprite_index=sprPWalkSilencer
@@ -17,7 +17,7 @@ if image_index=15 objPlayer.sprite_index=sprPWalkAxe
 if image_index=16 objPlayer.sprite_index=sprPWalkNightStick
 if image_index=17 objPlayer.sprite_index=sprPWalkCrowbar
 if image_index=18 objPlayer.sprite_index=sprPWalkMachete
-if image_index=19 objPlayer.sprite_index=sprPWalkSledge
+if image_index=19 objPlayer.sprite_index=sprPWalkSledgeHammer
 if image_index=20 objPlayer.sprite_index=sprPWalkTrophy
 if image_index=21 objPlayer.sprite_index=sprPWalkDrill
 if image_index=22 objPlayer.sprite_index=sprPWalkPan

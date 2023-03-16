@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>title=""
+            <string>if global.xbox=1 scrInitXboxButtons()
+title=""
 band[0]="SUN ARAW"
 band[1]="COCONUTS"
 band[2]="M.O.O.N."
@@ -35,6 +36,7 @@ band[5]="PERTURBATOR"
 band[6]="SCATTLE"
 band[7]="ELIOTT BERLIN"
 band[8]="&amp; EIRIK SUHRKE"
+
 dir=0
 if surface_exists(global.surf1) surface_free(global.surf1)
 global.surf1=surface_create(room_width,room_height)
@@ -46,8 +48,7 @@ current=0
 addx=0
 blackx=30
 fade=0
-c_amount=0
-</string>
+c_amount=0</string>
           </argument>
         </arguments>
       </action>
@@ -69,7 +70,16 @@ c_amount=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !surface_exists(global.surf1) {
+            <string>if global.xbox=1 {
+if checkbutton(0,getid(5)) or checkbutton(0,getid(6)) {
+if presstart=0 {
+presstart=1
+scrXboxBandCreditsStart()
+} 
+} else presstart=0
+}
+
+if !surface_exists(global.surf1) {
 global.surf1=surface_create(room_width,room_height)
 surface_set_target(global.surf1)
 draw_clear_alpha(c_black,0)
@@ -116,8 +126,7 @@ start_x+=string_width(letter)
 ii+=1
 }
 }
-surface_reset_target()
-</string>
+surface_reset_target()</string>
           </argument>
         </arguments>
       </action>
@@ -194,7 +203,7 @@ draw_set_blend_mode(bm_subtract)
 draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0)
 draw_set_blend_mode(bm_normal)
 } else { 
-/*if file_exists(working_directory+"\xbox") file_delete(working_directory+"\xbox")
+if file_exists(working_directory+"\xbox") and global.xbox=0 file_delete(working_directory+"\xbox")
 if file_exists(working_directory+"\steamon") file_delete(working_directory+"\steamon")
 if file_exists(working_directory+"\steamoff") file_delete(working_directory+"\steamoff")
 if file_exists(working_directory+"\alienware") file_delete(working_directory+"\alienware")
@@ -202,18 +211,25 @@ if global.steamon=1 {
 SteamShutdown()
 steamdll_free()
 }
+if global.xbox=1 dllfree()
 if global.alienware=1 scrAlienWareFree()
-sxeasy_close()*/
-game_restart()
+sxeasy_close()
+sleep(250)
+game_end()
 }
 }
+
 
 draw_set_color(c_black)
 if current&gt;9 {if blackx&lt;150 blackx+=(blackx-29)*0.05 else fade=1}
 draw_rectangle(0,0,view_wview[0],blackx,0)
 draw_rectangle(0,view_hview[0]-blackx,view_wview[0],view_hview[0],0)
-scrDrawFilter();
-</string>
+draw_set_blend_mode(bm_subtract)
+my_y=random(32)
+draw_sprite_tiled(sprScanlines,0,0,my_y)
+draw_set_blend_mode(bm_subtract)
+draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
+draw_set_blend_mode(bm_normal)</string>
           </argument>
         </arguments>
       </action>
@@ -235,8 +251,8 @@ scrDrawFilter();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fade=1
-</string>
+            <string>if global.xbox=1 exit
+fade=1</string>
           </argument>
         </arguments>
       </action>

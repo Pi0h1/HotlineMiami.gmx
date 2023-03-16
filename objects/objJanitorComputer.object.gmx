@@ -29,7 +29,7 @@
 active=1
 dir=0
 check=0
-</string>
+if global.xbox=1 scrInitXboxButtons()</string>
           </argument>
         </arguments>
       </action>
@@ -75,7 +75,9 @@ check=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if check=0 exit
+            <string>if global.xbox=1 scrXboxJanitorComputer()
+
+if check=0 exit
 if !instance_exists(objPhoneConversation) {
 if instance_exists(objPlayerBikerHack) {
 with objPlayerBikerHack {
@@ -83,8 +85,7 @@ instance_create(x,y,objPlayerBikerHouse)
 instance_destroy()
 }
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

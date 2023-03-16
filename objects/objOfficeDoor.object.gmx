@@ -55,7 +55,7 @@ if image_index&lt;9 image_index+=0.3+random(0.2)</string>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objWindowH">
+    <event eventtype="4" ename="objGlassPanelH">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -81,7 +81,7 @@ my_id.direction=260+random(20)
 my_id.speed=1+random(3)
 i+=1
 }
-PlaySFX("Glass")
+audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
 instance_destroy()
 }
 </string>
@@ -89,7 +89,7 @@ instance_destroy()
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objWindowV">
+    <event eventtype="4" ename="objGlassPanelV">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -115,7 +115,7 @@ if x&lt;other.x my_id.direction=170+random(20) else my_id.direction=-10+random(2
 my_id.speed=1+random(3)
 i+=1
 }
-
+audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
 instance_destroy()
 }
 </string>

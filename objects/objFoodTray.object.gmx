@@ -51,7 +51,7 @@ on=0</string>
           <argument>
             <kind>1</kind>
             <string>on=1
-PlaySFX(sndHitWall)
+audio_play_sound(sndHitWall,0,false)
 speed=0
 </string>
           </argument>

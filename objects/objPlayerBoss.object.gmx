@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>legsprite=sprPWalkLegs
-image_speed=0
+            <string>image_speed=0
 alert=0
 state=0
 scrInitMaskPos()
@@ -43,11 +42,10 @@ sxeasy_play(working_directory+"\Release.mp3");
 test=objPlayer.persistent
 objPlayer.persistent=0
 global.loaded=1
-SaveGameState();
+game_save(working_directory+"\tempsave.sav")
 //if !instance_exists(objMaskMenu) instance_create(x,y,objCheckpoint)
 global.loaded=0
-objPlayer.persistent=test
-</string>
+objPlayer.persistent=test</string>
           </argument>
         </arguments>
       </action>
@@ -69,7 +67,8 @@ objPlayer.persistent=test
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.my_id=id
+            <string>if global.xbox=1 scrXboxRestartDead()
+global.my_id=id
 global.test=0
 if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
 if speed&gt;0 {
@@ -112,7 +111,7 @@ direction=point_direction(x,y,objGolfBag.x,objGolfBag.y)
 if speed&lt;3 speed+=0.5 else speed=3
 image_index+=speed*0.1
 } else {
-PlaySFX("Pick Up")
+audio_play_sound(sndPickupWeapon,0,false)
 objGolfBag.image_index=1
 sprite_index=sprPWalkClub
 image_index+=speed*0.1
@@ -141,7 +140,7 @@ if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;12 {
 if sprite_index=sprPWalkClub {
 sprite_index=sprPAttackClub
 image_speed=0.5
-PlaySFX(choose(sndSwing1,sndSwing2))
+audio_play_sound(choose(sndSwing1,sndSwing2),0,false)
 }
 global.my_id=id
 scrPlayerDieMelee()
@@ -159,20 +158,47 @@ image_speed=speed*0.1
 if state=2 or state=3 {
 global.my_id=id
 with objPlayer {
-if sprite_index=sprBikerAttackCleaver {
+if sprite_index=sprBoss2AttackCleaver {
 if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),global.my_id) global.test=1
 }
 }
 if global.test&gt;0 {
 pdir=point_direction(objPlayer.x,objPlayer.y,x,y)
-createBlood(pdir)
+repeat (8) {
+my_id=instance_create(x-3+random(6)+lengthdir_x(8,pdir),y-3+random(6)+lengthdir_y(8,pdir),objBloodDrop)
+my_id.image_xscale=1-random(0.2)
+my_id.image_yscale=my_id.image_xscale
+my_id.image_angle=point_direction(x+lengthdir_x(8,pdir),y+lengthdir_y(8,pdir),my_id.x,my_id.y)
+my_id.sprite_index=sprBloodSplatSmall
+my_id.direction=my_id.image_angle
+my_id.speed=2+random(4)
+}
+repeat (2+random(3)) {
+my_id=instance_create(x-3+random(6)+lengthdir_x(8,pdir),y-3+random(6)+lengthdir_y(8,pdir),objBloodDrop)
+my_id.image_xscale=1-random(0.2)
+my_id.image_yscale=my_id.image_xscale
+my_id.image_angle=point_direction(x+lengthdir_x(8,pdir),y+lengthdir_y(8,pdir),my_id.x,my_id.y)
+my_id.direction=my_id.image_angle
+my_id.speed=1+random(5)
+}
+repeat (4) {
+my_id=instance_create(x-3+random(6)+lengthdir_x(16,pdir),y-3+random(6)+lengthdir_y(16,pdir),objBloodSmoke)
+my_id.image_xscale=1.2-random(0.2)
+my_id.image_yscale=my_id.image_xscale
+my_id.image_angle=pdir-20+random(40)
+my_id.direction=my_id.image_angle
+my_id.speed=2+random(1)
+my_id.friction=0.15
+}
 direction=point_direction(objPlayer.x,objPlayer.y,x,y)
 sprite_index=sprPKneel
 speed=3
 image_index=0
 friction=0.25
-PlaySFX("Hard Cut")
+audio_play_sound(choose(sndCut1,sndCut2),0,false)
 image_angle=direction-180
+audio_play_sound(sndDoorHit,0,false)
+audio_play_sound(sndHit,0,false)
 with objPlayerBiker {
 my_id=instance_create(x,y,objPlayerBikerHouse)
 my_id.active=0
@@ -254,8 +280,8 @@ draw_circle_color(x,y,48+random(6),make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)
 if sprite_index=sprPKneel or sprite_index=sprPStomped {dir=image_angle nothing=1} else {
 dir=direction
-draw_sprite_ext(legsprite,legindex,x+1,y+1,image_xscale,image_yscale,dir,c_black,0.5)
-draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,dir,image_blend,image_alpha)
+draw_sprite_ext(sprLegs,legindex,x+1,y+1,image_xscale,image_yscale,dir,c_black,0.5)
+draw_sprite_ext(sprLegs,legindex,x,y,image_xscale,image_yscale,dir,image_blend,image_alpha)
 }
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,dir,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,dir,image_blend,image_alpha)
@@ -270,8 +296,7 @@ draw_sprite_ext(sprMasks,global.maskindex,x+maddx+1,y+maddy+1,image_xscale,image
 draw_sprite_ext(sprMasks,global.maskindex,x+maddx,y+maddy,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
 }
 lastsprite=sprite_index
-//draw_path(my_path,0,0,1)
-</string>
+//draw_path(my_path,0,0,1)</string>
           </argument>
         </arguments>
       </action>
@@ -293,12 +318,7 @@ lastsprite=sprite_index
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objDeadBody) {
-    if objDeadBody.isPlayer=true {
-        objEffector.fade=1
-    }
-}
-</string>
+            <string>if instance_exists(objPlayerDead) {objEffector.fade=1}</string>
           </argument>
         </arguments>
       </action>

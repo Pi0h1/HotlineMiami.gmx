@@ -1,4 +1,4 @@
-/*nothing=1 if nothing=0 {
+nothing=1 if nothing=0 {
 global.i=0 
 surf=surface_create((room_width+32)/8,(room_height+32)/8)
 repeat (8) {
@@ -50,4 +50,3 @@ global.i+=1
 surface_free(surf)
 //room_goto_next()
 }
-*/

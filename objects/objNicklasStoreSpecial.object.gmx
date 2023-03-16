@@ -83,7 +83,8 @@ brus=2+floor(random(8))
 if objEffectorHouse.brus&lt;brus objEffector.brus=brus
 }
 }
-</string>
+
+if global.xbox=1 scrXboxNickeTalkSpecial()</string>
           </argument>
         </arguments>
       </action>

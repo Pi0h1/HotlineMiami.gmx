@@ -53,7 +53,7 @@ on=0</string>
             <kind>1</kind>
             <string>if !place_free(x,y) speed=0
 image_angle+=angle_speed*speed*3
-</string>
+if global.xbox=1 scrXboxItemTake()</string>
           </argument>
         </arguments>
       </action>
@@ -78,7 +78,7 @@ image_angle+=angle_speed*speed*3
             <string>if !instance_exists(objPlayer) or on=0 exit
 if place_meeting(x-lengthdir_x(12,objPlayer.dir),y-lengthdir_y(12,objPlayer.dir),objPlayer) {
 instance_destroy()
-PlaySFX("Pick Up")
+audio_play_sound(sndPickupWeapon,0,false)
 }
 </string>
           </argument>

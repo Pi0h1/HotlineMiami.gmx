@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objDizzy) {instance_create(x,y,objDizzy)}
+            <string>if global.xbox=1 scrInitXboxButtons()
 image_speed=0
 currentweapon=0
 dir=0
@@ -38,6 +38,7 @@ left=1
 ammo=0
 energie=1
 throwreload=0
+if global.controller=1 {instance_create(x,y,objPlayerController) instance_destroy()}
 active=1
 myxspeed=0
 myyspeed=0
@@ -47,8 +48,7 @@ view_xview[0]=x-view_wview[0]/2
 view_yview[0]=y-view_hview[0]/2
 xview=view_xview[0]
 yview=view_yview[0]
-alarm[1]=2
-</string>
+alarm[1]=2</string>
           </argument>
         </arguments>
       </action>
@@ -72,10 +72,9 @@ alarm[1]=2
             <kind>1</kind>
             <string>global.loaded=1
 with objEffector {global.amount=amount amount=0}
-SaveGameState();
+game_save(working_directory+"\tempsave.sav")
 with objEffector {amount=global.amount}
-global.loaded=0
-</string>
+global.loaded=0</string>
           </argument>
         </arguments>
       </action>
@@ -114,11 +113,20 @@ objEffector.action=global.test
 if throwreload&gt;0 throwreload-=1
 if instance_exists(objPhoneConversation) valid=0 else valid=1
 factor=1
-aimfar=keyboard_check_direct(vk_shift)
+if global.xbox=0 aimfar=keyboard_check_direct(vk_shift) else aimfar=checkbutton(0,getid(9))
 if aimfar and valid {
+/*viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(96,dir),y+lengthdir_y(96,dir))*0.1
+viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(96,dir),y+lengthdir_y(96,dir))
+view_xview[0]+=lengthdir_x(viewspeed,viewdir)
+view_yview[0]+=lengthdir_y(viewspeed,viewdir)*/
+if global.xbox=1 {
+viewx=objPlayer.x+rightthumb_x(0)*0.0045
+viewy=objPlayer.y-rightthumb_y(0)*0.003
+} else {
 factor=1.8
 viewx=objPlayer.x+((display_mouse_get_x()-display_get_width()*0.5)*(view_wview[0]/display_get_width()))*factor
 viewy=objPlayer.y+((display_mouse_get_y()-display_get_height()*0.5)*(view_hview[0]/display_get_height()))*factor
+}
 viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)*0.1
 viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)
 view_xview[0]+=lengthdir_x(viewspeed,viewdir)
@@ -167,7 +175,7 @@ legindex+=0.4
 exit 
 }
 
-if active=1 {scrPlayerHospitalMove()}
+if active=1 {scrPlayerHospitalMove() if global.xbox=1 scrXboxPlayerHospitalMouse()}
 
 </string>
           </argument>
@@ -361,7 +369,7 @@ scrMoveSolidOff()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objWindowFrameV {
+            <string>with objWindowV {
 if x=32 {
 if y=352 {
 if sprite_index=sprWindowSill nothing=1 else {
@@ -380,7 +388,7 @@ instance_create(x,y,objWindowOpen)
 if place_meeting(x,y,objToken) {
 with objToken {
 instance_destroy()
-PlaySFX(sndToken)
+audio_play_sound(sndToken,0,false)
 my_id=instance_create(x,y,objLetterFound)
 my_id.text='"'+scrGetTokenLetter(letter)+'"'
 global.letter[letter]=1
@@ -465,7 +473,7 @@ view_yview[0]=y-view_hview[0]/2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objWindowFrameV {
+            <string>with objWindowV {
 if x=32 and y=352 {
 draw_sprite_ext(sprArrow,0,x+12+lengthdir_x(3,global.dir*8),y+16,1,1,270,c_white,1)
 }
@@ -488,11 +496,35 @@ draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale*left,
 draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,image_blend,image_alpha)
 if sprite_index=sprPWalkHospital {
 dir=point_direction(x,y,global.mousex,global.mousey)
+if global.xbox=1 dir=scrXboxPlayerLook()
 }
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
 if reload&gt;0 reload-=1
-if light&gt;3 light-=3
-</string>
+if light&gt;3 light-=3</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>exit
+if instance_number(objEnemy)+instance_number(objKnockedOut)=0 {//vcapture_save() 
+objEffector.fade=1 if room=room_last objEffector.restart=1 else objEffector.next=1}</string>
           </argument>
         </arguments>
       </action>

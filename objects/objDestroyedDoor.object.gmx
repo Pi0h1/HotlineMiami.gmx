@@ -3,9 +3,9 @@
   <spriteName>sprExplodingDoor</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>100</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>Effects</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">

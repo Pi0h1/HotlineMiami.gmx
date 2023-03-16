@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>Effects</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -107,8 +107,22 @@ repeat (4) instance_create(x,y,objSteam)</string>
 instance_create(x,y,objWaterPuddle)
 global.my_id=id
 with other {
-createDeadBody(false,1.5,sprEDeadBoiling,global.my_id.direction)
-PlaySFX(sndBoilingWater)
+my_id=instance_create(x,y,objDeadBody)
+my_id.sprite_index=sprEDeadBoiling
+my_id.image_angle=global.my_id.direction
+my_id.speed=1
+my_id.direction=my_id.image_angle
+if !audio_is_playing(sndBoilingWater) audio_play_sound(sndBoilingWater,0,false)
+
+if sprite_index=sprEWalkUnarmed or sprite_index=sprEGiveUp or sprite_index=sprPoliceWalkUnarmed noweapon=1 else noweapon=0
+if noweapon=0 {
+my_id=instance_create(x,y,objWeaponThrow)
+my_id.direction=random(360)
+my_id.speed=2+random(1)
+my_id.image_index=scrCurrentWeaponExt(sprite_index)
+my_id.ammo=ammo
+}
+
 repeat (5) {
 my_id=instance_create(x,y,objSteam)
 my_id.direction=random(360)

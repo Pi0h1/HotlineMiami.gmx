@@ -50,7 +50,8 @@ if target.image_index=6 {my_id=instance_create(x,y,objEnemy) my_id.sprite_index=
 if target.image_index=7 {my_id=instance_create(x,y,objEnemy) my_id.sprite_index=sprEWalkSilencer}
 if target.image_index>7 exit
 if instance_exists(target) my_id.ammo=target.ammo
-PlaySFX("Pick Up")
+//with my_id scrChasePlayer()
+audio_play_sound(sndPickupWeapon,0,false)
 with target instance_destroy()
 instance_destroy()
 }

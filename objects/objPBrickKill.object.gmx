@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objExecution</parentName>
+  <parentName>objPlayer</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,8 +31,7 @@ image_speed=0
 scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
 ammo=0
-enemy=sprEBrickKill
-</string>
+if global.xbox=1 scrInitXboxButtons()</string>
           </argument>
         </arguments>
       </action>
@@ -54,9 +53,10 @@ enemy=sprEBrickKill
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if hurtindex=15 {
+            <string>if global.xbox=1 scrXboxBrickKill()
+if hurtindex=15 {
 if image_index=0 {
-my_id=instance_create(x,y,objPlayerJacket)
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.sprite_index=sprPWalkThrow
 my_id.throwindex=3
 my_id.maskon=global.maskon
@@ -65,7 +65,10 @@ global.angle=image_angle-180
 my_id.reload=10
 with my_id move_outside_solid(global.angle,16)
 my_id=instance_create(x+lengthdir_x(11,image_angle),y+lengthdir_y(11,image_angle),objBloodPool)
-createDeadBody(false,0,sprEBrickKill,image_angle)
+my_id=instance_create(x,y,objDeadBody)
+my_id.sprite_index=sprEBrickKill
+my_id.image_index=15
+my_id.image_angle=image_angle
 
 instance_destroy()
 my_id=instance_create(x,y-12,objScore)
@@ -81,8 +84,7 @@ global.kills+=1
 ds_list_add(global.bonuslist,"Execution")
 if global.combotime&lt;12 global.combotime=12
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -104,14 +106,16 @@ if global.combotime&lt;12 global.combotime=12
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index=0 and hurtindex=targetindex and targetindex&lt;15{
+            <string>if global.xbox=1 exit
+if image_index=0 and hurtindex=targetindex and targetindex&lt;15{
 if targetindex=12 targetindex=15
 if targetindex=8 targetindex=12
 if targetindex=4 targetindex=8
 if targetindex=0 targetindex=4
 hurtindex+=1
 image_index=7
-PlaySFX("Blunt")
+audio_play_sound(sndHit,0,false)
+audio_play_sound(sndPunch,0,false)
 global.shake=5
 repeat (1+random(3)) {
 instance_create(x+lengthdir_x(18,image_angle-1+random(2)),y+lengthdir_y(18,image_angle-1+random(2)),objBloodSquirt)
@@ -146,14 +150,13 @@ my_id.speed=random(2)
           <argument>
             <kind>1</kind>
             <string>
-draw_sprite_ext(enemy,hurtindex,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(enemy,hurtindex,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+draw_sprite_ext(sprEBrickKill,hurtindex,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
+draw_sprite_ext(sprEBrickKill,hurtindex,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 if hurtindex&lt;targetindex hurtindex+=0.25
 if image_index&gt;0 image_index-=0.5
-if global.maskon scrDrawMask(1)
-</string>
+if global.maskon scrDrawMask(1)</string>
           </argument>
         </arguments>
       </action>

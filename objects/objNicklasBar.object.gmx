@@ -64,7 +64,8 @@ served=2
 }
 }
 }
-</string>
+
+if global.xbox=1 scrXboxNickeTalkBar()</string>
           </argument>
         </arguments>
       </action>

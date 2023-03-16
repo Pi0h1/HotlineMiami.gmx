@@ -75,10 +75,32 @@ called=0</string>
           <argument>
             <kind>1</kind>
             <string>if talked=1 exit
-PlaySFX(sndPhoneCall)
+audio_play_sound(sndPhoneCall,0,false)
 alarm[0]=200
 called=1
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.xbox=1 scrXboxBossPhone()</string>
           </argument>
         </arguments>
       </action>
@@ -107,7 +129,7 @@ instance_destroy()
 instance_create(x,y,objPlayerMouseHouse)
 }*/
 with objPlayer {
-if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackUnarmed or sprite_index=sprPAttackBash noweapon=1 else noweapon=0
+if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackPunch or sprite_index=sprPAttackBash noweapon=1 else noweapon=0
 if noweapon=0 {
 my_id=instance_create(x,y,objWeaponThrow)
 my_id.direction=random(360)
@@ -122,8 +144,8 @@ objPlayer.active=0
 image_index=1
 scrGetMessage(4)
 talked=1
-PlaySFX(sndPhoneCall)
-PlaySFX(sndPhone)
+audio_stop_sound(sndPhoneCall)
+audio_play_sound(sndPhone,0,false)
 global.done=1
 }
 </string>
@@ -175,7 +197,7 @@ if objPlayer.sprite_index=sprPTakePhone {
 with objPlayerMouseHouse {
 active=1
 sprite_index=sprPWalkUnarmed
-my_id=instance_create(x,y,objPlayerJacket)
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.maskon=1
 my_id.maskindex=maskindex
 global.maskon=1
@@ -199,7 +221,7 @@ if on=0 {
 alarm[0]=60
 alarm[1]=150
 on=1
-with objPlayerJacket {
+with objPlayerMouse {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.maskon=1
 my_id.maskindex=maskindex
@@ -218,8 +240,7 @@ instance_destroy()
 
 }
 }
-dir+=4
-</string>
+dir+=4</string>
           </argument>
         </arguments>
       </action>

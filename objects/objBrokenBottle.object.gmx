@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>Effects</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,9 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_angle=random(360)
-image_speed=0
-PlaySFX("Light Glass")
-</string>
+image_speed=0</string>
           </argument>
         </arguments>
       </action>

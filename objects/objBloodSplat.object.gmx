@@ -3,9 +3,9 @@
   <spriteName>sprBloodSplat</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>101</depth>
+  <depth>2</depth>
   <persistent>0</persistent>
-  <parentName>Effects</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -30,9 +30,7 @@ image_angle=random(360)
 advancespeed=0.2+random(0.05)
 done=0
 image_alpha=1
-image_blend=merge_color(c_red,c_maroon,random(0.1))
-done=0
-</string>
+image_blend=merge_color(c_red,c_maroon,random(0.1))</string>
           </argument>
         </arguments>
       </action>
@@ -57,9 +55,7 @@ done=0
             <string>if image_index&lt;4 image_index+=advancespeed else {
 image_speed=0
 if surface_exists(global.surf2) {if global.blood=0 or global.surfaces=1 addToSurface(global.surf2,0)}
-done=1
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

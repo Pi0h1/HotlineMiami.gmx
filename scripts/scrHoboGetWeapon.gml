@@ -40,7 +40,8 @@ direction=point_direction(x,y,target.x,target.y)
 image_speed=0.2
 if place_meeting(x,y,target) {
 sprite_index=sprHoboWalkBat
-PlaySFX("Pick Up")
+//with my_id scrChasePlayer()
+audio_play_sound(sndPickupWeapon,0,false)
 with target instance_destroy()
 }
 

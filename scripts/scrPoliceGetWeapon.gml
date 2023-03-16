@@ -63,7 +63,7 @@ if target.image_index=16 {my_id=instance_create(x,y,objPoliceMelee) my_id.sprite
 if target.image_index=16 nothing=1 else {if target.image_index>1 exit}
 if instance_exists(target) my_id.ammo=target.ammo
 //with my_id scrChasePlayer()
-PlaySFX("Pick Up")
+audio_play_sound(sndPickupWeapon,0,false)
 with target instance_destroy()
 instance_destroy()
 }

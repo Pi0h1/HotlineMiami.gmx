@@ -68,10 +68,14 @@ if place_meeting(x,y,global.my_id) {global.my_id.x=x global.my_id.y=y}
 }
 
 if follow=1 {
+if global.xbox=1 {
+x=objPuzzle.mousex
+y=objPuzzle.mousey
+} else {
 x=mouse_x
 y=mouse_y
 }
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

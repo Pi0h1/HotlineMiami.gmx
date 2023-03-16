@@ -60,7 +60,7 @@ if global.done=0 and instance_number(objEBullet)=0 {instance_create(x,y,objLevel
 if room=rmMansionMainHall {
 if !instance_exists(objBoss) {
 with objDoorH {if solid=1 solid=0}
-with objBossPhone {if on=0 {on=1 PlayBGM(sndPhoneCall)}}
+with objBossPhone {if on=0 {on=1 audio_play_sound(sndPhoneCall,0,true)}}
 if !instance_exists(objBossgun) and objBossPhone.talked=1 {{instance_create(x,y,objLevelComplete) global.done=1}}
 }
 }

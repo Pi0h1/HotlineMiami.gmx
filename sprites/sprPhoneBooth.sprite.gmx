@@ -3,7 +3,7 @@
   <type>0</type>
   <xorig>14</xorig>
   <yorigin>24</yorigin>
-  <colkind>0</colkind>
+  <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>

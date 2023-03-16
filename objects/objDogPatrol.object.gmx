@@ -42,11 +42,7 @@ start_y=y
 stopchase=0
 add=1
 
-gotowall=0
-shake = 0;
-angle = 0;
-weaponfind = 0;
-</string>
+gotowall=0</string>
           </argument>
         </arguments>
       </action>
@@ -188,8 +184,14 @@ if global.factor=2 ds_list_add(global.bonuslist,"Exposure")
 if global.factor=3 ds_list_add(global.bonuslist,"Double Exposure")
 if global.factor=4 ds_list_add(global.bonuslist,"Triple Exposure")
 if global.factor&gt;4 ds_list_add(global.bonuslist,"Severe Exposure")
-createDeadBody(false,1.5,sprDogDeadShot,edir)
+my_id=instance_create(x,y,objDeadBody)
+my_id.sprite_index=sprDogDeadShot
 SteamIncStat("Dogs",1)
+if bullets&gt;1 my_id.image_index=3 else my_id.image_index=1+round(random(1))
+my_id.direction=edir
+my_id.speed=1.5+random(1)+bullets*0.15
+my_id.image_angle=my_id.direction
+
 instance_destroy()
 }
 </string>
@@ -241,10 +243,10 @@ ammo=0</string>
 draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)
+draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
 draw_set_color(c_white)
-//draw_path(my_path,0,0,1)
-</string>
+//draw_path(my_path,0,0,1)</string>
           </argument>
         </arguments>
       </action>

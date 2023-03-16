@@ -59,7 +59,7 @@ my_path=path_add()
 path_set_kind(my_path,1)
 path_set_precision(my_path,2)
 checkreload=floor(random(30))
-angle=0
+ammo=24
 alert=0
 reload=0
 light=0
@@ -67,9 +67,7 @@ start_x=x
 start_y=y
 stopchase=0
 weaponfind=0
-lastsprite=sprite_index
-shake = 0;
-</string>
+lastsprite=sprite_index</string>
           </argument>
         </arguments>
       </action>
@@ -188,13 +186,14 @@ draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)
 if scrIsSearching(sprite_index) nothing=1 else {
+draw_sprite_ext(sprELegs,image_index*2,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
 draw_sprite_ext(sprELegs,image_index*2,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
 }
+draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
 draw_set_color(c_white)
 //draw_path(my_path,0,0,1)
-lastsprite=sprite_index
-</string>
+lastsprite=sprite_index</string>
           </argument>
         </arguments>
       </action>

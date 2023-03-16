@@ -75,9 +75,9 @@ instance_destroy()</string>
 if instance_exists(master) {
 x=master.x+lengthdir_x(2,image_angle)
 y=master.y+lengthdir_y(2,image_angle)
-if master.speed=0 {if image_speed&lt;0.15 {PlaySFX(sndBonesBreak) PlaySFX(sndDogRip) PlaySFX(sndHit)} image_speed=0.15}
+if master.speed=0 {if image_speed&lt;0.15 {audio_play_sound(sndBonesBreak,0,false) audio_play_sound(sndDogRip,0,false) audio_play_sound(sndHit,0,false)} image_speed=0.15}
 } else {
-if image_speed&lt;0.15 {PlaySFX(sndBonesBreak) PlaySFX(sndDogRip) PlaySFX(sndHit)} image_speed=0.15
+if image_speed&lt;0.15 {audio_play_sound(sndBonesBreak,0,false) audio_play_sound(sndDogRip,0,false) audio_play_sound(sndHit,0,false)} image_speed=0.15
 }
 }
 

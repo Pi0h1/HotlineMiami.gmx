@@ -1,5 +1,3 @@
-left=0
-armlength=0
 dir=0
 reload=15
 alert=0

@@ -79,7 +79,7 @@ instance_destroy()
 }
 } else {
 with objPlayer {
-if sprite_index=sprBikerAttackCleaver {
+if sprite_index=sprBoss2AttackCleaver {
 if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),global.my_id) global.test=1
 }
 }
@@ -119,8 +119,10 @@ my_id2=instance_create(x-3+random(6),y-3+random(6),objMCHelmet)
 my_id2.sprite_index=sprJanitorCap
 my_id2.direction=random(360)
 my_id2.speed=2+random(1)
-PlaySFX("Hard Cut")
+audio_play_sound(choose(sndCut1,sndCut2),0,false)
 my_id.image_angle=my_id.direction
+audio_play_sound(sndDoorHit,0,false)
+audio_play_sound(sndHit,0,false)
 instance_destroy()
 }
 }

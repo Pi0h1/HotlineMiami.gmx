@@ -127,7 +127,7 @@ my_id.direction=direction-65
 my_id.speed=2
 my_id.friction=0.1
 my_id.image_angle=image_angle
-PlaySFX("Pick Up")
+audio_play_sound(sndPickupWeapon,0,false)
 }
 
 if sprite_index=sprWaiterWalkFood {
@@ -137,7 +137,7 @@ my_id.direction=direction-65
 my_id.speed=2
 my_id.friction=0.1
 my_id.image_angle=image_angle
-PlaySFX("Pick Up")
+audio_play_sound(sndPickupWeapon,0,false)
 }
 }
 }
@@ -163,8 +163,7 @@ PlaySFX("Pick Up")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var dead = false;
-global.my_id=id
+            <string>global.my_id=id
 image_xscale=1.5
 image_yscale=1.5
 bullets=0
@@ -185,9 +184,33 @@ image_xscale=1
 image_yscale=1
 edir=other.direction
 test=0
-createBlood(edir)
-if bullets&gt;1 or round(random(1)) or energie&lt;0 {dead=true}
-if dead{
+repeat (2*bullets) {
+my_id=instance_create(x-3+random(6)+lengthdir_x(8,edir),y-3+random(6)+lengthdir_y(8,edir),objBloodDrop)
+my_id.image_xscale=1-random(0.2)
+my_id.image_yscale=my_id.image_xscale
+my_id.image_angle=point_direction(x+lengthdir_x(8,edir),y+lengthdir_y(8,edir),my_id.x,my_id.y)
+my_id.sprite_index=sprBloodSplatSmall
+my_id.direction=my_id.image_angle
+my_id.speed=2+random(4)
+}
+repeat (1+random(bullets)) {
+my_id=instance_create(x-3+random(6)+lengthdir_x(8,edir),y-3+random(6)+lengthdir_y(8,edir),objBloodDrop)
+my_id.image_xscale=1-random(0.2)
+my_id.image_yscale=my_id.image_xscale
+my_id.image_angle=point_direction(x+lengthdir_x(8,edir),y+lengthdir_y(8,edir),my_id.x,my_id.y)
+my_id.direction=my_id.image_angle
+my_id.speed=1+random(5)
+}
+repeat (bullets) {
+my_id=instance_create(x-3+random(6)+lengthdir_x(16,edir),y-3+random(6)+lengthdir_y(16,edir),objBloodSmoke)
+my_id.image_xscale=1.2-random(0.2)
+my_id.image_yscale=my_id.image_xscale
+my_id.image_angle=edir-20+random(40)
+my_id.direction=my_id.image_angle
+my_id.speed=2+random(1)
+my_id.friction=0.15
+}
+if bullets&gt;1 or round(random(1)) or energie&lt;0 {
 if sprite_index=sprEWalkUnarmed noweapon=1 else noweapon=0
 global.punchonly=0
 if noweapon=1 factor=0.5 else factor=1
@@ -202,7 +225,21 @@ global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
 global.gunkill+=1
-if bullets&gt;1 createDeadBody(false,1.5+bullets*0.15,sprWaiterDeadShotgun,edir) else createDeadBody(false,1.5+bullets*0.15,sprWaiterDeadMachinegun,edir)
+my_id=instance_create(x,y,objDeadBody)
+if bullets&gt;1 my_id.sprite_index=sprWaiterDeadShotgun else my_id.sprite_index=sprWaiterDeadMachinegun
+my_id.image_index=1+floor(random(4))
+my_id.direction=edir
+my_id.speed=1.5+random(1)+bullets*0.15
+my_id.image_angle=my_id.direction
+
+
+if noweapon=0 {
+my_id=instance_create(x,y,objWeaponThrow)
+my_id.image_index=scrCurrentWeaponExt(sprite_index)
+my_id.direction=other.direction-70+random(40)
+my_id.speed=2+random(2)
+my_id.ammo=ammo
+}
 instance_destroy()
 }
 </string>

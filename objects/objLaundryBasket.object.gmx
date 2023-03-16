@@ -30,7 +30,29 @@ image_speed=0
 dir=random(360)
 clothes=0
 if room=rmSequence13 clothes=1
-</string>
+if global.xbox=1 scrInitXboxButtons()</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.xbox=1 scrXboxLaundry()</string>
           </argument>
         </arguments>
       </action>
@@ -79,14 +101,13 @@ with objPlayerMouseHouse {
 if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objLaundryBasket) {
 if objLaundryBasket.clothes=1 {
 objLaundryBasket.clothes=0
-with objItemPants visible=1
-with objItemJacket visible=1
+with objPlayerPants visible=1
+with objPlayerJacket visible=1
 mouse_clear(mb_left)
 }
 }
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

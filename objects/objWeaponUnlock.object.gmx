@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>surface_free(global.surf1)
+            <string>if global.xbox=1 scrInitXboxButtons()
+surface_free(global.surf1)
 global.surf1=surface_create(room_width,room_height)
 surface_set_target(global.surf1)
 draw_clear_alpha(c_black,0)
@@ -70,8 +71,7 @@ gun[18]="DART"
 gun[19]="MP5 SUBMACHINE GUN"
 gun[20]="FIRE AXE"
 gun[21]="SCISSORS"
-gun[22]="SILENCED PISTOL"
-</string>
+gun[22]="SILENCED PISTOL"</string>
           </argument>
         </arguments>
       </action>
@@ -93,7 +93,16 @@ gun[22]="SILENCED PISTOL"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>SteamRunCallbacks()
+            <string>if global.xbox=1 {
+if checkbutton(0,getid(5)) {
+if presstart=0 {
+presstart=1
+scrXboxWeaponUnlockStart()
+} 
+} else presstart=0
+}
+
+SteamRunCallbacks()
 surface_set_target(global.surf1)
 draw_clear_alpha(c_black,0)
 i=0
@@ -120,8 +129,7 @@ draw_set_color(merge_color(merge_color(c_aqua,c_teal,0.5+lengthdir_x(0.5,dir*3.2
 draw_text_transformed(room_width/2,room_height-room_height*0.15+i*0.5,gun[current],1+i*0.01,1+i*0.01,0)
 i+=1
 }
-surface_reset_target()
-</string>
+surface_reset_target()</string>
           </argument>
         </arguments>
       </action>
@@ -143,8 +151,9 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.newguns&lt;=0 {fade=1 exit}
-if on=0 {global.newguns-=1 global.newgun[current-7]=1 on=1 scrCheckGuns()} else {if factor&gt;=1 and shine&lt;=0 {global.newguns-=1 {shine=1 PlaySFX(sndSplashFace)} current+=1 global.newgun[current-7]=1 scrCheckGuns()}}
+            <string>if global.xbox=1 exit
+if global.newguns&lt;=0 {fade=1 exit}
+if on=0 {global.newguns-=1 global.newgun[current-7]=1 on=1 scrCheckGuns()} else {if factor&gt;=1 and shine&lt;=0 {global.newguns-=1 {shine=1 audio_play_sound(sndSplashFace,0,false)} current+=1 global.newgun[current-7]=1 scrCheckGuns()}}
 </string>
           </argument>
         </arguments>
@@ -207,7 +216,7 @@ draw_surface_ext(global.surf1,0,-1,1,1,0,c_black,1)
 draw_surface_ext(global.surf1,-1,0,1,1,0,c_black,1)
 draw_surface_ext(global.surf1,0,0,1,1,0,c_white,1)
 
-if on=1 {if factor&lt;1 factor+=0.05 else {if last=current nothing=1 else {last=current shine=1 PlaySFX(sndSplashFace)}}} else {if factor&gt;0.1 factor-=0.1 else factor=0}
+if on=1 {if factor&lt;1 factor+=0.05 else {if last=current nothing=1 else {last=current shine=1 audio_play_sound(sndSplashFace,0,false)}}} else {if factor&gt;0.1 factor-=0.1 else factor=0}
 
 
 if fade=0 {

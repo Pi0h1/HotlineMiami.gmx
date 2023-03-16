@@ -35,11 +35,7 @@ path=path_add()
 type=choose(objEnemy,objEnemyMeleeStationary)
 if room=rmTrainstationEntrance or room=rmBossClubFloor1 type=objEnemyMeleeStationary
 if room=rmHotelEntrance type=choose(objEnemy)
-on=0
-angle=0
-shake=0
-energie=0
-</string>
+on=0</string>
           </argument>
         </arguments>
       </action>
@@ -86,7 +82,7 @@ energie=0
             <string>if !instance_exists(objPlayer) or sprite_index=sprEnemyRise exit
 if reload&gt;0 reload-=1 else {
 if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;220 {
-if !scrCollisionLineExt(x,y,objPlayer.x,objPlayer.y,3,objSolid,objDoorV,objWallSoft) {
+if !scrCollisionLineExt(x,y,objPlayer.x,objPlayer.y,3,objSolid,objDoorV,objWallSoftH) {
 if sprite_index=sprEnemySit {
 image_index=1
 image_speed=0.5
@@ -103,8 +99,7 @@ image_index=1
 image_speed=0.5
 sprite_index=sprEnemyRise
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

@@ -41,10 +41,7 @@ reload=13
 light=0
 start_x=x
 start_y=y
-weaponfind=0
-shake=0
-angle=0
-</string>
+weaponfind=0</string>
           </argument>
         </arguments>
       </action>

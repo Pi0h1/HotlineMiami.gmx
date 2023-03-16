@@ -25,11 +25,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fade=0
+            <string>//scrLoadSounds()
+//sleep(1000)
+//window_set_fullscreen(true)
+fade=0
 amount=0
 alarm[0]=110
+/*i=0  sprite export code
+repeat (1000) {
+if sprite_exists(i) {
+ii=0
+repeat (sprite_get_number(i)) {
+sprite_save(i,ii,working_directory+"\sprites\"+sprite_get_name(i)+string(ii)+".bmp")
+ii+=1
+}
+}
+i+=1
+}*/
+//global.steamon=0
 scrSetPort()
-global.musicVolume=1
+global.mvol=1
 scrLoadVol()
 if file_exists(working_directory+"\skip") {
 global.currentsong=0
@@ -40,8 +55,7 @@ room_goto(rmMenu)
 sxeasy_init();
 file=file_text_open_write(working_directory+"\skip")
 file_text_close(file)
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -102,7 +116,7 @@ draw_set_blend_mode(bm_normal)
 
 if fade=1 {
 if amount&gt;0 amount-=10 else {
-room_goto(rmSplashDennaton)
+room_goto_next()
 }
 color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,amount)),0.5+lengthdir_x(0.5,amount))
 if amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,amount))),abs(lengthdir_y(1,amount))) else color2=c_white
@@ -110,12 +124,17 @@ draw_set_blend_mode(bm_subtract)
 draw_rectangle_color(-10,-10,view_wview[0]+10,view_hview[0]+10,color2,color1,color1,color2,0)
 draw_set_blend_mode(bm_normal) 
 }
-scrDrawFilter();
+
+
+draw_set_blend_mode(bm_subtract)
+my_y=random(32)
+draw_sprite_tiled(sprScanlines,0,0,my_y)
+draw_circle_color(view_wview[0]/2,view_hview[0]/2,268+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
+draw_set_blend_mode(bm_normal)
 
 draw_set_color(c_black)
 draw_rectangle(-10,-10,room_width+10,15,0)
-draw_rectangle(-10,room_height-15,room_width+10,room_height+10,0)
-</string>
+draw_rectangle(-10,room_height-15,room_width+10,room_height+10,0)</string>
           </argument>
         </arguments>
       </action>

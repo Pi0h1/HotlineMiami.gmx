@@ -29,6 +29,7 @@
 select=0
 scrFreeSurfaces()
 image_speed=0.2
+if global.xbox=1 scrInitXboxButtons()
 scrInitControls()
 x=room_width/2
 y=room_height*0.57
@@ -38,8 +39,15 @@ dir=90
 edit=0
 current=0
 fade=0
-angle=0
 c_amount=0
+/*repeat (5) instance_create(random(room_width),0,objHouse)
+
+i=0
+repeat (5) {
+palmx[i]=(room_width/4)*i
+palmindex[i]=floor(random(6))
+i+=1
+}*/
 wait=0
 global.i=0
 repeat (10) {
@@ -49,9 +57,9 @@ global.i+=1
 }
 alarm[0]=45
 alarm[1]=90
+
 x=room_width/2
-y=room_height/2
-</string>
+y=room_height/2</string>
           </argument>
         </arguments>
       </action>
@@ -79,7 +87,7 @@ with objKnockedOut instance_destroy()
 
 if move[select]="Pick Up" {
 if sprite_index=sprPWalkUnarmed {
-sprite_index=wpnWalkBat
+sprite_index=sprPWalkBat
 } else {
 sprite_index=sprPWalkUnarmed
 my_id=instance_create(x+16,y+16,objWeapon)
@@ -123,7 +131,7 @@ my_id.visible=0 my_id.angle=0
 }
 
 if move[select]="Drop Weapon" {
-if sprite_index=wpnWalkBat {
+if sprite_index=sprPWalkBat {
 sprite_index=sprPWalkUnarmed
 my_id=instance_create(x,y,objWeaponThrow)
 my_id.image_index=4
@@ -133,7 +141,7 @@ my_id.visible=0
 my_id.angle=0
 my_id.ammo=0
 } else {
-sprite_index=wpnWalkBat
+sprite_index=sprPWalkBat
 }
 }
 
@@ -147,8 +155,7 @@ my_id.visible=0 my_id.angle=0
 }
 }
 
-alarm[1]=90
-</string>
+alarm[1]=90</string>
           </argument>
         </arguments>
       </action>
@@ -194,6 +201,30 @@ alarm[0]=45</string>
           <argument>
             <kind>1</kind>
             <string>if wait&gt;0 wait-=1
+if global.xbox=1 {
+if checkbutton(0,getid(6)) {
+if pressback=0 {
+pressback=1
+scrXboxControlsBack()
+} 
+} else pressback=0
+
+
+if leftthumb_x(0)&gt;15000 {
+if pressright=0 {
+pressright=1
+scrXboxControlsRight()
+}
+} else pressright=0
+
+if leftthumb_x(0)&lt;-15000 {
+if pressleft=0 {
+pressleft=1
+scrXboxControlsLeft()
+}
+} else pressleft=0
+
+}
 
 if keyboard_check_pressed(ord(global.leftkey)) event_perform(ev_keypress,ord('A'))
 if keyboard_check_pressed(ord(global.rightkey)) event_perform(ev_keypress,ord('D'))
@@ -221,6 +252,8 @@ rightkey=string_replace(rightkey,"%","left")
 rightkey=string_replace(rightkey,"'","right")
 rightkey=string_replace(rightkey,"(","down")
 
+if global.xbox=0 control[0]=upkey+", "+leftkey+", "+downkey+", "+rightkey
+if global.xbox=0 control[14]=global.restartkey
 surface_set_target(global.surf1)
 draw_clear_alpha(c_black,0)
 mapdir+=0.5
@@ -247,8 +280,7 @@ draw_set_color(merge_color(c_lime,c_white,0.5+lengthdir_x(0.5,dir*16)))
 draw_text_transformed(room_width/2+1,room_height*0.75+1,condition[select],1,1,0)
 draw_set_color(merge_color(c_lime,c_white,0.5-lengthdir_x(0.5,dir*16)))
 draw_text_transformed(room_width/2,room_height*0.75,condition[select],1,1,0)
-surface_reset_target()
-</string>
+surface_reset_target()</string>
           </argument>
         </arguments>
       </action>
@@ -365,8 +397,12 @@ d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 draw_set_color(c_black)
 draw_rectangle(0,0,room_width,44,0)
 draw_rectangle(0,room_height,room_width,room_height-44,0)
-scrDrawFilter();
-</string>
+draw_set_blend_mode(bm_subtract)
+my_y=random(32)
+draw_sprite_tiled(sprScanlines,0,0,my_y)
+draw_set_blend_mode(bm_subtract)
+draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
+draw_set_blend_mode(bm_normal)</string>
           </argument>
         </arguments>
       </action>
@@ -389,7 +425,7 @@ scrDrawFilter();
           <argument>
             <kind>1</kind>
             <string>if edit=1 exit
-if wait&gt;0 exit
+if global.xbox=1 or wait&gt;0 exit
 wait=3
 with objAnsweringMachine instance_destroy()
 with objWeapon instance_destroy()
@@ -412,8 +448,7 @@ my_id=instance_create(x+16,y+16,objWeapon)
 my_id.image_index=4
 my_id.visible=0
 my_id.angle=0
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -436,7 +471,7 @@ my_id.angle=0
           <argument>
             <kind>1</kind>
             <string>if edit=1 exit
-if wait&gt;0 exit
+if global.xbox=1 or wait&gt;0 exit
 wait=3
 with objAnsweringMachine instance_destroy()
 with objWeapon instance_destroy()
@@ -460,8 +495,7 @@ my_id=instance_create(x+16,y+16,objWeapon)
 my_id.image_index=4
 my_id.visible=0
 my_id.angle=0
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -528,9 +562,9 @@ my_id.angle=0
           <argument>
             <kind>1</kind>
             <string>if edit=1 exit
+if global.xbox=1 exit
 restart=1
-fade=1
-</string>
+fade=1</string>
           </argument>
         </arguments>
       </action>

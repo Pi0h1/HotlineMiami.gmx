@@ -33,9 +33,10 @@ phonex=0
 blackx=15
 line1x=0
 line2x=0
-index=sprFaceBiker
+index=sprBiker
 start=0
 stop=0
+if global.xbox=1 scrInitXboxButtons()
 question=1
 question1[0]="What's going on down here?"
 question2[0]="Who are you people?"
@@ -51,15 +52,14 @@ currentquestion=0
 
 fade=0
 
-sprite=sprFaceDialogue
+sprite=sprDialogueFaces
 change=0
 current=0
 select=-1
-select=0
+if global.xbox=1 select=0
 reload=0
 image_xscale=1.5
-image_yscale=1.5
-</string>
+image_yscale=1.5</string>
           </argument>
         </arguments>
       </action>
@@ -81,11 +81,34 @@ image_yscale=1.5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if stop=1 {
-if blackx&gt;15 {blackx-=2.5} else 
-{objEffector.blackx=blackx with objPlayerBiker {my_id=instance_create(x,y,objPlayerBiker) my_id.sprite_index=sprBikerWalkUnarmed instance_destroy()} global.done=1 instance_create(x,y,objLevelComplete)  instance_destroy()}
+            <string>if global.xbox=1 {
+if checkbutton(0,getid(5)) or checkbutton(0,getid(11)) {
+if presstart=0 {
+presstart=1
+scrXboxEndingDialogue1Start()
+} 
+} else presstart=0
+
+if leftthumb_y(0)&gt;5000 {
+if pressup=0 {
+pressup=1
+scrXboxEndingDialogue1Up()
 }
-</string>
+} else pressup=0
+
+if leftthumb_y(0)&lt;-5000 {
+if pressdown=0 {
+pressdown=1
+scrXboxEndingDialogue1Down()
+}
+} else pressdown=0
+
+}
+
+if stop=1 {
+if blackx&gt;15 {blackx-=2.5} else 
+{objEffector.blackx=blackx with objPlayerBiker {my_id=instance_create(x,y,objPlayerBiker) my_id.sprite_index=sprBoss2Walk instance_destroy()} global.done=1 instance_create(x,y,objLevelComplete)  instance_destroy()}
+}</string>
           </argument>
         </arguments>
       </action>
@@ -107,7 +130,8 @@ if blackx&gt;15 {blackx-=2.5} else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if reload&gt;0 exit
+            <string>if global.xbox=1 exit
+if reload&gt;0 exit
 reload=2
 if question=1 {
 if select&gt;-1 {
@@ -125,8 +149,7 @@ change=1
 current=0
 } else {stop=1}
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -155,7 +178,7 @@ mousey=display_mouse_get_y()*(256/display_get_height())
 
 if change=1 {
 if phonex&gt;0 phonex-=10 else {
-if question=1 index=sprFaceBiker else {
+if question=1 index=sprBiker else {
 index=face[current]
 }
 change=0
@@ -171,10 +194,12 @@ if phonex&lt;180 phonex+=10
 }
 
 
+if global.xbox=0 {
 if question=1 {
 select=-1
 if mousey&gt;256-58.5 and mousey&lt;256-40.5 select=0
 if mousey&gt;256-40.5 and mousey&lt;256-22.5 select=1
+}
 }
 phonecolor1=merge_color(c_orange,c_lime,0.5+lengthdir_x(0.25,global.dir*2))
 phonecolor2=merge_color(c_maroon,c_navy,0.5+lengthdir_x(0.25,global.dir*2))
@@ -243,9 +268,19 @@ draw_sprite_ext(index,global.dir*0.1,view_wview[0]-phonex+128,view_hview[0]/2,im
 }
 }
 global.dir+=1
+if global.xbox=0 {
 draw_sprite_ext(sprCursor,global.dir*0.2,mousex+1,mousey+1,1,1,0,c_black,0.5)
 draw_set_blend_mode(bm_add)
 draw_sprite_ext(sprCursor,global.dir*0.2,mousex,mousey,1,1,0,c_white,1)
+draw_set_blend_mode(bm_normal)
+}
+
+exit
+draw_set_blend_mode(bm_subtract)
+draw_sprite_tiled(sprScanlines,0,0,my_y)
+my_y=random(32)
+draw_set_blend_mode(bm_subtract)
+draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
 draw_set_blend_mode(bm_normal)
 
 </string>

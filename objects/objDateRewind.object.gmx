@@ -54,8 +54,9 @@ draw_clear(c_black)
 repeat (100) {
 draw_surface_ext(surf,0,0,1,1,0,merge_color(c_black,c_white,i*(1/60)),1)
 if i&lt;60 i+=1
-}
-</string>
+sleep(1000/60)
+screen_refresh()
+}</string>
           </argument>
         </arguments>
       </action>
@@ -101,7 +102,7 @@ if i&lt;60 i+=1
             <kind>1</kind>
             <string>on=1
 reload=60
-PlaySFX(sndRewind)
+audio_play_sound(sndRewind,0,false)
 alarm[0]=270
 </string>
           </argument>

@@ -1,4 +1,6 @@
+if global.xbox=1 scrXboxPlayerHospitalMove() else {
 if sprite_index=sprPHospitalHeadache nothing=1 else {
+
 
 if keyboard_check_direct(ord(global.upkey)) {
 myxspeed+=lengthdir_x(0.25,90-view_angle[0])
@@ -43,7 +45,7 @@ if add>0.3 add=0.3
 if abs(myxspeed)=0 and abs(myyspeed)=0 legindex=0 else {
 legindex+=add
 with objDizzy {if dizziness<1.25 dizziness+=0.01 else {
-with objPlayer {myxspeed=0 myyspeed=0 legindex=0 PlaySFX(sndTinnitusHospital) image_index=0 image_speed=0.15 sprite_index=sprPHospitalHeadache}
+with objPlayer {myxspeed=0 myyspeed=0 legindex=0 audio_play_sound(sndTinnitusHospital,0,false) image_index=0 image_speed=0.15 sprite_index=sprPHospitalHeadache}
 }
 }
 image_index+=(abs(myxspeed)+abs(myyspeed))*0.05
@@ -52,4 +54,5 @@ scrMoveSolidOn()
 if place_free(x+myxspeed,y) x+=myxspeed
 if place_free(x,y+myyspeed) y+=myyspeed
 scrMoveSolidOff()
+}
 }

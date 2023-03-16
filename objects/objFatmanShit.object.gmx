@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objKillable</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -100,7 +100,8 @@ my_id.direction=my_id.image_angle
 my_id.speed=2+random(1)
 my_id.friction=0.15
 }
-PlaySFX("Cut")
+audio_play_sound(sndHit,0,false)
+audio_play_sound(sndCut1,0,false)
 SteamSetAchievement("ACH_SMELL_SOMETHING_BURNING")
 sprite_index=sprFatmanShitDecapitated
 image_index=0

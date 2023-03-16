@@ -73,7 +73,7 @@ touch=0
 if !place_meeting(x,y,objPlayer) {
 if wait&lt;30 wait=30
 }
-if instance_number(objPlayerJacket)+instance_number(objPlayerMouseHouse)+instance_number(objPlayerBiker)+instance_number(objPlayerBikerHouse)=0 exit
+if instance_number(objPlayerMouse)+instance_number(objPlayerMouseHouse)+instance_number(objPlayerBiker)+instance_number(objPlayerBikerHouse)=0 exit
 if valid=0 exit
 if instance_exists(objEnemy) or instance_exists(objBoss) {
 if place_meeting(x,y,objPlayer) {
@@ -85,13 +85,13 @@ image_index=index
 }
 if room=rmHotelEntrance {
 test=1
-if instance_exists(objFatmanEating) and instance_exists(objFatmanTelephone) if (objFatmanEating.sprite_index=sprFatmanEating or objFatmanEating.sprite_index=sprFatmanEatingGiveUp or objFatmanTelephone.sprite_index=sprFatmanTelephone or objFatmanTelephone.sprite_index=sprFatmanTelephoneGiveUp) test=0
+if objFatmanEating.sprite_index=sprFatmanEating or objFatmanEating.sprite_index=sprFatmanEatingGiveUp or objFatmanTelephone.sprite_index=sprFatmanTelephone or objFatmanTelephone.sprite_index=sprFatmanTelephoneGiveUp test=0
 if test=0 exit
 }
 
 if room=rmHotelSuite {
 test=1
-if (objFatmanShit.sprite_index=sprFatmanShit or objFatmanShit.sprite_index=sprFatmanShitGiveUp) test=0
+if objFatmanShit.sprite_index=sprFatmanShit or objFatmanShit.sprite_index=sprFatmanShitGiveUp test=0
 if test=0 exit
 }
 
@@ -143,7 +143,7 @@ objEffector.nextroom=nextroom
 }
 } else {
 if place_meeting(x,y,objPlayer) {
-if instance_exists(objPlayerCar) or instance_exists(objMCBike) {
+if instance_exists(objPlayerCarEnter) or instance_exists(objMCBike) {
 if wait&gt;0 {index=0 wait-=1} else {if index&lt;6 index+=0.5}
 } else {
 touch=1
@@ -192,8 +192,7 @@ if index&lt;3 mask_index=sprite_index else mask_index=sprElevatorMask
 image_index=index
 
 
-valid=1
-</string>
+valid=1</string>
           </argument>
         </arguments>
       </action>
@@ -248,12 +247,11 @@ if test=0 exit
 }
 
 if !instance_exists(objEnemy) and !instance_exists(objKnockedOut) and !instance_exists(objBoss) and !instance_exists(objFiles) and !instance_exists(objBossgun) and !instance_exists(objMiscEnemy) {
-if !instance_exists(objPlayerCar) or global.done=0 {
+if !instance_exists(objPlayerCarEnter) or global.done=0 {
 draw_sprite_ext(sprArrow,image_index,x+lengthdir_x(lengthdir_x(3,dir),image_angle-90),y+lengthdir_y(lengthdir_x(3,dir),image_angle-90),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 dir+=8
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

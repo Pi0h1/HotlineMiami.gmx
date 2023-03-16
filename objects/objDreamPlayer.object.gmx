@@ -55,7 +55,7 @@ objEffector.newsong=1
 objEffector.song=working_directory+"\Flatline.mp3"
 global.level=rmHospitalTitle
 global.pretitle="ELEVENTH CHAPTER"
-global.title=global.levelTitle[12]
+global.title="TRAUMA"
 </string>
           </argument>
         </arguments>

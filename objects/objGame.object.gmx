@@ -86,6 +86,32 @@ testLevel = rmSequence2;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Text strings
+//if (!global.devmode) exit // If devmode is disabled don't do any of this.
+text_WarningMenuName = "Dev Menu";
+text_WarningOpenMenu = "Press [F3] to open Dev Menu";
+text_WarningInstructions = ""; // The info here is dynamic; as such you can find it in the step event.
+text_WarningMessage  = "Surface sucessfully destroyed.";
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Initialize Global Variables
 GlobalVariables();
 </string>
@@ -332,32 +358,6 @@ if file &lt; 0 exit;
 
 discordId = file_text_read_string(file); // Set the discordId to the characters in the file.
 file_text_close(file); // Stop reading from the file.
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Text strings
-if (!global.devmode) exit // If devmode is disabled don't do any of this.
-text_WarningMenuName = "Dev Menu";
-text_WarningOpenMenu = "Press [F3] to open Dev Menu";
-text_WarningInstructions = ""; // The info here is dynamic; as such you can find it in the step event.
-text_WarningMessage  = "Surface sucessfully destroyed.";
 </string>
           </argument>
         </arguments>

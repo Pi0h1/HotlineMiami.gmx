@@ -131,58 +131,55 @@ draw_clear_alpha(c_black,0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Draw Text
-if wait&gt;0 wait-=1
-if on=1 {if textdir2&lt;180 textdir2+=10} else {textdir2=blacky*180}
-if on=1 factor=0.5-lengthdir_x(0.5,textdir2) else {if factor&gt;0 factor-=0.05 else {if on=2 {if !instance_exists(objPuzzle) instance_create(x,y,objPuzzle)}}}
-i=0
-draw_set_font(fntUnlock)
-draw_set_halign(fa_left)
-draw_set_valign(fa_center)
-start_x=view_wview[0]/2-string_width(text)*0.5
-repeat (string_length(text))*factor {
-letter=string_copy(text,1+i,1)
-ii=0
-repeat (5+lengthdir_x(4,textdir1+i*60)) {
-draw_set_color(merge_color(c_teal,c_white,ii*0.1))
-draw_text_transformed(start_x,room_height*0.35-ii*0.5,letter,1+ii*0.01,1+ii*0.01,0)
-ii+=1
-}
-start_x+=string_width(letter)
-i+=1
-}
-draw_set_font(fntMenu)
-i=0
-ii=0
-repeat (4) {
-if select=i {
-repeats=6+lengthdir_x(5,dir*2)
-if on=1 {
-if frac(i*0.5)&gt;0 addx=260*(1-factor) else addx=-260*(1-factor)
+            <string>/// Draw Text (New)
+if wait &gt; 0 wait--;
+if on == 1 {
+    if (textdir2 &lt; 180) textdir2 += 10;
 } else {
-if frac(i*0.5)&gt;0 addx=-260*(1-factor) else addx=260*(1-factor)
+    textdir2 = blacky * 180;
 }
-repeat (repeats) {
-draw_set_color(merge_color(c_fuchsia,c_white,ii*0.085))
-draw_text(room_width/2-56+ii+addx,room_height/2+i*20,choice[i])
-ii+=1
+if (on == 1) {
+    factor = 0.5 - lengthdir_x(0.5, textdir2);
+} else if (factor &gt; 0) {
+    factor -= 0.05;
+    if (on == 2 &amp;&amp; !instance_exists(objPuzzle)) {
+        instance_create(x, y, objPuzzle);
+    }
 }
-} else {
-if on=1 {
-if frac(i*0.5)&gt;0 addx=260*(1-factor) else addx=-260*(1-factor)
-} else {
-if frac(i*0.5)&gt;0 addx=-260*(1-factor) else addx=260*(1-factor)
+var start_x = view_wview[0] / 2 - string_width(text) * 0.5;
+draw_set_font(fntUnlock);
+draw_set_halign(fa_left);
+draw_set_valign(fa_center);
+for (var i = 0; i &lt; string_length(text) * factor; i++) {
+    var letter = string_copy(text, 1 + i, 1);
+    var ii = 0;
+    var len_x = 4 + lengthdir_x(4, textdir1 + i * 60);
+    for (var j = 0; j &lt; len_x + 5; j++) {
+        var color = merge_color(c_teal, c_white, ii * 0.1);
+        draw_set_color(color);
+        draw_text_transformed(start_x, room_height * 0.35 - ii * 0.5, letter, 1 + ii * 0.01, 1 + ii * 0.01, 0);
+        ii++;
+    }
+    start_x += string_width(letter);
 }
-amount=0.5+lengthdir_x(0.5,dir*2)
-if test=1 and i=1 draw_set_color(merge_color(c_white,c_dkgray,amount)) else draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(room_width/2-56+1+addx,room_height/2+i*20+1,choice[i])
-amount=0.5-lengthdir_x(0.5,dir*2)
-if test=1 and i=1 draw_set_color(merge_color(c_white,c_dkgray,amount)) else draw_set_color(merge_color(c_white,c_aqua,amount))
-draw_text(room_width/2-56+addx,room_height/2+i*20,choice[i])
+var menu_x = room_width / 2 - 56;
+var menu_y = room_height / 2;
+draw_set_font(fntMenu);
+for (var i = 0; i &lt; 4; i++) {
+    var offset = i * 20;
+    var selected = (select == i);
+    var menu_item_x = menu_x + ((selected * ((on == 1) * 260 + (on != 1) * (-260))) * (1 - factor)) + ((1 - selected) * 0);
+    var menu_item_y = menu_y + offset;
+    var menu_item_color = (selected &amp;&amp; c_fuchsia) || c_aqua;
+    var len_x = lengthdir_x(5, dir * 2) + 6;
+    for (var j = 0; j &lt; len_x; j++) {
+        var amount = (j &lt; 6) * (0.5 + lengthdir_x(0.5, dir * 2)) + (j &gt;= 6) * (0.5 - lengthdir_x(0.5, dir * 2));
+        var color = merge_color(c_white, menu_item_color, amount);
+        draw_set_color(color);
+        draw_text(menu_item_x + j, menu_item_y + 1, choice[i]);
+    }
 }
-i+=1
-}
-textdir1-=4
+textdir1 -= 4;
 </string>
           </argument>
         </arguments>
@@ -265,6 +262,79 @@ if kDown {
             <kind>1</kind>
             <string>/// Surface reset
 surface_reset_target();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw Text (Old)
+exit
+if wait&gt;0 wait-=1
+if on=1 {if textdir2&lt;180 textdir2+=10} else {textdir2=blacky*180}
+if on=1 factor=0.5-lengthdir_x(0.5,textdir2) else {if factor&gt;0 factor-=0.05 else {if on=2 {if !instance_exists(objPuzzle) instance_create(x,y,objPuzzle)}}}
+i=0
+draw_set_font(fntUnlock)
+draw_set_halign(fa_left)
+draw_set_valign(fa_center)
+start_x=view_wview[0]/2-string_width(text)*0.5
+repeat (string_length(text))*factor {
+letter=string_copy(text,1+i,1)
+ii=0
+repeat (5+lengthdir_x(4,textdir1+i*60)) {
+draw_set_color(merge_color(c_teal,c_white,ii*0.1))
+draw_text_transformed(start_x,room_height*0.35-ii*0.5,letter,1+ii*0.01,1+ii*0.01,0)
+ii+=1
+}
+start_x+=string_width(letter)
+i+=1
+}
+draw_set_font(fntMenu)
+i=0
+ii=0
+repeat (4) {
+if select=i {
+repeats=6+lengthdir_x(5,dir*2)
+if on=1 {
+if frac(i*0.5)&gt;0 addx=260*(1-factor) else addx=-260*(1-factor)
+} else {
+if frac(i*0.5)&gt;0 addx=-260*(1-factor) else addx=260*(1-factor)
+}
+repeat (repeats) {
+draw_set_color(merge_color(c_fuchsia,c_white,ii*0.085))
+draw_text(room_width/2-56+ii+addx,room_height/2+i*20,choice[i])
+ii+=1
+}
+} else {
+if on=1 {
+if frac(i*0.5)&gt;0 addx=260*(1-factor) else addx=-260*(1-factor)
+} else {
+if frac(i*0.5)&gt;0 addx=-260*(1-factor) else addx=260*(1-factor)
+}
+amount=0.5+lengthdir_x(0.5,dir*2)
+if test=1 and i=1 draw_set_color(merge_color(c_white,c_dkgray,amount)) else draw_set_color(merge_color(c_white,c_aqua,amount))
+draw_text(room_width/2-56+1+addx,room_height/2+i*20+1,choice[i])
+amount=0.5-lengthdir_x(0.5,dir*2)
+if test=1 and i=1 draw_set_color(merge_color(c_white,c_dkgray,amount)) else draw_set_color(merge_color(c_white,c_aqua,amount))
+draw_text(room_width/2-56+addx,room_height/2+i*20,choice[i])
+}
+i+=1
+}
+textdir1-=4
 </string>
           </argument>
         </arguments>

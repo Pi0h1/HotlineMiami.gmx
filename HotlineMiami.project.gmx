@@ -1914,9 +1914,9 @@
         <sprite>sprites\PEd_guiSprWindowCross</sprite>
       </sprites>
       <sprite>sprites\PEd_sprDummy2D</sprite>
-    </sprites>
-    <sprites name="Example">
-      <sprite>sprites\sprSmiley</sprite>
+      <sprites name="Example">
+        <sprite>sprites\sprSmiley</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\bgWater</sprite>
     <sprite>sprites\bgWaterMap</sprite>

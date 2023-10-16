@@ -460,6 +460,11 @@
     <option_textureGroup0_parent>&lt;none&gt;</option_textureGroup0_parent>
     <option_textureGroup0_scaled>0</option_textureGroup0_scaled>
     <option_textureGroup0_targets>9223372036854775807</option_textureGroup0_targets>
+    <option_textureGroup10_border>2</option_textureGroup10_border>
+    <option_textureGroup10_nocropping>0</option_textureGroup10_nocropping>
+    <option_textureGroup10_parent>&lt;none&gt;</option_textureGroup10_parent>
+    <option_textureGroup10_scaled>0</option_textureGroup10_scaled>
+    <option_textureGroup10_targets>9223372036854775807</option_textureGroup10_targets>
     <option_textureGroup1_border>2</option_textureGroup1_border>
     <option_textureGroup1_nocropping>0</option_textureGroup1_nocropping>
     <option_textureGroup1_parent>&lt;none&gt;</option_textureGroup1_parent>
@@ -505,9 +510,10 @@
     <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
     <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
     <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
-    <option_textureGroup_count>10</option_textureGroup_count>
+    <option_textureGroup_count>11</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Player_Jacket</option_textureGroups1>
+    <option_textureGroups10>PushEd</option_textureGroups10>
     <option_textureGroups2>NPCs</option_textureGroups2>
     <option_textureGroups3>Faces</option_textureGroups3>
     <option_textureGroups4>Backgrounds</option_textureGroups4>

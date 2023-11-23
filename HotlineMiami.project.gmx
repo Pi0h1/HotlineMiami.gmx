@@ -2062,6 +2062,8 @@
       <script>scripts\scrGetAmmo.gml</script>
     </scripts>
     <scripts name="Enemies">
+      <script>scripts\scrInitMeleeWeapon.gml</script>
+      <script>scripts\scrInitAmmo.gml</script>
       <script>scripts\scrChasePlayer.gml</script>
       <script>scripts\scrInitPathFinding.gml</script>
       <script>scripts\scrHoboStep.gml</script>

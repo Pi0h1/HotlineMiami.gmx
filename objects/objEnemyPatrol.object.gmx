@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Weapons
-if object_get_parent(object_index)=objEnemyIdle exit
-if sprite_index=sprite0 sprite_index=choose(sprEWalkM16,sprEWalkShotgun,sprEWalkDoubleBarrel)
+if object_get_parent(object_index) = objEnemyIdle exit
+if sprite_index = sprite0 sprite_index = choose(sprEWalkM16, sprEWalkShotgun, sprEWalkDoubleBarrel)
 </string>
           </argument>
         </arguments>
@@ -49,11 +49,7 @@ if sprite_index=sprite0 sprite_index=choose(sprEWalkM16,sprEWalkShotgun,sprEWalk
           <argument>
             <kind>1</kind>
             <string>///Ammo
-if sprite_index=sprEWalkShotgun ammo=6
-if sprite_index=sprEWalkDoubleBarrel ammo=2
-if sprite_index=sprEWalkSilencer ammo=13
-if sprite_index=sprEWalkM16 ammo=24
-if global.maskindex=10 ammo=ceil(ammo*1.33)
+scrInitAmmo();
 </string>
           </argument>
         </arguments>
@@ -75,23 +71,21 @@ if global.maskindex=10 ammo=ceil(ammo*1.33)
           <argument>
             <kind>1</kind>
             <string>///Initialize
-scrEPatrolInit()
-image_speed=0
-image_index=random(1000)
-speed=(1)*delta
-image_speed=(0.1)*delta
-energie=round(random(1))
-
-checkreload=floor(random(30))
-
-alert=0
-reload=13
-light=0
-start_x=x
-start_y=y
-weaponfind=0
-angle=direction
-shake=0
+scrEPatrolInit();
+image_speed = 0;
+image_index = random(1000);
+speed = (1) * delta;
+image_speed = (0.1) * delta;
+energie = round(random(1));
+checkreload = floor(random(30));
+alert = 0;
+reload = 13;
+light = 0;
+start_x = x;
+start_y = y;
+weaponfind = 0;
+angle = direction;
+shake = 0;
 </string>
           </argument>
         </arguments>
@@ -160,6 +154,30 @@ if !instance_exists(objPlayer)
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Ammo
+scrInitAmmo();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -177,17 +195,27 @@ if !instance_exists(objPlayer)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if shake&gt;0 shake-=0.5
-if light&gt;0 light-=1
-draw_set_blend_mode(bm_add)
-draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
-draw_set_blend_mode(bm_normal)
-if scrIsSearching(sprite_index) nothing=1 else {
-draw_sprite_ext(sprELegs,image_index*2,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+            <string>if (shake &gt; 0)
+{
+    shake -= 0.5 * delta;
 }
-draw_sprite_ext(sprite_index,image_index,x-shake+random(shake*0.5),y-shake+random(shake*0.5),image_xscale,image_yscale,direction,image_blend,image_alpha)
-draw_set_color(c_white)
-//draw_path(my_path,0,0,1)
+
+if (light &gt; 0)
+{
+    light -= 1 * delta;
+}
+
+draw_set_blend_mode(bm_add);
+draw_circle_color(x, y, 48 + random(6) + light, make_color_hsv(0, 0, 30), c_black, 0);
+draw_set_blend_mode(bm_normal);
+
+if !(scrIsSearching(sprite_index)) 
+{
+    draw_sprite_ext(sprELegs, image_index * 2, x, y, image_xscale, image_yscale, direction, image_blend, image_alpha);
+}
+
+draw_sprite_ext(sprite_index, image_index, x - shake + random(shake * 0.5), y - shake + random(shake * 0.5), image_xscale, image_yscale, direction, image_blend, image_alpha);
+draw_set_color(c_white);
 </string>
           </argument>
         </arguments>

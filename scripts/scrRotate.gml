@@ -5,7 +5,7 @@
 var tur_dir,destdir,turnspeed,dir;
 tur_dir=argument0;
 destdir=argument1;
-turnspeed=argument2;
+turnspeed=argument2*delta;
 
 if(tur_dir>359){tur_dir=0}
 if(tur_dir<0){tur_dir=359}

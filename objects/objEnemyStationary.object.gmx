@@ -49,11 +49,7 @@ if sprite_index=sprite0 sprite_index=choose(sprEWalkM16,sprEWalkShotgun,sprEWalk
           <argument>
             <kind>1</kind>
             <string>///Ammo
-if sprite_index=sprEWalkShotgun ammo=6
-if sprite_index=sprEWalkDoubleBarrel ammo=2
-if sprite_index=sprEWalkSilencer ammo=13
-if sprite_index=sprEWalkM16 ammo=24
-if global.maskindex=10 ammo=ceil(ammo*1.33)
+scrInitAmmo();
 </string>
           </argument>
         </arguments>
@@ -158,6 +154,30 @@ scrMoveSolidOff()
 if !instance_exists(objPlayer) {alert=0 speed=0 exit}
 
 scrEStaticStep()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Ammo
+scrInitAmmo();
 </string>
           </argument>
         </arguments>

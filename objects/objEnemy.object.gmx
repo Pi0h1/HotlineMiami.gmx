@@ -26,8 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>///Weapons
-if object_get_parent(object_index)=objEnemyIdle exit
-if sprite_index=sprite0 sprite_index=choose(sprEWalkM16,sprEWalkShotgun,sprEWalkDoubleBarrel)
+if (object_get_parent(object_index) = objEnemyIdle)
+{
+    exit
+}
+if (sprite_index = sprite0)
+{
+    sprite_index = choose(sprEWalkM16, sprEWalkShotgun, sprEWalkDoubleBarrel)
+}
 </string>
           </argument>
         </arguments>
@@ -49,11 +55,7 @@ if sprite_index=sprite0 sprite_index=choose(sprEWalkM16,sprEWalkShotgun,sprEWalk
           <argument>
             <kind>1</kind>
             <string>///Ammo
-if sprite_index=sprEWalkShotgun ammo=6
-if sprite_index=sprEWalkDoubleBarrel ammo=2
-if sprite_index=sprEWalkSilencer ammo=13
-if sprite_index=sprEWalkM16 ammo=24
-if global.maskindex=10 ammo=ceil(ammo*1.33)
+scrInitAmmo();
 </string>
           </argument>
         </arguments>
@@ -75,26 +77,33 @@ if global.maskindex=10 ammo=ceil(ammo*1.33)
           <argument>
             <kind>1</kind>
             <string>///Initialize
-scrERandomInit()
-image_speed=0
-image_index=random(1000)
-angle=random(360)
+scrERandomInit();
+image_speed = 0;
+image_index = random(1000);
+angle = random(360);
 
-direction=angle
-speed = round(random(1))*delta
-if room=rmTutorial {image_index=0 speed=0 direction=point_direction(x,y,objPlayer.x,objPlayer.y)}
-image_speed=speed*0.1
-alarm[0]=(60+random(60))*delta
-energie=round(random(1))
+direction = angle;
+speed = round(random(1)) * delta;
 
-checkreload=floor(random(30))
-//ammo=24
-alert=0
-reload=13
-light=0
+if (room == rmTutorial)
+{
+    image_index = 0;
+    speed = 0;
+    direction = point_direction(x, y, objPlayer.x, objPlayer.y);
+}
 
-weaponfind=0 
-shake=0
+image_speed = speed * 0.1;
+alarm[0] = (60 + random(60)) * delta;
+energie = round(random(1));
+
+checkreload = floor(random(30));
+
+alert = 0;
+reload = 13;
+light = 0;
+
+weaponfind = 0;
+shake = 0;
 </string>
           </argument>
         </arguments>
@@ -115,8 +124,8 @@ shake=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>start_x=x
-start_y=y
+            <string>start_x = x;
+start_y = y;
 </string>
           </argument>
         </arguments>
@@ -140,8 +149,9 @@ start_y=y
           <argument>
             <kind>1</kind>
             <string>/// Clean up
-if path_exists(path) {
-path_delete(path);
+if path_exists(path)
+{
+    path_delete(path);
 }
 </string>
           </argument>
@@ -165,15 +175,33 @@ path_delete(path);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room=rmTutorial exit
-if path_index&gt;0 or scrIsSearching(sprite_index) {alarm[0]=5 exit}
-if alert=1 {alarm[0]=5 exit}
-alarm[0]=(60+random(60))*delta
-angle=random(360)
-speed=(round(random(1)))*delta
-image_speed=(speed*0.1)*delta
-direction=angle
-if speed=0 image_index=0
+            <string>if (room == rmTutorial)
+{
+    exit;
+}
+
+if (path_index &gt; 0 || scrIsSearching(sprite_index))
+{
+    alarm[0] = 5; 
+    exit;
+}
+
+if (alert == 1)
+{
+    alarm[0] = 5;
+    exit;
+}
+
+alarm[0] = (60 + random(60)) * delta;
+angle = random(360);
+speed = (round(random(1))) * delta;
+image_speed = (speed * 0.1) * delta;
+direction = angle;
+
+if (speed == 0)
+{
+    image_index = 0;
+}
 </string>
           </argument>
         </arguments>
@@ -481,11 +509,7 @@ image_speed=0
           <argument>
             <kind>1</kind>
             <string>///Ammo
-if sprite_index=sprEWalkShotgun ammo=6
-if sprite_index=sprEWalkDoubleBarrel ammo=2
-if sprite_index=sprEWalkSilencer ammo=13
-if sprite_index=sprEWalkM16 ammo=24
-if global.maskindex=10 ammo=ceil(ammo*1.33)
+scrInitAmmo();
 </string>
           </argument>
         </arguments>

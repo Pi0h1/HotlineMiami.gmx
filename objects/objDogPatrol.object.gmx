@@ -28,8 +28,8 @@
             <string>scrDogInit()
 image_speed=0
 image_index=random(1000)
-speed=1
-image_speed=0.1
+speed=1*delta
+image_speed=0.1*delta
 energie=round(random(1))
 
 checkreload=floor(random(30))
@@ -42,7 +42,11 @@ start_y=y
 stopchase=0
 add=1
 
-gotowall=0</string>
+gotowall=0
+shake = 0;
+angle = 0;
+weaponfind = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -68,12 +72,12 @@ gotowall=0</string>
 global.factor+=sign(alert)
 scrMoveSolidOn()
 if path_index&gt;=0 {
-if image_speed&lt;0.3 image_speed=0.3
+if image_speed&lt;(0.3*delta) image_speed=(0.3*delta)
 if path_position=1 {path_end()
 if alert=3 alert=0
 }
 } else {
-image_speed=speed*0.1
+image_speed=(speed*0.1)*delta
 if !place_free(x,y) and alert=0 {
 tempdir=direction
 i=1
@@ -87,7 +91,7 @@ if i&lt;100 move_outside_solid(tempdir,4+i/20)
 
 
 
-if speed&gt;1 {
+if speed&gt;(1*delta) {
 if place_meeting(x,y,objPlayer) {
 global.my_id=id
 if objPlayer.object_index=objPlayerShieldMouse scrPlayerShieldDieDogBite() else scrPlayerDieDogBite()
@@ -95,7 +99,8 @@ instance_destroy()
 }
 }
 scrDogStep()
-scrMoveSolidOff()</string>
+scrMoveSolidOff()
+</string>
           </argument>
         </arguments>
       </action>
@@ -126,7 +131,7 @@ with objBullet {
 if place_meeting(x,y,global.my_id) {
 my_id=instance_create(x,y,objBloodSmoke)
 my_id.direction=direction-170+random(10)
-my_id.speed=1
+my_id.speed=1*delta
 my_id.image_angle=my_id.direction
 my_id.image_xscale=0.8+random(0.2)
 my_id.image_yscale=my_id.image_xscale
@@ -157,7 +162,7 @@ my_id.image_xscale=1-random(0.2)
 my_id.image_yscale=my_id.image_xscale
 my_id.image_angle=point_direction(x+lengthdir_x(8,edir),y+lengthdir_y(8,edir),my_id.x,my_id.y)
 my_id.direction=my_id.image_angle
-my_id.speed=1+random(5)
+my_id.speed=(1+random(5))*delta
 }
 repeat (bullets) {
 my_id=instance_create(x-3+random(6)+lengthdir_x(16,edir),y-3+random(6)+lengthdir_y(16,edir),objBloodSmoke)
@@ -184,14 +189,8 @@ if global.factor=2 ds_list_add(global.bonuslist,"Exposure")
 if global.factor=3 ds_list_add(global.bonuslist,"Double Exposure")
 if global.factor=4 ds_list_add(global.bonuslist,"Triple Exposure")
 if global.factor&gt;4 ds_list_add(global.bonuslist,"Severe Exposure")
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprDogDeadShot
+createDeadBody(false,1.5,sprDogDeadShot,edir)
 SteamIncStat("Dogs",1)
-if bullets&gt;1 my_id.image_index=3 else my_id.image_index=1+round(random(1))
-my_id.direction=edir
-my_id.speed=1.5+random(1)+bullets*0.15
-my_id.image_angle=my_id.direction
-
 instance_destroy()
 }
 </string>
@@ -243,10 +242,10 @@ ammo=0</string>
 draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
 draw_set_color(c_white)
-//draw_path(my_path,0,0,1)</string>
+//draw_path(my_path,0,0,1)
+</string>
           </argument>
         </arguments>
       </action>

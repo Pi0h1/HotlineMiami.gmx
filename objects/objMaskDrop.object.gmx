@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>Effects</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,13 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>friction=0.1
+            <string>objectFriction = 0.1;
+
 rotspeed=(-1+round(random(1))*2)*random(8)
 startspeed=0
 image_speed=0
 image_angle=random(360)
 sprite_index=choose(sprMaskDropFront,sprMaskDropBack)
-image_index=global.maskindex</string>
+image_index=global.maskindex
+</string>
           </argument>
         </arguments>
       </action>
@@ -54,7 +56,8 @@ image_index=global.maskindex</string>
           <argument>
             <kind>1</kind>
             <string>//image_blend=merge_color(c_ltgray,c_white,speed)
-image_angle+=rotspeed*speed
+friction=objectFriction * delta;
+image_angle+=(rotspeed*speed)* delta;
 </string>
           </argument>
         </arguments>

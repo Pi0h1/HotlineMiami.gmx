@@ -10,7 +10,7 @@ view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
 test=objPlayer.persistent
 objPlayer.persistent=0
 global.loaded=1
-game_save(working_directory+"\tempsave.sav")
+SaveGameState();
 //if !instance_exists(objMaskMenu) instance_create(x,y,objCheckpoint)
 global.loaded=0
 objPlayer.persistent=test

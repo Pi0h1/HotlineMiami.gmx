@@ -48,7 +48,8 @@ sprite=sprGoArrow</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objPlayer) exit
+            <string>if room=PEd_rmPlay {instance_destroy();}
+if !instance_exists(objPlayer) exit
 if room=rmTrainstationEntrance {
 if objTrain.visible=1 {
 if !place_meeting(x,y,objPlayer) solid=1 visible=0
@@ -60,7 +61,8 @@ solid=0
 if objPlayer.persistent=1 {
 if !place_meeting(x,y,objPlayer) {visible=1 solid=1}
 } else visible=1
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -86,7 +88,7 @@ if !place_meeting(x,y,objPlayer) {visible=1 solid=1}
 if instance_number(objEnemy)+instance_number(objKnockedOut)&gt;0 exit
 }*/
 if solid=1 exit
-if other.object_index=objPlayerMouse or other.object_index=objPlayerMouseHouse or other.object_index=objPlayerShieldMouse or other.object_index=objPlayerBiker or other.object_index=objPlayerBikerHouse {
+if other.object_index=objPlayerJacket or other.object_index=objPlayerMouseHouse or other.object_index=objPlayerShieldMouse or other.object_index=objPlayerBiker or other.object_index=objPlayerBikerHouse {
 sprite=sprArrowGray
 objPlayer.persistent=1
 objPlayer.addx=addx*3
@@ -127,7 +129,7 @@ visible=0
             <string>if instance_exists(objPlayerMouseHouse) or instance_exists(objPlayerBikerHouse) {
 if room=rmSequence13 {if global.done=0 exit} else exit
 }
-dir+=8
+dir+=8*delta;
 if sprite=sprGoArrow {
 index=0
 if addx=1 index=0
@@ -148,7 +150,8 @@ draw_sprite_ext(sprite,dir*(1/16),x,y+lengthdir_x(4,dir),1,1,0,c_white,1)
 }
 if addy=-1 {
 draw_sprite_ext(sprite,dir*(1/16),x,y+lengthdir_x(4,dir),1,1,180,c_white,1)
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

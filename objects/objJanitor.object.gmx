@@ -79,7 +79,7 @@ instance_destroy()
 }
 } else {
 with objPlayer {
-if sprite_index=sprBoss2AttackCleaver {
+if sprite_index=sprBikerAttackCleaver {
 if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),global.my_id) global.test=1
 }
 }

@@ -23,7 +23,7 @@ if objPlayer.sprite_index=sprPWalkSilencedUzi or objPlayer.sprite_index=sprPAtta
 showammo=1
 maxammo=30
 } 
-if objPlayer.sprite_index=sprPWalkShotgun or objPlayer.sprite_index=sprPAttackShotgun {
+if objPlayer.sprite_index=wpnWalkShotgun or objPlayer.sprite_index=wpnAttackShotgun {
 showammo=1
 maxammo=6
 } 
@@ -46,16 +46,18 @@ maxammo=32
 if showammo=1 ammostring=string(objPlayer.ammo)+"/"+string(maxammo)+"rnds" else ammostring="NO GUN!"
 if instance_exists(objPlayerBiker) or instance_exists(objPlayerBikerHouse) {
 if room=rmHideout or room=rmJanitors nothing=1 else {
-if objPlayer.ammo>0 and (instance_exists(objEnemy) or instance_exists(objECrawl) or instance_exists(objBoss) or instance_exists(objKnockedOut)) {showammo=1 ammostring=string(objPlayer.ammo)+" KNIVES"} else {ammostring="NO KNIVES!" showammo=0}
+if objPlayer.ammo>0 and (instance_exists(objEnemy) or instance_exists(objEnemyCrawl) or instance_exists(objBoss) or instance_exists(objKnockedOut)) {showammo=1 ammostring=string(objPlayer.ammo)+" KNIVES"} else {ammostring="NO KNIVES!" showammo=0}
 }
 }
 }
 scorestring=global.drawscore
-if instance_exists(objPlayerDead) {
+if instance_exists(objDeadBody) {
+if objDeadBody.isPlayer=true{
 if room=rmSequence12b or room=rmSequence12c nothing=1 else {
 ammostring=global.restartkey+" TO RESTART!" 
 scorestring="YOU'RE DEAD!"
 showammo=1
+}
 }
 }
 if showammo=1 {

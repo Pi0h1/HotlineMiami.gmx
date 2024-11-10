@@ -79,7 +79,7 @@ image_angle+=angle_speed*speed*3
 with objPlayerShieldMouse {scrPlayerDropShield()}
 }
 
-if place_meeting(x,y,objPlayerMouse)  {
+if place_meeting(x,y,objPlayerJacket)  {
 with objPlayer {
 if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackUnarmed or sprite_index=sprPAttackBash {} else {
 my_id=instance_create(x,y,objWeaponThrow)
@@ -123,8 +123,9 @@ draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(
 d3d_set_fog(true,c_white,0,0)
 draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
 d3d_set_fog(0,0,0,0)
-if instance_number(objESubwayStatic)+instance_number(objSubwayKnockedOut)+instance_number(objEnemy)=0 draw_sprite_ext(sprArrow,0,x,y-12+lengthdir_x(4,dir*2),1,1,0,c_white,1)
-dir+=4</string>
+if instance_number(objESubwayStatic)+instance_number(objSubwayKnockedOut)+instance_number(objEnemy)=0 drawArrow(0,false);
+dir+=4
+</string>
           </argument>
         </arguments>
       </action>

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
+            <string>if !instance_exists(objDizzy) {instance_create(x,y,objDizzy)}
+image_speed=0
 currentweapon=0
 dir=0
 viewspeed=0
@@ -71,9 +72,10 @@ alarm[1]=2
             <kind>1</kind>
             <string>global.loaded=1
 with objEffector {global.amount=amount amount=0}
-game_save(working_directory+"\tempsave.sav")
+SaveGameState();
 with objEffector {amount=global.amount}
-global.loaded=0</string>
+global.loaded=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -359,7 +361,7 @@ scrMoveSolidOff()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objWindowV {
+            <string>with objWindowFrameV {
 if x=32 {
 if y=352 {
 if sprite_index=sprWindowSill nothing=1 else {
@@ -463,16 +465,16 @@ view_yview[0]=y-view_hview[0]/2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objWindowV {
+            <string>with objWindowFrameV {
 if x=32 and y=352 {
-draw_sprite_ext(sprArrow,0,x+12+lengthdir_x(3,global.dir*8),y+16,1,1,270,c_white,1)
+drawArrow(270,false);
 }
 }
 
 if global.locked=0 {
 with objLockedDoor {
 if solid=1 {
-draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,global.dir*8),y+16,1,1,90,c_white,1)
+drawArrow(90,false);
 }
 }
 }

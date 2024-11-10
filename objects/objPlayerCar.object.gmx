@@ -25,13 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-engine=0
-visited=0
+            <string>image_speed=0;
+engine=0;
+visited=0;
 if sprite_index=sprCarThrashed {my_id=instance_create(x,y,objCarBottom) my_id.image_angle=image_angle}
 instance_deactivate_object(objSwat)
-seated=0
-pspd=3
+seated=0;
+pspd=3;
+
+animSpeed=0.2;
 </string>
           </argument>
         </arguments>
@@ -76,15 +78,15 @@ room=rmPizzaHut3 or
 room=rmVideoStore3 or 
 room=rmBar3 {} else {
     if global.done=0 {mask_index=sprite_index exit}
-    if instance_exists(objPlayerMouse) and global.done=0 {mask_index=sprite_index exit}
+    if instance_exists(objPlayerJacket) and global.done=0 {mask_index=sprite_index exit}
     }
 
 if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;80 {
 if image_index=0 PlaySFX(sndCarOpen)
-if image_index&lt;2 image_index+=0.2
+if image_index&lt;2 image_index+=animSpeed * delta
 } else {
 if image_index&lt;=0.2 and image_index&gt;0 PlaySFX(sndCarClose)
-if image_index&gt;0.1 image_index-=0.2 else image_index=0
+if image_index&gt;0.1 image_index-=animSpeed * delta else image_index=0
 }
 </string>
           </argument>
@@ -134,7 +136,8 @@ if room=rmStore1 or room=rmPizzaHut1 or room=rmVideoStore1 or room=rmBar1 or roo
             <string>revisit=0
 if instance_exists(objPlayerMouseHouse) {
 if global.done=1 nextroom=rmChapter else {nextroom=rmInterlude global.interlude=scrCarNextInterlude()}
-} else nextroom=rmChapter</string>
+} else nextroom=rmChapter
+</string>
           </argument>
         </arguments>
       </action>

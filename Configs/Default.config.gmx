@@ -203,10 +203,7 @@
     <option_androidtv_texture_page>1024</option_androidtv_texture_page>
     <option_androidtv_use_test_ads>false</option_androidtv_use_test_ads>
     <option_argumenterrors>True</option_argumenterrors>
-    <option_audioGroup1_targets>9223372036854775807</option_audioGroup1_targets>
-    <option_audioGroup2_targets>9223372036854775807</option_audioGroup2_targets>
-    <option_audioGroup3_targets>9223372036854775807</option_audioGroup3_targets>
-    <option_audioGroupCount>4</option_audioGroupCount>
+    <option_audioGroupCount>1</option_audioGroupCount>
     <option_author></option_author>
     <option_backimage>nil</option_backimage>
     <option_borderless>False</option_borderless>
@@ -224,7 +221,7 @@
     <option_freeze>false</option_freeze>
     <option_frequency>0</option_frequency>
     <option_frontimage>nil</option_frontimage>
-    <option_fullscreen>True</option_fullscreen>
+    <option_fullscreen>False</option_fullscreen>
     <option_gameguid>{D6AAC3BF-7549-4238-95B0-D1069B6E485A}</option_gameguid>
     <option_gameid>762421906</option_gameid>
     <option_haptic_effects>0</option_haptic_effects>
@@ -453,16 +450,21 @@
     <option_screenkey>True</option_screenkey>
     <option_screenshotkey>true</option_screenshotkey>
     <option_shortcircuit>True</option_shortcircuit>
-    <option_showcursor>False</option_showcursor>
+    <option_showcursor>True</option_showcursor>
     <option_showprogress>1</option_showprogress>
-    <option_sizeable>False</option_sizeable>
+    <option_sizeable>True</option_sizeable>
     <option_stayontop>false</option_stayontop>
-    <option_sync_vertex>1</option_sync_vertex>
+    <option_sync_vertex>0</option_sync_vertex>
     <option_textureGroup0_border>2</option_textureGroup0_border>
     <option_textureGroup0_nocropping>0</option_textureGroup0_nocropping>
     <option_textureGroup0_parent>&lt;none&gt;</option_textureGroup0_parent>
     <option_textureGroup0_scaled>0</option_textureGroup0_scaled>
     <option_textureGroup0_targets>9223372036854775807</option_textureGroup0_targets>
+    <option_textureGroup10_border>2</option_textureGroup10_border>
+    <option_textureGroup10_nocropping>0</option_textureGroup10_nocropping>
+    <option_textureGroup10_parent>&lt;none&gt;</option_textureGroup10_parent>
+    <option_textureGroup10_scaled>0</option_textureGroup10_scaled>
+    <option_textureGroup10_targets>9223372036854775807</option_textureGroup10_targets>
     <option_textureGroup1_border>2</option_textureGroup1_border>
     <option_textureGroup1_nocropping>0</option_textureGroup1_nocropping>
     <option_textureGroup1_parent>&lt;none&gt;</option_textureGroup1_parent>
@@ -498,15 +500,28 @@
     <option_textureGroup7_parent>&lt;none&gt;</option_textureGroup7_parent>
     <option_textureGroup7_scaled>0</option_textureGroup7_scaled>
     <option_textureGroup7_targets>9223372036854775807</option_textureGroup7_targets>
-    <option_textureGroup_count>8</option_textureGroup_count>
+    <option_textureGroup8_border>2</option_textureGroup8_border>
+    <option_textureGroup8_nocropping>0</option_textureGroup8_nocropping>
+    <option_textureGroup8_parent>&lt;none&gt;</option_textureGroup8_parent>
+    <option_textureGroup8_scaled>0</option_textureGroup8_scaled>
+    <option_textureGroup8_targets>9223372036854775807</option_textureGroup8_targets>
+    <option_textureGroup9_border>2</option_textureGroup9_border>
+    <option_textureGroup9_nocropping>0</option_textureGroup9_nocropping>
+    <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
+    <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
+    <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
+    <option_textureGroup_count>11</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
-    <option_textureGroups1>Player</option_textureGroups1>
+    <option_textureGroups1>Player_Jacket</option_textureGroups1>
+    <option_textureGroups10>PushEd</option_textureGroups10>
     <option_textureGroups2>NPCs</option_textureGroups2>
     <option_textureGroups3>Faces</option_textureGroups3>
     <option_textureGroups4>Backgrounds</option_textureGroups4>
     <option_textureGroups5>Fonts</option_textureGroups5>
     <option_textureGroups6>Walls</option_textureGroups6>
     <option_textureGroups7>UI</option_textureGroups7>
+    <option_textureGroups8>Weapons</option_textureGroups8>
+    <option_textureGroups9>Player_Biker</option_textureGroups9>
     <option_tizen_app_id>http://yourdomain/HotlineMiamiStudio</option_tizen_app_id>
     <option_tizen_build_version>0</option_tizen_build_version>
     <option_tizen_display_name>HotlineMiamiStudio</option_tizen_display_name>
@@ -545,9 +560,9 @@
     <option_version>100</option_version>
     <option_version_build>0</option_version_build>
     <option_version_company>Dennaton Games</option_version_company>
-    <option_version_copyright></option_version_copyright>
-    <option_version_description></option_version_description>
-    <option_version_major>1</option_version_major>
+    <option_version_copyright>Dennaton Games</option_version_copyright>
+    <option_version_description>Hotline Miami (Pi0h1.com)</option_version_description>
+    <option_version_major>3</option_version_major>
     <option_version_minor>0</option_version_minor>
     <option_version_product>Hotline Miami</option_version_product>
     <option_version_release>0</option_version_release>
@@ -625,14 +640,14 @@
     <option_windows_alternate_sync_method>True</option_windows_alternate_sync_method>
     <option_windows_build_version>0</option_windows_build_version>
     <option_windows_company_info>Dennaton Games</option_windows_company_info>
-    <option_windows_copyright_info></option_windows_copyright_info>
+    <option_windows_copyright_info>Dennaton Games</option_windows_copyright_info>
     <option_windows_create_textures_on_demand>False</option_windows_create_textures_on_demand>
-    <option_windows_description_info></option_windows_description_info>
+    <option_windows_description_info>Hotline Miami (Pi0h1.com)</option_windows_description_info>
     <option_windows_enable_steam>0</option_windows_enable_steam>
     <option_windows_game_icon>Configs\Default\windows\runner_icon.ico</option_windows_game_icon>
     <option_windows_license>Configs\Default\windows\License.txt</option_windows_license>
     <option_windows_mainor_version>0</option_windows_mainor_version>
-    <option_windows_major_version>1</option_windows_major_version>
+    <option_windows_major_version>3</option_windows_major_version>
     <option_windows_nsis_file>Configs\Default\windows\RunnerInstaller.nsi</option_windows_nsis_file>
     <option_windows_product_info>Hotline Miami</option_windows_product_info>
     <option_windows_release_version>0</option_windows_release_version>

@@ -53,8 +53,9 @@ alarm[1]=1</string>
           <argument>
             <kind>1</kind>
             <string>global.loaded=1
-game_save(working_directory+"\tempsave.sav")
-global.loaded=0</string>
+SaveGameState();
+global.loaded=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -87,7 +88,7 @@ image_angle=scrRotate(image_angle,point_direction(x,y,objPlayer.x,objPlayer.y),5
 
 if state=0 {
 if wait&gt;0 wait-=1 else {
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -108,7 +109,7 @@ exit
 if state=1 {
 if !instance_exists(objPhoneConversation) {
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.dir=dir
 my_id.legindex=legindex
 my_id.image_index=image_index
@@ -125,9 +126,9 @@ exit
 }
 
 if state=2 {
-if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objEnemyBash)+instance_number(objEnemyHeadKick)+instance_number(objPAttackThroat)&lt;3 {
+if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objPKillBash)+instance_number(objEnemyHeadKick)+instance_number(objPKillThroat)&lt;3 {
 if wait&gt;0 wait-=1 else {
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -156,7 +157,7 @@ with objLight {
 if color=c_red targetstrength=0.8
 }
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.dir=dir
 my_id.legindex=legindex
 my_id.sprite_index=sprite_index
@@ -177,9 +178,9 @@ exit
 }
 
 if state=4 {
-if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objEnemyBash)+instance_number(objEnemyHeadKick)+instance_number(objPBluntKill)+instance_number(objPAttackThroat)&lt;2 {
+if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objPKillBash)+instance_number(objEnemyHeadKick)+instance_number(objPBluntKill)+instance_number(objPKillThroat)&lt;2 {
 if wait&gt;0 wait-=1 else {
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -208,7 +209,7 @@ with objLight {
 if color=c_aqua targetstrength=0.8
 }
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.dir=dir
 my_id.legindex=legindex
 my_id.sprite_index=sprite_index
@@ -228,13 +229,13 @@ exit
 }
 
 if state=6 {
-if objPlayer.sprite_index=sprPWalkShotgun {
+if objPlayer.sprite_index=wpnWalkShotgun {
 with objLight {
 if color=c_yellow targetstrength=1
 }
 }
 with objDoorH solid=0
-if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objEnemyBash)+instance_number(objPBluntKill)+instance_number(objPAttackThroat)=0 {
+if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objPKillBash)+instance_number(objPBluntKill)+instance_number(objPKillThroat)=0 {
 state=7
 exit
 }
@@ -244,7 +245,7 @@ if state=7 {
 with objLight {
 if image_blend=c_yellow targetstrength=0.8
 }
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -271,7 +272,8 @@ objEffector.newsong=0
 global.nextlevel=rmDream1
 global.sequence=rmSequence1
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -340,20 +342,21 @@ global.time=0</string>
 if state=3 {
 with objWeapon {
 if image_index=4
-draw_sprite_ext(sprArrow,0,x,y-6+lengthdir_x(3,global.dir*8),1,1,0,c_white,1)
+drawArrow(0,false);
 }
 }
 if state=5 {
 with objWeapon {
 if image_index=1
-draw_sprite_ext(sprArrow,0,x,y-6+lengthdir_x(3,global.dir*8),1,1,0,c_white,1)
+drawArrow(0,false);
 }
 }
 if state=6 {
 with objEnemy {
-draw_sprite_ext(sprArrow,0,x,208+lengthdir_x(3,global.dir*8),1,1,0,c_white,1)
+drawArrow(0,false);
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

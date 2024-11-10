@@ -78,7 +78,7 @@ vomit=0
             <kind>1</kind>
             <string>if image_index&lt;50 image_index+=0.2 else {
 instance_destroy()
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 global.maskon=0
 my_id.maskon=0
 my_id=instance_create(x,y,objVomit)

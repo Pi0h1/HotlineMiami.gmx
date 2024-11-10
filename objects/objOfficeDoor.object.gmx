@@ -55,7 +55,7 @@ if image_index&lt;9 image_index+=0.3+random(0.2)</string>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objGlassPanelH">
+    <event eventtype="4" ename="objWindowH">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -89,7 +89,7 @@ instance_destroy()
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objGlassPanelV">
+    <event eventtype="4" ename="objWindowV">
       <action>
         <libid>1</libid>
         <id>603</id>

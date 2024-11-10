@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objPlayer</parentName>
+  <parentName>objExecution</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -30,7 +30,9 @@ image_speed=0
 ammo=0
 bled=0
 scrInitMaskPos()
-scrUpdateMaskPos(sprite_index)</string>
+scrUpdateMaskPos(sprite_index)
+enemy=sprEMafiaDieLean
+</string>
           </argument>
         </arguments>
       </action>
@@ -69,11 +71,9 @@ global.kills+=1
 ds_list_add(global.bonuslist,"Execution")
 if global.combotime&lt;12 global.combotime=12
 my_id=instance_create(myx,myy,objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprEBackKicked
-my_id.image_angle=image_angle
+createDeadBody(false,0,sprEMafiaDieLean,image_angle)
 global.angle=image_angle-180
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 if bag=1 my_id.sprite_index=sprPWalkBag
 my_id.reload=30
 with my_id move_contact_solid(global.angle,12)
@@ -149,10 +149,13 @@ view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
             <string>draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6),make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
+
 dir=point_direction(x,y,mouse_x,mouse_y)
+
+draw_sprite_ext(enemy,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-if maskon=1 scrDrawMask(1)</string>
+if maskon=1 scrDrawMask(1)
+</string>
           </argument>
         </arguments>
       </action>

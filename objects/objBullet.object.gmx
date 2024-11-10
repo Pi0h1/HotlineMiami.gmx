@@ -32,7 +32,7 @@ if objPlayer.sprite_index=sprPAttackDoubleBarrel1 or objPlayer.sprite_index=sprP
     PlaySFX(sndDoubleBarrel)
     }
 }
-image_speed=0.5
+bulletImageSpeed = 0.5;
 image_blend=merge_color(c_white,c_yellow,random(1))
 passed=0
 caliber=0
@@ -40,6 +40,33 @@ global.noguns=0
 startx=x
 starty=y
 swat=0
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Smoke Effect
+my_id=instance_create(x,y,objSteam)
+my_id.direction=random(360)
+my_id.speed=1+random(1)
+my_id.image_angle=my_id.direction
+my_id.image_blend=c_black
+my_id.image_alpha=0.02
 </string>
           </argument>
         </arguments>
@@ -62,43 +89,9 @@ swat=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_blend=merge_color(c_white,c_yellow,random(1))</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objGate">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.solid=1 move_contact_solid(direction,speed*2) else exit 
-my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objHit)
-my_id.image_angle=direction
-my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objSmokeHit)
-my_id.image_angle=direction
-my_id.direction=random(360)
-my_id.speed=random(0.5)
-
-repeat (4) {
-my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objDebris)
-my_id.direction=direction-140-random(80)
-my_id.speed=random(4)
-}
-
-instance_destroy()</string>
+            <string>image_speed = bulletImageSpeed * delta;
+image_blend=merge_color(c_white,c_yellow,random(1))
+</string>
           </argument>
         </arguments>
       </action>
@@ -120,7 +113,7 @@ instance_destroy()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.object_index=objWallSoftH or other.object_index=objWallSoftV {
+            <string>if other.object_index=objWallSoft {
 if solid=1 {
 x+=hspeed
 y+=vspeed
@@ -145,47 +138,8 @@ diry=y-lengthdir_y(16,direction)
 exit
 }
 
-if other.object_index=objGlassPanelH {
-SteamIncStat("Windows",1)
-if vspeed&gt;0 {
-other.add=-1
-} else {
-other.add=1
-}
-with other {
-i=0
-repeat (24) {
-my_id=instance_create(x+i*1.5,y,objShard)
-my_id.speed=random(5)
-my_id.direction=add*90-8+random(16)
-i+=1
-}
-instance_create(x,y,objGlassPanelHBroken)
-instance_destroy()
-}
-exit
-}
-
-if other.object_index=objGlassPanelV {
-SteamIncStat("Windows",1)
-if hspeed&gt;0 {
-other.add=-1
-} else {
-other.add=1
-}
-with other {
-i=0
-repeat (24) {
-my_id=instance_create(x,y+i*1.5,objShard)
-my_id.speed=random(5)
-my_id.direction=90+add*90-8+random(16)
-i+=1
-}
-instance_create(x,y,objGlassPanelVBroken)
-instance_destroy()
-}
-exit
-}
+scrDestroyWindowH("Object")
+scrDestroyWindowV("Object")
 </string>
           </argument>
         </arguments>
@@ -208,7 +162,7 @@ exit
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.object_index=objWallSoftH or other.object_index=objWallSoftV {
+            <string>if other.object_index=objWallSoft {
 my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objHit)
 my_id.image_angle=direction
 my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objSmokeHit)
@@ -242,7 +196,8 @@ my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),ob
 my_id.direction=direction-140-random(80)
 my_id.speed=random(4)
 }
-instance_destroy()</string>
+instance_destroy()
+</string>
           </argument>
         </arguments>
       </action>
@@ -375,6 +330,42 @@ if abs(other.swingspeed)&lt;8 {
 other.swingspeed+=hspeed*0.2
 if other.swingspeed&gt;3.5 other.swinger=1
 }</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objGate">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if other.solid=1 move_contact_solid(direction,speed*2) else exit 
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objHit)
+my_id.image_angle=direction
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objSmokeHit)
+my_id.image_angle=direction
+my_id.direction=random(360)
+my_id.speed=random(0.5)
+
+repeat (4) {
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objDebris)
+my_id.direction=direction-140-random(80)
+my_id.speed=random(4)
+}
+
+instance_destroy()</string>
           </argument>
         </arguments>
       </action>

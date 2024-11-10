@@ -32,6 +32,10 @@ image_speed=0
 alarm[0]=100+random(200)
 global.done=0
 scrInitPathFinding()
+legindex=0
+shake=0
+angle=0
+legsprite=0
 </string>
           </argument>
         </arguments>
@@ -79,7 +83,8 @@ image_speed=0.2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
+            <string>angle=image_angle
+if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
 if sprite_index=sprBoss4Die
 {
 if image_index&gt;12 and suicide=0 {
@@ -132,7 +137,7 @@ if sprite_index=sprBoss4Idle nothing=1 else image_speed=0
 if state=0 {
 if objPlayer.y&lt;476 {
 
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -169,7 +174,7 @@ if state=2 {
 if !instance_exists(objPhoneConversation) {
 
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.dir=dir
 my_id.legindex=legindex
 my_id.image_index=image_index
@@ -194,7 +199,7 @@ if !instance_exists(objPanther) {if global.maskindex=16 SteamSetAchievement("ACH
 if state=3 {
 if instance_number(objPBodyguardBash)+instance_number(objPBodyguardBlunt)+instance_number(objBodyguard)+instance_number(objBodyguardCrawl)+instance_number(objPKillBodyguard)=0 {
 scrGetMessage(1)
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -214,7 +219,7 @@ if state=4 {
 if !instance_exists(objPhoneConversation) {
 
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.dir=dir
 my_id.legindex=legindex
 my_id.image_index=image_index
@@ -341,10 +346,8 @@ if image_index&lt;8 image_index+=0.2 else {state=5}
 
 
 if state=5 {
-//if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;64 {
 scrGetMessage(3)
-
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -358,7 +361,6 @@ instance_destroy()
 }
 
 state=6
-//}
 }
 
 
@@ -380,7 +382,7 @@ my_id.speed=1
 my_id.direction=170
 }
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.dir=dir
 my_id.legindex=legindex
 my_id.image_index=image_index

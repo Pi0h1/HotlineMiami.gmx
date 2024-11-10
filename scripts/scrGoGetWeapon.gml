@@ -29,15 +29,15 @@ if place_free(x+lengthdir_x(1,dir),y+lengthdir_y(1,dir)) {
 x+=lengthdir_x(1,dir)
 y+=lengthdir_y(1,dir)
 }
-image_speed=0.1
+image_speed=0.1*delta
 }
 }
 
 } else {
 if !instance_exists(target) {weaponfind=0 speed=0} else {
-speed=2 
+speed=2*delta 
 direction=point_direction(x,y,target.x,target.y)
-image_speed=0.2
+image_speed=0.2*delta
 if place_meeting(x,y,target) {
 my_id=-123123
 if target.image_index=0 {my_id=instance_create(x,y,objEnemy) my_id.sprite_index=sprEWalkM16}

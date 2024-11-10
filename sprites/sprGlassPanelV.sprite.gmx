@@ -21,5 +21,6 @@
   <height>32</height>
   <frames>
     <frame index="0">images\sprGlassPanelV_0.png</frame>
+    <frame index="1">images\sprGlassPanelV_1.png</frame>
   </frames>
 </sprite>

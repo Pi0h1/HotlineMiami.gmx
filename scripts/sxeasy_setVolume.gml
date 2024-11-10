@@ -8,12 +8,12 @@ argument0 = REAL - The volume (0.0 to 1.0)
 ===
 return = REAL - Successful (1) or failure (0);
 */
-//bgm_vol(global.currentsong,(argument0*100)*global.mvol)
+//bgm_vol(global.currentsong,(argument0*100)*global.musicVolume)
 
 
-//audio_sound_gain(global.currentsong,(argument0/100)+global.mvol*2,0)
+//audio_sound_gain(global.currentsong,(argument0/100)+global.musicVolume*2,0)
 
-audio_sound_gain(global.currentsong,(argument0)*global.mvol,0)
+audio_sound_gain(global.currentsong,(argument0)*global.musicVolume,0)
 
 
 //if (!sxms.easyPlay) { return 0; };

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10000</depth>
   <persistent>0</persistent>
-  <parentName>objExporter</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,61 +25,108 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alpha=1
-coldir=0
-amount=0
-fade=0
-my_y=0
-global.dir=0
-restart=0
-update=0
-dir=0
-ammoy=-32
-next=0
-showfinished=0
-image_speed=0.4
-action=0
-wait=0
-phonex=0
-global.loaded=0
-nextroom=room_next(room)
-newsong=0
-song=-1
-blackx=0
-bamount=0
-width=display_get_width()
-height=display_get_height()
-global.mousex=(display_mouse_get_x()-width*0.5)*(view_wview[0]/width)
-global.mousey=(display_mouse_get_y()-height*0.5)*(view_hview[0]/height)
-vlastx=view_xview[0]
-vlasty=view_yview[0]
-global.enemy=-1234
-leveltitle=""
-levelshow=240
-gridon=0
-uzisnd=0
+            <string>window_set_cursor(cr_none);
+display_set_gui_size(view_wview, view_hview);
+eraser_index=0
+alpha = 1
+coldir = 0
+amount = 0
+fade = 0
+my_y = 0
+global.dir = 0
+restart = 0
+update = 0
+dir = 0
+ammoy = -32
+next = 0
+showfinished = 0
+cursor_speed = 0.4 // sets the speed of the cursor animation
+action = 0
+wait = 0
+phonex = 0
+global.loaded = 0
+nextroom = room_next(room)
+newsong = 0
+song = -1
+show_date = 0
+blackx = 0
+bamount = 0
+width = display_get_width()
+height = display_get_height()
+global.mousex = (display_mouse_get_x()-width*0.5)*(view_wview[0]/width)
+global.mousey = (display_mouse_get_y()-height*0.5)*(view_hview[0]/height)
+vlastx = view_xview[0]
+vlasty = view_yview[0]
+global.enemy = -1234
+leveltitle = ""
+levelshow = 240
+gridon = 0
+uzisnd = 0
 if instance_exists(objMaskMenu) {
-if global.sequence=rmSequence1 leveltitle="Brickell Metro Station"
-if global.sequence=rmSequence2 leveltitle="East 7th St"
-if global.sequence=rmSequence3 leveltitle="North West 184th St"
-if global.sequence=rmSequence4 leveltitle="South West 53rd Place"
-if global.sequence=rmSequence5 leveltitle="North West 24th St"
-if global.sequence=rmSequence6 leveltitle="South West 104th St"
-if global.sequence=rmSequence7 leveltitle="North West 151st Place"
-if global.sequence=rmSequence8 leveltitle="South East 122nd St"
-if global.sequence=rmSequence9 leveltitle="North East 165th "
-if global.sequence=rmSequence10 leveltitle="North East 24th St"
-if global.sequence=rmSequence11 leveltitle="East 7th St"
-if global.sequence=rmSequence12 leveltitle="South East 24th St"
-if global.sequence=rmSequence13 leveltitle="West 25th St"
-if global.sequence=rmSequence14 leveltitle="South 86th St"
+    switch global.sequence {
+        case rmSequence1:   leveltitle="Brickell Metro Station";    break;
+        case rmSequence2:   leveltitle="East 7th St";               break;
+        case rmSequence3:   leveltitle="North West 184th St";       break;
+        case rmSequence4:   leveltitle="South West 53rd Place";     break;
+        case rmSequence5:   leveltitle="North West 24th St";        break;
+        case rmSequence6:   leveltitle="South West 104th St";       break;
+        case rmSequence7:   leveltitle="North West 151st Place";    break;
+        case rmSequence8:   leveltitle="South East 122nd St";       break;
+        case rmSequence9:   leveltitle="North East 165th";          break;
+        case rmSequence10:  leveltitle="North East 24th St";        break;
+        case rmSequence11:  leveltitle="East 7th St";               break;
+        case rmSequence12:  leveltitle="South East 24th St";        break;
+        case rmSequence13:  leveltitle="West 25th St";              break;
+        case rmSequence14:  leveltitle="South 86th St";             break;
+        default:            leveltitle="";
+    }
 }
+
 if instance_exists(objPlayerBiker) {
-if room=rmNoodleShop leveltitle="North East 56th St"
-if room=rmArcadeDownstairs leveltitle="South West 107th Place"
-if room=rmPhoneHomEntranceBiker leveltitle="North West 342nd St"
-if room=rmJanitors leveltitle="North 87th Place"
+    switch room {
+    case rmNoodleShop:              leveltitle="North East 56th St";        break;
+    case rmArcadeDownstairs:        leveltitle="South West 107th Place";    break;
+    case rmPhoneHomEntranceBiker:   leveltitle="North West 342nd St";       break;
+    case rmJanitors:                leveltitle="North 87th Place";          break;
+    }
 }
+
+if global.devmode {
+    leveltitle = "Currently on " + room_get_name(room);
+}
+// Cutscenes
+sprite = sprFacePhone
+
+// Dates
+if room = rmSequence1
+or room = rmSequence2
+or room = rmSequence3
+or room = rmSequence4
+or room = rmSequence5
+or room = rmSequence6
+or room = rmSequence7
+or room = rmSequence8
+or room = rmSequence9
+or room = rmSequence10
+or room = rmSequence11
+or room = rmSequence12
+or room = rmSequence14
+or room = rmHospitalTopFloor
+or room = rmMCBar
+or room = rmMCSequence2
+or room = rmMCSequence3
+or room = rmMCSequence4 {
+    scrShowDate(room)
+    start = 1;
+} else {
+    start = 0;
+}
+
+if room = rmSequence13Downstairs {
+    start = 1;
+}
+lastbrus=0
+brus=0
 </string>
           </argument>
         </arguments>
@@ -124,7 +171,9 @@ if room=rmJanitors leveltitle="North 87th Place"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if uzisnd=1 {uzisnd=0PlaySFX(sndUzi)}
+            <string>image_speed = (cursor_speed)*delta
+
+if uzisnd=1 {uzisnd=0PlaySFX(sndUzi)}
 if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
 SteamRunCallbacks()
 if global.maskload=1 {
@@ -169,18 +218,60 @@ amount+=5
 if fade=1 {
 if amount&gt;0  {
 amount-=10
-if restart=1 or newsong=1 or (room=rmSwatUpstairs and instance_exists(objSwat) and instance_exists(objPlayerDead)) {
+if restart=1 or newsong=1 or (room=rmSwatUpstairs and instance_exists(objSwat) and (instance_exists(objDeadBody) and objDeadBody.isPlayer=true)) {
 sxeasy_setVolume(amount*(1/180))
 }
 } else {fade=0 if restart=1 {if file_exists(working_directory+"\restartmusic") file_delete(working_directory+"\restartmusic") sxeasy_stop(1) sxeasy_setVolume(0) bgm_Close() game_restart() //sxeasy_play(working_directory+"\HorseSteppin.mp3"); room=rmMenu
-} else {if next=1 {if file_exists(working_directory+"\restartmusic") file_delete(working_directory+"\restartmusic") if newsong=1 {sxeasy_stop(1) sxeasy_setVolume(0) sxeasy_play(song);} room=nextroom} else {if room=rmSwatUpstairs and file_exists(working_directory+"\restarmusic") {sxeasy_stop(1) bgm_Unload(global.currentsong)} scrResetSurfaces() game_load(working_directory+"\tempsave.sav")}}}
+} else {if next=1 {if file_exists(working_directory+"\restartmusic") file_delete(working_directory+"\restartmusic") if newsong=1 {sxeasy_stop(1) sxeasy_setVolume(0) sxeasy_play(song);} room=nextroom} else {if room=rmSwatUpstairs and file_exists(working_directory+"\restartmusic") {sxeasy_stop(1) bgm_Unload(global.currentsong)} scrRestart();}}}
 }
 vlastx=view_xview[0]
 vlasty=view_yview[0]
 if global.shake&gt;0 {
-global.shake-=0.5
-view_xview[0]+=-global.shake*0.33+random(global.shake*0.66)
-view_yview[0]+=-global.shake*0.33+random(global.shake*0.66)
+global.shake-=(0.5)*delta
+//view_xview[0]+=-global.shake*0.33+random(global.shake*0.66)
+//view_yview[0]+=-global.shake*0.33+random(global.shake*0.66)
+if global.devmode=0{
+view_angle[0]+=-global.shake*0.33+random(global.shake*0.66)
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="57">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.devmode=0 exit
+
+if keyboard_check(vk_control){
+
+var inst = noone
+var dis = 8
+with all {
+  var mydis = point_distance( x, y, other.x, other.y )
+
+if id!=other.id &amp;&amp; mydis &lt; dis {
+    dis = mydis   
+    inst = id
+  }
+}
+instance_destroy(inst)
+
 }
 </string>
           </argument>
@@ -288,12 +379,55 @@ my_id.image_angle=my_id.direction
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objMaskMenu) {if global.maskindex=14 bamount=1}
+            <string>global.depthDeath=0 // Reset the global.depth for dead bodies to prevent them from starting to pile up on top of stuff like furniture.
+
+if !instance_exists(objShadowManager){
+instance_create(x,y,objShadowManager)
+}
+
+if !instance_exists(objSurfaceManager){
+instance_create(x,y,objSurfaceManager)
+}
+
+if !instance_exists(objSurfaceChecker){
+instance_create(x,y,objSurfaceChecker)
+}
+
+
+if !instance_exists(objMaskMenu) {if global.maskindex=14 bamount=1}
 scrSaveBonusList()
 i=0
 room_set_persistent(room,true)
 room_persistent=true
 if global.paused=0 {scrInitPathFinding() if !instance_exists(objMaskMenu) scrCheckpoint()} else global.paused=0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>display_set_gui_size(view_wview, view_hview);
+if global.cutscene=0{
+scrGameplay();
+}else{
+scrCutscene();
+}
 </string>
           </argument>
         </arguments>
@@ -316,98 +450,15 @@ if global.paused=0 {scrInitPathFinding() if !instance_exists(objMaskMenu) scrChe
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if gridon=1 {draw_set_alpha(0.25) mp_grid_draw(global.grid) draw_set_alpha(1)}
-if instance_exists(objPlayer) {
-width=display_get_width()
-height=display_get_height()
-factor=1
-if keyboard_check_direct(vk_shift) factor=1.8
-global.mousex=objPlayer.x+((display_mouse_get_x()-width*0.5)*(view_wview[0]/width))*factor
-global.mousey=objPlayer.y+((display_mouse_get_y()-height*0.5)*(view_hview[0]/height))*factor
-x=global.mousex
-y=global.mousey
-if instance_exists(global.enemy) {
-global.mousex=global.enemy.x
-global.mousey=global.enemy.y
-} else global.enemy=-1234
-}
-if action&gt;0 {image_blend=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,global.dir*3.27)),c_white,0.5+lengthdir_y(0.5,global.dir*1.97))
+            <string>if action&gt;0 {image_blend=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,global.dir*3.27)),c_white,0.5+lengthdir_y(0.5,global.dir*1.97))
 draw_sprite_ext(sprCursorAction,action-1,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
 draw_sprite_ext(sprCursorAction,action-1,global.mousex,global.mousey,1,1,-view_angle[0],image_blend,1)
 }
-if room=rmHotelSuite {
-with objWindowV {
-if sprite_index=sprWindowSill nothing=1 else {
-if x=480 and y=256 {
-draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,objBackgroundColor.dir*32),y+16,1,1,90,c_white,1)
-}
-}
-}
-}
+//Actually draws the cursor
 draw_sprite_ext(sprite_index,image_index,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
 draw_set_blend_mode(bm_add)
 draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_white,1)
 draw_set_blend_mode(bm_normal)
-with objDiscoLights {
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_set_blend_mode(bm_subtract)
-draw_surface(surf,0,0)
-}
-draw_set_blend_mode(bm_normal)
-if !instance_exists(objMaskMenu) and !instance_exists(objPhoneConversation) global.time+=1
-scrDrawHUD()
-if instance_exists(objMaskMenu) scrDrawMaskMenu() else {
-if leveltitle="" nothing=1 else {
-if levelshow&gt;0 levelshow-=1 else leveltitle=""
-draw_set_font(fntDate)
-draw_set_halign(fa_center)
-draw_set_valign(fa_top)
-if levelshow&gt;180 draw_set_alpha((240-levelshow)*(1/60))
-if levelshow&lt;60 draw_set_alpha(levelshow*(1/60))
-draw_set_color(c_black)
-draw_text(view_wview[0]/2+1,view_hview[0]*0.7+1,leveltitle)
-draw_set_color(c_white)
-draw_text(view_wview[0]/2,view_hview[0]*0.7,leveltitle)
-draw_set_alpha(1)
-}
-}
-if fade=0 {
-if amount&lt;180 {
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,amount)),0.5+lengthdir_x(0.5,amount))
-if amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,amount))),abs(lengthdir_y(1,amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(-10,-10,view_wview[0]+10,view_hview[0]+10,color1,color2,color2,color1,0)
-draw_set_blend_mode(bm_normal)
-}
-}
-if fade=1 {
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,amount)),0.5+lengthdir_x(0.5,amount))
-if amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,amount))),abs(lengthdir_y(1,amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(-10,-10,view_wview[0]+10,view_hview[0]+10,color2,color1,color1,color2,0)
-draw_set_blend_mode(bm_normal)
-}
-coldir+=1
-scrDrawPlayer()
-if global.maskindex=14 and global.maskon=1 {
-draw_set_blend_mode(bm_subtract)
-draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24)+24,merge_color(c_black,merge_color(c_white,c_aqua,0.6+lengthdir_x(0.4,global.dir*4)),bamount),merge_color(c_black,c_white,bamount),0)
-draw_set_blend_mode(bm_normal)
-if bamount&lt;1 bamount+=0.05
-}
-draw_set_blend_mode(bm_subtract)
-draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24)+24,c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
-draw_set_blend_mode(bm_normal)
-if instance_exists(objPlayerMouse) {
-view_xview[0]=vlastx
-view_yview[0]=vlasty
-}
-if blackx&gt;0 {
-draw_set_color(c_black)
-draw_rectangle(0,0,view_wview[0],blackx,0)
-draw_rectangle(0,view_hview[0],view_wview[0],view_hview[0]-blackx*1.5,0)
-blackx-=3
-}
 </string>
           </argument>
         </arguments>
@@ -453,7 +504,8 @@ blackx-=3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gridon=!gridon
+            <string>exit
+gridon=!gridon
 </string>
           </argument>
         </arguments>
@@ -486,29 +538,6 @@ screen_save(working_directory+"\pause.bmp")
 global.sprite=sprite_add(working_directory+"\pause.bmp",0,0,0,0,1)
 room=rmPause
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="69">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>instance_create(x,y,objWeapon)
 </string>
           </argument>
         </arguments>

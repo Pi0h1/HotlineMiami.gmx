@@ -15,3 +15,7 @@ if string_upper(global.title)="DEADLINE" return 74000
 if string_upper(global.title)="SAFEHOUSE" return 18000
 if string_upper(global.title)="FUN&GAMES" return 50000
 return 40000
+
+
+
+

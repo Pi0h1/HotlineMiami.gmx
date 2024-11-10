@@ -26,8 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>letter=-1
-//text[0]="PART ONE"
-//text[1]="PHONECALLS"
 texts=1
 
 i=0
@@ -55,7 +53,8 @@ i+=1
 }
 
 fade=0
-c_amount=0</string>
+c_amount=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -171,8 +170,6 @@ draw_set_blend_mode(bm_normal)
 
 
 draw_set_blend_mode(bm_subtract)
-draw_y=-random(32)
-draw_sprite_tiled(sprScanlines,0,0,draw_y)
 draw_circle_color(x,y,room_width*0.75+random(10),c_black,c_lime,0)
 draw_set_blend_mode(bm_normal)
 </string>

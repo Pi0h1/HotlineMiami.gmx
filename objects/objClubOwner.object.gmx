@@ -26,7 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>image_speed=0
-state=0</string>
+state=0
+angle=0
+shake=0
+legindex=0
+legsprite=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -65,7 +70,7 @@ wait=20
 if state=1 {
 if wait&gt;0 wait-=1 else {scrGetMessage(0) sprite_index=sprClubOwnerTalk state=2}
 direction=scrRotate(direction,point_direction(x,y,objPlayer.x,objPlayer.y),10)
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.sprite_index=sprite_index
@@ -103,7 +108,7 @@ if state=4 {
 if image_index&lt;15.25 image_index+=0.125 else image_index=12
 if !instance_exists(objPhoneConversation) {
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.active=0
 my_id.sprite_index=sprite_index
 my_id.ammo=ammo
@@ -142,72 +147,7 @@ my_id.image_angle=image_angle-180
 instance_destroy()
 }
 }
-
-/*
-if state=0 {
-if objEffector.amount&gt;=180 {
-if instance_exists(objPlayerMouse) {
-with objPlayerMouse {
-my_id=instance_create(x,y,objPlayerMouseHouse)
-my_id.active=0
-my_id.sprite_index=sprite_index
-my_id.ammo=ammo
-global.maskon=1
-my_id.maskon=1
-instance_destroy()
-}
-}
-sxeasy_play(working_directory+"\Release.mp3")
-scrGetMessage(0)
-state=1
-test=objPlayer.persistent
-objPlayer.persistent=0
-global.loaded=1
-game_save(working_directory+"\tempsave.sav")
-//if !instance_exists(objMaskMenu) instance_create(x,y,objCheckpoint)
-global.loaded=0
-objPlayer.persistent=test
-}
-}
-
-if state=1 {
-if !instance_exists(objPhoneConversation) {
-state=2
-with objPlayer {
-my_id=instance_create(x,y,objPlayerMouse)
-my_id.active=0
-my_id.sprite_index=sprite_index
-my_id.ammo=ammo
-my_id.maskon=1
-my_id.maskindex=global.maskindex
-instance_destroy()
-}
-}
-}*/
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)</string>
           </argument>
         </arguments>
       </action>

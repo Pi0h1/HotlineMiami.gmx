@@ -173,7 +173,7 @@ if objPlayer.sprite_index=sprPTakePhone {
 with objPlayerMouseHouse {
 active=1
 sprite_index=sprPWalkUnarmed
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.maskon=1
 my_id.maskindex=maskindex
 global.maskon=1
@@ -191,7 +191,7 @@ if called=0 {
 alarm[0]=1
 alarm[1]=90
 called=1
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.maskon=1
 my_id.maskindex=maskindex
@@ -210,7 +210,8 @@ instance_destroy()
 
 }
 }
-dir+=4</string>
+dir+=4
+</string>
           </argument>
         </arguments>
       </action>

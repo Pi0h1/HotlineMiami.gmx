@@ -63,7 +63,7 @@ repeat (8) {
 my_id=instance_create(x+lengthdir_x(16,dir-7),y+lengthdir_y(16,dir-7),objBullet)
 if instance_exists(my_id) {
 my_id.direction=dir-6+random(12)
-my_id.speed=16-random(4)
+my_id.speed=(16-random(4))*delta
 my_id.image_angle=my_id.direction
 }
 }
@@ -72,8 +72,8 @@ my_id=instance_create(x+lengthdir_x(5,dir-5*left),y+lengthdir_y(5,dir-5*left),ob
 my_id.sprite_index=sprShotgunShell
 my_id.image_angle=dir
 my_id.direction=dir-90*left-20+random(30)
-my_id.speed=1+random(3)
-sprite_index=sprPAttackShotgun
+my_id.speed=(1+random(3))*delta
+sprite_index=wpnAttackShotgun
 image_speed=0.5
 image_index=0
 light=20

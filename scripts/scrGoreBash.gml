@@ -1,3 +1,4 @@
+///scrGoreBash(x,y,direction,brains,skin)
 if global.maskindex=22 {
 repeat (18) {
 tempid=instance_create(argument0,argument1,objBloodDrop2)

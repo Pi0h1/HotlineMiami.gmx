@@ -1,4 +1,6 @@
+angle=0
+sprite_angle=0
 image_speed=0
 corner_index=argument0
-my_id=instance_create(x,y,objCorner)
-my_id.sprite_index=corner_index
+sprite_index=argument1
+broken=false

@@ -137,8 +137,10 @@ my_id=instance_create(x,y,objSwat) my_id.direction=270 my_id.diradd=1 instance_d
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objPlayerDead) {
-audio_stop_sound(sndPolice)
+            <string>if instance_exists(objDeadBody) {
+    if objDeadBody.isPlayer=true{
+        audio_stop_sound(sndPolice)
+    }
 }
 </string>
           </argument>

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>friction=0.1
+            <string>objectFriction = 0.1;
+
 diradd=-1+round(random(1))*2
 angle=random(360)
 left=-1+round(random(1))*2
@@ -34,7 +35,8 @@ image_speed=0
 hits=0
 bounce=0
 enemy=0
-ammo=0</string>
+ammo=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -56,7 +58,9 @@ ammo=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>angle+=speed*5*diradd
+            <string>friction= objectFriction * delta;
+
+angle+=speed*5*diradd
 if speed&lt;=0 {
 my_id=instance_create(x,y,objWeapon)
 my_id.image_angle=angle
@@ -127,32 +131,6 @@ mask_index=sprWeaponMask
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objGate">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>move_bounce_all(0)
-speed*=0.6
-PlaySFX(sndHitWall)
-bounce=1
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objShootThrough">
       <action>
         <libid>1</libid>
@@ -170,14 +148,14 @@ bounce=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.object_index=objWallSoftH or other.object_index=objWallSoftV {
+            <string>if other.object_index=objWallSoft {
 move_bounce_all(0)
 speed*=0.6
 PlaySFX(sndHitWall)
 bounce=1
 }
 
-if other.object_index=objGlassPanelH {
+if other.object_index=objWindowH {
 if vspeed&gt;0 {
 other.add=-1
 } else {
@@ -197,25 +175,7 @@ instance_destroy()
 exit
 }
 
-if other.object_index=objGlassPanelV {
-if hspeed&gt;0 {
-other.add=-1
-} else {
-other.add=1
-}
-with other {
-i=0
-repeat (24) {
-my_id=instance_create(x,y+i*1.5,objShard)
-my_id.speed=random(5)
-my_id.direction=90+add*90-8+random(16)
-i+=1
-}
-instance_create(x,y,objGlassPanelVBroken)
-instance_destroy()
-}
-exit
-}
+scrDestroyWindowV("Object")
 </string>
           </argument>
         </arguments>
@@ -248,6 +208,32 @@ bounce=1
       </action>
     </event>
     <event eventtype="4" ename="objDoorV">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>move_bounce_all(0)
+speed*=0.6
+PlaySFX(sndHitWall)
+bounce=1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objGate">
       <action>
         <libid>1</libid>
         <id>603</id>

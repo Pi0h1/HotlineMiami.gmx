@@ -106,7 +106,7 @@ if current&lt;messages current+=1
     {
         if instance_exists(objAnsweringMachine)
             {
-                if sprite=sprPhone with objAnsweringMachine active=0 
+                if sprite=sprFacePhone with objAnsweringMachine active=0 
                     {
                         instance_destroy()
                     }
@@ -144,7 +144,7 @@ reload=10
     {
         if instance_exists(objAnsweringMachine)
             {
-                if sprite=sprPhone with objAnsweringMachine active=0 
+                if sprite=sprFacePhone with objAnsweringMachine active=0 
                     {
                         instance_destroy()
                     }

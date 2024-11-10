@@ -50,7 +50,8 @@ save=0
 testsurface=0
 surf2=1
 surf3=1
-check=0</string>
+check=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -157,12 +158,20 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.resetstory {
-draw_clear(c_black)
-room_persistent=0
-if ds_list_size(global.roomlist)&gt;0 {myroom=ds_list_find_value(global.roomlist,0) ds_list_delete(global.roomlist,0) room_goto(myroom)} else {global.level=global.afterreset global.resetstory=0 room=rmChapter}
-exit
-}
+            <string>/*if global.resetstory {
+    draw_clear(c_black)
+    room_persistent = 0
+    if ds_list_size(global.roomlist) &gt; 0 {
+        myroom = ds_list_find_value(global.roomlist,0)
+        ds_list_delete(global.roomlist,0)
+        room_goto(myroom)
+    } else {
+        global.level = global.afterreset 
+        global.resetstory = 0 
+        room = rmChapter
+    }
+    exit
+}*/
 if surface_exists(global.surf3) surface_free(global.surf3)
 global.surf3=surface_create(room_width*3,room_height*3)
 if global.surfaces=1 scrSurfaceTiles()

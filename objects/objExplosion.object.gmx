@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-5</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>SaveThisObject</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -102,7 +102,7 @@ sprite_index=sprBombCablesBroken
 image_speed=0.12
 }
 
-with objWindowV {
+with objWindowFrameV {
 if x=64 and y=224 {
 instance_create(x,y,objWindowExplode)
 instance_destroy()
@@ -199,12 +199,12 @@ if on=2 {
 if amount&gt;0 amount-=0.001
 }
 
-//draw_set_blend_mode(bm_subtract)
+draw_set_blend_mode(bm_subtract)
 draw_sprite_ext(sprExplosionSmoke,0,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir)),amount-0.75)
 draw_sprite_ext(sprExplosionSmoke,1,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir*0.6+90)),amount-0.75)
 draw_sprite_ext(sprExplosionSmoke,2,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir*1.2+180)),amount-0.75)
 draw_sprite_ext(sprExplosionSmoke,3,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir*0.8+270)),amount-0.75)
-//draw_set_blend_mode(bm_normal)
+draw_set_blend_mode(bm_normal)
 dir+=2
 
 if index&lt;20 {

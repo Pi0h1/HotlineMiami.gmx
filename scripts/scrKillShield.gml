@@ -58,7 +58,7 @@ if sprite_index=sprEGetUp or sprite_index=sprPoliceGetUp my_id=instance_create(x
 if sprite_index=sprEGetUpLean {my_id=instance_create(x,y,objEnemyHeadKick) if objPlayer.sprite_index=sprPWalkBag or objPlayer.sprite_index=sprPAttackBag my_id.bag=1 else my_id.bag=0 global.test=1}
 if my_id.object_index=objPBluntKill {
 if objPlayer.sprite_index=sprPWalkCrowbar or objPlayer.sprite_index=sprPAttackCrowbar {global.usedkill[9]=1 my_id.sprite_index=sprPKillCrowbar}
-if objPlayer.sprite_index=sprPWalkBat or objPlayer.sprite_index=sprPAttackBat {global.usedkill[2]=1 my_id.sprite_index=sprPBatKill}
+if objPlayer.sprite_index=wpnWalkBat or objPlayer.sprite_index=wpnAttackBat {global.usedkill[2]=1 my_id.sprite_index=sprPBatKill}
 if objPlayer.sprite_index=sprPWalkPipe or objPlayer.sprite_index=sprPAttackPipe {global.usedkill[1]=1 my_id.sprite_index=sprPPipeKill}
 if objPlayer.sprite_index=sprPWalkClub or objPlayer.sprite_index=sprPAttackClub {global.usedkill[0]=1 my_id.sprite_index=sprPClubKill}
 if objPlayer.sprite_index=sprPWalkBag or objPlayer.sprite_index=sprPAttackBag my_id.sprite_index=sprPBagKill
@@ -69,12 +69,12 @@ my_id.image_angle=angle
 my_id1=instance_create(x+lengthdir_x(22,my_id.image_angle),y+lengthdir_x(22,my_id.image_angle),objPoliceHat)
 my_id1.direction=my_id.image_angle-10+random(20)
 my_id1.speed=1+random(2)
-my_id.bottom=sprPoliceBluntKill 
+my_id.enemy=sprPoliceBluntKill 
 my_id.sprite_index=sprPNightStickKill
 }
 }
 my_id.image_angle=angle
-if my_id.object_index=objEnemyBash and sprite_index=sprPoliceGetUp {
+if my_id.object_index=objPKillBash and sprite_index=sprPoliceGetUp {
 my_id1=instance_create(x+lengthdir_x(22,my_id.image_angle),y+lengthdir_x(22,my_id.image_angle),objPoliceHat)
 my_id1.direction=my_id.image_angle-10+random(20)
 my_id1.speed=1+random(2)
@@ -103,7 +103,7 @@ if sprite_index=sprPWalkUnarmed or sprite_index=sprPWalkBag or sprite_index=sprP
 my_id=instance_create(objPlayer.x+lengthdir_x(8,objPlayer.dir+90),objPlayer.y+lengthdir_y(8,objPlayer.dir+90),objWeaponThrow)
 my_id.image_index=lastweapon
 my_id.direction=dir+70+random(40)
-my_id.speed=1+random(2)
+my_id.speed=(1+random(2))* delta
 my_id.ammo=lastammo
 }
 instance_destroy()

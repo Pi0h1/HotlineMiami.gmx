@@ -17,7 +17,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>48</width>
+  <width>39</width>
   <height>64</height>
   <frames>
     <frame index="0">images\sprHospitalCouch_0.png</frame>

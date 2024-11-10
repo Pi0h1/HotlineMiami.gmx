@@ -1,3 +1,4 @@
+scrPoliceInit();
 reload=15
 alert=0
 checkreload=random(30)

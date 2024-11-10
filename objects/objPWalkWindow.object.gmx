@@ -64,7 +64,7 @@ view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
 }
 if sprite_index=sprPClimbLedge {
 if image_index&lt;10 image_index+=0.2 else {
-instance_create(x+30,y+34,objPlayerMouse)
+instance_create(x+30,y+34,objPlayerJacket)
 instance_destroy()
 }
 }

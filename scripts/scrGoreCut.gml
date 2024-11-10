@@ -1,3 +1,4 @@
+///scrGoreCut(x,y,direction,guts)
 if global.maskindex=22 {
 repeat (18) {
 tempid=instance_create(argument0,argument1,objBloodDrop2)

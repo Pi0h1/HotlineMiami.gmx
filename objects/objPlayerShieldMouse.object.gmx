@@ -83,22 +83,17 @@ snap=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_id=instance_create(x,y,objDeadBody)
-global.dir=dir
-with my_id move_contact_solid(global.dir-45,12)
-if shotgunned {my_id.sprite_index=choose(sprEBackShotgun,sprEBackShotgun,sprEFrontShotgun) my_id.image_index=floor(random(2))} else {my_id.sprite_index=choose(sprEBackMachinegun,sprEBackMachinegun,sprEFrontMachinegun) my_id.image_index=floor(random(3))}
-my_id.direction=dir-180
-my_id.speed=random(1)+bullets*0.15
-my_id.image_angle=my_id.direction
+            <string>if shotgunned {createDeadBody(false,bullets*0.15,sprEBackShotgun,dir-180)} else {createDeadBody(false,bullets*0.15,sprEBackMachinegun,dir-180)}
 instance_destroy()
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.ammo=ammo
 if sprite_index=sprPHumanShieldDoubleBarrel my_id.sprite=sprPWalkDoubleBarrel
 if sprite_index=sprPHumanShieldMagnum my_id.sprite=sprPWalkMagnum
 if sprite_index=sprPHumanShieldScorpion my_id.sprite=sprPWalkScorpion
 if sprite_index=sprPHumanShieldUzi my_id.sprite=sprPWalkUzi
 if sprite_index=sprPHumanShieldMP5 my_id.sprite=sprPWalkMP5
-if sprite_index=sprPHumanShieldSilencer my_id.sprite=sprPWalkSilencer</string>
+if sprite_index=sprPHumanShieldSilencer my_id.sprite=sprPWalkSilencer
+</string>
           </argument>
         </arguments>
       </action>
@@ -142,7 +137,7 @@ if sprite_index=sprPHumanShieldSilencer my_id.sprite=sprPWalkSilencer</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if active=1 scrPlayerMove()
+            <string>if active=1 scrPlayerMove(1,1,1)
 if !mouse_check_button(mb_right) reset=0
 if sprite_index=sprShieldSnapUzi or sprite_index=sprShieldSnapMP5 or sprite_index=sprShieldSnapDoubleBarrel or sprite_index=sprShieldSnapSilencer or sprite_index=sprShieldSnapScorpion or sprite_index=sprShieldSnapMagnum {if image_index&gt;=3 and snap=0 {snap=1 PlaySFX(sndNeck)}}
 global.test=0
@@ -241,15 +236,9 @@ if !scrCheckHitBack(dir,other.direction) {
 image_xscale=1
 image_yscale=1
 exit
-my_id=instance_create(x,y,objDeadBody)
-global.dir=dir
-with my_id move_contact_solid(global.dir-45,12)
-if bullets&gt;1 my_id.sprite_index=choose(sprEBackShotgun,sprEBackShotgun,sprEFrontShotgun) else my_id.sprite_index=choose(sprEBackMachinegun,sprEBackMachinegun,sprEFrontMachinegun)
-my_id.direction=other.direction
-my_id.speed=1.5+random(1)+bullets*0.15
-my_id.image_angle=my_id.direction
+if bullets&gt;1 createDeadBody(false,1.5+bullets*0.15,sprEBackShotgun,dir-180) else createDeadBody(false,15+bullets*0.15,sprEBackMachinegun,dir-180)
 instance_destroy()
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.ammo=ammo
 if sprite_index=sprPHumanShieldDoubleBarrel my_id.sprite=sprPWalkDoubleBarrel
 if sprite_index=sprPHumanShieldMagnum my_id.sprite=sprPWalkMagnum
@@ -291,22 +280,7 @@ my_id.speed=2+random(1)
 my_id.friction=0.15
 }
 if bullets&gt;1 or round(random(1)) or energie&lt;0 {
-my_id=instance_create(x+lengthdir_x(12,dir-45),y+lengthdir_y(12,dir-45),objDeadBody)
-if bullets&gt;1 my_id.sprite_index=choose(sprEBackShotgun,sprEBackShotgun,sprEFrontShotgun) else my_id.sprite_index=choose(sprEBackMachinegun,sprEBackMachinegun,sprEFrontMachinegun)
-my_id.direction=edir-8+random(16)
-my_id.speed=1.5+random(1)+bullets*0.15
-my_id.image_angle=my_id.direction
-instance_destroy()
-
-my_id=instance_create(x,y,objPlayerDead)
-if bullets&gt;1 my_id.sprite_index=sprPBackShotgun else my_id.sprite_index=sprPBackMachinegun
-my_id.image_index=1+floor(random(4))
-my_id.direction=edir
-my_id.speed=1.5+random(1)+bullets*0.15
-my_id.image_angle=my_id.direction
-my_id=instance_create(x+lengthdir_x(24,edir),y+lengthdir_y(24,edir),objMaskDrop)
-my_id.direction=edir-40+random(80)
-my_id.speed=1.5+random(1)
+if bullets&gt;1 createDeadBody(true,1.5+bullets*0.15,sprPBackShotgun,edir) else createDeadBody(true,1.5+bullets*0.15,sprPBackMachinegun,edir)
 instance_destroy()
 }
 </string>
@@ -678,11 +652,12 @@ scrUpdateMaskPos(sprite_index)
 last_sprite=sprite_index
 }
 left=1
-draw_set_blend_mode(bm_add)
+
 lastdir=dir
 dir=scrRotate(dir,point_direction(x,y,global.mousex,global.mousey),6)
-draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30+light*2),c_black,0)
-draw_set_blend_mode(bm_normal)
+
+scrPlayerLight();
+
 draw_sprite_ext(legsprite,legindex,x+1,y+1,image_xscale,image_yscale,legdir,c_black,0.5)
 draw_sprite_ext(sprELegs,-legindex,x+lengthdir_x(7,dir-45)+1,y+lengthdir_y(7,dir-45)+1,image_xscale,image_yscale,legdir,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale*left,dir,c_black,0.5)
@@ -690,8 +665,7 @@ draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,image_bl
 draw_sprite_ext(sprELegs,-legindex,x+lengthdir_x(7,dir-45),y+lengthdir_y(7,dir-45),image_xscale,image_yscale,legdir,image_blend,image_alpha)
 if dir=lastdir or energie&lt;9 nothing=1 else legindex2+=0.05
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
-if reload&gt;0 reload-=1
-if light&gt;3 light-=3
+
 if maskon=1 scrDrawMask(0)
 </string>
           </argument>

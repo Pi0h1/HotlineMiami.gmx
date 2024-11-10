@@ -25,9 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.5
+            <string>image_speed=0;
+animSpeed=0.5;
 active=1
-if room=rmSequence12b or room=rmSequence12c or room=rmSequence13 or room=rmSequence14 active=0</string>
+if room=rmSequence12b or room=rmSequence12c or room=rmSequence13 or room=rmSequence14 active=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -51,7 +53,7 @@ if room=rmSequence12b or room=rmSequence12c or room=rmSequence13 or room=rmSeque
             <kind>1</kind>
             <string>if active=1 {
 draw_set_blend_mode(bm_add)
-image_speed=0.5
+image_speed=animSpeed * delta;
 draw_circle_color(x,y,22+random(1),c_dkgray,c_black,0)
 draw_set_blend_mode(bm_normal)
 } else {
@@ -60,7 +62,8 @@ image_index=0
 }
 if instance_exists(objPhoneConversation) sprite_index=sprDrawersH24PhoneOff else sprite_index=sprDrawersH24Phone
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+</string>
           </argument>
         </arguments>
       </action>

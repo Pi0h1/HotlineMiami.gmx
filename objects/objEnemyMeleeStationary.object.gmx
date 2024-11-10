@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Weapons
+            <string>/// Weapons
 sprite_index=choose(sprEWalkClub,sprEWalkPipe,sprEWalkKnife,sprEWalkBat)
 ammo=0
 </string>
@@ -48,7 +48,8 @@ ammo=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrEMeleeStationaryInit()
+            <string>/// Initialize variables
+scrEMeleeStationaryInit()
 image_speed=0
 image_index=random(1000)
 image_speed=0
@@ -66,6 +67,8 @@ start_x=x
 start_y=y
 weaponfind=0
 lastsprite=sprite_index
+angle = 0
+shake = 0;
 </string>
           </argument>
         </arguments>
@@ -88,39 +91,46 @@ lastsprite=sprite_index
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrMoveSolidOn()
+            <string>scrMoveSolidOn();
 
-if reload&gt;0 reload-=1
-if sprite_index=sprEWalkUnarmed nothing=0 else global.factor+=sign(alert)
-if path_index&gt;0 {
-if image_speed&lt;0.2 image_speed=0.2
-if alert=0 and path_position=1 path_end()
+if (reload &gt; 0) {
+    reload -= 1;
+}
+
+if (sprite_index != sprEWalkUnarmed) {
+    global.factor += sign(alert);
+}
+
+if (path_index &gt;= 0) {
+    if (image_speed &lt; 0.2) {
+        image_speed = 0.2;
+    }
+    if (alert = 0 and path_position=1) {
+        path_end();
+    }
 } else {
-if image_speed&lt;1 image_speed=speed*0.1
-/*if !place_free(x,y) {
-tempdir=direction
-i=1
-while (!place_free(x+lengthdir_x(4+i/20,tempdir),y+lengthdir_y(4+i/20,tempdir))) and i&lt;100 {
-tempdir+=18
-i+=1
-}
-if i&lt;100 move_outside_solid(tempdir,4+i/20)
-}*/
-
-}
-angle=direction
-if alert=1 {
-if place_meeting(x+lengthdir_x(8,angle),y+lengthdir_y(8,angle),objPlayer) or place_meeting(x,y,objPlayer) {
-if scrIsSearching(sprite_index) sprite_index=scrStopSearch(sprite_index)
-sprite_index=scrGetAttack(sprite_index)
-global.my_id=id
-scrPlayerDieMelee()
-speed=0
-}
+    if (image_speed &lt; 1) {
+        image_speed = (speed * 0.1)*delta;
+    }
 }
 
-scrEMeleeStationaryStep()
-scrMoveSolidOff()</string>
+angle = direction;
+
+if (alert = 1) {
+    if ( place_meeting(x + lengthdir_x(8, angle), y + lengthdir_y(8, angle), objPlayer) or place_meeting(x,y,objPlayer) ) {
+        if (scrIsSearching(sprite_index)) {
+            sprite_index = scrStopSearch(sprite_index);
+        }
+        sprite_index = scrGetAttack(sprite_index);
+        global.my_id = id;
+        scrPlayerDieMelee();
+        speed = 0;
+    }
+}
+
+scrEMeleeStationaryStep();
+scrMoveSolidOff();
+</string>
           </argument>
         </arguments>
       </action>
@@ -142,20 +152,23 @@ scrMoveSolidOff()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>update=0
-if sprite_index=sprEAttackClub {sprite_index=sprEWalkClub update=1}
-if sprite_index=sprEAttackPipe {sprite_index=sprEWalkPipe update=1}
-if sprite_index=sprEAttackBat {sprite_index=sprEWalkBat update=1}
-if sprite_index=sprEAttackKnife {sprite_index=sprEWalkKnife update=1}
-if update=1 {
-image_speed=0
-image_yscale=-image_yscale
+            <string>update = 0;
+
+if sprite_index = sprEAttackClub  {sprite_index = sprEWalkClub  update = 1}
+if sprite_index = sprEAttackPipe  {sprite_index = sprEWalkPipe  update = 1}
+if sprite_index = sprEAttackBat   {sprite_index = sprEWalkBat   update = 1}
+if sprite_index = sprEAttackKnife {sprite_index = sprEWalkKnife update = 1}
+
+if (update = 1) {
+    image_speed = 0;
+    image_yscale = -image_yscale;
 }
 
 if scrIsSearching(sprite_index) {
-sprite_index=scrStopSearch(sprite_index)
-image_speed=0
-}</string>
+    sprite_index = scrStopSearch(sprite_index);
+    image_speed = 0;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -177,20 +190,27 @@ image_speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=sprite0 sprite_index=lastsprite
-if light&gt;0 light-=1
+            <string>if (sprite_index == sprite0) sprite_index = lastsprite;
+
+if (light &gt; 0) light -= 1;
+
 draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)
-if scrIsSearching(sprite_index) nothing=1 else {
-draw_sprite_ext(sprELegs,image_index*2,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
+
+if scrIsSearching(sprite_index) {} else {
 draw_sprite_ext(sprELegs,image_index*2,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
 }
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
+
+
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+
 draw_set_color(c_white)
-//draw_path(my_path,0,0,1)
-lastsprite=sprite_index</string>
+
+lastsprite=sprite_index
+
+DrawObjectsVariables();
+</string>
           </argument>
         </arguments>
       </action>

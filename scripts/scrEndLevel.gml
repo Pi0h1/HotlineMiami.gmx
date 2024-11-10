@@ -1,7 +1,9 @@
 room_persistent=0
 objEffector.next=1 
-objEffector.fade=1 
-if instance_exists(objPlayerMouse) or 
+objEffector.fade=1
+if global.cutscene=0
+{
+if instance_exists(objPlayerJacket) or 
 room=rmHouse1Downstairs or
 room=rmBuildingFloor1 or 
 room=rmPhoneHomEntranceBiker or 
@@ -17,4 +19,5 @@ if room=rmTrainstationEntrance {
     }
     } else {
     objEffector.nextroom=nextroom objEffector.newsong=1 objEffector.song=scrGetSong(room)
+}
 }

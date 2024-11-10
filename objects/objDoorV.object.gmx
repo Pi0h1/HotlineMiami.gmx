@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objDoor</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,9 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>swingspeed=0
+            <string>angle=image_angle
+swingspeed=0
 x+=5
-swinger=0</string>
+swinger=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,11 +51,12 @@ swinger=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if abs(swingspeed)&gt;0 {
-image_angle+=swingspeed
+            <string>angle=image_angle
+if abs(swingspeed)&gt;0 {
+image_angle+=(swingspeed) * delta
 if place_meeting(x,y,objFurniture) {
-image_angle-=swingspeed
-swingspeed*=-0.5
+image_angle-=(swingspeed) * delta
+swingspeed*=(-0.5) * delta
 }
 if image_angle&lt;-135 {image_angle=-135 swingspeed=abs(swingspeed)}
 if image_angle&gt;135 {image_angle=135 swingspeed=-abs(swingspeed)}
@@ -62,15 +65,16 @@ if abs(swingspeed)&lt;3.5 {
 if image_angle&gt;-6 and image_angle&lt;6 {swingspeed=0 image_angle=0 exit}
 }
 
-if swingspeed&gt;0.25 swingspeed-=0.25 else {
-if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
+if swingspeed&gt;0.25 swingspeed-=(0.25) * delta else {
+if swingspeed&lt;0 swingspeed+=(0.25) * delta else {swinger=0 swingspeed=0}
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objJanitorFlee">
+    <event eventtype="4" ename="objPlayer">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -87,7 +91,11 @@ if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>swinger=2
+            <string>/*if abs(swingspeed)&gt;0 exit
+if image_angle&lt;-1 {swingspeed=1 exit}
+if image_angle&gt;1 {swingspeed=-1 exit}*/
+if solid=1 exit
+swinger=1
 if abs(swingspeed)&gt;3.5 exit
 if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
 if y&gt;other.y and other.x&lt;x {swingspeed=8 exit}
@@ -143,6 +151,34 @@ if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objJanitorFlee">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>swinger=2
+if abs(swingspeed)&gt;3.5 exit
+if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
+if y&gt;other.y and other.x&lt;x {swingspeed=8 exit}
+if y&gt;other.y and other.x&gt;x {swingspeed=-8 exit}
+if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objEnemy">
       <action>
         <libid>1</libid>
@@ -184,19 +220,23 @@ if sprite_index=sprEWalkShotgun ammo=6 else ammo=24
 }
 
 if global.maskindex=4 {
-my_id=instance_create(other.x,other.y,objDeadBody) 
-my_id.sprite_index=choose(sprEBackBlunt,sprEBackBlunt,sprEFrontBlunt)
-my_id.image_index=4+round(random(10))
-} else my_id=instance_create(other.x,other.y,objKnockedOut)
+with other {
+    createDeadBody(false,0,sprEBackBlunt,0)
+    PlaySFX(sndDoorHit)
+    ds_list_add(global.bonuslist,"Door Slam")
+    if global.bonustime&lt;12 global.bonustime=12
+    }
+} else 
+{
+my_id=instance_create(other.x,other.y,objKnockedOut)
 ds_list_add(global.bonuslist,"Door Slam")
 if global.bonustime&lt;12 global.bonustime=12
 PlaySFX(sndDoorHit)
 global.shake=6
-my_id.type=other.object_index
-if scrIsPolice(other.object_index) {if global.maskindex=4 my_id.sprite_index=choose(sprPoliceBackBlunt,sprPoliceBackBlunt,sprPoliceFrontBlunt) else my_id.sprite_index=sprPoliceGetUp}
 if swingspeed&gt;0 my_id.direction=-15+random(30) else my_id.direction=165+random(30)
 my_id.angle=my_id.direction
 my_id.speed=abs(swingspeed)*0.5
+}
 if noweapon=0 {
 global.test=0
 with objEnemy if alert=1 global.test+=1
@@ -224,61 +264,6 @@ if y&gt;other.y and other.x&lt;x {swingspeed=8 exit}
 if y&gt;other.y and other.x&gt;x {swingspeed=-8 exit}
 if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objPlayer">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if abs(swingspeed)&gt;0 exit
-if image_angle&lt;-1 {swingspeed=1 exit}
-if image_angle&gt;1 {swingspeed=-1 exit}*/
-if solid=1 exit
-swinger=1
-if abs(swingspeed)&gt;3.5 exit
-if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
-if y&gt;other.y and other.x&lt;x {swingspeed=8 exit}
-if y&gt;other.y and other.x&gt;x {swingspeed=-8 exit}
-if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+2,y+3,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
           </argument>
         </arguments>
       </action>

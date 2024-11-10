@@ -1,16 +1,21 @@
-if argument0=sprPAttackAxe return true
-if argument0=sprPAttackKnife return true
-if argument0=sprPAttackPipe return true
-if argument0=sprPAttackBat return true
-if argument0=sprPAttackClub return true
-if argument0=sprPAttackPool return true
-if argument0=sprPAttackPoolBroke return true
-if argument0=sprPAttackPan return true
-if argument0=sprPAttackPot return true
-if argument0=sprPAttackBoilingPot return true
-if argument0=sprPAttackSword return true
-if argument0=sprPAttackMachete return true
-if argument0=sprPAttackSledge return true
-if argument0=sprPAttackCrowbar return true
-if argument0=sprPAttackDrill return true
-return false
+switch (argument0) {
+    case sprPAttackKnife       : return true ; break;
+    case wpnAttackBat          : return true ; break;
+    case sprPAttackCrowbar     : return true ; break;
+    case sprPAttackPan         : return true ; break;
+    case sprPAttackPot         : return true ; break;
+    case sprPAttackBoilingPot  : return true ; break;
+    case sprPAttackMachete     : return true ; break;
+    case sprPAttackSledge      : return true ; break;
+    case sprPAttackNightStick  : return true ; break;
+    case sprPAttackPipe        : return true ; break;
+    case sprPAttackClub        : return true ; break;
+    case sprPAttackSword       : return true ; break;
+    case sprPAttackAxe         : return true ; break;
+    case sprPAttackPool        : return true ; break;
+    case sprPAttackPoolBroke   : return true ; break;
+    case sprPAttackDrill       : return true ; break;
+    case sprPAttackUnarmed     : return true ; break;
+    case sprPAttackBag         : return true ; break;
+    default: return false;
+}

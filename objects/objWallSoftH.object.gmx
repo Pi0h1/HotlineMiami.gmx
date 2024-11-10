@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrInitWall(sprCornerSoft);
+            <string>scrInitWall(sprCornerSoft,sprite_index);
 </string>
           </argument>
         </arguments>

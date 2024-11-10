@@ -30,8 +30,9 @@ wait=40
 state=0
 legindex=0
 path=path_add()
-
-pwait=0</string>
+legsprite=sprBodyguardLegs
+pwait=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -53,7 +54,8 @@ pwait=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=sprBodyguardKnockedOut {
+            <string>angle=direction
+if sprite_index=sprBodyguardKnockedOut {
 if instance_exists(objPlayer) {
 if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;12 {
 my_id=-112345
@@ -71,7 +73,7 @@ my_id2.direction=direction+70-random(40)
 my_id2.speed=2+random(1)
 
 instance_destroy()
-with objPlayerMouse instance_destroy()
+with objPlayerJacket instance_destroy()
 }
 }
 }
@@ -98,7 +100,7 @@ objPlayer.myyspeed=0
 if !instance_exists(objPanther) and !instance_exists(objPantherBite) {
 if instance_exists(objPlayer) {
 if wait&gt;0 wait-=1 else {
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.dir=dir
@@ -122,7 +124,7 @@ if state=2 {
 if !instance_exists(objPhoneConversation) {
 state=3 
 with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.dir=dir
 my_id.legindex=legindex
 my_id.image_index=image_index
@@ -270,10 +272,10 @@ sprite_index=sprBodyguardAttack
           <argument>
             <kind>1</kind>
             <string>if speed&gt;0 {
-draw_sprite_ext(sprBodyguardLegs,legindex,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
 }
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)</string>
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
+</string>
           </argument>
         </arguments>
       </action>

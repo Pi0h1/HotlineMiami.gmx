@@ -79,13 +79,14 @@ with objPlayerMouseHouse {
 if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objLaundryBasket) {
 if objLaundryBasket.clothes=1 {
 objLaundryBasket.clothes=0
-with objPlayerPants visible=1
-with objPlayerJacket visible=1
+with objItemPants visible=1
+with objItemJacket visible=1
 mouse_clear(mb_left)
 }
 }
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -111,9 +112,10 @@ mouse_clear(mb_left)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 
 if clothes=1 {
-draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,dir),y,1,1,90,image_blend,image_alpha)
+drawArrow(90,false);
 dir+=4
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objActor</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.2
+            <string>event_inherited();
 dir=random(360)
-talked=0</string>
+talked=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -110,9 +111,9 @@ draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_ang
 draw_sprite_ext(sprite_index,image_index,x-1,y-1,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 
 if talked=0 {
-draw_sprite_ext(sprArrow,0,x+lengthdir_x(16-lengthdir_x(3,dir),image_angle),y+lengthdir_y(16-lengthdir_x(3,dir),image_angle),1,1,image_angle-90,image_blend,image_alpha)
-dir+=8
-}</string>
+drawArrow(image_angle-90,false);
+}
+</string>
           </argument>
         </arguments>
       </action>

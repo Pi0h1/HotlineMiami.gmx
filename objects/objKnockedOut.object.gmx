@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objKillable</parentName>
   <maskName>sprMask</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -80,16 +80,13 @@ global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
 global.shake=7
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprEDeadLean
-my_id.image_index=1+floor(random(5))
-my_id.image_angle=angle
+createDeadBody(false,0,sprEDeadLean,angle)
 instance_destroy()
 scrMoveSolidOff()
 exit
 }
 if instance_exists(objPlayer) {
-if objPlayer.sprite_index=sprPAttackClub or objPlayer.sprite_index=sprPAttackCrowbar or objPlayer.sprite_index=sprPAttackSledge or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprBoss2AttackCleaver or objPlayer.sprite_index=sprPAttackSledge or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=sprPAttackBat or objPlayer.sprite_index=sprPAttackPipe or objPlayer.sprite_index=sprPAttackKnife or objPlayer.sprite_index=sprPAttackSword {
+if objPlayer.sprite_index=sprPAttackClub or objPlayer.sprite_index=sprPAttackCrowbar or objPlayer.sprite_index=sprPAttackSledge or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprBikerAttackCleaver or objPlayer.sprite_index=sprPAttackSledge or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=wpnAttackBat or objPlayer.sprite_index=sprPAttackPipe or objPlayer.sprite_index=sprPAttackKnife or objPlayer.sprite_index=sprPAttackSword {
 addx=lengthdir_x(12,objPlayer.dir)
 addy=lengthdir_y(12,objPlayer.dir)
 objPlayer.x+=addx
@@ -116,11 +113,7 @@ global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
 global.shake=7
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprEDeadWall
-my_id.image_index=3+floor(random(6))
-my_id.image_angle=angle
-my_id.image_yscale=objPlayer.left
+createDeadBody(false,0,sprEDeadWall,angle)
 instance_destroy()
 scrMoveSolidOff()
 objPlayer.x-=addx

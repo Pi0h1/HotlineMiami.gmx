@@ -56,13 +56,13 @@ if !instance_exists(objPlayer) exit
 
 
 if state=0 {
-if instance_exists(objPlayerMouse) {
+if instance_exists(objPlayerJacket) {
 with objEffector {
 my_id=instance_create(x,y,objEffectorHouse)
 my_id.amount=180
 instance_destroy()
 }
-with objPlayerMouse {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.sprite_index=sprite_index
@@ -95,7 +95,7 @@ if state=3 {
 if !instance_exists(objPhoneConversation) {
 state=4
 with objPlayer {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.active=0
 my_id.sprite_index=sprite_index
 my_id.ammo=ammo
@@ -115,7 +115,8 @@ view_yview[0]=viewy
 with objFocus instance_destroy()
 
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

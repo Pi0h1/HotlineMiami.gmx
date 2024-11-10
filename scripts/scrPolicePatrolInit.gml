@@ -1,3 +1,4 @@
+scrPoliceInit();
 reload=15
 alert=0
 checkreload=random(30)
@@ -14,3 +15,7 @@ speed=1
 turn=0
 diradd=1
 alertwait=-1
+
+dir=0
+left=0
+armlength=0

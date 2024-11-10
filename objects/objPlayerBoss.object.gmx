@@ -43,7 +43,7 @@ sxeasy_play(working_directory+"\Release.mp3");
 test=objPlayer.persistent
 objPlayer.persistent=0
 global.loaded=1
-game_save(working_directory+"\tempsave.sav")
+SaveGameState();
 //if !instance_exists(objMaskMenu) instance_create(x,y,objCheckpoint)
 global.loaded=0
 objPlayer.persistent=test
@@ -159,38 +159,13 @@ image_speed=speed*0.1
 if state=2 or state=3 {
 global.my_id=id
 with objPlayer {
-if sprite_index=sprBoss2AttackCleaver {
+if sprite_index=sprBikerAttackCleaver {
 if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),global.my_id) global.test=1
 }
 }
 if global.test&gt;0 {
 pdir=point_direction(objPlayer.x,objPlayer.y,x,y)
-repeat (8) {
-my_id=instance_create(x-3+random(6)+lengthdir_x(8,pdir),y-3+random(6)+lengthdir_y(8,pdir),objBloodDrop)
-my_id.image_xscale=1-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=point_direction(x+lengthdir_x(8,pdir),y+lengthdir_y(8,pdir),my_id.x,my_id.y)
-my_id.sprite_index=sprBloodSplatSmall
-my_id.direction=my_id.image_angle
-my_id.speed=2+random(4)
-}
-repeat (2+random(3)) {
-my_id=instance_create(x-3+random(6)+lengthdir_x(8,pdir),y-3+random(6)+lengthdir_y(8,pdir),objBloodDrop)
-my_id.image_xscale=1-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=point_direction(x+lengthdir_x(8,pdir),y+lengthdir_y(8,pdir),my_id.x,my_id.y)
-my_id.direction=my_id.image_angle
-my_id.speed=1+random(5)
-}
-repeat (4) {
-my_id=instance_create(x-3+random(6)+lengthdir_x(16,pdir),y-3+random(6)+lengthdir_y(16,pdir),objBloodSmoke)
-my_id.image_xscale=1.2-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=pdir-20+random(40)
-my_id.direction=my_id.image_angle
-my_id.speed=2+random(1)
-my_id.friction=0.15
-}
+createBlood(pdir)
 direction=point_direction(objPlayer.x,objPlayer.y,x,y)
 sprite_index=sprPKneel
 speed=3
@@ -206,7 +181,7 @@ instance_destroy()
 maskon=0
 my_id=instance_create(x,y,objMaskDrop)
 my_id.direction=direction-20+random(90)
-my_id.speed=3
+my_id.speed=3*delta
 state=5
 }
 }
@@ -318,7 +293,12 @@ lastsprite=sprite_index
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objPlayerDead) {objEffector.fade=1}</string>
+            <string>if instance_exists(objDeadBody) {
+    if objDeadBody.isPlayer=true {
+        objEffector.fade=1
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>

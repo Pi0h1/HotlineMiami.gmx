@@ -178,7 +178,151 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir+=0.25
+            <string>/// New code
+dir += 0.25 * delta;
+color2 = c_black;
+color1 = merge_color(
+    c_black,
+    merge_color(
+        merge_color(
+            c_purple,
+            c_teal,
+            0.5 + lengthdir_x(0.5, dir * 3.12)
+        ),
+        c_maroon,
+        0.125 + lengthdir_y(0.125, dir * 1.73)
+    ),
+    0.25 + lengthdir_y(0.25, dir * 1.73)
+);
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+
+draw_rectangle_color(
+    view_xview[0],
+    view_yview[0] + 54,
+    view_xview[0] + view_wview[0],
+    view_yview[0] + view_hview[0] - 64,
+    color1,
+    color1,
+    color2,
+    color2,
+    0
+);
+
+with (objHouse) {
+    draw_sprite_ext(
+        sprite_index,
+        image_index,
+        x,
+        y,
+        image_xscale,
+        image_yscale,
+        image_angle,
+        image_blend,
+        image_alpha
+    );
+}
+
+i = 0;
+repeat (5) {
+    draw_sprite_ext(
+        sprPalmTrees,
+        palmindex[i],
+        palmx[i],
+        room_height + 65,
+        1,
+        1,
+        0,
+        c_black,
+        1
+    );
+    palmx[i] -= 8;
+    if (palmx[i] &lt;= -60) {
+        palmx[i] = room_width + 60;
+        palmindex[i] = floor(random(6));
+    }
+    i += 1;
+}
+
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], view_angle[0]);
+
+if (surface_exists(global.surf1)) {
+    draw_surface_ext(global.surf1, 0, -1, 1, 1, 0, c_black, 1);
+    draw_surface_ext(global.surf1, -1, 0, 1, 1, 0, c_black, 1);
+    draw_surface_ext(global.surf1, 0, 1, 1, 1, 0, c_black, 1);
+    draw_surface_ext(global.surf1, 1, 0, 1, 1, 0, c_black, 1);
+    draw_surface_ext(global.surf1, 0, 0, 1, 1, 0, c_white, 1);
+}
+
+view_angle[0] = lengthdir_y(3, dir * 3.33);
+
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+
+draw_set_color(c_black);
+draw_rectangle(0, 0, room_width, 55, 0);
+draw_rectangle(0, room_height, room_width, room_height - 65, 0);
+
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+
+draw_set_font(fntDate);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
+draw_set_color(c_dkgray);
+draw_text(room_width / 2, room_height - 58, hint[myhint]);
+
+if (fade &amp;&amp; c_amount &lt; 180) || (!fade &amp;&amp; c_amount &gt; 0) {
+    c_amount -= 5 * fade;
+    c_amount += 10 * !fade;
+
+    var lengthdir_x_result = lengthdir_x(0.5, c_amount);
+    var lengthdir_y_result = lengthdir_y(1, c_amount);
+
+    color1 = merge_color(c_black, merge_color(c_aqua, c_white, 0.5 + lengthdir_x_result), 0.5 + lengthdir_x_result);
+
+    if (c_amount &gt; 90) {
+        color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y_result)), abs(lengthdir_y_result));
+    } else {
+        color2 = c_white;
+    }
+
+    draw_set_blend_mode(bm_subtract);
+
+    if (!fade) {
+        draw_rectangle_color(view_xview[0] - 10, view_yview[0] - 10, view_xview[0] + view_wview[0] + 10, view_yview[0] + view_hview[0] + 10, color1, color2, color2, color1, 0);
+    } else {
+        draw_rectangle_color(view_xview[0] - 10, view_yview[0] - 10, view_xview[0] + view_wview[0] + 10, view_yview[0] + view_hview[0] + 10, color2, color1, color1, color2, 0);
+    }
+
+    draw_set_blend_mode(bm_normal);
+}
+
+if (fade &amp;&amp; c_amount &lt;= 0) {
+    room_goto(global.level);
+    SaveCurrentLevel();
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Old code
+exit 
+dir+=0.25 * delta
 color2=c_black
 color1=merge_color(c_black,merge_color(merge_color(c_purple,c_teal,0.5+lengthdir_x(0.5,dir*3.12)),c_maroon,0.125+lengthdir_y(0.125,dir*1.73)),0.25+lengthdir_y(0.25,dir*1.73))
 d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
@@ -231,12 +375,9 @@ if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(l
 draw_set_blend_mode(bm_subtract)
 draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0)
 draw_set_blend_mode(bm_normal)
-} else {room_goto(global.level) game_save("restart.dat")}
+} else {room_goto(global.level) SaveCurrentLevel();}
 }
-
-draw_set_blend_mode(bm_subtract)
-draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
-draw_set_blend_mode(bm_normal)
+scrDrawFilter();
 </string>
           </argument>
         </arguments>

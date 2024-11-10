@@ -38,7 +38,10 @@ path=-1234
 
 alarm[0]=1
 ammo=10
-scrInitPathFinding()</string>
+scrInitPathFinding()
+shake=0
+angle=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -88,8 +91,8 @@ global.loaded=0</string>
 if state=0 {
 if wait&gt;0 wait-=1 else {
 if objEffector.amount&gt;=180 {
-if instance_exists(objPlayerMouse) {
-with objPlayerMouse {
+if instance_exists(objPlayerJacket) {
+with objPlayerJacket {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.sprite_index=sprite_index
@@ -116,7 +119,7 @@ sprite_index=sprChiefArm
 if wait&gt;0 wait-=1 else {
 state=2
 with objPlayer {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.active=0
 my_id.sprite_index=sprite_index
 my_id.ammo=ammo
@@ -312,13 +315,8 @@ my_id.friction=0.15
           <argument>
             <kind>1</kind>
             <string>if sprite_index=sprChiefDie {
-my_id=instance_create(x,y,objDeadBody)
-my_id.direction=direction-180
-my_id.speed=0.5
-my_id.sprite_index=sprChiefDead
-my_id.image_angle=my_id.direction
+createDeadBody(false,0,sprChiefDead,direction-180)
 instance_destroy()
-
 exit
 }
 
@@ -326,7 +324,8 @@ if sprite_index=sprChiefArm {
 sprite_index=sprChiefShoot
 image_index=16
 image_speed=0
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

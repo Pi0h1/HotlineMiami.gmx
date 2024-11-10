@@ -1,8 +1,17 @@
 //  Initializes player.
 //  ANY player.
-active=1
-headindex=0
-weaponx=0
+global.PlayerStartingPointX = x;
+global.PlayerStartingPointY = y;
+
+playerSpeed = 3
+playerFactor = 1
+playerMoveScale = 1
+keyLookFurther = keyboard_check_direct(vk_shift);
+armlength = 0
+goddir = 0
+active = 1
+head_FrameIndex = 0
+weaponx = 0
 if room = rmTutorial {global.maskindex=3 global.maskon=1 global.done=1}
 SetHealth("Random")
 image_speed = 0
@@ -52,3 +61,5 @@ if !place_free(x,y)
     x = global.executionx
     y = global.executiony
     }
+    
+isLethal = false;

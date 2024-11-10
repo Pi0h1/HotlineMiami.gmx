@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.5</string>
+            <string>image_speed=0.5
+image_index=random(12)
+</string>
           </argument>
         </arguments>
       </action>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objPlayer</parentName>
+  <parentName>objExecution</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,6 +31,7 @@ image_speed=0
 ammo=0
 scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
+enemy=sprBodyguardFinish2
 </string>
           </argument>
         </arguments>
@@ -138,15 +139,7 @@ my_id.speed=2+random(1)
 my_id.friction=0.15
 }
 if bullets&gt;1 or round(random(1)) or energie&lt;0 {
-my_id=instance_create(x,y,objPlayerDead)
-if bullets&gt;1 my_id.sprite_index=sprPBackShotgun else my_id.sprite_index=sprPBackMachinegun
-my_id.image_index=1+floor(random(4))
-my_id.direction=edir
-my_id.speed=1.5+random(1)+bullets*0.15
-my_id.image_angle=my_id.direction
-my_id=instance_create(x+lengthdir_x(24,edir),y+lengthdir_y(24,edir),objMaskDrop)
-my_id.direction=edir-40+random(80)
-my_id.speed=1.5+random(1)
+if bullets&gt;1 createDeadBody(true,1.5+bullets*0.15,sprPBackShotgun,edir) else createDeadBody(true,1.5+bullets*0.15,sprPBackMachinegun,edir)
 instance_destroy()
 }
 my_id=instance_create(x,y,objKnockedOut)
@@ -155,7 +148,8 @@ if sprite_index=sprPAttackBashPolice {
 my_id.sprite_index=sprPoliceGetUp
 my_id.type=objPolice
 } else my_id.type=objEnemy
-instance_destroy()</string>
+instance_destroy()
+</string>
           </argument>
         </arguments>
       </action>
@@ -189,11 +183,8 @@ global.shake=5
 myx=x+lengthdir_x(20,image_angle)
 myy=y+lengthdir_y(24,image_angle)
 my_id=instance_create(myx,myy,objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprBodyguardDead
-my_id.image_index=floor(random(4))
-my_id.image_angle=image_angle
-my_id=instance_create(x,y,objPlayerMouse)
+createDeadBody(false,0,sprBodyguardDead,image_angle)
+my_id=instance_create(x,y,objPlayerJacket)
 my_id.reload=30
 global.dir=image_angle-180
 with my_id move_outside_solid(global.dir,16)

@@ -26,7 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>image_speed=0.15
-image_index=1</string>
+image_index=1
+angle=0
+shake=0
+legsprite=0
+legindex=0
+hasLegs=false;
+</string>
           </argument>
         </arguments>
       </action>
@@ -48,14 +54,14 @@ image_index=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if objPlayer.sprite_index=sprPAttackClub {
+            <string>angle=image_angle
+if objPlayer.sprite_index=sprPAttackClub {
 global.test=0
 with objPlayer {
 if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),objBoss2Pry) global.test=1
 }
 if global.test=1 {
-PlaySFX(sndHit)
-PlaySFX(sndHitWall)
+PlaySFX("Blunt")
 global.shake=5
 if energie&gt;=2 {
 my_id=instance_create(x+lengthdir_x(14,image_angle+135),y+lengthdir_y(14,image_angle+135),objBoss2GetUp)
@@ -76,7 +82,7 @@ else {
 my_id=instance_create(x+lengthdir_x(14,image_angle+135),y+lengthdir_y(14,image_angle+135),objBoss2Crawl)
 my_id.image_angle=image_angle
 my_id2=instance_create(x,y,objMCHelmet)
-my_id2.sprite_index=sprHelmetBroken
+my_id2.sprite_index=sprBikerHelmetBroken
 if objPlayer.left=1 my_id2.direction=image_angle+70+random(40) else my_id2.direction=image_angle-70-random(40)
 my_id2.speed=2+random(1)
 
@@ -164,8 +170,8 @@ instance_destroy()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1)</string>
+            <string>draw_self();
+</string>
           </argument>
         </arguments>
       </action>

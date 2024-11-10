@@ -1924,6 +1924,7 @@
     <sprite>sprites\sprBeard</sprite>
     <sprite>sprites\sprBeardLegs</sprite>
     <sprite>sprites\sprRichterLegs</sprite>
+    <sprite>sprites\sprite1461</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tlStudio2</background>

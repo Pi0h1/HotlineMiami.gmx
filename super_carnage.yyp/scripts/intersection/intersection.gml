@@ -1,5 +1,4 @@
 function intersection(argument0, argument1, argument2, argument3, argument4) {
-	/*
 	if argument4=0 {return -100 exit}
 	dist=point_distance(argument0,argument1,argument2,argument3)
 	dir=point_direction(argument0,argument1,argument2,argument3)
@@ -15,5 +14,4 @@ function intersection(argument0, argument1, argument2, argument3, argument4) {
 	i+=1
 	}
 	if i<dist/argument4 {return 1} else return -100
-	*/
 }

@@ -1,0 +1,13 @@
+my_speed=0.5
+image_speed=0.2
+sprite_index=dog_walk
+active=0
+my_angle=0
+dir_change=-1+round(random(1))*2
+reload=15
+killed=0
+energie=1
+last_seen_x=0
+last_seen_y=0
+flamed=0
+exploded=0

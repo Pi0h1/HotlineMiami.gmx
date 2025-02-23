@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"intersection",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"intersection",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,39 @@
+Converting GML script: ${project_dir}\objects\light\Draw_0.gml
+Converted builtin - line 1: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 2: view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit
+Windows NSIS Installer Script has been set to default due to changes in GameMaker Studio 2
+Missing audiogroup for sound: 's_mg' - setting to default audio group
+Missing audiogroup for sound: 's_sg' - setting to default audio group
+Missing audiogroup for sound: 's_ssg' - setting to default audio group
+Missing audiogroup for sound: 'flame_sound' - setting to default audio group
+Missing audiogroup for sound: 'wall_hit' - setting to default audio group
+Missing audiogroup for sound: 'man_hit' - setting to default audio group
+Missing audiogroup for sound: 'die' - setting to default audio group
+Missing audiogroup for sound: 'door_open' - setting to default audio group
+Missing audiogroup for sound: 'click2' - setting to default audio group
+Missing audiogroup for sound: 'click' - setting to default audio group
+Missing audiogroup for sound: 'bottle_hit' - setting to default audio group
+Missing audiogroup for sound: 'throw_hit' - setting to default audio group
+Missing audiogroup for sound: 'swing_sound' - setting to default audio group
+Missing audiogroup for sound: 'burning' - setting to default audio group
+Missing audiogroup for sound: 'minishoot' - setting to default audio group
+Missing audiogroup for sound: 'hit_door' - setting to default audio group
+Missing audiogroup for sound: 'blunt_hit' - setting to default audio group
+Missing audiogroup for sound: 'crush' - setting to default audio group
+Missing audiogroup for sound: 'dog_die' - setting to default audio group
+Missing audiogroup for sound: 'explo' - setting to default audio group
+Game speed set to 30
+Added compatibility script 'action/action_bounce.gml'
+Added compatibility script 'action/action_kill_object.gml'
+Added compatibility script 'action/action_set_friction.gml'
+Added compatibility script 'draw/draw_set_blend_mode.gml'
+Added compatibility script 'instance/instance_create.gml'
+Added compatibility script 'object/object_get_depth.gml'
+Added compatibility script 'sound/sound_play.gml'
+Added compatibility script 'view/__view_get.gml'
+Added compatibility script 'action/__init_action.gml'
+Added compatibility script 'view/__init_view.gml'
+Added compatibility script '__init_global.gml'
+Added compatibility script '__global_object_depths.gml'

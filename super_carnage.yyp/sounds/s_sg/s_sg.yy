@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"s_sg",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":192,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.906587,
+  "name":"s_sg",
+  "parent":{
+    "name":"gunsounds",
+    "path":"folders/Sounds/gunsounds.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"s_sg",
+  "type":0,
+  "volume":1.0,
+}

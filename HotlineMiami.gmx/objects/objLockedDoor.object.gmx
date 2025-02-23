@@ -49,7 +49,8 @@ swinger=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if abs(swingspeed)&gt;0 {
+            <string>if global.xbox=1 scrXboxHospitalDoor()
+if abs(swingspeed)&gt;0 {
 image_angle+=swingspeed
 if place_meeting(x,y,objFurniture) {
 image_angle-=swingspeed
@@ -65,8 +66,7 @@ if image_angle&gt;-6 and image_angle&lt;6 {swingspeed=0 image_angle=0 exit}
 if swingspeed&gt;0.25 swingspeed-=0.25 else {
 if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -88,9 +88,12 @@ if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>swinger=1
+            <string>/*if abs(swingspeed)&gt;0 exit
+if image_angle&lt;-1 {swingspeed=1 exit}
+if image_angle&gt;1 {swingspeed=-1 exit}*/
+swinger=1
 if abs(swingspeed)&gt;3.5 exit
-if abs(swingspeed)&lt;2 PlaySFX(sndDoorOpen)
+if abs(swingspeed)&lt;2 audio_play_sound(sndDoorOpen,0,false)
 if y&gt;other.y and other.x&lt;x {swingspeed=8 exit}
 if y&gt;other.y and other.x&gt;x {swingspeed=-8 exit}
 if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
@@ -144,7 +147,7 @@ if objPlayer.sprite_index=sprPWalkHospital {
 if global.locked=0 {
 objPlayer.x=x-16
 objPlayer.y=y+16
-PlaySFX(sndKeycard)
+audio_play_sound(sndKeycard,0,false)
 objPlayer.sprite_index=sprPKeyLockOpen
 objPlayer.image_index=0
 objPlayer.active=0

@@ -30,7 +30,7 @@ image_speed=0
 dir=45
 angle_speed=-1+round(random(1))*2
 on=0
-</string>
+if global.xbox=1 scrInitXboxButtons()</string>
           </argument>
         </arguments>
       </action>
@@ -54,7 +54,7 @@ on=0
             <kind>1</kind>
             <string>if !place_free(x,y) speed=0
 image_angle+=angle_speed*speed*3
-</string>
+if global.xbox=1 scrXboxPoliceFile()</string>
           </argument>
         </arguments>
       </action>
@@ -81,7 +81,7 @@ if place_meeting(x-lengthdir_x(12,objPlayer.dir),y-lengthdir_y(12,objPlayer.dir)
 instance_destroy()
 global.files=1
 instance_create(x,y,objGoToCar)
-PlaySFX("Pick Up")
+audio_play_sound(sndPickupWeapon,0,false)
 }
 </string>
           </argument>
@@ -132,9 +132,8 @@ draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(
 d3d_set_fog(true,c_white,0,0)
 if on draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
 d3d_set_fog(0,0,0,0)
-if on drawArrow(180,false);
-if on dir+=4
-</string>
+if on draw_sprite_ext(sprArrow,0,x,y+12+lengthdir_x(4,dir*2),1,1,180,c_white,1)
+if on dir+=4</string>
           </argument>
         </arguments>
       </action>

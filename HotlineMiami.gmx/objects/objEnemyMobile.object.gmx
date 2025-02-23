@@ -28,8 +28,8 @@
             <string>scrEMobileInit()
 image_speed=0
 image_index=random(1000)
-speed=1*delta
-image_speed=0.1*delta
+speed=1
+image_speed=0.1
 energie=round(random(1))
 
 checkreload=floor(random(30))
@@ -41,8 +41,7 @@ start_x=x
 start_y=y
 weaponfind=0
 diradd=1
-findwall=0
-</string>
+findwall=0</string>
           </argument>
         </arguments>
       </action>

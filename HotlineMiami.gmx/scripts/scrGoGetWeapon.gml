@@ -29,15 +29,15 @@ if place_free(x+lengthdir_x(1,dir),y+lengthdir_y(1,dir)) {
 x+=lengthdir_x(1,dir)
 y+=lengthdir_y(1,dir)
 }
-image_speed=0.1*delta
+image_speed=0.1
 }
 }
 
 } else {
 if !instance_exists(target) {weaponfind=0 speed=0} else {
-speed=2*delta 
+speed=2 
 direction=point_direction(x,y,target.x,target.y)
-image_speed=0.2*delta
+image_speed=0.2
 if place_meeting(x,y,target) {
 my_id=-123123
 if target.image_index=0 {my_id=instance_create(x,y,objEnemy) my_id.sprite_index=sprEWalkM16}
@@ -50,7 +50,8 @@ if target.image_index=6 {my_id=instance_create(x,y,objEnemy) my_id.sprite_index=
 if target.image_index=7 {my_id=instance_create(x,y,objEnemy) my_id.sprite_index=sprEWalkSilencer}
 if target.image_index>7 exit
 if instance_exists(target) my_id.ammo=target.ammo
-PlaySFX("Pick Up")
+//with my_id scrChasePlayer()
+audio_play_sound(sndPickupWeapon,0,false)
 with target instance_destroy()
 instance_destroy()
 }

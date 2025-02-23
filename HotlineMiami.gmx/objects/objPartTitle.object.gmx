@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>letter=-1
+//text[0]="PART ONE"
+//text[1]="PHONECALLS"
 texts=1
 
 i=0
@@ -53,8 +55,7 @@ i+=1
 }
 
 fade=0
-c_amount=0
-</string>
+c_amount=0</string>
           </argument>
         </arguments>
       </action>
@@ -77,7 +78,7 @@ c_amount=0
           <argument>
             <kind>1</kind>
             <string>if c_amount&gt;=180 and fade=0 { 
-if letter&lt;string_length(global.parttitle[current]) {letter+=0.1 if floor(letter)&gt;floor(letter-0.1) {if string_copy(global.parttitle[current],letter+1,1)=" " or letter&gt;=string_length(global.parttitle[current]) nothing=1 else PlaySFX(sndLetter) amount[i]=10}}
+if letter&lt;string_length(global.parttitle[current]) {letter+=0.1 if floor(letter)&gt;floor(letter-0.1) {if string_copy(global.parttitle[current],letter+1,1)=" " or letter&gt;=string_length(global.parttitle[current]) nothing=1 else audio_play_sound(sndLetter,0,false) amount[i]=10}}
 }
 
 color1=merge_color(merge_color(c_dkgray,c_navy,0.5+lengthdir_x(0.5,dir*0.5)),merge_color(c_black,c_teal,0.2+lengthdir_x(0.2,dir*0.67)),0.6+lengthdir_x(0.3,dir))
@@ -170,6 +171,8 @@ draw_set_blend_mode(bm_normal)
 
 
 draw_set_blend_mode(bm_subtract)
+draw_y=-random(32)
+draw_sprite_tiled(sprScanlines,0,0,draw_y)
 draw_circle_color(x,y,room_width*0.75+random(10),c_black,c_lime,0)
 draw_set_blend_mode(bm_normal)
 </string>

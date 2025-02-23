@@ -79,10 +79,7 @@ objPlayer.persistent=0
           <argument>
             <kind>1</kind>
             <string>direction+=lengthdir_x(2,dir)
-dir+=2
-
-scrCenterOn(x,y)
-</string>
+dir+=2</string>
           </argument>
         </arguments>
       </action>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>objActor</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0;
-animSpeed=0;
-alarm[0]=1+random(600);
-</string>
+            <string>image_speed=0
+alarm[0]=1+random(600)</string>
           </argument>
         </arguments>
       </action>
@@ -50,8 +48,8 @@ alarm[0]=1+random(600);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>animSpeed=0.1;
-alarm[0]=500+random(200);
+            <string>image_speed=0.1
+alarm[0]=500+random(200)
 </string>
           </argument>
         </arguments>
@@ -74,8 +72,7 @@ alarm[0]=500+random(200);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>animSpeed = 0;
-</string>
+            <string>image_speed=0</string>
           </argument>
         </arguments>
       </action>

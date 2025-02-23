@@ -67,32 +67,6 @@ my_id.speed=dist*0.025+random(1)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objPlayerJacket">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with other {
-my_id=instance_create(x,y,objBurningGuy)
-my_id.direction=dir
-instance_destroy()
-}</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objEnemy">
       <action>
         <libid>1</libid>
@@ -114,6 +88,32 @@ instance_destroy()
 with other {
 my_id=instance_create(x,y,objBurningGuy)
 my_id.direction=direction
+instance_destroy()
+}</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objPlayerMouse">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with other {
+my_id=instance_create(x,y,objBurningGuy)
+my_id.direction=dir
 instance_destroy()
 }</string>
           </argument>

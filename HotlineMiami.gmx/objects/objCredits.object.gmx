@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.levels[15]=1
+            <string>if global.xbox=1 scrInitXboxButtons()
+global.levels[15]=1
 global.grade[15]=15
 scrSaveUnlocked()
 topic[0]="Game Designed By"
@@ -42,6 +43,7 @@ topic[5]="Sound Effects"
 credit[5]="Jordan Fehr"
 topic[6]="MAC Version"
 credit[6]="Leon Arnott"
+
 topic[7]="Music by"
 credit[7]="Sun Araw"
 topic[8]="Music by"
@@ -60,6 +62,7 @@ topic[14]="Music by"
 credit[14]="Elliott Berlin"
 topic[15]="Music by"
 credit[15]="Eirik Suhrke"
+
 current=0
 fade=0
 topicfade=0
@@ -143,7 +146,16 @@ alarm[0]=320</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !surface_exists(global.surf1) {
+            <string>if global.xbox=1 {
+if checkbutton(0,getid(5)) or checkbutton(0,getid(6)) {
+if presstart=0 {
+presstart=1
+scrXboxCreditsStart()
+} 
+} else presstart=0
+}
+
+if !surface_exists(global.surf1) {
 global.surf1=surface_create(room_width,room_height)
 surface_set_target(global.surf1)
 draw_clear_alpha(c_black,0)
@@ -219,8 +231,7 @@ draw_set_blend_mode(bm_add)
 draw_surface_ext(global.surf3,-1200*0.01,-768*0.01,1.02,1.02,0,c_white,1)
 texture_set_interpolation(false)
 draw_set_blend_mode(bm_normal)
-surface_reset_target()
-</string>
+surface_reset_target()</string>
           </argument>
         </arguments>
       </action>
@@ -242,10 +253,10 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if credit_y&lt;string_height(creditlist)+128 nothing=1 else {
+            <string>if global.xbox=1 exit
+if credit_y&lt;string_height(creditlist)+128 nothing=1 else {
 endfade=1
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -311,7 +322,12 @@ draw_set_blend_mode(bm_normal)
 }
 
 d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-scrDrawFilter();
+draw_set_blend_mode(bm_subtract)
+my_y=random(32)
+draw_sprite_tiled(sprScanlines,0,0,my_y)
+draw_set_blend_mode(bm_subtract)
+draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
+draw_set_blend_mode(bm_normal)
 </string>
           </argument>
         </arguments>
@@ -334,8 +350,8 @@ scrDrawFilter();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>endfade=1
-</string>
+            <string>if global.xbox=1 exit
+endfade=1</string>
           </argument>
         </arguments>
       </action>

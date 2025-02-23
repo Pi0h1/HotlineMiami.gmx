@@ -25,13 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>startingRoom=0
-mapdir=0
+            <string>mapdir=0
 addx=0
 intro=0
 newsong=1
 global.levels[20]=1
 global.levels[21]=1
+if global.xbox=1 {
+scrInitXboxButtons()
+}
 wait=0
 scrFreeSurfaces()
 level[0]=sprTrainstation
@@ -56,7 +58,7 @@ level[18]=sprPhoneLevel
 level[19]=sprBossClub2
 level[20]=sprVenusLevel
 level[21]=sprEurogamerLogo
-/*title[0]="THE METRO"
+title[0]="THE METRO"
 title[1]="NO TALK"
 title[2]="OVERDOSE"
 title[3]="DECADENCE"
@@ -99,7 +101,7 @@ chapter[17]="CHAPTER SEVENTEEN"
 chapter[18]="CHAPTER EIGHTEEN"
 chapter[19]="CHAPTER NINETEEN"
 chapter[20]="BONUS CHAPTER"
-chapter[21]="SPECIAL CHAPTER"*/
+chapter[21]="SPECIAL CHAPTER"
 if global.levels[15]=1 {if file_exists(working_directory+"\exposed.lvl") levels=21 else levels=20} else levels=15
 select=0
 repeats=16
@@ -120,7 +122,7 @@ i+=1
 
 i=0
 repeat (20) {
-if global.levels[i]=0 {if select=0 and global.levels[1]=1 select=i-1 global.levelTitle[i]="LOCKED"}
+if global.levels[i]=0 {if select=0 and global.levels[1]=1 select=i-1 title[i]="LOCKED"}
 i+=1
 }
 
@@ -145,8 +147,7 @@ with my_id {repeat (global.i*45) amount*=1.01}
 global.i+=1
 }
 alarm[0]=45
-state=0
-</string>
+state=0</string>
           </argument>
         </arguments>
       </action>
@@ -191,11 +192,60 @@ alarm[0]=45</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if wait&gt;0 wait-=1
+            <string>if global.xbox=1 {
+
+if checkbutton(0,getid(5)) {
+if presstart=0 {
+presstart=1
+scrXboxLevelSelectStart()
+}
+} else presstart=0
+
+if checkbutton(0,getid(6)) {
+if pressback=0 {
+pressback=1
+scrXboxLevelSelectBack()
+} 
+} else pressback=0
+
+if leftthumb_x(0)&gt;15000 {
+if pressright=0 {
+pressright=1
+scrXboxLevelSelectRight()
+}
+} else pressright=0
+
+if leftthumb_x(0)&lt;-15000 {
+if pressleft=0 {
+pressleft=1
+scrXboxLevelSelectLeft()
+}
+} else pressleft=0
+
+if leftthumb_y(0)&gt;5000 {
+if pressup=0 {
+pressup=1
+scrXboxLevelSelectUp()
+}
+} else pressup=0
+
+if leftthumb_y(0)&lt;-5000 {
+if pressdown=0 {
+pressdown=1
+scrXboxLevelSelectDown()
+}
+} else pressdown=0
+
+}
+
+if wait&gt;0 wait-=1
 if keyboard_check_pressed(ord(global.upkey)) event_perform(ev_keypress,ord('W'))
 if keyboard_check_pressed(ord(global.downkey)) event_perform(ev_keypress,ord('S'))
 if keyboard_check_pressed(ord(global.leftkey)) event_perform(ev_keypress,ord('A'))
 if keyboard_check_pressed(ord(global.rightkey)) event_perform(ev_keypress,ord('D'))
+
+
+
 
 if !surface_exists(global.surf1) {
 global.surf1=surface_create(view_wview[0],view_hview[0])
@@ -212,7 +262,7 @@ dist=point_distance(x,y,mouse_x,mouse_y)*0.01
 if dist&gt;1 dist=1
 if state=1 {if addx&gt;-96 addx-=8} else {if addx&lt;0 addx+=8}
 repeat (myrepeats) {
-if global.levelTitle[select]="LOCKED" color=merge_color(c_dkgray,c_black,i*(1/sprite_get_number(sprite_index))) else color=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.12)),c_white,i*(1/sprite_get_number(sprite_index)))
+if title[select]="LOCKED" color=merge_color(c_dkgray,c_black,i*(1/sprite_get_number(sprite_index))) else color=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.12)),c_white,i*(1/sprite_get_number(sprite_index)))
 draw_sprite_ext(sprite_index,i,x+addx*0.75,y-i*0.6,1+i*0.01,1+i*0.01,mapdir,color,1) 
 i+=1
 }
@@ -272,7 +322,7 @@ if texts&gt;22 texts=22
 i=0
 repeat (texts) {
 draw_set_color(merge_color(merge_color(c_lime,c_yellow,0.5+lengthdir_x(0.5,dir*3.232)),c_white,i*(1/22)))
-draw_text_transformed(room_width/2,room_height*0.28-i*0.5,global.chapterTitle[select],1+i*0.01,1+i*0.01,0)
+draw_text_transformed(room_width/2,room_height*0.28-i*0.5,chapter[select],1+i*0.01,1+i*0.01,0)
 i+=1
 }
 
@@ -282,81 +332,11 @@ if texts&gt;22 texts=22
 i=0
 repeat (texts) {
 draw_set_color(merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.232)),c_white,i*(1/22)))
-draw_text_transformed(room_width/2,room_height-room_height*0.28+i*0.5,global.levelTitle[select],1+i*0.01,1+i*0.01,0)
+draw_text_transformed(room_width/2,room_height-room_height*0.28+i*0.5,title[select],1+i*0.01,1+i*0.01,0)
 i+=1
 }
 surface_alpha()
-surface_reset_target()
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="61">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_perform(ev_keypress, ord("A"))
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="60">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_perform(ev_keypress, ord("D"))
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="54">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_perform(ev_keypress, vk_escape)
-</string>
+surface_reset_target()</string>
           </argument>
         </arguments>
       </action>
@@ -378,43 +358,334 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Start Level
-if state=0 and select&lt;20 {state=1 exit}
+            <string>if state=0 and select&lt;20 {state=1 exit}
 if global.levels[select]=1 fade=1 else exit
 
-switch (select) {
-// Phonecalls
-    case 0: scrStartLevel(0, rmTrainstationEntrance  , rmSequence1   , "Paris2"              ); break;
-    case 1: scrStartLevel(1, rmApartment1Entrance    , rmSequence2   , "Crystals"            ); break;
-    case 2: scrStartLevel(2, rmApartment2Entrance    , rmSequence3   , "Hotline"             ); break;
-    case 3: scrStartLevel(3, rmHouse1Downstairs      , rmSequence4   , "Hydrogen"            ); break;
-// Questions 
-    case 4: scrStartLevel(4, rmHouse5Downstairs      , rmSequence5   , "Paris2"              ); break;
-    case 5: scrStartLevel(5, rmHouse2Downstairs      , rmSequence6   , "Crystals"            ); break;
-    case 6: scrStartLevel(6, rmHotelEntrance         , rmSequence7   , "Hotline"             ); break;
-    case 7: scrStartLevel(7, rmBuildingFloor1        , rmSequence8   , "Hydrogen"            ); break;
-// Visitations
-    case 8: scrStartLevel(8, rmHouse3Downstairs      , rmSequence9   , "Perturbator"         ); break;
-    case 9: scrStartLevel(9, rmSwatDownstairs        , rmSequence10  , "Crystals"            ); break;
-    case 10: scrStartLevel(10, rmHouse4Middle         , rmSequence11  , "Hotline"             ); break;
-    case 11: scrStartLevel(11, rmOfficeEntrance       , rmSequence12  , "Hydrogen"            ); break;
-// Connection
-    case 12: scrStartLevel(12, rmHospitalTitle        , rmSequence12bDownstairs, "Flatline"   ); break;
-    case 13: scrStartLevel(13, rmPoliceHQFloor1       , rmSequence13  , "Knock"               ); break;
-    case 14: scrStartLevel(14, rmBossClubFloor1       , rmSequence14  , "InnerAnimal"         ); break;
-    case 15: scrStartLevel(15, rmMansionEntrance      , rmChapter     , "TurfMain"            ); break;
-// Answers
-    case 16: scrStartLevel(16, rmNoodleShop           , rmMCBar       , "ToTheTop"            ); break;
-    case 17: scrStartLevel(17, rmArcadeDownstairs     , rmMCSequence2 , "Musikk2"             ); break;
-    case 18: scrStartLevel(18, rmPhoneHomEntranceBiker, rmMCSequence3 , "Knock"               ); break;
-    case 19: scrStartLevel(19, rmJanitors             , rmMCSequence4 , "InnerAnimal"         ); break;
-// Bonus
-    case 20: scrStartLevel(20, rmHighballer           , rmChapter     , "Perturbator"         ); break;
-    case 21: scrStartLevel(21, rmEurogamer            , rmChapter     , "ToTheTop"            ); break;
+if intro=0 {
+if select=0 {
+global.sequence=rmSequence1
+global.level=rmTrainstationEntrance
+global.pretitle="PRELUDE"
+global.title="THE METRO"
+song=working_directory+"\Paris2.mp3"
+}
+if select=1 {
+global.sequence=rmSequence2
+global.level=rmApartment1Entrance
+global.pretitle="FIRST CHAPTER"
+global.title="NO TALK"
+song=working_directory+"\Crystals.mp3"
+}
+if select=2 {
+global.sequence=rmSequence3
+global.level=rmApartment2Entrance
+global.pretitle="SECOND CHAPTER"
+global.title="OVERDOSE"
+song=working_directory+"\Hotline.mp3"
+}
+if select=3 {
+global.sequence=rmSequence4
+global.level=rmHouse1Downstairs
+global.pretitle="THIRD CHAPTER"
+global.title="DECADENCE"
+song=working_directory+"\Hydrogen.mp3"
+}
+if select=4 {
+global.sequence=rmSequence5
+global.level=rmHouse5Downstairs
+global.pretitle="FOURTH CHAPTER"
+global.title="TENSION"
+song=working_directory+"\Paris2.mp3"
+}
+if select=5 {
+global.sequence=rmSequence6
+global.level=rmHouse2Downstairs
+global.pretitle="FIFTH CHAPTER"
+global.title="FULL HOUSE"
+song=working_directory+"\Crystals.mp3"
 }
 
-if intro=1 {mylevel=global.level if select=15 mylevel=rmChapter}
-</string>
+if select=6 {
+global.sequence=rmSequence7
+global.level=rmHotelEntrance
+global.pretitle="SIXTH CHAPTER"
+global.title="CLEAN HIT"
+song=working_directory+"\Hotline.mp3"
+}
+
+if select=7 {
+global.sequence=rmSequence8
+global.level=rmBuildingFloor1
+global.pretitle="SEVENTH CHAPTER"
+global.title="NEIGHBORS"
+song=working_directory+"\Hydrogen.mp3"
+}
+
+if select=8 {
+global.sequence=rmSequence9
+global.level=rmHouse3Downstairs
+global.pretitle="EIGHTH CHAPTER"
+global.title="PUSH IT"
+song=working_directory+"\Perturbator.mp3"
+}
+
+if select=9 {
+global.sequence=rmSequence10
+global.level=rmSwatDownstairs
+global.pretitle="NINTH CHAPTER"
+global.title="CRACKDOWN"
+song=working_directory+"\Crystals.mp3"
+}
+
+if select=10 {
+global.sequence=rmSequence11
+global.level=rmHouse4Middle
+global.pretitle="TENTH CHAPTER"
+global.title="HOT&amp;HEAVY"
+song=working_directory+"\Hotline.mp3"
+}
+if select=11 {
+global.sequence=rmSequence12
+global.level=rmOfficeEntrance
+global.pretitle="ELEVENTH CHAPTER"
+global.title="DEADLINE"
+song=working_directory+"\Hydrogen.mp3"
+}
+if select=12 {
+global.sequence=rmSequence12bDownstairs
+global.level=rmHospitalTitle
+global.pretitle="TWELFTH CHAPTER"
+global.title="TRAUMA"
+song=working_directory+"\Flatline.mp3"
+}
+if select=13 {
+global.sequence=rmSequence13
+global.level=rmPoliceHQFloor1
+global.pretitle="THIRTEENTH CHAPTER"
+global.title="ASSAULT"
+song=working_directory+"\Knock.mp3"
+}
+if select=14 {
+global.sequence=rmSequence14
+global.level=rmBossClubFloor1
+global.pretitle="FOURTEENTH CHAPTER"
+global.title="VENGEANCE"
+song=working_directory+"\InnerAnimal.mp3"
+}
+if select=15 {
+global.sequence=rmChapter
+global.level=rmMansionEntrance
+global.pretitle="FINAL CHAPTER"
+global.title="SHOWDOWN"
+song=working_directory+"\TurfMain.mp3"
+}
+if select=16 {
+global.sequence=rmMCBar
+global.level=rmNoodleShop
+global.pretitle="SIXTEENTH CHAPTER"
+global.title="SAFEHOUSE"
+song=working_directory+"\ToTheTop.mp3"
+}
+if select=17 {
+global.sequence=rmMCSequence2
+global.level=rmArcadeDownstairs
+global.pretitle="SEVENTEENTH CHAPTER"
+global.title="FUN&amp;GAMES"
+song=working_directory+"\Musikk2.mp3"
+}
+if select=18 {
+global.sequence=rmMCSequence3
+global.level=rmPhoneHomEntranceBiker
+global.pretitle="EIGHTEENTH CHAPTER"
+global.title="PRANKCALL"
+song=working_directory+"\Knock.mp3"
+}
+if select=19 {
+global.sequence=rmMCSequence4
+global.level=rmJanitors
+global.pretitle="NINETEENTH CHAPTER"
+global.title="RESOLUTION"
+song=working_directory+"\InnerAnimal.mp3"
+}
+if select=20 {
+global.sequence=rmChapter
+global.level=rmHighballer
+global.pretitle="BONUS CHAPTER"
+global.title="HIGHBALL"
+song=working_directory+"\Perturbator.mp3"
+}
+if select=21 {
+global.sequence=rmChapter
+global.level=rmEurogamer
+global.pretitle="SPECIAL CHAPTER"
+global.title="EXPOSED"
+song=working_directory+"\ToTheTop.mp3"
+}
+} else {
+if select=0 {
+global.sequence=rmSequence1
+global.level=rmSequence1
+global.pretitle="PRELUDE"
+global.title="THE METRO"
+song=working_directory+"\DeepCover.mp3"
+}
+if select=1 {
+global.sequence=rmSequence2
+global.level=rmSequence2
+global.pretitle="FIRST CHAPTER"
+global.title="NO TALK"
+song=working_directory+"\DeepCover.mp3"
+}
+if select=2 {
+global.sequence=rmSequence3
+global.level=rmSequence3
+global.pretitle="SECOND CHAPTER"
+global.title="OVERDOSE"
+song=working_directory+"\DeepCover.mp3"
+}
+if select=3 {
+global.sequence=rmSequence4
+global.level=rmSequence4
+global.pretitle="THIRD CHAPTER"
+global.title="DECADENCE"
+song=working_directory+"\DeepCover.mp3"
+}
+if select=4 {
+global.sequence=rmSequence5
+global.level=rmSequence5
+global.pretitle="FOURTH CHAPTER"
+global.title="TENSION"
+song=working_directory+"\DeepCover.mp3"
+}
+if select=5 {
+global.sequence=rmSequence6
+global.level=rmSequence6
+global.pretitle="FIFTH CHAPTER"
+global.title="FULL HOUSE"
+song=working_directory+"\DeepCover.mp3"
+}
+
+if select=6 {
+global.sequence=rmSequence7
+global.level=rmSequence7
+global.pretitle="SIXTH CHAPTER"
+global.title="CLEAN HIT"
+song=working_directory+"\DeepCover.mp3"
+}
+
+if select=7 {
+global.sequence=rmSequence8
+global.level=rmSequence8
+global.pretitle="SEVENTH CHAPTER"
+global.title="NEIGHBORS"
+song=working_directory+"\DeepCover.mp3"
+}
+
+if select=8 {
+global.sequence=rmSequence9
+global.level=rmSequence9
+global.pretitle="EIGHTH CHAPTER"
+global.title="PUSH IT"
+song=working_directory+"\DeepCover.mp3"
+}
+
+if select=9 {
+global.sequence=rmSequence10
+global.level=rmSequence10
+global.pretitle="NINTH CHAPTER"
+global.title="CRACKDOWN"
+song=working_directory+"\DeepCover.mp3"
+}
+
+if select=10 {
+global.sequence=rmSequence11
+global.level=rmSequence11
+global.pretitle="TENTH CHAPTER"
+global.title="HOT&amp;HEAVY"
+song=working_directory+"\DeepCover.mp3"
+}
+if select=11 {
+global.sequence=rmSequence12
+global.level=rmSequence12
+global.pretitle="ELEVENTH CHAPTER"
+global.title="DEADLINE"
+song=working_directory+"\DeepCover.mp3"
+}
+if select=12 {
+global.sequence=rmSequence12bDownstairs
+global.level=rmHospitalCutscene
+global.pretitle="TWELFTH CHAPTER"
+global.title="TRAUMA"
+song=working_directory+"\Flatline.mp3"
+}
+if select=13 {
+global.sequence=rmSequence13Downstairs
+global.level=rmSequence13Downstairs
+global.pretitle="THIRTEENTH CHAPTER"
+global.title="ASSAULT"
+song=working_directory+"\DeepCover.mp3"
+}
+if select=14 {
+global.sequence=rmSequence14
+global.level=rmSequence14
+global.pretitle="FOURTEENTH CHAPTER"
+global.title="VENGEANCE"
+song=working_directory+"\DeepCover.mp3"
+}
+if select=15 {
+global.sequence=rmChapter
+global.level=rmMansionEntrance
+global.pretitle="FIFTEENTH CHAPTER"
+global.title="SHOWDOWN"
+song=working_directory+"\TurfMain.mp3"
+}
+if select=16 {
+global.sequence=rmMCBar
+global.level=rmRewind
+global.pretitle="SIXTEENTH CHAPTER"
+global.title="SAFEHOUSE"
+newsong=0
+song=working_directory+"\ToTheTop.mp3"
+}
+if select=17 {
+global.sequence=rmMCSequence2
+global.level=rmMCSequence2
+global.pretitle="SEVENTEENTH CHAPTER"
+global.title="FUN&amp;GAMES"
+song=working_directory+"\ItsSafeNow.mp3"
+}
+if select=18 {
+global.sequence=rmMCSequence3
+global.level=rmMCSequence3
+global.pretitle="EIGHTEENTH CHAPTER"
+global.title="PRANKCALL"
+song=working_directory+"\ItsSafeNow.mp3"
+}
+if select=19 {
+global.sequence=rmMCSequence4
+global.level=rmMCSequence4
+global.pretitle="NINETEENTH CHAPTER"
+global.title="RESOLUTION"
+song=working_directory+"\ItsSafeNow.mp3"
+}
+if select=20 {
+global.sequence=rmChapter
+global.level=rmHighballer
+global.pretitle="BONUS CHAPTER"
+global.title="HIGHBALL"
+song=working_directory+"\Perturbator.mp3"
+}
+if select=21 {
+global.sequence=rmChapter
+global.level=rmEurogamer
+global.pretitle="SPECIAL CHAPTER"
+global.title="EXPOSED"
+song=working_directory+"\ToTheTop.mp3"
+}
+
+}
+
+if intro=1 {mylevel=global.level if select=15 mylevel=rmChapter}</string>
           </argument>
         </arguments>
       </action>
@@ -436,17 +707,36 @@ if intro=1 {mylevel=global.level if select=15 mylevel=rmChapter}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir+=0.25
+            <string>/*draw_surface_ext(surf,1,0,1,1,0,c_black,1)
+draw_surface_ext(surf,-1,0,1,1,0,c_black,1)
+draw_surface_ext(surf,0,1,1,1,0,c_black,1)
+draw_surface_ext(surf,0,-1,1,1,0,c_black,1)
+
+
+draw_surface_ext(surf,0,0,1,1,0,c_white,1)*/
+
+
+dir+=0.25
 color2=merge_color(c_black,merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.12)),0.5+lengthdir_x(0.25,dir*1.13))
 color1=merge_color(c_black,merge_color(merge_color(c_lime,c_yellow,0.5+lengthdir_x(0.5,dir*3.12)),c_maroon,0.125+lengthdir_y(0.125,dir*1.73)),0.35+lengthdir_y(0.25,dir*1.73))
 d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 draw_rectangle_color(view_xview[0],view_yview[0]+44,view_xview[0]+view_wview[0],view_yview[0]+view_hview[0]-43,color1,color1,color2,color2,0)
+/*draw_set_blend_mode(bm_max)
+global.color=merge_color(merge_color(color1,color2,0.5+lengthdir_x(0.5,dir*5.17)),c_white,0.25+lengthdir_x(0.25,dir))
+with objHouse draw_sprite_general(sprite_index,image_index,0,0,128,255,x-64,y,image_xscale,image_yscale,image_angle,global.color,global.color,c_black,c_black,image_alpha)
+i=0
+repeat (5) {
+draw_sprite_general(sprPalmTrees,palmindex[i],0,0,82,255,palmx[i]-41,65,1,1,0,global.color,global.color,c_black,c_black,1)
+palmx[i]-=2
+if palmx[i]&lt;=-60 {palmx[i]=room_width+60 palmindex[i]=floor(random(6))}
+i+=1
+}*/
 
 global.color3=merge_color(merge_color(merge_color(c_blue,c_red,0.5+lengthdir_x(0.5,dir*3.12)),c_yellow,0.125+lengthdir_y(0.125,dir*1.73)),merge_color(c_white,c_fuchsia,0.5+lengthdir_x(0.3,dir)),0.5+lengthdir_x(0.5,dir*2.33))
 draw_set_blend_mode(bm_add)
 with objPalmTree {
-draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2+amount,room_height*0.5-(250*(amount/240)),amount/240,(amount/120),0,global.color3,global.color3,c_black,c_black,image_alpha)
-draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2-amount-(amount/240)*82,room_height*0.5-(250*(amount/240)),-amount/240,amount/120,0,global.color3,global.color3,c_black,c_black,image_alpha)
+draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2+amount,room_height*0.5-(250*(amount/240)),amount/240,(amount/120),0,global.color3,global.color3,c_black,c_black,1)
+draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2-amount-(amount/240)*82,room_height*0.5-(250*(amount/240)),-amount/240,amount/120,0,global.color3,global.color3,c_black,c_black,1)
 }
 
 draw_set_blend_mode(bm_normal)
@@ -468,7 +758,7 @@ draw_sprite_ext(sprMaskDropFront,currentmask,400+156+addx*3.3,125,1,1,-90,color,
 if select&lt;=15 {
 if global.letter[scrLevelGetPuzzle(select)]=1 draw_sprite_ext(sprToken,0,400+156+addx*3.3+11,125,1,1,0,c_white,1) else draw_sprite_ext(sprToken,0,400+156+addx*3.3+11,125,1,1,0,c_black,1)
 }
-
+//view_angle[0]=lengthdir_y(3,dir*3.33)
 if fade=0 {
 if c_amount&lt;180 {
 c_amount+=10
@@ -489,7 +779,7 @@ if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(l
 draw_set_blend_mode(bm_subtract)
 draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0)
 draw_set_blend_mode(bm_normal)
-} else {if restart=0 {sxeasy_stop() sxeasy_setVolume(1) if newsong=1 sxeasy_play(song) if global.level=rmHospitalTitle room_goto(rmHospitalTitle) else  {if intro=1 room_goto(mylevel) else {if select&lt;=15 or select&gt;=20 room_goto(rmChapter) else room_goto(rmMCChapter)}}} else game_restart()}
+} else {if restart=0 {sxeasy_stop() sxeasy_setVolume(1) if newsong=1 sxeasy_play(song) if global.level=rmHospitalTitle room_goto(rmHospitalTitle) else  {if intro=1 room_goto(mylevel) else {if select&lt;=15 or select&gt;=20 room_goto(rmChapter) else room_goto(rmMCChapter)}}} else room=rmMenu}
 }
 
 
@@ -498,9 +788,12 @@ d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 draw_set_color(c_black)
 draw_rectangle(0,0,room_width,44,0)
 draw_rectangle(0,room_height,room_width,room_height-44,0)
-
-scrDrawFilter();
-</string>
+draw_set_blend_mode(bm_subtract)
+my_y=random(32)
+draw_sprite_tiled(sprScanlines,0,0,my_y)
+draw_set_blend_mode(bm_subtract)
+draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
+draw_set_blend_mode(bm_normal)</string>
           </argument>
         </arguments>
       </action>
@@ -522,10 +815,10 @@ scrDrawFilter();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if fade=1 or wait&gt;0 exit
+            <string>if global.xbox=1 exit
+if fade=1 or wait&gt;0 exit
 wait=3
-if repeats&lt;sprite_get_number(sprite_index) repeats+=8
-</string>
+if repeats&lt;sprite_get_number(sprite_index) repeats+=8</string>
           </argument>
         </arguments>
       </action>
@@ -547,10 +840,10 @@ if repeats&lt;sprite_get_number(sprite_index) repeats+=8
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if fade=1 or wait&gt;0 exit
+            <string>if global.xbox=1 exit
+if fade=1 or wait&gt;0 exit
 wait=3
-if repeats&gt;8 repeats-=8
-</string>
+if repeats&gt;8 repeats-=8</string>
           </argument>
         </arguments>
       </action>
@@ -572,7 +865,8 @@ if repeats&gt;8 repeats-=8
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if fade=1 or wait&gt;0 exit
+            <string>if global.xbox=1 exit
+if fade=1 or wait&gt;0 exit
 wait=3
 if state=1 {intro=!intro exit}
 mapdir=180
@@ -582,8 +876,7 @@ if select=0 repeats=16
 if select=8 repeats=16
 myrepeats=0
 
-sprite_index=level[select]
-</string>
+sprite_index=level[select]</string>
           </argument>
         </arguments>
       </action>
@@ -605,7 +898,8 @@ sprite_index=level[select]
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if fade=1  or wait&gt;0 exit
+            <string>if global.xbox=1 exit
+if fade=1  or wait&gt;0 exit
 wait=3
 if state=1 {intro=!intro exit}
 mapdir=180
@@ -615,8 +909,7 @@ if select=0 repeats=16
 if select=8 repeats=16
 myrepeats=0
 
-sprite_index=level[select]
-</string>
+sprite_index=level[select]</string>
           </argument>
         </arguments>
       </action>

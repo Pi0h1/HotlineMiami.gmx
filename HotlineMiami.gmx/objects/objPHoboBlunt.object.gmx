@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objExecution</parentName>
+  <parentName>objPlayer</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -32,8 +32,7 @@ scrInitMaskPos()
 scrUpdateMaskPos(sprPBashBoss2)
 ammo=0
 maskindex=global.maskindex
-enemy=sprHoboGround
-</string>
+if global.xbox=1 scrInitXboxButtons()</string>
           </argument>
         </arguments>
       </action>
@@ -55,21 +54,25 @@ enemy=sprHoboGround
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if hurtindex=4 {
+            <string>if global.xbox=1 scrXboxHoboBlunt()
+if hurtindex=4 {
 if image_index=0 {
-my_id=instance_create(x,y,objPlayerJacket)
-my_id.alarm[2]=160 * delta
+my_id=instance_create(x,y,objPlayerMouse)
+my_id.alarm[2]=160
 global.angle=image_angle-180
 my_id.reload=10
 with my_id move_outside_solid(global.angle,16)
-if sprite_index=sprPBatKill my_id.sprite_index=wpnWalkBat
-PlaySFX(sndComplete)
+if sprite_index=sprPBatKill my_id.sprite_index=sprPWalkBat
+audio_play_sound(sndComplete,0,false)
 sxeasy_play(working_directory+"\Static.mp3")
 instance_create(x,y,objLevelComplete)
 my_id.maskon=global.maskon
 my_id.maskindex=global.maskindex
 my_id=instance_create(x+lengthdir_x(11,image_angle),y+lengthdir_y(11,image_angle),objBloodPool)
-createDeadBody(false,0,sprHoboGround,image_angle)
+my_id=instance_create(x,y,objDeadBody)
+my_id.sprite_index=sprHoboGround
+my_id.image_index=3
+my_id.image_angle=image_angle
 global.done=1
 instance_destroy()
 my_id=instance_create(x,y-12,objScore)
@@ -106,11 +109,13 @@ global.kills+=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index=0 and hurtindex=targetindex and targetindex&lt;4 {
+            <string>if global.xbox=1 exit
+if image_index=0 and hurtindex=targetindex and targetindex&lt;4 {
 if targetindex=0 targetindex=4
 hurtindex+=1
 image_index=7
-PlaySFX("Blunt")
+audio_play_sound(sndHit,0,false)
+audio_play_sound(sndPunch,0,false)
 global.shake=4
 repeat (1+random(3)) {
 instance_create(x+lengthdir_x(18,image_angle-1+random(2)),y+lengthdir_y(18,image_angle-1+random(2)),objBloodSquirt)
@@ -153,14 +158,13 @@ my_id.speed=random(1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(enemy,hurtindex,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(enemy,hurtindex,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+            <string>draw_sprite_ext(sprHoboGround,hurtindex,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
+draw_sprite_ext(sprHoboGround,hurtindex,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 if hurtindex&lt;targetindex hurtindex+=0.25
 if image_index&gt;0 image_index-=0.5
-scrDrawMask(1)
-</string>
+scrDrawMask(1)</string>
           </argument>
         </arguments>
       </action>

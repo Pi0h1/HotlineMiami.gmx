@@ -25,11 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x=room_width/2
-scrFreeSurfaces()
+            <string>scrFreeSurfaces()
 if global.resetstory=1 {
 scrResetStory()
-} else {}
+} else {set_automatic_draw(true)}
 global.levels[scrGetCurrentLevel()-1]=1
 scrSaveUnlocked()
 alarm[0]=300
@@ -66,8 +65,7 @@ hint[8]="TIP: PAY ATTENTION TO DETAILS"
 hint[9]="TIP: YOUR MEAT CLEAVER IS THERE TO STAY"
 hint[10]="TIP: FINISH OFF FALLEN ENEMIES"
 
-myhint=floor(random(11))
-</string>
+myhint=floor(random(11))</string>
           </argument>
         </arguments>
       </action>
@@ -230,9 +228,16 @@ if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(l
 draw_set_blend_mode(bm_subtract)
 draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0)
 draw_set_blend_mode(bm_normal)
-} else {room_goto(global.level) SaveCurrentLevel();}
+} else {room_goto(global.level) game_save("restart.dat")}
 }
-scrDrawFilter();
+
+
+draw_set_blend_mode(bm_subtract)
+my_y=random(32)
+draw_sprite_tiled(sprScanlines,0,0,my_y)
+draw_set_blend_mode(bm_subtract)
+draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
+draw_set_blend_mode(bm_normal)
 </string>
           </argument>
         </arguments>

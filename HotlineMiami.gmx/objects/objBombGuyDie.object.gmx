@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>Effects</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -47,8 +47,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;4 image_index+=1*delta;
-</string>
+            <string>if image_index&lt;4 image_index+=1</string>
           </argument>
         </arguments>
       </action>

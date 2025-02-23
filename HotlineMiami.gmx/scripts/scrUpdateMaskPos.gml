@@ -500,7 +500,7 @@ maskaddx[8]=0 maskaddy[8]=-1
 check=1
 }
 
-if argument0=sprPAttackPipe or argument0=sprPAttackClub or argument0=wpnAttackBat or sprite_index=sprPAttackCrowbar {
+if argument0=sprPAttackPipe or argument0=sprPAttackClub or argument0=sprPAttackBat or sprite_index=sprPAttackCrowbar {
 maskaddx[0]=0 maskaddy[0]=2
 maskaddx[1]=0 maskaddy[1]=0
 maskaddx[2]=0 maskaddy[2]=-1
@@ -532,13 +532,13 @@ maskaddx[3]=0 maskaddy[3]=0
 check=1
 }
 
-if argument0=wpnAttackM16 {
+if argument0=sprPAttackM16 {
 maskaddx[0]=0 maskaddy[0]=-1
 maskaddx[1]=0 maskaddy[1]=0
 check=1
 }
 
-if argument0=wpnAttackShotgun {
+if argument0=sprPAttackShotgun {
 maskaddx[0]=0 maskaddy[0]=-1
 maskaddx[1]=0 maskaddy[1]=-1
 maskaddx[2]=0 maskaddy[2]=-1
@@ -563,7 +563,7 @@ maskaddx[4]=0 maskaddy[4]=0
 check=1
 }
 
-if argument0=sprPAttackUnarmed {
+if argument0=sprPAttackPunch {
 maskaddx[0]=0 maskaddy[0]=0
 maskaddx[1]=0 maskaddy[1]=0
 maskaddx[2]=0 maskaddy[2]=-1
@@ -634,12 +634,12 @@ maskaddx[6]=0 maskaddy[6]=0
 
 if check=0 {
 maskaddx[0]=0 maskaddy[0]=0
-maskaddx[1]=0 maskaddy[1]=-.5
-maskaddx[2]=0 maskaddy[2]=-.5
-maskaddx[3]=0 maskaddy[3]=-.5
+maskaddx[1]=0 maskaddy[1]=-1
+maskaddx[2]=0 maskaddy[2]=-1
+maskaddx[3]=0 maskaddy[3]=-1
 maskaddx[4]=0 maskaddy[4]=0
-maskaddx[5]=0 maskaddy[5]=.5
-maskaddx[6]=0 maskaddy[6]=.5
-maskaddx[7]=0 maskaddy[7]=.5
+maskaddx[5]=0 maskaddy[5]=1
+maskaddx[6]=0 maskaddy[6]=1
+maskaddx[7]=0 maskaddy[7]=1
 maskaddx[8]=0 maskaddy[8]=0
 } 

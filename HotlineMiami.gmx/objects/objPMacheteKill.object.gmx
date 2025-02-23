@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objExecution</parentName>
+  <parentName>objPlayer</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -29,9 +29,7 @@
 bled=0
 scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
-ammo=0
-enemy=sprPKillMachete
-</string>
+ammo=0</string>
           </argument>
         </arguments>
       </action>
@@ -54,8 +52,11 @@ enemy=sprPKillMachete
           <argument>
             <kind>1</kind>
             <string>if image_index&lt;22 image_index+=0.2 else {
-createDeadBody(false,0,sprEDeadMachete,image_angle)
-my_id=instance_create(x,y,objPlayerJacket)
+my_id=instance_create(x,y,objDeadBody)
+my_id.image_angle=image_angle
+my_id.sprite_index=sprEDeadMachete
+my_id.image_speed=0.2
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.sprite_index=sprPWalkMachete
 my_id.maskon=global.maskon
 my_id.maskindex=global.maskindex
@@ -79,7 +80,8 @@ exit
 }
 if image_index&gt;=4 and bled=0{
 bled=1
-PlaySFX("Cut")
+audio_play_sound(choose(sndCut1,sndCut2),0,false)
+audio_play_sound(sndHit,0,false)
 repeat (2+random(3)) {
 instance_create(x+lengthdir_x(12,image_angle-3)-1+random(2),y+lengthdir_y(12,image_angle-3)-1+random(2),objBloodSquirt)
 }
@@ -93,7 +95,8 @@ my_id.image_angle=my_id.direction
 
 if image_index&gt;=11 and bled=1{
 bled=2
-PlaySFX("Cut")
+audio_play_sound(choose(sndCut1,sndCut2),0,false)
+audio_play_sound(sndHit,0,false)
 repeat (2+random(3)) {
 instance_create(x+lengthdir_x(12,image_angle-3)-1+random(2),y+lengthdir_y(12,image_angle-3)-1+random(2),objBloodSquirt)
 }
@@ -107,7 +110,8 @@ my_id.image_angle=my_id.direction
 
 if image_index&gt;=20 and bled=2{
 bled=3
-PlaySFX("Cut")
+audio_play_sound(choose(sndCut1,sndCut2),0,false)
+audio_play_sound(sndHit,0,false)
 repeat (7) {
 my_id=instance_create(x+lengthdir_x(12,image_angle)-1+random(2),y+lengthdir_y(12,image_angle)-1+random(2),objBloodSquirt)
 my_id.image_angle=image_angle-15+random(30)

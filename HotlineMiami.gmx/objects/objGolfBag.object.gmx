@@ -28,7 +28,29 @@
             <string>image_angle=random(360)
 image_speed=0
 dir=90
-</string>
+if global.xbox=1 scrInitXboxButtons()</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.xbox=1 scrXboxGolfbag()</string>
           </argument>
         </arguments>
       </action>
@@ -50,12 +72,12 @@ dir=90
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objPlayerJacket) or instance_exists(objPlayerMouseHouse) {
+            <string>if instance_exists(objPlayerMouse) or instance_exists(objPlayerMouseHouse) {
 if place_meeting(x,y,objPlayer) and image_index=0 {
 objPlayer.sprite_index=sprPWalkClub
 objPlayer.reload=10
 image_index=1
-PlaySFX("Pick Up")
+audio_play_sound(sndPickupWeapon,0,false)
 }
 }
 </string>
@@ -86,13 +108,12 @@ draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(
 d3d_set_fog(true,c_white,0,0)
 if room=rmPhoneHomUpstairs draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
 d3d_set_fog(0,0,0,0)
-if image_index=0 and room=rmPhoneHomUpstairs drawArrow(0,false);
+if image_index=0 and room=rmPhoneHomUpstairs draw_sprite_ext(sprArrow,0,x,y-12+lengthdir_x(4,dir*2),1,1,0,c_white,1)
 } else {
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 }
-if room=rmPhoneHomUpstairs dir+=4
-</string>
+if room=rmPhoneHomUpstairs dir+=4</string>
           </argument>
         </arguments>
       </action>

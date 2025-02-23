@@ -8,13 +8,13 @@
   <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>1</bbox_left>
-  <bbox_right>25</bbox_right>
-  <bbox_top>23</bbox_top>
-  <bbox_bottom>27</bbox_bottom>
+  <bbox_right>28</bbox_right>
+  <bbox_top>3</bbox_top>
+  <bbox_bottom>28</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
-    <TextureGroup0>8</TextureGroup0>
+    <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
   <width>32</width>

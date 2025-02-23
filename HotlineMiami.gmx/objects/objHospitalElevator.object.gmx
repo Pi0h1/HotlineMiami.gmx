@@ -78,7 +78,7 @@ if saved=0 {
 saved=1
 global.loaded=1
 objPlayer.persistent=0
-SaveGameState();
+game_save(working_directory+"\tempsave.sav")
 global.loaded=0
 }
 if image_index&lt;6 image_index+=0.5 else wait=30
@@ -141,8 +141,7 @@ objEffector.nextroom=nextroom
 }
 }
 
-if image_index&lt;3 mask_index=sprite_index else mask_index=sprElevatorMask
-</string>
+if image_index&lt;3 mask_index=sprite_index else mask_index=sprElevatorMask</string>
           </argument>
         </arguments>
       </action>

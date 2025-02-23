@@ -7,19 +7,20 @@
   <coltolerance>0</coltolerance>
   <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>2</bbox_left>
+  <bbox_left>1</bbox_left>
   <bbox_right>6</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>7</bbox_bottom>
+  <bbox_bottom>31</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
-    <TextureGroup0>6</TextureGroup0>
+    <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
   <width>8</width>
-  <height>8</height>
+  <height>32</height>
   <frames>
     <frame index="0">images\sprWoodFenceV_0.png</frame>
+    <frame index="1">images\sprWoodFenceV_1.png</frame>
   </frames>
 </sprite>

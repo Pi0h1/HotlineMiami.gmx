@@ -16,7 +16,7 @@ if alert<2 and alert>0 {
 scrAttack(objPlayer.x,objPlayer.y,10,4)
 if reload>0 reload-=1 else {
 if point_distance(x,y,objPlayer.x,objPlayer.y)<18 {
-PlaySFX(choose(sndSwing1,sndSwing2))
+audio_play_sound(choose(sndSwing1,sndSwing2),0,false)
 if scrIsSearching(sprite_index) sprite_index=scrStopSearch(sprite_index)
 sprite_index=scrGetAttack(sprite_index)
 image_index=1

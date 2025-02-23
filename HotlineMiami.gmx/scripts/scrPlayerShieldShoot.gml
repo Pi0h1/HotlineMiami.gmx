@@ -7,7 +7,7 @@ mask_index=sprBullet
 image_angle=dir
 
 if sprite_index=sprPHumanShieldDoubleBarrel {
-PlaySFX(sndDoubleBarrel)
+audio_play_sound(sndDoubleBarrel,0,false)
 scrHearPlayer()
 ammo-=1
 reload=8
@@ -36,7 +36,7 @@ light=25
 
 
 if sprite_index=sprPHumanShieldSilencer {
-PlaySFX(sndSilencer)
+audio_play_sound(sndSilencer,0,false)
 ammo-=1
 reload=10
 if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objSolid) {
@@ -67,7 +67,7 @@ light=12
 
 
 if sprite_index=sprPHumanShieldUzi {
-PlaySFX(sndUzi)
+audio_play_sound(sndUzi,0,false)
 scrHearPlayer()
 ammo-=1
 reload=1
@@ -98,7 +98,7 @@ light=12
 }
 
 if sprite_index=sprPHumanShieldMP5 {
-PlaySFX(sndMP5)
+audio_play_sound(sndMP5,0,false)
 scrHearPlayer()
 ammo-=1
 reload=2
@@ -129,7 +129,7 @@ light=12
 }
 
 if sprite_index=sprPHumanShieldMagnum {
-PlaySFX(sndMagnum)
+audio_play_sound(sndMagnum,0,false)
 scrHearPlayer()
 ammo-=1
 reload=8
@@ -156,7 +156,7 @@ light=12
 }
 
 if sprite_index=sprPHumanShieldScorpion {
-PlaySFX(sndScorpion)
+audio_play_sound(sndScorpion,0,false)
 scrHearPlayer()
 ammo-=1
 reload=2

@@ -1,0 +1,1 @@
+global.currentsong=0

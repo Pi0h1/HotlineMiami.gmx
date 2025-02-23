@@ -9,7 +9,7 @@ if reload>0 reload-=1 else {
 ammo-=1
 light=10
 global.shake=3
-PlaySFX(sndEM16)
+audio_play_sound(sndEM16,0,false)
 mask_index=sprWeaponMask
 reload=5
 if place_meeting(x+lengthdir_x(8,angle),y+lengthdir_y(8,angle),objSolid) {

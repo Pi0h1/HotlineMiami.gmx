@@ -52,16 +52,17 @@ image_speed=0
             <kind>1</kind>
             <string>if hurtindex=10 {
 if image_index=0 {
-instance_create(x,y,objPlayerJacket)
+instance_create(x,y,objPlayerMouse)
 global.done=1
 with objDoorH solid=0
 with objDoorH2 solid=0
 my_id=instance_create(x+lengthdir_x(11,image_angle),y+lengthdir_y(11,image_angle),objBloodPool)
-createDeadBody(false,0,sprBoss2Dead,image_angle)
+my_id=instance_create(x,y,objDeadBody)
+my_id.sprite_index=sprBoss2Dead
+my_id.image_angle=image_angle
 instance_destroy()
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -89,8 +90,8 @@ if targetindex=4 targetindex=8
 if targetindex=0 targetindex=4
 hurtindex+=1
 image_index=7
-PlaySFX(sndHit)
-PlaySFX(sndPunch)
+audio_play_sound(sndHit,0,false)
+audio_play_sound(sndPunch,0,false)
 repeat (1+random(3)) {
 instance_create(x+lengthdir_x(18,image_angle-1+random(2)),y+lengthdir_y(18,image_angle-1+random(2)),objBloodSquirt)
 }

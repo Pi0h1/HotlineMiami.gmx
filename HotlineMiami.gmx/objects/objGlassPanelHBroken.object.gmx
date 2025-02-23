@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mp_grid_add_instances(global.grid,id,1)
-PlaySFX("Strong Glass")
-</string>
+            <string>mp_grid_add_instances(global.grid,id,1)</string>
           </argument>
         </arguments>
       </action>

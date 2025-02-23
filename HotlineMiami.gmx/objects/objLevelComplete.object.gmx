@@ -36,7 +36,7 @@ file=file_text_open_write(working_directory+"\restartmusic")
 file_text_writeln(file)
 file_text_close(file)
 } else {
-PlaySFX(sndComplete)
+audio_play_sound(sndComplete,0,false)
 sxeasy_setVolume(1)
 sxeasy_play(working_directory+"\Static.mp3")
 }

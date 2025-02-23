@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>Effects</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,9 +31,7 @@ startspeed=0
 image_speed=0
 image_angle=random(360)
 image_index=floor(random(10000))
-//image_blend=c_aqua
-done=0
-</string>
+image_blend=c_aqua</string>
           </argument>
         </arguments>
       </action>
@@ -59,7 +57,6 @@ done=0
 image_angle+=rotspeed
 if speed=0 {
 rotspeed=0;
-done=1
 }
 </string>
           </argument>
@@ -83,8 +80,8 @@ done=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-</string>
+            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.25)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,0.5)</string>
           </argument>
         </arguments>
       </action>

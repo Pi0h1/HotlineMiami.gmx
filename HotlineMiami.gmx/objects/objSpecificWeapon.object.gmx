@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index=sprWeapons
-image_angle=random(360)
+            <string>image_angle=random(360)
 ammo=0
 if image_index=0 ammo=24
 if image_index=1 ammo=6
@@ -37,8 +36,7 @@ if image_index=10 ammo=6
 if image_index=11 ammo=20
 if image_index=12 ammo=32
 image_speed=0
-dir=random(360)
-</string>
+dir=random(360)</string>
           </argument>
         </arguments>
       </action>
@@ -84,8 +82,16 @@ if round(random(5))=2 instance_create(x+lengthdir_x(3,image_angle),y+lengthdir_y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-</string>
+            <string>/*draw_sprite_ext(sprite_index,image_index,x-1,y,image_xscale,image_yscale,image_angle,c_black,image_alpha)
+draw_sprite_ext(sprite_index,image_index,x,y+1,image_xscale,image_yscale,image_angle,c_black,image_alpha)
+draw_sprite_ext(sprite_index,image_index,x,y-1,image_xscale,image_yscale,image_angle,c_black,image_alpha)
+draw_sprite_ext(sprite_index,image_index,x+1,y,image_xscale,image_yscale,image_angle,c_black,image_alpha)*/
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5)
+draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+d3d_set_fog(true,c_white,0,0)
+draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
+d3d_set_fog(0,0,0,0)
+dir+=4</string>
           </argument>
         </arguments>
       </action>

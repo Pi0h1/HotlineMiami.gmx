@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>objKillable</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>sprMask</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -60,21 +60,20 @@ image_speed=0.35
 }
 }
 kill=0
-kill=keyboard_check(vk_space)
+if global.xbox=1 kill=checkbutton(0,getid(11)) else kill=keyboard_check(vk_space)
 if kill {
 image_xscale=2
 image_yscale=2
 if place_meeting(x,y,objPlayer) {
-if objPlayer.sprite_index=sprPWalkUnarmed or objPlayer.sprite_index=sprPAttackUnarmed my_id=instance_create(x,y,objPHoboBash)
-if objPlayer.sprite_index=wpnWalkBat or objPlayer.sprite_index=wpnAttackBat my_id=instance_create(x,y,objPHoboBlunt)
+if objPlayer.sprite_index=sprPWalkUnarmed or objPlayer.sprite_index=sprPAttackPunch my_id=instance_create(x,y,objPHoboBash)
+if objPlayer.sprite_index=sprPWalkBat or objPlayer.sprite_index=sprPAttackBat my_id=instance_create(x,y,objPHoboBlunt)
 my_id.image_angle=image_angle
-with objPlayerJacket instance_destroy()
+with objPlayerMouse instance_destroy()
 instance_destroy()
 }
 image_xscale=1
 image_yscale=1
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -128,8 +127,8 @@ instance_destroy()</string>
             <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 
-drawArrow(180,false);
-</string>
+draw_sprite_ext(sprArrow,0,x,y-8+lengthdir_x(3,dir),1,1,180,c_white,1)
+dir+=8</string>
           </argument>
         </arguments>
       </action>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>objActor</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,11 +25,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0;
-animSpeed=0.1;
+            <string>image_speed=0.1
 dir=random(360)
-talked=0
-</string>
+talked=0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.xbox=1 scrXboxNickeTalkPizza()</string>
           </argument>
         </arguments>
       </action>
@@ -112,9 +132,9 @@ draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_ang
 draw_sprite_ext(sprite_index,image_index,x-1,y-1,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 
 if talked=0 {
-drawArrow(180,false);
-}
-</string>
+draw_sprite_ext(sprArrow,0,x+lengthdir_x(16-lengthdir_x(3,dir),image_angle-90),y+lengthdir_y(16-lengthdir_x(3,dir),image_angle-90),1,1,image_angle+180,image_blend,image_alpha)
+dir+=8
+}</string>
           </argument>
         </arguments>
       </action>

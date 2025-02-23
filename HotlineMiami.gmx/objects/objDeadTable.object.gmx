@@ -56,12 +56,11 @@ objPlayer.active=0
 }
 
 if instance_exists(objPhoneConversation) and global.talked=2 {
-if image_index&lt;5 image_index+=0.2 * delta
+if image_index&lt;5 image_index+=0.2
 } else {
-if image_index&gt;0 image_index-=0.2 * delta
+if image_index&gt;0 image_index-=0.2
 if global.talked=2 objPlayer.active=1
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

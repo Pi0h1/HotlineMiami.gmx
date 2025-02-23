@@ -25,11 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-animSpeed=0.15
+            <string>image_speed=0.15
 dir=random(360)
-talked=0
-</string>
+talked=0</string>
           </argument>
         </arguments>
       </action>
@@ -51,9 +49,7 @@ talked=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-
-if talked=1 {
+            <string>if talked=1 {
 if !instance_exists(objPhoneConversation) {
 if objBoss2Corpse.state=0 {
 objBoss2Corpse.state=1
@@ -87,7 +83,8 @@ brus=2+floor(random(8))
 if objEffectorHouse.brus&lt;brus objEffector.brus=brus
 }
 }
-</string>
+
+if global.xbox=1 scrXboxNickeTalkSpecial()</string>
           </argument>
         </arguments>
       </action>
@@ -168,9 +165,9 @@ draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_ang
 draw_sprite_ext(sprite_index,image_index,x-1,y-1,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 
 if talked=0 {
-drawArrow(image_angle,false);
-}
-</string>
+draw_sprite_ext(sprArrow,0,x+lengthdir_x(16-lengthdir_x(3,dir),image_angle+90),y+lengthdir_y(16-lengthdir_x(3,dir),image_angle+90),1,1,image_angle,image_blend,image_alpha)
+dir+=8
+}</string>
           </argument>
         </arguments>
       </action>

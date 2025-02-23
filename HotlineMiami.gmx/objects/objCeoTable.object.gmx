@@ -29,7 +29,7 @@
 dir=0
 active=1
 state=0
-</string>
+if global.xbox=1 scrInitXboxButtons()</string>
           </argument>
         </arguments>
       </action>
@@ -74,15 +74,16 @@ state=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if state=1 {
+            <string>if global.xbox=1 scrXboxCeoTable()
+
+if state=1 {
 if !instance_exists(objPhoneConversation) {
 state=2
 instance_create(320,40,objPlayerBoss)
 }
 } else {
 if room=rmPhoneHomUpstairsBiker and state=0 and !instance_exists(objCEO) with objElevator valid=0
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -156,13 +157,14 @@ active=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room=rmPhoneHomUpstairsBiker {
+            <string>event_inherited()
+
+if room=rmPhoneHomUpstairsBiker {
 if !instance_exists(objCEO) and active=1 {
-drawArrow(0,false);
+draw_sprite_ext(sprArrow,0,x+12,y-20+lengthdir_x(3,dir),1,1,0,c_white,1)
+dir+=3
 }
-}
-draw_self();
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

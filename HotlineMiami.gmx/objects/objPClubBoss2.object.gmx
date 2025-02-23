@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objExecution</parentName>
+  <parentName>objPlayer</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -34,9 +34,7 @@ scrUpdateMaskPos(sprite_index)
 ammo=0
 global.maskon=1
 maskon=1
-maskindex=global.maskindex
-enemy=sprite_index
-</string>
+maskindex=global.maskindex</string>
           </argument>
         </arguments>
       </action>
@@ -60,8 +58,12 @@ enemy=sprite_index
             <kind>1</kind>
             <string>if image_index&lt;17 image_index+=0.2 else {
 instance_create(x+lengthdir_x(18,image_angle),y+lengthdir_y(18,image_angle),objBloodPool)
-createDeadBody(false,0,sprBoss2Clubbed,image_angle)
-my_id=instance_create(x,y,objPlayerJacket)
+my_id=instance_create(x,y,objDeadBody)
+my_id.image_angle=image_angle
+my_id.sprite_index=sprBoss2Clubbed
+my_id.image_index=hurtindex
+my_id.image_yscale=1
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.sprite_index=sprPWalkClub
 my_id.maskon=1
 my_id.maskindex=global.maskindex
@@ -76,7 +78,10 @@ if image_index&gt;=11 and bled=0 {
 bled=1
 hurtindex=1
 targetindex=3
-PlaySFX("Hard Blunt")
+audio_play_sound(sndPunch,0,false)
+audio_play_sound(sndDoorHit,0,false)
+audio_play_sound(sndNeck,0,false)
+audio_play_sound(sndHit,0,false)
 global.shake=5
 repeat (3+random(3)) {
 my_id=instance_create(x+lengthdir_x(18,image_angle)-1+random(2),y+lengthdir_y(18,image_angle)-1+random(2),objBloodSmoke)

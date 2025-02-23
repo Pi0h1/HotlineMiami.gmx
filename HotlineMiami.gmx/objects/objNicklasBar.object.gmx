@@ -25,12 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-animSpeed=0.1
+            <string>image_speed=0.1
 dir=random(360)
 talked=0
-served=0
-</string>
+served=0</string>
           </argument>
         </arguments>
       </action>
@@ -52,9 +50,7 @@ served=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-
-if talked=1 and !instance_exists(objPhoneConversation) {
+            <string>if talked=1 and !instance_exists(objPhoneConversation) {
 if served=0 {
 served=1 {sprite_index=sprNicklasServe image_index=0}
 }
@@ -68,7 +64,8 @@ served=2
 }
 }
 }
-</string>
+
+if global.xbox=1 scrXboxNickeTalkBar()</string>
           </argument>
         </arguments>
       </action>
@@ -172,9 +169,9 @@ draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_ang
 draw_sprite_ext(sprite_index,image_index,x-1,y-1,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 
 if talked=0 {
-drawArrow(image_angle-90,false);
-}
-</string>
+draw_sprite_ext(sprArrow,0,x+lengthdir_x(16-lengthdir_x(3,dir),image_angle-90),y+lengthdir_y(16-lengthdir_x(3,dir),image_angle-90),1,1,image_angle+180,image_blend,image_alpha)
+dir+=8
+}</string>
           </argument>
         </arguments>
       </action>

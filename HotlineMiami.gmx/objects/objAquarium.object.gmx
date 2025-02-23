@@ -52,7 +52,7 @@ my_id=instance_create(x,y,objAquariumBreak)
 my_id.image_angle=image_angle
 my_id=instance_create(x,y,objAquariumWater)
 my_id.image_angle=image_angle
-PlaySFX("Glass")
+audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
 global.shake=2
 i=0
 start_x=x+lengthdir_x(9,image_angle)+lengthdir_x(28,image_angle-90)

@@ -29,13 +29,41 @@
 if place_meeting(x,y,objPlayer) {
 global.my_id=id
 with objPlayer {
-createDeadBody(true,1,sprPBackNinjaKnife,global.my_id.direction)
-PlaySFX("Light Cut")
+my_id=instance_create(x,y,objPlayerDead)
+my_id.sprite_index=sprPBackNinjaKnife
+my_id.image_angle=global.my_id.direction
+my_id.direction=my_id.direction
+my_id.speed=1
+audio_play_sound(sndCut1,0,false)
 instance_destroy()
 }
 instance_destroy()
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objWallHeavyH">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if speed=0 exit
+move_contact_solid(direction,speed)
+speed=0</string>
           </argument>
         </arguments>
       </action>

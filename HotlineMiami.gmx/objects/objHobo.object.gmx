@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>objKillable</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>sprBodyMask</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -67,11 +67,12 @@ state=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
+            <string>if global.xbox=1 scrXboxRestart()
+if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
 if state=0 {
 if objEffector.amount&gt;=180 {
-if instance_exists(objPlayerJacket) {
-with objPlayerJacket {
+if instance_exists(objPlayerMouse) {
+with objPlayerMouse {
 my_id=instance_create(x,y,objPlayerMouseHouse)
 my_id.active=0
 my_id.sprite_index=sprite_index
@@ -87,7 +88,7 @@ state=1
 test=objPlayer.persistent
 objPlayer.persistent=0
 global.loaded=1
-SaveGameState();
+game_save(working_directory+"\tempsave.sav")
 //if !instance_exists(objMaskMenu) instance_create(x,y,objCheckpoint)
 global.loaded=0
 objPlayer.persistent=test
@@ -98,7 +99,7 @@ if state=1 {
 if !instance_exists(objPhoneConversation) {
 state=2
 with objPlayer {
-my_id=instance_create(x,y,objPlayerJacket)
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.active=0
 my_id.sprite_index=sprPWalkUnarmed
 my_id.ammo=ammo
@@ -112,7 +113,7 @@ instance_destroy()
 
 if instance_exists(objPlayer) {
 global.test=0
-with objPlayer {if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),objHobo) {if sprite_index=sprPAttackUnarmed global.test=2 if sprite_index=wpnAttackBat global.test=1}}
+with objPlayer {if place_meeting(x+lengthdir_x(16,dir),y+lengthdir_y(16,dir),objHobo) {if sprite_index=sprPAttackPunch global.test=2 if sprite_index=sprPAttackBat global.test=1}}
 if global.test=1 {
 pdir=point_direction(objPlayer.x,objPlayer.y,x,y)
 repeat (8) {
@@ -152,8 +153,8 @@ my_id.direction=random(360)
 my_id.speed=random(2)
 my_id.ammo=0
 }
-PlaySFX(sndDoorHit)
-PlaySFX(sndHit)
+audio_play_sound(sndDoorHit,0,false)
+audio_play_sound(sndHit,0,false)
 instance_destroy()
 }
 
@@ -169,7 +170,7 @@ my_id.direction=random(360)
 my_id.ammo=0
 my_id.speed=random(2)
 }
-PlaySFX(sndDoorHit)
+audio_play_sound(sndDoorHit,0,false)
 instance_destroy()
 }
 } else {

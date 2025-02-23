@@ -28,8 +28,8 @@
             <string>scrEFatInit()
 image_speed=0
 image_index=random(1000)
-speed=1*delta
-image_speed=0.1*delta
+speed=1
+image_speed=0.1
 energie=round(random(1))
 
 path=path_add()
@@ -48,9 +48,7 @@ weaponfind=0
 hits=0
 blood=120
 wait=0
-shotgunned=0
-shake = 0;
-</string>
+shotgunned=0</string>
           </argument>
         </arguments>
       </action>
@@ -84,12 +82,17 @@ instance_create(x-8+random(16),y-8+random(16),objBloodSplat)
 }
 if blood&lt;=0 or hits&gt;6 {
 if speed&gt;0 {
-if shotgunned=1 createDeadBody(false,0,sprEFatDead,direction) else createDeadBody(false,0,sprEFatDead,direction)
+my_id=instance_create(x,y,objDeadBody)
+my_id.direction=direction
+my_id.speed=speed
+my_id.sprite_index=sprEFatDead
+if shotgunned=1 my_id.image_index=floor(random(2)) else my_id.image_index=2+floor(random(2))
+my_id.image_angle=my_id.direction
 instance_destroy()
 } else {
 sprite_index=sprEFatDie
 image_index=1
-image_speed=0.15*delta
+image_speed=0.15
 speed=0
 if global.enemy=id global.enemy=-1234
 }
@@ -121,15 +124,15 @@ exit
 
 if reload&gt;0 reload-=1
 if path_index&gt;0 {
-if image_speed&lt;(1*delta) image_speed=0.2*delta
+if image_speed&lt;1 image_speed=0.2
 if alert=0 and path_position=1 path_end()
 } else {
-if image_speed&lt;(1*delta) image_speed=(speed*0.1)*delta
+if image_speed&lt;1 image_speed=speed*0.1
 if !place_free(x,y) {
 tempdir=direction
 i=1
 while (!place_free(x+lengthdir_x(4+i/20,tempdir),y+lengthdir_y(4+i/20,tempdir))) and i&lt;100 {
-tempdir+=(18*delta)
+tempdir+=18
 i+=1
 }
 if i&lt;100 move_outside_solid(tempdir,4+i/20)
@@ -146,8 +149,7 @@ if scrIsSearching(sprite_index) scrStopSearch(sprite_index)
 global.my_id=id
 scrPlayerDieMelee()
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -176,7 +178,7 @@ if global.bonustime&lt;12 global.bonustime=12
 global.my_x=other.dirx
 global.my_y=other.diry
 with objEnemy {
-if scrCollisionLineExt(x,y,global.my_id.x,global.my_id.y,4,objSolid,objDoorV,objWallSoft)=0 {
+if scrCollisionLineExt(x,y,global.my_id.x,global.my_id.y,4,objSolid,objDoorV,objWallSoftH)=0 {
 alert=2
 checkreload=50
 reload=10
@@ -185,7 +187,7 @@ chasey=global.my_y
 }
 }
 }
-if speed&gt;(0.2*delta) speed-=(0.2*delta)
+if speed&gt;0.2 speed-=0.2
 image_xscale=1.5
 image_yscale=1.5
 bullets=0
@@ -193,7 +195,7 @@ with objBullet {
 if place_meeting(x,y,global.my_id) {
 my_id=instance_create(x,y,objBloodSmoke)
 my_id.direction=direction-170+random(10)
-my_id.speed=1*delta
+my_id.speed=1
 my_id.image_angle=my_id.direction
 my_id.image_xscale=0.8+random(0.2)
 my_id.image_yscale=my_id.image_xscale
@@ -218,7 +220,7 @@ my_id.image_yscale=my_id.image_xscale
 my_id.image_angle=point_direction(x+lengthdir_x(8,edir),y+lengthdir_y(8,edir),my_id.x,my_id.y)
 my_id.sprite_index=sprBloodSplatSmall
 my_id.direction=my_id.image_angle
-my_id.speed=(2+random(4))*delta
+my_id.speed=2+random(4)
 }
 repeat (1+random(bullets)) {
 my_id=instance_create(x-3+random(6)+lengthdir_x(8,edir),y-3+random(6)+lengthdir_y(8,edir),objBloodDrop)
@@ -226,7 +228,7 @@ my_id.image_xscale=1-random(0.2)
 my_id.image_yscale=my_id.image_xscale
 my_id.image_angle=point_direction(x+lengthdir_x(8,edir),y+lengthdir_y(8,edir),my_id.x,my_id.y)
 my_id.direction=my_id.image_angle
-my_id.speed=(1+random(5))*delta
+my_id.speed=1+random(5)
 }
 repeat (bullets) {
 my_id=instance_create(x-3+random(6)+lengthdir_x(16,edir),y-3+random(6)+lengthdir_y(16,edir),objBloodSmoke)
@@ -234,7 +236,7 @@ my_id.image_xscale=1.2-random(0.2)
 my_id.image_yscale=my_id.image_xscale
 my_id.image_angle=edir-20+random(40)
 my_id.direction=my_id.image_angle
-my_id.speed=(2+random(1))*delta
+my_id.speed=2+random(1)
 my_id.friction=0.15
 }
 
@@ -262,17 +264,22 @@ my_id.friction=0.15
             <kind>1</kind>
             <string>update=0
 if sprite_index=sprEFatDie {
-if shotgunned=1 createDeadBody(false,0,sprEFatDead,direction-180) else createDeadBody(false,0,sprEFatDead,direction-180)
+my_id=instance_create(x,y,objDeadBody)
+my_id.direction=direction-180
+my_id.speed=0.5
+my_id.sprite_index=sprEFatDead
+if shotgunned=1 my_id.image_index=floor(random(2)) else my_id.image_index=2+floor(random(2))
+my_id.image_angle=my_id.direction
 instance_destroy()
 exit
 }
+
 if sprite_index=sprEFatAttack {sprite_index=sprEFatWalk update=1}
 if sprite_index=sprESearchFat {sprite_index=sprEFatWalk image_speed=0}
 if update=1 {
 image_speed=0
 image_yscale=-image_yscale
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -321,12 +328,13 @@ draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)
 if sprite_index=sprEFatDie or scrIsSearching(sprite_index) nothing=1 else {
+draw_sprite_ext(sprEFatLegs,image_index*2,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
 draw_sprite_ext(sprEFatLegs,image_index*2,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
 }
+draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
 draw_set_color(c_white)
-//draw_path(my_path,0,0,1)
-</string>
+//draw_path(my_path,0,0,1)</string>
           </argument>
         </arguments>
       </action>

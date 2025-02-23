@@ -36,7 +36,7 @@ my_id.direction=random(360)
 my_id.speed=2+random(3)
 my_id.friction=0.15
 }
-PlaySFX(sndMolotov)
+audio_play_sound(sndMolotov,0,false)
 </string>
           </argument>
         </arguments>

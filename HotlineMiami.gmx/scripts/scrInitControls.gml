@@ -13,6 +13,23 @@ move[11]="Advance Dialogue"
 move[12]="Skip Dialogue"
 move[13]="Pause Menu"
 move[14]="Restart"
+if global.xbox {
+control[0]="Left Thumbstick"
+control[1]="Left/Right Trigger"
+control[2]="Right Trigger"
+control[3]="Left Trigger"
+control[5]="Right Trigger"
+control[4]="Right Trigger"
+control[6]="Left Trigger"
+control[7]="N/A"
+control[8]="A Button"
+control[9]="Left Button"
+control[10]="A Button"
+control[11]="A Button"
+control[12]="Hold Start"
+control[13]="Back"
+control[14]="Start"
+} else {
 control[0]="W, A, S, D"
 control[1]="Left/Right Mouse Button"
 control[2]="Left Mouse Button"
@@ -28,7 +45,12 @@ control[11]="Left/Right Mouse Button"
 control[12]="Hold Right Mouse Button"
 control[13]="ESC"
 control[14]="R"
-condition[0]="[enter] to reconfigure"
+}
+
+
+
+
+if global.xbox=1 condition[0]="" else condition[0]="[enter] to reconfigure"
 condition[1]="(story object)"
 condition[2]="(unarmed)"
 condition[3]="(close to weapon)"
@@ -46,12 +68,12 @@ condition[14]="[enter] to reconfigure"
 
 sprite[0]=sprPWalkUnarmed
 sprite[1]=sprPWalkUnarmed
-sprite[2]=sprPAttackUnarmed
+sprite[2]=sprPAttackPunch
 sprite[3]=sprPWalkUnarmed
-sprite[4]=wpnAttackBat
-sprite[5]=wpnAttackShotgun
+sprite[4]=sprPAttackBat
+sprite[5]=sprPAttackShotgun
 sprite[6]=sprPWalkKnife
-sprite[7]=wpnWalkBat
+sprite[7]=sprPWalkBat
 sprite[8]=sprPAttackBash
 sprite[9]=sprPAttackSilencer
 sprite[10]=sprPHumanShieldDoubleBarrel

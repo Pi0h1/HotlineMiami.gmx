@@ -28,6 +28,7 @@
             <string>if global.barehanded=1 and scrGetCurrentLevel()=5 SteamSetAchievement("ACH_THESE_ARE_MY_GUNS")
 scrSaveAchievements()
 scrCheckGuns()
+if global.xbox=1 scrInitXboxButtons()
 scrCountFlexibilityScore()
 scrCountMobilityScore()
 scrCheckLetters()
@@ -131,8 +132,7 @@ if global.sequence=rmMCSequence3 global.currentmask=17
 -Distance between kills = Mobility Bonus
 -Only melee bonus = Melee Bonus
 -Shots fired during combat = Artillery Bonus
--People who see you kill someone = Boldness Bonus*/
-</string>
+-People who see you kill someone = Boldness Bonus*/</string>
           </argument>
         </arguments>
       </action>
@@ -154,7 +154,18 @@ if global.sequence=rmMCSequence3 global.currentmask=17
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fastforward=mouse_check_button(mb_left)
+            <string>if global.xbox=1 {
+fastforward=0
+if checkbutton(0,getid(5)) {
+if presstart=0 {
+presstart=1
+scrXboxScoreStatsStart()
+} else {fastforward=1}
+} else presstart=0
+} else {
+fastforward=mouse_check_button(mb_left)
+}
+
 SteamRunCallbacks()
 if !surface_exists(global.surf1) {
 global.surf1=surface_create(room_width,room_height)
@@ -162,6 +173,7 @@ surface_set_target(global.surf1)
 draw_clear_alpha(c_black,0)
 surface_reset_target()
 }
+
 surface_set_target(global.surf1)
 draw_clear_alpha(c_black,0)
 draw_set_font(fntPointShow)
@@ -212,8 +224,7 @@ draw_text_transformed(200,view_hview[0]-64,string(global.myscore)+parscore,0.65+
 i+=1
 }
 }
-surface_reset_target()
-</string>
+surface_reset_target()</string>
           </argument>
         </arguments>
       </action>
@@ -235,9 +246,9 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if factor&lt;1 exit
-fade=1
-</string>
+            <string>if global.xbox=1 exit
+if factor&lt;1 exit
+fade=1</string>
           </argument>
         </arguments>
       </action>
@@ -340,8 +351,14 @@ room_goto(next)
 
 d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 draw_set_color(c_black)
-scrDrawFilter();
-</string>
+//draw_rectangle(0,0,room_width,55,0)
+//draw_rectangle(0,room_height,room_width,room_height-65,0)
+draw_set_blend_mode(bm_subtract)
+my_y=random(32)
+draw_sprite_tiled(sprScanlines,0,0,my_y)
+draw_set_blend_mode(bm_subtract)
+draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
+draw_set_blend_mode(bm_normal)</string>
           </argument>
         </arguments>
       </action>

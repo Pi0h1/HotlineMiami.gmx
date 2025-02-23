@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objExecution</parentName>
+  <parentName>objPlayer</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,9 +31,7 @@ ammo=0
 bled=0
 scrInitMaskPos()
 scrUpdateMaskPos(sprite_index)
-bag=0
-enemy=sprEMafiaDieNeckBreak
-</string>
+bag=0</string>
           </argument>
         </arguments>
       </action>
@@ -69,9 +67,13 @@ global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
 ds_list_add(global.bonuslist,"Mercy Kill")
-createDeadBody(false,0,sprEMafiaDieNeckBreak,image_angle) //Snapped
+my_id=instance_create(myx,myy,objBloodPool)
+my_id=instance_create(x,y,objDeadBody)
+my_id.sprite_index=sprEFrontSnap//Snapped
+my_id.image_index=random(4)
+my_id.image_angle=image_angle
 global.angle=image_angle-180
-my_id=instance_create(x,y,objPlayerJacket)
+if global.controller=1 my_id=instance_create(x,y,objPlayerController) else my_id=instance_create(x,y,objPlayerMouse)
 my_id.reload=30
 if bag=1 my_id.sprite_index=sprPWalkBag
 with my_id move_outside_solid(global.angle,16)
@@ -80,7 +82,7 @@ instance_destroy()
 
 if bled=0 and image_index&gt;=6 {
 bled=1
-PlaySFX(sndBonesBreak)
+audio_play_sound(sndBonesBreak,0,false)
 }
 vdist=point_distance(x,y,room_width/2,room_height/2)
 vdir=point_direction(room_width/2,room_height/2,x,y)
@@ -136,13 +138,10 @@ view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
             <string>draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6),make_color_hsv(0,0,30),c_black,0)
 draw_set_blend_mode(bm_normal)
-
+draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
 dir=point_direction(x,y,mouse_x,mouse_y)
-
-draw_sprite_ext(enemy,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-if maskon=1 scrDrawMask(1)
-</string>
+if maskon=1 scrDrawMask(1)</string>
           </argument>
         </arguments>
       </action>

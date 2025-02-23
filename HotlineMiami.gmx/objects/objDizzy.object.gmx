@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>draw_clear(c_black)
+screen_refresh()
 surface_free(global.surf2)
 global.surf2=surface_create(view_wport,view_hport)
 //scrSaveTiles()
@@ -44,8 +45,7 @@ myy2=0
 h1=0
 h2=155
 dir=random(10000)
-noiseindex=0
-</string>
+noiseindex=0</string>
           </argument>
         </arguments>
       </action>
@@ -145,7 +145,7 @@ draw_circle_color(view_wport/2,view_hport/2,view_wport*0.75,c_black,make_color_h
 
 draw_set_blend_mode(bm_add)
 noiseindex+=0.25
-d3d_set_projection_ortho(0,0,400,256,0)
+d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 draw_sprite_ext(sprNoise,noiseindex,0,0,1,1,0,merge_color(c_black,c_ltgray,dizziness*0.5),1)
 draw_set_blend_mode(bm_normal)
 with objEffectorHospital {
@@ -247,7 +247,7 @@ draw_set_blend_mode(bm_subtract)
 draw_rectangle_color(-10,-10,view_wview[0]+10,view_hview[0]+10,color2,color1,color1,color2,0)
 draw_set_blend_mode(bm_normal)
 } else {fade=0 if restart=1 {sxeasy_stop(1) sxeasy_setVolume(0) game_restart()//sxeasy_play(working_directory+"\HorseSteppin.mp3"); room=rmMenu
-} else {if next=1 {if newsong=1 {sxeasy_stop(1) if room=rmDream1 sxeasy_setVolume(0) sxeasy_play(song);} room=nextroom} else {scrRestart();}}}
+} else {if next=1 {if newsong=1 {sxeasy_stop(1) if room=rmDream1 sxeasy_setVolume(0) sxeasy_play(song);} room=nextroom} else {game_load(working_directory+"\tempsave.sav")}}}
 }
 coldir+=1
 if show_date=1 {
@@ -262,16 +262,23 @@ draw_text(view_wview[0]/2+1,view_hview[0]/2+1,text)
 draw_set_color(c_white)
 draw_text(view_wview[0]/2,view_hview[0]/2,text)
 draw_set_alpha(1)
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
+//d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 }
-scrDrawFilter();
+
+draw_set_blend_mode(bm_subtract)
+draw_sprite_tiled(sprScanlines,0,0,my_y)
+my_y=random(32)
+draw_set_blend_mode(bm_subtract)
+draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
+draw_set_blend_mode(bm_normal)
 }
+
+screen_refresh()
 if round(random(100))=2 myx1=-dizziness*20+random(dizziness*40)
 if round(random(100))=2 myx2=-dizziness*20+random(dizziness*40)
 if round(random(100))=2 myy1=-dizziness*20+random(dizziness*40)
 if round(random(100))=2 myy2=-dizziness*20+random(dizziness*40)
-//if check=1 scrSurfaceTiles()
-</string>
+//if check=1 scrSurfaceTiles()</string>
           </argument>
         </arguments>
       </action>

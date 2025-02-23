@@ -1,0 +1,19 @@
+if replace=0
+{
+my_i=instance_create(x,y,dead_patroller)
+my_i.image_angle=dead_dir
+my_i.direction=dead_dir
+my_i.speed=2
+my_i=instance_create(x,y,gun_drop)
+my_i.image_angle=dead_dir+90
+my_i.direction=dead_dir-45-25+random(50)
+my_i.speed=1+random(0.5)
+}
+else
+{
+my_i=instance_create(x,y,searcher)
+my_i.energie=energie
+my_i.direction=direction
+my_i.image_angle=image_angle
+my_i.active=active
+}

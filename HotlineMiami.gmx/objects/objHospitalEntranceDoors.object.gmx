@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-animSpeed=0.5
-</string>
+            <string>image_speed=0</string>
           </argument>
         </arguments>
       </action>
@@ -52,13 +50,12 @@ animSpeed=0.5
             <string>if instance_exists(objPlayer) {
 if point_distance(x,y+32,objPlayer.x,objPlayer.y)&lt;80 {
 if place_meeting(x,y,objPlayer) exit
-if image_index&lt;9 image_index+=animSpeed * delta
-if place_meeting(x,y,objPlayer) image_index-=animSpeed * delta
+if image_index&lt;9 image_index+=0.5
+if place_meeting(x,y,objPlayer) image_index-=0.5
 } else {
-if image_index&gt;0 image_index-=animSpeed * delta
+if image_index&gt;0 image_index-=0.5
 }
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

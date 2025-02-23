@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-5</depth>
   <persistent>0</persistent>
-  <parentName>SaveThisObject</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -64,7 +64,7 @@ if sprite_index=sprBombDoorH {if image_angle&gt;0 or image_angle&lt;0 global.tes
 if global.test=1 {
 if on=0 {
 image_index=2
-PlaySFX(sndBigExplosion) 
+audio_play_sound(sndBigExplosion,0,false) 
 sxeasy_setVolume(0.1) 
 vol=0.1
 starttime=current_time 
@@ -102,7 +102,7 @@ sprite_index=sprBombCablesBroken
 image_speed=0.12
 }
 
-with objWindowFrameV {
+with objWindowV {
 if x=64 and y=224 {
 instance_create(x,y,objWindowExplode)
 instance_destroy()
@@ -198,12 +198,11 @@ if wait&gt;0 wait-=1 else on=2
 if on=2 {
 if amount&gt;0 amount-=0.001
 }
-
 draw_set_blend_mode(bm_subtract)
-draw_sprite_ext(sprExplosionSmoke,0,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir)),amount-0.75)
-draw_sprite_ext(sprExplosionSmoke,1,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir*0.6+90)),amount-0.75)
-draw_sprite_ext(sprExplosionSmoke,2,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir*1.2+180)),amount-0.75)
-draw_sprite_ext(sprExplosionSmoke,3,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir*0.8+270)),amount-0.75)
+draw_sprite_ext(sprExplosionSmoke,0,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir)),1)
+draw_sprite_ext(sprExplosionSmoke,1,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir*0.6+90)),1)
+draw_sprite_ext(sprExplosionSmoke,2,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir*1.2+180)),1)
+draw_sprite_ext(sprExplosionSmoke,3,x,y,image_xscale,image_yscale,image_angle,merge_color(merge_color(c_black,c_gray,amount),merge_color(c_black,c_white,amount),0.5+lengthdir_x(0.5,dir*0.8+270)),1)
 draw_set_blend_mode(bm_normal)
 dir+=2
 
@@ -214,10 +213,7 @@ if index&lt;=18 draw_sprite_ext(sprRoomExplosion,index,x,y,image_xscale,image_ys
 index+=0.33 
 }
 
-if global.shake&lt;(20-index)*2 global.shake=(20-index)*2
-
-
-</string>
+if global.shake&lt;(20-index)*2 global.shake=(20-index)*2</string>
           </argument>
         </arguments>
       </action>

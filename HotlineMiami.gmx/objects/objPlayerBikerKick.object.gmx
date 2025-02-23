@@ -53,12 +53,12 @@ global.executiony=y</string>
           <argument>
             <kind>1</kind>
             <string>if state=0 {
-if image_index&lt;9 image_index+=0.2 else {state=1 sprite_index=sprBikerWalkUnarmed}
+if image_index&lt;9 image_index+=0.2 else {state=1 sprite_index=sprBoss2Walk}
 if image_index&gt;=5 {
 with objPlayerBoss {
 if state=5 {
 sprite_index=sprPStomped
-PlaySFX(sndDoorHit)
+audio_play_sound(sndDoorHit,0,false)
 image_angle=point_direction(objPlayerBikerKick.x,objPlayerBikerKick.y,x,y)
 direction=image_angle
 speed=3
@@ -88,7 +88,7 @@ legindex=0
 
 if state=2 {
 if !instance_exists(objPhoneConversation) {
-if sprite_index=sprBikerWalkUnarmed {
+if sprite_index=sprBoss2Walk {
 sprite_index=sprBikerKick
 image_index=0
 }
@@ -96,7 +96,8 @@ if image_index&lt;9 image_index+=0.25 else {global.done=1 instance_create(x,y,ob
 if image_index&gt;=5 {
 if objPlayerBoss.image_index=0 {
 objPlayerBoss.image_index=1
-PlaySFX("Blunt")
+audio_play_sound(sndPunch,0,false)
+audio_play_sound(sndHit,0,false)
 with objPlayerBoss {
 global.shake=8
 repeat (3+random(3)) {

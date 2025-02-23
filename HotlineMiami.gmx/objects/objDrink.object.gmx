@@ -55,7 +55,7 @@ friction=0.1</string>
           <argument>
             <kind>1</kind>
             <string>if speed=0 on=1
-</string>
+if global.xbox=1 scrXboxItemTake()</string>
           </argument>
         </arguments>
       </action>
@@ -80,7 +80,7 @@ friction=0.1</string>
             <string>if !instance_exists(objPlayer) or on=0 exit
 if place_meeting(x-lengthdir_x(12,objPlayer.dir),y-lengthdir_y(12,objPlayer.dir),objPlayer) {
 instance_destroy()
-PlaySFX("Pick Up")
+audio_play_sound(sndPickupWeapon,0,false)
 }
 </string>
           </argument>
@@ -132,10 +132,9 @@ d3d_set_fog(true,c_white,0,0)
 if on draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
 d3d_set_fog(0,0,0,0)
 if on {
-drawArrow(180,false);
+draw_sprite_ext(sprArrow,0,x,y+12+lengthdir_x(4,dir*2),1,1,180,c_white,1)
 dir+=4
-}
-</string>
+}</string>
           </argument>
         </arguments>
       </action>

@@ -55,7 +55,7 @@ siren=0</string>
             <string>if siren=0 {
 if instance_number(objEnemy)+instance_number(objKnockedOut)=10 { 
 siren=1
-PlaySFX(sndPolice)
+audio_play_sound(sndPolice,0,true)
 }
 }
 if state=0 {
@@ -99,8 +99,8 @@ instance_destroy()
 }
 global.done=1 
 solid=0 
-PlaySFX(sndDoorHit) 
-PlaySFX(sndPunch) 
+audio_play_sound(sndDoorHit,0,false) 
+audio_play_sound(sndPunch,0,false) 
 swingspeed=-12 
 swinger=2
 }
@@ -137,10 +137,8 @@ my_id=instance_create(x,y,objSwat) my_id.direction=270 my_id.diradd=1 instance_d
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objDeadBody) {
-    if objDeadBody.isPlayer=true{
-        audio_stop_sound(sndPolice)
-    }
+            <string>if instance_exists(objPlayerDead) {
+audio_stop_sound(sndPolice)
 }
 </string>
           </argument>

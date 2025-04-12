@@ -1127,7 +1127,7 @@
     <tile bgName="tlCorners1" x="384" y="224" w="8" h="8" xo="0" yo="0" id="10013528" name="tile_2B95FF5F" depth="-99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tlCorners1" x="352" y="320" w="8" h="8" xo="0" yo="0" id="10013529" name="tile_6510A642" depth="-99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tlFloorTiles" x="400" y="328" w="16" h="16" xo="240" yo="96" id="10013530" name="tile_B251F778" depth="-99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tlCorners" x="440" y="320" w="8" h="8" xo="0" yo="0" id="10117689" name="inst_2E0E2113" depth="-99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="&lt;undefined&gt;" x="440" y="320" w="8" h="8" xo="0" yo="0" id="10117689" name="inst_2E0E2113" depth="-99" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

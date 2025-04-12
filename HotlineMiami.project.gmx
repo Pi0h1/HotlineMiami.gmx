@@ -1498,28 +1498,6 @@
       <sprite>sprites\sprWallHeavyV</sprite>
       <sprite>sprites\sprWallHospitalH</sprite>
       <sprite>sprites\sprWallHospitalV</sprite>
-      <sprite>sprites\sprBunkerWallH</sprite>
-      <sprite>sprites\sprBunkerWallV</sprite>
-      <sprite>sprites\sprSubwayWallH</sprite>
-      <sprite>sprites\sprSubwayWallV</sprite>
-      <sprite>sprites\sprSubwayWindowH</sprite>
-      <sprite>sprites\sprSubwayWindowV</sprite>
-      <sprite>sprites\sprBoatRailingH</sprite>
-      <sprite>sprites\sprBoatRailingV</sprite>
-      <sprite>sprites\sprWoodWallV</sprite>
-      <sprite>sprites\sprWoodWallH</sprite>
-      <sprite>sprites\sprWoodWallInteriorV</sprite>
-      <sprite>sprites\sprWoodWallInteriorH</sprite>
-      <sprite>sprites\sprCementWallV</sprite>
-      <sprite>sprites\sprCementWallH</sprite>
-      <sprite>sprites\sprPorchWallV</sprite>
-      <sprite>sprites\sprPorchWallH</sprite>
-      <sprite>sprites\sprFenceH</sprite>
-      <sprite>sprites\sprFenceV</sprite>
-      <sprite>sprites\sprWindowLargeV</sprite>
-      <sprite>sprites\sprWindowLargeMirroredV</sprite>
-      <sprite>sprites\sprWindowLargeH</sprite>
-      <sprite>sprites\sprWindowLargeMirroredH</sprite>
       <sprite>sprites\sprFenceBroken</sprite>
       <sprite>sprites\sprWalls</sprite>
       <sprite>sprites\sprWallSoftH</sprite>

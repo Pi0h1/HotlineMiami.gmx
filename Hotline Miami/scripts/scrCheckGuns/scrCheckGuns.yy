@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrCheckGuns",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrCheckGuns",
+  "parent":{
+    "name":"Check",
+    "path":"folders/Scripts/Steam/Achievements/Check.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

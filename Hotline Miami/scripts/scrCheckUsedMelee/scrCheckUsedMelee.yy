@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrCheckUsedMelee",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrCheckUsedMelee",
+  "parent":{
+    "name":"Check",
+    "path":"folders/Scripts/Steam/Achievements/Check.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

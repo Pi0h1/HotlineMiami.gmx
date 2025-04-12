@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrPlayerShieldAnimationEnd",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrPlayerShieldAnimationEnd",
+  "parent":{
+    "name":"Player",
+    "path":"folders/Scripts/Player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

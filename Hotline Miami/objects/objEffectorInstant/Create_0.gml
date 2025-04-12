@@ -1,0 +1,26 @@
+alpha=1
+coldir=0
+amount=0
+fade=0
+my_y=0
+global.dir=0
+restart=0
+update=0
+dir=0
+ammoy=-32
+next=0
+showfinished=0
+image_speed=0.4
+action=0
+wait=0
+phonex=0
+nextroom=room_next(room)
+global.combo=0
+global.combotime=0
+combo=0
+
+width=display_get_width()
+height=display_get_height()
+global.mousex=(display_mouse_get_x()-width*0.5)*(__view_get( e__VW.WView, 0 )/width)
+global.mousey=(display_mouse_get_y()-height*0.5)*(__view_get( e__VW.HView, 0 )/height)
+global.done=0

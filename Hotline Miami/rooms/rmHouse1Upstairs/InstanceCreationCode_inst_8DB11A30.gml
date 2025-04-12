@@ -1,0 +1,1 @@
+image_index=choose(2,3,4,5)

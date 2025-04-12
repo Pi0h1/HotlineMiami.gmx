@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SteamSetFloatStat",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SteamSetFloatStat",
+  "parent":{
+    "name":"Steam",
+    "path":"folders/Scripts/Steam.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,10 @@
+select=0
+dir1=180
+dir2=180
+dir=0
+amount=0
+fade=0
+global.steamon=0
+if file_exists(working_directory+"\\steamon") {global.steamon=1 steamdll_init() SteamInit() room_goto_next()}
+if file_exists(working_directory+"\\steamoff") {global.steamon=0 room_goto_next()}
+disclaimer="Note: Some users are currently experiencing#errors with Steamworks. Update forthcoming."

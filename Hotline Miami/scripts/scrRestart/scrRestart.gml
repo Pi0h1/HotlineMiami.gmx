@@ -1,0 +1,4 @@
+function scrRestart(){
+	scrResetSurfaces();
+	scrLoadGame();
+}

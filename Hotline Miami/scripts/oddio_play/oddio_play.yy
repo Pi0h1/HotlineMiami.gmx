@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"oddio_play",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"oddio_play",
+  "parent":{
+    "name":"oddio",
+    "path":"folders/Scripts/Audio/oddio.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

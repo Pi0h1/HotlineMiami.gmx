@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"cleanmem_init",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cleanmem_init",
+  "parent":{
+    "name":"cleanmem",
+    "path":"folders/Scripts/Surfaces/cleanmem.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

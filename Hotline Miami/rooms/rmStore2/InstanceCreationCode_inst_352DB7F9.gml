@@ -1,0 +1,1 @@
+image_angle=point_direction(x,y,objVictimWall.x,objVictimWall.y)

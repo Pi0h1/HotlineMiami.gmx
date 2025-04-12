@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"steamdll_free",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"steamdll_free",
+  "parent":{
+    "name":"Steam",
+    "path":"folders/Scripts/Steam.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

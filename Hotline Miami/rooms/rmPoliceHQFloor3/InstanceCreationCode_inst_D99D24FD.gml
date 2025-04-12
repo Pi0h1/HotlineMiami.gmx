@@ -1,0 +1,2 @@
+sprite_index=sprEvidenceTable3
+image_yscale=-1

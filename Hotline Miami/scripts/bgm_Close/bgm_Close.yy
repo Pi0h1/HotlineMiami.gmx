@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"bgm_Close",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"bgm_Close",
+  "parent":{
+    "name":"bgm",
+    "path":"folders/Scripts/Audio/bgm.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

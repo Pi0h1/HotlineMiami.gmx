@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrChasePlayer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrChasePlayer",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SteamInit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SteamInit",
+  "parent":{
+    "name":"Steam",
+    "path":"folders/Scripts/Steam.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

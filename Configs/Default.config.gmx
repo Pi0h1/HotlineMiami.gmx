@@ -577,7 +577,7 @@
     <option_winUAP_texture_page>1024</option_winUAP_texture_page>
     <option_winUAP_wide_logo>Configs\Default\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
-    <option_windows_alternate_sync_method>False</option_windows_alternate_sync_method>
+    <option_windows_alternate_sync_method>True</option_windows_alternate_sync_method>
     <option_windows_build_version>0</option_windows_build_version>
     <option_windows_company_info>Dennaton Games</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>

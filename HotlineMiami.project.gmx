@@ -3908,8 +3908,8 @@
           <room>rooms\rmHouse4Left</room>
           <room>rooms\rmHouse4Middle</room>
           <room>rooms\rmHouse4Right</room>
-          <room>rooms\rmVideoStore3</room>
           <room>rooms\rmHouse4Upstairs</room>
+          <room>rooms\rmVideoStore3</room>
         </rooms>
         <rooms name="Deadline">
           <room>rooms\rmSequence12</room>

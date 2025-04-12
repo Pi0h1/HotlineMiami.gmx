@@ -1252,7 +1252,7 @@
         <sprite>sprites\splSplashShift</sprite>
         <sprite>sprites\splWaveComing</sprite>
       </sprites>
-      <sprites name="Title screen">
+      <sprites name="Title Screen">
         <sprite>sprites\sprTitle</sprite>
         <sprite>sprites\sprPalmTrees</sprite>
       </sprites>
@@ -1498,7 +1498,6 @@
       <sprite>sprites\sprWallHeavyV</sprite>
       <sprite>sprites\sprWallHospitalH</sprite>
       <sprite>sprites\sprWallHospitalV</sprite>
-      <sprite>sprites\sprFenceBroken</sprite>
       <sprite>sprites\sprWalls</sprite>
       <sprite>sprites\sprWallSoftH</sprite>
       <sprite>sprites\sprWallSoftV</sprite>
@@ -2082,7 +2081,7 @@
       <sprite>sprites\sprSewerShadow</sprite>
       <sprite>sprites\sprSoup</sprite>
     </sprites>
-    <sprites name="Cutscene characters &amp; NPCs">
+    <sprites name="NPCs">
       <sprites name="Dream people">
         <sprite>sprites\sprDreamPeople</sprite>
         <sprite>sprites\sprDreamSit</sprite>
@@ -2321,12 +2320,10 @@
     <sprite>sprites\sprKitchenSinkMask</sprite>
   </sprites>
   <backgrounds name="background">
-    <backgrounds name="Hotline Miami">
-      <background>background\tlFloorTiles</background>
-      <background>background\tlRoadEnd</background>
-      <background>background\tlRoadEnd2</background>
-      <background>background\tlCorners1</background>
-    </backgrounds>
+    <background>background\tlFloorTiles</background>
+    <background>background\tlRoadEnd</background>
+    <background>background\tlRoadEnd2</background>
+    <background>background\tlCorners1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -2435,7 +2432,7 @@
       <script>scripts\scrCantGetHit.gml</script>
       <script>scripts\scrDogChasePlayer.gml</script>
     </scripts>
-    <scripts name="Xbox gamepad support">
+    <scripts name="Xbox Controller Support">
       <scripts name="GMX Input">
         <script>scripts\dllinit.gml</script>
         <script>scripts\setrumble.gml</script>
@@ -2890,29 +2887,14 @@
         <object>objects\objWallSoftH</object>
         <object>objects\objSewerWallV</object>
         <object>objects\objSewerWallH</object>
-        <object>objects\objCementWallV</object>
-        <object>objects\objCementWallH</object>
         <object>objects\objCellWallV</object>
         <object>objects\objCellWallH</object>
-        <object>objects\objWoodWallInteriorV</object>
-        <object>objects\objWoodWallInteriorH</object>
-        <object>objects\objSubwayWallV</object>
-        <object>objects\objSubwayWallH</object>
-        <object>objects\objPorchWallH</object>
-        <object>objects\objPorchWallV</object>
       </objects>
       <objects name="Exterior">
         <object>objects\objWallBrickV</object>
         <object>objects\objWallBrickH</object>
         <object>objects\objWallHospitalV</object>
         <object>objects\objWallHospitalH</object>
-        <object>objects\objWoodWallV</object>
-        <object>objects\objWoodWallH</object>
-        <object>objects\objBunkerWallH</object>
-        <object>objects\objBunkerWallV</object>
-        <object>objects\objFenceH</object>
-        <object>objects\objFenceBroken</object>
-        <object>objects\objFenceV</object>
       </objects>
       <objects name="Glass (Breakable &amp; Unbreakable)">
         <object>objects\objGlassPanelV</object>
@@ -2920,21 +2902,15 @@
         <object>objects\objGlassPanelH</object>
         <object>objects\objGlassPanelHBroken</object>
         <object>objects\objWindowV</object>
-        <object>objects\objWindowLargeV</object>
         <object>objects\objWindowH</object>
-        <object>objects\objWindowLargeH</object>
-        <object>objects\objSubwayWindowV</object>
-        <object>objects\objSubwayWindowH</object>
       </objects>
-      <objects name="Railing">
+      <objects name="Rail">
         <object>objects\objRailV</object>
         <object>objects\objRailH</object>
         <object>objects\objWoodFenceV</object>
         <object>objects\objWoodFenceH</object>
         <object>objects\objBalconyV</object>
         <object>objects\objBalconyH</object>
-        <object>objects\objBoatRailingH</object>
-        <object>objects\objBoatRailingV</object>
       </objects>
       <object>objects\objHorBarrier</object>
       <object>objects\objVertBarrier</object>
@@ -2999,7 +2975,7 @@
       <object>objects\objSubwayKnockedOut</object>
       <object>objects\objEGiveUp</object>
     </objects>
-    <objects name="Weapons and Items">
+    <objects name="Weapons &amp; Items">
       <objects name="Items">
         <objects name="Interactable">
           <object>objects\objBox</object>
@@ -3685,43 +3661,6 @@
         <object>objects\objSecretSewerShadow</object>
       </objects>
     </objects>
-    <objects name="Cutscene characters">
-      <objects name="Niklas">
-        <object>objects\objNicklasStore</object>
-        <object>objects\objNicklasPizza</object>
-        <object>objects\objNicklasVHS</object>
-        <object>objects\objNicklasBar</object>
-        <object>objects\objNicklasStoreSpecial</object>
-        <object>objects\objNickeDead</object>
-        <object>objects\objNickeTiedUp</object>
-      </objects>
-      <objects name="Richter">
-        <object>objects\objPrisoner</object>
-        <object>objects\objAssassinGround</object>
-        <object>objects\objAssassinDie</object>
-        <object>objects\objAssassinPizza</object>
-        <object>objects\objAssassinWait</object>
-        <object>objects\objAssassinSitUzi</object>
-        <object>objects\objAssassinVHS</object>
-        <object>objects\objAssassinBar</object>
-      </objects>
-      <object>objects\objDreamPeople</object>
-      <object>objects\objDreamPlayer</object>
-      <object>objects\objGirlfriendDead</object>
-      <object>objects\objGirlfriendDeadOutline</object>
-      <object>objects\objGirlfriend</object>
-      <object>objects\objGirlfriendBathroom</object>
-      <object>objects\objGirlfriendSit</object>
-      <object>objects\objDoctorTalk</object>
-      <object>objects\objPoliceTalk</object>
-      <object>objects\objHobo</object>
-      <object>objects\objHoboKnockedOut</object>
-      <object>objects\objDeadTable</object>
-      <object>objects\objWileyWiggins</object>
-      <object>objects\objDogPetCorpse</object>
-      <object>objects\objFatCorpseEat</object>
-      <object>objects\objCrocodileMan</object>
-    </objects>
     <objects name="Boss Fights">
       <objects name="Boss 1 (Producer)">
         <object>objects\objBossJacket</object>
@@ -3765,7 +3704,44 @@
         <object>objects\objPlayerBoss</object>
       </objects>
     </objects>
-    <objects name="Cameos / NPCs / Dead Bodies">
+    <objects name="NPCs">
+      <objects name="Cutscene">
+        <objects name="Niklas">
+          <object>objects\objNicklasStore</object>
+          <object>objects\objNicklasPizza</object>
+          <object>objects\objNicklasVHS</object>
+          <object>objects\objNicklasBar</object>
+          <object>objects\objNicklasStoreSpecial</object>
+          <object>objects\objNickeDead</object>
+          <object>objects\objNickeTiedUp</object>
+        </objects>
+        <objects name="Richter">
+          <object>objects\objPrisoner</object>
+          <object>objects\objAssassinGround</object>
+          <object>objects\objAssassinDie</object>
+          <object>objects\objAssassinPizza</object>
+          <object>objects\objAssassinWait</object>
+          <object>objects\objAssassinSitUzi</object>
+          <object>objects\objAssassinVHS</object>
+          <object>objects\objAssassinBar</object>
+        </objects>
+        <object>objects\objDreamPeople</object>
+        <object>objects\objDreamPlayer</object>
+        <object>objects\objGirlfriendDead</object>
+        <object>objects\objGirlfriendDeadOutline</object>
+        <object>objects\objGirlfriend</object>
+        <object>objects\objGirlfriendBathroom</object>
+        <object>objects\objGirlfriendSit</object>
+        <object>objects\objDoctorTalk</object>
+        <object>objects\objPoliceTalk</object>
+        <object>objects\objHobo</object>
+        <object>objects\objHoboKnockedOut</object>
+        <object>objects\objDeadTable</object>
+        <object>objects\objWileyWiggins</object>
+        <object>objects\objDogPetCorpse</object>
+        <object>objects\objFatCorpseEat</object>
+        <object>objects\objCrocodileMan</object>
+      </objects>
       <objects name="Janitors">
         <object>objects\objJanitorVacuum</object>
         <object>objects\objJanitorClean</object>

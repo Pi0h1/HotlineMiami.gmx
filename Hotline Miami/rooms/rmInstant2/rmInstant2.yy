@@ -1227,8 +1227,8 @@
   ],
   "name":"rmInstant2",
   "parent":{
-    "name":"Unused",
-    "path":"folders/Rooms/Cocaine Cowboy/Unused.yy",
+    "name":"Cocaine Cowboy",
+    "path":"folders/Rooms/Levels/6 - Extra/Cocaine Cowboy.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

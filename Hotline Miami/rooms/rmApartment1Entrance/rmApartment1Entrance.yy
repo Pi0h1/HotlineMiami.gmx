@@ -589,8 +589,8 @@
   ],
   "name":"rmApartment1Entrance",
   "parent":{
-    "name":"No Talk (2)",
-    "path":"folders/Rooms/Playable Levels/Part One - Phonecalls/No Talk (2).yy",
+    "name":"No Talk",
+    "path":"folders/Rooms/Levels/1 - Phonecalls/No Talk.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -976,8 +976,8 @@
   ],
   "name":"rmMansionMainHall",
   "parent":{
-    "name":"Showdown (3)",
-    "path":"folders/Rooms/Playable Levels/Part Four - Connections/Showdown (3).yy",
+    "name":"Showdown",
+    "path":"folders/Rooms/Levels/4 - Connections/Showdown.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

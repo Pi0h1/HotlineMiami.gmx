@@ -709,8 +709,8 @@
   ],
   "name":"rmVideoStore1",
   "parent":{
-    "name":"VHS Store (3)",
-    "path":"folders/Rooms/Niklas (4)/VHS Store (3).yy",
+    "name":"Overdose",
+    "path":"folders/Rooms/Levels/1 - Phonecalls/Overdose.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -17,8 +17,8 @@
   ],
   "name":"rmScore",
   "parent":{
-    "name":"Interface (10)",
-    "path":"folders/Rooms/Interface (10).yy",
+    "name":"Interface",
+    "path":"folders/Rooms/Interface.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

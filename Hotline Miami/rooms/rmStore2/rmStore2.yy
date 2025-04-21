@@ -643,8 +643,8 @@
   ],
   "name":"rmStore2",
   "parent":{
-    "name":"Store (3)",
-    "path":"folders/Rooms/Niklas (4)/Store (3).yy",
+    "name":"Tension",
+    "path":"folders/Rooms/Levels/2 - Questions/Tension.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

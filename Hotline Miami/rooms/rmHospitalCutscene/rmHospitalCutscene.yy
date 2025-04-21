@@ -2134,8 +2134,8 @@
   ],
   "name":"rmHospitalCutscene",
   "parent":{
-    "name":"Trauma (4)",
-    "path":"folders/Rooms/Playable Levels/Part Four - Connections/Trauma (4).yy",
+    "name":"Trauma",
+    "path":"folders/Rooms/Levels/4 - Connections/Trauma.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

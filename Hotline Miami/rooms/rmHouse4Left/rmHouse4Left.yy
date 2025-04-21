@@ -1539,8 +1539,8 @@
   ],
   "name":"rmHouse4Left",
   "parent":{
-    "name":"Hot & Heavy (4)",
-    "path":"folders/Rooms/Playable Levels/Part Three - Visitations/Hot & Heavy (4).yy",
+    "name":"Hot & Heavy",
+    "path":"folders/Rooms/Levels/3 - Visitations/Hot & Heavy.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

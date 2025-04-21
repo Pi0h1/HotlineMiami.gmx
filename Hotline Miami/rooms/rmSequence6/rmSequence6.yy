@@ -975,8 +975,8 @@
   ],
   "name":"rmSequence6",
   "parent":{
-    "name":"Full House (2)",
-    "path":"folders/Rooms/Jacket Sequences (34)/Part Two - Questions/Full House (2).yy",
+    "name":"Full House",
+    "path":"folders/Rooms/Levels/2 - Questions/Full House.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

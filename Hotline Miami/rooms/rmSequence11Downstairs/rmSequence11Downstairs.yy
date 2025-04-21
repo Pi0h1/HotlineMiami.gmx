@@ -447,8 +447,8 @@
   ],
   "name":"rmSequence11Downstairs",
   "parent":{
-    "name":"Hot & Heavy (2)",
-    "path":"folders/Rooms/Jacket Sequences (34)/Part Three - Visitations/Hot & Heavy (2).yy",
+    "name":"Hot & Heavy",
+    "path":"folders/Rooms/Levels/3 - Visitations/Hot & Heavy.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

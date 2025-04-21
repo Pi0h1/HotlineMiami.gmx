@@ -988,8 +988,8 @@
   ],
   "name":"rmSequence1",
   "parent":{
-    "name":"The Metro (2)",
-    "path":"folders/Rooms/Jacket Sequences (34)/Part One - Phonecalls/The Metro (2).yy",
+    "name":"The Metro",
+    "path":"folders/Rooms/Levels/1 - Phonecalls/The Metro.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

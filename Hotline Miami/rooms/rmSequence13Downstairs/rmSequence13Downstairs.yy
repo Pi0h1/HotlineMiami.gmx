@@ -451,8 +451,8 @@
   ],
   "name":"rmSequence13Downstairs",
   "parent":{
-    "name":"Assault (2)",
-    "path":"folders/Rooms/Jacket Sequences (34)/Part Four - Connections/Assault (2).yy",
+    "name":"Assault",
+    "path":"folders/Rooms/Levels/4 - Connections/Assault.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

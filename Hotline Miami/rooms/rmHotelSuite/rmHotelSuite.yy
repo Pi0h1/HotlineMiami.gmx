@@ -1726,8 +1726,8 @@
   ],
   "name":"rmHotelSuite",
   "parent":{
-    "name":"Clean Hit (2)",
-    "path":"folders/Rooms/Playable Levels/Part Two - Questions/Clean Hit (2).yy",
+    "name":"Clean Hit",
+    "path":"folders/Rooms/Levels/2 - Questions/Clean Hit.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

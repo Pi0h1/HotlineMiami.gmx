@@ -991,8 +991,8 @@
   ],
   "name":"rmSequence12b",
   "parent":{
-    "name":"Trauma (3)",
-    "path":"folders/Rooms/Jacket Sequences (34)/Part Four - Connections/Trauma (3).yy",
+    "name":"Trauma",
+    "path":"folders/Rooms/Levels/4 - Connections/Trauma.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

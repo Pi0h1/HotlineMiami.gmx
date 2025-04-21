@@ -25,8 +25,8 @@
   ],
   "name":"rmBandCredits",
   "parent":{
-    "name":"Chapter Title (4)",
-    "path":"folders/Rooms/Chapter Title (4).yy",
+    "name":"Interface",
+    "path":"folders/Rooms/Interface.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

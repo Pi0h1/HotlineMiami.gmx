@@ -17,8 +17,8 @@
   ],
   "name":"rmHospitalTitle",
   "parent":{
-    "name":"Chapter Title (4)",
-    "path":"folders/Rooms/Chapter Title (4).yy",
+    "name":"Trauma",
+    "path":"folders/Rooms/Levels/4 - Connections/Trauma.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

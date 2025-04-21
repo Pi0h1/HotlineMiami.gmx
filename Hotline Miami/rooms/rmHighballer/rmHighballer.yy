@@ -2894,8 +2894,8 @@
   ],
   "name":"rmHighballer",
   "parent":{
-    "name":"Highballer (1)",
-    "path":"folders/Rooms/Playable Levels/Extra/Highballer (1).yy",
+    "name":"Highballer",
+    "path":"folders/Rooms/Levels/6 - Extra/Highballer.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

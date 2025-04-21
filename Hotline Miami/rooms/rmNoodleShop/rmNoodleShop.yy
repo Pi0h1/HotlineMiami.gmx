@@ -1027,7 +1027,7 @@
   "name":"rmNoodleShop",
   "parent":{
     "name":"Safehouse (1)",
-    "path":"folders/Rooms/Playable Levels/Part Five - Answers/Safehouse (1).yy",
+    "path":"folders/Rooms/Levels/5 - Answers/Safehouse (1).yy",
   },
   "parentRoom":null,
   "physicsSettings":{

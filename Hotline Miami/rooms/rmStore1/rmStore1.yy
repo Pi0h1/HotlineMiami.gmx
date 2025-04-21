@@ -600,8 +600,8 @@
   ],
   "name":"rmStore1",
   "parent":{
-    "name":"Store (3)",
-    "path":"folders/Rooms/Niklas (4)/Store (3).yy",
+    "name":"The Metro",
+    "path":"folders/Rooms/Levels/1 - Phonecalls/The Metro.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

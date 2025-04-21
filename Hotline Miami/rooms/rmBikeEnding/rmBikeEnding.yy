@@ -23,8 +23,8 @@
   ],
   "name":"rmBikeEnding",
   "parent":{
-    "name":"Biker Ending (1)",
-    "path":"folders/Rooms/Biker Ending (1).yy",
+    "name":"Resolution (2)",
+    "path":"folders/Rooms/Levels/5 - Answers/Resolution (2).yy",
   },
   "parentRoom":null,
   "physicsSettings":{

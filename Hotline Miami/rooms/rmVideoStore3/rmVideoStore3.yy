@@ -707,8 +707,8 @@
   ],
   "name":"rmVideoStore3",
   "parent":{
-    "name":"VHS Store (3)",
-    "path":"folders/Rooms/Niklas (4)/VHS Store (3).yy",
+    "name":"Hot & Heavy",
+    "path":"folders/Rooms/Levels/3 - Visitations/Hot & Heavy.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

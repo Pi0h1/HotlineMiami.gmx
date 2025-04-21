@@ -480,7 +480,7 @@
   "name":"rmMCSequence4Downstairs",
   "parent":{
     "name":"Resolution (2)",
-    "path":"folders/Rooms/Biker Sequences (9)/Resolution (2).yy",
+    "path":"folders/Rooms/Levels/5 - Answers/Resolution (2).yy",
   },
   "parentRoom":null,
   "physicsSettings":{

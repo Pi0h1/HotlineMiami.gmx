@@ -1779,8 +1779,8 @@
   ],
   "name":"rmPoliceHQFloor2",
   "parent":{
-    "name":"Assault (3)",
-    "path":"folders/Rooms/Playable Levels/Part Four - Connections/Assault (3).yy",
+    "name":"Assault",
+    "path":"folders/Rooms/Levels/4 - Connections/Assault.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

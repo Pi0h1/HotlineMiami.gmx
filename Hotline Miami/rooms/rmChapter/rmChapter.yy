@@ -17,8 +17,8 @@
   ],
   "name":"rmChapter",
   "parent":{
-    "name":"Chapter Title (4)",
-    "path":"folders/Rooms/Chapter Title (4).yy",
+    "name":"The Metro",
+    "path":"folders/Rooms/Levels/1 - Phonecalls/The Metro.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

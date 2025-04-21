@@ -1275,8 +1275,8 @@
   ],
   "name":"rmBossClubFloor2",
   "parent":{
-    "name":"Vengeance (3)",
-    "path":"folders/Rooms/Playable Levels/Part Four - Connections/Vengeance (3).yy",
+    "name":"Vengeance",
+    "path":"folders/Rooms/Levels/4 - Connections/Vengeance.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

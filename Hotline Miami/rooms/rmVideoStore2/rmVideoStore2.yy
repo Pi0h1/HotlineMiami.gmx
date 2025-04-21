@@ -705,8 +705,8 @@
   ],
   "name":"rmVideoStore2",
   "parent":{
-    "name":"VHS Store (3)",
-    "path":"folders/Rooms/Niklas (4)/VHS Store (3).yy",
+    "name":"Clean Hit",
+    "path":"folders/Rooms/Levels/2 - Questions/Clean Hit.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

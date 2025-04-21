@@ -19,8 +19,8 @@
   ],
   "name":"rmDevolver",
   "parent":{
-    "name":"Splash (3)",
-    "path":"folders/Rooms/Splash (3).yy",
+    "name":"Interface",
+    "path":"folders/Rooms/Interface.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

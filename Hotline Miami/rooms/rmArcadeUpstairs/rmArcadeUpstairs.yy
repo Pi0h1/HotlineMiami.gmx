@@ -1545,7 +1545,7 @@
   "name":"rmArcadeUpstairs",
   "parent":{
     "name":"Fun & Games (2)",
-    "path":"folders/Rooms/Playable Levels/Part Five - Answers/Fun & Games (2).yy",
+    "path":"folders/Rooms/Levels/5 - Answers/Fun & Games (2).yy",
   },
   "parentRoom":null,
   "physicsSettings":{

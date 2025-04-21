@@ -17,8 +17,8 @@
   ],
   "name":"rmScoreDetails",
   "parent":{
-    "name":"Unlockables (2)",
-    "path":"folders/Rooms/Interface (10)/Unlockables (2).yy",
+    "name":"Interface",
+    "path":"folders/Rooms/Interface.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

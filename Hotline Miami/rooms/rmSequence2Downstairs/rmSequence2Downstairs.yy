@@ -447,8 +447,8 @@
   ],
   "name":"rmSequence2Downstairs",
   "parent":{
-    "name":"No Talk (2)",
-    "path":"folders/Rooms/Jacket Sequences (34)/Part One - Phonecalls/No Talk (2).yy",
+    "name":"No Talk",
+    "path":"folders/Rooms/Levels/1 - Phonecalls/No Talk.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

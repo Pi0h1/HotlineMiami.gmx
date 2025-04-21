@@ -613,8 +613,8 @@
   ],
   "name":"rmStore3",
   "parent":{
-    "name":"Store (3)",
-    "path":"folders/Rooms/Niklas (4)/Store (3).yy",
+    "name":"Push It",
+    "path":"folders/Rooms/Levels/3 - Visitations/Push It.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

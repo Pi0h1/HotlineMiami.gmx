@@ -291,8 +291,8 @@
   ],
   "name":"rmPizzaHut2",
   "parent":{
-    "name":"Pizza Hut (3)",
-    "path":"folders/Rooms/Niklas (4)/Pizza Hut (3).yy",
+    "name":"Full House",
+    "path":"folders/Rooms/Levels/2 - Questions/Full House.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

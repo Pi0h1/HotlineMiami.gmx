@@ -17,8 +17,8 @@
   ],
   "name":"rmMCChapter",
   "parent":{
-    "name":"Chapter Title (4)",
-    "path":"folders/Rooms/Chapter Title (4).yy",
+    "name":"Safehouse (1)",
+    "path":"folders/Rooms/Levels/5 - Answers/Safehouse (1).yy",
   },
   "parentRoom":null,
   "physicsSettings":{

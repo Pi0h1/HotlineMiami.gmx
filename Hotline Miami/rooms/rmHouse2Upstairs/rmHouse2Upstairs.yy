@@ -1356,8 +1356,8 @@
   ],
   "name":"rmHouse2Upstairs",
   "parent":{
-    "name":"Full House (3)",
-    "path":"folders/Rooms/Playable Levels/Part Two - Questions/Full House (3).yy",
+    "name":"Full House",
+    "path":"folders/Rooms/Levels/2 - Questions/Full House.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

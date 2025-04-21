@@ -3045,8 +3045,8 @@
   ],
   "name":"rmEurogamer",
   "parent":{
-    "name":"Exposed (1)",
-    "path":"folders/Rooms/Playable Levels/Extra/Exposed (1).yy",
+    "name":"Exposed",
+    "path":"folders/Rooms/Levels/6 - Extra/Exposed.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

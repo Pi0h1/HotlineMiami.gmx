@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrRestart",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrRestart",
+  "parent":{
+    "name":"Save",
+    "path":"folders/Scripts/Save.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

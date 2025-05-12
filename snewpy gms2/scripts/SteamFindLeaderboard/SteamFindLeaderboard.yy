@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SteamFindLeaderboard",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SteamFindLeaderboard",
+  "parent":{
+    "name":"Steam",
+    "path":"folders/Scripts/Steam.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

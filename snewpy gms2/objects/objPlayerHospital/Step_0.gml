@@ -1,0 +1,79 @@
+global.test=0
+camera_set_view_pos(view_camera[0], xview, yview);
+if sprite_index=sprPKeyLockOpen {
+if image_index<4 image_index+=0.2 else {
+active=1
+with objLockedDoor image_index=1
+sprite_index=sprPWalkHospital
+}
+exit
+}
+with objWeapon {if point_distance(x,y,objPlayer.x,objPlayer.y)<32 global.test=2}
+if place_meeting(x,y,objKnockedOut) global.test=1
+objEffector.action=global.test
+if throwreload>0 throwreload-=1
+if instance_exists(objPhoneConversation) valid=0 else valid=1
+factor=1
+if global.xbox=0 aimfar=keyboard_check_direct(vk_shift) else aimfar=checkbutton(0,getid(9))
+if aimfar and valid {
+/*viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(96,dir),y+lengthdir_y(96,dir))*0.1
+viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(96,dir),y+lengthdir_y(96,dir))
+view_xview[0]+=lengthdir_x(viewspeed,viewdir)
+view_yview[0]+=lengthdir_y(viewspeed,viewdir)*/
+if global.xbox=1 {
+viewx=objPlayer.x+rightthumb_x(0)*0.0045
+viewy=objPlayer.y-rightthumb_y(0)*0.003
+} else {
+factor=1.8
+viewx=objPlayer.x+((display_mouse_get_x()-display_get_width()*0.5)*(camera_get_view_width(view_camera[0])/display_get_width()))*factor
+viewy=objPlayer.y+((display_mouse_get_y()-display_get_height()*0.5)*(camera_get_view_height(view_camera[0])/display_get_height()))*factor
+}
+viewspeed=point_distance(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2,camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])/2,viewx,viewy)*0.1
+viewdir=point_direction(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2,camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])/2,viewx,viewy)
+camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + (lengthdir_x(viewspeed,viewdir)), camera_get_view_y(view_camera[0]) + (lengthdir_y(viewspeed,viewdir)))
+vdist=point_distance(x,y,room_width/2,room_height/2)
+vdir=point_direction(room_width/2,room_height/2,x,y)
+camera_set_view_angle(view_camera[0], lengthdir_y(objDizzy.dizziness*20,lengthdir_x(objDizzy.dizziness*30,global.dir*3)))
+} else {
+if objPlayer.active=0 and instance_exists(objPhoneConversation) {
+
+with global.doctor {
+valid=0
+vdist=point_distance(x,y,room_width/2-(1-valid)*88,room_height/2)
+vdir=point_direction(room_width/2-(1-valid)*88,room_height/2,x,y)
+viewspeed=point_distance(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2-(1-valid)*88,camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])/2,x+lengthdir_x(vdist*0.2,vdir-180),y+lengthdir_y(vdist*0.2,vdir-180))*0.1
+viewdir=point_direction(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2-(1-valid)*88,camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])/2,x+lengthdir_x(vdist*0.2,vdir-180),y+lengthdir_y(vdist*0.2,vdir-180))
+camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + (lengthdir_x(viewspeed,viewdir)), camera_get_view_y(view_camera[0]) + (lengthdir_y(viewspeed,viewdir)))
+camera_set_view_angle(view_camera[0], lengthdir_y(objDizzy.dizziness*20,lengthdir_x(objDizzy.dizziness*30,global.dir*3)))
+}
+
+} else {
+viewspeed=point_distance(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2,camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])/2,x+lengthdir_x(24,dir),y+lengthdir_y(24,dir))*0.1
+viewdir=point_direction(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2,camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])/2,x+lengthdir_x(24,dir),y+lengthdir_y(24,dir))
+camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + (lengthdir_x(viewspeed,viewdir)), camera_get_view_y(view_camera[0]) + (lengthdir_y(viewspeed,viewdir)))
+camera_set_view_angle(view_camera[0], lengthdir_y(objDizzy.dizziness*20,lengthdir_x(objDizzy.dizziness*30,global.dir*3)))
+}
+}
+if sprite_index=sprPHospitalHeadache {
+if global.shake<6 global.shake+=0.25
+with objDizzy {if dizziness>0.1 dizziness-=0.005}
+} else {
+if global.shake>0 global.shake-=0.5
+}
+xview=camera_get_view_x(view_camera[0])
+yview=camera_get_view_y(view_camera[0])
+camera_set_view_pos(view_camera[0], xview-global.shake+global.shake*2, yview-global.shake+global.shake*2)
+
+if persistent=1 and objEffector.fade=1 {
+if place_free(x+addx,y) x+=addx
+if place_free(x,y+addy) y+=addy
+if image_speed=0 image_index+=0.15
+legindex+=0.4
+exit 
+}
+
+if active=1 {scrPlayerHospitalMove() if global.xbox=1 scrXboxPlayerHospitalMouse()}
+
+
+/* */
+/*  */

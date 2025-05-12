@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"object_destroy",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"object_destroy",
+  "parent":{
+    "name":"Save",
+    "path":"folders/Scripts/Save.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

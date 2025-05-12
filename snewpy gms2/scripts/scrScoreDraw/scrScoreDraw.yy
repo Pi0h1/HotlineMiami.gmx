@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrScoreDraw",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrScoreDraw",
+  "parent":{
+    "name":"Unused",
+    "path":"folders/Scripts/Player/HUD/Unused.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

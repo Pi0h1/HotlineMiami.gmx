@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrSaveFurniture",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrSaveFurniture",
+  "parent":{
+    "name":"Save",
+    "path":"folders/Scripts/Save.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

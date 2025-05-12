@@ -1,0 +1,8 @@
++ Layers
+Player (Includes Effector, Masks, Level Essentials, etc.)
+Gameplay (Enemies, Walls, Furniture)
+Debris
+Edges
+Tiles
+Backgrounds (void)
+Color Backgrounds

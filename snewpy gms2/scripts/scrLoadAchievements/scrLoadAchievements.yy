@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrLoadAchievements",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrLoadAchievements",
+  "parent":{
+    "name":"Achievements",
+    "path":"folders/Scripts/Steam/Achievements.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

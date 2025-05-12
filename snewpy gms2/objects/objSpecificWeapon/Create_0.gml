@@ -1,0 +1,22 @@
+image_angle=random(360)
+ammo=0
+if image_index=0 ammo=24
+if image_index=1 ammo=6
+if image_index=6 ammo=2
+if image_index=7 ammo=13
+if image_index=9 ammo=30
+if image_index=10 ammo=6
+if image_index=11 ammo=20
+if image_index=12 ammo=32
+image_speed=0
+dir=random(360)
+DoSave = function() {
+	buffer_write(global.tempSave, buffer_f32, image_index);
+	buffer_write(global.tempSave, buffer_f32, ammo);
+}
+DoLoad = function() {
+	var savedIndex = buffer_read(global.tempSave, buffer_f32); 
+	var savedAmmo = buffer_read(global.tempSave, buffer_f32);
+	image_index = savedIndex;
+	ammo = savedAmmo;
+}

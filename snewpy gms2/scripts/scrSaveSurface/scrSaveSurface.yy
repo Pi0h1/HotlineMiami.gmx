@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrSaveSurface",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrSaveSurface",
+  "parent":{
+    "name":"Surfaces",
+    "path":"folders/Scripts/Surfaces.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

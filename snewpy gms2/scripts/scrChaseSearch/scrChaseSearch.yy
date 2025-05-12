@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrChaseSearch",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrChaseSearch",
+  "parent":{
+    "name":"Enemies",
+    "path":"folders/Scripts/Enemies.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

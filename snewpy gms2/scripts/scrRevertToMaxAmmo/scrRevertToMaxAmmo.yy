@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrRevertToMaxAmmo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrRevertToMaxAmmo",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

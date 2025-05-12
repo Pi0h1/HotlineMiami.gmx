@@ -1,0 +1,2 @@
+sprite_index=sprArcadeCabinet3
+image_angle=180

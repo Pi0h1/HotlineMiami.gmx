@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrPoliceGetWeapon",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrPoliceGetWeapon",
+  "parent":{
+    "name":"Police",
+    "path":"folders/Scripts/Enemies/Police.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

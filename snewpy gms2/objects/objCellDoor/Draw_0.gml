@@ -1,0 +1,7 @@
+draw_sprite_ext(sprite_index,image_index,x+2,y+3,image_xscale,image_yscale,image_angle,c_black,0.5)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+
+if global.locked=0 and !instance_exists(objEnemy) and !instance_exists(objKnockedOut) and solid=1 {
+draw_sprite_ext(sprArrow,0,x+16+lengthdir_x(16-lengthdir_x(3,dir),image_angle-90),y+lengthdir_y(16-lengthdir_x(3,dir),image_angle-90),1,1,image_angle+180,image_blend,image_alpha)
+dir+=8
+}

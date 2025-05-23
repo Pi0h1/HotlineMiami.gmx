@@ -288,10 +288,7 @@ draw_set_alpha(1)
 }
 
 
-draw_set_blend_mode(bm_subtract)
-my_y=random(32)
-draw_sprite_tiled(sprScanlines,0,0,my_y)
-draw_set_blend_mode(bm_normal)
+drawScanlines();
 
 if fade=0 {
 if amount&lt;180 {
@@ -330,7 +327,8 @@ scrSaveUnlocked()
 room_goto(next)
 }
 //else {fade=0 if restart=1 {sxeasy_stop(1) sxeasy_setVolume(0) sxeasy_play(working_directory+"\HorseSteppin.mp3"); room=rmMenu} else {if next=1 {if newsong=1 {sxeasy_stop(1) sxeasy_setVolume(0) sxeasy_play(song);} room=nextroom} else {scrResetSurfaces() game_load(working_directory+"\tempsave.sav")}}}
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrFreeSurfaces()
+            <string>x = room_width/2;
+scrFreeSurfaces()
 if global.resetstory=1 {
 scrResetStory()
 } else {set_automatic_draw(true)}
@@ -65,7 +66,8 @@ hint[8]="TIP: PAY ATTENTION TO DETAILS"
 hint[9]="TIP: YOUR MEAT CLEAVER IS THERE TO STAY"
 hint[10]="TIP: FINISH OFF FALLEN ENEMIES"
 
-myhint=floor(random(11))</string>
+myhint=floor(random(11))
+</string>
           </argument>
         </arguments>
       </action>
@@ -232,12 +234,8 @@ draw_set_blend_mode(bm_normal)
 }
 
 
-draw_set_blend_mode(bm_subtract)
-my_y=random(32)
-draw_sprite_tiled(sprScanlines,0,0,my_y)
-draw_set_blend_mode(bm_subtract)
-draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
-draw_set_blend_mode(bm_normal)
+drawScanlines();
+drawVignette();
 </string>
           </argument>
         </arguments>

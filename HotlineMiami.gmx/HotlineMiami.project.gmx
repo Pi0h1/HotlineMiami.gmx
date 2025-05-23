@@ -2748,6 +2748,10 @@
       <script>scripts\screen_refresh.gml</script>
       <script>scripts\screen_redraw.gml</script>
     </scripts>
+    <scripts name="Redundant Visual Effects">
+      <script>scripts\drawVignette.gml</script>
+      <script>scripts\drawScanlines.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>
@@ -3051,7 +3055,7 @@
       <object>objects\objDriveSmoke</object>
       <object>objects\objBrokenBottle</object>
     </objects>
-    <objects name="UI and miscelaneous">
+    <objects name="UI &amp; Miscelaneous">
       <objects name="User interface">
         <object>objects\objTitle</object>
         <object>objects\objPalmTree</object>
@@ -3984,7 +3988,7 @@
         <room>rooms\rmEurogamer</room>
       </rooms>
     </rooms>
-    <rooms name="Cocaine Cowboy &amp; Unused">
+    <rooms name="Cocaine Cowboy">
       <room>rooms\rmOldHotel</room>
       <room>rooms\rmNew9</room>
       <room>rooms\rmNew11</room>

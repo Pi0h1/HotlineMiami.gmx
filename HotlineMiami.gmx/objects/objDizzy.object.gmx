@@ -265,12 +265,8 @@ draw_set_alpha(1)
 //d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 }
 
-draw_set_blend_mode(bm_subtract)
-draw_sprite_tiled(sprScanlines,0,0,my_y)
-my_y=random(32)
-draw_set_blend_mode(bm_subtract)
-draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24),c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
-draw_set_blend_mode(bm_normal)
+drawScanlines();
+drawVignette();
 }
 
 screen_refresh()
@@ -278,7 +274,8 @@ if round(random(100))=2 myx1=-dizziness*20+random(dizziness*40)
 if round(random(100))=2 myx2=-dizziness*20+random(dizziness*40)
 if round(random(100))=2 myy1=-dizziness*20+random(dizziness*40)
 if round(random(100))=2 myy2=-dizziness*20+random(dizziness*40)
-//if check=1 scrSurfaceTiles()</string>
+//if check=1 scrSurfaceTiles()
+</string>
           </argument>
         </arguments>
       </action>

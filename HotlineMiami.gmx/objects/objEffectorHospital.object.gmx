@@ -151,10 +151,7 @@ global.videofile="ccReplay"+room_get_name(room)+string(i)+".avi"*/</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_blend_mode(bm_subtract)
-draw_sprite_tiled(sprScanlines,0,x,my_y)
-my_y=random(32)
-draw_set_blend_mode(bm_normal)
+            <string>drawScanlines();
 
 if instance_exists(objPlayer) {
 width=display_get_width()
@@ -308,9 +305,7 @@ draw_set_alpha(1)
 }
 
 
-draw_set_blend_mode(bm_subtract)
-draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+random(24)+24+24,c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
-draw_set_blend_mode(bm_normal)
+drawVignette();
 </string>
           </argument>
         </arguments>

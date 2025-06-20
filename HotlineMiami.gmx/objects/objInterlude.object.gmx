@@ -153,7 +153,6 @@ d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 draw_set_color(c_black)
 //draw_rectangle(0,0,room_width,55,0)
 //draw_rectangle(0,room_height,room_width,room_height-65,0)
-drawScanlines();
 drawVignette();
 </string>
           </argument>

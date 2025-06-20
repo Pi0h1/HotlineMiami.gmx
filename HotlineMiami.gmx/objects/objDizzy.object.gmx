@@ -265,7 +265,6 @@ draw_set_alpha(1)
 //d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 }
 
-drawScanlines();
 drawVignette();
 }
 

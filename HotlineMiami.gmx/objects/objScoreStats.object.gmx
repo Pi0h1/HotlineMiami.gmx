@@ -199,11 +199,11 @@ if drawbonus[i]&lt;bonus[i]-5 drawbonus[i]+=5 else drawbonus[i]=bonus[i]
 }
 draw_set_halign(fa_right)
 draw_set_color(merge_color(c_teal,c_black,0.35+lengthdir_x(0.35,dir*24)))
-draw_text_transformed(334,64+i*16,string(drawbonus[i]),1,1,0)
+draw_text_transformed(room_width-66,64+i*16,string(drawbonus[i]),1,1,0)
 draw_set_color(merge_color(c_aqua,c_teal,0.35+lengthdir_x(0.35,dir*24)))
-draw_text_transformed(332,64+i*16,string(drawbonus[i]),1,1,0)
+draw_text_transformed(room_width-68,64+i*16,string(drawbonus[i]),1,1,0)
 draw_set_color(c_white)
-draw_text_transformed(330,64+i*16,string(drawbonus[i]),1,1,0)
+draw_text_transformed(room_width-70,64+i*16,string(drawbonus[i]),1,1,0)
 draw_set_halign(fa_center)
 if current=i and drawbonus[i]=bonus[i] current+=1
 }
@@ -220,11 +220,12 @@ if times&lt;1 times=1
 if global.myscore&lt;real(string_digits(parscore)) color1=c_red else color1=c_lime
 repeat (times) {
 draw_set_color(merge_color(color1,c_white,0.5-lengthdir_x(0.5,i*16)))
-draw_text_transformed(200,view_hview[0]-64,string(global.myscore)+parscore,0.65+i*0.005,1+i*0.05,lengthdir_x(4,dir*8))
+draw_text_transformed((room_width/2),view_hview[0]-64,string(global.myscore)+parscore,0.65+i*0.005,1+i*0.05,lengthdir_x(4,dir*8))
 i+=1
 }
 }
-surface_reset_target()</string>
+surface_reset_target()
+</string>
           </argument>
         </arguments>
       </action>
@@ -353,7 +354,6 @@ d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 draw_set_color(c_black)
 //draw_rectangle(0,0,room_width,55,0)
 //draw_rectangle(0,room_height,room_width,room_height-65,0)
-drawScanlines();
 drawVignette();
 </string>
           </argument>

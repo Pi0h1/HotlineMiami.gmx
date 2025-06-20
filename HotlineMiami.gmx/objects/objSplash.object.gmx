@@ -168,11 +168,9 @@ if wait2&gt;0 wait2-=1 else {audio_stop_sound(sndNoise) room_goto_next()}
 }
 }
 
-
+drawVignette();
 
 d3d_set_projection_ortho(0,0,view_wview[0]*2,view_hview[0]*2,0)
-drawScanlines();
-drawVignette();
 </string>
           </argument>
         </arguments>

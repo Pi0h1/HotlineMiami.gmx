@@ -742,7 +742,6 @@ draw_rectangle(-1,room_height+1,room_width+1,room_height-15,0)
 draw_set_color(c_white)
 draw_set_font(fntDate)
 
-drawScanlines();
 drawVignette();
 </string>
           </argument>

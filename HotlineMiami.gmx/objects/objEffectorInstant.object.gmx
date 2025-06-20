@@ -179,7 +179,6 @@ draw_set_blend_mode(bm_normal)
 }
 coldir+=1
 
-drawScanlines();
 drawVignette();
 </string>
           </argument>

@@ -233,8 +233,6 @@ draw_set_blend_mode(bm_normal)
 } else {room_goto(global.level) game_save("restart.dat")}
 }
 
-
-drawScanlines();
 drawVignette();
 </string>
           </argument>

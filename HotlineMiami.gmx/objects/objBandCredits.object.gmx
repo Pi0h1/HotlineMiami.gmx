@@ -224,7 +224,6 @@ draw_set_color(c_black)
 if current&gt;9 {if blackx&lt;150 blackx+=(blackx-29)*0.05 else fade=1}
 draw_rectangle(0,0,view_wview[0],blackx,0)
 draw_rectangle(0,view_hview[0]-blackx,view_wview[0],view_hview[0],0)
-drawScanlines();
 drawVignette();
 </string>
           </argument>

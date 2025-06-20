@@ -287,9 +287,6 @@ shine-=0.1
 draw_set_alpha(1)
 }
 
-
-drawScanlines();
-
 if fade=0 {
 if amount&lt;180 {
 amount+=5

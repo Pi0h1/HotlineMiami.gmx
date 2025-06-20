@@ -2748,9 +2748,8 @@
       <script>scripts\screen_refresh.gml</script>
       <script>scripts\screen_redraw.gml</script>
     </scripts>
-    <scripts name="Redundant Visual Effects">
+    <scripts name="Visual Effects">
       <script>scripts\drawVignette.gml</script>
-      <script>scripts\drawScanlines.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -2774,7 +2773,6 @@
     <font>fonts\fntQuestion</font>
     <font>fonts\fntScore</font>
     <font>fonts\fntScoreUpdate</font>
-    <font>fonts\fntSmallFonts</font>
     <font>fonts\fntTopic</font>
     <font>fonts\fntUnlock</font>
     <font>fonts\fntWarning</font>
@@ -3799,6 +3797,7 @@
       <object>objects\objDevolver</object>
       <object>objects\objSplash</object>
     </objects>
+    <object>objects\objScanlines</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Interface">

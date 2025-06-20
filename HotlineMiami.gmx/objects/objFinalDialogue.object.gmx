@@ -276,7 +276,6 @@ draw_set_blend_mode(bm_normal)
 }
 
 exit
-drawScanlines();
 drawVignette();
 
 </string>

@@ -29,7 +29,7 @@
 //global.title="DECADENCE"�
 if global.xbox=1 scrInitXboxButtons()
 if surface_exists(global.surf1) surface_free(global.surf1)
-global.surf1=surface_create(400,256)
+global.surf1=surface_create(room_width,room_height)
 song=working_directory+"\Daisuke.mp3"
 bonuses=""
 i=0 repeat ds_list_size(global.bonuslist) {
@@ -127,7 +127,8 @@ housex=0
 dir=random(360)
 factor=0
 fade=0
-c_amount=0</string>
+c_amount=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -170,7 +171,7 @@ surface_set_target(global.surf1)
 draw_clear_alpha(c_black,0)
 draw_set_font(fntDetails)
 i=0 repeat (7) {
-draw_line_color(0,12+i*3,400,12+i*3,merge_color(c_black,c_maroon,0.25+lengthdir_x(0.25,dir2*4+i*35)),merge_color(c_black,c_maroon,0.25+lengthdir_x(0.25,dir2*4+i*35)+180))
+draw_line_color(0,12+i*3,room_width,12+i*3,merge_color(c_black,c_maroon,0.25+lengthdir_x(0.25,dir2*4+i*35)),merge_color(c_black,c_maroon,0.25+lengthdir_x(0.25,dir2*4+i*35)+180))
 i+=1
 }
 draw_set_halign(fa_left)
@@ -184,16 +185,16 @@ draw_text(11,22,"LEVEL: "+'"'+level+'"'+"#TIME: "+string(floor(time/60))+"s")
 
 draw_set_halign(fa_right)
 draw_set_color(merge_color(c_yellow,c_olive,0.5+lengthdir_x(0.5,dir2*10+180)))
-draw_text(387,22,"HIGHSCORE: "+string(highscore)+"#SCORE: "+string(myscore))
+draw_text(room_width-11,22,"HIGHSCORE: "+string(highscore)+"#SCORE: "+string(myscore))
 draw_set_color(merge_color(c_yellow,c_orange,0.5+lengthdir_x(0.5,dir2*10)))
-draw_text(388,22,"HIGHSCORE: "+string(highscore)+"#SCORE: "+string(myscore))
+draw_text(room_width-12,22,"HIGHSCORE: "+string(highscore)+"#SCORE: "+string(myscore))
 
 draw_set_halign(fa_center)
 if gradeon=1 {
 draw_set_color(merge_color(c_lime,c_green,0.5+lengthdir_x(0.5,dir2*10)))
-draw_text(200,22,"PLAY STYLE:#"+'"'+type+'"')
+draw_text((room_width/2)+1,22,"PLAY STYLE:#"+'"'+type+'"')
 draw_set_color(merge_color(c_lime,c_green,0.5+lengthdir_x(0.5,dir2*10+180)))
-draw_text(199,22,"PLAY STYLE:#"+'"'+type+'"')
+draw_text((room_width/2),22,"PLAY STYLE:#"+'"'+type+'"')
 }
 draw_set_font(fntFeats)
 if dir&lt;180 dir+=18 else {if current&lt;ds_list_size(global.bonuslist) current+=1 dir=0}
@@ -206,7 +207,7 @@ ii=0
 repeat (times) {
 draw_set_color(merge_color(merge_color(c_white,c_aqua,0.5+lengthdir_x(0.5,cdir+i*20)),c_teal,0.5+lengthdir_x(0.5,cdir+i*30)))
 mystring=ds_list_find_value(global.bonuslist,i)
-draw_text(350-string_width(mystring)*0.5+lengthdir_x(3,cdir+i*40),190-ii*(12),mystring)
+draw_text((room_width-50)-string_width(mystring)*0.5+lengthdir_x(3,cdir+i*40),190-ii*(12),mystring)
 i-=1
 ii+=1
 }
@@ -217,11 +218,11 @@ i=0
 draw_set_font(fntChapter)
 repeat (times) {
 draw_set_color(merge_color(merge_color(c_olive,c_orange,0.5+lengthdir_x(0.5,cdir*3)),merge_color(c_yellow,c_white,0.75+lengthdir_x(0.25,cdir*2)),1*(times/20)))
-draw_text_transformed(350-string_width(mystring)*0.325,210+i*0.1,mystring,0.65+i*0.005,1+i*0.025,0)
+draw_text_transformed((room_width-50)-string_width(mystring)*0.325,210+i*0.1,mystring,0.65+i*0.005,1+i*0.025,0)
 i+=1
 }
 } else {
-if gradex&lt;280 gradex+=10 else {if gradeon=0 {gradeon=1 if grade="A+" SteamSetAchievement("ACH_ACED_IT") scrCheckGrades() alpha=1}}
+if gradex&lt;(room_width-120) gradex+=10 else {if gradeon=0 {gradeon=1 if grade="A+" SteamSetAchievement("ACH_ACED_IT") scrCheckGrades() alpha=1}}
 draw_set_font(fntGrading)
 mystring="GRADE:"
 draw_set_color(merge_color(c_yellow,c_white,0.5+lengthdir_x(0.5,cdir*3)))
@@ -232,10 +233,11 @@ amount=-1+lengthdir_x(2,cdir)
 if amount&lt;0 amount=0
 draw_set_color(merge_color(c_red,c_white,amount))
 draw_set_halign(fa_left)
-draw_text_transformed(290,210,grade,0.95+amount*0.05,0.9+amount*0.1,0)
+draw_text_transformed((room_width-110),210,grade,0.95+amount*0.05,0.9+amount*0.1,0)
 }
 }
-surface_reset_target()</string>
+surface_reset_target()
+</string>
           </argument>
         </arguments>
       </action>
@@ -367,7 +369,6 @@ d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 draw_set_color(c_black)
 //draw_rectangle(0,0,room_width,55,0)
 //draw_rectangle(0,room_height,room_width,room_height-65,0)
-drawScanlines();
 drawVignette();
 </string>
           </argument>

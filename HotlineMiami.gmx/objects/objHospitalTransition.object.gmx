@@ -175,7 +175,6 @@ draw_sprite_tiled_ext(sprNoise,dir,x,y,1,1,merge_color(c_black,make_color_hsv(ra
 draw_set_blend_mode(bm_normal)
 draw_rectangle(0,0,room_width,blackx,0)
 draw_rectangle(0,room_height,room_width,room_height-blackx,0)
-drawScanlines();
 drawVignette();
 </string>
           </argument>

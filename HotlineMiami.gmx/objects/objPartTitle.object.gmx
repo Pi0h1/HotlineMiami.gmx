@@ -170,8 +170,6 @@ draw_set_blend_mode(bm_normal)
 } else {if global.nextlevel=rmRewind or global.nextlevel=rmSequence12bDownstairs {nothing=1 if global.nextlevel=rmSequence12bDownstairs sxeasy_play(working_directory+"\TurfIntro.mp3")} else sxeasy_play(working_directory+"\SilverLights.mp3") room_goto(global.nextlevel)}
 }
 
-
-drawScanlines();
 draw_set_blend_mode(bm_subtract)
 draw_circle_color(x,y,room_width*0.75+random(10),c_black,c_lime,0)
 draw_set_blend_mode(bm_normal)

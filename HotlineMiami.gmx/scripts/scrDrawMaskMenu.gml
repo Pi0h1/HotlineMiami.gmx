@@ -31,7 +31,7 @@ if global.masks[select]=0 color=c_black else color=c_white
 draw_sprite_ext(sprite_index,select,80,masky+drawy+20,1.5,1.5,lengthdir_x(5,starty*1.765+dir*2),color,1)
 if on=0 {
 if masky<room_height+40 {masky+=maskspeed maskspeed+=0.5} else {
-if maskx>0 maskx-=2 else {
+if maskx>-10 maskx-=2 else {
 if blacky>0 blacky-=2 else instance_destroy()
 }
 }

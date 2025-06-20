@@ -353,9 +353,7 @@ global.videofile="ccReplay"+room_get_name(room)+string(i)+".avi"</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawScanlines();
-
-if gridon=1 {draw_set_alpha(0.25) mp_grid_draw(global.grid) draw_set_alpha(1)}
+            <string>if gridon=1 {draw_set_alpha(0.25) mp_grid_draw(global.grid) draw_set_alpha(1)}
 if instance_exists(objPlayer) {
 width=display_get_width()
 height=display_get_height()

@@ -151,9 +151,7 @@ global.videofile="ccReplay"+room_get_name(room)+string(i)+".avi"*/</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawScanlines();
-
-if instance_exists(objPlayer) {
+            <string>if instance_exists(objPlayer) {
 width=display_get_width()
 height=display_get_height()
 if global.xbox=1 {
@@ -303,7 +301,6 @@ draw_text(view_wview[0]/2,view_hview[0]/2,text)
 draw_set_alpha(1)
 //d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
 }
-
 
 drawVignette();
 </string>

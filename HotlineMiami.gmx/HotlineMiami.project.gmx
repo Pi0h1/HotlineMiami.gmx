@@ -3090,6 +3090,7 @@
         <object>objects\objLetterDone</object>
         <object>objects\objLetterFound</object>
       </objects>
+      <object>objects\objScanlines</object>
       <object>objects\sxms</object>
       <object>objects\objVCapture</object>
       <object>objects\objPathTest</object>
@@ -3797,7 +3798,6 @@
       <object>objects\objDevolver</object>
       <object>objects\objSplash</object>
     </objects>
-    <object>objects\objScanlines</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Interface">
@@ -3818,7 +3818,7 @@
       <room>rooms\rmWeaponUnlock</room>
     </rooms>
     <rooms name="Levels">
-      <rooms name="Part One - Phonecalls">
+      <rooms name="Phonecalls">
         <rooms name="The Metro">
           <room>rooms\rmTutorial</room>
           <room>rooms\rmDream1</room>
@@ -3852,7 +3852,7 @@
           <room>rooms\rmBar1</room>
         </rooms>
       </rooms>
-      <rooms name="Part Two - Questions">
+      <rooms name="Questions">
         <rooms name="Tension">
           <room>rooms\rmDream2</room>
           <room>rooms\rmSequence5</room>
@@ -3888,7 +3888,7 @@
           <room>rooms\rmBar2</room>
         </rooms>
       </rooms>
-      <rooms name="Part Three - Visitations">
+      <rooms name="Visitations">
         <rooms name="Push It">
           <room>rooms\rmDream3</room>
           <room>rooms\rmSequence9</room>
@@ -3923,7 +3923,7 @@
           <room>rooms\rmBar3</room>
         </rooms>
       </rooms>
-      <rooms name="Part Four - Connections">
+      <rooms name="Connections">
         <rooms name="Trauma">
           <room>rooms\rmHospitalTitle</room>
           <room>rooms\rmSequence12b</room>
@@ -3955,7 +3955,7 @@
           <room>rooms\rmCredits</room>
         </rooms>
       </rooms>
-      <rooms name="Part Five - Answers">
+      <rooms name="Answers">
         <rooms name="Safehouse">
           <room>rooms\rmRewind</room>
           <room>rooms\rmMCBar</room>
@@ -3982,7 +3982,7 @@
           <room>rooms\rmBikeEnding</room>
         </rooms>
       </rooms>
-      <rooms name="Bonus Levels">
+      <rooms name="Bonus">
         <room>rooms\rmHighballer</room>
         <room>rooms\rmEurogamer</room>
       </rooms>

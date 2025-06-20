@@ -1,0 +1,108 @@
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrCharge:In script scrEnemyShoot:Error in code at line 81:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrCharge:In script scrEnemyShoot:Error in code at line 81:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrCharge:In script scrEnemyShoot:Error in code at line 41:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrCharge:In script scrEnemyShoot:Error in code at line 41:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrCharge:In script scrEnemyShoot:Error in code at line 41:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrCharge:In script scrEnemyShoot:Error in code at line 41:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrAim:In script scrEnemyShoot:Error in code at line 81:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrCharge:In script scrEnemyShoot:Error in code at line 81:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrAim:In script scrEnemyShoot:Error in code at line 81:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrAim:In script scrEnemyShoot:Error in code at line 81:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrCharge:In script scrEnemyShoot:Error in code at line 81:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+
+ERROR in
+action number 1
+of  Step Event
+for object objEnemy:
+
+In script scrERandomStep:In script scrAim:In script scrEnemyShoot:Error in code at line 81:   
+            my_id = instance_create(x + lengthdir_x(5, angle - 5 * left), y + lengthdir_y(5, angle - 5 * left), objShell)at position 69: Unknown variable left
+
+

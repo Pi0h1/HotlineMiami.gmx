@@ -30,11 +30,13 @@
     instance_destroy();
 }
 
-x = 0;
-y = 0;
+x = -480;
+y = -270;
 
 gui_w = room_width;
 gui_h = room_height;
+
+angle = 0;
 </string>
           </argument>
         </arguments>

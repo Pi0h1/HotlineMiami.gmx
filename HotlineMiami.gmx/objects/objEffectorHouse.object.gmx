@@ -69,7 +69,9 @@ if room=rmNoodleShop leveltitle="North East 56th St"
 if room=rmArcadeDownstairs leveltitle="South West 107th Place"
 if room=rmPhoneHomEntranceBiker leveltitle="North West 342nd St"
 if room=rmJanitors leveltitle="North 87th Place"
-}</string>
+}
+scrLockInEffectInit();
+</string>
           </argument>
         </arguments>
       </action>
@@ -130,7 +132,10 @@ objPlayer.persistent=test
 /*surface_set_target(global.surf4)
 draw_clear_alpha(c_black,0)
 scrScoreDraw()
-surface_reset_target()*/</string>
+surface_reset_target()*/
+
+scrLockInEffectStep();
+</string>
           </argument>
         </arguments>
       </action>
@@ -232,8 +237,8 @@ if instance_exists(objPlayerMouseHouse) {if objPlayer.aimon=0 test=0}
 if instance_exists(objPhoneConversation) or instance_exists(objFinalDialogue) or instance_exists(objFinalDialogue2) test=0 
 if test=1 {
 draw_sprite_ext(sprite_index,image_index,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
-draw_set_blend_mode(bm_add)
-draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_white,1)
+draw_set_blend_mode(bm_cursor)
+draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_cursor,1)
 draw_set_blend_mode(bm_normal)
 }
 with objAnsweringMachine {

@@ -652,6 +652,7 @@
     <sound>sound\sndManhole</sound>
     <sound>sound\sndLadder</sound>
     <sound>sound\sndTinnitusHospital</sound>
+    <sound>sound\sndLock</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
@@ -2751,6 +2752,8 @@
     <scripts name="Visual Effects">
       <script>scripts\drawVignette.gml</script>
     </scripts>
+    <script>scripts\scrLockInEffectInit.gml</script>
+    <script>scripts\scrLockInEffectStep.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mapdir=0
+            <string>angle = 0;
+mapdir=0
 select=0
 scrFreeSurfaces()
 image_speed=0.2
@@ -59,7 +60,8 @@ alarm[0]=45
 alarm[1]=90
 
 x=room_width/2
-y=room_height/2</string>
+y=room_height/2
+</string>
           </argument>
         </arguments>
       </action>

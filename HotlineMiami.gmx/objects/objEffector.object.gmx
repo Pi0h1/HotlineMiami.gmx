@@ -80,7 +80,10 @@ if room=rmNoodleShop leveltitle="North East 56th St"
 if room=rmArcadeDownstairs leveltitle="South West 107th Place"
 if room=rmPhoneHomEntranceBiker leveltitle="North West 342nd St"
 if room=rmJanitors leveltitle="North 87th Place"
-}</string>
+}
+
+scrLockInEffectInit();
+</string>
           </argument>
         </arguments>
       </action>
@@ -217,6 +220,8 @@ if global.xbox=1 setrumble(0,0,global.shake*(1/15)*65535)
 view_xview[0]+=-global.shake*0.33+random(global.shake*0.66)
 view_yview[0]+=-global.shake*0.33+random(global.shake*0.66)
 }
+
+scrLockInEffectStep();
 </string>
           </argument>
         </arguments>
@@ -407,8 +412,8 @@ draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,objBackgroundColor.dir*32),y+16,1,
 }
 }
 draw_sprite_ext(sprite_index,image_index,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
-draw_set_blend_mode(bm_add)
-draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_white,1)
+draw_set_blend_mode(bm_cursor);
+draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_cursor,1)
 draw_set_blend_mode(bm_normal)
 with objDiscoLights {
 d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)

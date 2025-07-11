@@ -76,7 +76,7 @@ my_id=instance_create(x,y,objDeadBody)
 my_id.sprite_index=sprBodyguardBashed
 my_id.image_index=floor(random(4))
 my_id.image_angle=image_angle
-if global.controller=1 my_id=instance_create(x,y,objPlayerController) else my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.reload=30
 instance_destroy()
 }
@@ -228,7 +228,7 @@ my_id=instance_create(x,y,objDeadBody)
 my_id.sprite_index=sprBodyguardDead
 my_id.image_index=floor(random(4))
 my_id.image_angle=image_angle
-if global.controller=1 my_id=instance_create(x,y,objPlayerController) else my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.reload=30
 global.dir=image_angle-180
 with my_id move_outside_solid(global.dir,16)
@@ -236,28 +236,6 @@ instance_destroy()
 }
 }
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>

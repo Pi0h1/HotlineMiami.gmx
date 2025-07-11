@@ -38,7 +38,6 @@ left=1
 ammo=0
 energie=1
 throwreload=0
-if global.controller=1 {instance_create(x,y,objPlayerController) instance_destroy()}
 active=1
 myxspeed=0
 myyspeed=0
@@ -48,7 +47,8 @@ view_xview[0]=x-view_wview[0]/2
 view_yview[0]=y-view_hview[0]/2
 xview=view_xview[0]
 yview=view_yview[0]
-alarm[1]=2</string>
+alarm[1]=2
+</string>
           </argument>
         </arguments>
       </action>

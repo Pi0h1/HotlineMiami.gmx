@@ -63,11 +63,6 @@ if (global.maskon == 1) {
 
 throwreload = 0;
 
-if (global.controller == 1) {
-    instance_create(x,y,objPlayerController);
-    instance_destroy();
-}
-
 scrInitThrowPos();
 scrInitMaskPos();
 scrUpdateMaskPos(sprite_index);
@@ -146,7 +141,7 @@ if (!place_free(x,y)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox = 1 {
+            <string>if (global.xbox) {
     scrXboxPlayerMouse();
 }
 
@@ -775,7 +770,7 @@ if (bullets &gt; 1 or round(random(1)) or energie &lt; 0) {
             <kind>1</kind>
             <string>if (global.xbox == 1) 
     exit;
-if (releaze &lt; 20) {
+if (release &lt; 20) {
     scrPlayerPickUp();
     release = 0;
 }

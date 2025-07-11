@@ -2786,7 +2786,6 @@
         <object>objects\objPlayerMouse</object>
         <object>objects\objPlayerMouseHouse</object>
         <object>objects\objPlayerShieldMouse</object>
-        <object>objects\objPlayerController</object>
         <object>objects\objMaskMenu</object>
         <object>objects\objPlayerCarEnter</object>
         <object>objects\objPlayerHospital</object>

@@ -94,10 +94,11 @@ my_id=instance_create(x,y,objPBodyguardBash)
 my_id.maskindex=objPlayer.maskindex
 my_id.maskon=1
 my_id.image_angle=image_angle
-with objPlayer {if object_index=objPlayerMouse or object_index=objPlayerController instance_destroy()}
+with objPlayer {if object_index=objPlayerMouse instance_destroy()}
 instance_destroy()
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

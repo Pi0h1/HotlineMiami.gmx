@@ -29,7 +29,7 @@ if sprite_index=sprPAttackBash my_id.sprite_index=sprEBackBashed
 if sprite_index=sprPAttackBashPolice my_id.sprite_index=sprPoliceBackBashed
 my_id.image_index=floor(random(4))
 my_id.image_angle=image_angle
-if global.controller=1 my_id=instance_create(x,y,objPlayerController) else my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.reload=30
 global.dir=image_angle-180
 with my_id move_outside_solid(global.dir,16)

@@ -79,7 +79,7 @@ my_id=instance_create(x+lengthdir_x(19,dir),y+lengthdir_y(19,dir),objBloodSquirt
 my_id.image_angle=random(360)
 }
 global.angle=image_angle-180
-if global.controller=1 my_id=instance_create(x,y,objPlayerController) else my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.reload=10
 if global.maskindex=11 {my_id.sprite_index=global.gun with my_id {scrGetAmmo(sprite_index)}}
 my_id.sprite_index=sprPigButcher

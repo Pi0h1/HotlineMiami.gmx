@@ -41,10 +41,6 @@ left = 1;
 ammo = 0;
 energie = 1;
 throwreload = 0;
-if (global.controller == 1) {
-    instance_create(x, y, objPlayerController);
-    instance_destroy();
-}
 scrInitThrowPos();
 scrInitMaskPos();
 throwindex = 0;

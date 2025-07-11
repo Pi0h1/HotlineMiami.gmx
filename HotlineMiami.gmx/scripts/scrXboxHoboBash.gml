@@ -32,7 +32,7 @@ my_id=instance_create(x,y,objDeadBody)
 my_id.sprite_index=sprHoboBashed
 my_id.image_index=floor(random(4))
 my_id.image_angle=image_angle
-if global.controller=1 my_id=instance_create(x,y,objPlayerController) else my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPlayerMouse)
 my_id.reload=30
 my_id.alarm[2]=180
 global.dir=image_angle-180

@@ -25,41 +25,46 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-currentweapon=0
-dir=0
-if global.xbox=1 scrInitXboxButtons()
-myxspeed=0
-myyspeed=0
-move=0
-movex=0
-movey=0
+            <string>image_speed = 0;
+currentweapon = 0;
+dir = 0;
+if (global.xbox)
+    scrInitXboxButtons();
+myxspeed = 0;
+myyspeed = 0;
+move = 0;
+movex = 0;
+movey = 0;
 
-viewspeed=0
-bullets=0
-reload=0
-light=0
-legdir=0
-legindex=0
-legindex2=0
-left=1
-ammo=0
-energie=10
-throwreload=0
-if global.controller=1 {instance_create(x,y,objPlayerShieldController) instance_destroy()}
-scrInitThrowPos()
-scrInitMaskPos()
-scrUpdateMaskPos(sprite_index)
-last_sprite=sprite_index
-throwindex=0
-maskindex=global.maskindex
-maskon=global.maskon
-masksprite=-1
-reset=mouse_check_button(mb_right)
-shotgunned=0
-aim=0
-SteamSetAchievement("ACH_NIGEL_LOWRIE")
-snap=0</string>
+viewspeed = 0;
+bullets = 0;
+reload = 0;
+light = 0;
+legdir = 0;
+legindex = 0;
+legindex2 = 0;
+left = 1;
+ammo = 0;
+energie = 10;
+throwreload = 0;
+if (global.controller) {
+    instance_create(x, y, objPlayerShieldController);
+    instance_destroy();
+}
+scrInitThrowPos();
+scrInitMaskPos();
+scrUpdateMaskPos(sprite_index);
+last_sprite = sprite_index;
+throwindex = 0;
+maskindex = global.maskindex;
+maskon = global.maskon;
+masksprite = -1;
+reset = mouse_check_button(mb_right);
+shotgunned = 0;
+aim = 0;
+SteamSetAchievement("ACH_NIGEL_LOWRIE");
+snap = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -81,22 +86,30 @@ snap=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_id=instance_create(x,y,objDeadBody)
-global.dir=dir
-with my_id move_contact_solid(global.dir-45,12)
-if shotgunned {my_id.sprite_index=choose(sprEBackShotgun,sprEBackShotgun,sprEFrontShotgun) my_id.image_index=floor(random(2))} else {my_id.sprite_index=choose(sprEBackMachinegun,sprEBackMachinegun,sprEFrontMachinegun) my_id.image_index=floor(random(3))}
-my_id.direction=dir-180
-my_id.speed=random(1)+bullets*0.15
-my_id.image_angle=my_id.direction
-instance_destroy()
-my_id=instance_create(x,y,objPlayerMouse)
-my_id.ammo=ammo
-if sprite_index=sprPHumanShieldDoubleBarrel my_id.sprite=sprPWalkDoubleBarrel
-if sprite_index=sprPHumanShieldMagnum my_id.sprite=sprPWalkMagnum
-if sprite_index=sprPHumanShieldScorpion my_id.sprite=sprPWalkScorpion
-if sprite_index=sprPHumanShieldUzi my_id.sprite=sprPWalkUzi
-if sprite_index=sprPHumanShieldMP5 my_id.sprite=sprPWalkMP5
-if sprite_index=sprPHumanShieldSilencer my_id.sprite=sprPWalkSilencer</string>
+            <string>my_id = instance_create(x, y, objDeadBody);
+global.dir = dir;
+with (my_id)
+    move_contact_solid(global.dir - 45, 12);
+if (shotgunned) {
+    my_id.sprite_index = choose(sprEBackShotgun, sprEBackShotgun, sprEFrontShotgun);
+    my_id.image_index = floor(random(2));
+} else {
+    my_id.sprite_index = choose(sprEBackMachinegun, sprEBackMachinegun, sprEFrontMachinegun);
+    my_id.image_index = floor(random(3));
+}
+my_id.direction = dir - 180;
+my_id.speed = random(1) + bullets * 0.15;
+my_id.image_angle = my_id.direction;
+instance_destroy();
+my_id = instance_create(x, y, objPlayerMouse);
+my_id.ammo = ammo;
+if sprite_index = sprPHumanShieldDoubleBarrel my_id.sprite = sprPWalkDoubleBarrel
+if sprite_index = sprPHumanShieldMagnum my_id.sprite = sprPWalkMagnum
+if sprite_index = sprPHumanShieldScorpion my_id.sprite = sprPWalkScorpion
+if sprite_index = sprPHumanShieldUzi my_id.sprite = sprPWalkUzi
+if sprite_index = sprPHumanShieldMP5 my_id.sprite = sprPWalkMP5
+if sprite_index = sprPHumanShieldSilencer my_id.sprite = sprPWalkSilencer
+</string>
           </argument>
         </arguments>
       </action>
@@ -118,7 +131,8 @@ if sprite_index=sprPHumanShieldSilencer my_id.sprite=sprPWalkSilencer</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>persistent=0</string>
+            <string>persistent = 0;
+</string>
           </argument>
         </arguments>
       </action>

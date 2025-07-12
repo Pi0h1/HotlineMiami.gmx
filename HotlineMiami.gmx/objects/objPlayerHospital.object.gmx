@@ -25,29 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrInitXboxButtons()
-image_speed=0
-currentweapon=0
-dir=0
-viewspeed=0
-reload=0
-light=0
-legdir=0
-legindex=0
-left=1
-ammo=0
-energie=1
-throwreload=0
-active=1
-myxspeed=0
-myyspeed=0
-myspeed=0
-last_sprite=sprPWalkHospital
-view_xview[0]=x-view_wview[0]/2
-view_yview[0]=y-view_hview[0]/2
-xview=view_xview[0]
-yview=view_yview[0]
-alarm[1]=2
+            <string>if (global.xbox)
+    scrInitXboxButtons();
+image_speed = 0;
+currentweapon = 0;
+dir = 0;
+viewspeed = 0;
+reload = 0;
+light = 0;
+legdir = 0;
+legindex = 0;
+left = 1;
+ammo = 0;
+energie = 1;
+throwreload = 0;
+active = 1;
+myxspeed = 0;
+myyspeed = 0;
+myspeed = 0;
+last_sprite = sprPWalkHospital;
+view_xview[0] = x - view_wview[0] / 2;
+view_yview[0] = y - view_hview[0] / 2;
+xview = view_xview[0];
+yview = view_yview[0];
+alarm[1] = 2;
 </string>
           </argument>
         </arguments>
@@ -70,11 +71,17 @@ alarm[1]=2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.loaded=1
-with objEffector {global.amount=amount amount=0}
-game_save(working_directory+"\tempsave.sav")
-with objEffector {amount=global.amount}
-global.loaded=0</string>
+            <string>global.loaded = 1;
+with (objEffector) {
+    global.amount = amount;
+    amount = 0;
+}
+game_save(working_directory + "\tempsave.sav");
+with (objEffector) {
+    amount = global.amount;
+}
+global.loaded = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -96,236 +103,105 @@ global.loaded=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.test=0
-view_xview[0]=xview
-view_yview[0]=yview
-if sprite_index=sprPKeyLockOpen {
-if image_index&lt;4 image_index+=0.2 else {
-active=1
-with objLockedDoor image_index=1
-sprite_index=sprPWalkHospital
+            <string>global.test = 0;
+view_xview[0] = xview;
+view_yview[0] = yview;
+if (sprite_index == sprPKeyLockOpen) {
+    if (image_index &lt; 4){
+        image_index += 0.2;
+    } else {
+        active = 1;
+        with (objLockedDoor)
+            image_index = 1;
+        sprite_index = sprPWalkHospital;
+    }
+    exit
 }
-exit
+with (objWeapon) {
+    if (point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 32)
+        global.test = 2;
 }
-with objWeapon {if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;32 global.test=2}
-if place_meeting(x,y,objKnockedOut) global.test=1
-objEffector.action=global.test
-if throwreload&gt;0 throwreload-=1
-if instance_exists(objPhoneConversation) valid=0 else valid=1
-factor=1
-if global.xbox=0 aimfar=keyboard_check_direct(vk_shift) else aimfar=checkbutton(0,getid(9))
-if aimfar and valid {
-/*viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(96,dir),y+lengthdir_y(96,dir))*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(96,dir),y+lengthdir_y(96,dir))
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)*/
-if global.xbox=1 {
-viewx=objPlayer.x+rightthumb_x(0)*0.0045
-viewy=objPlayer.y-rightthumb_y(0)*0.003
+if (place_meeting(x, y, objKnockedOut))
+    global.test = 1;
+objEffector.action = global.test;
+if (throwreload &gt; 0)
+    throwreload--;
+if (instance_exists(objPhoneConversation)) {
+    valid = 0;
+} else valid = 1;
+factor = 1;
+if (global.xbox == 0) {
+    aimfar = keyboard_check_direct(vk_shift);
+} else aimfar = checkbutton(0, getid(9));
+if (aimfar &amp;&amp; valid) {
+    if (global.xbox) {
+        viewx = objPlayer.x + rightthumb_x(0) * 0.0045;
+        viewy = objPlayer.y - rightthumb_y(0) * 0.003;
+    } else {
+        factor = 1.8;
+        viewx = objPlayer.x + ((display_mouse_get_x() - display_get_width() * 0.5) * (view_wview[0] / display_get_width())) * factor;
+        viewy = objPlayer.y + ((display_mouse_get_y() - display_get_height() * 0.5) * (view_hview[0] / display_get_height())) * factor;
+    }
+    viewspeed = point_distance(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, viewx, viewy) * 0.1;
+    viewdir = point_direction(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, viewx, viewy);
+    view_xview[0] += lengthdir_x(viewspeed, viewdir);
+    view_yview[0] += lengthdir_y(viewspeed, viewdir);
+    vdist = point_distance(x, y, room_width / 2, room_height / 2);
+    vdir = point_direction(room_width / 2, room_height / 2, x, y);
+    view_angle[0] = lengthdir_y(objDizzy.dizziness * 20, lengthdir_x(objDizzy.dizziness * 30, global.dir * 3));
 } else {
-factor=1.8
-viewx=objPlayer.x+((display_mouse_get_x()-display_get_width()*0.5)*(view_wview[0]/display_get_width()))*factor
-viewy=objPlayer.y+((display_mouse_get_y()-display_get_height()*0.5)*(view_hview[0]/display_get_height()))*factor
+    if (objPlayer.active == 0 &amp;&amp; instance_exists(objPhoneConversation)) {
+        with (global.doctor) {
+            valid = 0;
+            vdist = point_distance(x, y, room_width / 2 - (1 - valid) * 88, room_height / 2);
+            vdir = point_direction(room_width / 2 - (1 - valid) * 88, room_height / 2, x, y);
+            viewspeed = point_distance(view_xview[0] + view_wview[0] / 2 - (1 - valid) * 88, view_yview[0] + view_hview[0] / 2, x + lengthdir_x(vdist * 0.2, vdir - 180), y + lengthdir_y(vdist * 0.2, vdir - 180)) * 0.1;
+            viewdir = point_direction(view_xview[0] + view_wview[0] / 2 - (1 - valid) * 88, view_yview[0] + view_hview[0] / 2, x + lengthdir_x(vdist * 0.2, vdir - 180), y + lengthdir_y(vdist * 0.2, vdir - 180));
+            view_xview[0] += lengthdir_x(viewspeed, viewdir);
+            view_yview[0] += lengthdir_y(viewspeed, viewdir);
+            view_angle[0] = lengthdir_y(objDizzy.dizziness * 20, lengthdir_x(objDizzy.dizziness * 30, global.dir * 3));
+        }
+    } else {
+        viewspeed = point_distance(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, x + lengthdir_x(24, dir), y + lengthdir_y(24, dir)) * 0.1;
+        viewdir = point_direction(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, x + lengthdir_x(24, dir), y + lengthdir_y(24, dir));
+        view_xview[0] += lengthdir_x(viewspeed, viewdir);
+        view_yview[0] += lengthdir_y(viewspeed, viewdir);
+        view_angle[0] = lengthdir_y(objDizzy.dizziness * 20, lengthdir_x(objDizzy.dizziness * 30, global.dir * 3));
+    }
 }
-viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)
-vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-view_angle[0]=lengthdir_y(objDizzy.dizziness*20,lengthdir_x(objDizzy.dizziness*30,global.dir*3))
+if (sprite_index == sprPHospitalHeadache) {
+    if (global.shake &lt; 6)
+        global.shake += 0.25;
+    with (objDizzy) {
+        if (dizziness &gt; 0.1)
+            dizziness -= 0.005;
+    }
 } else {
-if objPlayer.active=0 and instance_exists(objPhoneConversation) {
+    if (global.shake &gt; 0)
+        global.shake -= 0.5;
+}
+xview = view_xview[0];
+yview = view_yview[0];
+view_xview[0] = xview - global.shake + global.shake * 2;
+view_yview[0] = yview - global.shake + global.shake * 2;
 
-with global.doctor {
-valid=0
-vdist=point_distance(x,y,room_width/2-(1-valid)*88,room_height/2)
-vdir=point_direction(room_width/2-(1-valid)*88,room_height/2,x,y)
-viewspeed=point_distance(view_xview[0]+view_wview[0]/2-(1-valid)*88,view_yview[0]+view_hview[0]/2,x+lengthdir_x(vdist*0.2,vdir-180),y+lengthdir_y(vdist*0.2,vdir-180))*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2-(1-valid)*88,view_yview[0]+view_hview[0]/2,x+lengthdir_x(vdist*0.2,vdir-180),y+lengthdir_y(vdist*0.2,vdir-180))
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)
-view_angle[0]=lengthdir_y(objDizzy.dizziness*20,lengthdir_x(objDizzy.dizziness*30,global.dir*3))
+if (persistent &amp;&amp; objEffector.fade) {
+    if (place_free(x + addx, y))
+        x += addx;
+    if (place_free(x, y + addy))
+        y += addy;
+    if (image_speed == 0)
+        image_index += 0.15;
+    legindex += 0.4;
+    exit;
 }
 
-} else {
-viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(24,dir),y+lengthdir_y(24,dir))*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(24,dir),y+lengthdir_y(24,dir))
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)
-view_angle[0]=lengthdir_y(objDizzy.dizziness*20,lengthdir_x(objDizzy.dizziness*30,global.dir*3))
+if (active) {
+    scrPlayerHospitalMove();
+    if (global.xbox)
+        scrXboxPlayerHospitalMouse();
 }
-}
-if sprite_index=sprPHospitalHeadache {
-if global.shake&lt;6 global.shake+=0.25
-with objDizzy {if dizziness&gt;0.1 dizziness-=0.005}
-} else {
-if global.shake&gt;0 global.shake-=0.5
-}
-xview=view_xview[0]
-yview=view_yview[0]
-view_xview[0]=xview-global.shake+global.shake*2
-view_yview[0]=yview-global.shake+global.shake*2
-
-if persistent=1 and objEffector.fade=1 {
-if place_free(x+addx,y) x+=addx
-if place_free(x,y+addy) y+=addy
-if image_speed=0 image_index+=0.15
-legindex+=0.4
-exit 
-}
-
-if active=1 {scrPlayerHospitalMove() if global.xbox=1 scrXboxPlayerHospitalMouse()}
-
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="87">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>exit
-if persistent=1 and objEffector.fade=1 exit
-if instance_exists(objPhoneConversation) exit
-if active=0 exit
-scrMoveSolidOn()
-if place_free(x,y-3) {y-=3-keyboard_check_direct(vk_shift)} else {
-if place_free(x-6,y-3) x-=3-keyboard_check_direct(vk_shift) else {
-if place_free(x+6,y-3) x+=3-keyboard_check_direct(vk_shift)
-}
-}
-if image_speed=0 image_index+=0.15-keyboard_check_direct(vk_shift)*0.05
-legdir=90 
-if keyboard_check(ord('A')) legdir=135
-if keyboard_check(ord('D')) legdir=45
-legindex+=0.4-keyboard_check_direct(vk_shift)*0.15
-scrMoveSolidOff()</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="83">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>exit
-if persistent=1 and objEffector.fade=1 exit
-if instance_exists(objPhoneConversation) exit
-if active=0 exit
-scrMoveSolidOn()
-if place_free(x,y+3) {y+=3-keyboard_check_direct(vk_shift)} else {
-if place_free(x-6,y+3) x-=3-keyboard_check_direct(vk_shift) else {
-if place_free(x+6,y+3) x+=3-keyboard_check_direct(vk_shift)
-}
-}
-if image_speed=0 image_index+=0.15-keyboard_check_direct(vk_shift)*0.05
-legdir=270 
-if keyboard_check(ord('A')) legdir=225
-if keyboard_check(ord('D')) legdir=315
-legindex+=0.4-keyboard_check_direct(vk_shift)-keyboard_check_direct(vk_shift)*0.15
-scrMoveSolidOff()</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="68">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>exit
-if persistent=1 and objEffector.fade=1 exit
-if instance_exists(objPhoneConversation) exit
-if active=0 exit
-scrMoveSolidOn()
-if place_free(x+3,y) {x+=3-keyboard_check_direct(vk_shift)} else {
-if place_free(x+3,y-6) y-=3-keyboard_check_direct(vk_shift) else {
-if place_free(x+3,y+6) y+=3-keyboard_check_direct(vk_shift)
-}
-}
-if image_speed=0 image_index+=0.15-keyboard_check_direct(vk_shift)*0.05
-legdir=0
-if keyboard_check(ord('W')) legdir=45
-if keyboard_check(ord('S')) legdir=315
-legindex+=0.4-keyboard_check_direct(vk_shift)*0.15
-scrMoveSolidOff()</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="65">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>exit
-if persistent=1 and objEffector.fade=1 exit
-if instance_exists(objPhoneConversation) exit
-if active=0 exit
-scrMoveSolidOn()
-if place_free(x-3,y) {x-=3-keyboard_check_direct(vk_shift)} else {
-if place_free(x-3,y-6) y-=3-keyboard_check_direct(vk_shift) else {
-if place_free(x-3,y+6) y+=3-keyboard_check_direct(vk_shift)
-}
-}
-if image_speed=0 image_index+=0.15-keyboard_check_direct(vk_shift)*0.05
-legdir=180 
-if keyboard_check(ord('W')) legdir=135
-if keyboard_check(ord('S')) legdir=225
-legindex+=0.4-keyboard_check_direct(vk_shift)*0.15
-scrMoveSolidOff()</string>
           </argument>
         </arguments>
       </action>
@@ -347,7 +223,8 @@ scrMoveSolidOff()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_mouse,ev_global_left_press)</string>
+            <string>event_perform(ev_mouse, ev_global_left_press);
+</string>
           </argument>
         </arguments>
       </action>
@@ -369,31 +246,34 @@ scrMoveSolidOff()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objWindowV {
-if x=32 {
-if y=352 {
-if sprite_index=sprWindowSill nothing=1 else {
-if place_meeting(x+16,y,objPlayer) {
-with objPlayer instance_destroy()
-instance_create(x+16,y+16,objPlayerOpenWindow)
-sprite_index=sprWindowSill
-image_index=0
-instance_create(x,y,objWindowOpen)
-}
-}
-}
-}
+            <string>with (objWindowV) {
+    if (x == 32) {
+        if (y == 352) {
+            if (sprite_index == sprWindowSill) {
+                // do nothing.
+            } else {
+                if (place_meeting(x + 16, y, objPlayer)) {
+                    with (objPlayer)
+                        instance_destroy();
+                    instance_create(x + 16, y + 16, objPlayerOpenWindow);
+                    sprite_index = sprWindowSill;
+                    image_index = 0;
+                    instance_create(x, y, objWindowOpen);
+                }
+            }
+        }
+    }
 }
 
-if place_meeting(x,y,objToken) {
-with objToken {
-instance_destroy()
-audio_play_sound(sndToken,0,false)
-my_id=instance_create(x,y,objLetterFound)
-my_id.text='"'+scrGetTokenLetter(letter)+'"'
-global.letter[letter]=1
-}
-exit
+if (place_meeting(x, y, objToken)) {
+    with (objToken) {
+        instance_destroy();
+        audio_play_sound(sndToken, 0, false);
+        my_id = instance_create(x, y, objLetterFound);
+        my_id.text = '"' + scrGetTokenLetter(letter) + '"';
+        global.letter[letter] = 1;
+    }
+    exit;
 }
 </string>
           </argument>
@@ -417,10 +297,11 @@ exit
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=sprPHospitalHeadache {
-sprite_index=sprPWalkHospital
-image_speed=0
-}</string>
+            <string>if (sprite_index == sprPHospitalHeadache) {
+    sprite_index = sprPWalkHospital;
+    image_speed = 0;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -442,16 +323,16 @@ image_speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if persistent=1 {
-view_xview[0]=xview
-view_yview[0]=yview
-alarm[0]=36
+            <string>if (persistent) {
+    view_xview[0] = xview;
+    view_yview[0] = yview;
+    alarm[0] = 36;
+} else {
+    view_angle[0] = 1;
+    view_xview[0] = x - view_wview[0] / 2;
+    view_yview[0] = y - view_hview[0] / 2;
 }
-else {
-view_angle[0]=1
-view_xview[0]=x-view_wview[0]/2
-view_yview[0]=y-view_hview[0]/2
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -473,58 +354,37 @@ view_yview[0]=y-view_hview[0]/2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objWindowV {
-if x=32 and y=352 {
-draw_sprite_ext(sprArrow,0,x+12+lengthdir_x(3,global.dir*8),y+16,1,1,270,c_white,1)
-}
+            <string>with (objWindowV) {
+    if (x == 32) &amp;&amp; (y == 352) {
+        draw_sprite_ext(sprArrow, 0, x + 12 + lengthdir_x(3, global.dir * 8), y + 16, 1, 1, 270, c_white, 1);
+    }
 }
 
-if global.locked=0 {
-with objLockedDoor {
-if solid=1 {
-draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,global.dir*8),y+16,1,1,90,c_white,1)
+if (!global.locked) {
+    with (objLockedDoor) {
+        if (solid) {
+            draw_sprite_ext(sprArrow, 0, x - 12 + lengthdir_x(3, global.dir * 8), y + 16, 1, 1, 90, c_white, 1);
+        }
+    }
 }
+draw_set_blend_mode(bm_add);
+draw_circle_color(x, y, 48 + random(6) + light, make_color_hsv(0, 0, 30 + light * 2), c_black, 0);
+draw_set_blend_mode(bm_normal);
+legsprite = sprLegsLimp;
+draw_sprite_ext(legsprite, legindex, x + 1, y + 1, image_xscale, image_yscale, legdir, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale * left, dir, c_black, 0.5);
+draw_sprite_ext(legsprite, legindex, x, y, image_xscale, image_yscale, legdir, image_blend, image_alpha);
+if (sprite_index == sprPWalkHospital) {
+    dir = point_direction(x, y, global.mousex, global.mousey);
+    if (global.xbox)
+        dir = scrXboxPlayerLook();
 }
-}
-//if persistent=1 exit
-draw_set_blend_mode(bm_add)
-draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30+light*2),c_black,0)
-draw_set_blend_mode(bm_normal)
-legsprite=sprLegsLimp
-draw_sprite_ext(legsprite,legindex,x+1,y+1,image_xscale,image_yscale,legdir,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale*left,dir,c_black,0.5)
-draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,image_blend,image_alpha)
-if sprite_index=sprPWalkHospital {
-dir=point_direction(x,y,global.mousex,global.mousey)
-if global.xbox=1 dir=scrXboxPlayerLook()
-}
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
-if reload&gt;0 reload-=1
-if light&gt;3 light-=3</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>exit
-if instance_number(objEnemy)+instance_number(objKnockedOut)=0 {//vcapture_save() 
-objEffector.fade=1 if room=room_last objEffector.restart=1 else objEffector.next=1}</string>
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale * left, dir, image_blend, image_alpha);
+if (reload &gt; 0)
+    reload--;
+if (light &gt; 3)
+    light -= 3;
+</string>
           </argument>
         </arguments>
       </action>

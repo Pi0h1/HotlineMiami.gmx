@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>persistent=0</string>
+            <string>persistent = 0;
+</string>
           </argument>
         </arguments>
       </action>

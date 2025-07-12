@@ -515,23 +515,6 @@
       <filename>vstdlib_s.dll</filename>
     </datafile>
     <datafile>
-      <name>saves.dat</name>
-      <exists>-1</exists>
-      <size>302</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>saves.dat</filename>
-    </datafile>
-    <datafile>
       <name>TurfIntro.ogg</name>
       <exists>-1</exists>
       <size>3685305</size>

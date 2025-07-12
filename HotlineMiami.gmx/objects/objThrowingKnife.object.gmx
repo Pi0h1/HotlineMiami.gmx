@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>angle=random(360)
-image_speed=0
-bounced=0
-dir_add=-1+round(random(1))*2</string>
+            <string>angle = random(360);
+image_speed = 0;
+bounced = 0;
+dir_add = -1 + round(random(1)) * 2;
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,26 +51,30 @@ dir_add=-1+round(random(1))*2</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if bounced=1 {
-image_angle+=dir_add*speed*10
-friction=0.2
+            <string>if (bounced) {
+    image_angle += dir_add * speed * 10;
+    friction = 0.2;
 }
 
-if speed&gt;0 {
-mask_index=sprite_index
-global.my_id=id
-with objEnemy {
-if object_index=objDogPatrol or object_index=objEnemyFat nothing=1 else {
-if place_meeting(x,y,global.my_id) {
-scrKnifeThrowHits()
-ds_list_add(global.bonuslist,"Projectile Kill")
-global.combotime=240
-if global.bonustime&lt;12+global.factor*4 global.bonustime=12+global.factor*4
+if (speed &gt; 0) {
+    mask_index = sprite_index;
+    global.my_id = id;
+    with (objEnemy) {
+        if (object_index == objDogPatrol || object_index == objEnemyFat) {
+            // do nothing.
+        } else {
+            if (place_meeting(x, y, global.my_id)) {
+                scrKnifeThrowHits();
+                ds_list_add(global.bonuslist, "Projectile Kill");
+                global.combotime = 240;
+                if (global.bonustime &lt; 12 + global.factor * 4)
+                    global.bonustime = 12 + global.factor * 4;
+            }
+        }
+    }
+    mask_index = sprWeaponMask;
 }
-}
-}
-mask_index=sprWeaponMask
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -91,54 +96,55 @@ mask_index=sprWeaponMask
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_id=instance_create(x,y,objBloodSmoke)
-my_id.direction=direction-170+random(10)
-my_id.speed=1
-my_id.image_angle=my_id.direction
-my_id.image_xscale=0.8+random(0.2)
-my_id.image_yscale=my_id.image_xscale
-instance_destroy()
-global.dir=direction
-with other {
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprEmployeeThrowingKnife
-my_id.image_index=floor(random(4))
-my_id.speed=1.5
-my_id.direction=global.dir
-my_id.image_angle=global.dir
-edir=global.dir
-test=0
-repeat (2) {
-my_id=instance_create(x-3+random(6)+lengthdir_x(8,edir),y-3+random(6)+lengthdir_y(8,edir),objBloodDrop)
-my_id.image_xscale=1-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=point_direction(x+lengthdir_x(8,edir),y+lengthdir_y(8,edir),my_id.x,my_id.y)
-my_id.sprite_index=sprBloodSplatSmall
-my_id.direction=my_id.image_angle
-my_id.speed=2+random(4)
-}
-repeat (1) {
-my_id=instance_create(x-3+random(6)+lengthdir_x(8,edir),y-3+random(6)+lengthdir_y(8,edir),objBloodDrop)
-my_id.image_xscale=1-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=point_direction(x+lengthdir_x(8,edir),y+lengthdir_y(8,edir),my_id.x,my_id.y)
-my_id.direction=my_id.image_angle
-my_id.speed=1+random(5)
-}
-repeat (1) {
-my_id=instance_create(x-3+random(6)+lengthdir_x(16,edir),y-3+random(6)+lengthdir_y(16,edir),objBloodSmoke)
-my_id.image_xscale=1.2-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=edir-20+random(40)
-my_id.direction=my_id.image_angle
-my_id.speed=2+random(1)
-my_id.friction=0.15
-}
+            <string>my_id = instance_create(x, y, objBloodSmoke);
+my_id.direction = direction - 170 + random(10);
+my_id.speed = 1;
+my_id.image_angle = my_id.direction;
+my_id.image_xscale = 0.8 + random(0.2);
+my_id.image_yscale = my_id.image_xscale;
+instance_destroy();
+global.dir = direction;
 
-instance_destroy()
-audio_play_sound(choose(sndCut2,sndCut1),0,false)
+with (other) {
+    my_id = instance_create(x, y, objDeadBody);
+    my_id.sprite_index = sprEmployeeThrowingKnife;
+    my_id.image_index = floor(random(4));
+    my_id.speed = 1.5;
+    my_id.direction = global.dir;
+    my_id.image_angle = global.dir;
+    edir = global.dir;
+    test = 0;
+    repeat(2) {
+        my_id = instance_create(x - 3 + random(6) + lengthdir_x(8, edir), y - 3 + random(6) + lengthdir_y(8, edir), objBloodDrop);
+        my_id.image_xscale = 1 - random(0.2);
+        my_id.image_yscale = my_id.image_xscale;
+        my_id.image_angle = point_direction(x + lengthdir_x(8, edir), y + lengthdir_y(8, edir), my_id.x, my_id.y);
+        my_id.sprite_index = sprBloodSplatSmall;
+        my_id.direction = my_id.image_angle;
+        my_id.speed = 2 + random(4);
+    }
+    repeat(1) {
+        my_id = instance_create(x - 3 + random(6) + lengthdir_x(8, edir), y - 3 + random(6) + lengthdir_y(8, edir), objBloodDrop);
+        my_id.image_xscale = 1 - random(0.2);
+        my_id.image_yscale = my_id.image_xscale;
+        my_id.image_angle = point_direction(x + lengthdir_x(8, edir), y + lengthdir_y(8, edir), my_id.x, my_id.y);
+        my_id.direction = my_id.image_angle;
+        my_id.speed = 1 + random(5);
+    }
+    repeat(1) {
+        my_id = instance_create(x - 3 + random(6) + lengthdir_x(16, edir), y - 3 + random(6) + lengthdir_y(16, edir), objBloodSmoke);
+        my_id.image_xscale = 1.2 - random(0.2);
+        my_id.image_yscale = my_id.image_xscale;
+        my_id.image_angle = edir - 20 + random(40);
+        my_id.direction = my_id.image_angle;
+        my_id.speed = 2 + random(1);
+        my_id.friction = 0.15;
+    }
+
+    instance_destroy();
+    audio_play_sound(choose(sndCut2, sndCut1), 0, false);
 }
-instance_destroy()
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -161,59 +167,59 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.object_index=objWallSoftH or other.object_index=objWallSoftV {
-if speed&gt;0 {
-x-=hspeed
-y-=vspeed
-speed=0
-move_contact_all(direction,12)
-audio_play_sound(sndHitWall,0,false)
-}
-}
-
-if other.object_index=objGlassPanelH {
-if vspeed&gt;0 {
-other.add=-1
-} else {
-other.add=1
-}
-with other {
-i=0
-repeat (24) {
-my_id=instance_create(x+i*1.5,y,objShard)
-my_id.speed=random(5)
-my_id.direction=add*90-8+random(16)
-i+=1
-}
-instance_create(x,y,objGlassPanelHBroken)
-instance_destroy()
-audio_play_sound(sndGlass1,0,false)
-audio_play_sound(sndGlass2,0,false)
-audio_play_sound(sndWeaponHit,0,false)
-}
-exit
+            <string>if (other.object_index == objWallSoftH || other.object_index == objWallSoftV) {
+    if (speed &gt; 0) {
+        x -= hspeed;
+        y -= vspeed;
+        speed = 0;
+        move_contact_all(direction, 12);
+        audio_play_sound(sndHitWall, 0, false);
+    }
 }
 
-if other.object_index=objGlassPanelV {
-if hspeed&gt;0 {
-other.add=-1
-} else {
-other.add=1
+if (other.object_index == objGlassPanelH) {
+    if (vspeed &gt; 0) {
+        other.add = -1;
+    } else {
+        other.add = 1;
+    }
+    with (other) {
+        i = 0;
+        repeat(24) {
+            my_id = instance_create(x + i * 1.5, y, objShard);
+            my_id.speed = random(5);
+            my_id.direction = add * 90 - 8 + random(16);
+            i++;
+        }
+        instance_create(x, y, objGlassPanelHBroken);
+        instance_destroy();
+        audio_play_sound(sndGlass1, 0, false);
+        audio_play_sound(sndGlass2, 0, false);
+        audio_play_sound(sndWeaponHit, 0, false);
+    }
+    exit;
 }
-with other {
-i=0
-repeat (24) {
-my_id=instance_create(x,y+i*1.5,objShard)
-my_id.speed=random(5)
-my_id.direction=90+add*90-8+random(16)
-i+=1
-}
-instance_create(x,y,objGlassPanelVBroken)
-instance_destroy()
-audio_play_sound(sndGlass1,0,false)
-audio_play_sound(sndGlass2,0,false)
-}
-exit
+
+if (other.object_index == objGlassPanelV) {
+    if (hspeed &gt; 0) {
+        other.add = -1;
+    } else {
+        other.add = 1;
+    }
+    with (other) {
+        i = 0;
+        repeat(24) {
+            my_id = instance_create(x, y + i * 1.5, objShard);
+            my_id.speed = random(5);
+            my_id.direction = 90 + add * 90 - 8 + random(16);
+            i++;
+        }
+        instance_create(x, y, objGlassPanelVBroken);
+        instance_destroy();
+        audio_play_sound(sndGlass1, 0, false);
+        audio_play_sound(sndGlass2, 0, false);
+    }
+    exit;
 }
 </string>
           </argument>
@@ -237,9 +243,9 @@ exit
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed=0
-move_contact_solid(direction,12)
-audio_play_sound(sndHitWall,0,false)
+            <string>speed = 0;
+move_contact_solid(direction, 12);
+audio_play_sound(sndHitWall, 0, false);
 </string>
           </argument>
         </arguments>
@@ -262,10 +268,10 @@ audio_play_sound(sndHitWall,0,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>bounced=1
-move_bounce_all(0)
-speed*=0.3
-audio_play_sound(sndHitWall,0,false)
+            <string>bounced = 1;
+move_bounce_all(0);
+speed *= 0.3;
+audio_play_sound(sndHitWall, 0, false);
 </string>
           </argument>
         </arguments>
@@ -288,10 +294,10 @@ audio_play_sound(sndHitWall,0,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if speed&lt;=0 {
-other.ammo+=1
-instance_destroy()
-audio_play_sound(sndPickupWeapon,0,false)
+            <string>if (speed &lt;= 0) {
+    other.ammo++;
+    instance_destroy();
+    audio_play_sound(sndPickupWeapon, 0, false);
 }
 </string>
           </argument>
@@ -315,8 +321,9 @@ audio_play_sound(sndPickupWeapon,0,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

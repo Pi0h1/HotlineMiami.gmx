@@ -25,35 +25,37 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-masksprite=sprRoosterMask
-if global.maskindex=0 masksprite=sprRoosterMask
-if global.maskindex=1 masksprite=sprOwlMask
-if global.maskindex=2 masksprite=sprTigerMask
-if global.maskindex=3 masksprite=sprPigMask
-if global.maskindex=4 masksprite=sprHorseMask
-if global.maskindex=5 masksprite=sprRabbitMask
-if global.maskindex=6 masksprite=sprWolfMask
-if global.maskindex=7 masksprite=sprGiraffeMask
-if global.maskindex=8 masksprite=sprCollieMask
-if global.maskindex=9 masksprite=sprElephantMask
-if global.maskindex=10 masksprite=sprCamelMask
-if global.maskindex=11 masksprite=sprMonkeyMask
-if global.maskindex=12 masksprite=sprUnicornMask
-if global.maskindex=13 masksprite=sprFrogMask
-if global.maskindex=14 masksprite=sprMoleMask
-if global.maskindex=15 masksprite=sprFoxMask
-if global.maskindex=16 masksprite=sprPantherMask
-if global.maskindex=17 masksprite=sprOctopusMask
-if global.maskindex=18 masksprite=sprFishMask
-if global.maskindex=19 masksprite=sprBatMask
-if global.maskindex=20 masksprite=sprWalrusMask
-if global.maskindex=21 masksprite=sprCrocodileMask
-if global.maskindex=22 masksprite=sprLocustMask
-if global.maskindex=23 masksprite=sprCobraMask
-if global.maskindex=24 masksprite=sprRatMask
-if global.maskindex=25 masksprite=sprUnicornMask
-vomit=0
+            <string>image_speed = 0;
+masksprite = sprRoosterMask;
+switch (global.maskindex) {
+    case 0: masksprite = sprRoosterMask; break;
+    case 1: masksprite = sprOwlMask; break;
+    case 2: masksprite = sprTigerMask; break;
+    case 3: masksprite = sprPigMask; break;
+    case 4: masksprite = sprHorseMask; break;
+    case 5: masksprite = sprRabbitMask; break;
+    case 6: masksprite = sprWolfMask; break;
+    case 7: masksprite = sprGiraffeMask; break;
+    case 8: masksprite = sprCollieMask; break;
+    case 9: masksprite = sprElephantMask; break;
+    case 10: masksprite = sprCamelMask; break;
+    case 11: masksprite = sprMonkeyMask; break;
+    case 12: masksprite = sprUnicornMask; break;
+    case 13: masksprite = sprFrogMask; break;
+    case 14: masksprite = sprMoleMask; break;
+    case 15: masksprite = sprFoxMask; break;
+    case 16: masksprite = sprPantherMask; break;
+    case 17: masksprite = sprOctopusMask; break;
+    case 18: masksprite = sprFishMask; break;
+    case 10: masksprite = sprBatMask; break;
+    case 20: masksprite = sprWalrusMask; break;
+    case 21: masksprite = sprCrocodileMask; break;
+    case 22: masksprite = sprLocustMask; break;
+    case 23: masksprite = sprCobraMask; break;
+    case 24: masksprite = sprRatMask; break;
+    case 25: masksprite = sprUnicornMask; break;
+}
+vomit = 0;
 </string>
           </argument>
         </arguments>
@@ -76,17 +78,19 @@ vomit=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;50 image_index+=0.2 else {
-instance_destroy()
-my_id=instance_create(x,y,objPlayerMouse)
-global.maskon=0
-my_id.maskon=0
-my_id=instance_create(x,y,objVomit)
-my_id.image_angle=image_angle
+            <string>if (image_index &lt; 50) {
+    image_index += 0.2;
+} else {
+    instance_destroy();
+    my_id = instance_create(x, y, objPlayerMouse);
+    global.maskon = 0;
+    my_id.maskon = 0;
+    my_id = instance_create(x, y, objVomit);
+    my_id.image_angle = image_angle;
 }
-if image_index&gt;25 and vomit=0 {
-vomit=1
-audio_play_sound(sndVomit,0,false)
+if (image_index &gt; 25 &amp;&amp; vomit == 0) {
+    vomit = 1;
+    audio_play_sound(sndVomit, 0, false);
 }
 </string>
           </argument>
@@ -110,9 +114,11 @@ audio_play_sound(sndVomit,0,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-if image_index&lt;3 draw_sprite_ext(masksprite,3-image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+if (image_index &lt; 3)
+    draw_sprite_ext(masksprite, 3 - image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

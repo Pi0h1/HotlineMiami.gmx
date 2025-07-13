@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-bled=0
-hurtindex=0
-targetindex=0
-scrInitMaskPos()
-scrUpdateMaskPos(sprite_index)
-ammo=0</string>
+            <string>image_speed = 0;
+bled = 0;
+hurtindex = 0;
+targetindex = 0;
+scrInitMaskPos();
+scrUpdateMaskPos(sprite_index);
+ammo = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -53,53 +54,56 @@ ammo=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;8 image_index+=0.15 else {
-instance_create(x+lengthdir_x(24,image_angle),y+lengthdir_y(24,image_angle),objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.image_angle=image_angle
-my_id.sprite_index=sprEPoolKill
-my_id.image_index=3
-my_id=instance_create(x,y,objPlayerMouse)
-my_id.sprite_index=sprPWalkPoolBroke
-my_id.maskon=global.maskon
-my_id.maskindex=global.maskindex
-global.angle=image_angle-180
-my_id.reload=30
-with my_id move_outside_solid(global.angle,16)
-instance_destroy()
-my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((600)+400*(global.factor))+"pts"
-global.myscore+=(600)+400*(global.factor)
-global.killscore+=600
-global.boldscore+=400*global.factor
-global.combotime=240
-global.combo+=1
-global.killx[global.kills]=x
-global.killy[global.kills]=y
-global.kills+=1
-ds_list_add(global.bonuslist,"Execution")
-if global.combotime&lt;12 global.combotime=12
-exit
+            <string>if (image_index &lt; 8) {
+    image_index += 0.15;
+} else {
+    instance_create(x + lengthdir_x(24, image_angle), y + lengthdir_y(24, image_angle), objBloodPool);
+    my_id = instance_create(x, y, objDeadBody);
+    my_id.image_angle = image_angle;
+    my_id.sprite_index = sprEPoolKill;
+    my_id.image_index = 3;
+    my_id = instance_create(x, y, objPlayerMouse);
+    my_id.sprite_index = sprPWalkPoolBroke;
+    my_id.maskon = global.maskon;
+    my_id.maskindex = global.maskindex;
+    global.angle = image_angle - 180;
+    my_id.reload = 30;
+    with (my_id)
+        move_outside_solid(global.angle, 16);
+    instance_destroy();
+    my_id = instance_create(x, y - 12, objScore);
+    my_id.text = "+" + string((600) + 400 * (global.factor)) + "pts";
+    global.myscore += (600) + 400 * (global.factor);
+    global.killscore += 600;
+    global.boldscore += 400 * global.factor;
+    global.combotime = 240;
+    global.combo++;
+    global.killx[global.kills] = x;
+    global.killy[global.kills] = y;
+    global.kills++;
+    ds_list_add(global.bonuslist, "Execution");
+    if (global.combotime &lt; 12)
+        global.combotime = 12;
+    exit;
 }
-if image_index&gt;=5 and bled=0 {
-bled=1
-hurtindex=1
-targetindex=3
-global.shake=5
-audio_play_sound(choose(sndCut1,sndCut2),0,false)
-audio_play_sound(sndHit,0,false)
-audio_play_sound(sndPunch,0,false)
-repeat (3+random(3)) {
-instance_create(x+lengthdir_x(24,image_angle)-1+random(2),y+lengthdir_y(24,image_angle)-1+random(2),objBloodSquirt)
+if (image_index &gt;= 5 &amp;&amp; !bled) {
+    bled = 1;
+    hurtindex = 1;
+    targetindex = 3;
+    global.shake = 5;
+    audio_play_sound(choose(sndCut1, sndCut2), 0, false);
+    audio_play_sound(sndHit, 0, false);
+    audio_play_sound(sndPunch, 0, false);
+    repeat(3 + random(3)) {
+        instance_create(x + lengthdir_x(24, image_angle) - 1 + random(2), y + lengthdir_y(24, image_angle) - 1 + random(2), objBloodSquirt);
+    }
+    repeat(4) {
+        my_id = instance_create(x + lengthdir_x(24, image_angle) - 1 + random(2), y + lengthdir_y(24, image_angle) - 1 + random(2), objBloodSmoke);
+        my_id.direction = random(360);
+        my_id.speed = random(3);
+        my_id.image_angle = my_id.direction;
+    }
 }
-repeat (4) {
-my_id=instance_create(x+lengthdir_x(24,image_angle)-1+random(2),y+lengthdir_y(24,image_angle)-1+random(2),objBloodSmoke)
-my_id.direction=random(360)
-my_id.speed=random(3)
-my_id.image_angle=my_id.direction
-}
-}
-
 </string>
           </argument>
         </arguments>
@@ -122,12 +126,13 @@ my_id.image_angle=my_id.direction
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if hurtindex&lt;targetindex hurtindex+=0.2
-draw_sprite_ext(sprESwordKill,hurtindex,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprESwordKill,hurtindex,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-if global.maskon scrDrawMask(1)</string>
+            <string>if (hurtindex &lt; targetindex)
+    hurtindex += 0.2;
+draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+if (global.maskon)
+    scrDrawMask(1);
+</string>
           </argument>
         </arguments>
       </action>

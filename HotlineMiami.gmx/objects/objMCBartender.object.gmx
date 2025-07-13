@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.2
-alarm[0]=60
-state=0
-message=0</string>
+            <string>image_speed = 0.2;
+alarm[0] = 60;
+state = 0;
+message = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,7 +51,8 @@ message=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrGetMessage(0)</string>
+            <string>scrGetMessage(0);
+</string>
           </argument>
         </arguments>
       </action>
@@ -72,30 +74,40 @@ message=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if state=0 {
-if instance_exists(objPhoneConversation) state=1
+            <string>if (state == 0) {
+    if (instance_exists(objPhoneConversation))
+        state = 1;
 }
 
-if state=1 {
-if !instance_exists(objPhoneConversation) state=2
+if (state == 1) {
+    if (!instance_exists(objPhoneConversation))
+        state = 2;
 }
 
-if state=2 {
-if sprite_index=sprMCShakePig {
-image_index=0
-image_speed=0
-sprite_index=sprMCPushPig
-}
-if image_index&lt;9 image_index+=0.2 else state=3
-if image_index&gt;=5 {if !instance_exists(objBartender) {my_id=instance_create(x+16,y,objBartender) my_id.hspeed=3}}
+if (state == 2) {
+    if (sprite_index == sprMCShakePig) {
+        image_index = 0;
+        image_speed = 0;
+        sprite_index = sprMCPushPig;
+    }
+    if (image_index &lt; 9) {
+        image_index += 0.2;
+    } else state = 3;
+    if (image_index &gt;= 5) {
+        if (!instance_exists(objBartender)) {
+            my_id = instance_create(x + 16, y, objBartender);
+            my_id.hspeed = 3;
+        }
+    }
 }
 
-if state=3 {
-if objBartender.talked=1 and !instance_exists(objPhoneConversation) {
-my_id=instance_create(x,y,objPlayerBikerHouse)
-instance_destroy()
+if (state == 3) {
+    if (objBartender.talked &amp;&amp; !instance_exists(objPhoneConversation)) {
+        my_id = instance_create(x, y, objPlayerBikerHouse);
+        instance_destroy();
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -117,14 +129,14 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-view_xview[0]=x+lengthdir_x(vdist*0.2,vdir-180)-view_wview[0]*0.5
-view_yview[0]=y+lengthdir_y(vdist*0.2,vdir-180)-view_hview[0]*0.5
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
-with objEffector {
-vlastx=view_xview[0]
-vlasty=view_yview[0]
+            <string>vdist = point_distance(x, y, room_width / 2, room_height / 2);
+vdir = point_direction(room_width / 2, room_height / 2, x, y);
+view_xview[0] = x + lengthdir_x(vdist * 0.2, vdir - 180) - view_wview[0] * 0.5;
+view_yview[0] = y + lengthdir_y(vdist * 0.2, vdir - 180) - view_hview[0] * 0.5;
+view_angle[0] = lengthdir_y(vdist * (1 / 160), vdir * 2);
+with (objEffector) {
+    vlastx = view_xview[0];
+    vlasty = view_yview[0];
 }
 </string>
           </argument>

@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-image_angle=180
-last_sprite=sprite_index</string>
+            <string>image_speed = 0;
+image_angle = 180;
+last_sprite = sprite_index;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,11 +50,16 @@ last_sprite=sprite_index</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;19 image_index+=0.2 else {
-my_id=instance_create(x,y,objPWalkWindow)
-if sprite_index=sprPClimbWindow my_id.sprite_index=sprPWalkLedge else my_id.sprite_index=sprPWalkWindow
-instance_destroy()
-}</string>
+            <string>if (image_index &lt; 19) {
+    image_index += 0.2;
+} else {
+    my_id = instance_create(x, y, objPWalkWindow);
+    if (sprite_index == sprPClimbWindow) {
+        my_id.sprite_index = sprPWalkLedge;
+    } else my_id.sprite_index = sprPWalkWindow;
+    instance_destroy();
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -75,17 +81,20 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=last_sprite nothing=1 else {
-scrUpdateMaskPos(sprite_index)
-last_sprite=sprite_index
+            <string>if (sprite_index == last_sprite) {
+    // do nothing
+} else {
+    scrUpdateMaskPos(sprite_index);
+    last_sprite = sprite_index;
 }
 
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
-if sprite_index=sprPClimbWindow {
-scrDrawMask(1)
-}</string>
+if (sprite_index == sprPClimbWindow) {
+    scrDrawMask(1);
+}
+</string>
           </argument>
         </arguments>
       </action>

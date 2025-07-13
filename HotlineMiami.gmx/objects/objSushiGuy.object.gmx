@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>on=1
-image_speed=0.15</string>
+            <string>on = 1;
+image_speed = 0.15;
+</string>
           </argument>
         </arguments>
       </action>
@@ -48,36 +49,45 @@ image_speed=0.15</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_number(objEnemy)+instance_number(objKnockedOut)=0 {with objDoorV solid=0}
-if !instance_exists(objPlayer) exit
-if on=0 exit
-if objPlayer.x&gt;456 and objPlayer.y&gt;352 {
-if sprite_index=sprSushiGuyShake {
-sprite_index=sprSushiGuy
-image_index=0
-image_speed=0
+            <string>if (instance_number(objEnemy) + instance_number(objKnockedOut) == 0) {
+    with (objDoorV)
+        solid = 0;
 }
-if image_index&lt;3 image_index+=0.2
-if !instance_exists(objPlayerBikerHouse) {
-with objPlayerBiker {
-instance_create(x,y,objPlayerBikerHouse)
-with objEffector instance_destroy()
-my_id=instance_create(x,y,objEffectorHouse)
-my_id.leveltitle=''
-my_id.blackx=0
-my_id.amount=180
-instance_destroy()
-}
-}
-direction=scrRotate(direction,point_direction(x,y,objPlayer.x,objPlayer.y),10)
+if (!instance_exists(objPlayer))
+    exit;
+if (on == 0)
+    exit;
+if (objPlayer.x &gt; 456 &amp;&amp; objPlayer.y &gt; 352) {
+    if (sprite_index == sprSushiGuyShake) {
+        sprite_index = sprSushiGuy;
+        image_index = 0;
+        image_speed = 0;
+    }
+    if (image_index &lt; 3)
+        image_index += 0.2;
+    if (!instance_exists(objPlayerBikerHouse)) {
+        with (objPlayerBiker) {
+            instance_create(x, y, objPlayerBikerHouse);
+            with (objEffector)
+                instance_destroy();
+            my_id = instance_create(x, y, objEffectorHouse);
+            my_id.leveltitle = '';
+            my_id.blackx = 0;
+            my_id.amount = 180;
+            instance_destroy();
+        }
+    }
+    direction = scrRotate(direction, point_direction(x, y, objPlayer.x, objPlayer.y), 10);
 }
 
-if place_meeting(x,y,objPlayerBikerHouse) {
-my_id=instance_create((objPlayerBiker.x+x)*0.5,(objPlayerBiker.y+y)*0.5,objBikerSushi)
-my_id.image_angle=point_direction(objPlayerBiker.x,objPlayerBiker.y,x,y)
-with objPlayerBiker instance_destroy()
-instance_destroy()
-}</string>
+if (place_meeting(x, y, objPlayerBikerHouse)) {
+    my_id = instance_create((objPlayerBiker.x + x) * 0.5, (objPlayerBiker.y + y) * 0.5, objBikerSushi);
+    my_id.image_angle = point_direction(objPlayerBiker.x, objPlayerBiker.y, x, y);
+    with (objPlayerBiker)
+        instance_destroy();
+    instance_destroy();
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -99,8 +109,9 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, direction, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, direction, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

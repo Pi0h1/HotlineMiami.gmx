@@ -25,13 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-bled=0
-hurtindex=0
-targetindex=0
-scrInitMaskPos()
-scrUpdateMaskPos(sprite_index)
-ammo=0
+            <string>image_speed = 0;
+bled = 0;
+hurtindex = 0;
+targetindex = 0;
+scrInitMaskPos();
+scrUpdateMaskPos(sprite_index);
+ammo = 0;
 </string>
           </argument>
         </arguments>
@@ -132,7 +132,8 @@ if hurtindex&lt;13 hurtindex+=0.2 else hurtindex=6
 draw_sprite_ext(sprEGroundBoiling,hurtindex,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-if global.maskon scrDrawMask(1)</string>
+if global.maskon scrDrawMask(1)
+</string>
           </argument>
         </arguments>
       </action>

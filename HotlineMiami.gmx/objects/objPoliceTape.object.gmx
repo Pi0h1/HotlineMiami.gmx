@@ -25,13 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x,y-2,objPlayer) {
-if objPlayer.x&gt;x+13 and objPlayer.x&lt;x+19 {
-with objPlayer instance_destroy()
-instance_create(x,y,objPlayerRipTape)
-instance_destroy()
+            <string>if (place_meeting(x, y - 2, objPlayer)) {
+    if (objPlayer.x &gt; x + 13 &amp;&amp; objPlayer.x &lt; x + 19) {
+        with (objPlayer)
+            instance_destroy();
+        instance_create(x, y, objPlayerRipTape);
+        instance_destroy();
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>

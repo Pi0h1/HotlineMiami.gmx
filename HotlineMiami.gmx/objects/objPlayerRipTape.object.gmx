@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.2
-image_index=1
-ripped=0</string>
+            <string>image_speed = 0.2;
+image_index = 1;
+ripped = false;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,11 +50,12 @@ ripped=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_id=instance_create(x+16,y-6,objPlayerMouseHouse)
-my_id.sprite_index=sprPWalkHospital
-my_id=instance_create(x,y,objPoliceTapeRipped)
-my_id.image_blend=c_ltgray
-instance_destroy()</string>
+            <string>my_id = instance_create(x + 16, y - 6, objPlayerMouseHouse);
+my_id.sprite_index = sprPWalkHospital;
+my_id = instance_create(x, y, objPoliceTapeRipped);
+my_id.image_blend = c_ltgray;
+instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>
@@ -75,14 +77,14 @@ instance_destroy()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&gt;11 {
-if ripped=0 {
-ripped=1
-audio_play_sound(sndBox,0,false)
+            <string>if (image_index &gt; 11) {
+    if (!ripped) {
+        ripped = true;
+        audio_play_sound(sndBox, 0, false);
+    }
 }
-}
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 </string>
           </argument>
         </arguments>

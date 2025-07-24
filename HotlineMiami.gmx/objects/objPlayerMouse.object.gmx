@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.xbox == 1) {
+            <string>if (global.xbox) {
     scrInitXboxButtons();
 }
 
@@ -189,7 +189,7 @@ if (instance_number(objEnemy) + instance_number(objKnockedOut) + instance_number
     }
 } else clear = 0;
 
-if (global.xbox == 0) {
+if (!global.xbox) {
     aimfar = keyboard_check_direct(vk_shift);
 } else {
     aimfar = checkbutton(0, getid(9));
@@ -216,7 +216,7 @@ if (aimfar) {
     }
     else factor = 1;
     
-    if (global.xbox == 1) {
+    if (global.xbox) {
         viewx = objPlayer.x + rightthumb_x(0) * 0.0045;
         viewy = objPlayer.y - rightthumb_y(0) * 0.003;
     } else {
@@ -1100,10 +1100,10 @@ if (persistent == 1) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (persistent == 1)
+            <string>if (persistent)
     exit;
 if (sprite_index == last_sprite) {
-    nothing = 1;
+    // do nothing
 } else {
     scrUpdateMaskPos(sprite_index);
     last_sprite = sprite_index;
@@ -1125,7 +1125,7 @@ if (sprite_index == sprPLeaveBag) {
 }
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale * left, dir, image_blend, image_alpha);
 if (reload &gt; 0)
-    reload -= 1;
+    reload--;
 if (light &gt; 3)
     light -= 3;
 if (sprite_index == sprPWalkThrow) {
@@ -1136,7 +1136,7 @@ if (sprite_index == sprPWalkThrow) {
 if (sprite_index == sprPMaskSlip) {
     draw_sprite_ext(masksprite, image_index, x, y, image_xscale, image_yscale * left, dir, image_blend, image_alpha);
 }
-if (maskon == 1)
+if (maskon)
     scrDrawMask(0);
 </string>
           </argument>

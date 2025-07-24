@@ -957,6 +957,7 @@
         <sprites name="Walking">
           <sprite>sprites\sprEWalkBat</sprite>
           <sprite>sprites\sprEWalkDoubleBarrel</sprite>
+          <sprite>sprites\sprEWalkShotgun</sprite>
           <sprite>sprites\sprEWalkKnife</sprite>
           <sprite>sprites\sprEWalkM16</sprite>
           <sprite>sprites\sprEWalkPipe</sprite>
@@ -1055,16 +1056,6 @@
           <sprite>sprites\sprETauntBat</sprite>
           <sprite>sprites\sprETauntChain</sprite>
           <sprite>sprites\sprETauntPipe</sprite>
-        </sprites>
-        <sprites name="Unused">
-          <sprite>sprites\sprEAttackM16n</sprite>
-          <sprite>sprites\sprEAttackShotgunn</sprite>
-          <sprite>sprites\sprESneakM16</sprite>
-          <sprite>sprites\sprESneakUnarmed</sprite>
-          <sprite>sprites\sprEWalkM16n</sprite>
-          <sprite>sprites\sprEWalkShotgun</sprite>
-          <sprite>sprites\sprEWalkUnarmedn</sprite>
-          <sprite>sprites\sprEPickup</sprite>
         </sprites>
         <sprites name="Hallucination">
           <sprite>sprites\sprDeadGuyFace</sprite>
@@ -2539,12 +2530,6 @@
       </scripts>
       <script>scripts\scrXboxPlayerMove.gml</script>
     </scripts>
-    <scripts name="vcapture">
-      <script>scripts\vcapture_init.gml</script>
-      <script>scripts\vcapture_begin.gml</script>
-      <script>scripts\vcapture_frame.gml</script>
-      <script>scripts\vcapture_save.gml</script>
-    </scripts>
     <scripts name="Surfaces">
       <script>scripts\addToSurface.gml</script>
       <script>scripts\scrResetSurfaces.gml</script>
@@ -2943,21 +2928,11 @@
       <object>objects\objEHideM16</object>
       <object>objects\objDogPatrol</object>
       <object>objects\objEnemyFat</object>
-      <object>objects\objEnemyMobile</object>
       <object>objects\objKnockedOut</object>
       <object>objects\objDeadBody</object>
       <object>objects\objBodyPart</object>
       <object>objects\objECrawl</object>
       <object>objects\objDogBite</object>
-      <objects name="Old">
-        <object>objects\objEnemyOld</object>
-        <object>objects\objDogPatrolOld</object>
-        <object>objects\objEnemyStationaryOld</object>
-        <object>objects\objEnemyPatrolOld</object>
-        <object>objects\objEnemyMeleeOld</object>
-        <object>objects\objEnemyMobileOld</object>
-        <object>objects\objEnemyMeleeStationaryOld</object>
-      </objects>
       <object>objects\objESubwayStatic</object>
       <object>objects\objSubwayKnockedOut</object>
       <object>objects\objEGiveUp</object>

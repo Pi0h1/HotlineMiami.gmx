@@ -280,10 +280,11 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if scrIsSearching(sprite_index) {
-sprite_index=scrStopSearch(sprite_index)
-image_speed=0
-}</string>
+            <string>if (scrIsSearching(sprite_index)) {
+    sprite_index = scrStopSearch(sprite_index);
+    image_speed = 0;
+}
+</string>
           </argument>
         </arguments>
       </action>

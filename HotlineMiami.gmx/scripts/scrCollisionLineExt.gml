@@ -7,11 +7,11 @@ if cldist>0 repeats=round(cldist/argument4) else repeats=0
 claddx=lengthdir_x(argument4,cldir)
 claddy=lengthdir_y(argument4,cldir)
 i=0
-test=0
+test=false
 while (i<repeats)  {
 x+=claddx
 y+=claddy
-if place_meeting(x,y,argument5) or place_meeting(x,y,argument6) or place_meeting(x,y,argument7) test=1
+if place_meeting(x,y,argument5) or place_meeting(x,y,argument6) or place_meeting(x,y,argument7) test=true
 i+=1
 }
 x=clstartx

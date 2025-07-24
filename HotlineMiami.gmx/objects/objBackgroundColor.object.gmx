@@ -25,9 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir=random(1000)
-if global.alienware scrAlienWarePink()
-lastbonus=global.bonustime</string>
+            <string>dir = random(1000);
+if (global.alienware)
+    scrAlienWarePink();
+lastbonus = global.bonustime;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,28 +51,36 @@ lastbonus=global.bonustime</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir+=0.25
-color2=c_black
-color1=merge_color(c_black,merge_color(merge_color(c_fuchsia,c_aqua,0.5+lengthdir_x(0.5,dir*3.12)),c_red,0.125+lengthdir_y(0.125,dir*1.73)),0.75+lengthdir_y(0.25,dir*1.73))
-draw_rectangle_color(view_xview[0]-60,view_yview[0]-60,view_xview[0]+view_wview[0]+60,view_yview[0]+view_hview[0]+60,color1,color1,color2,color2,0)
-if global.bonustime&gt;0 {
-if lastbonus&lt;=0 {if global.alienware=1 scrAlienWareRed()}
-global.bonustime-=1
-if global.bonustime&lt;=0 {if global.alienware=1 scrAlienWarePink()}
-draw_set_blend_mode(bm_add)
-amount=global.bonustime*0.25
-while amount&gt;1 amount-=1
-if global.comboflash=0 {
-color1=merge_color(c_red,c_black,amount)
-color2=merge_color(c_maroon,c_black,amount)
-} else {
-color1=merge_color(c_yellow,c_black,amount)
-color2=merge_color(c_orange,c_black,amount)
+            <string>dir += 0.25;
+color2 = c_black;
+color1 = merge_color(c_black, merge_color(merge_color(c_fuchsia, c_aqua, 0.5 + lengthdir_x(0.5, dir * 3.12)), c_red, 0.125 + lengthdir_y(0.125, dir * 1.73)), 0.75 + lengthdir_y(0.25, dir * 1.73));
+draw_rectangle_color(view_xview[0] - 60, view_yview[0] - 60, view_xview[0] + view_wview[0] + 60, view_yview[0] + view_hview[0] + 60, color1, color1, color2, color2, 0);
+if (global.bonustime &gt; 0) {
+    if (lastbonus &lt;= 0) {
+        if (global.alienware)
+            scrAlienWareRed();
+    }
+    global.bonustime--;
+    if (global.bonustime &lt;= 0) {
+        if (global.alienware)
+            scrAlienWarePink()
+    }
+    draw_set_blend_mode(bm_add);
+    amount = global.bonustime * 0.25;
+    while (amount &gt; 1)
+        amount--;;
+    if (!global.comboflash) {
+        color1 = merge_color(c_red, c_black, amount);
+        color2 = merge_color(c_maroon, c_black, amount);
+    } else {
+        color1 = merge_color(c_yellow, c_black, amount);
+        color2 = merge_color(c_orange, c_black, amount);
+    }
+    draw_rectangle_color(view_xview[0] - 60, view_yview[0] - 60, view_xview[0] + view_wview[0] + 60, view_yview[0] + view_hview[0] + 60, color1, color1, color2, color2, 0);
+    draw_set_blend_mode(bm_normal);
 }
-draw_rectangle_color(view_xview[0]-60,view_yview[0]-60,view_xview[0]+view_wview[0]+60,view_yview[0]+view_hview[0]+60,color1,color1,color2,color2,0)
-draw_set_blend_mode(bm_normal)
-}
-lastbonus=global.bonustime</string>
+lastbonus = global.bonustime;
+</string>
           </argument>
         </arguments>
       </action>

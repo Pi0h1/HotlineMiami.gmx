@@ -41,7 +41,8 @@ if image_index=11 ammo=20
 if image_index=12 ammo=32
 
 image_speed=0
-dir=random(360)</string>
+dir=random(360)
+</string>
           </argument>
         </arguments>
       </action>

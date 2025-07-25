@@ -25,9 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed=0.05
-direction=random(360)
-image_angle=random(360)
+            <string>speed = 0.05;
+direction = random(360);
+image_angle = random(360);
 </string>
           </argument>
         </arguments>
@@ -50,9 +50,12 @@ image_angle=random(360)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle-=abs(hspeed)
-if !place_free(x+hspeed*20,y) hspeed=-hspeed
-if !place_free(x,y+vspeed*20) vspeed=-vspeed</string>
+            <string>image_angle -= abs(hspeed);
+if (!place_free(x + hspeed * 20, y))
+    hspeed = -hspeed;
+if (!place_free(x, y + vspeed * 20))
+    vspeed = -vspeed;
+</string>
           </argument>
         </arguments>
       </action>

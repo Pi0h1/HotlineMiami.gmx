@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>addspeed=0.2+random(0.1)
-image_blend=c_red
-image_speed=0
-image_angle=random(360)
-image_xscale=0.75+random(0.5)
-image_yscale=image_xscale</string>
+            <string>addspeed = 0.2 + random(0.1);
+image_blend = c_red;
+image_speed = 0;
+image_angle = random(360);
+image_xscale = 0.75 + random(0.5);
+image_yscale = image_xscale;
+</string>
           </argument>
         </arguments>
       </action>
@@ -52,7 +53,13 @@ image_yscale=image_xscale</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;2 image_index+=addspeed else {if global.blood=0 or global.surfaces=1 addToSurface(global.surf3,0)}</string>
+            <string>if (image_index &lt; 2)
+    image_index += addspeed;
+else {
+    if (!global.blood || global.surfaces)
+        addToSurface(global.surf3, 0);
+}
+</string>
           </argument>
         </arguments>
       </action>

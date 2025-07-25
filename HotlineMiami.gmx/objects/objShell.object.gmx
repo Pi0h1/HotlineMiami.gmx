@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>friction=0.1
-rotspeed=(-1+round(random(1))*2)*random(5)
-startspeed=0.1</string>
+            <string>friction = 0.1;
+rotspeed = (-1 + round(random(1)) * 2) * random(5);
+startspeed = 0.1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,11 +50,12 @@ startspeed=0.1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if startspeed=0.1 and speed&gt;0 startspeed=speed
-image_blend=merge_color(c_ltgray,c_white,speed*(1/startspeed))
-image_angle+=rotspeed
-if speed=0 {
-rotspeed=0;
+            <string>if (startspeed == 0.1 &amp;&amp; speed &gt; 0)
+    startspeed = speed;
+image_blend = merge_color(c_ltgray, c_white, speed * (1 / startspeed));
+image_angle += rotspeed;
+if (speed == 0) {
+    rotspeed = 0;
 }
 </string>
           </argument>
@@ -77,7 +79,8 @@ rotspeed=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed=0</string>
+            <string>speed = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -99,8 +102,9 @@ rotspeed=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

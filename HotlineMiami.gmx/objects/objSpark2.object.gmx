@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>life=random(30)</string>
+            <string>life = random(30);
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,8 +48,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index=random(32)
-if life&gt;0 life-=1 else instance_destroy()</string>
+            <string>image_index = random(32);
+if (life &gt; 0)
+    life--;
+else instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>

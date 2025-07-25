@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-seen=0
-dir=90
-image_angle=random(360)</string>
+            <string>image_speed = 0;
+seen = 0;
+dir = 90;
+image_angle = random(360);
+</string>
           </argument>
         </arguments>
       </action>
@@ -72,11 +73,13 @@ image_angle=random(360)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if seen=1 exit
-if place_meeting(x+lengthdir_x(12,objPlayer.dir-180),y+lengthdir_y(12,objPlayer.dir-180),objPlayer) {
-scrGetMessage(1)
-seen=1
-}</string>
+            <string>if (seen)
+    exit;
+if (place_meeting(x + lengthdir_x(12, objPlayer.dir - 180), y + lengthdir_y(12, objPlayer.dir - 180), objPlayer)) {
+    scrGetMessage(1);
+    seen = 1;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -120,14 +123,15 @@ seen=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;24 and seen=0 {
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y-abs(lengthdir_x(1.5,dir)),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-dir+=4
+            <string>if (point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 24 &amp;&amp; !seen) {
+    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, 0.5);
+    draw_sprite_ext(sprite_index, image_index, x, y - abs(lengthdir_x(1.5, dir)), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+    dir += 4;
 } else {
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-dir+=4
-}</string>
+    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+    dir += 4;
+}
+</string>
           </argument>
         </arguments>
       </action>

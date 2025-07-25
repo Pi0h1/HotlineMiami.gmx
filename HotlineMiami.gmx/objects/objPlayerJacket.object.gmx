@@ -25,10 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle=random(360)
-dir=random(360)
-reload=10
-if global.xbox=1 scrInitXboxButtons()</string>
+            <string>image_angle = random(360);
+dir = random(360);
+reload = 10;
+if (global.xbox)
+    scrInitXboxButtons();
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,7 +52,9 @@ if global.xbox=1 scrInitXboxButtons()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrXboxClothes()</string>
+            <string>if (global.xbox)
+    scrXboxClothes();
+</string>
           </argument>
         </arguments>
       </action>
@@ -72,7 +76,8 @@ if global.xbox=1 scrInitXboxButtons()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_mouse,ev_global_left_press)</string>
+            <string>event_perform(ev_mouse, ev_global_left_press);
+</string>
           </argument>
         </arguments>
       </action>
@@ -94,16 +99,20 @@ if global.xbox=1 scrInitXboxButtons()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if visible=0 or reload&gt;0 exit
-with objPlayer {
-sprite_index=sprPWalkUnarmed
-global.done=1
+            <string>if (!visible || reload &gt; 0)
+    exit;
+with (objPlayer) {
+    sprite_index = sprPWalkUnarmed;
+    global.done = 1;
 }
-with objPlayerPants instance_destroy()
-instance_destroy()
-objEffector.brus=10
-with objBackgroundColorClear instance_destroy()
-instance_create(x,y,objBackgroundColor)</string>
+with (objPlayerPants)
+    instance_destroy();
+instance_destroy();
+objEffector.brus = 10;
+with (objBackgroundColorClear)
+    instance_destroy();
+instance_create(x, y, objBackgroundColor);
+</string>
           </argument>
         </arguments>
       </action>
@@ -125,12 +134,13 @@ instance_create(x,y,objBackgroundColor)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if reload&gt;0 reload-=1
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+            <string>if (reload &gt; 0)
+    reload--;
+draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
-draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,dir),y,1,1,90,image_blend,image_alpha)
-dir+=4
+draw_sprite_ext(sprArrow, 0, x - 12 + lengthdir_x(3, dir), y, 1, 1, 90, image_blend, image_alpha);
+dir += 4;
 </string>
           </argument>
         </arguments>

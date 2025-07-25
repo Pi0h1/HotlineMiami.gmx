@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-seen=0
-dir=90</string>
+            <string>image_speed = 0;
+seen = 0;
+dir = 90;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,7 +50,9 @@ dir=90</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrXboxClipRead1()</string>
+            <string>if (global.xbox)
+    scrXboxClipRead1();
+</string>
           </argument>
         </arguments>
       </action>
@@ -71,11 +74,13 @@ dir=90</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if seen=1 exit
-if place_meeting(x,y,objPlayer) {
-scrGetMessage(1)
-seen=1
-}</string>
+            <string>if (seen)
+    exit;
+if (place_meeting(x, y, objPlayer)) {
+    scrGetMessage(1);
+    seen = 1;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -97,7 +102,8 @@ seen=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_mouse,ev_global_right_button)</string>
+            <string>event_perform(ev_mouse, ev_global_right_button);
+</string>
           </argument>
         </arguments>
       </action>
@@ -119,15 +125,17 @@ seen=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x,y,objPlayer) and seen=0 {
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y-abs(lengthdir_x(1.5,dir)),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-dir+=4
+            <string>if (place_meeting(x, y, objPlayer) &amp;&amp; !seen) {
+    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, 0.5);
+    draw_sprite_ext(sprite_index, image_index, x, y - abs(lengthdir_x(1.5, dir)), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+    dir += 4;
 } else {
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-if seen=0 draw_sprite_ext(sprArrow,0,x+9+lengthdir_x(3,dir),y,image_xscale,image_yscale,-90,image_blend,image_alpha)
-dir+=4
-}</string>
+    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+    if (!seen)
+        draw_sprite_ext(sprArrow, 0, x + 9 + lengthdir_x(3, dir), y, image_xscale, image_yscale, -90, image_blend, image_alpha);
+    dir += 4;
+}
+</string>
           </argument>
         </arguments>
       </action>

@@ -25,12 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-on=0
-global.done=0
-alarm[0]=2
-dir=0
-if global.xbox=1 scrInitXboxButtons()</string>
+            <string>image_speed = 0;
+on = 0;
+global.done = 0;
+alarm[0] = 2;
+dir = 0;
+if (global.xbox)
+    scrInitXboxButtons();
+</string>
           </argument>
         </arguments>
       </action>
@@ -52,10 +54,11 @@ if global.xbox=1 scrInitXboxButtons()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>objPlayer.persistent=0
-global.loaded=1
-game_save(working_directory+"\tempsave.sav")
-global.loaded=0</string>
+            <string>objPlayer.persistent = 0;
+global.loaded = 1;
+game_save(working_directory + "\tempsave.sav");
+global.loaded = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -77,10 +80,13 @@ global.loaded=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrXboxDumpster()
-if on=1 {
-if image_index&lt;3 image_index+=0.2
-}</string>
+            <string>if (global.xbox)
+    scrXboxDumpster();
+if (on) {
+    if (image_index &lt; 3)
+        image_index += 0.2;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -102,32 +108,38 @@ if image_index&lt;3 image_index+=0.2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if on=1 exit
-global.test=0
-if objPlayer.x&lt;x+40 {
-with objPlayer {
-if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objDumpster) {sprite_index=sprPLeaveBag image_index=1 image_speed=0.5 global.test=1}
-}
-if global.test=0 exit
-if on=0 {
-xview=view_xview[0]
-yview=view_yview[0]
-angle=view_angle[0]
-with objPlayer {
-vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-view_xview[0]=x+lengthdir_x(vdist*0.2,vdir-180)-view_wview[0]*0.5
-view_yview[0]=y+lengthdir_y(vdist*0.2,vdir-180)-view_hview[0]*0.5
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
-}
+            <string>if (on)
+    exit;
+global.test = 0;
+if (objPlayer.x &lt; x + 40) {
+    with (objPlayer) {
+        if (place_meeting(x + lengthdir_x(12, dir), y + lengthdir_y(12, dir), objDumpster)) {
+            sprite_index = sprPLeaveBag;
+            image_index = 1;
+            image_speed = 0.5;
+            global.test = 1;
+        }
+    }
+    if (global.test == 0)
+        exit;
+    if (on) {
+        xview = view_xview[0];
+        yview = view_yview[0];
+        angle = view_angle[0];
+        with (objPlayer) {
+            vdist = point_distance(x, y, room_width / 2, room_height / 2);
+            vdir = point_direction(room_width / 2, room_height / 2, x, y);
+            view_xview[0] = x + lengthdir_x(vdist * 0.2, vdir - 180) - view_wview[0] * 0.5;
+            view_yview[0] = y + lengthdir_y(vdist * 0.2, vdir - 180) - view_hview[0] * 0.5;
+            view_angle[0] = lengthdir_y(vdist * (1 / 160), vdir * 2);
+        }
 
-
-
-on=1
-my_id=instance_create(52,304,objHobo)
-my_id.direction=260+random(20)
+        on = 1;
+        my_id = instance_create(52, 304, objHobo);
+        my_id.direction = 260 + random(20);
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -149,10 +161,12 @@ my_id.direction=260+random(20)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+2,y+3,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-if on=0 draw_sprite_ext(sprArrow,0,x+32,y+60+lengthdir_x(3,dir),1,1,180,c_white,1)
-dir+=8</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 2, y + 3, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+if (!on)
+    draw_sprite_ext(sprArrow, 0, x + 32, y + 60 + lengthdir_x(3, dir), 1, 1, 180, c_white, 1);
+dir += 8;
+</string>
           </argument>
         </arguments>
       </action>

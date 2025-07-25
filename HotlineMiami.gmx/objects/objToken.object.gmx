@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>letter=0
-if global.letter[letter]=1 instance_destroy()
-dir=0
+            <string>letter = 0;
+if (global.letter[letter] == 1)
+    instance_destroy();
+dir = 0;
 </string>
           </argument>
         </arguments>
@@ -50,16 +51,17 @@ dir=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objPlayer) {
-if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;32 or global.maskindex==1 {
-draw_sprite_ext(sprite_index,image_index,x,y+abs(lengthdir_x(1.5,dir)),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-dir+=4
+            <string>if (instance_exists(objPlayer)) {
+    if (point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 32 || global.maskindex == 1) {
+        draw_sprite_ext(sprite_index, image_index, x, y + abs(lengthdir_x(1.5, dir)), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+        dir += 4;
+    } else {
+        draw_sprite_ext(sprite_index, 0, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+    }
 } else {
-draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+    draw_sprite_ext(sprite_index, 0, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 }
-} else {
-draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-}</string>
+</string>
           </argument>
         </arguments>
       </action>

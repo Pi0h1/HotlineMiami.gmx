@@ -25,18 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle=random(360)
-ammo=0
-if image_index=0 ammo=24
-if image_index=1 ammo=6
-if image_index=6 ammo=2
-if image_index=7 ammo=13
-if image_index=9 ammo=30
-if image_index=10 ammo=6
-if image_index=11 ammo=20
-if image_index=12 ammo=32
-image_speed=0
-dir=random(360)</string>
+            <string>image_angle = random(360);
+ammo = 0;
+switch (image_index) {
+    case  0: ammo = 24; break;
+    case  1: ammo =  6; break;
+    case  6: ammo =  2; break;
+    case  7: ammo = 13; break;
+    case  9: ammo = 30; break;
+    case 10: ammo =  6; break;
+    case 11: ammo = 20; break;
+    case 12: ammo = 32; break;
+}
+image_speed = 0;
+dir = random(360);
+</string>
           </argument>
         </arguments>
       </action>
@@ -58,9 +61,11 @@ dir=random(360)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index=23 {
-if round(random(5))=2 instance_create(x+lengthdir_x(3,image_angle),y+lengthdir_y(3,image_angle),objSteam)
-}</string>
+            <string>if (image_index == 23) {
+    if (round(random(5)) == 2)
+        instance_create(x + lengthdir_x(3, image_angle), y + lengthdir_y(3, image_angle), objSteam);
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -82,16 +87,13 @@ if round(random(5))=2 instance_create(x+lengthdir_x(3,image_angle),y+lengthdir_y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*draw_sprite_ext(sprite_index,image_index,x-1,y,image_xscale,image_yscale,image_angle,c_black,image_alpha)
-draw_sprite_ext(sprite_index,image_index,x,y+1,image_xscale,image_yscale,image_angle,c_black,image_alpha)
-draw_sprite_ext(sprite_index,image_index,x,y-1,image_xscale,image_yscale,image_angle,c_black,image_alpha)
-draw_sprite_ext(sprite_index,image_index,x+1,y,image_xscale,image_yscale,image_angle,c_black,image_alpha)*/
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-d3d_set_fog(true,c_white,0,0)
-draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
-d3d_set_fog(0,0,0,0)
-dir+=4</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x - 1 + lengthdir_x(1, dir), y - 1 + lengthdir_x(1, dir), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+d3d_set_fog(true, c_white, 0, 0);
+draw_sprite_ext(sprite_index, image_index, x - 1 + lengthdir_x(1, dir), y - 1 + lengthdir_x(1, dir), image_xscale, image_yscale, image_angle, image_blend, 0.1 + lengthdir_x(0.1, dir));
+d3d_set_fog(0, 0, 0, 0);
+dir += 4;
+</string>
           </argument>
         </arguments>
       </action>

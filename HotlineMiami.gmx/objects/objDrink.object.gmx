@@ -25,14 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle=random(360)
-image_speed=0
-image_index=floor(random(9))
-dir=45
-angle_speed=-1+round(random(1))*2
-on=0
-vspeed=1.5
-friction=0.1</string>
+            <string>image_angle = random(360);
+image_speed = 0;
+image_index = floor(random(9));
+dir = 45;
+angle_speed = -1 + round(random(1)) * 2;
+on = 0;
+vspeed = 1.5;
+friction = 0.1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -54,8 +55,11 @@ friction=0.1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if speed=0 on=1
-if global.xbox=1 scrXboxItemTake()</string>
+            <string>if (speed == 0)
+    on = 1;
+if (global.xbox)
+    scrXboxItemTake();
+</string>
           </argument>
         </arguments>
       </action>
@@ -77,10 +81,11 @@ if global.xbox=1 scrXboxItemTake()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objPlayer) or on=0 exit
-if place_meeting(x-lengthdir_x(12,objPlayer.dir),y-lengthdir_y(12,objPlayer.dir),objPlayer) {
-instance_destroy()
-audio_play_sound(sndPickupWeapon,0,false)
+            <string>if (!instance_exists(objPlayer) || !on)
+    exit;
+if (place_meeting(x - lengthdir_x(12, objPlayer.dir), y - lengthdir_y(12, objPlayer.dir), objPlayer)) {
+    instance_destroy();
+    audio_play_sound(sndPickupWeapon, 0, false);
 }
 </string>
           </argument>
@@ -104,7 +109,8 @@ audio_play_sound(sndPickupWeapon,0,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_mouse,ev_global_right_press)</string>
+            <string>event_perform(ev_mouse, ev_global_right_press);
+</string>
           </argument>
         </arguments>
       </action>
@@ -126,15 +132,17 @@ audio_play_sound(sndPickupWeapon,0,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-d3d_set_fog(true,c_white,0,0)
-if on draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
-d3d_set_fog(0,0,0,0)
-if on {
-draw_sprite_ext(sprArrow,0,x,y+12+lengthdir_x(4,dir*2),1,1,180,c_white,1)
-dir+=4
-}</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x - 1 + lengthdir_x(1, dir), y - 1 + lengthdir_x(1, dir), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+d3d_set_fog(true, c_white, 0, 0);
+if (on)
+    draw_sprite_ext(sprite_index, image_index, x - 1 + lengthdir_x(1, dir), y - 1 + lengthdir_x(1, dir), image_xscale, image_yscale, image_angle, image_blend, 0.1 + lengthdir_x(0.1, dir));
+d3d_set_fog(0, 0, 0, 0);
+if (on) {
+    draw_sprite_ext(sprArrow, 0, x, y + 12 + lengthdir_x(4, dir * 2), 1, 1, 180, c_white, 1);
+    dir += 4;
+}
+</string>
           </argument>
         </arguments>
       </action>

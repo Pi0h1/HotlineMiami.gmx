@@ -52,7 +52,6 @@
   </views>
   <instances>
     <instance objName="objBackgroundColor" x="68" y="120" name="inst_FA685F82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVCapture" x="376" y="436" name="inst_F7FDF822" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSurfacer" x="88" y="120" name="inst_539474C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSink" x="288" y="174" name="inst_D7FBB9E0" locked="0" code="image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarStool" x="284" y="124" name="inst_DF4010A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

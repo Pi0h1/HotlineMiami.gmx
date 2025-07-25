@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-friction=0.1
-image_index=1
-reload=100+random(120)
-type=objEnemy
-startx=x
-starty=y</string>
+            <string>image_speed = 0;
+friction = 0.1;
+image_index = 1;
+reload = 100 + random(120);
+type = objEnemy;
+startx = x;
+starty = y;
+</string>
           </argument>
         </arguments>
       </action>
@@ -53,126 +54,149 @@ starty=y</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrMoveSolidOn()
+            <string>scrMoveSolidOn();
 
-if sprite_index=sprEGetUpLean or sprite_index=sprPoliceGetUpLean {
-mask_index=sprEGetUpLeanMask
-if place_meeting(x,y,objBullet) {
-audio_play_sound(sndHit,0,false)
-audio_play_sound(sndPunch,0,false)
-global.shake=5
-myx=x+lengthdir_x(8,image_angle)
-myy=y+lengthdir_y(8,image_angle)
-repeat (8) {
-dir=random(360)
-my_id=instance_create(myx+lengthdir_x(4,dir),myy+lengthdir_y(4,dir),objBloodSmoke)
-my_id.direction=dir
-my_id.speed=2+random(1)
-my_id.friction=0.1
-}
-my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((100)+100*global.factor)+"pts" 
-global.myscore+=(100)+100*global.factor
-global.boldscore=100*global.factor
-global.killscore+=100
-global.combo+=1
-global.combotime=240
-global.killx[global.kills]=x
-global.killy[global.kills]=y
-global.kills+=1
-global.shake=7
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprEDeadLean
-my_id.image_index=1+floor(random(5))
-my_id.image_angle=angle
-instance_destroy()
-scrMoveSolidOff()
-exit
-}
-if instance_exists(objPlayer) {
-if objPlayer.sprite_index=sprPAttackClub or objPlayer.sprite_index=sprPAttackCrowbar or objPlayer.sprite_index=sprPAttackSledgeHammer or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprBoss2AttackCleaver or objPlayer.sprite_index=sprPAttackSledgeHammer or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprPAttackMachete or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=sprPigButcherAttack or objPlayer.sprite_index=sprPAttackBat or objPlayer.sprite_index=sprPAttackPipe or objPlayer.sprite_index=sprPAttackKnife or objPlayer.sprite_index=sprPAttackSword {
-addx=lengthdir_x(12,objPlayer.dir)
-addy=lengthdir_y(12,objPlayer.dir)
-objPlayer.x+=addx
-objPlayer.y+=addy
-if place_meeting(x,y,objPlayer) {
-audio_play_sound(sndHit,0,false)
-audio_play_sound(sndPunch,0,false)
-myx=x+lengthdir_x(8,image_angle)
-myy=y+lengthdir_y(8,image_angle)
-repeat (8) {
-dir=random(360)
-my_id=instance_create(myx+lengthdir_x(4,dir),myy+lengthdir_y(4,dir),objBloodSmoke)
-my_id.direction=dir
-my_id.speed=2+random(1)
-my_id.friction=0.1
-}
-my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((100)+100*global.factor)+"pts" 
-global.myscore+=(100)+100*global.factor
-global.boldscore=100*global.factor
-global.killscore+=100
-global.combo+=1
-global.combotime=240
-global.killx[global.kills]=x
-global.killy[global.kills]=y
-global.kills+=1
-global.shake=7
-my_id=instance_create(x,y,objDeadBody)
-my_id.sprite_index=sprEDeadWall
-my_id.image_index=3+floor(random(6))
-my_id.image_angle=angle
-my_id.image_yscale=objPlayer.left
-instance_destroy()
-scrMoveSolidOff()
-objPlayer.x-=addx
-objPlayer.y-=addy
-exit
-}
-objPlayer.x-=addx
-objPlayer.y-=addy
-}
-}
+if (sprite_index == sprEGetUpLean || sprite_index == sprPoliceGetUpLean) {
+    mask_index = sprEGetUpLeanMask;
+    if (place_meeting(x, y, objBullet)) {
+        audio_play_sound(sndHit, 0, false);
+        audio_play_sound(sndPunch, 0, false);
+        global.shake = 5;
+        myx = x + lengthdir_x(8, image_angle);
+        myy = y + lengthdir_y(8, image_angle);
+        repeat(8) {
+            dir = random(360);
+            my_id = instance_create(myx + lengthdir_x(4, dir), myy + lengthdir_y(4, dir), objBloodSmoke);
+            my_id.direction = dir;
+            my_id.speed = 2 + random(1);
+            my_id.friction = 0.1;
+        }
+        my_id = instance_create(x, y - 12, objScore);
+        my_id.text = "+" + string((100) + 100 * global.factor) + "pts";
+        global.myscore += (100) + 100 * global.factor;
+        global.boldscore = 100 * global.factor;
+        global.killscore += 100;
+        global.combo++;
+        global.combotime = 240;
+        global.killx[global.kills] = x;
+        global.killy[global.kills] = y;
+        global.kills++;
+        global.shake = 7;
+        my_id = instance_create(x, y, objDeadBody);
+        my_id.sprite_index = sprEDeadLean;
+        my_id.image_index = 1 + floor(random(5));
+        my_id.image_angle = angle;
+        instance_destroy();
+        scrMoveSolidOff();
+        exit;
+    }
+    if (instance_exists(objPlayer)) {
+        if (objPlayer.sprite_index == sprPAttackClub ||
+            objPlayer.sprite_index == sprPAttackCrowbar ||
+            objPlayer.sprite_index == sprPAttackMachete ||
+            objPlayer.sprite_index == sprBoss2AttackCleaver ||
+            objPlayer.sprite_index == sprPAttackSledgeHammer ||
+            objPlayer.sprite_index == sprPAttackPot ||
+            objPlayer.sprite_index == sprPAttackPan ||
+            objPlayer.sprite_index == sprPigButcherAttack ||
+            objPlayer.sprite_index == sprPAttackBat ||
+            objPlayer.sprite_index == sprPAttackPipe ||
+            objPlayer.sprite_index == sprPAttackKnife ||
+            objPlayer.sprite_index == sprPAttackSword) {
+            
+            addx = lengthdir_x(12, objPlayer.dir);
+            addy = lengthdir_y(12, objPlayer.dir);
+            objPlayer.x += addx;
+            objPlayer.y += addy;
+            
+            if (place_meeting(x, y, objPlayer)) {
+                audio_play_sound(sndHit, 0, false);
+                audio_play_sound(sndPunch, 0, false);
+                myx = x + lengthdir_x(8, image_angle);
+                myy = y + lengthdir_y(8, image_angle);
+                repeat(8) {
+                    dir = random(360);
+                    my_id = instance_create(myx + lengthdir_x(4, dir), myy + lengthdir_y(4, dir), objBloodSmoke);
+                    my_id.direction = dir;
+                    my_id.speed = 2 + random(1);
+                    my_id.friction = 0.1;
+                }
+                my_id = instance_create(x, y - 12, objScore);
+                my_id.text = "+" + string((100) + 100 * global.factor) + "pts";
+                global.myscore += (100) + 100 * global.factor;
+                global.boldscore = 100 * global.factor;
+                global.killscore += 100;
+                global.combo++;
+                global.combotime = 240;
+                global.killx[global.kills] = x;
+                global.killy[global.kills] = y;
+                global.kills++;
+                global.shake = 7;
+                my_id = instance_create(x, y, objDeadBody);
+                my_id.sprite_index = sprEDeadWall;
+                my_id.image_index = 3 + floor(random(6));
+                my_id.image_angle = angle;
+                my_id.image_yscale = objPlayer.left;
+                instance_destroy();
+                scrMoveSolidOff();
+                objPlayer.x -= addx;
+                objPlayer.y -= addy;
+                exit;
+            }
+            objPlayer.x -= addx;
+            objPlayer.y -= addy;
+        }
+    }
 
-mask_index=sprMask
+    mask_index = sprMask;
 }
-if image_speed&gt;0 exit
-if !place_free(x,y) {
-if speed&gt;0 move_outside_solid(direction-180,8) else {
-if place_free(x+lengthdir_x(7,direction-180),y+lengthdir_y(7,direction-180)) {
-dir=direction
-if sprite_index=sprEGetUp sprite_index=sprEGetUpLean 
-//if sprite_index=sprPoliceGetUp sprite_index=sprPoliceGetUpLean
-direction=round(direction*(1/90))*90 
-if place_free(x+lengthdir_x(5,direction),y+lengthdir_y(5,direction)) {
-direction=dir 
-if sprite_index=sprEGetUpLean sprite_index=sprEGetUp 
-if sprite_index=sprPoliceGetUpLean sprite_index=sprPoliceGetUp
-}
-}
-}
-speed=0
+if (image_speed &gt; 0)
+    exit;
+if (!place_free(x, y)) {
+    if (speed &gt; 0)
+        move_outside_solid(direction - 180, 8);
+    else {
+        if (place_free(x + lengthdir_x(7, direction - 180), y + lengthdir_y(7, direction - 180))) {
+            dir = direction;
+            if (sprite_index == sprEGetUp)
+                sprite_index = sprEGetUpLean;
+            direction = round(direction * (1 / 90)) * 90;
+            if (place_free(x + lengthdir_x(5, direction), y + lengthdir_y(5, direction))) {
+                direction = dir;
+                if (sprite_index == sprEGetUpLean)
+                    sprite_index = sprEGetUp;
+                if (sprite_index == sprPoliceGetUpLean)
+                    sprite_index = sprPoliceGetUp;
+            }
+        }
+    }
+    speed = 0;
 } else {
-if !place_free(x+lengthdir_x(5,direction),y+lengthdir_y(5,direction)) {
-move_contact_solid(direction,8) 
-dir=direction
-if sprite_index=sprEGetUp sprite_index=sprEGetUpLean 
-//if sprite_index=sprPoliceGetUp sprite_index=sprPoliceGetUpLean
-direction=round(direction*(1/90))*90 
-if place_free(x+lengthdir_x(5,direction),y+lengthdir_y(5,direction)) {direction=dir
-if sprite_index=sprEGetUpLean sprite_index=sprEGetUp 
-if sprite_index=sprPoliceGetUpLean sprite_index=sprPoliceGetUp
+    if (!place_free(x + lengthdir_x(5, direction), y + lengthdir_y(5, direction))) {
+        move_contact_solid(direction, 8);
+        dir = direction;
+        if (sprite_index == sprEGetUp)
+            sprite_index = sprEGetUpLean;
+        direction = round(direction * (1 / 90)) * 90;
+        if (place_free(x + lengthdir_x(5, direction), y + lengthdir_y(5, direction))) {
+            direction = dir;
+            if (sprite_index == sprEGetUpLean)
+                sprite_index = sprEGetUp;
+            if (sprite_index == sprPoliceGetUpLean)
+                sprite_index = sprPoliceGetUp;
+        }
+    }
 }
-} 
-}
-scrMoveSolidOff()
-if speed=0 {
-if reload&gt;0 reload-=1 else {
-image_speed=0.35
-}
+scrMoveSolidOff();
+if (speed == 0) {
+    if (reload &gt; 0)
+        reload--;
+    else {
+        image_speed = 0.35;
+    }
 }
 
-angle=direction
+angle = direction;
 </string>
           </argument>
         </arguments>
@@ -195,20 +219,31 @@ angle=direction
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if type=objEnemyMelee type=objEnemy//Patrol
-if type=objEnemyMeleeStationary type=objEnemy
-if type=objEnemyIdlePee type=objEnemy
-if type=objEnemyIdleSmoke type=objEnemy
-if type=objPoliceMelee or type=objPoliceStationary or type=objPolicePatrol or type=objPoliceMeleeStationary type=objPolice
-my_id=instance_create(x,y,type)
-if scrIsPolice(my_id.object_index) my_id.sprite_index=sprPoliceWalkUnarmed else my_id.sprite_index=sprEWalkUnarmed
-my_id.angle=image_angle-180
-my_id.startx=startx
-my_id.starty=starty
-with my_id {
-if !place_free(x,y) {x=startx y=starty}
+            <string>if (type == objEnemyMelee)
+    type = objEnemy; //Patrol
+if (type == objEnemyMeleeStationary)
+    type = objEnemy;
+if (type == objEnemyIdlePee)
+    type = objEnemy;
+if (type == objEnemyIdleSmoke)
+    type = objEnemy;
+if (type == objPoliceMelee || type == objPoliceStationary || type == objPolicePatrol || type == objPoliceMeleeStationary)
+    type = objPolice;
+my_id = instance_create(x, y, type);
+if (scrIsPolice(my_id.object_index))
+    my_id.sprite_index = sprPoliceWalkUnarmed;
+else my_id.sprite_index = sprEWalkUnarmed;
+my_id.angle = image_angle - 180;
+my_id.startx = startx;
+my_id.starty = starty;
+with (my_id) {
+    if (!place_free(x, y)) {
+        x = startx;
+        y = starty;
+    }
 }
-instance_destroy()</string>
+instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>
@@ -230,8 +265,9 @@ instance_destroy()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

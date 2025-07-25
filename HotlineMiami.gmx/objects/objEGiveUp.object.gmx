@@ -25,11 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-ammo=0
-alert=0
-path=-124
-energie=0</string>
+            <string>image_speed = 0;
+ammo = 0;
+alert = 0;
+path = -124;
+energie = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -51,7 +52,9 @@ energie=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;5 image_index+=0.15</string>
+            <string>if (image_index &lt; 5)
+    image_index += 0.15;
+</string>
           </argument>
         </arguments>
       </action>
@@ -73,8 +76,9 @@ energie=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

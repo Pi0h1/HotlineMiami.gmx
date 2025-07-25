@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-friction=0.1
-image_index=1
-reload=100+random(120)</string>
+            <string>image_speed = 0;
+friction = 0.1;
+image_index = 1;
+reload = 100 + random(120);
+</string>
           </argument>
         </arguments>
       </action>
@@ -51,13 +52,19 @@ reload=100+random(120)</string>
           <argument>
             <kind>1</kind>
             <string>scrMoveSolidOn()
-if !place_free(x,y) {move_outside_solid(direction-180,8) speed=0}
-scrMoveSolidOff()
-if speed=0 {
-if reload&gt;0 reload-=1 else {
-image_speed=0.35
+if (!place_free(x, y)) {
+    move_outside_solid(direction - 180, 8);
+    speed = 0;
 }
-}</string>
+scrMoveSolidOff();
+if (speed == 0) {
+    if (reload &gt; 0)
+        reload--;
+    else {
+        image_speed = 0.35;
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -79,13 +86,14 @@ image_speed=0.35
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_id=instance_create(x,y,objESubwayStatic)
-my_id.angle=image_angle-180
-my_id.alert=1
-with my_id {
-move_outside_solid(angle,16)
+            <string>my_id = instance_create(x, y, objESubwayStatic);
+my_id.angle = image_angle - 180;
+my_id.alert = 1;
+with (my_id) {
+    move_outside_solid(angle, 16);
 }
-instance_destroy()</string>
+instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>
@@ -107,8 +115,9 @@ instance_destroy()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

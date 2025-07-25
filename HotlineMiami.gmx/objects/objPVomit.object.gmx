@@ -47,7 +47,7 @@ switch (global.maskindex) {
     case 16: masksprite = sprPantherMask; break;
     case 17: masksprite = sprOctopusMask; break;
     case 18: masksprite = sprFishMask; break;
-    case 10: masksprite = sprBatMask; break;
+    case 19: masksprite = sprBatMask; break;
     case 20: masksprite = sprWalrusMask; break;
     case 21: masksprite = sprCrocodileMask; break;
     case 22: masksprite = sprLocustMask; break;

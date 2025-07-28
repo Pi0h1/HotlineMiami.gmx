@@ -2723,9 +2723,6 @@
     <script>scripts\scrLockInEffectInit.gml</script>
     <script>scripts\scrLockInEffectStep.gml</script>
   </scripts>
-  <shaders name="shaders">
-    <shader type="GLSLES">shaders\shader0.shader</shader>
-  </shaders>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>
     <font>fonts\fntBands</font>
@@ -3053,8 +3050,6 @@
         <object>objects\objLetterFound</object>
       </objects>
       <object>objects\objScanlines</object>
-      <object>objects\sxms</object>
-      <object>objects\objPathTest</object>
       <object>objects\objShadowH</object>
       <object>objects\objShadowV</object>
       <object>objects\objShootThrough</object>

@@ -14,7 +14,7 @@ if ammo>0 {
 if sprite_index=sprPWalkScorpion or sprite_index=sprPWalkMP5 or sprite_index=sprPWalkMagnum or sprite_index=sprPWalkDoubleBarrel or sprite_index=sprPWalkUzi or sprite_index=sprPWalkSilencer {
 if place_meeting(x,y,objKnockedOut) {
 //remove from here
-if global.controller=0 my_id=instance_create(x,y,objPlayerShieldMouse) else my_id=instance_create(x,y,objPlayerShieldController)
+my_id=instance_create(x,y,objPlayerShieldMouse)
 my_id.dir=dir
 my_id.ammo=ammo
 if sprite_index=sprPWalkScorpion my_id.sprite_index=sprPHumanShieldScorpion

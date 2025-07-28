@@ -25,38 +25,35 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = room_width/2;
-letter=-1
-//text[0]="PART ONE"
-//text[1]="PHONECALLS"
-texts=1
+            <string>x = room_width / 2;
+letter = -1;
+texts = 1;
 
-i=0
-repeat (15)
-{
-amount[i]=0
-i+=1
+i = 0;
+repeat(15) {
+    amount[i] = 0;
+    i += 1;
 }
-amount[0]=10
-dir=random(10000)
-current=0
-factor=1
+amount[0] = 10;
+dir = random(10000);
+current = 0;
+factor = 1;
 
 
 
-i=0
-repeat (30) {
-size[i]=1+random(2)
-myx[i]=random(room_width)
-myy[i]=random(room_height)
-mydir[i]=random(360)
-myspeed[i]=1+random(2)
-diradd[i]=-4+random(8)
-i+=1
+i = 0;
+repeat(30) {
+    size[i] = 1 + random(2);
+    myx[i] = random(room_width);
+    myy[i] = random(room_height);
+    mydir[i] = random(360);
+    myspeed[i] = 1 + random(2);
+    diradd[i] = -4 + random(8);
+    i++;
 }
 
-fade=0
-c_amount=0
+fade = 0;
+c_amount = 0;
 </string>
           </argument>
         </arguments>
@@ -79,100 +76,129 @@ c_amount=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if c_amount&gt;=180 and fade=0 { 
-if letter&lt;string_length(global.parttitle[current]) {letter+=0.1 if floor(letter)&gt;floor(letter-0.1) {if string_copy(global.parttitle[current],letter+1,1)=" " or letter&gt;=string_length(global.parttitle[current]) nothing=1 else audio_play_sound(sndLetter,0,false) amount[i]=10}}
+            <string>if (c_amount &gt;= 180 &amp;&amp; !fade) {
+    if (letter &lt; string_length(global.parttitle[current])) {
+        letter += 0.1;
+        if (floor(letter) &gt; floor(letter - 0.1)) {
+            if (string_copy(global.parttitle[current], letter + 1, 1) == " "
+            || letter &gt;= string_length(global.parttitle[current])) {
+                // do nothing
+            } else audio_play_sound(sndLetter, 0, false);
+            amount[i] = 10;
+        }
+    }
 }
 
-color1=merge_color(merge_color(c_dkgray,c_navy,0.5+lengthdir_x(0.5,dir*0.5)),merge_color(c_black,c_teal,0.2+lengthdir_x(0.2,dir*0.67)),0.6+lengthdir_x(0.3,dir))
-view_angle[0]=lengthdir_x(2,dir)
-color1=merge_color(color1,make_color_hsv(0,0,5+random(3)),0.75)
-color2=c_black
-d3d_set_projection_ortho(0,0,400,256,0)
-draw_rectangle_color(0,64,room_width,room_height-64,color1,color1,color2,color2,0)
+color1 = merge_color(merge_color(c_dkgray, c_navy, 0.5 + lengthdir_x(0.5, dir * 0.5)), merge_color(c_black, c_teal, 0.2 + lengthdir_x(0.2, dir * 0.67)), 0.6 + lengthdir_x(0.3, dir));
+view_angle[0] = lengthdir_x(2, dir);
+color1 = merge_color(color1, make_color_hsv(0, 0, 5 + random(3)), 0.75);
+color2 = c_black;
+d3d_set_projection_ortho(0, 0, 400, 256, 0);
+draw_rectangle_color(0, 64, room_width, room_height - 64, color1, color1, color2, color2, 0);
 
-draw_set_blend_mode(bm_subtract)
+draw_set_blend_mode(bm_subtract);
 
-i=0
-repeat (30) {
-draw_circle_color(myx[i],myy[i],size[i]+random(0.5),c_white,c_black,0)
-myx[i]+=lengthdir_x(myspeed[i],mydir[i])
-myy[i]+=lengthdir_y(myspeed[i],mydir[i])
-mydir[i]+=diradd[i]
-if round(random(30))=2 diradd[i]=-4+random(8)
-if myx[i]&lt;0 myx[i]+=room_width
-if myy[i]&lt;64 myy[i]+=room_height-128
-if myy[i]&gt;room_height-64 myy[i]-=room_height-128
-if myx[i]&gt;room_width myx[i]-=room_width
-i+=1
+i = 0;
+repeat(30) {
+    draw_circle_color(myx[i], myy[i], size[i] + random(0.5), c_white, c_black, 0);
+    myx[i] += lengthdir_x(myspeed[i], mydir[i]);
+    myy[i] += lengthdir_y(myspeed[i], mydir[i]);
+    mydir[i] += diradd[i];
+    if (round(random(30)) == 2)
+        diradd[i] = -4 + random(8)
+    if (myx[i] &lt; 0)
+        myx[i] += room_width;
+    if (myy[i] &lt; 64) myy[i]
+        += room_height - 128;
+    if (myy[i] &gt; room_height - 64)
+        myy[i] -= room_height - 128;
+    if (myx[i] &gt; room_width)
+        myx[i] -= room_width;
+    i++;
 }
-draw_set_blend_mode(bm_normal)
-
-
-d3d_set_projection_ortho(view_xview[0],view_yview[0],view_wview[0],view_hview[0],view_angle[0])
-draw_set_font(fntPart)
-draw_set_valign(fa_center)
-draw_set_halign(fa_left)
-i=0
-dir+=1
-start_x=room_width/2-string_width(global.parttitle[current])*0.5
-test=0
-repeat letter {
-mystring=string_copy(global.parttitle[current],i+1,1)
-draw_set_color(c_black)
-draw_text_transformed(start_x,room_height/2-1,mystring,1,1,0)
-draw_text_transformed(start_x,room_height/2+1,mystring,1,1,0)
-draw_text_transformed(start_x+1,room_height/2,mystring,1,1,0)
-draw_text_transformed(start_x-1,room_height/2,mystring,1,1,0)
-draw_set_color(merge_color(c_black,merge_color(c_red,c_orange,0.5+lengthdir_x(0.5,dir+i*5)),factor))
-draw_text_transformed(start_x,room_height/2,mystring,1,1,0)
-ii=0
-draw_set_blend_mode(bm_add)
-repeat ceil(amount[i]) {
-draw_text_transformed(start_x+ii*0.5-random(ii),room_height/2+ii*0.5-random(ii),mystring,1,1,0)
-ii+=1
-}
-draw_set_blend_mode(bm_normal)
-if amount[i]&gt;0 amount[i]-=0.25
-test+=amount[i]
-i+=1
-start_x+=string_width(mystring)
-}
-if test=0 and letter&gt;=string_length(global.parttitle[current]) {
-if factor&gt;0 factor-=0.05 else {
-factor=1
-letter=0
-amount[0]=10
-if current&lt;texts current+=1 else fade=1
-}
-}
-d3d_set_projection_ortho(0,0,400,256,0)
+draw_set_blend_mode(bm_normal);
 
 
-if fade=0 {
-if c_amount&lt;180 {
-c_amount+=10
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color1,color2,color2,color1,0)
-draw_set_blend_mode(bm_normal)
+d3d_set_projection_ortho(view_xview[0], view_yview[0], view_wview[0], view_hview[0], view_angle[0]);
+draw_set_font(fntPart);
+draw_set_valign(fa_center);
+draw_set_halign(fa_left);
+i = 0;
+dir++;
+start_x = room_width / 2 - string_width(global.parttitle[current]) * 0.5;
+test = 0;
+repeat (letter) {
+    mystring = string_copy(global.parttitle[current], i + 1, 1);
+    draw_set_color(c_black);
+    draw_text_transformed(start_x, room_height / 2 - 1, mystring, 1, 1, 0);
+    draw_text_transformed(start_x, room_height / 2 + 1, mystring, 1, 1, 0);
+    draw_text_transformed(start_x + 1, room_height / 2, mystring, 1, 1, 0);
+    draw_text_transformed(start_x - 1, room_height / 2, mystring, 1, 1, 0);
+    draw_set_color(merge_color(c_black, merge_color(c_red, c_orange, 0.5 + lengthdir_x(0.5, dir + i * 5)), factor));
+    draw_text_transformed(start_x, room_height / 2, mystring, 1, 1, 0);
+    ii = 0;
+    draw_set_blend_mode(bm_add);
+    repeat (ceil(amount[i])) {
+        draw_text_transformed(start_x + ii * 0.5 - random(ii), room_height / 2 + ii * 0.5 - random(ii), mystring, 1, 1, 0);
+        ii++;
+    }
+    draw_set_blend_mode(bm_normal);
+    if (amount[i] &gt; 0)
+        amount[i] -= 0.25;
+    test += amount[i];
+    i++;
+    start_x += string_width(mystring);
 }
+if (!test &amp;&amp; letter &gt;= string_length(global.parttitle[current])) {
+    if (factor &gt; 0)
+        factor -= 0.05;
+    else {
+        factor = 1;
+        letter = 0;
+        amount[0] = 10;
+        if (current &lt; texts)
+            current++;
+        else fade = 1;
+    }
+}
+d3d_set_projection_ortho(0, 0, 400, 256, 0);
+
+
+if (!fade) {
+    if (c_amount &lt; 180) {
+        c_amount += 10;
+        color1 = merge_color(c_black, merge_color(c_aqua, c_white, 0.5 + lengthdir_x(0.5, c_amount)), 0.5 + lengthdir_x(0.5, c_amount));
+        if (c_amount &gt; 90)
+            color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
+        else color2 = c_white;
+        draw_set_blend_mode(bm_subtract);
+        draw_rectangle_color(view_xview[0] - 10, view_yview[0] - 10, view_xview[0] + view_wview[0] + 10, view_yview[0] + view_hview[0] + 10, color1, color2, color2, color1, 0);
+        draw_set_blend_mode(bm_normal);
+    }
 }
 
-if fade=1 {
-if c_amount&gt;0  {
-c_amount-=5
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0)
-draw_set_blend_mode(bm_normal)
-} else {if global.nextlevel=rmRewind or global.nextlevel=rmSequence12bDownstairs {nothing=1 if global.nextlevel=rmSequence12bDownstairs sxeasy_play(working_directory+"\TurfIntro.mp3")} else sxeasy_play(working_directory+"\SilverLights.mp3") room_goto(global.nextlevel)}
+if (fade) {
+    if (c_amount &gt; 0) {
+        c_amount -= 5;
+        color1 = merge_color(c_black, merge_color(c_aqua, c_white, 0.5 + lengthdir_x(0.5, c_amount)), 0.5 + lengthdir_x(0.5, c_amount));
+        if (c_amount &gt; 90)
+            color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
+        else color2 = c_white;
+        draw_set_blend_mode(bm_subtract);
+        draw_rectangle_color(view_xview[0] - 10, view_yview[0] - 10, view_xview[0] + view_wview[0] + 10, view_yview[0] + view_hview[0] + 10, color2, color1, color1, color2, 0);
+        draw_set_blend_mode(bm_normal);
+    } else {
+        if (global.nextlevel == rmRewind || global.nextlevel == rmSequence12bDownstairs) {
+            if (global.nextlevel == rmSequence12bDownstairs)
+                sxeasy_play(working_directory + "\TurfIntro.mp3");
+        } else sxeasy_play(working_directory + "\SilverLights.mp3");
+        room_goto(global.nextlevel);
+    }
 }
 
-draw_set_blend_mode(bm_subtract)
-draw_circle_color(x,y,room_width*0.75+random(10),c_black,c_lime,0)
-draw_set_blend_mode(bm_normal)
+draw_set_blend_mode(bm_subtract);
+draw_circle_color(x, y, room_width * 0.75 + random(10), c_black, c_lime, 0);
+draw_set_blend_mode(bm_normal);
 </string>
           </argument>
         </arguments>

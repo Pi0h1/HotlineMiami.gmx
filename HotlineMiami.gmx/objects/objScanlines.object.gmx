@@ -87,7 +87,7 @@ draw_set_blend_mode(bm_normal);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Nothing.
+            <string>// draw nothing in the game world
 </string>
           </argument>
         </arguments>

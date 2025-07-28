@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x=room_width/2
-i=0
-repeat (6) {
-index[i]=floor(random(4))
-i+=1
+            <string>x = room_width / 2;
+i = 0;
+repeat(6) {
+    index[i] = floor(random(4));
+    i++;
 }
-dir=0</string>
+dir = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -53,7 +54,8 @@ dir=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>// dont draw
+</string>
           </argument>
         </arguments>
       </action>

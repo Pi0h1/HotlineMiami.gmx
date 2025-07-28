@@ -25,38 +25,40 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>day=23
-currentmonth=3
-month[0]="April"
-month[1]="May"
-month[2]="June"
-month[3]="July"
-reload=5
-maxreload=5
-on=0
-draw_set_font(fntDate)
-draw_set_halign(fa_center)
-draw_set_valign(fa_center)
-text=month[currentmonth]+" "+string(day)+scrNth(string(day))+", 1989#Miami - Florida"
-surf=surface_create(room_width*3,room_height*3)
-surface_set_target(surf)
-draw_clear_alpha(0,c_black)
-draw_set_color(c_gray)
-draw_text_transformed((room_width/2)*3+3,(room_height/2)*3+3,month[currentmonth]+" "+string(day)+scrNth(string(day))+", 1989#Miami - Florida",3,3,0)
-draw_set_color(c_white)
-draw_text_transformed((room_width/2)*3,(room_height/2)*3,month[currentmonth]+" "+string(day)+scrNth(string(day))+", 1989#Miami - Florida",3,3,0)
-surface_reset_target()
-factor=0
-alarm[1]=60
-i=0
+            <string>day = 23;
+currentmonth = 3;
+month[0] = "April";
+month[1] = "May";
+month[2] = "June";
+month[3] = "July";
+reload = 5;
+maxreload = 5;
+on = 0;
+draw_set_font(fntDate);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
+text = month[currentmonth] + " " + string(day) + scrNth(string(day)) + ", 1989#Miami - Florida";
+surf = surface_create(room_width * 3, room_height * 3);
+surface_set_target(surf);
+draw_clear_alpha(0, c_black);
+draw_set_color(c_gray);
+draw_text_transformed((room_width / 2) * 3 + 3, (room_height / 2) * 3 + 3, month[currentmonth] + " " + string(day) + scrNth(string(day)) + ", 1989#Miami - Florida", 3, 3, 0);
+draw_set_color(c_white);
+draw_text_transformed((room_width / 2) * 3, (room_height / 2) * 3, month[currentmonth] + " " + string(day) + scrNth(string(day)) + ", 1989#Miami - Florida", 3, 3, 0);
+surface_reset_target();
+factor = 0;
+alarm[1] = 60;
+i = 0;
 
-draw_clear(c_black)
-repeat (100) {
-draw_surface_ext(surf,0,0,1,1,0,merge_color(c_black,c_white,i*(1/60)),1)
-if i&lt;60 i+=1
-sleep(1000/60)
-screen_refresh()
-}</string>
+draw_clear(c_black);
+repeat(100) {
+    draw_surface_ext(surf, 0, 0, 1, 1, 0, merge_color(c_black, c_white, i * (1 / 60)), 1);
+    if (i &lt; 60)
+        i++;
+    sleep(1000 / 60);
+    screen_refresh();
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -78,7 +80,8 @@ screen_refresh()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto_next()</string>
+            <string>room_goto_next();
+</string>
           </argument>
         </arguments>
       </action>
@@ -100,10 +103,10 @@ screen_refresh()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>on=1
-reload=60
-audio_play_sound(sndRewind,0,false)
-alarm[0]=270
+            <string>on = 1;
+reload = 60;
+audio_play_sound(sndRewind, 0, false);
+alarm[0] = 270;
 </string>
           </argument>
         </arguments>
@@ -126,9 +129,10 @@ alarm[0]=270
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>on=0
-alarm[2]=60
-sxeasy_play("ItsSafeNow.mp3")</string>
+            <string>on = 0;
+alarm[2] = 60;
+sxeasy_play("ItsSafeNow.mp3");
+</string>
           </argument>
         </arguments>
       </action>
@@ -150,32 +154,54 @@ sxeasy_play("ItsSafeNow.mp3")</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if on=1 {if factor&lt;1 factor+=0.0125} else {if factor&gt;0.05 factor-=0.05 else factor=0}
-surface_set_target(surf)
-draw_set_alpha(1-random(0.9*factor))
-draw_set_color(merge_color(c_black,merge_color(c_dkgray,c_black,0.7+random(0.3)),factor))
-draw_rectangle(0,0,room_width*3,room_height*3,0)
-draw_set_color(merge_color(c_gray,merge_color(c_black,c_ltgray,random(1)),factor))
-draw_set_font(fntDate)
-addx=((-1+random(2))*factor) 
-addy=((-1+random(2))*factor)
-draw_set_halign(fa_center)
-draw_set_valign(fa_center)
-draw_text_transformed((room_width/2)*3+3+addx,(room_height/2)*3+3+addy,month[currentmonth]+" "+string(day)+scrNth(string(day))+", 1989#Miami - Florida",3-random(addx*0.2),3-random(addy*0.4),0)
-if on=0 draw_set_color(c_white) else draw_set_color(merge_color(c_ltgray,c_white,random(1)))
-draw_text_transformed((room_width/2)*3+addy,(room_height/2)*3+addy,month[currentmonth]+" "+string(day)+scrNth(string(day))+", 1989#Miami - Florida",3-random(addx*0.2),3-random(addy*0.4),0)
+            <string>if (on) {
+    if (factor &lt; 1)
+        factor += 0.0125;
+} else {
+    if (factor &gt; 0.05)
+        factor -= 0.05;
+    else factor = 0;
+}
+surface_set_target(surf);
+draw_set_alpha(1 - random(0.9 * factor));
+draw_set_color(merge_color(c_black, merge_color(c_dkgray, c_black, 0.7 + random(0.3)), factor));
+draw_rectangle(0, 0, room_width * 3, room_height * 3, 0);
+draw_set_color(merge_color(c_gray, merge_color(c_black, c_ltgray, random(1)), factor));
+draw_set_font(fntDate);
+addx = ((-1 + random(2)) * factor);
+addy = ((-1 + random(2)) * factor);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
+draw_text_transformed((room_width / 2) * 3 + 3 + addx, (room_height / 2) * 3 + 3 + addy, month[currentmonth] + " " + string(day) + scrNth(string(day)) + ", 1989#Miami - Florida", 3 - random(addx * 0.2), 3 - random(addy * 0.4), 0);
+if (!on)
+    draw_set_color(c_white);
+else draw_set_color(merge_color(c_ltgray, c_white, random(1)));
+draw_text_transformed((room_width / 2) * 3 + addy, (room_height / 2) * 3 + addy, month[currentmonth] + " " + string(day) + scrNth(string(day)) + ", 1989#Miami - Florida", 3 - random(addx * 0.2), 3 - random(addy * 0.4), 0);
 
 
-if on=1 {
-if reload&gt;0 reload-=1 else {
-if maxreload&gt;1 maxreload-=0.15
-reload=ceil(maxreload)
-if day=13 and currentmonth=1 nothing=1 else {
-if day&gt;1 day-=1 else {if currentmonth&gt;1 {day=31 currentmonth-=1}}
+if (on) {
+    if (reload &gt; 0)
+        reload--;
+    else {
+        if (maxreload &gt; 1)
+            maxreload -= 0.15;
+        reload = ceil(maxreload);
+        if (day == 13 &amp;&amp; currentmonth == 1) {
+            // do nothing
+        } else {
+            if (day &gt; 1)
+                day--;
+            else {
+                if (currentmonth &gt; 1) {
+                    day = 31;
+                    currentmonth--;
+                }
+            }
+        }
+    }
 }
-}
-}
-surface_reset_target()</string>
+surface_reset_target();
+</string>
           </argument>
         </arguments>
       </action>
@@ -197,36 +223,39 @@ surface_reset_target()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if on=0 draw_surface_ext(surf,0,0,1/3,1/3,0,c_white,1) else {
-splits=3+round(random(10))
-i=1
-split_y1[0]=0
-split_y2[0]=room_height*0.45
-repeat (splits-2) {
-split_y1[i]=split_y2[i-1]
-split_y2[i]=split_y1[i]+random(8)
-i+=1
-}
-split_y1[i]=split_y2[i-1]
-split_y2[i]=room_height
-i=0
-repeat (splits) {
-draw_surface_part_ext(surf,0,split_y1[i]*3,room_width*3,(split_y2[i]*3)-split_y1[i]*3,-1+random(2),split_y1[i],1/3,1/3,c_white,1)
-texture_set_interpolation(true)
-draw_surface_part_ext(surf,0,split_y1[i]*3,room_width*3,(split_y2[i]*3)-split_y1[i]*3,-1+random(2),split_y1[i],1/3,1/3,c_white,random(0.3*factor))
-texture_set_interpolation(false)
-i+=1
-}
+            <string>if (!on)
+    draw_surface_ext(surf, 0, 0, 1 / 3, 1 / 3, 0, c_white, 1);
+else {
+    splits = 3 + round(random(10));
+    i = 1;
+    split_y1[0] = 0;
+    split_y2[0] = room_height * 0.45;
+    repeat(splits - 2) {
+        split_y1[i] = split_y2[i - 1];
+        split_y2[i] = split_y1[i] + random(8);
+        i++;
+    }
+    split_y1[i] = split_y2[i - 1];
+    split_y2[i] = room_height;
+    i = 0;
+    repeat(splits) {
+        draw_surface_part_ext(surf, 0, split_y1[i] * 3, room_width * 3, (split_y2[i] * 3) - split_y1[i] * 3, -1 + random(2), split_y1[i], 1 / 3, 1 / 3, c_white, 1);
+        texture_set_interpolation(true);
+        draw_surface_part_ext(surf, 0, split_y1[i] * 3, room_width * 3, (split_y2[i] * 3) - split_y1[i] * 3, -1 + random(2), split_y1[i], 1 / 3, 1 / 3, c_white, random(0.3 * factor));
+        texture_set_interpolation(false);
+        i++;
+    }
 }
 
-if factor&gt;0 {
-y1=room_height*0.35+random(6)-(30-factor*30)
-y2=room_height*0.65-random(6)+(30-factor*30)
-repeat (40) {
-draw_sprite_ext(sprMagnetic,random(100),random(room_width),y1,1,1,0,merge_color(c_black,c_white,random(1)),(0.5+random(0.5))*factor)
-draw_sprite_ext(sprMagnetic,random(100),random(room_width),y2,1,1,0,merge_color(c_black,c_white,random(1)),(0.5+random(0.5))*factor)
+if (factor &gt; 0) {
+    y1 = room_height * 0.35 + random(6) - (30 - factor * 30);
+    y2 = room_height * 0.65 - random(6) + (30 - factor * 30);
+    repeat(40) {
+        draw_sprite_ext(sprMagnetic, random(100), random(room_width), y1, 1, 1, 0, merge_color(c_black, c_white, random(1)), (0.5 + random(0.5)) * factor);
+        draw_sprite_ext(sprMagnetic, random(100), random(room_width), y2, 1, 1, 0, merge_color(c_black, c_white, random(1)), (0.5 + random(0.5)) * factor);
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>

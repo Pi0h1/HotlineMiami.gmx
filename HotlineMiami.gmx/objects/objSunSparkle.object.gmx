@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.1+random(0.1)
-image_index=random(1000)
-dir=(200-x)*2</string>
+            <string>image_speed = 0.1 + random(0.1);
+image_index = random(1000);
+dir = (200 - x) * 2;
+</string>
           </argument>
         </arguments>
       </action>

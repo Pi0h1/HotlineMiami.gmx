@@ -25,11 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-follow=0
-check=0
+            <string>image_speed = 0;
+follow = 0;
+check = 0;
 
-addx=choose(-400,400)</string>
+addx = choose(-400, 400);
+</string>
           </argument>
         </arguments>
       </action>
@@ -51,31 +52,38 @@ addx=choose(-400,400)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if check=1 {
-check=0
-if follow=0 {
-global.my_id=id
-with objLetterSocket {
-global.check=0
-global.myx=x
-global.myy=y
-with objLetter {if x=global.myx and y=global.myy global.check=1} 
-if global.check=0 {
-if place_meeting(x,y,global.my_id) {global.my_id.x=x global.my_id.y=y}
-}
-}
-}
+            <string>if (check) {
+    check = 0;
+    if (!follow) {
+        global.my_id = id;
+        with (objLetterSocket) {
+            global.check = 0;
+            global.myx = x;
+            global.myy = y;
+            with (objLetter) {
+                if (x == global.myx &amp;&amp; y == global.myy)
+                    global.check = 1;
+            }
+            if (!global.check) {
+                if (place_meeting(x, y, global.my_id)) {
+                    global.my_id.x = x;
+                    global.my_id.y = y;
+                }
+            }
+        }
+    }
 }
 
-if follow=1 {
-if global.xbox=1 {
-x=objPuzzle.mousex
-y=objPuzzle.mousey
-} else {
-x=mouse_x
-y=mouse_y
+if (follow) {
+    if (global.xbox) {
+        x = objPuzzle.mousex;
+        y = objPuzzle.mousey;
+    } else {
+        x = mouse_x;
+        y = mouse_y;
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -97,10 +105,14 @@ y=mouse_y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if y&lt;64 y=64
-if y&gt;192 y=192
-draw_sprite(sprite_index,image_index,x+addx,y)
-if abs(addx)&gt;0 addx=addx*0.8</string>
+            <string>if (y &lt; 64)
+    y = 64;
+if (y &gt; 192)
+    y = 192;
+draw_sprite(sprite_index, image_index, x + addx, y);
+if (abs(addx) &gt; 0)
+    addx = addx * 0.8;
+</string>
           </argument>
         </arguments>
       </action>

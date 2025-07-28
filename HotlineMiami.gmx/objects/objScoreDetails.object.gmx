@@ -25,109 +25,114 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//scrCreateBonusList()
-//global.title="DECADENCE"�
-if global.xbox=1 scrInitXboxButtons()
-if surface_exists(global.surf1) surface_free(global.surf1)
-global.surf1=surface_create(room_width,room_height)
-song=working_directory+"\Daisuke.mp3"
-bonuses=""
-i=0 repeat ds_list_size(global.bonuslist) {
-bonuses+=ds_list_find_value(global.bonuslist,i)+"#"
-i+=1
+            <string>if (global.xbox)
+    scrInitXboxButtons();
+if (surface_exists(global.surf1))
+    surface_free(global.surf1);
+global.surf1 = surface_create(room_width, room_height);
+song = working_directory + "\Daisuke.mp3";
+bonuses = "";
+i = 0;
+repeat (ds_list_size(global.bonuslist)) {
+    bonuses += ds_list_find_value(global.bonuslist, i) + "#";
+    i++;
 }
-parscore="/5000pts"
-current=0
-dir=180
-dir2=0
-cdir=0
-gradex=-10
-gradeon=0
-alpha=0
-level=global.title
-time=global.time
-myscore=global.myscore
+parscore = "/5000pts";
+current = 0;
+dir = 180;
+dir2 = 0;
+cdir = 0;
+gradex = -10;
+gradeon = 0;
+alpha = 0;
+level = global.title;
+time = global.time;
+myscore = global.myscore;
 
-type="GENERIC"
-maxpoints=scrGetMaxpoints()
+type = "GENERIC";
+maxpoints = scrGetMaxpoints();
 
-skillpoints=global.myscore
-/*
-repeat (string_count("exposure",string_lower(bonuses))) skillpoints+=1
-repeat (string_count("double exposure",string_lower(bonuses))) skillpoints+=1
-repeat (string_count("triple exposure",string_lower(bonuses))) skillpoints+=1
-repeat (string_count("severe",string_lower(bonuses))) skillpoints+=3
-repeat (string_count("pressure",string_lower(bonuses))) skillpoints+=1
-repeat (string_count("sharp",string_lower(bonuses))) skillpoints+=2
-repeat (string_count("sneaky",string_lower(bonuses))) skillpoints+=1
-repeat (string_count("door",string_lower(bonuses))) skillpoints+=1
-repeat (string_count("mercy",string_lower(bonuses))) skillpoints+=2
-repeat (string_count("execution",string_lower(bonuses))) skillpoints+=2
-repeat (string_count("2x",string_lower(bonuses))) skillpoints+=1
-repeat (string_count("3x",string_lower(bonuses))) skillpoints+=2
-repeat (string_count("4x",string_lower(bonuses))) skillpoints+=3
-repeat (string_count("5x",string_lower(bonuses))) skillpoints+=6
-repeat (string_count("6x",string_lower(bonuses))) skillpoints+=8
-repeat (string_count("7x",string_lower(bonuses))) skillpoints+=10
-repeat (string_count("8x",string_lower(bonuses))) skillpoints+=12
-repeat (string_count("9x",string_lower(bonuses))) skillpoints+=15
-repeat (string_count("10x",string_lower(bonuses))) skillpoints+=16
-repeat (string_count("11x",string_lower(bonuses))) skillpoints+=18
-repeat (string_count("12x",string_lower(bonuses))) skillpoints+=20
-repeat (string_count("13x",string_lower(bonuses))) skillpoints+=25
-repeat (string_count("14x",string_lower(bonuses))) skillpoints+=27
-repeat (string_count("15x",string_lower(bonuses))) skillpoints+=30
-repeat (string_count("double kill",string_lower(bonuses))) skillpoints+=5
-repeat (string_count("triple kill",string_lower(bonuses))) skillpoints+=15
-repeat (string_count("multi kill",string_lower(bonuses))) skillpoints+=20*/
-grade="F"
-if skillpoints&lt;maxpoints*(1/15) grade="F-"
-if skillpoints&gt;maxpoints*(2/15) grade="F"
-if skillpoints&gt;maxpoints*(3/15) grade="F+"
-if skillpoints&gt;maxpoints*(4/15) grade="D-"
-if skillpoints&gt;maxpoints*(5/15) grade="D"
-if skillpoints&gt;maxpoints*(6/15) grade="D+"
-if skillpoints&gt;maxpoints*(7/15) grade="C-"
-if skillpoints&gt;maxpoints*(8/15) grade="C"
-if skillpoints&gt;maxpoints*(9/15) grade="C+"
-if skillpoints&gt;maxpoints*(10/15) grade="B-"
-if skillpoints&gt;maxpoints*(11/15) grade="B"
-if skillpoints&gt;maxpoints*(12/15) grade="B+"
-if skillpoints&gt;maxpoints*(13/15) grade="A-"
-if skillpoints&gt;maxpoints*(14/15) grade="A"
-if skillpoints&gt;maxpoints*(15/15) grade="A+"
-global.currentlevel=scrGetCurrentLevel()
-lastgrade=grade
-if global.grade[global.currentlevel-1]&lt;scrGradeToNumber(grade) global.grade[global.currentlevel-1]=scrGradeToNumber(grade)
-if global.myscore&gt;global.highscore[global.currentlevel-1] global.highscore[global.currentlevel-1]=global.myscore
-highscore=global.highscore[global.currentlevel-1]
-global.lastgrade=scrGradeToNumber(grade)
-if string_count("exposure",string_lower(bonuses))&gt;6 type="EXHIBITIONIST"
-if string_count("pressure",string_lower(bonuses))&gt;3 type="IMPROVISER"
-if string_count("sharp",string_lower(bonuses))&gt;2 type="MARKSMAN"
-if string_count("combo",string_lower(bonuses))&gt;5 type="COMBO BREAKER"
-if string_count("sneaky",string_lower(bonuses))&gt;1 type="COWARD"
-if string_count("projectile",string_lower(bonuses))&gt;1 type="PITCHER"
-if string_count("door",string_lower(bonuses))&gt;4 type="DOOR MAN"
-if string_count("mercy",string_lower(bonuses))&gt;2 type="CHIROPRACTOR"
-if string_count("7x",string_lower(bonuses))&gt;0 or string_count("6x",string_lower(bonuses))&gt;0 or string_count("5x",string_lower(bonuses))&gt;0 or string_count("4x",string_lower(bonuses))&gt;0 type="COMBO TRAINEE"
-if string_count("10x",string_lower(bonuses))&gt;0 or string_count("8x",string_lower(bonuses))&gt;0 or string_count("9x",string_lower(bonuses))&gt;0 or string_count("11x",string_lower(bonuses))&gt;0 type="COMBO SPECIALIST"
-if string_count("12x",string_lower(bonuses))&gt;0 or string_count("13x",string_lower(bonuses))&gt;0 or string_count("14x",string_lower(bonuses))&gt;0 or string_count("15x",string_lower(bonuses))&gt;0 type="COMBO MASTER"
-if string_count("execution",string_lower(bonuses))&gt;4 type="EXECUTIONER"
-if string_count("execution",string_lower(bonuses))&gt;10 type="SADIST"
-if string_count("sharp",string_lower(bonuses))&gt;6 type="COWARD"
-if string_count("exposure",string_lower(bonuses))=0 type="INVISIBLE MAN"
-i=0
-repeat (64) {
-repeat ((64-i)*0.1) instance_create(136+i+random(128-i*2),room_height*0.6+i,objSunSparkle)
-i+=1
+skillpoints = global.myscore;
+grade = "F";
+if (skillpoints &lt; maxpoints * (1 / 15))
+    grade = "F-";
+if (skillpoints &gt; maxpoints * (2 / 15))
+    grade = "F";
+if (skillpoints &gt; maxpoints * (3 / 15))
+    grade = "F+";
+if (skillpoints &gt; maxpoints * (4 / 15))
+    grade = "D-";
+if (skillpoints &gt; maxpoints * (5 / 15))
+    grade = "D";
+if (skillpoints &gt; maxpoints * (6 / 15))
+    grade = "D+";
+if (skillpoints &gt; maxpoints * (7 / 15))
+    grade = "C-";
+if (skillpoints &gt; maxpoints * (8 / 15))
+    grade = "C";
+if (skillpoints &gt; maxpoints * (9 / 15))
+    grade = "C+";
+if (skillpoints &gt; maxpoints * (10 / 15))
+    grade = "B-";
+if (skillpoints &gt; maxpoints * (11 / 15))
+    grade = "B";
+if (skillpoints &gt; maxpoints * (12 / 15))
+    grade = "B+";
+if (skillpoints &gt; maxpoints * (13 / 15))
+    grade = "A-";
+if (skillpoints &gt; maxpoints * (14 / 15))
+    grade = "A";
+if (skillpoints &gt; maxpoints * (15 / 15))
+    grade = "A+";
+global.currentlevel = scrGetCurrentLevel();
+lastgrade = grade;
+if (global.grade[global.currentlevel - 1] &lt; scrGradeToNumber(grade))
+    global.grade[global.currentlevel - 1] = scrGradeToNumber(grade);
+if (global.myscore &gt; global.highscore[global.currentlevel - 1])
+    global.highscore[global.currentlevel - 1] = global.myscore;
+highscore = global.highscore[global.currentlevel - 1];
+global.lastgrade = scrGradeToNumber(grade);
+if (string_count("exposure", string_lower(bonuses)) &gt; 6)
+    type = "EXHIBITIONIST";
+if (string_count("pressure", string_lower(bonuses)) &gt; 3)
+    type = "IMPROVISER";
+if (string_count("sharp", string_lower(bonuses)) &gt; 2)
+    type = "MARKSMAN";
+if (string_count("combo", string_lower(bonuses)) &gt; 5)
+    type = "COMBO BREAKER";
+if (string_count("sneaky", string_lower(bonuses)) &gt; 1)
+    type = "COWARD";
+if (string_count("projectile", string_lower(bonuses)) &gt; 1)
+    type = "PITCHER";
+if (string_count("door", string_lower(bonuses)) &gt; 4)
+    type = "DOOR MAN";
+if (string_count("mercy", string_lower(bonuses)) &gt; 2)
+    type = "CHIROPRACTOR";
+if (string_count("7x", string_lower(bonuses)) &gt; 0 || string_count("6x", string_lower(bonuses)) &gt; 0 || string_count("5x", string_lower(bonuses)) &gt; 0 || string_count("4x", string_lower(bonuses)) &gt; 0)
+    type = "COMBO TRAINEE";
+if (string_count("10x", string_lower(bonuses)) &gt; 0 || string_count("8x", string_lower(bonuses)) &gt; 0 || string_count("9x", string_lower(bonuses)) &gt; 0 || string_count("11x", string_lower(bonuses)) &gt; 0)
+    type = "COMBO SPECIALIST";
+if (string_count("12x", string_lower(bonuses)) &gt; 0 || string_count("13x", string_lower(bonuses)) &gt; 0 || string_count("14x", string_lower(bonuses)) &gt; 0 || string_count("15x", string_lower(bonuses)) &gt; 0)
+    type = "COMBO MASTER";
+if (string_count("execution", string_lower(bonuses)) &gt; 4)
+    type = "EXECUTIONER";
+if (string_count("execution", string_lower(bonuses)) &gt; 10)
+    type = "SADIST";
+if (string_count("sharp", string_lower(bonuses)) &gt; 6)
+    type = "COWARD";
+if (string_count("exposure", string_lower(bonuses)) == 0)
+    type = "INVISIBLE MAN";
+i = 0;
+repeat(64) {
+    repeat((64 - i) * 0.1) instance_create(136 + i + random(128 - i * 2), room_height * 0.6 + i, objSunSparkle);
+    i++;
 }
-housex=0
+housex = 0;
 
-dir=random(360)
-factor=0
-fade=0
-c_amount=0
+dir = random(360);
+factor = 0;
+fade = 0;
+c_amount = 0;
 </string>
           </argument>
         </arguments>
@@ -150,93 +155,111 @@ c_amount=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if global.xbox=1 {
-if checkbutton(0,getid(5)) {
-if presstart=0 {
-presstart=1
-scrXboxScoreDetailsStart()
-} 
-} else presstart=0
+            <string>if (global.xbox) {
+    if (checkbutton(0, getid(5))) {
+        if (!presstart) {
+            presstart = 1;
+            scrXboxScoreDetailsStart();
+        }
+    } else presstart = 0;
 }
 
-SteamRunCallbacks()
-if !surface_exists(global.surf1) {
-global.surf1=surface_create(room_width,room_height)
-surface_set_target(global.surf1)
-draw_clear_alpha(c_black,0)
-surface_reset_target()
+SteamRunCallbacks();
+if (!surface_exists(global.surf1)) {
+    global.surf1 = surface_create(room_width, room_height);
+    surface_set_target(global.surf1);
+    draw_clear_alpha(c_black, 0);
+    surface_reset_target();
 }
-surface_set_target(global.surf1)
-draw_clear_alpha(c_black,0)
-draw_set_font(fntDetails)
-i=0 repeat (7) {
-draw_line_color(0,12+i*3,room_width,12+i*3,merge_color(c_black,c_maroon,0.25+lengthdir_x(0.25,dir2*4+i*35)),merge_color(c_black,c_maroon,0.25+lengthdir_x(0.25,dir2*4+i*35)+180))
-i+=1
+surface_set_target(global.surf1);
+draw_clear_alpha(c_black, 0);
+draw_set_font(fntDetails);
+i = 0;
+repeat(7) {
+    draw_line_color(0, 12 + i * 3, room_width, 12 + i * 3, merge_color(c_black, c_maroon, 0.25 + lengthdir_x(0.25, dir2 * 4 + i * 35)), merge_color(c_black, c_maroon, 0.25 + lengthdir_x(0.25, dir2 * 4 + i * 35) + 180));
+    i++;
 }
-draw_set_halign(fa_left)
-draw_set_valign(fa_center)
-draw_set_color(merge_color(c_dkgray,c_gray,0.5+lengthdir_x(0.5,dir2*10)))
-draw_text(12,22,"LEVEL: "+'"'+level+'"'+"#TIME: "+string(floor(time/60))+"s")
-draw_set_color(merge_color(c_dkgray,c_gray,0.5+lengthdir_x(0.5,dir2*10+180)))
-draw_text(11,22,"LEVEL: "+'"'+level+'"'+"#TIME: "+string(floor(time/60))+"s")
+draw_set_halign(fa_left);
+draw_set_valign(fa_center);
+draw_set_color(merge_color(c_dkgray, c_gray, 0.5 + lengthdir_x(0.5, dir2 * 10)));
+draw_text(12, 22, "LEVEL: " + '"' + level + '"' + "#TIME: " + string(floor(time / 60)) + "s");
+draw_set_color(merge_color(c_dkgray, c_gray, 0.5 + lengthdir_x(0.5, dir2 * 10 + 180)));
+draw_text(11, 22, "LEVEL: " + '"' + level + '"' + "#TIME: " + string(floor(time / 60)) + "s");
 
 
 
-draw_set_halign(fa_right)
-draw_set_color(merge_color(c_yellow,c_olive,0.5+lengthdir_x(0.5,dir2*10+180)))
-draw_text(room_width-11,22,"HIGHSCORE: "+string(highscore)+"#SCORE: "+string(myscore))
-draw_set_color(merge_color(c_yellow,c_orange,0.5+lengthdir_x(0.5,dir2*10)))
-draw_text(room_width-12,22,"HIGHSCORE: "+string(highscore)+"#SCORE: "+string(myscore))
+draw_set_halign(fa_right);
+draw_set_color(merge_color(c_yellow, c_olive, 0.5 + lengthdir_x(0.5, dir2 * 10 + 180)));
+draw_text(room_width - 11, 22, "HIGHSCORE: " + string(highscore) + "#SCORE: " + string(myscore));
+draw_set_color(merge_color(c_yellow, c_orange, 0.5 + lengthdir_x(0.5, dir2 * 10)));
+draw_text(room_width - 12, 22, "HIGHSCORE: " + string(highscore) + "#SCORE: " + string(myscore));
 
-draw_set_halign(fa_center)
-if gradeon=1 {
-draw_set_color(merge_color(c_lime,c_green,0.5+lengthdir_x(0.5,dir2*10)))
-draw_text((room_width/2)+1,22,"PLAY STYLE:#"+'"'+type+'"')
-draw_set_color(merge_color(c_lime,c_green,0.5+lengthdir_x(0.5,dir2*10+180)))
-draw_text((room_width/2),22,"PLAY STYLE:#"+'"'+type+'"')
+draw_set_halign(fa_center);
+if (gradeon) {
+    draw_set_color(merge_color(c_lime, c_green, 0.5 + lengthdir_x(0.5, dir2 * 10)));
+    draw_text((room_width / 2) + 1, 22, "PLAY STYLE:#" + '"' + type + '"');
+    draw_set_color(merge_color(c_lime, c_green, 0.5 + lengthdir_x(0.5, dir2 * 10 + 180)));
+    draw_text((room_width / 2), 22, "PLAY STYLE:#" + '"' + type + '"');
 }
-draw_set_font(fntFeats)
-if dir&lt;180 dir+=18 else {if current&lt;ds_list_size(global.bonuslist) current+=1 dir=0}
-draw_y=220
-i=current-1
-cdir+=4
-times=current-1
-if times&gt;13 times=13
-ii=0
-repeat (times) {
-draw_set_color(merge_color(merge_color(c_white,c_aqua,0.5+lengthdir_x(0.5,cdir+i*20)),c_teal,0.5+lengthdir_x(0.5,cdir+i*30)))
-mystring=ds_list_find_value(global.bonuslist,i)
-draw_text((room_width-50)-string_width(mystring)*0.5+lengthdir_x(3,cdir+i*40),190-ii*(12),mystring)
-i-=1
-ii+=1
+draw_set_font(fntFeats);
+if (dir &lt; 180)
+    dir += 18;
+else {
+    if (current &lt; ds_list_size(global.bonuslist))
+        current++;
+    dir = 0;
 }
-if current&lt;ds_list_size(global.bonuslist) {
-times=1+abs(lengthdir_y(19,dir))
-mystring=ds_list_find_value(global.bonuslist,current)
-i=0
-draw_set_font(fntChapter)
-repeat (times) {
-draw_set_color(merge_color(merge_color(c_olive,c_orange,0.5+lengthdir_x(0.5,cdir*3)),merge_color(c_yellow,c_white,0.75+lengthdir_x(0.25,cdir*2)),1*(times/20)))
-draw_text_transformed((room_width-50)-string_width(mystring)*0.325,210+i*0.1,mystring,0.65+i*0.005,1+i*0.025,0)
-i+=1
+draw_y = 220;
+i = current - 1;
+cdir += 4;
+times = current - 1;
+if (times &gt; 13)
+    times = 13;
+ii = 0;
+repeat(times) {
+    draw_set_color(merge_color(merge_color(c_white, c_aqua, 0.5 + lengthdir_x(0.5, cdir + i * 20)), c_teal, 0.5 + lengthdir_x(0.5, cdir + i * 30)));
+    mystring = ds_list_find_value(global.bonuslist, i);
+    draw_text((room_width - 50) - string_width(mystring) * 0.5 + lengthdir_x(3, cdir + i * 40), 190 - ii * (12), mystring);
+    i--;
+    ii++;
 }
+if (current &lt; ds_list_size(global.bonuslist)) {
+    times = 1 + abs(lengthdir_y(19, dir));
+    mystring = ds_list_find_value(global.bonuslist, current);
+    i = 0;
+    draw_set_font(fntChapter);
+    repeat(times) {
+        draw_set_color(merge_color(merge_color(c_olive, c_orange, 0.5 + lengthdir_x(0.5, cdir * 3)), merge_color(c_yellow, c_white, 0.75 + lengthdir_x(0.25, cdir * 2)), 1 * (times / 20)));
+        draw_text_transformed((room_width - 50) - string_width(mystring) * 0.325, 210 + i * 0.1, mystring, 0.65 + i * 0.005, 1 + i * 0.025, 0);
+        i++;
+    }
 } else {
-if gradex&lt;(room_width-120) gradex+=10 else {if gradeon=0 {gradeon=1 if grade="A+" SteamSetAchievement("ACH_ACED_IT") scrCheckGrades() alpha=1}}
-draw_set_font(fntGrading)
-mystring="GRADE:"
-draw_set_color(merge_color(c_yellow,c_white,0.5+lengthdir_x(0.5,cdir*3)))
-draw_text_transformed(gradex-string_width(mystring)*0.5,215,mystring,1,1,0)
-if gradeon=1 {
-draw_set_font(fntGrade)
-amount=-1+lengthdir_x(2,cdir)
-if amount&lt;0 amount=0
-draw_set_color(merge_color(c_red,c_white,amount))
-draw_set_halign(fa_left)
-draw_text_transformed((room_width-110),210,grade,0.95+amount*0.05,0.9+amount*0.1,0)
+    if (gradex &lt; (room_width - 120))
+        gradex += 10;
+    else {
+        if (!gradeon) {
+            gradeon = 1;
+            if (grade == "A+")
+                SteamSetAchievement("ACH_ACED_IT");
+            scrCheckGrades();
+            alpha = 1;
+        }
+    }
+    draw_set_font(fntGrading);
+    mystring = "GRADE:";
+    draw_set_color(merge_color(c_yellow, c_white, 0.5 + lengthdir_x(0.5, cdir * 3)));
+    draw_text_transformed(gradex - string_width(mystring) * 0.5, 215, mystring, 1, 1, 0);
+    if (gradeon) {
+        draw_set_font(fntGrade);
+        amount = -1 + lengthdir_x(2, cdir);
+        if (amount &lt; 0)
+            amount = 0;
+        draw_set_color(merge_color(c_red, c_white, amount));
+        draw_set_halign(fa_left);
+        draw_text_transformed((room_width - 110), 210, grade, 0.95 + amount * 0.05, 0.9 + amount * 0.1, 0);
+    }
 }
-}
-surface_reset_target()
+surface_reset_target();
 </string>
           </argument>
         </arguments>
@@ -259,8 +282,11 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 exit
-if gradeon=1 fade=1</string>
+            <string>if (global.xbox)
+    exit;
+if (gradeon)
+    fade = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -282,117 +308,111 @@ if gradeon=1 fade=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-dir2+=0.25
-color2=make_color_hsv(0,255,15)
-color1=merge_color(c_yellow,merge_color(merge_color(c_fuchsia,c_red,0.5+lengthdir_x(0.5,dir2*3.12)),c_maroon,0.125+lengthdir_y(0.125,dir2*1.73)),0.5+lengthdir_y(0.5,dir2*1.73))
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_rectangle_color(view_xview[0],view_yview[0]+40,view_xview[0]+view_wview[0],view_yview[0]+view_hview[0]-40,color2,color2,color1,color1,0)
+            <string>dir2 += 0.25;
+color2 = make_color_hsv(0, 255, 15);
+color1 = merge_color(c_yellow, merge_color(merge_color(c_fuchsia, c_red, 0.5 + lengthdir_x(0.5, dir2 * 3.12)), c_maroon, 0.125 + lengthdir_y(0.125, dir2 * 1.73)), 0.5 + lengthdir_y(0.5, dir2 * 1.73));
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+draw_rectangle_color(view_xview[0], view_yview[0] + 40, view_xview[0] + view_wview[0], view_yview[0] + view_hview[0] - 40, color2, color2, color1, color1, 0);
 
 
-color3=merge_color(c_orange,c_yellow,0.5+lengthdir_x(0.5,dir2*3))
-draw_set_color(merge_color(color1,color3,0.5))
-draw_circle(room_width/2,room_height*0.6,63,0)
-draw_circle_color(room_width/2,room_height*0.6,60,merge_color(c_white,c_yellow,0.25+lengthdir_x(0.25,dir2*2)),merge_color(c_orange,c_yellow,0.5+lengthdir_x(0.5,dir2*3)),0)
-global.color=merge_color(color3,color1,0.5)
-draw_rectangle_color(view_xview[0],room_height*0.6,view_xview[0]+view_wview[0],view_yview[0]+view_hview[0]-40,color1,color1,color2,color2,0)
-with objWave {
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,merge_color(global.color,c_white,0.5+lengthdir_x(0.5,dir)),image_alpha)
+color3 = merge_color(c_orange, c_yellow, 0.5 + lengthdir_x(0.5, dir2 * 3));
+draw_set_color(merge_color(color1, color3, 0.5));
+draw_circle(room_width / 2, room_height * 0.6, 63, 0);
+draw_circle_color(room_width / 2, room_height * 0.6, 60, merge_color(c_white, c_yellow, 0.25 + lengthdir_x(0.25, dir2 * 2)), merge_color(c_orange, c_yellow, 0.5 + lengthdir_x(0.5, dir2 * 3)), 0);
+global.color = merge_color(color3, color1, 0.5);
+draw_rectangle_color(view_xview[0], room_height * 0.6, view_xview[0] + view_wview[0], view_yview[0] + view_hview[0] - 40, color1, color1, color2, color2, 0);
+with (objWave) {
+    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, merge_color(global.color, c_white, 0.5 + lengthdir_x(0.5, dir)), image_alpha);
 }
 
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0],view_hview[0]-39,view_xview[0]+view_wview[0],view_yview[0]+view_hview[0]-50,c_black,c_black,c_white,c_white,0)
-draw_set_blend_mode(bm_normal)
-if housex&gt;-144 housex-=0.05 else housex+=144
-i=0 repeat (11) {
-draw_sprite_ext(sprHouseSilhouettes,1,housex*0.666+i*48,room_height*0.6-2,1,1,0,merge_color(c_black,global.color,0.25),1)
-draw_sprite_ext(sprHouseSilhouettes,0,housex*0.333+i*48,room_height*0.6-1,1,1,0,merge_color(c_black,global.color,0.5),1)
-draw_sprite_ext(sprHouseSilhouettes,0,housex+i*48,room_height*0.6,1,1,0,merge_color(c_black,global.color,0.75),1)
-i+=1
-}
-
-
-draw_surface_ext(global.surf1,-1,0,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,1,0,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,0,-1,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,0,1,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,0,0,1,1,0,c_white,1)
-if alpha&gt;0 {
-draw_set_alpha(alpha)
-alpha-=0.1
-draw_set_color(c_white)
-draw_rectangle(0,0,room_width,room_height,0)
-draw_set_alpha(1)
-}
-
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-view_angle[0]=lengthdir_y(2,dir*2.33)
-if fade=0 {
-if c_amount&lt;180 {
-c_amount+=10
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color1,color2,color2,color1,0)
-draw_set_blend_mode(bm_normal)
-}
-}
-
-if fade=1 {
-if c_amount&gt;0  {
-if (global.myscore&gt;=real(string_digits(parscore)) and global.masks[global.currentmask]=0) or global.newguns&gt;0 or global.newmasks&gt;0 nothing=1 else sxeasy_setVolume(c_amount*(1/180))
-c_amount-=5
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0)
-draw_set_blend_mode(bm_normal)
-} else {
-global.levels[scrGetCurrentLevel()]=1
-if (global.myscore&gt;=real(string_digits(parscore)) and global.masks[global.currentmask]=0 and scrGradeToNumber(lastgrade)&gt;=7) or global.newmasks&gt;0 {next=rmUnlock} else {if global.newguns&gt;0 next=rmWeaponUnlock else next=scrGetSequence(global.sequence)}
-ds_list_clear(global.bonuslist)
-if next=rmUnlock or next=rmWeaponUnlock nothing=1 else {
-sxeasy_stop(1) 
-sxeasy_setVolume(0) 
-sxeasy_play(song)
-scrResetScore() 
-scrSaveUnlocked()
-}
-room_goto(next)
-}
-
+draw_set_blend_mode(bm_subtract);
+draw_rectangle_color(view_xview[0], view_hview[0] - 39, view_xview[0] + view_wview[0], view_yview[0] + view_hview[0] - 50, c_black, c_black, c_white, c_white, 0);
+draw_set_blend_mode(bm_normal);
+if (housex &gt; -144)
+    housex -= 0.05;
+else housex += 144;
+i = 0;
+repeat(11) {
+    draw_sprite_ext(sprHouseSilhouettes, 1, housex * 0.666 + i * 48, room_height * 0.6 - 2, 1, 1, 0, merge_color(c_black, global.color, 0.25), 1);
+    draw_sprite_ext(sprHouseSilhouettes, 0, housex * 0.333 + i * 48, room_height * 0.6 - 1, 1, 1, 0, merge_color(c_black, global.color, 0.5), 1);
+    draw_sprite_ext(sprHouseSilhouettes, 0, housex + i * 48, room_height * 0.6, 1, 1, 0, merge_color(c_black, global.color, 0.75), 1);
+    i++;
 }
 
 
+draw_surface_ext(global.surf1, -1, 0, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, 1, 0, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, 0, -1, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, 0, 1, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, 0, 0, 1, 1, 0, c_white, 1);
+if (alpha &gt; 0) {
+    draw_set_alpha(alpha);
+    alpha -= 0.1;
+    draw_set_color(c_white);
+    draw_rectangle(0, 0, room_width, room_height, 0);
+    draw_set_alpha(1);
+}
 
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_set_color(c_black)
-//draw_rectangle(0,0,room_width,55,0)
-//draw_rectangle(0,room_height,room_width,room_height-65,0)
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+view_angle[0] = lengthdir_y(2, dir * 2.33);
+if (!fade) {
+    if (c_amount &lt; 180) {
+        c_amount += 10;
+        color1 = merge_color(c_black, merge_color(c_aqua, c_white, 0.5 + lengthdir_x(0.5, c_amount)), 0.5 + lengthdir_x(0.5, c_amount));
+        if (c_amount &gt; 90)
+            color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
+        else color2 = c_white;
+        draw_set_blend_mode(bm_subtract);
+        draw_rectangle_color(view_xview[0] - 10, view_yview[0] - 10, view_xview[0] + view_wview[0] + 10, view_yview[0] + view_hview[0] + 10, color1, color2, color2, color1, 0);
+        draw_set_blend_mode(bm_normal);
+    }
+}
+
+if (fade) {
+    if (c_amount &gt; 0) {
+        if ((global.myscore &gt;= real(string_digits(parscore)) &amp;&amp; global.masks[global.currentmask] == 0) || global.newguns &gt; 0 || global.newmasks &gt; 0) {
+            // do nothing
+        } else sxeasy_setVolume(c_amount * (1 / 180));
+        c_amount -= 5;
+        color1 = merge_color(c_black, merge_color(c_aqua, c_white, 0.5 + lengthdir_x(0.5, c_amount)), 0.5 + lengthdir_x(0.5, c_amount));
+        if (c_amount &gt; 90)
+            color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
+        else color2 = c_white;
+        draw_set_blend_mode(bm_subtract);
+        draw_rectangle_color(view_xview[0] - 10, view_yview[0] - 10, view_xview[0] + view_wview[0] + 10, view_yview[0] + view_hview[0] + 10, color2, color1, color1, color2, 0);
+        draw_set_blend_mode(bm_normal);
+    } else {
+        global.levels[scrGetCurrentLevel()] = 1;
+        if ((global.myscore &gt;= real(string_digits(parscore)) &amp;&amp; global.masks[global.currentmask] == 0 &amp;&amp; scrGradeToNumber(lastgrade) &gt;= 7) || global.newmasks &gt; 0) {
+            next = rmUnlock;
+        } else {
+            if (global.newguns &gt; 0)
+                next = rmWeaponUnlock
+            else next = scrGetSequence(global.sequence);
+        }
+        ds_list_clear(global.bonuslist);
+        if (next == rmUnlock || next == rmWeaponUnlock) {
+            // do nothing
+        } else {
+            sxeasy_stop(1);
+            sxeasy_setVolume(0);
+            sxeasy_play(song);
+            scrResetScore();
+            scrSaveUnlocked();
+        }
+        room_goto(next);
+    }
+
+}
+
+
+
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+draw_set_color(c_black);
+//draw_rectangle(0,0,room_width,55,0);
+//draw_rectangle(0,room_height,room_width,room_height-65,0);
 drawVignette();
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="82">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>exit if keyboard_check(vk_shift) room_restart() else scrCreateBonusList()</string>
           </argument>
         </arguments>
       </action>

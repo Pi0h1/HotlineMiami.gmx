@@ -25,41 +25,44 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_y=0
-global.dir=0
-dir=0
-wait=0
-phonex=0
-blackx=15
-line1x=0
-line2x=0
-index=sprBiker
-start=0
-stop=0
-if global.xbox=1 scrInitXboxButtons()
-question=1
-question1[0]="What's going on down here?"
-question2[0]="Who are you people?"
-question1[1]="Who are you working for?"
-question2[1]="You're the phone guys?"
-question1[2]="You think this is a game?"
-question2[2]="Why are you doing this?"
-question1[3]="Why are you killing people?"
-question2[3]="It's all been pointless?"
-question1[4]="That's it?"
-question2[4]="Any last words?"
-currentquestion=0
+            <string>my_y = 0;
+global.dir = 0;
+dir = 0;
+wait = 0;
+phonex = 0;
+blackx = 15;
+line1x = 0;
+line2x = 0;
+index = sprBiker;
+start = 0;
+stop = 0;
+if (global.xbox)
+    scrInitXboxButtons();
+question = 1;
+question1[0] = "What's going on down here?";
+question2[0] = "Who are you people?";
+question1[1] = "Who are you working for?";
+question2[1] = "You're the phone guys?";
+question1[2] = "You think this is a game?";
+question2[2] = "Why are you doing this?";
+question1[3] = "Why are you killing people?";
+question2[3] = "It's all been pointless?";
+question1[4] = "That's it?";
+question2[4] = "Any last words?";
+currentquestion = 0;
 
-fade=0
+fade = 0;
 
-sprite=sprDialogueFaces
-change=0
-current=0
-select=-1
-if global.xbox=1 select=0
-reload=0
-image_xscale=1.5
-image_yscale=1.5</string>
+sprite = sprDialogueFaces;
+change = 0;
+current = 0;
+select = -1;
+if (global.xbox)
+    select = 0;
+reload = 0;
+image_xscale = 1.5;
+image_yscale = 1.5;
+</string>
           </argument>
         </arguments>
       </action>
@@ -81,34 +84,46 @@ image_yscale=1.5</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 {
-if checkbutton(0,getid(5)) or checkbutton(0,getid(11)) {
-if presstart=0 {
-presstart=1
-scrXboxEndingDialogue1Start()
-} 
-} else presstart=0
+            <string>if (global.xbox) {
+    if (checkbutton(0, getid(5)) or checkbutton(0, getid(11))) {
+        if (!presstart) {
+            presstart = 1;
+            scrXboxEndingDialogue1Start();
+        }
+    } else presstart = 0;
 
-if leftthumb_y(0)&gt;5000 {
-if pressup=0 {
-pressup=1
-scrXboxEndingDialogue1Up()
+    if (leftthumb_y(0) &gt; 5000) {
+        if (!pressup) {
+            pressup = 1;
+            scrXboxEndingDialogue1Up();
+        }
+    } else pressup = 0;
+
+    if (leftthumb_y(0) &lt; -5000) {
+        if (!pressdown) {
+            pressdown = 1;
+            scrXboxEndingDialogue1Down();
+        }
+    } else pressdown = 0;
+
 }
-} else pressup=0
 
-if leftthumb_y(0)&lt;-5000 {
-if pressdown=0 {
-pressdown=1
-scrXboxEndingDialogue1Down()
+if (stop) {
+    if (blackx &gt; 15) {
+        blackx -= 2.5;
+    } else {
+        objEffector.blackx = blackx;
+        with (objPlayerBiker) {
+            my_id = instance_create(x, y, objPlayerBiker);
+            my_id.sprite_index = sprBoss2Walk;
+            instance_destroy();
+        }
+        global.done = 1;
+        instance_create(x, y, objLevelComplete);
+        instance_destroy();
+    }
 }
-} else pressdown=0
-
-}
-
-if stop=1 {
-if blackx&gt;15 {blackx-=2.5} else 
-{objEffector.blackx=blackx with objPlayerBiker {my_id=instance_create(x,y,objPlayerBiker) my_id.sprite_index=sprBoss2Walk instance_destroy()} global.done=1 instance_create(x,y,objLevelComplete)  instance_destroy()}
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -130,26 +145,38 @@ if blackx&gt;15 {blackx-=2.5} else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 exit
-if reload&gt;0 exit
-reload=2
-if question=1 {
-if select&gt;-1 {
-if select=0 scrDialogueGetAnswers(question1[currentquestion])
-if select=1 scrDialogueGetAnswers(question2[currentquestion])
-change=1
+            <string>if (global.xbox)
+    exit;
+if (reload &gt; 0)
+    exit;
+reload = 2;
+if (question == 1) {
+    if (select &gt; -1) {
+        if (select == 0)
+            scrDialogueGetAnswers(question1[currentquestion])
+        if (select == 1)
+            scrDialogueGetAnswers(question2[currentquestion])
+        change = 1;
+    }
+} else {
+    if (current &lt; messages) {
+        if (face[current] &gt; face[current + 1])
+            change = 1;
+        if (face[current] &lt; face[current + 1])
+            change = 1;
+        current += 1;
+    } else {
+        if (currentquestion &lt; 4) {
+            question = 1;
+            currentquestion++;
+            change = 1;
+            current = 0;
+        } else {
+            stop = 1;
+        }
+    }
 }
-}
-else {
-if current&lt;messages {if face[current]&gt;face[current+1] change=1 if face[current]&lt;face[current+1] change=1 current+=1} else {
-if currentquestion&lt;4 {
-question=1
-currentquestion+=1
-change=1
-current=0
-} else {stop=1}
-}
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -171,136 +198,125 @@ current=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if reload&gt;0 reload-=1
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-mousex=display_mouse_get_x()*(400/display_get_width())
-mousey=display_mouse_get_y()*(256/display_get_height())
+            <string>if (reload &gt; 0)
+    reload--;
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+mousex = display_mouse_get_x() * (400 / display_get_width());
+mousey = display_mouse_get_y() * (256 / display_get_height());
 
-if change=1 {
-if phonex&gt;0 phonex-=10 else {
-if question=1 index=sprBiker else {
-index=face[current]
-}
-change=0
-}
-}
-
-if stop=0 {
-if blackx&lt;45 blackx+=2.5
-if blackx&gt;15 {
-if change=0 {
-if phonex&lt;180 phonex+=10
-}
+if (change) {
+    if (phonex &gt; 0)
+        phonex -= 10;
+    else {
+        if (question)
+            index = sprBiker;
+        else {
+            index = face[current];
+        }
+        change = 0;
+    }
 }
 
+if (!stop) {
+    if (blackx &lt; 45)
+        blackx += 2.5;
+    if (blackx &gt; 15) {
+        if (!change) {
+            if (phonex &lt; 180)
+                phonex += 10;
+        }
+    }
 
-if global.xbox=0 {
-if question=1 {
-select=-1
-if mousey&gt;256-58.5 and mousey&lt;256-40.5 select=0
-if mousey&gt;256-40.5 and mousey&lt;256-22.5 select=1
-}
-}
-phonecolor1=merge_color(c_orange,c_lime,0.5+lengthdir_x(0.25,global.dir*2))
-phonecolor2=merge_color(c_maroon,c_navy,0.5+lengthdir_x(0.25,global.dir*2))
 
-draw_triangle_color(view_wview[0]-phonex,0,view_wview[0],0,view_wview[0],view_hview[0],phonecolor1,phonecolor1,phonecolor2,0)
-draw_triangle_color(view_wview[0]-phonex,0,view_wview[0]-phonex+70,view_hview[0],view_wview[0],view_hview[0],phonecolor1,phonecolor2,phonecolor2,0)
-draw_sprite_ext(sprPhoneLine,0,view_wview[0]-phonex,0,1,2,15,c_white,1)
-draw_set_color(c_black)
-draw_rectangle(0,0,view_wview[0],blackx,0)
-draw_rectangle(0,view_hview[0],view_wview[0],view_hview[0]-blackx*1.5,0)
-draw_sprite_ext(index,global.dir*0.1,view_wview[0]-phonex+128+2,view_hview[0]/2+3,image_xscale,image_yscale,lengthdir_x(4,global.dir*1.67),c_black,0.5)
-draw_sprite_ext(index,global.dir*0.1,view_wview[0]-phonex+128,view_hview[0]/2,image_xscale,image_yscale,lengthdir_x(4,global.dir*1.67),c_white,1)
-if blackx=45 {
-textcolor1=merge_color(merge_color(c_maroon,c_teal,0.5+lengthdir_x(0.5,global.dir)),c_black,reload*0.1)
-textcolor2=merge_color(merge_color(c_white,c_yellow,0.25-lengthdir_x(0.25,global.dir)),c_black,reload*0.1)
-draw_set_color(textcolor1)
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
-draw_set_font(fntScore)
-if change=0 {
-if question=0 {
-draw_text(17,view_hview[0]-57,string_upper(line1[current]))
-draw_text(17,view_hview[0]-39,string_upper(line2[current]))
-draw_set_color(textcolor2)
-draw_text(15.5-lengthdir_x(0.5,global.dir*4),view_hview[0]-58.5-lengthdir_x(0.5,global.dir*4),string_upper(line1[current]))
-draw_text(15.5-lengthdir_x(0.5,global.dir*4),view_hview[0]-40.5-lengthdir_x(0.5,global.dir*4),string_upper(line2[current]))
+    if (!global.xbox) {
+        if (question) {
+            select = -1;
+            if (mousey &gt; 256 - 58.5 &amp;&amp; mousey &lt; 256 - 40.5)
+                select = 0;
+            if (mousey &gt; 256 - 40.5 &amp;&amp; mousey &lt; 256 - 22.5)
+                select = 1;
+        }
+    }
+    phonecolor1 = merge_color(c_orange, c_lime, 0.5 + lengthdir_x(0.25, global.dir * 2));
+    phonecolor2 = merge_color(c_maroon, c_navy, 0.5 + lengthdir_x(0.25, global.dir * 2));
+
+    draw_triangle_color(view_wview[0] - phonex, 0, view_wview[0], 0, view_wview[0], view_hview[0], phonecolor1, phonecolor1, phonecolor2, 0);
+    draw_triangle_color(view_wview[0] - phonex, 0, view_wview[0] - phonex + 70, view_hview[0], view_wview[0], view_hview[0], phonecolor1, phonecolor2, phonecolor2, 0);
+    draw_sprite_ext(sprPhoneLine, 0, view_wview[0] - phonex, 0, 1, 2, 15, c_white, 1);
+    draw_set_color(c_black);
+    draw_rectangle(0, 0, view_wview[0], blackx, 0);
+    draw_rectangle(0, view_hview[0], view_wview[0], view_hview[0] - blackx * 1.5, 0);
+    draw_sprite_ext(index, global.dir * 0.1, view_wview[0] - phonex + 128 + 2, view_hview[0] / 2 + 3, image_xscale, image_yscale, lengthdir_x(4, global.dir * 1.67), c_black, 0.5);
+    draw_sprite_ext(index, global.dir * 0.1, view_wview[0] - phonex + 128, view_hview[0] / 2, image_xscale, image_yscale, lengthdir_x(4, global.dir * 1.67), c_white, 1);
+    if (blackx = 45) {
+        textcolor1 = merge_color(merge_color(c_maroon, c_teal, 0.5 + lengthdir_x(0.5, global.dir)), c_black, reload * 0.1);
+        textcolor2 = merge_color(merge_color(c_white, c_yellow, 0.25 - lengthdir_x(0.25, global.dir)), c_black, reload * 0.1);
+        draw_set_color(textcolor1);
+        draw_set_halign(fa_left);
+        draw_set_valign(fa_top);
+        draw_set_font(fntScore);
+        if (!change) {
+            if (!question) {
+                draw_text(17, view_hview[0] - 57, string_upper(line1[current]));
+                draw_text(17, view_hview[0] - 39, string_upper(line2[current]));
+                draw_set_color(textcolor2);
+                draw_text(15.5 - lengthdir_x(0.5, global.dir * 4), view_hview[0] - 58.5 - lengthdir_x(0.5, global.dir * 4), string_upper(line1[current]));
+                draw_text(15.5 - lengthdir_x(0.5, global.dir * 4), view_hview[0] - 40.5 - lengthdir_x(0.5, global.dir * 4), string_upper(line2[current]));
+            } else {
+                draw_set_halign(fa_center);
+                draw_set_color(c_dkgray);
+                draw_set_font(fntDate);
+                draw_text(200, blackx - 11, "PICK A QUESTION TO ASK");
+                draw_set_font(fntScore);
+                draw_set_halign(fa_left);
+                draw_set_color(textcolor1);
+                textcolor2 = merge_color(merge_color(c_fuchsia, c_orange, 0.5 - lengthdir_x(0.5, global.dir)), c_black, reload * 0.1);
+                draw_text(17, view_hview[0] - 57, string_upper(question1[currentquestion]));
+                draw_text(17, view_hview[0] - 39, string_upper(question2[currentquestion]));
+                draw_set_color(textcolor2);
+                if (select == 0)
+                    draw_set_color(c_white) draw_text(15.5 - lengthdir_x(0.5, global.dir * 4), view_hview[0] - 58.5 - lengthdir_x(0.5, global.dir * 4), string_upper(question1[currentquestion]));
+                draw_set_color(textcolor2);
+                if (select == 1)
+                    draw_set_color(c_white) draw_text(15.5 - lengthdir_x(0.5, global.dir * 4), view_hview[0] - 40.5 - lengthdir_x(0.5, global.dir * 4), string_upper(question2[currentquestion]));
+            }
+        }
+    }
 } else {
-draw_set_halign(fa_center)
-draw_set_color(c_dkgray)
-draw_set_font(fntDate)
-draw_text(200,blackx-11,"PICK A QUESTION TO ASK")
-draw_set_font(fntScore)
-draw_set_halign(fa_left)
-draw_set_color(textcolor1)
-textcolor2=merge_color(merge_color(c_fuchsia,c_orange,0.5-lengthdir_x(0.5,global.dir)),c_black,reload*0.1)
-draw_text(17,view_hview[0]-57,string_upper(question1[currentquestion]))
-draw_text(17,view_hview[0]-39,string_upper(question2[currentquestion]))
-draw_set_color(textcolor2)
-if select=0 draw_set_color(c_white) draw_text(15.5-lengthdir_x(0.5,global.dir*4),view_hview[0]-58.5-lengthdir_x(0.5,global.dir*4),string_upper(question1[currentquestion]))
-draw_set_color(textcolor2)
-if select=1 draw_set_color(c_white) draw_text(15.5-lengthdir_x(0.5,global.dir*4),view_hview[0]-40.5-lengthdir_x(0.5,global.dir*4),string_upper(question2[currentquestion]))
+    if (blackx &gt; 0) {
+        if (phonex &gt; 0)
+            phonex -= 10;
+        if (phonex &gt; 40) {
+            if (blackx &gt; 15)
+                blackx -= 2.5;
+        }
+
+        if (phonex &gt; 0) {
+            phonecolor1 = merge_color(c_orange, c_lime, 0.5 + lengthdir_x(0.25, global.dir * 2));
+            phonecolor2 = merge_color(c_maroon, c_navy, 0.5 + lengthdir_x(0.25, global.dir * 2));
+        }
+        draw_triangle_color(view_wview[0] - phonex, 0, view_wview[0], 0, view_wview[0], view_hview[0], phonecolor1, phonecolor1, phonecolor2, 0);
+        draw_triangle_color(view_wview[0] - phonex, 0, view_wview[0] - phonex + 70, view_hview[0], view_wview[0], view_hview[0], phonecolor1, phonecolor2, phonecolor2, 0);
+        draw_sprite_ext(sprPhoneLine, 0, view_wview[0] - phonex, 0, 1, 2, 15, c_white, 1);
+    }
+    draw_set_color(c_black);
+    draw_rectangle(0, 0, view_wview[0], blackx, 0);
+    draw_rectangle(0, view_hview[0], view_wview[0], view_hview[0] - blackx * 1.5, 0);
+    if (phonex &gt; 0) {
+        draw_sprite_ext(index, global.dir * 0.1, view_wview[0] - phonex + 128 + 2, view_hview[0] / 2 + 3, image_xscale, image_yscale, lengthdir_x(4, global.dir * 1.67), c_black, 0.5);
+        draw_sprite_ext(index, global.dir * 0.1, view_wview[0] - phonex + 128, view_hview[0] / 2, image_xscale, image_yscale, lengthdir_x(4, global.dir * 1.67), c_white, 1);
+    }
 }
-}
-}
-} else {
-if blackx&gt;0 {
-if phonex&gt;0 phonex-=10
-if phonex&gt;40 {
-if blackx&gt;15 blackx-=2.5
+global.dir++;
+if (!global.xbox) {
+    draw_sprite_ext(sprCursor, global.dir * 0.2, mousex + 1, mousey + 1, 1, 1, 0, c_black, 0.5);
+    draw_set_blend_mode(bm_add);
+    draw_sprite_ext(sprCursor, global.dir * 0.2, mousex, mousey, 1, 1, 0, c_white, 1);
+    draw_set_blend_mode(bm_normal);
 }
 
-if phonex&gt;0 {
-phonecolor1=merge_color(c_orange,c_lime,0.5+lengthdir_x(0.25,global.dir*2))
-phonecolor2=merge_color(c_maroon,c_navy,0.5+lengthdir_x(0.25,global.dir*2))
-}
-draw_triangle_color(view_wview[0]-phonex,0,view_wview[0],0,view_wview[0],view_hview[0],phonecolor1,phonecolor1,phonecolor2,0)
-draw_triangle_color(view_wview[0]-phonex,0,view_wview[0]-phonex+70,view_hview[0],view_wview[0],view_hview[0],phonecolor1,phonecolor2,phonecolor2,0)
-draw_sprite_ext(sprPhoneLine,0,view_wview[0]-phonex,0,1,2,15,c_white,1)
-}
-draw_set_color(c_black)
-draw_rectangle(0,0,view_wview[0],blackx,0)
-draw_rectangle(0,view_hview[0],view_wview[0],view_hview[0]-blackx*1.5,0)
-if phonex&gt;0 {
-draw_sprite_ext(index,global.dir*0.1,view_wview[0]-phonex+128+2,view_hview[0]/2+3,image_xscale,image_yscale,lengthdir_x(4,global.dir*1.67),c_black,0.5)
-draw_sprite_ext(index,global.dir*0.1,view_wview[0]-phonex+128,view_hview[0]/2,image_xscale,image_yscale,lengthdir_x(4,global.dir*1.67),c_white,1)
-}
-}
-global.dir+=1
-if global.xbox=0 {
-draw_sprite_ext(sprCursor,global.dir*0.2,mousex+1,mousey+1,1,1,0,c_black,0.5)
-draw_set_blend_mode(bm_add)
-draw_sprite_ext(sprCursor,global.dir*0.2,mousex,mousey,1,1,0,c_white,1)
-draw_set_blend_mode(bm_normal)
-}
-
-exit
-drawVignette();
-
+//drawVignette();
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>exit</string>
           </argument>
         </arguments>
       </action>

@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(vk_shift) scrExportRoom()</string>
+            <string>if (keyboard_check(vk_shift))
+    scrExportRoom();
+</string>
           </argument>
         </arguments>
       </action>

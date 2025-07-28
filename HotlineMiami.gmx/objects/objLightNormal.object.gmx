@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir=0
-color=merge_color(merge_color(color1,color2,0.5+lengthdir_x(0.5,dir*2.474)),color3,0.25+lengthdir_x(0.25,dir))</string>
+            <string>dir = 0;
+color = merge_color(merge_color(color1, color2, 0.5 + lengthdir_x(0.5, dir * 2.474)), color3, 0.25 + lengthdir_x(0.25, dir));
+</string>
           </argument>
         </arguments>
       </action>
@@ -48,8 +49,9 @@ color=merge_color(merge_color(color1,color2,0.5+lengthdir_x(0.5,dir*2.474)),colo
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>color=merge_color(merge_color(color1,color2,0.5+lengthdir_x(0.5,dir*2.474)),color3,0.25+lengthdir_x(0.25,dir))
-dir+=4</string>
+            <string>color = merge_color(merge_color(color1, color2, 0.5 + lengthdir_x(0.5, dir * 2.474)), color3, 0.25 + lengthdir_x(0.25, dir));
+dir += 4;
+</string>
           </argument>
         </arguments>
       </action>

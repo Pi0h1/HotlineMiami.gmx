@@ -1,4 +1,4 @@
-if global.controllertype=0 or object_index=objPlayerMouseHouse or object_index=objPlayerHospital or object_index=objPlayerBikerHouse {
+if object_index=objPlayerMouseHouse or object_index=objPlayerHospital or object_index=objPlayerBikerHouse {
 if checkbutton(0,getid(9)) or instance_exists(global.enemy) {
 return point_direction(x,y,global.mousex,global.mousey)
 } else {

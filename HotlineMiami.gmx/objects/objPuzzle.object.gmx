@@ -25,36 +25,40 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrInitXboxButtons()
+            <string>if (global.xbox)
+    scrInitXboxButtons();
 
-my_id=instance_create(30,118,objLetterSocket) my_id.target=0
-my_id=instance_create(54,118,objLetterSocket) my_id.target=1
-my_id=instance_create(76,118,objLetterSocket) my_id.target=2
-my_id=instance_create(98,118,objLetterSocket) my_id.target=3
-my_id=instance_create(122,118,objLetterSocket) my_id.target=4
-my_id=instance_create(144,118,objLetterSocket) my_id.target=5
-my_id=instance_create(166,118,objLetterSocket) my_id.target=6
-my_id=instance_create(188,118,objLetterSocket) my_id.target=7
-my_id=instance_create(212,118,objLetterSocket) my_id.target=0
-my_id=instance_create(234,118,objLetterSocket) my_id.target=7
-my_id=instance_create(258,118,objLetterSocket) my_id.target=8
-my_id=instance_create(280,118,objLetterSocket) my_id.target=9
-my_id=instance_create(302,118,objLetterSocket) my_id.target=10
-my_id=instance_create(326,118,objLetterSocket) my_id.target=11
-my_id=instance_create(348,118,objLetterSocket) my_id.target=3
-my_id=instance_create(370,118,objLetterSocket) my_id.target=2
-if global.puzzledone=0 scrCreateLetters() else alarm[0]=30
-surf1=surface_create(room_width,room_height)
-surface_set_target(surf1)
-draw_clear_alpha(c_black,0)
-surface_reset_target()
-dir=0
-off=0
-factor=0
-currentletter=0
+my_id = instance_create(30, 118, objLetterSocket) my_id.target = 0;
+my_id = instance_create(54, 118, objLetterSocket) my_id.target = 1;
+my_id = instance_create(76, 118, objLetterSocket) my_id.target = 2;
+my_id = instance_create(98, 118, objLetterSocket) my_id.target = 3;
+my_id = instance_create(122, 118, objLetterSocket) my_id.target = 4;
+my_id = instance_create(144, 118, objLetterSocket) my_id.target = 5;
+my_id = instance_create(166, 118, objLetterSocket) my_id.target = 6;
+my_id = instance_create(188, 118, objLetterSocket) my_id.target = 7;
+my_id = instance_create(212, 118, objLetterSocket) my_id.target = 0;
+my_id = instance_create(234, 118, objLetterSocket) my_id.target = 7;
+my_id = instance_create(258, 118, objLetterSocket) my_id.target = 8;
+my_id = instance_create(280, 118, objLetterSocket) my_id.target = 9;
+my_id = instance_create(302, 118, objLetterSocket) my_id.target = 10;
+my_id = instance_create(326, 118, objLetterSocket) my_id.target = 11;
+my_id = instance_create(348, 118, objLetterSocket) my_id.target = 3;
+my_id = instance_create(370, 118, objLetterSocket) my_id.target = 2;
+if (!global.puzzledone)
+    scrCreateLetters();
+else alarm[0] = 30;
+surf1 = surface_create(room_width, room_height);
+surface_set_target(surf1);
+draw_clear_alpha(c_black, 0);
+surface_reset_target();
+dir = 0;
+off = 0;
+factor = 0;
+currentletter = 0;
 
-mousex=200
-mousey=127</string>
+mousex = 200;
+mousey = 127;
+</string>
           </argument>
         </arguments>
       </action>
@@ -76,15 +80,16 @@ mousey=127</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if off=0 {
-with instance_find(objLetterSocket,currentletter) {
-my_id=instance_create(x,y,objLetterDone)
-my_id.sprite_index=scrGetLetterSprite(target)
-my_id.glowsprite=scrGetGlowSprite(target)
-audio_play_sound(sndLetter,0,false)
-}
-currentletter+=1
-if currentletter&lt;16 alarm[0]=5
+            <string>if (!off) {
+    with (instance_find(objLetterSocket, currentletter)) {
+        my_id = instance_create(x, y, objLetterDone);
+        my_id.sprite_index = scrGetLetterSprite(target);
+        my_id.glowsprite = scrGetGlowSprite(target);
+        audio_play_sound(sndLetter, 0, false);
+    }
+    currentletter++;
+    if (currentletter &lt; 16)
+        alarm[0] = 5;
 }
 </string>
           </argument>
@@ -108,94 +113,111 @@ if currentletter&lt;16 alarm[0]=5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 {
+            <string>if (global.xbox) {
 
-if checkbutton(0,getid(6)) {
-if pressback=0 {
-pressback=1
-scrXboxPuzzleQuit()
-} 
-} else pressback=0
+    if (checkbutton(0, getid(6))) {
+        if (!pressback) {
+            pressback = 1;
+            scrXboxPuzzleQuit();
+        }
+    } else pressback = 0;
 
+    if (gettrigger_r() &gt; 100) {
+        if (!pressrtrig) {
+            pressrtrig = 1;
+            scrXboxPuzzlePress();
+        }
+    } else {
+        if (pressrtrig) {
+            scrXboxPuzzleRelease()
+            pressrtrig = 0;
+        }
+    }
 
-if gettrigger_r()&gt;100 {
-if pressrtrig=0 {
-pressrtrig=1
-scrXboxPuzzlePress()
-} 
-} else {if pressrtrig=1 scrXboxPuzzleRelease() pressrtrig=0}
+    if (leftthumb_x(0) &gt; 15000) {
+        mousex += 3;
+    }
 
-if leftthumb_x(0)&gt;15000 {
-mousex+=3
-} 
+    if (leftthumb_x(0) &lt; -15000) {
+        mousex -= 3;
+    }
 
-if leftthumb_x(0)&lt;-15000 {
-mousex-=3
-}
+    if leftthumb_y(0) &lt; -5000 {
+        mousey += 3;
+    }
 
-if leftthumb_y(0)&lt;-5000 {
-mousey+=3
-}
-
-if leftthumb_y(0)&gt;5000 {
-mousey-=3
-}
-
-}
-
-
-
-if off=1 {
-global.check=0
-with objLetterSocket {
-x+=16
-if x&lt;416 global.check=1
-}
-with objLetter {
-follow=0
-x-=16
-if x&gt;-16 global.check=1
-}
-with objLetterDone {
-x+=16
-if x&lt;416 global.check=1
-}
-if global.check=0 {
-with objLetterSocket instance_destroy()
-with objLetter instance_destroy()
-with objLetterDone instance_destroy()
-surface_free(surf1)
-instance_destroy()
-objPause.on=1
-objPause.state=0
-objPause.textdir1=0
-objPause.textdir2=0
-exit
-}
+    if leftthumb_y(0) &gt; 5000 {
+        mousey -= 3;
+    }
 
 }
-if factor&lt;1 factor+=0.05
-dir+=2
-//view_angle[0]=lengthdir_x(2,dir)
-if instance_number(objLetterDone)=16 {
-if global.puzzledone=0 {global.puzzledone=1 SteamSetAchievement("ACH_THE_BOSS") scrSaveUnlocked()}
-if factor&lt;1 factor+=0.05
-surface_set_target(surf1)
-draw_clear_alpha(c_black,0)
-with objLetterDone {
-times=8*objPuzzle.factor+lengthdir_y(16*objPuzzle.factor,(image_index*(1/13))*360)
-if times&lt;1 times=1
-i=0 
-ldir=point_direction(room_width/2,room_height*0.75,x,y)
-draw_set_blend_mode(bm_add)
-repeat times {
-draw_sprite_ext(glowsprite,0,x+lengthdir_x(i*0.5,ldir),y+lengthdir_y(i*0.5,ldir),1+i*0.01,1+i*0.01,0,merge_color(c_fuchsia,merge_color(c_aqua,c_black,i*(1/times)),i*(1/times)),1)
-i+=1
+
+
+
+if (off) {
+    global.check = 0;
+    with (objLetterSocket) {
+        x += 16;
+        if (x &lt; 416)
+            global.check = 1;
+    }
+    with (objLetter) {
+        follow = 0;
+        x -= 16;
+        if (x &gt; -16)
+            global.check = 1;
+    }
+    with (objLetterDone) {
+        x += 16;
+        if (x &lt; 416)
+            global.check = 1;
+    }
+    if (!global.check) {
+        with (objLetterSocket)
+            instance_destroy();
+        with (objLetter)
+            instance_destroy();
+        with (objLetterDone)
+            instance_destroy();
+        surface_free(surf1);
+        instance_destroy();
+        objPause.on = 1;
+        objPause.state = 0;
+        objPause.textdir1 = 0;
+        objPause.textdir2 = 0;
+        exit;
+    }
+
 }
+if (factor &lt; 1)
+    factor += 0.05;
+dir += 2;
+if (instance_number(objLetterDone) == 16) {
+    if (!global.puzzledone) {
+        global.puzzledone = 1;
+        SteamSetAchievement("ACH_THE_BOSS");
+        scrSaveUnlocked();
+    }
+    if (factor &lt; 1)
+        factor += 0.05;
+    surface_set_target(surf1);
+    draw_clear_alpha(c_black, 0);
+    with (objLetterDone) {
+        times = 8 * objPuzzle.factor + lengthdir_y(16 * objPuzzle.factor, (image_index * (1 / 13)) * 360);
+        if (times &lt; 1)
+            times = 1;
+        i = 0;
+        ldir = point_direction(room_width / 2, room_height * 0.75, x, y);
+        draw_set_blend_mode(bm_add);
+        repeat (times) {
+            draw_sprite_ext(glowsprite, 0, x + lengthdir_x(i * 0.5, ldir), y + lengthdir_y(i * 0.5, ldir), 1 + i * 0.01, 1 + i * 0.01, 0, merge_color(c_fuchsia, merge_color(c_aqua, c_black, i * (1 / times)), i * (1 / times)), 1);
+            i++;
+        }
+    }
+    draw_set_blend_mode(bm_normal);
+    surface_reset_target();
 }
-draw_set_blend_mode(bm_normal)
-surface_reset_target()
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -217,8 +239,13 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 exit
-with objLetter {check=follow follow=0}</string>
+            <string>if (global.xbox)
+    exit;
+with (objLetter) {
+    check = follow;
+    follow = 0;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -240,18 +267,31 @@ with objLetter {check=follow follow=0}</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 exit
-if off=1 exit
-global.test=-12323
-with objLetter {if follow=1 global.test=1}
-if global.test&gt;0 {with objLetter follow=0 exit}
-x=mouse_x
-y=mouse_y
-with objLetter {
-follow=0
-if place_meeting(x,y,objPuzzle) {global.test=id}
+            <string>if (global.xbox)
+    exit;
+if (off)
+    exit;
+global.test = -12323;
+with (objLetter) {
+    if (follow)
+        global.test = 1;
 }
-with global.test follow=1</string>
+if (global.test &gt; 0) {
+    with (objLetter)
+        follow = 0;
+    exit;
+}
+x = mouse_x;
+y = mouse_y;
+with (objLetter) {
+    follow = 0;
+    if (place_meeting(x, y, objPuzzle)) {
+        global.test = id;
+    }
+}
+with (global.test)
+    follow = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -273,14 +313,18 @@ with global.test follow=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_number(objLetterDone)=16 draw_surface(surf1,0,0)
-draw_set_blend_mode(bm_normal)
-draw_set_color(c_white)
-if global.xbox=0 draw_sprite(sprCursor,0,mouse_x,mouse_y) else draw_sprite(sprCursor,0,mousex,mousey)
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_set_color(c_black)
-draw_rectangle(0,0,room_width,44,0)
-draw_rectangle(0,room_height-44,room_width,room_height,0)</string>
+            <string>if (instance_number(objLetterDone) == 16)
+    draw_surface(surf1, 0, 0);
+draw_set_blend_mode(bm_normal);
+draw_set_color(c_white);
+if (!global.xbox)
+    draw_sprite(sprCursor, 0, mouse_x, mouse_y);
+else draw_sprite(sprCursor, 0, mousex, mousey);
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+draw_set_color(c_black);
+draw_rectangle(0, 0, room_width, 44, 0);
+draw_rectangle(0, room_height - 44, room_width, room_height, 0);
+</string>
           </argument>
         </arguments>
       </action>
@@ -302,8 +346,8 @@ draw_rectangle(0,room_height-44,room_width,room_height,0)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if global.xbox=1 exit
-off=1</string>
+            <string>off = 1;
+</string>
           </argument>
         </arguments>
       </action>

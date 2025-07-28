@@ -25,48 +25,51 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = room_width/2;
-global.level=rmHospitalCutscene
-scrFreeSurfaces()
-if global.resetstory=1 {
-scrResetStory()
-} else {set_automatic_draw(true)}
-
-alarm[0]=300
-pointx=-192
-i=0
-repeat (string_length(global.title)) {
-amount[i]=1
-on[i]=0
-i+=1
-}
-dir=90
-
-fade=0
-c_amount=0
-repeat (5) instance_create(random(room_width),0,objHouse)
-
-i=0
-repeat (5) {
-palmx[i]=(room_width/4)*i
-palmindex[i]=floor(random(6))
-i+=1
+            <string>x = room_width / 2;
+global.level = rmHospitalCutscene;
+scrFreeSurfaces();
+if (global.resetstory) {
+    scrResetStory();
+} else {
+    set_automatic_draw(true);
 }
 
+alarm[0] = 300;
+pointx = -192;
+i = 0;
+repeat(string_length(global.title)) {
+    amount[i] = 1;
+    on[i] = 0;
+    i++;
+}
+dir = 90;
 
-hint[0]="TIP: YOU'VE DONE ENOUGH"
-hint[1]="TIP: WAKE UP"
-hint[2]="TIP: TIME TO LET GO"
-hint[3]="TIP: DON'T DO ANYTHING RASH"
-hint[4]="TIP: THINK THINGS OVER"
-hint[5]="TIP: CONFESS TO THE POLICE"
-hint[6]="TIP: PAY FOR YOUR CRIMES"
-hint[7]="TIP: STOP BREATHING"
-hint[8]="TIP: SHE'S ALREADY DEAD"
-hint[9]="TIP: YOU'RE ALL ALONE NOW"
-hint[10]="TIP: NO MORE PAIN"
+fade = 0;
+c_amount = 0;
+repeat(5)
+    instance_create(random(room_width), 0, objHouse);
 
-myhint=floor(random(11))
+i = 0;
+repeat(5) {
+    palmx[i] = (room_width / 4) * i;
+    palmindex[i] = floor(random(6));
+    i++;
+}
+
+
+hint[0] = "TIP: YOU'VE DONE ENOUGH";
+hint[1] = "TIP: WAKE UP";
+hint[2] = "TIP: TIME TO LET GO";
+hint[3] = "TIP: DON'T DO ANYTHING RASH";
+hint[4] = "TIP: THINK THINGS OVER";
+hint[5] = "TIP: CONFESS TO THE POLICE";
+hint[6] = "TIP: PAY FOR YOUR CRIMES";
+hint[7] = "TIP: STOP BREATHING";
+hint[8] = "TIP: SHE'S ALREADY DEAD";
+hint[9] = "TIP: YOU'RE ALL ALONE NOW";
+hint[10] = "TIP: NO MORE PAIN";
+
+myhint = floor(random(11));
 </string>
           </argument>
         </arguments>
@@ -89,7 +92,8 @@ myhint=floor(random(11))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fade=1</string>
+            <string>fade = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -111,40 +115,49 @@ myhint=floor(random(11))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>surface_set_target(global.surf1)
-draw_clear_alpha(c_black,0)
-draw_set_font(fntMenu)
-draw_set_halign(fa_center)
-draw_set_valign(fa_center)
-draw_set_color(merge_color(c_white,c_black,0.5+lengthdir_y(0.5,pointx*2)))
-draw_text(x+1,y-35,global.pretitle)
-draw_set_color(merge_color(c_white,c_black,0.5+lengthdir_x(0.5,pointx*2)))
-draw_text(x,y-36,global.pretitle)
-draw_set_font(fntChapter)
-i=0
-pointx+=3
-start_x=-string_width(global.title)*0.5
-draw_set_halign(fa_left)
-repeat (string_length(global.title)) {
-str=string_copy(global.title,1+i,1)
-//if i=0 start_x+=string_width(str)*0.5
-darkcolor=merge_color(merge_color(c_teal,c_blue,random(1)),merge_color(c_teal,c_aqua,random(1)),0.5-lengthdir_x(0.5,start_x*0.25-pointx*1.5))
-dist=round(15-point_distance(pointx,y,x+start_x,y)*0.1)
-if dist&lt;1 {dist=1 if amount[i]&lt;1 amount[i]+=0.025} else {amount[i]=0 on[i]=1}
-tempdir=point_direction(pointx,y+64,x+start_x,y)
-if on[i]=1 {
-ii=0
-repeat dist {
-if dist&gt;1 draw_set_color(merge_color(c_white,c_aqua,ii*(1/15))) else draw_set_color(merge_color(merge_color(c_aqua,c_teal,random(1)),darkcolor,amount[i]))
-draw_text(x+start_x+lengthdir_x(ii,tempdir),y+lengthdir_y(ii,tempdir),str)
-ii+=1
+            <string>surface_set_target(global.surf1);
+draw_clear_alpha(c_black, 0);
+draw_set_font(fntMenu);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
+draw_set_color(merge_color(c_white, c_black, 0.5 + lengthdir_y(0.5, pointx * 2)));
+draw_text(x + 1, y - 35, global.pretitle);
+draw_set_color(merge_color(c_white, c_black, 0.5 + lengthdir_x(0.5, pointx * 2)));
+draw_text(x, y - 36, global.pretitle);
+draw_set_font(fntChapter);
+i = 0;
+pointx += 3;
+start_x = -string_width(global.title) * 0.5;
+draw_set_halign(fa_left);
+repeat(string_length(global.title)) {
+    str = string_copy(global.title, 1 + i, 1);
+    darkcolor = merge_color(merge_color(c_teal, c_blue, random(1)), merge_color(c_teal, c_aqua, random(1)), 0.5 - lengthdir_x(0.5, start_x * 0.25 - pointx * 1.5));
+    dist = round(15 - point_distance(pointx, y, x + start_x, y) * 0.1);
+    if (dist &lt; 1) {
+        dist = 1;
+        if (amount[i] &lt; 1)
+            amount[i] += 0.025;
+    } else {
+        amount[i] = 0;
+        on[i] = 1;
+    }
+    tempdir = point_direction(pointx, y + 64, x + start_x, y);
+    if (on[i]) {
+        ii = 0;
+        repeat dist {
+            if (dist &gt; 1)
+                draw_set_color(merge_color(c_white, c_aqua, ii * (1 / 15)));
+            else draw_set_color(merge_color(merge_color(c_aqua, c_teal, random(1)), darkcolor, amount[i]));
+            draw_text(x + start_x + lengthdir_x(ii, tempdir), y + lengthdir_y(ii, tempdir), str);
+            ii++;
+        }
+    }
+    start_x += string_width(str);
+    i++;
 }
-}
-start_x+=string_width(str)
-i+=1
-}
-surface_alpha()
-surface_reset_target()</string>
+surface_alpha();
+surface_reset_target();
+</string>
           </argument>
         </arguments>
       </action>
@@ -166,90 +179,77 @@ surface_reset_target()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir+=0.25
-color2=merge_color(c_yellow,c_white,0.7+lengthdir_x(0.3,dir*3))
-color1=merge_color(c_yellow,merge_color(merge_color(c_red,c_orange,0.5+lengthdir_x(0.5,dir*3.12)),c_maroon,0.125+lengthdir_y(0.125,dir*1.73)),0.4+lengthdir_y(0.4,dir*24))
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_rectangle_color(view_xview[0],view_yview[0]+54,view_xview[0]+view_wview[0],view_yview[0]+view_hview[0]-64,color1,color1,color2,color2,0)
-with objHouse draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-i=0
-repeat (5) {
-draw_sprite_ext(sprPalmTrees,palmindex[i],palmx[i],room_height+65,1,1,0,c_black,1)
-palmx[i]-=12
-if palmx[i]&lt;=-60 {palmx[i]=room_width+60 palmindex[i]=floor(random(6))}
-i+=1
+            <string>dir += 0.25;
+color2 = merge_color(c_yellow, c_white, 0.7 + lengthdir_x(0.3, dir * 3));
+color1 = merge_color(c_yellow, merge_color(merge_color(c_red, c_orange, 0.5 + lengthdir_x(0.5, dir * 3.12)), c_maroon, 0.125 + lengthdir_y(0.125, dir * 1.73)), 0.4 + lengthdir_y(0.4, dir * 24));
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+draw_rectangle_color(view_xview[0], view_yview[0] + 54, view_xview[0] + view_wview[0], view_yview[0] + view_hview[0] - 64, color1, color1, color2, color2, 0);
+with (objHouse)
+    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+i = 0
+repeat(5) {
+    draw_sprite_ext(sprPalmTrees, palmindex[i], palmx[i], room_height + 65, 1, 1, 0, c_black, 1);
+    palmx[i] -= 12;
+    if (palmx[i] &lt;= -60) {
+        palmx[i] = room_width + 60;
+        palmindex[i] = floor(random(6));
+    }
+    i++;
 }
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],view_angle[0])
-draw_surface_ext(global.surf1,0,-1,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,-1,0,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,0,1,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,1,0,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,0,0,1,1,0,c_white,1)
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], view_angle[0]);
+draw_surface_ext(global.surf1, 0, -1, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, -1, 0, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, 0, 1, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, 1, 0, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, 0, 0, 1, 1, 0, c_white, 1);
 
-view_angle[0]=lengthdir_y(3,dir*3.33)
+view_angle[0] = lengthdir_y(3, dir * 3.33);
 
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_set_color(c_black)
-draw_rectangle(0,0,room_width,55,0)
-draw_rectangle(0,room_height,room_width,room_height-65,0)
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_set_font(fntDate)
-draw_set_halign(fa_center)
-draw_set_color(c_black)
-draw_text(room_width/2,room_height-58-1,hint[myhint])
-draw_text(room_width/2,room_height-58+1,hint[myhint])
-draw_text(room_width/2-1,room_height-58,hint[myhint])
-draw_text(room_width/2+1,room_height-58,hint[myhint])
-draw_set_color(c_dkgray)
-draw_text(room_width/2,room_height-58,hint[myhint])
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+draw_set_color(c_black);
+draw_rectangle(0, 0, room_width, 55, 0);
+draw_rectangle(0, room_height, room_width, room_height - 65, 0);
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+draw_set_font(fntDate);
+draw_set_halign(fa_center);
+draw_set_color(c_black);
+draw_text(room_width / 2, room_height - 58 - 1, hint[myhint]);
+draw_text(room_width / 2, room_height - 58 + 1, hint[myhint]);
+draw_text(room_width / 2 - 1, room_height - 58, hint[myhint]);
+draw_text(room_width / 2 + 1, room_height - 58, hint[myhint]);
+draw_set_color(c_dkgray);
+draw_text(room_width / 2, room_height - 58, hint[myhint]);
 
-if fade=0 {
-if c_amount&lt;180 {
-c_amount+=10
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color1,color2,color2,color1,0)
-draw_set_blend_mode(bm_normal)
+if (!fade) {
+    if (c_amount &lt; 180) {
+        c_amount += 10;
+        color1 = merge_color(c_black, merge_color(c_aqua, c_white, 0.5 + lengthdir_x(0.5, c_amount)), 0.5 + lengthdir_x(0.5, c_amount));
+        if (c_amount &gt; 90)
+            color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
+        else color2 = c_white;
+        draw_set_blend_mode(bm_subtract);
+        draw_rectangle_color(view_xview[0] - 10, view_yview[0] - 10, view_xview[0] + view_wview[0] + 10, view_yview[0] + view_hview[0] + 10, color1, color2, color2, color1, 0);
+        draw_set_blend_mode(bm_normal);
+    }
 }
-}
 
-if fade=1 {
-if c_amount&gt;0  {
-c_amount-=5
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0)
-draw_set_blend_mode(bm_normal)
-} else {room_goto(global.level) game_save("restart.dat")}
+if (fade) {
+    if (c_amount &gt; 0) {
+        c_amount -= 5;
+        color1 = merge_color(c_black, merge_color(c_aqua, c_white, 0.5 + lengthdir_x(0.5, c_amount)), 0.5 + lengthdir_x(0.5, c_amount));
+        if c_amount &gt; 90 color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
+        else color2 = c_white;
+        draw_set_blend_mode(bm_subtract);
+        draw_rectangle_color(view_xview[0] - 10, view_yview[0] - 10, view_xview[0] + view_wview[0] + 10, view_yview[0] + view_hview[0] + 10, color2, color1, color1, color2, 0);
+        draw_set_blend_mode(bm_normal);
+    } else {
+        room_goto(global.level);
+        game_save("restart.dat");
+    }
 }
 
 drawVignette();
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>exit
-fade=1</string>
           </argument>
         </arguments>
       </action>

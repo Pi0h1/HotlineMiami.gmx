@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_alpha=0.8
-image_speed=0
-addy=-160</string>
+            <string>image_alpha = 0.8;
+image_speed = 0;
+addy = -160;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,31 +50,38 @@ addy=-160</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index=0
-global.test=-1234
-global.my_id=id
-global.target=target
-with objLetter {
-if place_meeting(x,y,global.my_id) {
-if follow=1 global.test=-20
-if image_index=global.target {
-if follow=1 global.test=-20 else {if check=1 global.test=id}
+            <string>image_index = 0;
+global.test = -1234;
+global.my_id = id;
+global.target = target;
+with (objLetter) {
+    if (place_meeting(x, y, global.my_id)) {
+        if (follow)
+            global.test = -20;
+        if (image_index == global.target) {
+            if (follow)
+                global.test = -20;
+            else {
+                if (check)
+                    global.test = id;
+            }
+        }
+    }
 }
+if (global.test == -20 || instance_exists(global.test)) {
+    image_index = 1;
 }
+if (instance_exists(global.test)) {
+    global.test.x = x;
+    global.test.y = y;
+    with (global.test) {
+        my_id = instance_create(x, y, objLetterDone);
+        my_id.sprite_index = scrGetLetterSprite(image_index);
+        my_id.glowsprite = scrGetGlowSprite(image_index);
+        instance_destroy();
+    }
 }
-if global.test=-20 or instance_exists(global.test) {
-image_index=1
-}
-if instance_exists(global.test) {
-global.test.x=x
-global.test.y=y
-with global.test {
-my_id=instance_create(x,y,objLetterDone)
-my_id.sprite_index=scrGetLetterSprite(image_index)
-my_id.glowsprite=scrGetGlowSprite(image_index)
-instance_destroy()
-}
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -95,8 +103,10 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprite_index,image_index,x,y+addy)
-if addy&lt;0 addy+=8</string>
+            <string>draw_sprite(sprite_index, image_index, x, y + addy);
+if (addy &lt; 0)
+    addy += 8;
+</string>
           </argument>
         </arguments>
       </action>

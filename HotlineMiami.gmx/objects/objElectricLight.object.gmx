@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>r=20</string>
+            <string>r = 20;
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,10 +48,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_blend_mode(bm_add)
-draw_circle_color(x,y,r,merge_color(c_aqua,c_white,random(1)),c_black,0)
-draw_set_blend_mode(bm_normal)
-if r&gt;0 r-=2 else instance_destroy()</string>
+            <string>draw_set_blend_mode(bm_add);
+draw_circle_color(x, y, r, merge_color(c_aqua, c_white, random(1)), c_black, 0);
+draw_set_blend_mode(bm_normal);
+if (r &gt; 0)
+    r -= 2;
+else instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>

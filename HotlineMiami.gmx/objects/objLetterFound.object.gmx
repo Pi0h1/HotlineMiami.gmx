@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>text="STAGE CLEAR"
-dir=0
-dir2=0</string>
+            <string>text = "STAGE CLEAR";
+dir = 0;
+dir2 = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,33 +50,36 @@ dir2=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-i=0
-factor=0.5-lengthdir_x(0.5,dir2)
-if dir2&lt;360 dir2+=5 else instance_destroy()
-draw_set_font(fntCheckpoint)
-draw_set_halign(fa_left)
-draw_set_valign(fa_center)
-start_x=view_wview[0]/2-string_width(text)*0.5
-repeat (string_length(text)) {
-letter=string_copy(text,1+i,1)
-ii=0
-draw_set_color(c_black)
-if dir2&gt;180 draw_set_alpha(0.5-lengthdir_x(0.5,dir2))
-draw_text_transformed(start_x,view_hview[0]*0.5-ii*0.35-1,letter,1,1,0)
-draw_text_transformed(start_x,view_hview[0]*0.5-ii*0.35+1,letter,1,1,0)
-draw_text_transformed(start_x+1,view_hview[0]*0.5-ii*0.35,letter,1,1,0)
-draw_text_transformed(start_x-1,view_hview[0]*0.5-ii*0.35,letter,1,1,0)
-draw_set_alpha(1)
-repeat (5+lengthdir_x(4,dir+i*60))*factor {
-draw_set_color(merge_color(c_maroon,c_yellow,ii*0.1))
-draw_text_transformed(start_x,view_hview[0]*0.5-ii*0.35,letter,1,1,0)
-ii+=1
+            <string>d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+i = 0;
+factor = 0.5 - lengthdir_x(0.5, dir2);
+if (dir2 &lt; 360)
+    dir2 += 5;
+else instance_destroy();
+draw_set_font(fntCheckpoint);
+draw_set_halign(fa_left);
+draw_set_valign(fa_center);
+start_x = view_wview[0] / 2 - string_width(text) * 0.5;
+repeat(string_length(text)) {
+    letter = string_copy(text, 1 + i, 1);
+    ii = 0;
+    draw_set_color(c_black);
+    if (dir2 &gt; 180)
+        draw_set_alpha(0.5 - lengthdir_x(0.5, dir2));
+    draw_text_transformed(start_x, view_hview[0] * 0.5 - ii * 0.35 - 1, letter, 1, 1, 0);
+    draw_text_transformed(start_x, view_hview[0] * 0.5 - ii * 0.35 + 1, letter, 1, 1, 0);
+    draw_text_transformed(start_x + 1, view_hview[0] * 0.5 - ii * 0.35, letter, 1, 1, 0);
+    draw_text_transformed(start_x - 1, view_hview[0] * 0.5 - ii * 0.35, letter, 1, 1, 0);
+    draw_set_alpha(1);
+    repeat(5 + lengthdir_x(4, dir + i * 60)) * factor {
+        draw_set_color(merge_color(c_maroon, c_yellow, ii * 0.1));
+        draw_text_transformed(start_x, view_hview[0] * 0.5 - ii * 0.35, letter, 1, 1, 0);
+        ii++;
+    }
+    start_x += string_width(letter);
+    i++;
 }
-start_x+=string_width(letter)
-i+=1
-}
-dir+=8
+dir += 8;
 </string>
           </argument>
         </arguments>

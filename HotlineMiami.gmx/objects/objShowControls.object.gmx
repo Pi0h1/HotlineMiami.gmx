@@ -26,41 +26,37 @@
           <argument>
             <kind>1</kind>
             <string>angle = 0;
-mapdir=0
-select=0
-scrFreeSurfaces()
-image_speed=0.2
-if global.xbox=1 scrInitXboxButtons()
-scrInitControls()
-x=room_width/2
-y=room_height*0.57
-sprite_index=sprite[0]
-restart=0
-dir=90
-edit=0
-current=0
-fade=0
-c_amount=0
-/*repeat (5) instance_create(random(room_width),0,objHouse)
-
-i=0
-repeat (5) {
-palmx[i]=(room_width/4)*i
-palmindex[i]=floor(random(6))
-i+=1
-}*/
-wait=0
-global.i=0
-repeat (10) {
-my_id=instance_create(x,y,objPalmTree)
-with my_id {repeat (global.i*45) amount*=1.01}
-global.i+=1
+mapdir = 0;
+select = 0;
+scrFreeSurfaces();
+image_speed = 0.2;
+if (global.xbox)
+    scrInitXboxButtons();
+scrInitControls();
+x = room_width / 2;
+y = room_height * 0.57;
+sprite_index = sprite[0];
+restart = 0;
+dir = 90;
+edit = 0;
+current = 0;
+fade = 0;
+c_amount = 0;
+wait = 0;
+global.i = 0;
+repeat(10) {
+    my_id = instance_create(x, y, objPalmTree);
+    with (my_id) {
+        repeat(global.i * 45)
+            amount *= 1.01;
+    }
+    global.i++;
 }
-alarm[0]=45
-alarm[1]=90
+alarm[0] = 45;
+alarm[1] = 90;
 
-x=room_width/2
-y=room_height/2
+x = room_width / 2;
+y = room_height / 2;
 </string>
           </argument>
         </arguments>
@@ -83,81 +79,89 @@ y=room_height/2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with objWeapon instance_destroy()
-with objWeaponThrow instance_destroy()
-with objKnockedOut instance_destroy()
+            <string>with (objWeapon)
+    instance_destroy();
+with (objWeaponThrow)
+    instance_destroy();
+with (objKnockedOut) instance_destroy();
 
-if move[select]="Pick Up" {
-if sprite_index=sprPWalkUnarmed {
-sprite_index=sprPWalkBat
-} else {
-sprite_index=sprPWalkUnarmed
-my_id=instance_create(x+16,y+16,objWeapon)
-my_id.image_index=4
-my_id.visible=0 
-my_id.angle=0
-}
-}
-
-if move[select]="Interact" {
-if sprite_index=sprPWalkUnarmed {
-sprite_index=sprPTakePhone
-with objAnsweringMachine sprite_index=sprDrawersH24PhoneOff
-image_index=0
-} else {
-sprite_index=sprPWalkUnarmed
-with objAnsweringMachine sprite_index=sprDrawersH24Phone
-}
+if (move[select] == "Pick Up") {
+    if (sprite_index == sprPWalkUnarmed) {
+        sprite_index = sprPWalkBat;
+    } else {
+        sprite_index = sprPWalkUnarmed;
+        my_id = instance_create(x + 16, y + 16, objWeapon);
+        my_id.image_index = 4;
+        my_id.visible = 0;
+        my_id.angle = 0;
+    }
 }
 
-if move[select]="Throw Weapon" {
-if sprite_index=sprPWalkKnife {
-sprite_index=sprPWalkUnarmed
-my_id=instance_create(x+16,y,objWeaponThrow)
-my_id.speed=9
-my_id.image_index=5
-my_id.visible=0 my_id.angle=0
-} else {
-sprite_index=sprPWalkKnife
-}
-}
-
-if move[select]="Human Shield" {
-if sprite_index=sprPWalkDoubleBarrel {
-sprite_index=sprPHumanShieldDoubleBarrel
-} else {
-sprite_index=sprPWalkDoubleBarrel
-my_id=instance_create(x,y,objKnockedOut)
-my_id.visible=0 my_id.angle=0
-}
+if (move[select] == "Interact") {
+    if (sprite_index == sprPWalkUnarmed) {
+        sprite_index = sprPTakePhone;
+        with (objAnsweringMachine)
+            sprite_index = sprDrawersH24PhoneOff;
+        image_index = 0;
+    } else {
+        sprite_index = sprPWalkUnarmed;
+        with (objAnsweringMachine)
+            sprite_index = sprDrawersH24Phone;
+    }
 }
 
-if move[select]="Drop Weapon" {
-if sprite_index=sprPWalkBat {
-sprite_index=sprPWalkUnarmed
-my_id=instance_create(x,y,objWeaponThrow)
-my_id.image_index=4
-my_id.direction=-70
-my_id.speed=2
-my_id.visible=0 
-my_id.angle=0
-my_id.ammo=0
-} else {
-sprite_index=sprPWalkBat
-}
+if (move[select] == "Throw Weapon") {
+    if (sprite_index == sprPWalkKnife) {
+        sprite_index = sprPWalkUnarmed;
+        my_id = instance_create(x + 16, y, objWeaponThrow);
+        my_id.speed = 9;
+        my_id.image_index = 5;
+        my_id.visible = 0;
+        my_id.angle = 0;
+    } else {
+        sprite_index = sprPWalkKnife;
+    }
 }
 
-if move[select]="Finish Enemy" {
-if sprite_index=sprPWalkUnarmed {
-sprite_index=sprPAttackBash
-} else {
-sprite_index=sprPWalkUnarmed
-my_id=instance_create(x,y,objKnockedOut)
-my_id.visible=0 my_id.angle=0
-}
+if (move[select] == "Human Shield") {
+    if (sprite_index = sprPWalkDoubleBarrel) {
+        sprite_index = sprPHumanShieldDoubleBarrel;
+    } else {
+        sprite_index = sprPWalkDoubleBarrel;
+        my_id = instance_create(x, y, objKnockedOut);
+        my_id.visible = 0;
+        my_id.angle = 0;
+    }
 }
 
-alarm[1]=90</string>
+if (move[select] == "Drop Weapon") {
+    if (sprite_index == sprPWalkBat) {
+        sprite_index = sprPWalkUnarmed;
+        my_id = instance_create(x, y, objWeaponThrow);
+        my_id.image_index = 4;
+        my_id.direction = -70;
+        my_id.speed = 2;
+        my_id.visible = 0;
+        my_id.angle = 0;
+        my_id.ammo = 0;
+    } else {
+        sprite_index = sprPWalkBat;
+    }
+}
+
+if (move[select] == "Finish Enemy") {
+    if (sprite_index == sprPWalkUnarmed) {
+        sprite_index = sprPAttackBash;
+    } else {
+        sprite_index = sprPWalkUnarmed;
+        my_id = instance_create(x, y, objKnockedOut);
+        my_id.visible = 0;
+        my_id.angle = 0;
+    }
+}
+
+alarm[1] = 90;
+</string>
           </argument>
         </arguments>
       </action>
@@ -179,8 +183,9 @@ alarm[1]=90</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y,objPalmTree)
-alarm[0]=45</string>
+            <string>instance_create(x, y, objPalmTree);
+alarm[0] = 45;
+</string>
           </argument>
         </arguments>
       </action>
@@ -202,87 +207,96 @@ alarm[0]=45</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if wait&gt;0 wait-=1
-if global.xbox=1 {
-if checkbutton(0,getid(6)) {
-if pressback=0 {
-pressback=1
-scrXboxControlsBack()
-} 
-} else pressback=0
+            <string>if (wait &gt; 0)
+    wait--;
+if (global.xbox) {
+    if (checkbutton(0, getid(6))) {
+        if (!pressback) {
+            pressback = 1;
+            scrXboxControlsBack();
+        }
+    } else pressback = 0;
 
 
-if leftthumb_x(0)&gt;15000 {
-if pressright=0 {
-pressright=1
-scrXboxControlsRight()
+    if (leftthumb_x(0) &gt; 15000) {
+        if (!pressright) {
+            pressright = 1;
+            scrXboxControlsRight();
+        }
+    } else pressright = 0;
+
+    if (leftthumb_x(0) &lt; -15000) {
+        if (!pressleft) {
+            pressleft = 1;
+            scrXboxControlsLeft();
+        }
+    } else pressleft = 0;
 }
-} else pressright=0
 
-if leftthumb_x(0)&lt;-15000 {
-if pressleft=0 {
-pressleft=1
-scrXboxControlsLeft()
+if (keyboard_check_pressed(ord(global.leftkey)))
+    event_perform(ev_keypress, ord('A'));
+if (keyboard_check_pressed(ord(global.rightkey)))
+    event_perform(ev_keypress, ord('D'));
+upkey = global.upkey;
+downkey = global.downkey;
+leftkey = global.leftkey;
+rightkey = global.rightkey;
+upkey = string_replace(upkey, "&amp;", "up");
+upkey = string_replace(upkey, "%", "left");
+upkey = string_replace(upkey, "'", "right");
+upkey = string_replace(upkey, "(", "down");
+
+downkey = string_replace(downkey, "&amp;", "up");
+downkey = string_replace(downkey, "%", "left");
+downkey = string_replace(downkey, "'", "right");
+downkey = string_replace(downkey, "(", "down");
+
+leftkey = string_replace(leftkey, "&amp;", "up");
+leftkey = string_replace(leftkey, "%", "left");
+leftkey = string_replace(leftkey, "'", "right");
+leftkey = string_replace(leftkey, "(", "down");
+
+rightkey = string_replace(rightkey, "&amp;", "up");
+rightkey = string_replace(rightkey, "%", "left");
+rightkey = string_replace(rightkey, "'", "right");
+rightkey = string_replace(rightkey, "(", "down");
+
+if (!global.xbox)
+    control[0] = upkey + ", " + leftkey + ", " + downkey + ", " + rightkey;
+if (!global.xbox)
+    control[14] = global.restartkey;
+surface_set_target(global.surf1);
+draw_clear_alpha(c_black, 0);
+mapdir += 0.5;
+
+draw_set_font(fntMenu);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
+texts = 7 + lengthdir_x(15, dir * 15);
+if (texts &lt; 1)
+    texts = 1;
+if (texts &gt; 22)
+    texts = 22;
+i = 0;
+repeat(texts) {
+    draw_set_color(merge_color(merge_color(c_lime, c_yellow, 0.5 + lengthdir_x(0.5, dir * 3.232)), c_white, i * (1 / 22)));
+    draw_text_transformed(room_width / 2, room_height * 0.28 - i * 0.5, move[select], 1 + i * 0.01, 1 + i * 0.01, 0);
+    i++;
 }
-} else pressleft=0
-
-}
-
-if keyboard_check_pressed(ord(global.leftkey)) event_perform(ev_keypress,ord('A'))
-if keyboard_check_pressed(ord(global.rightkey)) event_perform(ev_keypress,ord('D'))
-upkey=global.upkey
-downkey=global.downkey
-leftkey=global.leftkey
-rightkey=global.rightkey
-upkey=string_replace(upkey,"&amp;","up")
-upkey=string_replace(upkey,"%","left")
-upkey=string_replace(upkey,"'","right")
-upkey=string_replace(upkey,"(","down")
-
-downkey=string_replace(downkey,"&amp;","up")
-downkey=string_replace(downkey,"%","left")
-downkey=string_replace(downkey,"'","right")
-downkey=string_replace(downkey,"(","down")
-
-leftkey=string_replace(leftkey,"&amp;","up")
-leftkey=string_replace(leftkey,"%","left")
-leftkey=string_replace(leftkey,"'","right")
-leftkey=string_replace(leftkey,"(","down")
-
-rightkey=string_replace(rightkey,"&amp;","up")
-rightkey=string_replace(rightkey,"%","left")
-rightkey=string_replace(rightkey,"'","right")
-rightkey=string_replace(rightkey,"(","down")
-
-if global.xbox=0 control[0]=upkey+", "+leftkey+", "+downkey+", "+rightkey
-if global.xbox=0 control[14]=global.restartkey
-surface_set_target(global.surf1)
-draw_clear_alpha(c_black,0)
-mapdir+=0.5
-
-draw_set_font(fntMenu)
-draw_set_halign(fa_center)
-draw_set_valign(fa_center)
-texts=7+lengthdir_x(15,dir*15)
-if texts&lt;1 texts=1 
-if texts&gt;22 texts=22
-i=0
-repeat (texts) {
-draw_set_color(merge_color(merge_color(c_lime,c_yellow,0.5+lengthdir_x(0.5,dir*3.232)),c_white,i*(1/22)))
-draw_text_transformed(room_width/2,room_height*0.28-i*0.5,move[select],1+i*0.01,1+i*0.01,0)
-i+=1
-}
-draw_set_color(merge_color(c_orange,c_white,0.5+lengthdir_x(0.5,dir*16)))
-if edit=1 draw_set_color(merge_color(c_lime,c_white,0.5+lengthdir_x(0.5,dir*16)))
-draw_text_transformed(room_width/2+1,room_height*0.67+1,control[select],1,1,0)
-draw_set_color(merge_color(c_orange,c_white,0.5-lengthdir_x(0.5,dir*16)))
-if edit=1 draw_set_color(merge_color(c_lime,c_white,0.5+lengthdir_x(0.5,dir*16)))
-draw_text_transformed(room_width/2,room_height*0.67,control[select],1,1,0)
-draw_set_color(merge_color(c_lime,c_white,0.5+lengthdir_x(0.5,dir*16)))
-draw_text_transformed(room_width/2+1,room_height*0.75+1,condition[select],1,1,0)
-draw_set_color(merge_color(c_lime,c_white,0.5-lengthdir_x(0.5,dir*16)))
-draw_text_transformed(room_width/2,room_height*0.75,condition[select],1,1,0)
-surface_reset_target()</string>
+draw_set_color(merge_color(c_orange, c_white, 0.5 + lengthdir_x(0.5, dir * 16)));
+if (edit)
+    draw_set_color(merge_color(c_lime, c_white, 0.5 + lengthdir_x(0.5, dir * 16)));
+draw_text_transformed(room_width / 2 + 1, room_height * 0.67 + 1, control[select], 1, 1, 0);
+draw_set_color(merge_color(c_orange, c_white, 0.5 - lengthdir_x(0.5, dir * 16)));
+if (edit)
+    draw_set_color(merge_color(c_lime, c_white, 0.5 + lengthdir_x(0.5, dir * 16)));
+draw_text_transformed(room_width / 2, room_height * 0.67, control[select], 1, 1, 0);
+draw_set_color(merge_color(c_lime, c_white, 0.5 + lengthdir_x(0.5, dir * 16)));
+draw_text_transformed(room_width / 2 + 1, room_height * 0.75 + 1, condition[select], 1, 1, 0);
+draw_set_color(merge_color(c_lime, c_white, 0.5 - lengthdir_x(0.5, dir * 16)));
+draw_text_transformed(room_width / 2, room_height * 0.75, condition[select], 1, 1, 0);
+surface_reset_target();
+</string>
           </argument>
         </arguments>
       </action>
@@ -304,101 +318,125 @@ surface_reset_target()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*draw_surface_ext(surf,1,0,1,1,0,c_black,1)
-draw_surface_ext(surf,-1,0,1,1,0,c_black,1)
-draw_surface_ext(surf,0,1,1,1,0,c_black,1)
-draw_surface_ext(surf,0,-1,1,1,0,c_black,1)
-
-
-draw_surface_ext(surf,0,0,1,1,0,c_white,1)*/
-
-if move[select]="Drop Weapon" or move[select]="Pick Up"  or move[select]="Advance Dialogue" or move[select]="Skip Dialogue" or move[select]="Pause Menu" or move[select]="Quit" or move[select]="Aim" {image_speed=0 image_index=0} else image_speed=0.2
-if move[select]="Finish Enemy" and sprite_index=sprPWalkUnarmed {image_speed=0 image_index=0}
-if move[select]="Throw Weapon" and sprite_index=sprPWalkUnarmed {image_speed=0 image_index=0}
-if move[select]="Human Shield" and sprite_index=sprPWalkDoubleBarrel {image_speed=0 image_index=0}
-if sprite_index=sprPAttackPipe {image_speed=0 if image_index&lt;8.4 image_index+=0.2 else {image_yscale*=-1 image_index=1}}
-if move[select]="Interact" {image_speed=0 if sprite_index=sprPTakePhone {if image_index&lt;3 image_index+=0.25} else image_index=0}
-
-dir+=0.25
-color2=merge_color(c_black,merge_color(c_yellow,c_red,0.5+lengthdir_x(0.5,dir*3.12)),0.5+lengthdir_x(0.25,dir*1.13))
-color1=merge_color(c_black,merge_color(merge_color(c_orange,c_maroon,0.5+lengthdir_x(0.5,dir*3.12)),c_olive,0.125+lengthdir_y(0.125,dir*1.73)),0.35+lengthdir_y(0.25,dir*1.73))
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_rectangle_color(view_xview[0],view_yview[0]+44,view_xview[0]+view_wview[0],view_yview[0]+view_hview[0]-43,color1,color1,color2,color2,0)
-/*draw_set_blend_mode(bm_max)
-global.color=merge_color(merge_color(color1,color2,0.5+lengthdir_x(0.5,dir*5.17)),c_white,0.25+lengthdir_x(0.25,dir))
-with objHouse draw_sprite_general(sprite_index,image_index,0,0,128,255,x-64,y,image_xscale,image_yscale,image_angle,global.color,global.color,c_black,c_black,image_alpha)
-i=0
-repeat (5) {
-draw_sprite_general(sprPalmTrees,palmindex[i],0,0,82,255,palmx[i]-41,65,1,1,0,global.color,global.color,c_black,c_black,1)
-palmx[i]-=2
-if palmx[i]&lt;=-60 {palmx[i]=room_width+60 palmindex[i]=floor(random(6))}
-i+=1
-}*/
-
-global.color3=merge_color(merge_color(merge_color(c_aqua,c_green,0.5+lengthdir_x(0.5,dir*3.12)),c_lime,0.125+lengthdir_y(0.125,dir*1.73)),merge_color(c_white,c_blue,0.5+lengthdir_x(0.3,dir)),0.5+lengthdir_x(0.5,dir*2.33))
-draw_set_blend_mode(bm_add)
-with objPalmTree {
-draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2+amount,room_height*0.5-(250*(amount/240)),amount/240,(amount/120),0,global.color3,global.color3,c_black,c_black,1)
-draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2-amount-(amount/240)*82,room_height*0.5-(250*(amount/240)),-amount/240,amount/120,0,global.color3,global.color3,c_black,c_black,1)
+            <string>if (move[select] == "Drop Weapon")||
+    move[select] == "Pick Up" ||
+    move[select] == "Advance Dialogue" ||
+    move[select] == "Skip Dialogue" ||
+    move[select] == "Pause Menu" ||
+    move[select] == "Quit" ||
+    move[select] == "Aim" {
+        image_speed = 0;
+        image_index = 0;
+} else image_speed = 0.2;
+if (move[select] == "Finish Enemy" &amp;&amp; sprite_index == sprPWalkUnarmed) {
+    image_speed = 0;
+    image_index = 0;
+}
+if (move[select] == "Throw Weapon" &amp;&amp; sprite_index == sprPWalkUnarmed) {
+    image_speed = 0;
+    image_index = 0;
+}
+if (move[select] == "Human Shield" &amp;&amp; sprite_index == sprPWalkDoubleBarrel) {
+    image_speed = 0;
+    image_index = 0;
+}
+if (sprite_index == sprPAttackPipe) {
+    image_speed = 0;
+    if (image_index &lt; 8.4)
+        image_index += 0.2;
+    else {
+        image_yscale *= -1;
+        image_index = 1;
+    }
+}
+if (move[select] == "Interact") {
+    image_speed = 0;
+    if (sprite_index == sprPTakePhone) {
+        if (image_index &lt; 3)
+            image_index += 0.25;
+    } else image_index = 0;
 }
 
-draw_set_blend_mode(bm_normal)
+dir += 0.25;
+color2 = merge_color(c_black, merge_color(c_yellow, c_red, 0.5 + lengthdir_x(0.5, dir * 3.12)), 0.5 + lengthdir_x(0.25, dir * 1.13));
+color1 = merge_color(c_black, merge_color(merge_color(c_orange, c_maroon, 0.5 + lengthdir_x(0.5, dir * 3.12)), c_olive, 0.125 + lengthdir_y(0.125, dir * 1.73)), 0.35 + lengthdir_y(0.25, dir * 1.73));
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+draw_rectangle_color(view_xview[0], view_yview[0] + 44, view_xview[0] + view_wview[0], view_yview[0] + view_hview[0] - 43, color1, color1, color2, color2, 0);
 
-draw_set_blend_mode(bm_normal)
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],view_angle[0])
-draw_surface_ext(global.surf1,0,-1,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,-1,0,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,0,1,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,1,0,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,0,0,1,1,0,merge_color(c_white,merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3)),0.25+lengthdir_x(0.25,dir)),1)
-//if sprite_index!=sprite[select] sprite_index=sprite[select]
-global.x=x
-global.y=y
-global.dir=mapdir
-with all {
-if sprite_index&gt;0 {
-if object_index=objWeapon angle=0
-if object_index=objShowControls nothing=1 else {
-drawdir=point_direction(global.x,global.y,x,y)
-draw_sprite_ext(sprite_index,image_index,global.x+lengthdir_x(point_distance(x,y,global.x,global.y),global.dir+drawdir),global.y+lengthdir_y(point_distance(x,y,global.x,global.y),global.dir+drawdir),image_xscale,image_yscale,global.dir+image_angle+angle,image_blend,image_alpha)
-}
-if sprite_index=sprDrawersH24Phone {
-draw_sprite_ext(sprArrow,0,global.x+lengthdir_x(point_distance(x,y,global.x,global.y),global.dir+drawdir),global.y+lengthdir_y(point_distance(x,y,global.x,global.y),global.dir+drawdir)-16+lengthdir_x(4,global.dir*16),image_xscale,image_yscale,0,image_blend,image_alpha)
-}
-}
-}
-draw_sprite_ext(sprite_index,image_index,room_width/2,room_height/2,1,image_yscale,mapdir,c_white,1)
-
-view_angle[0]=lengthdir_y(3,dir*3.33)
-if fade=0 {
-if c_amount&lt;180 {
-c_amount+=10
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color1,color2,color2,color1,0)
-draw_set_blend_mode(bm_normal)
-}
+global.color3 = merge_color(merge_color(merge_color(c_aqua, c_green, 0.5 + lengthdir_x(0.5, dir * 3.12)), c_lime, 0.125 + lengthdir_y(0.125, dir * 1.73)), merge_color(c_white, c_blue, 0.5 + lengthdir_x(0.3, dir)), 0.5 + lengthdir_x(0.5, dir * 2.33));
+draw_set_blend_mode(bm_add);
+with (objPalmTree) {
+    draw_sprite_general(sprPalmTrees, image_index, 0, 0, 82, 256, room_width / 2 + amount, room_height * 0.5 - (250 * (amount / 240)), amount / 240, (amount / 120), 0, global.color3, global.color3, c_black, c_black, 1);
+    draw_sprite_general(sprPalmTrees, image_index, 0, 0, 82, 256, room_width / 2 - amount - (amount / 240) * 82, room_height * 0.5 - (250 * (amount / 240)), -amount / 240, amount / 120, 0, global.color3, global.color3, c_black, c_black, 1);
 }
 
-if fade=1 {
-if c_amount&gt;0  {
-c_amount-=5
-if restart=0 sxeasy_setVolume(c_amount*(1/180))
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0)
-draw_set_blend_mode(bm_normal)
-} else {if restart=0 {sxeasy_stop() sxeasy_setVolume(1) sxeasy_play(working_directory+"\DeepCover.mp3") room_goto(global.sequence)} else room=rmMenu}
+draw_set_blend_mode(bm_normal);
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], view_angle[0]);
+draw_surface_ext(global.surf1, 0, -1, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, -1, 0, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, 0, 1, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, 1, 0, 1, 1, 0, c_black, 1);
+draw_surface_ext(global.surf1, 0, 0, 1, 1, 0, merge_color(c_white, merge_color(c_aqua, c_fuchsia, 0.5 + lengthdir_x(0.5, dir * 3)), 0.25 + lengthdir_x(0.25, dir)), 1);
+global.x = x;
+global.y = y;
+global.dir = mapdir;
+with (all) {
+    if (sprite_index &gt; 0) {
+        if (object_index == objWeapon)
+            angle = 0;
+        if (object_index == objShowControls) {
+            // do nothing
+        } else {
+            drawdir = point_direction(global.x, global.y, x, y);
+            draw_sprite_ext(sprite_index, image_index, global.x + lengthdir_x(point_distance(x, y, global.x, global.y), global.dir + drawdir), global.y + lengthdir_y(point_distance(x, y, global.x, global.y), global.dir + drawdir), image_xscale, image_yscale, global.dir + image_angle + angle, image_blend, image_alpha);
+        }
+        if (sprite_index == sprDrawersH24Phone) {
+            draw_sprite_ext(sprArrow, 0, global.x + lengthdir_x(point_distance(x, y, global.x, global.y), global.dir + drawdir), global.y + lengthdir_y(point_distance(x, y, global.x, global.y), global.dir + drawdir) - 16 + lengthdir_x(4, global.dir * 16), image_xscale, image_yscale, 0, image_blend, image_alpha);
+        }
+    }
+}
+draw_sprite_ext(sprite_index, image_index, room_width / 2, room_height / 2, 1, image_yscale, mapdir, c_white, 1);
+
+view_angle[0] = lengthdir_y(3, dir * 3.33);
+if (!fade) {
+    if (c_amount &lt; 180) {
+        c_amount += 10;
+        color1 = merge_color(c_black, merge_color(c_aqua, c_white, 0.5 + lengthdir_x(0.5, c_amount)), 0.5 + lengthdir_x(0.5, c_amount));
+        if (c_amount &gt; 90)
+            color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
+        else color2 = c_white;
+        draw_set_blend_mode(bm_subtract);
+        draw_rectangle_color(view_xview[0] - 10, view_yview[0] - 10, view_xview[0] + view_wview[0] + 10, view_yview[0] + view_hview[0] + 10, color1, color2, color2, color1, 0);
+        draw_set_blend_mode(bm_normal);
+    }
 }
 
+if (fade) {
+    if (c_amount &gt; 0) {
+        c_amount -= 5;
+        if (!restart)
+            sxeasy_setVolume(c_amount * (1 / 180));
+        color1 = merge_color(c_black, merge_color(c_aqua, c_white, 0.5 + lengthdir_x(0.5, c_amount)), 0.5 + lengthdir_x(0.5, c_amount));
+        if (c_amount &gt; 90)
+            color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
+        else color2 = c_white;
+        draw_set_blend_mode(bm_subtract);
+        draw_rectangle_color(view_xview[0] - 10, view_yview[0] - 10, view_xview[0] + view_wview[0] + 10, view_yview[0] + view_hview[0] + 10, color2, color1, color1, color2, 0);
+        draw_set_blend_mode(bm_normal);
+    } else {
+        if (!restart) {
+            sxeasy_stop();
+            sxeasy_setVolume(1);
+            sxeasy_play(working_directory + "\DeepCover.mp3");
+            room_goto(global.sequence);
+        } else room = rmMenu;
+    }
+}
 
-
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_set_color(c_black)
-draw_rectangle(0,0,room_width,44,0)
-draw_rectangle(0,room_height,room_width,room_height-44,0)
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+draw_set_color(c_black);
+draw_rectangle(0, 0, room_width, 44, 0);
+draw_rectangle(0, room_height, room_width, room_height - 44, 0);
 
 drawVignette();
 </string>
@@ -423,31 +461,43 @@ drawVignette();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if edit=1 exit
-if global.xbox=1 or wait&gt;0 exit
-wait=3
-with objAnsweringMachine instance_destroy()
-with objWeapon instance_destroy()
-with objWeaponThrow instance_destroy()
-with objKnockedOut instance_destroy()
-if fade=1 exit
-if select&lt;14 select+=1 else select=0
+            <string>if (edit)
+    exit;
+if (global.xbox || wait &gt; 0)
+    exit;
+    
+wait = 3;
+with (objAnsweringMachine)
+    instance_destroy();
+with (objWeapon)
+    instance_destroy();
+with (objWeaponThrow)
+    instance_destroy();
+with (objKnockedOut)
+    instance_destroy();
+if (fade)
+    exit;
+    
+if (select &lt; 14)
+    select++;
+else select = 0;
 
-sprite_index=sprite[select]
+sprite_index = sprite[select];
 
-if move[select]="Interact" {
-my_id=instance_create(x+32,y,objAnsweringMachine)
-my_id.image_angle=-90
-my_id.visible=0
-my_id.angle=0
+if (move[select] == "Interact") {
+    my_id = instance_create(x + 32, y, objAnsweringMachine);
+    my_id.image_angle = -90;
+    my_id.angle = 0;
+    my_id.visible = 0;
 }
 
-if move[select]="Pick Up" {
-my_id=instance_create(x+16,y+16,objWeapon)
-my_id.image_index=4
-my_id.visible=0
-my_id.angle=0
-}</string>
+if (move[select] == "Pick Up") {
+    my_id = instance_create(x + 16, y + 16, objWeapon);
+    my_id.image_index = 4;
+    my_id.visible = 0;
+    my_id.angle = 0;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -469,32 +519,42 @@ my_id.angle=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if edit=1 exit
-if global.xbox=1 or wait&gt;0 exit
-wait=3
-with objAnsweringMachine instance_destroy()
-with objWeapon instance_destroy()
-with objWeaponThrow instance_destroy()
-with objKnockedOut instance_destroy()
-if fade=1 exit
-if select&gt;0 select-=1 else select=14
+            <string>if (edit)
+    exit;
+if (global.xbox || wait &gt; 0)
+    exit;
+    
+wait = 3;
+with (objAnsweringMachine)
+    instance_destroy();
+with (objWeapon)
+    instance_destroy();
+with (objWeaponThrow)
+    instance_destroy();
+with (objKnockedOut)
+    instance_destroy();
+if (fade)
+    exit;
+if (select &gt; 0)
+    select--;
+else select = 14;
 
-sprite_index=sprite[select]
+sprite_index = sprite[select];
 
-
-if move[select]="Interact" {
-my_id=instance_create(x+32,y,objAnsweringMachine)
-my_id.image_angle=-90
-my_id.angle=0
-my_id.visible=0
+if (move[select] == "Interact") {
+    my_id = instance_create(x + 32, y, objAnsweringMachine);
+    my_id.image_angle = -90;
+    my_id.angle = 0;
+    my_id.visible = 0;
 }
 
-if move[select]="Pick Up" {
-my_id=instance_create(x+16,y+16,objWeapon)
-my_id.image_index=4
-my_id.visible=0
-my_id.angle=0
-}</string>
+if (move[select] == "Pick Up") {
+    my_id = instance_create(x + 16, y + 16, objWeapon);
+    my_id.image_index = 4;
+    my_id.visible = 0;
+    my_id.angle = 0;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -516,7 +576,8 @@ my_id.angle=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_keypress,ord('D'))</string>
+            <string>event_perform(ev_keypress, ord('D'));
+</string>
           </argument>
         </arguments>
       </action>
@@ -538,7 +599,8 @@ my_id.angle=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_keypress,ord('A'))</string>
+            <string>event_perform(ev_keypress, ord('A'));
+</string>
           </argument>
         </arguments>
       </action>
@@ -560,10 +622,13 @@ my_id.angle=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if edit=1 exit
-if global.xbox=1 exit
-restart=1
-fade=1</string>
+            <string>if (edit)
+    exit;
+if (global.xbox)
+    exit;
+restart = 1;
+fade = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -585,10 +650,11 @@ fade=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if select=0 or select=14 {
-edit=1
-wait=10
-}</string>
+            <string>if (select == 0 || select == 14) {
+    edit = 1;
+    wait = 10;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -610,22 +676,33 @@ wait=10
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if wait&gt;0 exit
-wait=3
-if edit=1 and select=0 {
-if select=0 {
-if current=0 global.upkey=string_upper(chr(keyboard_lastkey)) 
-if current=1 global.leftkey=string_upper(chr(keyboard_lastkey)) 
-if current=2 global.downkey=string_upper(chr(keyboard_lastkey)) 
-if current=3 global.rightkey=string_upper(chr(keyboard_lastkey)) 
-current+=1
-if current=4 {edit=0 scrSaveKeys() current=0}
-}
+            <string>if (wait &gt; 0)
+    exit;
+wait = 3;
+if (edit || select == 0) {
+    if (select == 0) {
+        if (current == 0)
+            global.upkey = string_upper(chr(keyboard_lastkey));
+        if (current == 1)
+            global.leftkey = string_upper(chr(keyboard_lastkey));
+        if (current == 2)
+            global.downkey = string_upper(chr(keyboard_lastkey));
+        if (current == 3)
+            global.rightkey = string_upper(chr(keyboard_lastkey));
+        current++;
+        if (current == 4) {
+            edit = 0;
+            scrSaveKeys();
+            current = 0;
+        }
+    }
 }
 
-if edit=1 and select=14 {
-global.restartkey=string_upper(chr(keyboard_lastkey)) 
-edit=0 scrSaveKeys() current=0
+if (edit &amp;&amp; select == 14) {
+    global.restartkey = string_upper(chr(keyboard_lastkey));
+    edit = 0;
+    scrSaveKeys();
+    current = 0;
 }
 </string>
           </argument>

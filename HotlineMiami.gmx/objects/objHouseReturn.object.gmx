@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_blend=c_black
-scale=0.75+random(0.25)
-speed=(scale*scale*scale)*3
-if room=rmHospitalTransition speed*=0.2
-image_xscale=scale
-y=80-scale*32
-index=0
+            <string>image_blend = c_black;
+scale = 0.75 + random(0.25);
+speed = (scale * scale * scale) * 3;
+if (room == rmHospitalTransition)
+    speed *= 0.2;
+image_xscale = scale;
+y = 80 - scale * 32;
+index = 0;
 </string>
           </argument>
         </arguments>
@@ -54,15 +55,18 @@ index=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if x&gt;room_width+100 {
-instance_destroy() 
-instance_create(-100-random(60),y,objHouseReturn)
+            <string>if (x &gt; room_width + 100) {
+    instance_destroy();
+    instance_create(-100 - random(60), y, objHouseReturn);
 }
 
-index=9-(x*(1/(room_width/9)))
-image_index=round(index)
-if image_index&lt;0 image_index=0
-if image_index&gt;9 image_index=9</string>
+index = 9 - (x * (1 / (room_width / 9)));
+image_index = round(index);
+if (image_index &lt; 0)
+    image_index = 0;
+if (image_index &gt; 9)
+    image_index = 9;
+</string>
           </argument>
         </arguments>
       </action>
@@ -84,7 +88,8 @@ if image_index&gt;9 image_index=9</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>// don't draw sprite
+</string>
           </argument>
         </arguments>
       </action>

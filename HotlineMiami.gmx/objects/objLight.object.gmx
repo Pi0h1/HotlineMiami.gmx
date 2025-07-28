@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>strength=0</string>
+            <string>strength = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,8 +48,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if strength&lt;targetstrength strength+=0.05
-if strength&gt;targetstrength strength-=0.05</string>
+            <string>if (strength &lt; targetstrength)
+    strength += 0.05;
+if (strength &gt; targetstrength)
+    strength -= 0.05;
+</string>
           </argument>
         </arguments>
       </action>

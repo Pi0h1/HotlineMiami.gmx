@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.3+random(0.2)
-image_xscale=1+random(1)
-image_yscale=1+random(1)
-image_angle=random(360)
-sprite_index=choose(sprFlameBig,sprFlameSmall1,sprFlameSmall2)
-images=sprite_get_number(sprite_index)</string>
+            <string>image_speed = 0.3 + random(0.2);
+image_xscale = 1 + random(1);
+image_yscale = 1 + random(1);
+image_angle = random(360);
+sprite_index = choose(sprFlameBig, sprFlameSmall1, sprFlameSmall2);
+images = sprite_get_number(sprite_index);
+</string>
           </argument>
         </arguments>
       </action>
@@ -52,7 +53,8 @@ images=sprite_get_number(sprite_index)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_blend=merge_color(c_white,c_yellow,random(image_index*(1/images)))</string>
+            <string>image_blend = merge_color(c_white, c_yellow, random(image_index * (1 / images)));
+</string>
           </argument>
         </arguments>
       </action>
@@ -74,7 +76,8 @@ images=sprite_get_number(sprite_index)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy()</string>
+            <string>instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>

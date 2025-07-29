@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-bled=0
-scrInitMaskPos()
-scrUpdateMaskPos(sprite_index)</string>
+            <string>image_speed = 0;
+bled = 0;
+scrInitMaskPos();
+scrUpdateMaskPos(sprite_index);
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,29 +51,31 @@ scrUpdateMaskPos(sprite_index)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;29 image_index+=0.15 else {
-instance_create(x+lengthdir_x(24,image_angle),y+lengthdir_y(24,image_angle),objBloodPool)
-my_id=instance_create(x,y,objDeadBody)
-my_id.image_angle=image_angle
-my_id.sprite_index=sprBoss1Dead
-my_id=instance_create(x,y,objPlayerMouse)
-my_id.maskon=global.maskon
-my_id.maskindex=global.maskindex
-instance_destroy()
-exit
+            <string>if (image_index &lt; 29)
+    image_index += 0.15;
+else {
+    instance_create(x + lengthdir_x(24, image_angle), y + lengthdir_y(24, image_angle), objBloodPool);
+    my_id = instance_create(x, y, objDeadBody);
+    my_id.image_angle = image_angle;
+    my_id.sprite_index = sprBoss1Dead;
+    my_id = instance_create(x, y, objPlayerMouse);
+    my_id.maskon = global.maskon;
+    my_id.maskindex = global.maskindex;
+    instance_destroy();
+    exit;
 }
-if image_index&gt;13 and bled=0{
-bled=1
-audio_play_sound(sndHit,0,false)
-repeat (2+random(3)) {
-instance_create(x+lengthdir_x(24,image_angle)-1+random(2),y+lengthdir_y(24,image_angle)-1+random(2),objBloodSquirt)
-}
-repeat (4) {
-my_id=instance_create(x+lengthdir_x(24,image_angle)-1+random(2),y+lengthdir_y(24,image_angle)-1+random(2),objBloodSmoke)
-my_id.direction=random(360)
-my_id.speed=random(3)
-my_id.image_angle=my_id.direction
-}
+if (image_index &gt; 13 &amp;&amp; !bled) {
+    bled = 1;
+    audio_play_sound(sndHit, 0, false);
+    repeat(2 + random(3)) {
+        instance_create(x + lengthdir_x(24, image_angle) - 1 + random(2), y + lengthdir_y(24, image_angle) - 1 + random(2), objBloodSquirt);
+    }
+    repeat(4) {
+        my_id = instance_create(x + lengthdir_x(24, image_angle) - 1 + random(2), y + lengthdir_y(24, image_angle) - 1 + random(2), objBloodSmoke);
+        my_id.direction = random(360);
+        my_id.speed = random(3);
+        my_id.image_angle = my_id.direction;
+    }
 }
 </string>
           </argument>
@@ -96,9 +99,10 @@ my_id.image_angle=my_id.direction
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-scrDrawMask(1)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+scrDrawMask(1);
+</string>
           </argument>
         </arguments>
       </action>

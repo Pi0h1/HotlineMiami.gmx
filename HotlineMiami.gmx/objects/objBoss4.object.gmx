@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state=0
-wait=60
-image_speed=0
-alarm[0]=100+random(200)
-global.done=0
-scrInitPathFinding()</string>
+            <string>state = 0;
+wait = 60;
+image_speed = 0;
+alarm[0] = 100 + random(200);
+global.done = 0;
+scrInitPathFinding();
+</string>
           </argument>
         </arguments>
       </action>
@@ -52,10 +53,11 @@ scrInitPathFinding()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0]=100+random(200)
-if sprite_index=sprBoss4Idle and instance_exists(objPlayer) {
-image_speed=0.2
-}</string>
+            <string>alarm[0] = 100 + random(200);
+if (sprite_index == sprBoss4Idle &amp;&amp; instance_exists(objPlayer)) {
+    image_speed = 0.2;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -77,322 +79,368 @@ image_speed=0.2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrXboxRestart()
+            <string>if (global.xbox)
+    scrXboxRestart();
 
-if keyboard_check_pressed(ord(global.restartkey)) event_perform(ev_keypress,ord('R'))
+if (keyboard_check_pressed(ord(global.restartkey)))
+    event_perform(ev_keypress, ord('R'));
 
-if !instance_exists(objPlayer) {
-sprite_index=sprBoss4Idle
-image_index=0
-image_angle=0
-exit
+if (!instance_exists(objPlayer)) {
+    sprite_index = sprBoss4Idle;
+    image_index = 0;
+    image_angle = 0;
+    exit;
 }
-if sprite_index=sprBoss4Idle nothing=1 else image_speed=0
+if (sprite_index == sprBoss4Idle) {
+    // do nothing
+} else image_speed = 0;
 
-if state=0 {
-if objPlayer.y&lt;476 {
+if (state == 0) {
+    if (objPlayer.y &lt; 476) {
 
-with objPlayerMouse {
-my_id=instance_create(x,y,objPlayerMouseHouse)
-my_id.active=0
-my_id.dir=dir
-my_id.legindex=legindex
-my_id.image_index=image_index
-my_id.direction=90
-my_id.legdir=90
-my_id.maskon=1
-my_id.maskindex=maskindex
-if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackPunch nothing=1 else {
-my_id=instance_create(x+lengthdir_x(8,dir+90),y+lengthdir_y(8,dir+90),objWeaponThrow)
-my_id.image_index=scrCurrentWeaponExt(sprite_index)
-my_id.direction=250+random(40)
-my_id.speed=3
-my_id.ammo=ammo
-}
-instance_destroy()
-}
+        with (objPlayerMouse) {
+            my_id = instance_create(x, y, objPlayerMouseHouse);
+            my_id.active = 0;
+            my_id.dir = dir;
+            my_id.legindex = legindex;
+            my_id.image_index = image_index;
+            my_id.direction = 90;
+            my_id.legdir = 90;
+            my_id.maskon = 1;
+            my_id.maskindex = maskindex;
+            if (sprite_index == sprPWalkUnarmed || sprite_index == sprPAttackPunch) {
+                // do nothing
+            } else {
+                my_id = instance_create(x + lengthdir_x(8, dir + 90), y + lengthdir_y(8, dir + 90), objWeaponThrow);
+                my_id.image_index = scrCurrentWeaponExt(sprite_index);
+                my_id.direction = 250 + random(40);
+                my_id.speed = 3;
+                my_id.ammo = ammo;
+            }
+            instance_destroy();
+        }
 
-if objPlayer.y&gt;240 {
-objPlayer.y-=2
-objPlayer.image_index+=0.2
-objPlayer.legindex+=0.3
-} else {with objDoorH {solid=1 image_angle=0} with objDoorH2 {solid=1 image_angle=0} state=1}
-}
-}
-
-if state=1 {
-scrGetMessage(0)
-state=2
-}
-
-if state=2 {
-if !instance_exists(objPhoneConversation) {
-
-with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
-my_id.dir=dir
-my_id.legindex=legindex
-my_id.image_index=image_index
-my_id.direction=90
-my_id.legdir=90
-my_id.maskon=1
-my_id.maskindex=maskindex
-instance_destroy()
+        if (objPlayer.y &gt; 240) {
+            objPlayer.y -= 2;
+            objPlayer.image_index += 0.2;
+            objPlayer.legindex += 0.3;
+        } else {
+            with (objDoorH) {
+                solid = 1;
+                image_angle = 0;
+            }
+            with (objDoorH2) {
+                solid = 1;
+                image_angle = 0;
+            }
+            state = 1;
+        }
+    }
 }
 
-if wait&gt;0 wait-=1 else {
-global.test=0
-with objPanther {
-if global.test=0 {state=1 global.test=1}
-}
-wait=100
-}
-}
-if !instance_exists(objPanther) {if global.maskindex=16 SteamSetAchievement("ACH_CAT_FIGHT") state=3}
+if (state = 1) {
+    scrGetMessage(0);
+    state = 2;
 }
 
-if state=3 {
-if instance_number(objPBodyguardBash)+instance_number(objPBodyguardBlunt)+instance_number(objBodyguard)+instance_number(objBodyguardCrawl)+instance_number(objPKillBodyguard)=0 {
-scrGetMessage(1)
-with objPlayerMouse {
-my_id=instance_create(x,y,objPlayerMouseHouse)
-my_id.active=0
-my_id.dir=dir
-my_id.legindex=legindex
-my_id.image_index=image_index
-my_id.direction=90
-my_id.legdir=90
-my_id.maskon=1
-my_id.maskindex=maskindex
-instance_destroy()
-}
-state=4
-} 
+if (state == 2) {
+    if (!instance_exists(objPhoneConversation)) {
+
+        with (objPlayerMouseHouse) {
+            my_id = instance_create(x, y, objPlayerMouse);
+            my_id.dir = dir;
+            my_id.legindex = legindex;
+            my_id.image_index = image_index;
+            my_id.direction = 90;
+            my_id.legdir = 90;
+            my_id.maskon = 1;
+            my_id.maskindex = maskindex;
+            instance_destroy();
+        }
+
+        if (wait &gt; 0)
+            wait--;
+        else {
+            global.test = 0;
+            with (objPanther) {
+                if (global.test == 0) {
+                    state = 1;
+                    global.test = 1;
+                }
+            }
+            wait = 100;
+        }
+    }
+    if (!instance_exists(objPanther)) {
+        if (global.maskindex == 16)
+            SteamSetAchievement("ACH_CAT_FIGHT");
+        state = 3;
+    }
 }
 
-if state=4 {
-if !instance_exists(objPhoneConversation) {
-
-with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
-my_id.dir=dir
-my_id.legindex=legindex
-my_id.image_index=image_index
-my_id.direction=90
-my_id.legdir=90
-my_id.maskon=1
-my_id.maskindex=maskindex
-instance_destroy()
+if (state == 3) {
+    if (instance_number(objPBodyguardBash) + instance_number(objPBodyguardBlunt) + instance_number(objBodyguard) + instance_number(objBodyguardCrawl) + instance_number(objPKillBodyguard) == 0) {
+        scrGetMessage(1);
+        with (objPlayerMouse) {
+            my_id = instance_create(x, y, objPlayerMouseHouse);
+            my_id.active = 0;
+            my_id.dir = dir;
+            my_id.legindex = legindex;
+            my_id.image_index = image_index;
+            my_id.direction = 90;
+            my_id.legdir = 90;
+            my_id.maskon = 1;
+            my_id.maskindex = maskindex;
+            instance_destroy();
+        }
+        state = 4;
+    }
 }
 
-if sprite_index=sprBoss4Idle {
-sprite_index=sprBoss4GetGuns
-image_index=0
-vspeed=-1.5
-friction=0.1
-with objBoss4Chair {
-vspeed=-1.5
-friction=0.1
-}
-ammo=60
-with objPlayer active=0
+if (state == 4) {
+    if (!instance_exists(objPhoneConversation)) {
+
+        with (objPlayerMouseHouse) {
+            my_id = instance_create(x, y, objPlayerMouse);
+            my_id.dir = dir;
+            my_id.legindex = legindex;
+            my_id.image_index = image_index;
+            my_id.direction = 90;
+            my_id.legdir = 90;
+            my_id.maskon = 1;
+            my_id.maskindex = maskindex;
+            instance_destroy();
+        }
+
+        if (sprite_index == sprBoss4Idle) {
+            sprite_index = sprBoss4GetGuns;
+            image_index = 0;
+            vspeed = -1.5;
+            friction = 0.1;
+            with (objBoss4Chair) {
+                vspeed = -1.5;
+                friction = 0.1;
+            }
+            ammo = 60;
+            with (objPlayer)
+                active = 0;
+        }
+
+        if (sprite_index == sprBoss4GetGuns) {
+            if (image_index &lt; 9)
+                image_index += 0.2;
+            else {
+                image_index = 0;
+                sprite_index = sprBoss4Shoot1;
+            }
+        }
+
+        if (sprite_index == sprBoss4Shoot1) {
+            image_index += 0.5;
+            dir = point_direction(x, y, objPlayer.x, objPlayer.y) + 90;
+            if (dir &lt; 0)
+                dir += 360;
+            image_angle = scrRotate(image_angle, dir, 4);
+            if (image_index == 1 || image_index == 3 &amp;&amp; frac(image_index) == 0) {
+                if (ammo &gt; 0) {
+                    ammo--;
+                    if (image_index == 1)
+                        my_id = instance_create(x + lengthdir_x(32, image_angle - 100), y + lengthdir_y(32, image_angle - 100), objEBullet);
+                    else my_id = instance_create(x + lengthdir_x(32, image_angle - 80), y + lengthdir_y(32, image_angle - 80), objEBullet);
+                    audio_play_sound(sndMP5, 0, false);
+                    my_id.direction = image_angle - 90;
+                    my_id.image_angle = image_angle - 90;
+                    my_id.speed = 12;
+                    image_angle += -3 + random(6);
+
+                    if (image_index == 1) {
+                        my_id = instance_create(x + lengthdir_x(24, image_angle - 85), y + lengthdir_y(24, image_angle - 85), objShell);
+                        my_id.direction = image_angle - 160 + random(40);
+                        my_id.speed = 2 + random(3);
+                    } else {
+                        my_id = instance_create(x + lengthdir_x(24, image_angle - 95), y + lengthdir_y(24, image_angle - 95), objShell);
+                        my_id.direction = image_angle - 20 + random(40);
+                        my_id.speed = 2 + random(3);
+                    }
+                } else {
+                    sprite_index = sprBoss4Reload1;
+                    image_index = 0;
+                }
+            }
+        }
+
+        if (sprite_index == sprBoss4Reload1) {
+            if (image_index &lt; 16)
+                image_index += 0.15;
+            else {
+                ammo = 40;
+                sprite_index = sprBoss4Shoot1;
+            }
+            if (image_index &gt; 1 &amp;&amp; image_index &lt; 1.15) {
+                my_id = instance_create(x + lengthdir_x(24, image_angle + 75), y + lengthdir_y(24, image_angle + 75), objClip);
+                my_id.direction = image_angle - 20 + random(40);
+                my_id.speed = 1 + random(1);
+            }
+        }
+
+        if (sprite_index == sprBoss4Shoot2) {
+            image_index += 0.5;
+            dir = point_direction(x, y, objPlayer.x, objPlayer.y) + 90;
+            if (dir &lt; 0)
+                dir += 360;
+            image_angle = scrRotate(image_angle, dir, 4);
+            if (image_index == 1 &amp;&amp; frac(image_index) = 0) {
+                if (ammo &gt; 0) {
+                    ammo--;
+                    my_id = instance_create(x + lengthdir_x(32, image_angle - 80), y + lengthdir_y(32, image_angle - 80), objEBullet);
+                    audio_play_sound(sndMP5, 0, false);
+                    my_id.direction = image_angle - 90;
+                    my_id.image_angle = image_angle - 90;
+                    my_id.speed = 12;
+                    image_angle += -3 + random(6);
+                                        
+                    my_id = instance_create(x + lengthdir_x(24, image_angle - 85), y + lengthdir_y(24, image_angle - 85), objShell);
+                    my_id.direction = image_angle - 160 + random(40);
+                    my_id.speed = 2 + random(3);
+                } else {
+                    sprite_index = sprBoss4Reload2;
+                    image_index = 0;
+                }
+            }
+        }
+
+        if (sprite_index == sprBoss4Reload2) {
+            if (image_index &lt; 16)
+                image_index += 0.15;
+            else {
+                ammo = 20;
+                sprite_index = sprBoss4Shoot2;
+            }
+            if (image_index &gt; 1 &amp;&amp; image_index &lt; 1.15) {
+                my_id = instance_create(x + lengthdir_x(24, image_angle - 75), y + lengthdir_y(24, image_angle - 75), objClip);
+                my_id.direction = image_angle - 20 + random(40);
+                my_id.speed = 1 + random(1);
+            }
+            if (image_index &gt; 2 &amp;&amp; image_index &lt; 2.15) {
+                my_id = instance_create(x + lengthdir_x(24, image_angle + 105), y + lengthdir_y(24, image_angle + 105), objClip);
+                my_id.direction = image_angle - 160 + random(40);
+                my_id.speed = 1 + random(1);
+            }
+        }
+
+        if (sprite_index == sprBoss4Hit1) {
+            image_angle = 0;
+            if (image_index &lt; 8)
+                image_index += 0.2;
+            else {
+                image_index = 0;
+                sprite_index = sprBoss4Shoot2;
+            }
+        }
+
+        if (sprite_index == sprBoss4Hit2) {
+            image_angle = 0;
+            if (image_index &lt; 8)
+                image_index += 0.2;
+            else {
+                state = 5;
+            }
+        }
+    }
 }
 
-if sprite_index=sprBoss4GetGuns {
-if image_index&lt;9 image_index+=0.2 else {image_index=0 sprite_index=sprBoss4Shoot1}
-}
 
-if sprite_index=sprBoss4Shoot1 {
-image_index+=0.5
-dir=point_direction(x,y,objPlayer.x,objPlayer.y)+90
-if dir&lt;0 dir+=360
-image_angle=scrRotate(image_angle,dir,4)
-if image_index=1 or image_index=3 and frac(image_index)=0 {
-if ammo&gt;0 {
-ammo-=1
-if image_index=1 my_id=instance_create(x+lengthdir_x(32,image_angle-100),y+lengthdir_y(32,image_angle-100),objEBullet) else my_id=instance_create(x+lengthdir_x(32,image_angle-80),y+lengthdir_y(32,image_angle-80),objEBullet)
-audio_play_sound(sndMP5,0,false)
-my_id.direction=image_angle-90
-my_id.image_angle=image_angle-90
-my_id.speed=12
-image_angle+=-3+random(6)
-
-if image_index=1 {
-my_id=instance_create(x+lengthdir_x(24,image_angle-85),y+lengthdir_y(24,image_angle-85),objShell)
-my_id.direction=image_angle-160+random(40)
-my_id.speed=2+random(3)
-}
-else {
-my_id=instance_create(x+lengthdir_x(24,image_angle-95),y+lengthdir_y(24,image_angle-95),objShell)
-my_id.direction=image_angle-20+random(40)
-my_id.speed=2+random(3)
+if (state == 5) {
+    scrGetMessage(3);
+    with (objPlayerMouse) {
+        my_id = instance_create(x, y, objPlayerMouseHouse);
+        my_id.active = 0;
+        my_id.dir = dir;
+        my_id.legindex = legindex;
+        my_id.image_index = image_index;
+        my_id.direction = 90;
+        my_id.legdir = 90;
+        my_id.maskon = 1;
+        my_id.maskindex = maskindex;
+        instance_destroy();
+    }
+    state = 6;
 }
 
 
-} else {
-sprite_index=sprBoss4Reload1 
-image_index=0
-}
-}
-}
-
-if sprite_index=sprBoss4Reload1 {
-if image_index&lt;16 image_index+=0.15 else {ammo=40 sprite_index=sprBoss4Shoot1}
-if image_index&gt;1 and image_index&lt;1.15 {
-my_id=instance_create(x+lengthdir_x(24,image_angle+75),y+lengthdir_y(24,image_angle+75),objClip)
-my_id.direction=image_angle-20+random(40)
-my_id.speed=1+random(1)
-}
+if (state == 6) {
+    if (!instance_exists(objPhoneConversation)) {
+        image_angle = 0;
+        image_index = 0;
+        sprite_index = sprBoss4Die;
+        state = 7;
+    }
 }
 
-if sprite_index=sprBoss4Shoot2 {
-image_index+=0.5
-dir=point_direction(x,y,objPlayer.x,objPlayer.y)+90
-if dir&lt;0 dir+=360
-image_angle=scrRotate(image_angle,dir,4)
-if image_index=1 and frac(image_index)=0 {
-if ammo&gt;0 {
-ammo-=1
-my_id=instance_create(x+lengthdir_x(32,image_angle-80),y+lengthdir_y(32,image_angle-80),objEBullet)
-audio_play_sound(sndMP5,0,false)
-my_id.direction=image_angle-90
-my_id.image_angle=image_angle-90
-my_id.speed=12
-image_angle+=-3+random(6)
-
-my_id=instance_create(x+lengthdir_x(24,image_angle-85),y+lengthdir_y(24,image_angle-85),objShell)
-my_id.direction=image_angle-160+random(40)
-my_id.speed=2+random(3)
-
-} else {
-sprite_index=sprBoss4Reload2 
-image_index=0
-}
-}
-}
-
-if sprite_index=sprBoss4Reload2 {
-if image_index&lt;16 image_index+=0.15 else {ammo=20 sprite_index=sprBoss4Shoot2}
-if image_index&gt;1 and image_index&lt;1.15 {
-my_id=instance_create(x+lengthdir_x(24,image_angle-75),y+lengthdir_y(24,image_angle-75),objClip)
-my_id.direction=image_angle-20+random(40)
-my_id.speed=1+random(1)
-}
-if image_index&gt;2 and image_index&lt;2.15 {
-my_id=instance_create(x+lengthdir_x(24,image_angle+105),y+lengthdir_y(24,image_angle+105),objClip)
-my_id.direction=image_angle-160+random(40)
-my_id.speed=1+random(1)
-}
-}
-
-if sprite_index=sprBoss4Hit1 {
-image_angle=0
-if image_index&lt;8 image_index+=0.2 else {image_index=0 sprite_index=sprBoss4Shoot2}
-}
-
-if sprite_index=sprBoss4Hit2 {
-image_angle=0
-if image_index&lt;8 image_index+=0.2 else {state=5}
-}
-
-
-}
-}
-
-
-if state=5 {
-//if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;64 {
-scrGetMessage(3)
-
-with objPlayerMouse {
-my_id=instance_create(x,y,objPlayerMouseHouse)
-my_id.active=0
-my_id.dir=dir
-my_id.legindex=legindex
-my_id.image_index=image_index
-my_id.direction=90
-my_id.legdir=90
-my_id.maskon=1
-my_id.maskindex=maskindex
-instance_destroy()
-}
-
-state=6
-//}
-}
-
-
-if state=6 {
-if !instance_exists(objPhoneConversation) {
-image_angle=0
-image_index=0
-sprite_index=sprBoss4Die
-state=7
-}
-}
-
-if state=7 {
-if image_index&lt;19 image_index+=0.2 else {
-if !instance_exists(objBossgun) {
-my_id=instance_create(x-12,y,objBossgun)
-my_id.friction=0.1
-my_id.speed=1
-my_id.direction=170
-}
-with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
-my_id.dir=dir
-my_id.legindex=legindex
-my_id.image_index=image_index
-my_id.direction=90
-my_id.legdir=90
-my_id.maskon=1
-my_id.maskindex=maskindex
-instance_destroy()
-}
-my_id=instance_create(x,y,objEmpty)
-my_id.image_speed=0
-my_id.image_angle=image_angle
-my_id.image_index=image_index
-my_id.sprite_index=sprite_index
-instance_destroy()
-exit
-state=8
-}
-if image_index&gt;12 and image_index-0.2&lt;12 {
-repeat (8) {
-my_id=instance_create(x-3+random(6),y-3+random(6),objBloodDrop)
-my_id.image_xscale=1-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=point_direction(x-32,y,my_id.x,my_id.y)
-my_id.sprite_index=sprBloodSplatSmall
-my_id.direction=my_id.image_angle
-my_id.speed=2+random(4)
-}
-repeat (2+random(3)) {
-my_id=instance_create(x+random(12),y-3+random(6),objBloodDrop)
-my_id.image_xscale=1-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=point_direction(x-32,y,my_id.x,my_id.y)
-my_id.direction=my_id.image_angle
-my_id.speed=1+random(5)
-}
-repeat (4) {
-my_id=instance_create(x-3+random(6),y-3+random(6),objBloodSmoke)
-my_id.image_xscale=1.2-random(0.2)
-my_id.image_yscale=my_id.image_xscale
-my_id.image_angle=point_direction(x-32,y,my_id.x,my_id.y)
-my_id.direction=my_id.image_angle
-my_id.speed=2+random(1)
-my_id.friction=0.15
-}
-global.shake=10
-my_id=instance_create(x+12,y,objEBullet)
-my_id.speed=12
-with objPlayer energie=100
-instance_create(x,y,objLevelComplete)
-audio_play_sound(sndMagnum,0,false)
-}
+if (state == 7) {
+    if (image_index &lt; 19)
+        image_index += 0.2;
+    else {
+        if (!instance_exists(objBossgun)) {
+            my_id = instance_create(x - 12, y, objBossgun);
+            my_id.friction = 0.1;
+            my_id.speed = 1;
+            my_id.direction = 170;
+        }
+        with (objPlayerMouseHouse) {
+            my_id = instance_create(x, y, objPlayerMouse);
+            my_id.dir = dir;
+            my_id.legindex = legindex;
+            my_id.image_index = image_index;
+            my_id.direction = 90;
+            my_id.legdir = 90;
+            my_id.maskon = 1;
+            my_id.maskindex = maskindex;
+            instance_destroy();
+        }
+        my_id = instance_create(x, y, objEmpty);
+        my_id.image_speed = 0;
+        my_id.image_angle = image_angle;
+        my_id.image_index = image_index;
+        my_id.sprite_index = sprite_index;
+        instance_destroy();
+        exit;
+        state = 8;
+    }
+    if (image_index &gt; 12 &amp;&amp; image_index - 0.2 &lt; 12) {
+        repeat(8) {
+            my_id = instance_create(x - 3 + random(6), y - 3 + random(6), objBloodDrop);
+            my_id.image_xscale = 1 - random(0.2);
+            my_id.image_yscale = my_id.image_xscale;
+            my_id.image_angle = point_direction(x - 32, y, my_id.x, my_id.y);
+            my_id.sprite_index = sprBloodSplatSmall;
+            my_id.direction = my_id.image_angle;
+            my_id.speed = 2 + random(4);
+        }
+        repeat(2 + random(3)) {
+            my_id = instance_create(x + random(12), y - 3 + random(6), objBloodDrop);
+            my_id.image_xscale = 1 - random(0.2);
+            my_id.image_yscale = my_id.image_xscale;
+            my_id.image_angle = point_direction(x - 32, y, my_id.x, my_id.y);
+            my_id.direction = my_id.image_angle;
+            my_id.speed = 1 + random(5);
+        }
+        repeat(4) {
+            my_id = instance_create(x - 3 + random(6), y - 3 + random(6), objBloodSmoke);
+            my_id.image_xscale = 1.2 - random(0.2);
+            my_id.image_yscale = my_id.image_xscale;
+            my_id.image_angle = point_direction(x - 32, y, my_id.x, my_id.y);
+            my_id.direction = my_id.image_angle;
+            my_id.speed = 2 + random(1);
+            my_id.friction = 0.15;
+        }
+        global.shake = 10;
+        my_id = instance_create(x + 12, y, objEBullet);
+        my_id.speed = 12;
+        with objPlayer energie = 100;
+        instance_create(x, y, objLevelComplete);
+        audio_play_sound(sndMagnum, 0, false);
+    }
 }
 </string>
           </argument>
@@ -416,49 +464,51 @@ audio_play_sound(sndMagnum,0,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=sprBoss4Reload1 or sprite_index=sprBoss4Shoot1 {
-sprite_index=sprBoss4Hit1
-image_index=0
-image_angle=0
-audio_play_sound(choose(sndCut1,sndCut2),0,false)
-repeat (5) {
-my_id=instance_create(x-12,y,objBloodDrop)
-my_id.direction=other.direction-20+random(40)
-my_id.speed=2+random(2)
-my_id.image_xscale=1+random(0.2)
-my_id.image_yscale=my_id.image_xscale
-}
-with other instance_destroy()
+            <string>if (sprite_index == sprBoss4Reload1 || sprite_index == sprBoss4Shoot1) {
+    sprite_index = sprBoss4Hit1;
+    image_index = 0;
+    image_angle = 0;
+    audio_play_sound(choose(sndCut1, sndCut2), 0, false);
+    repeat(5) {
+        my_id = instance_create(x - 12, y, objBloodDrop);
+        my_id.direction = other.direction - 20 + random(40);
+        my_id.speed = 2 + random(2);
+        my_id.image_xscale = 1 + random(0.2);
+        my_id.image_yscale = my_id.image_xscale;
+    }
+    with (other)
+        instance_destroy();
 
-my_id=instance_create(x-12,y,objSpecificWeapon)
-my_id.direction=160+random(40)
-my_id.speed=1.5
-my_id.friction=0.1
-my_id.image_index=12
-my_id.ammo=0
-exit
+    my_id = instance_create(x - 12, y, objSpecificWeapon);
+    my_id.direction = 160 + random(40);
+    my_id.speed = 1.5;
+    my_id.friction = 0.1;
+    my_id.image_index = 12;
+    my_id.ammo = 0;
+    exit;
 }
 
-if sprite_index=sprBoss4Reload2 or sprite_index=sprBoss4Shoot2 {
-sprite_index=sprBoss4Hit2
-image_index=0
-image_angle=0
-audio_play_sound(choose(sndCut1,sndCut2),0,false)
-repeat (5) {
-my_id=instance_create(x+12,y,objBloodDrop)
-my_id.direction=other.direction-20+random(40)
-my_id.speed=2+random(2)
-my_id.image_xscale=1+random(0.2)
-my_id.image_yscale=my_id.image_xscale
-}
-my_id=instance_create(x+12,y,objSpecificWeapon)
-my_id.direction=-20+random(40)
-my_id.speed=1.5
-my_id.friction=0.1
-my_id.image_index=12
-my_id.ammo=0
-with other instance_destroy()
-exit
+if (sprite_index == sprBoss4Reload2 || sprite_index == sprBoss4Shoot2) {
+    sprite_index = sprBoss4Hit2;
+    image_index = 0;
+    image_angle = 0;
+    audio_play_sound(choose(sndCut1, sndCut2), 0, false);
+    repeat(5) {
+        my_id = instance_create(x + 12, y, objBloodDrop);
+        my_id.direction = other.direction - 20 + random(40);
+        my_id.speed = 2 + random(2);
+        my_id.image_xscale = 1 + random(0.2);
+        my_id.image_yscale = my_id.image_xscale;
+    }
+    my_id = instance_create(x + 12, y, objSpecificWeapon);
+    my_id.direction = -20 + random(40);
+    my_id.speed = 1.5;
+    my_id.friction = 0.1;
+    my_id.image_index = 12;
+    my_id.ammo = 0;
+    with (other)
+        instance_destroy();
+    exit;
 }
 </string>
           </argument>
@@ -482,7 +532,8 @@ exit
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0</string>
+            <string>image_speed = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -504,9 +555,10 @@ exit
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objPlayer) {
-objEffector.fade=1
-}</string>
+            <string>if (!instance_exists(objPlayer)) {
+    objEffector.fade = 1;
+}
+</string>
           </argument>
         </arguments>
       </action>

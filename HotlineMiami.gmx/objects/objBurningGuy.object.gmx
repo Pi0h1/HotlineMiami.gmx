@@ -25,18 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction=random(360)
-speed=2
-image_speed=0.25
-diradd=-4+random(8)
-alarm[0]=200
-repeat (30) {
-my_id=instance_create(x,y,objFlameParticle)
-my_id.direction=random(360)
-my_id.speed=2+random(3)
-my_id.friction=0.15
+            <string>direction = random(360);
+speed = 2;
+image_speed = 0.25;
+diradd = -4 + random(8);
+alarm[0] = 200;
+repeat(30) {
+    my_id = instance_create(x, y, objFlameParticle);
+    my_id.direction = random(360);
+    my_id.speed = 2 + random(3);
+    my_id.friction = 0.15;
 }
-audio_play_sound(sndMolotov,0,false)
+audio_play_sound(sndMolotov, 0, false);
 </string>
           </argument>
         </arguments>
@@ -59,9 +59,10 @@ audio_play_sound(sndMolotov,0,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_id=instance_create(x,y,objDeadBurning)
-my_id.image_angle=direction
-instance_destroy()</string>
+            <string>my_id = instance_create(x, y, objDeadBurning);
+my_id.image_angle = direction;
+instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>
@@ -83,17 +84,21 @@ instance_destroy()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if round(random(20))=2 diradd=-4+random(8)
-scrMoveSolidOn()
-if !place_free(x+hspeed*4,y) hspeed=-hspeed
-if !place_free(x,y+vspeed) vspeed=-vspeed
-scrMoveSolidOff()
-direction+=diradd
+            <string>if (round(random(20)) == 2)
+    diradd = -4 + random(8);
+scrMoveSolidOn();
+if (!place_free(x + hspeed * 4, y))
+    hspeed = -hspeed;
+if (!place_free(x, y + vspeed))
+    vspeed = -vspeed;
+scrMoveSolidOff();
+direction += diradd;
 
-my_id=instance_create(x,y,objFlameParticle)
-my_id.direction=random(360)
-my_id.speed=2+random(3)
-my_id.friction=0.15</string>
+my_id = instance_create(x, y, objFlameParticle);
+my_id.direction = random(360);
+my_id.speed = 2 + random(3);
+my_id.friction = 0.15;
+</string>
           </argument>
         </arguments>
       </action>
@@ -115,10 +120,11 @@ my_id.friction=0.15</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprBurningLegs,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprBurningLegs,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprBurningLegs, image_index, x + 1, y + 1, image_xscale, image_yscale, direction, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, direction, c_black, 0.5);
+draw_sprite_ext(sprBurningLegs, image_index, x, y, image_xscale, image_yscale, direction, image_blend, image_alpha);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, direction, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

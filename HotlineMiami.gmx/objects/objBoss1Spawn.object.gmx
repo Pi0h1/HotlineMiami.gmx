@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.15</string>
+            <string>image_speed = 0.15;
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,74 +48,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.done=1 {
-with objEffector {
-instance_create(x,y,objEffectorHouse)
-instance_destroy()
+            <string>if (global.done) {
+    with (objEffector) {
+        instance_create(x, y, objEffectorHouse);
+        instance_destroy();
+    }
+    with (objDoorV) {
+        if (x &lt; 80) {
+            solid = 1;
+            image_angle = 0;
+        }
+    }
+    with (objGate) {
+        image_index = 1;
+        solid = 0;
+    }
+    global.myx = x;
+    global.myy = y;
+    instance_destroy();
+    instance_create(global.myx, global.myy, objBossChair);
+    instance_create(global.myx + 8, global.myy + 16, objBoss1);
+    my_id = instance_create(x - 24, y, objBossJacket);
+    my_id.image_angle = 170 + random(20);
 }
-with objDoorV {
-if x&lt;80 {solid=1 image_angle=0}
-}
-with objGate {
-image_index=1
-solid=0
-}
-global.myx=x
-global.myy=y
-instance_destroy()
-instance_create(global.myx,global.myy,objBossChair)
-instance_create(global.myx+8,global.myy+16,objBoss1)
-my_id=instance_create(x-24,y,objBossJacket)
-my_id.image_angle=170+random(20)
-}</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="75">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>exit
-with objEnemy instance_destroy()
-global.done=1
-if global.done=1 {
-with objEffector {
-instance_create(x,y,objEffectorHouse)
-instance_destroy()
-}
-with objDoorV {
-if x=32 {solid=1 image_angle=0}
-}
-with objGate {
-image_index=1
-solid=0
-}
-global.myx=x
-global.myy=y
-instance_destroy()
-instance_create(global.myx,global.myy,objBoss1)
-test=objPlayer.persistent
-objPlayer.persistent=0
-global.loaded=1
-game_save(working_directory+"\tempsave.sav")
-//if !instance_exists(objMaskMenu) instance_create(x,y,objCheckpoint)
-global.loaded=0
-objPlayer.persistent=test
-}</string>
+</string>
           </argument>
         </arguments>
       </action>

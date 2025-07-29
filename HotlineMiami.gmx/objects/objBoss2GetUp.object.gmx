@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wait=100
-image_speed=0</string>
+            <string>wait = 100;
+image_speed = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -48,15 +49,20 @@ image_speed=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if wait&gt;0 wait-=1 else {
-if image_index&lt;5 image_index+=0.25 else {
-my_id=instance_create(x,y,objBoss2)
-my_id.image_angle=image_angle
-my_id.energie=energie
-my_id.state=3
-instance_destroy()
+            <string>if (wait &gt; 0)
+    wait--;
+else {
+    if (image_index &lt; 5)
+        image_index += 0.25;
+    else {
+        my_id = instance_create(x, y, objBoss2);
+        my_id.image_angle = image_angle;
+        my_id.energie = energie;
+        my_id.state = 3;
+        instance_destroy();
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -78,8 +84,9 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, 1);
+</string>
           </argument>
         </arguments>
       </action>

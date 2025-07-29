@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle=random(360)
-image_speed=0.25
-friction=0.1
-dist=0</string>
+            <string>image_angle = random(360);
+image_speed = 0.25;
+friction = 0.1;
+dist = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,15 +51,16 @@ dist=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dist+=speed
-if !place_free(x,y) or speed&lt;=3 or dist&gt;limit {
-if place_meeting(x,y,objVan) exit
-x-=hspeed
-y-=vspeed
-instance_create(x,y,objBottleExplosion)
-instance_destroy()
-audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
-audio_play_sound(sndMolotov,0,false)
+            <string>dist += speed;
+if (!place_free(x, y) || speed &lt;= 3 || dist &gt; limit) {
+    if (place_meeting(x, y, objVan))
+        exit;
+    x -= hspeed;
+    y -= vspeed;
+    instance_create(x, y, objBottleExplosion);
+    instance_destroy();
+    audio_play_sound(choose(sndGlass1, sndGlass2), 0, false);
+    audio_play_sound(sndMolotov, 0, false);
 }
 </string>
           </argument>

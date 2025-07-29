@@ -3642,7 +3642,7 @@
         <object>objects\objMolotov</object>
         <object>objects\objBurningGuy</object>
         <object>objects\objBoss3</object>
-        <object>objects\objBoss3Kneel</object>
+        <object>objects\_objBoss3Kneel</object>
         <object>objects\objBoss3Dead</object>
         <object>objects\objDeadBurning</object>
         <object>objects\objPlayerLighter</object>

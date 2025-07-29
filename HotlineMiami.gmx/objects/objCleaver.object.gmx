@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>bounced=0</string>
+            <string>bounced = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,12 +48,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if speed&gt;0 image_angle+=23
+            <string>if (speed &gt; 0)
+    image_angle += 23;
 
-if place_meeting(x,y,objPlayer) {
-global.my_id=id
-scrPlayerDieMelee()
-}</string>
+if (place_meeting(x, y, objPlayer)) {
+    global.my_id = id;
+    scrPlayerDieMelee();
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -74,21 +77,32 @@ scrPlayerDieMelee()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if speed&lt;=0 exit
-if other.object_index=objWallHeavyV {
-if x&gt;room_width/2 image_angle=0 else image_angle=180
+            <string>if (speed &lt;= 0)
+    exit;
+if (other.object_index = objWallHeavyV) {
+    if (x &gt; room_width / 2)
+        image_angle = 0;
+    else image_angle = 180;
 }
-if other.object_index=objWallHeavyH {
-if y&lt;room_height/2 image_angle=90 else image_angle=270
+if (other.object_index == objWallHeavyH) {
+    if (y &lt; room_height / 2)
+        image_angle = 90;
+    else image_angle = 270;
 }
-move_contact_solid(image_angle,speed*5)
-mask_index=sprBoss2PryMask
-if !place_free(x,y) {audio_play_sound(sndKnifeWall,0,false) move_bounce_solid(0) speed*=0.5 friction=0.5 bounced=1} else {
-audio_play_sound(sndHitWall,0,false)
-speed=0
-global.shake=2
+move_contact_solid(image_angle, speed * 5);
+mask_index = sprBoss2PryMask;
+if (!place_free(x, y)) {
+    audio_play_sound(sndKnifeWall, 0, false);
+    move_bounce_solid(0);
+    speed *= 0.5;
+    friction = 0.5;
+    bounced = 1;
+} else {
+    audio_play_sound(sndHitWall, 0, false);
+    speed = 0;
+    global.shake = 2;
 }
-mask_index=sprite_index
+mask_index = sprite_index;
 </string>
           </argument>
         </arguments>
@@ -111,14 +125,17 @@ mask_index=sprite_index
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if speed&lt;=0 exit
-if y&lt;room_height/2 image_angle=90 else image_angle=270
-move_contact_solid(image_angle,speed)
-x+=lengthdir_x(2,image_angle)
-y+=lengthdir_y(2,image_angle)
-speed=0
-global.shake=2
-audio_play_sound(sndHitWall,0,false)
+            <string>if (speed &lt;= 0)
+    exit;
+if (y &lt; room_height / 2)
+    image_angle = 90;
+else image_angle = 270;
+move_contact_solid(image_angle, speed);
+x += lengthdir_x(2, image_angle);
+y += lengthdir_y(2, image_angle);
+speed = 0;
+global.shake = 2;
+audio_play_sound(sndHitWall, 0, false);
 </string>
           </argument>
         </arguments>
@@ -141,14 +158,17 @@ audio_play_sound(sndHitWall,0,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if speed&lt;=0 exit
-if y&lt;room_height/2 image_angle=90 else image_angle=270
-move_contact_solid(image_angle,speed)
-x+=lengthdir_x(2,image_angle)
-y+=lengthdir_y(2,image_angle)
-speed=0
-global.shake=2
-audio_play_sound(sndHitWall,0,false)
+            <string>if (speed &lt;= 0)
+    exit;
+if (y &lt; room_height / 2)
+    image_angle = 90;
+else image_angle = 270;
+move_contact_solid(image_angle, speed);
+x += lengthdir_x(2, image_angle);
+y += lengthdir_y(2, image_angle);
+speed = 0;
+global.shake = 2;
+audio_play_sound(sndHitWall, 0, false);
 </string>
           </argument>
         </arguments>
@@ -171,8 +191,9 @@ audio_play_sound(sndHitWall,0,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, 1);
+</string>
           </argument>
         </arguments>
       </action>

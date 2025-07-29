@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.15
-alarm[0]=1+random(200)</string>
+            <string>image_speed = 0.15;
+alarm[0] = 1 + random(200);
+</string>
           </argument>
         </arguments>
       </action>
@@ -48,8 +49,8 @@ alarm[0]=1+random(200)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.15
-alarm[0]=100+random(150)
+            <string>image_speed = 0.15;
+alarm[0] = 100 + random(150);
 </string>
           </argument>
         </arguments>
@@ -72,7 +73,8 @@ alarm[0]=100+random(150)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0</string>
+            <string>image_speed = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -94,8 +96,8 @@ alarm[0]=100+random(150)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 </string>
           </argument>
         </arguments>

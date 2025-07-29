@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.2
-wait=60</string>
+            <string>image_speed = 0.2;
+wait = 60;
+</string>
           </argument>
         </arguments>
       </action>
@@ -48,34 +49,41 @@ wait=60</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if hspeed&gt;-3 hspeed-=0.2
-if wait&gt;0 {
-wait-=1
-addx=0
-viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+addx,y)*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+addx,y)
+            <string>if (hspeed &gt; -3)
+    hspeed -= 0.2;
+if (wait &gt; 0) {
+    wait--;
+    addx = 0;
+    viewspeed = point_distance(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, x + addx, y) * 0.1;
+    viewdir = point_direction(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, x + addx, y);
 
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)
+    view_xview[0] += lengthdir_x(viewspeed, viewdir);
+    view_yview[0] += lengthdir_y(viewspeed, viewdir);
 
-vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
+    vdist = point_distance(x, y, room_width / 2, room_height / 2);
+    vdir = point_direction(room_width / 2, room_height / 2, x, y);
+    view_angle[0] = lengthdir_y(vdist * (1 / 160), vdir * 2);
 } else {
-if wait&gt;-16 wait-=1 else {instance_destroy() objPlayerBikerHouse.active=1}
-with objPlayerBikerHouse {
-addx=0
-viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+addx,y)*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+addx,y)
+    if (wait &gt; -16)
+        wait--;
+    else {
+        instance_destroy();
+        objPlayerBikerHouse.active = 1;
+    }
+    with (objPlayerBikerHouse) {
+        addx = 0;
+        viewspeed = point_distance(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, x + addx, y) * 0.1;
+        viewdir = point_direction(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, x + addx, y);
 
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)
+        view_xview[0] += lengthdir_x(viewspeed, viewdir);
+        view_yview[0] += lengthdir_y(viewspeed, viewdir);
 
-vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
+        vdist = point_distance(x, y, room_width / 2, room_height / 2);
+        vdir = point_direction(room_width / 2, room_height / 2, x, y);
+        view_angle[0] = lengthdir_y(vdist * (1 / 160), vdir * 2);
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -97,11 +105,12 @@ view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>angle=direction
-draw_sprite_ext(sprJanitorLegs,image_index*2,x+1,y+1,image_xscale,image_yscale,angle,c_black,0.5)
-draw_sprite_ext(sprJanitorLegs,image_index*2,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)</string>
+            <string>angle = direction;
+draw_sprite_ext(sprJanitorLegs, image_index * 2, x + 1, y + 1, image_xscale, image_yscale, angle, c_black, 0.5);
+draw_sprite_ext(sprJanitorLegs, image_index * 2, x, y, image_xscale, image_yscale, angle, image_blend, image_alpha);
+draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

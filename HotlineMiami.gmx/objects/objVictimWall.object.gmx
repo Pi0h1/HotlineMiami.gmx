@@ -25,18 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.15
-alarm[0]=1+random(200)
-tile_layer_hide(1001)
+            <string>image_speed = 0.15;
+alarm[0] = 1 + random(200);
+tile_layer_hide(1001);
 
-if round(random(2))&lt;=1 nothing=1 else {
-with objETauntBat instance_destroy()
-with objETauntChain instance_destroy()
-with objETauntPipe instance_destroy()
-with objETauntSmoke instance_destroy()
-tile_layer_hide(1003)
-instance_destroy()
-}</string>
+if (round(random(2)) &lt;= 1) {
+    // do nothing
+} else {
+    with (objETauntBat)
+        instance_destroy();
+    with (objETauntChain)
+        instance_destroy();
+    with (objETauntPipe)
+        instance_destroy();
+    with (objETauntSmoke)
+        instance_destroy();
+    tile_layer_hide(1003);
+    instance_destroy();
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -58,10 +65,12 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=sprVictimDead exit
-image_speed=0.15
-alarm[0]=200+random(300)
-sprite_index=choose(sprVictimWall1,sprVictimWall2)</string>
+            <string>if (sprite_index == sprVictimDead)
+    exit;
+image_speed = 0.15;
+alarm[0] = 200 + random(300);
+sprite_index = choose(sprVictimWall1, sprVictimWall2);
+</string>
           </argument>
         </arguments>
       </action>
@@ -83,7 +92,8 @@ sprite_index=choose(sprVictimWall1,sprVictimWall2)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0</string>
+            <string>image_speed = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -105,8 +115,8 @@ sprite_index=choose(sprVictimWall1,sprVictimWall2)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 </string>
           </argument>
         </arguments>

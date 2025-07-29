@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>smirked=0
-image_speed=0.085
-state=0
-vol=1</string>
+            <string>smirked = 0;
+image_speed = 0.085;
+state = 0;
+vol = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,53 +51,59 @@ vol=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objPlayer) exit
-if smirked=0 {
-if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;80 {
-if point_direction(x,y,objPlayer.x,objPlayer.y)&lt;15 {
-if state=0 {
-objPWalkWindow.active=0
-with objEffector {
-my_id=instance_create(x,y,objEffectorHouse)
-my_id.amount=180
-instance_destroy()
-}
-scrGetMessage(1)
-state=1
-wait=15
+            <string>if (!instance_exists(objPlayer))
+    exit;
+if (!smirked) {
+    if (point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 80) {
+        if (point_direction(x, y, objPlayer.x, objPlayer.y) &lt; 15) {
+            if (state == 0) {
+                objPWalkWindow.active = 0;
+                with (objEffector) {
+                    my_id = instance_create(x, y, objEffectorHouse);
+                    my_id.amount = 180;
+                    instance_destroy();
+                }
+                scrGetMessage(1);
+                state = 1;
+                wait = 15;
+            }
+
+            if (state == 1) {
+                if (!instance_exists(objPhoneConversation)) {
+                    if (wait &gt; 0)
+                        wait--;
+                    else {
+                        state = 2;
+                        with (objPWalkWindow)
+                            active = 1;
+                        viewx = view_xview[0];
+                        viewy = view_yview[0];
+                        with (objEffector)
+                            instance_destroy();
+                        my_id = instance_create(x, y, objEffector);
+                        my_id.blackx = 15;
+                        my_id.amount = 180;
+                        view_xview[0] = viewx;
+                        view_yview[0] = viewy;
+                        smirked = 1;
+                    }
+                }
+            }
+        }
+    }
 }
 
-if state=1 {
-if !instance_exists(objPhoneConversation) {
-if wait&gt;0 wait-=1 else {
-state=2
-with objPWalkWindow active=1
-viewx=view_xview[0]
-viewy=view_yview[0]
-with objEffector instance_destroy()
-my_id=instance_create(x,y,objEffector)
-my_id.blackx=15
-my_id.amount=180
-view_xview[0]=viewx
-view_yview[0]=viewy
-smirked=1
-}
-}
-}
-
-}
-}
-}
-
-if instance_exists(objPhoneConversation) {
-if vol&gt;0.35 vol-=0.01
-sxeasy_setVolume(vol)
+if (instance_exists(objPhoneConversation)) {
+    if (vol &gt; 0.35)
+        vol -= 0.01;
+    sxeasy_setVolume(vol);
 } else {
-if vol&lt;1 {
-vol+=0.05
-sxeasy_setVolume(vol)
+    if (vol &lt; 1) {
+        vol += 0.05;
+        sxeasy_setVolume(vol);
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -118,8 +125,9 @@ sxeasy_setVolume(vol)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

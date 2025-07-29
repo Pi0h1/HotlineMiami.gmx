@@ -25,11 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-friction=0.1
-image_index=1
-reload=100+random(120)
-dir=0</string>
+            <string>image_speed = 0;
+friction = 0.1;
+image_index = 1;
+reload = 100 + random(120);
+dir = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -51,29 +52,40 @@ dir=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrMoveSolidOn()
-if !place_free(x,y) {move_outside_solid(direction-180,8) speed=0}
-scrMoveSolidOff()
-if speed=0 {
-if reload&gt;0 reload-=1 else {
-image_speed=0.35
+            <string>scrMoveSolidOn();
+if (!place_free(x, y)) {
+    move_outside_solid(direction - 180, 8);
+    speed = 0;
 }
+scrMoveSolidOff();
+if (speed == 0) {
+    if (reload &gt; 0)
+        reload--;
+    else {
+        image_speed = 0.35;
+    }
 }
-kill=0
-if global.xbox=1 kill=checkbutton(0,getid(11)) else kill=keyboard_check(vk_space)
-if kill {
-image_xscale=2
-image_yscale=2
-if place_meeting(x,y,objPlayer) {
-if objPlayer.sprite_index=sprPWalkUnarmed or objPlayer.sprite_index=sprPAttackPunch my_id=instance_create(x,y,objPHoboBash)
-if objPlayer.sprite_index=sprPWalkBat or objPlayer.sprite_index=sprPAttackBat my_id=instance_create(x,y,objPHoboBlunt)
-my_id.image_angle=image_angle
-with objPlayerMouse instance_destroy()
-instance_destroy()
+kill = 0;
+if (global.xbox)
+    kill = checkbutton(0, getid(11));
+else kill = keyboard_check(vk_space);
+if (kill) {
+    image_xscale = 2;
+    image_yscale = 2;
+    if (place_meeting(x, y, objPlayer)) {
+        if (objPlayer.sprite_index == sprPWalkUnarmed || objPlayer.sprite_index == sprPAttackPunch)
+            my_id = instance_create(x, y, objPHoboBash);
+        if (objPlayer.sprite_index == sprPWalkBat || objPlayer.sprite_index == sprPAttackBat)
+            my_id = instance_create(x, y, objPHoboBlunt);
+        my_id.image_angle = image_angle;
+        with (objPlayerMouse)
+            instance_destroy();
+        instance_destroy();
+    }
+    image_xscale = 1;
+    image_yscale = 1;
 }
-image_xscale=1
-image_yscale=1
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -95,14 +107,15 @@ image_yscale=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_id=instance_create(x,y,objHobo)
-my_id.angle=image_angle-180
-my_id.state=-1
-my_id.sprite_index=sprHoboWalk
-with my_id {
-move_outside_solid(image_angle,16)
+            <string>my_id = instance_create(x, y, objHobo);
+my_id.angle = image_angle - 180;
+my_id.state = -1;
+my_id.sprite_index = sprHoboWalk;
+with (my_id) {
+    move_outside_solid(image_angle, 16);
 }
-instance_destroy()</string>
+instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>
@@ -124,11 +137,11 @@ instance_destroy()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-
-draw_sprite_ext(sprArrow,0,x,y-8+lengthdir_x(3,dir),1,1,180,c_white,1)
-dir+=8</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_sprite_ext(sprArrow, 0, x, y - 8 + lengthdir_x(3, dir), 1, 1, 180, c_white, 1);
+dir += 8;
+</string>
           </argument>
         </arguments>
       </action>

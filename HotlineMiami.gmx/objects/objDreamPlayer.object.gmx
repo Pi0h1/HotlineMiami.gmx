@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state=0
+            <string>state = 0;
 </string>
           </argument>
         </arguments>
@@ -48,14 +48,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>objEffector.fade=1
-objEffector.next=1
-objEffector.nextroom=rmHospitalTitle
-objEffector.newsong=1
-objEffector.song=working_directory+"\Flatline.mp3"
-global.level=rmHospitalTitle
-global.pretitle="ELEVENTH CHAPTER"
-global.title="TRAUMA"
+            <string>objEffector.fade = 1;
+objEffector.next = 1;
+objEffector.nextroom = rmHospitalTitle;
+objEffector.newsong = 1;
+objEffector.song = working_directory + "\Flatline.mp3";
+global.level = rmHospitalTitle;
+global.pretitle = "ELEVENTH CHAPTER";
+global.title = "TRAUMA";
 </string>
           </argument>
         </arguments>
@@ -78,44 +78,64 @@ global.title="TRAUMA"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objPlayer) alert=1 else {
-alert=scrLook(objPlayer.x,objPlayer.y,4)
-if point_distance(x,y,objPlayer.x,objPlayer.y)&gt;100 alert=1
+            <string>if (!instance_exists(objPlayer))
+    alert = 1;
+else {
+    alert = scrLook(objPlayer.x, objPlayer.y, 4);
+    if (point_distance(x, y, objPlayer.x, objPlayer.y) &gt; 100)
+        alert = 1;
 }
-if alert=0 or alert=2 {
-if state=0 {
-state=1
-scrGetMessage(0)
-with objPlayer active=0
-} 
-if state=1 {
-if !instance_exists(objPhoneConversation) {objPlayer.active=1 objEffectorHouse.brus=10 with objDoorV solid=0 state=2}
-}
-}
-
-
-
-if objEffectorHouse.fade=1 {
-objEffectorHouse.amount+=9.5
-} else { if round(random(100))=2 objEffectorHouse.brus=2+floor(random(8)) }
-
-if state=2 {
-with objPlayer {
-if x&gt;288 and x&lt;416 and y&lt;320 {
-if sprite_index=sprPWalkUnarmed {
-objEffectorHouse.brus=10
-sprite_index=sprPWalkHospital
-with objBackgroundColor instance_destroy()
-instance_create(x,y,objBackgroundColorClear)
+if (alert == 0 || alert == 2) {
+    if (state == 0) {
+        state = 1;
+        scrGetMessage(0);
+        with (objPlayer)
+            active = 0;
+    }
+    if (state == 1) {
+        if (!instance_exists(objPhoneConversation)) {
+            objPlayer.active = 1;
+            objEffectorHouse.brus = 10;
+            with (objDoorV)
+                solid = 0;
+            state = 2;
+        }
+    }
 }
 
-if y&lt;64 {
-if sprite_index=sprPWalkHospital {legindex=0 aimon=0 sprite_index=sprPHeadExplode image_index=1 active=0 image_speed=0.15}
-}
-}
-}
+
+
+if (objEffectorHouse.fade) {
+    objEffectorHouse.amount += 9.5;
+} else {
+    if (round(random(100)) == 2)
+        objEffectorHouse.brus = 2 + floor(random(8));
 }
 
+if (state == 2) {
+    with (objPlayer) {
+        if (x &gt; 288 &amp;&amp; x &lt; 416 &amp;&amp; y &lt; 320) {
+            if (sprite_index == sprPWalkUnarmed) {
+                objEffectorHouse.brus = 10;
+                sprite_index = sprPWalkHospital;
+                with (objBackgroundColor)
+                    instance_destroy();
+                instance_create(x, y, objBackgroundColorClear);
+            }
+
+            if (y &lt; 64) {
+                if (sprite_index == sprPWalkHospital) {
+                    legindex = 0;
+                    aimon = 0;
+                    sprite_index = sprPHeadExplode;
+                    image_index = 1;
+                    active = 0;
+                    image_speed = 0.15;
+                }
+            }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -138,8 +158,8 @@ if sprite_index=sprPWalkHospital {legindex=0 aimon=0 sprite_index=sprPHeadExplod
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 </string>
           </argument>
         </arguments>

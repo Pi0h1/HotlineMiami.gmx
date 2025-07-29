@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-friction=0.25
-bled=0</string>
+            <string>image_speed = 0;
+friction = 0.25;
+bled = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,17 +50,19 @@ bled=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if speed&lt;=0 {
-if image_index&lt;28 image_index+=0.2
+            <string>if (speed &lt;= 0) {
+    if (image_index &lt; 28)
+        image_index += 0.2;
 }
 
-if bled=0 and image_index&gt;19 {
-bled=1
-repeat (5) {
-my_id=instance_create(x+lengthdir_x(5,image_angle+45),y+lengthdir_y(4,image_angle+35),objBloodSquirt)
-my_id.image_angle=image_angle+110+random(70)
+if (!bled &amp;&amp; image_index &gt; 19) {
+    bled = 1;
+    repeat(5) {
+        my_id = instance_create(x + lengthdir_x(5, image_angle + 45), y + lengthdir_y(4, image_angle + 35), objBloodSquirt);
+        my_id.image_angle = image_angle + 110 + random(70);
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -81,8 +84,9 @@ my_id.image_angle=image_angle+110+random(70)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

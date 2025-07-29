@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-state=0
-talked=0</string>
+            <string>image_speed = 0;
+state = 0;
+talked = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,9 +50,10 @@ talked=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if state=1 {
-image_speed=0.25
-}</string>
+            <string>if (state == 1) {
+    image_speed = 0.25;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -73,7 +75,10 @@ image_speed=0.25
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if state=1 nothing=1 else image_speed=0</string>
+            <string>if (state == 1) {
+    // do nothing
+} else image_speed = 0;
+</string>
           </argument>
         </arguments>
       </action>

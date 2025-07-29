@@ -25,7 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !place_free(x,y) {if speed&gt;0 {instance_create(x,y,objBloodPool)} speed=0}</string>
+            <string>if (!place_free(x, y)) {
+    if (speed &gt; 0) {
+        instance_create(x, y, objBloodPool);
+    }
+    speed = 0;
+}
+</string>
           </argument>
         </arguments>
       </action>

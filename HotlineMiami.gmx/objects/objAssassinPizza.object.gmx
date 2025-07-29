@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.1
-talked=0
-dir=random(360)</string>
+            <string>image_speed = 0.1;
+talked = 0;
+dir = random(360);
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,7 +50,9 @@ dir=random(360)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrXboxNickeTalkPizza()</string>
+            <string>if (global.xbox)
+    scrXboxNickeTalkPizza();
+</string>
           </argument>
         </arguments>
       </action>
@@ -71,13 +74,15 @@ dir=random(360)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objPlayerMouseHouse) or talked=1 or instance_exists(objPhoneConversation) or objPlayer.active=0 exit
-if place_meeting(x+lengthdir_x(32,270),y+lengthdir_y(32,270),objPlayer){
-objPlayer.image_index=0
-objPlayer.active=0
-scrGetMessage(0)
-talked=1
-}</string>
+            <string>if (!instance_exists(objPlayerMouseHouse) || talked || instance_exists(objPhoneConversation) || !objPlayer.active)
+    exit;
+if (place_meeting(x + lengthdir_x(32, 270), y + lengthdir_y(32, 270), objPlayer)) {
+    objPlayer.image_index = 0;
+    objPlayer.active = 0;
+    scrGetMessage(0);
+    talked = 1;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -99,7 +104,8 @@ talked=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_mouse,ev_global_right_press)</string>
+            <string>event_perform(ev_mouse, ev_global_right_press);
+</string>
           </argument>
         </arguments>
       </action>
@@ -121,18 +127,19 @@ talked=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(objPhoneConversation) and talked=1 {
-with objPlayerMouseHouse {
-active=1
+            <string>if (!instance_exists(objPhoneConversation) &amp;&amp; talked) {
+    with (objPlayerMouseHouse) {
+        active = 1;
+    }
 }
-}
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x-1,y-1,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x - 1, y - 1, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
-if talked=0 {
-draw_sprite_ext(sprArrow,0,x+lengthdir_x(16-lengthdir_x(3,dir),image_angle-90),y+lengthdir_y(16-lengthdir_x(3,dir),image_angle-90),1,1,image_angle+180,image_blend,image_alpha)
-dir+=8
-}</string>
+if (!talked) {
+    draw_sprite_ext(sprArrow, 0, x + lengthdir_x(16 - lengthdir_x(3, dir), image_angle - 90), y + lengthdir_y(16 - lengthdir_x(3, dir), image_angle - 90), 1, 1, image_angle + 180, image_blend, image_alpha);
+    dir += 8;
+}
+</string>
           </argument>
         </arguments>
       </action>

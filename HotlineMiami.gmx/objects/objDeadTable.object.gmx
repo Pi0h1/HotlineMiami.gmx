@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0</string>
+            <string>image_speed = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,20 +48,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.talked=1 {
-if objPlayer.x&gt;x {
-global.talked=2
-scrGetMessage(1)
-objPlayer.active=0
-}
+            <string>if (global.talked) {
+    if (objPlayer.x &gt; x) {
+        global.talked = 2;
+        scrGetMessage(1);
+        objPlayer.active = 0;
+    }
 }
 
-if instance_exists(objPhoneConversation) and global.talked=2 {
-if image_index&lt;5 image_index+=0.2
+if (instance_exists(objPhoneConversation) &amp;&amp; global.talked == 2) {
+    if (image_index &lt; 5)
+        image_index += 0.2;
 } else {
-if image_index&gt;0 image_index-=0.2
-if global.talked=2 objPlayer.active=1
-}</string>
+    if (image_index &gt; 0)
+        image_index -= 0.2;
+    if (global.talked == 2)
+        objPlayer.active = 1;
+}
+</string>
           </argument>
         </arguments>
       </action>

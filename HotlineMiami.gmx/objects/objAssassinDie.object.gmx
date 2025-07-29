@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-bled=0
-scrInitMaskPos()
-scrUpdateMaskPos(sprite_index)</string>
+            <string>image_speed = 0;
+bled = 0;
+scrInitMaskPos();
+scrUpdateMaskPos(sprite_index);
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,19 +51,22 @@ scrUpdateMaskPos(sprite_index)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;49 image_index+=0.15 else {
-my_id=instance_create(x,y,objDeadBody)
-my_id.image_angle=image_angle
-my_id.sprite_index=sprAssassinDead
-my_id.image_index=shot
-my_id=instance_create(x,y,objPlayerMouse)
-my_id.maskon=global.maskon
-my_id.maskindex=global.maskindex
-global.dir=image_angle
-with my_id move_outside_solid(global.dir-180,16)
-instance_destroy()
-exit
-}</string>
+            <string>if (image_index &lt; 49)
+    image_index += 0.15;
+else {
+    my_id = instance_create(x, y, objDeadBody);
+    my_id.image_angle = image_angle;
+    my_id.sprite_index = sprAssassinDead;
+    my_id.image_index = shot;
+    my_id = instance_create(x, y, objPlayerMouse);
+    my_id.maskon = global.maskon;
+    my_id.maskindex = global.maskindex;
+    global.dir = image_angle;
+    with my_id move_outside_solid(global.dir - 180, 16);
+    instance_destroy();
+    exit;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -84,9 +88,10 @@ exit
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-scrDrawMask(1)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+scrDrawMask(1);
+</string>
           </argument>
         </arguments>
       </action>

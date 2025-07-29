@@ -25,11 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>smirked=0
-image_speed=0.085
-if global.revisit instance_destroy()
-vol=1
-global.ending=0</string>
+            <string>smirked = 0;
+image_speed = 0.085;
+if (global.revisit)
+    instance_destroy();
+vol = 1;
+global.ending = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -51,44 +53,47 @@ global.ending=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if smirked=0 {
-if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;220 {
-scrGetMessage(0)
-objPlayerBikerHouse.active=0
-smirked=1
-}
+            <string>if (!smirked) {
+    if (point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 220) {
+        scrGetMessage(0);
+        objPlayerBikerHouse.active = 0;
+        smirked = 1;
+    }
 }
 
-if smirked=1 {
-if instance_exists(objPhoneConversation) {
-addx=80
-viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+addx,y)*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+addx,y)
+if (smirked) {
+    if (instance_exists(objPhoneConversation)) {
+        addx = 80;
+        viewspeed = point_distance(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, x + addx, y) * 0.1;
+        viewdir = point_direction(view_xview[0] + view_wview[0] / 2, view_yview[0] + view_hview[0] / 2, x + addx, y);
 
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)
+        view_xview[0] += lengthdir_x(viewspeed, viewdir);
+        view_yview[0] += lengthdir_y(viewspeed, viewdir);
 
-vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
+        vdist = point_distance(x, y, room_width / 2, room_height / 2);
+        vdir = point_direction(room_width / 2, room_height / 2, x, y);
+        view_angle[0] = lengthdir_y(vdist * (1 / 160), vdir * 2);
 
-if vol&gt;0.35 vol-=0.01
-sxeasy_setVolume(vol)
-} else {
-if vol&lt;1 {
-vol+=0.05
-sxeasy_setVolume(vol)
+        if (vol &gt; 0.35)
+            vol -= 0.01;
+        sxeasy_setVolume(vol);
+    } else {
+        if (vol &lt; 1) {
+            vol += 0.05;
+            sxeasy_setVolume(vol);
+        }
+        if (sprite_index == sprJanitorClean) {
+            sprite_index = sprJanitorMop;
+            my_id = instance_create(x - 8, y, objJanitorFlee);
+            my_id.hspeed = -0.5;
+        }
+    }
+    if (sprite_index == sprJanitorMop) {
+        if (!instance_exists(objJanitorFlee))
+            smirked = 2;
+    }
 }
-if sprite_index=sprJanitorClean {
-sprite_index=sprJanitorMop
-my_id=instance_create(x-8,y,objJanitorFlee)
-my_id.hspeed=-0.5
-}
-}
-if sprite_index=sprJanitorMop {
-if !instance_exists(objJanitorFlee) smirked=2
-}
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -110,8 +115,9 @@ if !instance_exists(objJanitorFlee) smirked=2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

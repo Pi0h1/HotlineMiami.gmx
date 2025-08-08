@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle=choose(0,180)
-image_xscale=choose(-1,1)
-image_yscale=choose(-1,1)</string>
+            <string>image_angle = choose(0, 180);
+image_xscale = choose(-1, 1);
+image_yscale = choose(-1, 1);
+</string>
           </argument>
         </arguments>
       </action>

@@ -25,11 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.35
-dir=0
-active=1
-state=0
-if global.xbox=1 scrInitXboxButtons()</string>
+            <string>image_speed = 0.35;
+dir = 0;
+active = 1;
+state = 0;
+if (global.xbox)
+    scrInitXboxButtons();
+</string>
           </argument>
         </arguments>
       </action>
@@ -51,8 +53,9 @@ if global.xbox=1 scrInitXboxButtons()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrGetMessage(2)
-state=1</string>
+            <string>scrGetMessage(2);
+state = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -74,16 +77,20 @@ state=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrXboxCeoTable()
+            <string>if (global.xbox)
+    scrXboxCeoTable();
 
-if state=1 {
-if !instance_exists(objPhoneConversation) {
-state=2
-instance_create(320,40,objPlayerBoss)
-}
+if (state == 1) {
+    if (!instance_exists(objPhoneConversation)) {
+        state = 2;
+        instance_create(320, 40, objPlayerBoss);
+    }
 } else {
-if room=rmPhoneHomUpstairsBiker and state=0 and !instance_exists(objCEO) with objElevator valid=0
-}</string>
+    if (room == rmPhoneHomUpstairsBiker &amp;&amp; state == 0 &amp;&amp; !instance_exists(objCEO))
+        with (objElevator)
+            valid = 0;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -105,15 +112,18 @@ if room=rmPhoneHomUpstairsBiker and state=0 and !instance_exists(objCEO) with ob
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if active=0 or instance_exists(objCEO) exit
-if place_meeting(x,y-8,objPlayerBikerHouse) {
-if objPlayer.x&gt;x+6 and objPlayer.x&lt;x+18 {
-with objPlayer instance_destroy()
-instance_create(x+12,y-26,objPlayerBikerHack)
-alarm[0]=120
-active=0
+            <string>if (active == 0 || instance_exists(objCEO))
+    exit;
+if (place_meeting(x, y - 8, objPlayerBikerHouse)) {
+    if (objPlayer.x &gt; x + 6 &amp;&amp; objPlayer.x &lt; x + 18) {
+        with (objPlayer)
+            instance_destroy();
+        instance_create(x + 12, y - 26, objPlayerBikerHack);
+        alarm[0] = 120;
+        active = 0;
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -135,7 +145,8 @@ active=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_mouse,ev_global_right_press)</string>
+            <string>event_perform(ev_mouse, ev_global_right_press);
+</string>
           </argument>
         </arguments>
       </action>
@@ -157,14 +168,15 @@ active=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited()
+            <string>event_inherited();
 
-if room=rmPhoneHomUpstairsBiker {
-if !instance_exists(objCEO) and active=1 {
-draw_sprite_ext(sprArrow,0,x+12,y-20+lengthdir_x(3,dir),1,1,0,c_white,1)
-dir+=3
+if (room == rmPhoneHomUpstairsBiker) {
+    if (!instance_exists(objCEO) &amp;&amp; active) {
+        draw_sprite_ext(sprArrow, 0, x + 12, y - 20 + lengthdir_x(3, dir), 1, 1, 0, c_white, 1);
+        dir += 3;
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>

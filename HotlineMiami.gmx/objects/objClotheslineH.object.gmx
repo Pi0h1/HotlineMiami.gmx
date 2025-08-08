@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index=floor(random(9))
-image_speed=0.1
-sprite_index=choose(sprClotheslineH2,sprClotheslineH1)</string>
+            <string>image_index = floor(random(9));
+image_speed = 0.1;
+sprite_index = choose(sprClotheslineH2, sprClotheslineH1);
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,8 +50,9 @@ sprite_index=choose(sprClotheslineH2,sprClotheslineH1)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+2,y+3,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 2, y + 3, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

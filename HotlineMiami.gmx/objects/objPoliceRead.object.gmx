@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-alarm[0]=100
-on=0</string>
+            <string>image_speed = 0;
+alarm[0] = 100;
+on = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,8 +50,8 @@ on=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>on=!on
-alarm[0]=200-on*100
+            <string>on = !on;
+alarm[0] = 200 - on * 100;
 </string>
           </argument>
         </arguments>
@@ -73,59 +74,61 @@ alarm[0]=200-on*100
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;56 and objPlayer.x&gt;192 {
-if sprite_index=sprPoliceReading {
-sprite_index=sprPolicePoint
-image_index=0
-objPlayer.active=0
-if global.talked=0 {
-scrGetMessage(1)
-global.talked=1
-global.doctor=id
-}
-}
-}
-
-if sprite_index=sprPoliceReading {
-if on=1 {
-if image_index&lt;3 image_index+=0.25
-} else {
-if image_index&gt;0 image_index-=0.25
-}
-if image_index&lt;3 exit
-}
-angle=direction
-if point_distance(x,y,objPlayer.x,objPlayer.y)&gt;200 test=1 else {
-test=scrLook(objPlayer.x,objPlayer.y,4)
+            <string>if (point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 56 &amp;&amp; objPlayer.x &gt; 192) {
+    if (sprite_index == sprPoliceReading) {
+        sprite_index = sprPolicePoint;
+        image_index = 0;
+        objPlayer.active = 0;
+        if (!global.talked) {
+            scrGetMessage(1);
+            global.talked = 1;
+            global.doctor = id;
+        }
+    }
 }
 
-
-
-
-if test=0 or test=2 {
-speed=0
-
-
-
-if sprite_index=sprPoliceReading {
-sprite_index=sprPolicePoint
-image_index=0
-objPlayer.active=0
-if global.talked=0 {
-scrGetMessage(1)
-global.talked=1
-global.doctor=id
+if (sprite_index == sprPoliceReading) {
+    if (on) {
+        if (image_index &lt; 3)
+            image_index += 0.25;
+    } else {
+        if (image_index &gt; 0)
+            image_index -= 0.25;
+    }
+    if (image_index &lt; 3)
+        exit;
 }
-} else {
-direction=scrRotate(direction,point_direction(x,y,objPlayer.x,objPlayer.y),10)
-if image_index&lt;6 image_index+=0.15
+angle = direction;
+if (point_distance(x, y, objPlayer.x, objPlayer.y) &gt; 200)
+    test = 1;
+else {
+    test = scrLook(objPlayer.x, objPlayer.y, 4);
 }
+if (test = 0 || test == 2) {
+    speed = 0;
+
+    if (sprite_index == sprPoliceReading) {
+        sprite_index = sprPolicePoint;
+        image_index = 0;
+        objPlayer.active = 0;
+        if (!global.talked) {
+            scrGetMessage(1);
+            global.talked = 1;
+            global.doctor = id;
+        }
+    } else {
+        direction = scrRotate(direction, point_direction(x, y, objPlayer.x, objPlayer.y), 10);
+        if (image_index &lt; 6)
+            image_index += 0.15;
+    }
 }
 
-
-if sprite_index=sprPolicePoint {
-if !instance_exists(objPhoneConversation) {objEffector.fade=1}
-}</string>
+if (sprite_index == sprPolicePoint) {
+    if (!instance_exists(objPhoneConversation)) {
+        objEffector.fade = 1;
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -147,10 +150,10 @@ if !instance_exists(objPhoneConversation) {objEffector.fade=1}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
-draw_set_color(c_white)
-//draw_path(my_path,0,0,1)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, direction, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, direction, image_blend, image_alpha);
+draw_set_color(c_white);
+</string>
           </argument>
         </arguments>
       </action>

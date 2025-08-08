@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-alarm[0]=15
-diradd=-1+round(random(1))*2
-on=0</string>
+            <string>image_speed = 0;
+alarm[0] = 15;
+diradd = -1 + round(random(1)) * 2;
+on = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,9 +51,9 @@ on=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>on=1
-audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
-speed=0
+            <string>on = 1;
+audio_play_sound(choose(sndGlass1, sndGlass2), 0, false);
+speed = 0;
 </string>
           </argument>
         </arguments>
@@ -75,11 +76,13 @@ speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle+=speed*diradd*10
-if on=1 {
-if image_index&lt;3 image_index+=0.25
+            <string>image_angle += speed * diradd * 10;
+if (on) {
+    if (image_index &lt; 3)
+        image_index += 0.25;
 }
-image_blend=merge_color(c_ltgray,c_white,speed*0.5)</string>
+image_blend = merge_color(c_ltgray, c_white, speed * 0.5);
+</string>
           </argument>
         </arguments>
       </action>

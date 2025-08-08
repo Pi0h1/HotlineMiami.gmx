@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-friction=0.15
-broke=0</string>
+            <string>image_speed = 0;
+friction = 0.15;
+broke = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,8 +50,9 @@ broke=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if !place_free(x,y) speed=0
-if image_index&lt;9 image_index+=0.3+random(0.2)</string>
+            <string>if (image_index &lt; 9)
+    image_index += 0.3 + random(0.2);
+</string>
           </argument>
         </arguments>
       </action>
@@ -72,17 +74,17 @@ if image_index&lt;9 image_index+=0.3+random(0.2)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(other.x,other.y,objGlassPanelHBroken)
-with other {
-i=0
-repeat (16) {
-my_id=instance_create(x+i*2,y+2,objShard)
-my_id.direction=260+random(20)
-my_id.speed=1+random(3)
-i+=1
-}
-audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
-instance_destroy()
+            <string>instance_create(other.x, other.y, objGlassPanelHBroken);
+with (other) {
+    i = 0;
+    repeat(16) {
+        my_id = instance_create(x + i * 2, y + 2, objShard);
+        my_id.direction = 260 + random(20);
+        my_id.speed = 1 + random(3);
+        i++;
+    }
+    audio_play_sound(choose(sndGlass1, sndGlass2), 0, false);
+    instance_destroy();
 }
 </string>
           </argument>
@@ -106,17 +108,19 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(other.x,other.y,objGlassPanelVBroken)
-with other {
-i=0
-repeat (16) {
-my_id=instance_create(x+2,y+i*2,objShard)
-if x&lt;other.x my_id.direction=170+random(20) else my_id.direction=-10+random(20)
-my_id.speed=1+random(3)
-i+=1
-}
-audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
-instance_destroy()
+            <string>instance_create(other.x, other.y, objGlassPanelVBroken);
+with (other) {
+    i = 0;
+    repeat(16) {
+        my_id = instance_create(x + 2, y + i * 2, objShard);
+        if (x &lt; other.x)
+            my_id.direction = 170 + random(20);
+        else my_id.direction = -10 + random(20);
+        my_id.speed = 1 + random(3);
+        i++;
+    }
+    audio_play_sound(choose(sndGlass1, sndGlass2), 0, false);
+    instance_destroy();
 }
 </string>
           </argument>

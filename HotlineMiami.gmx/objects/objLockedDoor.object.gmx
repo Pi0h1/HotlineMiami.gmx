@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>swingspeed=0
-x+=5
-swinger=0</string>
+            <string>swingspeed = 0;
+x += 5;
+swinger = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,24 +50,43 @@ swinger=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrXboxHospitalDoor()
-if abs(swingspeed)&gt;0 {
-image_angle+=swingspeed
-if place_meeting(x,y,objFurniture) {
-image_angle-=swingspeed
-swingspeed*=-0.5
-}
-if image_angle&lt;-135 {image_angle=-135 swingspeed=abs(swingspeed)}
-if image_angle&gt;135 {image_angle=135 swingspeed=-abs(swingspeed)}
-swingdir=sign(swingspeed)
-if abs(swingspeed)&lt;3.5 {
-if image_angle&gt;-6 and image_angle&lt;6 {swingspeed=0 image_angle=0 exit}
-}
+            <string>if (global.xbox)
+    scrXboxHospitalDoor();
+if (abs(swingspeed) &gt; 0) {
+    image_angle += swingspeed;
+    if (place_meeting(x, y, objFurniture)) {
+        image_angle -= swingspeed;
+        swingspeed *= -0.5;
+    }
+    if (image_angle &lt; -135) {
+        image_angle = -135;
+        swingspeed = abs(swingspeed);
+    }
+    if (image_angle &gt; 135) {
+        image_angle = 135;
+        swingspeed = -abs(swingspeed);
+    }
+    swingdir = sign(swingspeed);
+    if (abs(swingspeed) &lt; 3.5) {
+        if (image_angle &gt; -6 &amp;&amp; image_angle &lt; 6) {
+            swingspeed = 0;
+            image_angle = 0;
+            exit;
+        }
+    }
 
-if swingspeed&gt;0.25 swingspeed-=0.25 else {
-if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
+    if (swingspeed &gt; 0.25)
+        swingspeed -= 0.25;
+    else {
+        if (swingspeed &lt; 0)
+            swingspeed += 0.25;
+        else {
+            swinger = 0;
+            swingspeed = 0;
+        }
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -88,15 +108,22 @@ if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if abs(swingspeed)&gt;0 exit
-if image_angle&lt;-1 {swingspeed=1 exit}
-if image_angle&gt;1 {swingspeed=-1 exit}*/
-swinger=1
-if abs(swingspeed)&gt;3.5 exit
-if abs(swingspeed)&lt;2 audio_play_sound(sndDoorOpen,0,false)
-if y&gt;other.y and other.x&lt;x {swingspeed=8 exit}
-if y&gt;other.y and other.x&gt;x {swingspeed=-8 exit}
-if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
+            <string>swinger = 1;
+if (abs(swingspeed) &gt; 3.5)
+    exit;
+if (abs(swingspeed) &lt; 2)
+    audio_play_sound(sndDoorOpen, 0, false);
+if (y &gt; other.y &amp;&amp; other.x &lt; x) {
+    swingspeed = 8;
+    exit;
+}
+if (y &gt; other.y &amp;&amp; other.x &gt; x) {
+    swingspeed = -8;
+    exit;
+}
+if (other.x &lt; x + lengthdir_x(32, image_angle + 270))
+    swingspeed = 8;
+else swingspeed = -8;
 </string>
           </argument>
         </arguments>
@@ -119,7 +146,8 @@ if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_mouse,ev_global_left_press)</string>
+            <string>event_perform(ev_mouse, ev_global_left_press);
+</string>
           </argument>
         </arguments>
       </action>
@@ -141,21 +169,21 @@ if other.x&lt;x+lengthdir_x(32,image_angle+270) swingspeed=8 else swingspeed=-8
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if solid=1 {
-if place_meeting(x-8,y,objPlayer) {
-if objPlayer.sprite_index=sprPWalkHospital {
-if global.locked=0 {
-objPlayer.x=x-16
-objPlayer.y=y+16
-audio_play_sound(sndKeycard,0,false)
-objPlayer.sprite_index=sprPKeyLockOpen
-objPlayer.image_index=0
-objPlayer.active=0
-objPlayer.dir=0
-solid=0
-}
-}
-}
+            <string>if (solid) {
+    if (place_meeting(x - 8, y, objPlayer)) {
+        if (objPlayer.sprite_index == sprPWalkHospital) {
+            if (!global.locked) {
+                objPlayer.x = x - 16;
+                objPlayer.y = y + 16;
+                audio_play_sound(sndKeycard, 0, false);
+                objPlayer.sprite_index = sprPKeyLockOpen;
+                objPlayer.image_index = 0;
+                objPlayer.active = 0;
+                objPlayer.dir = 0;
+                solid = 0;
+            }
+        }
+    }
 }
 </string>
           </argument>
@@ -179,8 +207,9 @@ solid=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+2,y+3,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 2, y + 3, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

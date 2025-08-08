@@ -25,16 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.done=1 {
-if place_meeting(x-8,y,objPlayerBiker) {
-with objPlayerBiker instance_destroy()
-instance_create(x,y,objBikerClimbUp)
+            <string>if (global.done) {
+    if (place_meeting(x - 8, y, objPlayerBiker)) {
+        with (objPlayerBiker)
+            instance_destroy();
+        instance_create(x, y, objBikerClimbUp);
+    }
+    if (place_meeting(x - 8, y, objPlayerMouseHouse)) {
+        with (objPlayerMouseHouse)
+            instance_destroy();
+        instance_create(x, y, objPlayerClimbUp);
+    }
 }
-if place_meeting(x-8,y,objPlayerMouseHouse) {
-with objPlayerMouseHouse instance_destroy()
-instance_create(x,y,objPlayerClimbUp)
-}
-}</string>
+</string>
           </argument>
         </arguments>
       </action>

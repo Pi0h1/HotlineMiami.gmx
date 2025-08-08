@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-spawned=0</string>
+            <string>image_speed = 0;
+spawned = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -48,21 +49,22 @@ spawned=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>viewx=view_xview[0]
-viewy=view_yview[0]
-with objPlayerMouseHouse {
-my_id=instance_create(x,y,objPlayerMouse)
-my_id.sprite_index=sprite_index
-my_id.image_index=0
-my_id.dir=dir
-my_id.active=0
-my_id.maskon=1
-my_id.maskindex=global.maskindex
-global.maskon=1
-instance_destroy()
+            <string>viewx = view_xview[0];
+viewy = view_yview[0];
+with (objPlayerMouseHouse) {
+    my_id = instance_create(x, y, objPlayerMouse);
+    my_id.sprite_index = sprite_index;
+    my_id.image_index = 0;
+    my_id.dir = dir;
+    my_id.active = 0;
+    my_id.maskon = 1;
+    my_id.maskindex = global.maskindex;
+    global.maskon = 1;
+    instance_destroy();
 }
-view_xview[0]=viewx
-view_yview[0]=viewy</string>
+view_xview[0] = viewx;
+view_yview[0] = viewy;
+</string>
           </argument>
         </arguments>
       </action>
@@ -84,24 +86,26 @@ view_yview[0]=viewy</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if objPlayer.persistent=1 {
-alarm[0]=2 exit
+            <string>if (objPlayer.persistent) {
+    alarm[0] = 2;
+    exit;
 }
-viewx=view_xview[0]
-viewy=view_yview[0]
-with objPlayerMouse {
-my_id=instance_create(x,y,objPlayerMouseHouse)
-my_id.sprite_index=sprPWalkBag
-my_id.image_index=0
-my_id.dir=dir
-my_id.active=0
-my_id.maskon=1
-my_id.maskindex=global.maskindex
-instance_destroy()
+viewx = view_xview[0];
+viewy = view_yview[0];
+with (objPlayerMouse) {
+    my_id = instance_create(x, y, objPlayerMouseHouse);
+    my_id.sprite_index = sprPWalkBag;
+    my_id.image_index = 0;
+    my_id.dir = dir;
+    my_id.active = 0;
+    my_id.maskon = 1;
+    my_id.maskindex = global.maskindex;
+    instance_destroy();
 }
-view_xview[0]=viewx
-view_yview[0]=viewy
-alarm[1]=100</string>
+view_xview[0] = viewx;
+view_yview[0] = viewy;
+alarm[1] = 100;
+</string>
           </argument>
         </arguments>
       </action>
@@ -123,19 +127,27 @@ alarm[1]=100</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !place_meeting(x,y,objEnemy) solid=1
+            <string>if (!place_meeting(x, y, objEnemy))
+    solid = 1;
 
-if global.done=1 exit
-if visible=1 {
-global.test=0 
-with objSubwayDoor {if on=2 global.test=1}
-if global.test=1 {
-if instance_exists(objEnemy) or instance_exists(objKnockedOut) or instance_exists(objBoss) or instance_exists(objESubwayStatic) nothing=1 else {
-global.done=1
-instance_create(x,y,objCheckpoint)
+if (global.done)
+    exit;
+if (visible) {
+    global.test = 0;
+    with (objSubwayDoor) {
+        if (on == 2)
+            global.test = 1;
+    }
+    if (global.test == 1) {
+        if (instance_exists(objEnemy) || instance_exists(objKnockedOut) || instance_exists(objBoss) || instance_exists(objESubwayStatic)) {
+            // do nothing
+        } else {
+            global.done = 1;
+            instance_create(x, y, objCheckpoint);
+        }
+    }
 }
-}
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -157,36 +169,36 @@ instance_create(x,y,objCheckpoint)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if spawned=1 exit
-visible=0
-if x&lt;room_width/2 {
-visible=global.done
-if visible and spawned=0 {
-spawned=1
-global.done=0
-with objSubwayDoor {
-visible=1
-alarm[0]=90
-}
-alarm[0]=40
+            <string>if (spawned) exit
+visible = 0;
+if (x &lt; room_width / 2) {
+    visible = global.done;
+    if (visible &amp;&amp; !spawned) {
+        spawned = 1;
+        global.done = 0;
+        with (objSubwayDoor) {
+            visible = 1;
+            alarm[0] = 90;
+        }
+        alarm[0] = 40;
 
-with objPlayer {
-vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-view_xview[0]=x+lengthdir_x(vdist*0.2,vdir-180)-view_wview[0]*0.5
-view_yview[0]=y+lengthdir_y(vdist*0.2,vdir-180)-view_hview[0]*0.5
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
-}
-test=objPlayer.persistent
-objPlayer.persistent=0
-global.loaded=1
-game_save(working_directory+"\tempsave.sav")
-//if !instance_exists(objMaskMenu) instance_create(x,y,objCheckpoint)
-global.loaded=0
-objPlayer.persistent=test
+        with (objPlayer) {
+            vdist = point_distance(x, y, room_width / 2, room_height / 2);
+            vdir = point_direction(room_width / 2, room_height / 2, x, y);
+            view_xview[0] = x + lengthdir_x(vdist * 0.2, vdir - 180) - view_wview[0] * 0.5;
+            view_yview[0] = y + lengthdir_y(vdist * 0.2, vdir - 180) - view_hview[0] * 0.5;
+            view_angle[0] = lengthdir_y(vdist * (1 / 160), vdir * 2);
+        }
+        test = objPlayer.persistent;
+        objPlayer.persistent = 0;
+        global.loaded = 1;
+        game_save(working_directory + "\tempsave.sav");
+        global.loaded = 0;
+        objPlayer.persistent = test;
 
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>

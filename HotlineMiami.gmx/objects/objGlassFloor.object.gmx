@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>repeat (random(3)) instance_create(x+random(32),y+random(32),objGlimmer)</string>
+            <string>repeat(random(3))
+    instance_create(x + random(32), y + random(32), objGlimmer);
+</string>
           </argument>
         </arguments>
       </action>

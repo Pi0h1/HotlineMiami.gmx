@@ -25,11 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index=0
-image_speed=0
-on=0
-wait=0
-global.alarmsound=0</string>
+            <string>image_index = 0;
+image_speed = 0;
+on = 0;
+wait = 0;
+global.alarmsound = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -51,21 +52,51 @@ global.alarmsound=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if wait&gt;0 {
-wait-=1
-if wait=0 {
-on=0
-global.test=0
-with objMetalDetector {if on=1 global.test=1}
-if !global.test {audio_stop_sound(sndAlarm) global.alarmsound=0}
+            <string>if (wait &gt; 0) {
+    wait--;
+    if (wait == 0) {
+        on = 0;
+        global.test = 0;
+        with (objMetalDetector) {
+            if (on)
+                global.test = 1
+        }
+        if (!global.test) {
+            audio_stop_sound(sndAlarm);
+            global.alarmsound = 0;
+        }
+    }
 }
-}
-if place_meeting(x,y,objPlayer) {
-if objPlayer.sprite_index=sprPWalkUnarmed or objPlayer.sprite_index=sprPWalkBat or objPlayer.sprite_index=sprPWalkPool or objPlayer.sprite_index=sprPWalkPoolBroke or objPlayer.sprite_index=sprPAttackThrow or objPlayer.sprite_index=sprPAttackPunch or objPlayer.sprite_index=sprPAttackBat or objPlayer.sprite_index=sprPAttackPool or objPlayer.sprite_index=sprPAttackPoolBroke or objPlayer.sprite_index=sprPWalkNightStick or objPlayer.sprite_index=sprPAttackNightStick  nothing=1 else {
-if objPlayer.sprite_index=sprPWalkThrow {
-if objPlayer.throwindex&gt;=1 and objPlayer.throwindex&lt;=3 nothing=1 else {if on=0 {if global.alarmsound=0 {audio_play_sound(sndAlarm,0,false) global.alarmsound=1} on=1 scrHearPlayer()} wait=180} 
-} else {if on=0 {if global.alarmsound=0 {audio_play_sound(sndAlarm,0,false) global.alarmsound=1} on=1 scrHearPlayer()} wait=180}
-} 
+if (place_meeting(x, y, objPlayer)) {
+    if (objPlayer.sprite_index == sprPWalkUnarmed || objPlayer.sprite_index == sprPWalkBat || objPlayer.sprite_index == sprPWalkPool || objPlayer.sprite_index == sprPWalkPoolBroke || objPlayer.sprite_index == sprPAttackThrow || objPlayer.sprite_index == sprPAttackPunch || objPlayer.sprite_index == sprPAttackBat || objPlayer.sprite_index == sprPAttackPool || objPlayer.sprite_index == sprPAttackPoolBroke || objPlayer.sprite_index == sprPWalkNightStick || objPlayer.sprite_index == sprPAttackNightStick) {
+        // do nothing
+    } else {
+        if (objPlayer.sprite_index == sprPWalkThrow) {
+            if (objPlayer.throwindex &gt;= 1 &amp;&amp; objPlayer.throwindex &lt;= 3) {
+                // do nothing
+            } else {
+                if (!on) {
+                    if (!global.alarmsound) {
+                        audio_play_sound(sndAlarm, 0, false);
+                        global.alarmsound = 1;
+                    }
+                    on = 1;
+                    scrHearPlayer();
+                }
+                wait = 180;
+            }
+        } else {
+            if (!on) {
+                if (!global.alarmsound) {
+                    audio_play_sound(sndAlarm, 0, false);
+                    global.alarmsound = 1;
+                }
+                on = 1;
+                scrHearPlayer();
+            }
+            wait = 180;
+        }
+    }
 }
 </string>
           </argument>
@@ -89,9 +120,16 @@ if objPlayer.throwindex&gt;=1 and objPlayer.throwindex&lt;=3 nothing=1 else {if 
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if on=1 {sprite_index=sprMetalDetectorAlarm image_speed=0.25} else {sprite_index=sprMetalDetector image_speed=0}
-draw_sprite_ext(sprite_index,image_index,x+2,y+3,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>if (on) {
+    sprite_index = sprMetalDetectorAlarm;
+    image_speed = 0.25;
+} else {
+    sprite_index = sprMetalDetector;
+    image_speed = 0;
+}
+draw_sprite_ext(sprite_index, image_index, x + 2, y + 3, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

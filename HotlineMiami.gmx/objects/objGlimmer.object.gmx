@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-angle=random(360)
-index=random(1000)</string>
+            <string>image_speed = 0;
+angle = random(360);
+index = random(1000);
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,9 +50,10 @@ index=random(1000)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index=(view_xview[0]+view_yview[0])*0.1+index
-image_angle=angle+(view_xview[0]+view_yview[0])*0.02
-index+=0.05</string>
+            <string>image_index = (view_xview[0] + view_yview[0]) * 0.1 + index;
+image_angle = angle + (view_xview[0] + view_yview[0]) * 0.02;
+index += 0.05;
+</string>
           </argument>
         </arguments>
       </action>

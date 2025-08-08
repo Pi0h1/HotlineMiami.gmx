@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir=x+y</string>
+            <string>dir = x + y;
+</string>
           </argument>
         </arguments>
       </action>

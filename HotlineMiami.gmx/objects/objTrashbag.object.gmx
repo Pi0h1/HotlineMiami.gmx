@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-image_angle=random(360)
-image_index=floor(random(3))
-if round(random(3))=2 {
-sprite_index=sprOpenTrashbag
-image_speed=0.25
-}</string>
+            <string>image_speed = 0;
+image_angle = random(360);
+image_index = floor(random(3));
+if (round(random(3)) == 2) {
+    sprite_index = sprOpenTrashbag;
+    image_speed = 0.25;
+}
+</string>
           </argument>
         </arguments>
       </action>

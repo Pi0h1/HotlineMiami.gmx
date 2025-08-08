@@ -25,16 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if !instance_exists(objPlayer) exit
-if ylimit&lt;0 {
-if objPlayer.y&lt;y and !place_meeting(x,y,objPlayer) solid=1 else solid=0
+            <string>if (!instance_exists(objPlayer))
+    exit;
+if (ylimit &lt; 0) {
+    if (objPlayer.y &lt; y &amp;&amp; !place_meeting(x, y, objPlayer))
+        solid = 1;
+    else solid = 0;
 }
-if ylimit&gt;0 {
-if objPlayer.y&gt;y and !place_meeting(x,y,objPlayer) solid=1 else solid=0
+if (ylimit &gt; 0) {
+    if (objPlayer.y &gt; y &amp;&amp; !place_meeting(x, y, objPlayer))
+        solid = 1;
+    else solid = 0;
 }
 
-if global.done=1 solid=0</string>
+if (global.done)
+    solid = 0;
+</string>
           </argument>
         </arguments>
       </action>

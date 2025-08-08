@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0</string>
+            <string>image_speed = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,7 +48,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;8 image_index+=1</string>
+            <string>if (image_index &lt; 8)
+    image_index++;
+</string>
           </argument>
         </arguments>
       </action>

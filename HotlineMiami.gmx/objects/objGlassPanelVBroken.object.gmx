@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mp_grid_add_instances(global.grid,id,1)</string>
+            <string>mp_grid_add_instances(global.grid,id, 1);
+</string>
           </argument>
         </arguments>
       </action>

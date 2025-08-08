@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0</string>
+            <string>image_speed = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,13 +48,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index=0 {
-if place_meeting(x-4,y,objPlayer) {
-image_index=1
-audio_play_sound(sndDoorOpen,0,false)
-my_id=instance_create(x-4,y,objWeapon)
-my_id.image_index=15
-}
+            <string>if (image_index == 0) {
+    if (place_meeting(x - 4, y, objPlayer)) {
+        image_index = 1;
+        audio_play_sound(sndDoorOpen, 0, false);
+        my_id = instance_create(x - 4, y, objWeapon);
+        my_id.image_index = 15;
+    }
 }
 </string>
           </argument>

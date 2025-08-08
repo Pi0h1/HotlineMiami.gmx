@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>amount=1
-image_speed=0
-dir=random(360)</string>
+            <string>amount = 1;
+image_speed = 0;
+dir = random(360);
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,13 +50,18 @@ dir=random(360)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_blend_mode(bm_add)
-color2=merge_color(c_gray,c_ltgray,0.5+lengthdir_x(0.5,dir))
-dir+=3
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,merge_color(c_black,color2,amount),1)
-draw_sprite_ext(sprite_index,image_index+1,x,y,image_xscale,image_yscale,0,merge_color(c_black,color2,1-amount),1)
-draw_set_blend_mode(bm_normal)
-if amount&gt;0 amount-=0.01 else {amount=1 image_index+=1}
+            <string>draw_set_blend_mode(bm_add);
+color2 = merge_color(c_gray, c_ltgray, 0.5 + lengthdir_x(0.5, dir));
+dir += 3;
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, merge_color(c_black, color2, amount), 1);
+draw_sprite_ext(sprite_index, image_index + 1, x, y, image_xscale, image_yscale, 0, merge_color(c_black, color2, 1 - amount), 1);
+draw_set_blend_mode(bm_normal);
+if (amount &gt; 0)
+    amount -= 0.01;
+else {
+    amount = 1;
+    image_index++;
+}
 </string>
           </argument>
         </arguments>

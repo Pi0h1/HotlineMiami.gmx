@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>h=y*0.1
-sdir=(x+y)*0.25
-image_index=0
-image_speed=0.25
-view_angle[0]=5
-index=floor(random(8))*0.5</string>
+            <string>h = y * 0.1;
+sdir = (x + y) * 0.25;
+image_index = 0;
+image_speed = 0.25;
+view_angle[0] = 5;
+index = floor(random(8)) * 0.5;
+</string>
           </argument>
         </arguments>
       </action>
@@ -52,10 +53,10 @@ index=floor(random(8))*0.5</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>h+=1 
-sdir+=1
-s=0.7+lengthdir_x(0.2,sdir)
-image_blend=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,h*7)),merge_color(c_white,c_gray,0.25+lengthdir_x(0.25,sdir*9)),0.25+lengthdir_x(0.25,sdir*0.2))
+            <string>h += 1;
+sdir += 1;
+s = 0.7 + lengthdir_x(0.2, sdir);
+image_blend = merge_color(merge_color(c_aqua, c_fuchsia, 0.5 + lengthdir_x(0.5, h * 7)), merge_color(c_white, c_gray, 0.25 + lengthdir_x(0.25, sdir * 9)), 0.25 + lengthdir_x(0.25, sdir * 0.2));
 </string>
           </argument>
         </arguments>
@@ -78,17 +79,24 @@ image_blend=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,h*7)),m
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if floor(index*0.5)=0 light=sprDanceFloorLight0
-if floor(index*0.5)=1 light=sprDanceFloorLight1
-if floor(index*0.5)=2 light=sprDanceFloorLight2
-if floor(index*0.5)=3 light=sprDanceFloorLight3
-if index&lt;3.5 index+=0.5 else index=0
+            <string>if (floor(index * 0.5) == 0)
+    light = sprDanceFloorLight0;
+if (floor(index * 0.5) == 1)
+    light = sprDanceFloorLight1;
+if (floor(index * 0.5) == 2)
+    light = sprDanceFloorLight2;
+if (floor(index * 0.5) == 3)
+    light = sprDanceFloorLight3;
+if (index &lt; 3.5)
+    index += 0.5;
+else index = 0;
 
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-draw_sprite_ext(sprDanceFloorFrame,image_index,x,y,image_xscale,image_yscale,image_angle,merge_color(image_blend,c_white,0.5+lengthdir_x(0.5,sdir*12)),image_alpha)
-draw_set_blend_mode(bm_add)
-draw_sprite_ext(light,image_index,x,y,image_xscale,image_yscale,image_angle,merge_color(c_black,merge_color(image_blend,merge_color(c_yellow,c_red,0.25+random(0.25)),random(1)),0.5+lengthdir_x(0.5,sdir*30)),image_alpha)
-draw_set_blend_mode(bm_normal)</string>
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_sprite_ext(sprDanceFloorFrame, image_index, x, y, image_xscale, image_yscale, image_angle, merge_color(image_blend, c_white, 0.5 + lengthdir_x(0.5, sdir * 12)), image_alpha);
+draw_set_blend_mode(bm_add);
+draw_sprite_ext(light, image_index, x, y, image_xscale, image_yscale, image_angle, merge_color(c_black, merge_color(image_blend, merge_color(c_yellow, c_red, 0.25 + random(0.25)), random(1)), 0.5 + lengthdir_x(0.5, sdir * 30)), image_alpha);
+draw_set_blend_mode(bm_normal);
+</string>
           </argument>
         </arguments>
       </action>

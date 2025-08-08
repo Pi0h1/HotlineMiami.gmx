@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-image_alpha=0.5
-frames=sprite_get_number(sprite_index)</string>
+            <string>image_speed = 0;
+image_alpha = 0.5;
+frames = sprite_get_number(sprite_index);
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,7 +50,9 @@ frames=sprite_get_number(sprite_index)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index&lt;frames-1 image_index+=0.2</string>
+            <string>if (image_index &lt; frames - 1)
+    image_index += 0.2;
+</string>
           </argument>
         </arguments>
       </action>

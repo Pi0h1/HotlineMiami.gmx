@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-spawn=0
-visible=0</string>
+            <string>image_speed = 0;
+spawn = 0;
+visible = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,27 +50,31 @@ visible=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.done=1 {
-if spawn=0 {
-my_id=instance_create(248,120,objSwat)
-my_id.direction=180
-my_id.diradd=1
-my_id=instance_create(352,120,objSwat)
-my_id.direction=0
-my_id.diradd=-1
-my_id=instance_create(280,528,objSwat)
-my_id.direction=90
-my_id.diradd=-1
-my_id=instance_create(336,528,objSwat)
-my_id.direction=90
-my_id.diradd=1
-visible=1
-solid=1
-spawn=1
-with objCopCar {visible=1 solid=1}
-scrCheckpoint()
+            <string>if (global.done) {
+    if (!spawn) {
+        my_id = instance_create(248, 120, objSwat);
+        my_id.direction = 180;
+        my_id.diradd = 1;
+        my_id = instance_create(352, 120, objSwat);
+        my_id.direction = 0;
+        my_id.diradd = -1;
+        my_id = instance_create(280, 528, objSwat);
+        my_id.direction = 90;
+        my_id.diradd = -1;
+        my_id = instance_create(336, 528, objSwat);
+        my_id.direction = 90;
+        my_id.diradd = 1;
+        visible = 1;
+        solid = 1;
+        spawn = 1;
+        with (objCopCar) {
+            visible = 1;
+            solid = 1;
+        }
+        scrCheckpoint();
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -91,7 +96,8 @@ scrCheckpoint()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if objEffector.newsong=1 audio_stop_sound(sndPolice)
+            <string>if (objEffector.newsong)
+    audio_stop_sound(sndPolice);
 </string>
           </argument>
         </arguments>

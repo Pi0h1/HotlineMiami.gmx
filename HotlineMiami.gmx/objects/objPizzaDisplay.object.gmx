@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index=floor(random(7))
-image_speed=0.2</string>
+            <string>image_index = floor(random(7));
+image_speed = 0.2;
+</string>
           </argument>
         </arguments>
       </action>
@@ -48,9 +49,10 @@ image_speed=0.2</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+2,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-draw_sprite_ext(sprPizzaGlass,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,0.5)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 2, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_sprite_ext(sprPizzaGlass, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, 0.5);
+</string>
           </argument>
         </arguments>
       </action>

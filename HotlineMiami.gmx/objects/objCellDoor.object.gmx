@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>swingspeed=0
-y+=5
-swinger=0
-dir=0</string>
+            <string>swingspeed = 0;
+y += 5;
+swinger = 0;
+dir = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,25 +51,44 @@ dir=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrXboxPrisonDoor()
+            <string>if (global.xbox)
+    scrXboxPrisonDoor();
 
-if abs(swingspeed)&gt;0 {
-image_angle+=swingspeed
-if place_meeting(x,y,objFurniture) {
-image_angle-=swingspeed
-swingspeed*=-0.5
-}
-if image_angle&lt;-135 {image_angle=-135 swingspeed=abs(swingspeed)}
-if image_angle&gt;135 {image_angle=135 swingspeed=-abs(swingspeed)}
-swingdir=sign(swingspeed)
-if abs(swingspeed)&lt;3.5 {
-if image_angle&gt;-6 and image_angle&lt;6 {swingspeed=0 image_angle=0 exit}
-}
+if (abs(swingspeed) &gt; 0) {
+    image_angle += swingspeed;
+    if (place_meeting(x, y, objFurniture)) {
+        image_angle -= swingspeed;
+        swingspeed *= -0.5;
+    }
+    if (image_angle &lt; -135) {
+        image_angle = -135;
+        swingspeed = abs(swingspeed);
+    }
+    if (image_angle &gt; 135) {
+        image_angle = 135;
+        swingspeed = -abs(swingspeed);
+    }
+    swingdir = sign(swingspeed);
+    if (abs(swingspeed) &lt; 3.5) {
+        if (image_angle &gt; -6 &amp;&amp; image_angle &lt; 6) {
+            swingspeed = 0;
+            image_angle = 0;
+            exit;
+        }
+    }
 
-if swingspeed&gt;0.25 swingspeed-=0.25 else {
-if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
+    if (swingspeed &gt; 0.25)
+        swingspeed -= 0.25;
+    else {
+        if (swingspeed &lt; 0)
+            swingspeed += 0.25;
+        else {
+            swinger = 0;
+            swingspeed = 0;
+        }
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -90,64 +110,94 @@ if swingspeed&lt;0 swingspeed+=0.25 else {swinger=0 swingspeed=0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if abs(swingspeed)&gt;0 exit
-if image_angle&lt;-1 {swingspeed=1 exit}
-if image_angle&gt;1 {swingspeed=-1 exit}*/
-if solid=1 exit
-if other.object_index=objDogPatrol or other.object_index=objEnemyFat {
-swinger=2
-if abs(swingspeed)&lt;2 audio_play_sound(sndDoorOpen,0,false)
-if x&gt;other.x and other.y&lt;y {swingspeed=-8 exit}
-if x&gt;other.x and other.y&gt;y {swingspeed=8 exit}
-if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=-8 else swingspeed=8
-exit
+            <string>if (solid)
+    exit;
+if (other.object_index == objDogPatrol || other.object_index == objEnemyFat) {
+    swinger = 2;
+    if (abs(swingspeed) &lt; 2)
+        audio_play_sound(sndDoorOpen, 0, false);
+    if (x &gt; other.x &amp;&amp; other.y &lt; y) {
+        swingspeed = -8;
+        exit;
+    }
+    if (x &gt; other.x &amp;&amp; other.y &gt; y){
+        swingspeed = 8;
+        exit;
+    }
+    if (other.y &lt; y + lengthdir_y(32, image_angle))
+        swingspeed = -8;
+    else swingspeed = 8;
+    exit;
 }
 
-if abs(swingspeed)&gt;3.5 {
-if swinger=1 or swinger=0 {
-if other.sprite_index=sprEWalkUnarmed or other.sprite_index=sprPoliceWalkUnarmed noweapon=1 else noweapon=0
-with other {
-if object_get_parent(object_index)=objEnemyIdle {
-if room=rmTrainstationEntrance or room=rmHouse3Downstairs sprite_index=sprEWalkKnife else sprite_index=choose(sprEWalkClub,sprEWalkBat,sprEWalkKnife,sprEWalkPipe,sprEWalkM16,sprEWalkShotgun)
-ammo=0
-if sprite_index=sprEWalkShotgun ammo=6 
-if sprite_index=sprEWalkM16 ammo=24
+if (abs(swingspeed) &gt; 3.5) {
+    if (swinger == 1 || swinger == 0) {
+        if (other.sprite_index == sprEWalkUnarmed || other.sprite_index == sprPoliceWalkUnarmed)
+            noweapon = 1;
+        else noweapon = 0;
+        with (other) {
+            if (object_get_parent(object_index) == objEnemyIdle) {
+                if (room == rmTrainstationEntrance || room == rmHouse3Downstairs)
+                    sprite_index = sprEWalkKnife;
+                else sprite_index = choose(sprEWalkClub, sprEWalkBat, sprEWalkKnife, sprEWalkPipe, sprEWalkM16, sprEWalkShotgun);
+                ammo = 0;
+                if (sprite_index == sprEWalkShotgun)
+                    ammo = 6;
+                if (sprite_index == sprEWalkM16)
+                    ammo = 24;
+            }
+        }
+        audio_play_sound(sndDoorHit, 0, false);
+        global.shake = 6;
+        my_id = instance_create(other.x, other.y, objKnockedOut);
+        my_id.type = other.object_index;
+        if (scrIsPolice(other.object_index))
+            my_id.sprite_index = sprPoliceGetUp;
+        if (swingspeed &gt; 0)
+            my_id.direction = 90 - 15 + random(30);
+        else my_id.direction = 255 + random(30);
+        my_id.angle = my_id.direction;
+        my_id.speed = abs(swingspeed) * 0.5;
+        if (!noweapon) {
+            global.test = 0;
+            with (objEnemy)
+                if (alert == 1)
+                    global.test++;
+            my_id = instance_create(x, y - 12, objScore);
+            my_id.text = "+" + string(180 + 300 * global.factor) + "pts";
+            global.myscore += 180 + 300 * global.factor;
+            global.boldscore += 180 + 300 * global.factor;
+            global.combotime += 100;
+            global.killx[global.kills] = x;
+            global.killy[global.kills] = y;
+            global.kills++;
+            my_id = instance_create(other.x, other.y, objWeaponThrow);
+            if (swingspeed &gt; 0)
+                my_id.direction = 90 - 15 + random(30) + 25;
+            else my_id.direction = 255 + random(30) + 25;
+            my_id.speed = 1 + random(2);
+            my_id.ammo = other.ammo;
+            my_id.image_index = scrCurrentWeaponExt(other.sprite_index);
+        }
+        with (other)
+            instance_destroy();
+    }
+    exit;
 }
+swinger = 2;
+if (abs(swingspeed) &lt; 2)
+    audio_play_sound(sndDoorOpen, 0, false);
+if (x &gt; other.x &amp;&amp; other.y &lt; y) {
+    swingspeed = -8;
+    exit;
 }
-audio_play_sound(sndDoorHit,0,false)
-global.shake=6
-my_id=instance_create(other.x,other.y,objKnockedOut)
-my_id.type=other.object_index
-if scrIsPolice(other.object_index) my_id.sprite_index=sprPoliceGetUp
-if swingspeed&gt;0 my_id.direction=90-15+random(30) else my_id.direction=255+random(30)
-my_id.angle=my_id.direction
-my_id.speed=abs(swingspeed)*0.5
-if noweapon=0 {
-global.test=0
-with objEnemy if alert=1 global.test+=1
-my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(180+300*global.factor)+"pts"
-global.myscore+=180+300*global.factor
-global.boldscore+=180+300*global.factor
-global.combotime+=100
-global.killx[global.kills]=x
-global.killy[global.kills]=y
-global.kills+=1
-my_id=instance_create(other.x,other.y,objWeaponThrow)
-if swingspeed&gt;0 my_id.direction=90-15+random(30)+25 else my_id.direction=255+random(30)+25
-my_id.speed=1+random(2)
-my_id.ammo=other.ammo
-my_id.image_index=scrCurrentWeaponExt(other.sprite_index)
+if (x &gt; other.x &amp;&amp; other.y &gt; y) {
+    swingspeed = 8;
+    exit;
 }
-with other instance_destroy()
-}
-exit
-}
-swinger=2
-if abs(swingspeed)&lt;2 audio_play_sound(sndDoorOpen,0,false)
-if x&gt;other.x and other.y&lt;y {swingspeed=-8 exit}
-if x&gt;other.x and other.y&gt;y {swingspeed=8 exit}
-if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=-8 else swingspeed=8
+if (other.y &lt; y + lengthdir_y(32, image_angle))
+    swingspeed = -8;
+else swingspeed = 8;
 </string>
           </argument>
         </arguments>
@@ -170,16 +220,24 @@ if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=-8 else swingspeed=8
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if abs(swingspeed)&gt;0 exit
-if image_angle&lt;-1 {swingspeed=1 exit}
-if image_angle&gt;1 {swingspeed=-1 exit}*/
-if solid=1 exit
-swinger=1
-if abs(swingspeed)&gt;3.5 exit
-if abs(swingspeed)&lt;2 audio_play_sound(sndDoorOpen,0,false)
-if x&gt;other.x and other.y&lt;y {swingspeed=-7 exit}
-if x&gt;other.x and other.y&gt;y {swingspeed=7 exit}
-if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=-7 else swingspeed=7
+            <string>if (solid)
+    exit;
+swinger = 1;
+if (abs(swingspeed) &gt; 3.5)
+    exit;
+if (abs(swingspeed) &lt; 2)
+    audio_play_sound(sndDoorOpen, 0, false);
+if (x &gt; other.x and other.y &lt; y) {
+    swingspeed = -7;
+    exit;
+}
+if (x &gt; other.x &amp;&amp; other.y &gt; y) {
+    swingspeed = 7;
+    exit;
+}
+if (other.y &lt; y + lengthdir_y(32, image_angle))
+    swingspeed = -7;
+else swingspeed = 7;
 </string>
           </argument>
         </arguments>
@@ -202,7 +260,8 @@ if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=-7 else swingspeed=7
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_mouse,ev_global_left_press)</string>
+            <string>event_perform(ev_mouse, ev_global_left_press);
+</string>
           </argument>
         </arguments>
       </action>
@@ -224,32 +283,32 @@ if other.y&lt;y+lengthdir_y(32,image_angle) swingspeed=-7 else swingspeed=7
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if solid=0 or instance_exists(objEnemy) or instance_exists(objKnockedOut) exit
-if global.locked=0 {
-if place_meeting(x,y+4,objPlayer) {
-solid=0
-audio_play_sound(sndPickupWeapon,0,false)
-with objPlayerMouse {
-
-if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackPunch nothing=1 else {
-my_id=instance_create(objPlayer.x+lengthdir_x(8,objPlayer.dir+90),objPlayer.y+lengthdir_y(8,objPlayer.dir+90),objWeaponThrow)
-my_id.image_index=scrCurrentWeaponExt(sprite_index)
-my_id.direction=dir+70+random(40)
-my_id.speed=1+random(2)
-my_id.ammo=ammo
-}
-
-
-my_id=instance_create(x,y+5,objPlayerMouseHouse)
-my_id.active=0
-my_id.sprite_index=sprPUnlockDoor
-my_id.image_speed=0.15
-my_id.ammo=0
-global.maskon=1
-my_id.maskon=1
-instance_destroy()
-}
-}
+            <string>if (!solid || instance_exists(objEnemy) || instance_exists(objKnockedOut))
+    exit;
+if (!global.locked) {
+    if (place_meeting(x, y + 4, objPlayer)) {
+        solid = 0;
+        audio_play_sound(sndPickupWeapon, 0, false);
+        with (objPlayerMouse) {
+            if (sprite_index == sprPWalkUnarmed || sprite_index == sprPAttackPunch) {
+                // do nothing
+            } else {
+                my_id = instance_create(objPlayer.x + lengthdir_x(8, objPlayer.dir + 90), objPlayer.y + lengthdir_y(8, objPlayer.dir + 90), objWeaponThrow);
+                my_id.image_index = scrCurrentWeaponExt(sprite_index);
+                my_id.direction = dir + 70 + random(40);
+                my_id.speed = 1 + random(2);
+                my_id.ammo = ammo;
+            }
+            my_id = instance_create(x, y + 5, objPlayerMouseHouse);
+            my_id.active = 0;
+            my_id.sprite_index = sprPUnlockDoor;
+            my_id.image_speed = 0.15;
+            my_id.ammo = 0;
+            global.maskon = 1;
+            my_id.maskon = 1;
+            instance_destroy();
+        }
+    }
 }
 </string>
           </argument>
@@ -273,13 +332,14 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+2,y+3,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+            <string>draw_sprite_ext(sprite_index, image_index, x + 2, y + 3, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
-if global.locked=0 and !instance_exists(objEnemy) and !instance_exists(objKnockedOut) and solid=1 {
-draw_sprite_ext(sprArrow,0,x+16+lengthdir_x(16-lengthdir_x(3,dir),image_angle-90),y+lengthdir_y(16-lengthdir_x(3,dir),image_angle-90),1,1,image_angle+180,image_blend,image_alpha)
-dir+=8
-}</string>
+if (!global.locked &amp;&amp; !instance_exists(objEnemy) &amp;&amp; !instance_exists(objKnockedOut) &amp;&amp; solid) {
+    draw_sprite_ext(sprArrow, 0, x + 16 + lengthdir_x(16 - lengthdir_x(3, dir), image_angle - 90), y + lengthdir_y(16 - lengthdir_x(3, dir), image_angle - 90), 1, 1, image_angle + 180, image_blend, image_alpha);
+    dir += 8;
+}
+</string>
           </argument>
         </arguments>
       </action>

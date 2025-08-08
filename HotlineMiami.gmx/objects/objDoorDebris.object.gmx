@@ -25,11 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index=random(8)
-image_speed=0
-dir_add=-1+round(random(2))
-image_angle=random(360)
-friction=0.1</string>
+            <string>image_index = random(8);
+image_speed = 0;
+dir_add = -1 + round(random(2));
+image_angle = random(360);
+friction = 0.1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -51,10 +52,12 @@ friction=0.1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle+=dir_add*speed*2
-if speed=0 {
-if surface_exists(global.surf2) addToSurface(global.surf2,1)
-}</string>
+            <string>image_angle += dir_add * speed * 2;
+if (speed == 0) {
+    if (surface_exists(global.surf2))
+        addToSurface(global.surf2, 1);
+}
+</string>
           </argument>
         </arguments>
       </action>

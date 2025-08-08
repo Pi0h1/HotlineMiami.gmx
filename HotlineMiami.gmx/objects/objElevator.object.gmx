@@ -25,28 +25,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wait=80
-index=0
-if image_angle=0 {
-addx=0
-addy=0.5
+            <string>wait = 80;
+index = 0;
+if (image_angle == 0) {
+    addx = 0;
+    addy = 0.5;
 }
-if image_angle=90 {
-addx=0.5
-addy=0
+if (image_angle == 90) {
+    addx = 0.5;
+    addy = 0;
 }
-if image_angle=180 {
-addx=0
-addy=-0.5
+if (image_angle == 180) {
+    addx = 0;
+    addy = -0.5;
 }
-if image_angle=270 {
-addx=-0.5
-addy=0
+if (image_angle == 270) {
+    addx = -0.5;
+    addy = 0;
 }
-touch=0
-image_speed=0
-dir=0
-valid=1</string>
+touch = 0;
+image_speed = 0;
+dir = 0;
+valid = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -68,131 +69,176 @@ valid=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mask_index=sprElevatorFloor 
-touch=0
-if !place_meeting(x,y,objPlayer) {
-if wait&lt;30 wait=30
+            <string>mask_index = sprElevatorFloor;
+touch = 0;
+if (!place_meeting(x, y, objPlayer)) {
+    if (wait &lt; 30)
+        wait = 30;
 }
-if instance_number(objPlayerMouse)+instance_number(objPlayerMouseHouse)+instance_number(objPlayerBiker)+instance_number(objPlayerBikerHouse)=0 exit
-if valid=0 exit
-if instance_exists(objEnemy) or instance_exists(objBoss) {
-if place_meeting(x,y,objPlayer) {
-if wait&gt;0 wait-=1 else {if index&lt;6 index+=0.5}
-} 
-if index&lt;3 mask_index=sprite_index else mask_index=sprElevatorMask
-image_index=index
+if (instance_number(objPlayerMouse) + instance_number(objPlayerMouseHouse) + instance_number(objPlayerBiker) + instance_number(objPlayerBikerHouse) == 0)
+    exit;
+if (!valid)
+    exit;
+if (instance_exists(objEnemy) || instance_exists(objBoss)) {
+    if (place_meeting(x, y, objPlayer)) {
+        if (wait &gt; 0)
+            wait--;
+        else {
+            if (index &lt; 6)
+                index += 0.5;
+        }
+    }
+    if (index &lt; 3)
+        mask_index = sprite_index;
+    else mask_index = sprElevatorMask;
+    image_index = index;
 
 }
-if room=rmHotelEntrance {
-test=1
-if objFatmanEating.sprite_index=sprFatmanEating or objFatmanEating.sprite_index=sprFatmanEatingGiveUp or objFatmanTelephone.sprite_index=sprFatmanTelephone or objFatmanTelephone.sprite_index=sprFatmanTelephoneGiveUp test=0
-if test=0 exit
+if (room == rmHotelEntrance) {
+    test = 1;
+    if (objFatmanEating.sprite_index == sprFatmanEating || objFatmanEating.sprite_index == sprFatmanEatingGiveUp || objFatmanTelephone.sprite_index == sprFatmanTelephone || objFatmanTelephone.sprite_index == sprFatmanTelephoneGiveUp)
+        test = 0;
+    if (test == 0)
+        exit;
 }
 
-if room=rmHotelSuite {
-test=1
-if objFatmanShit.sprite_index=sprFatmanShit or objFatmanShit.sprite_index=sprFatmanShitGiveUp test=0
-if test=0 exit
+if (room == rmHotelSuite) {
+    test = 1;
+    if (objFatmanShit.sprite_index == sprFatmanShit || objFatmanShit.sprite_index == sprFatmanShitGiveUp)
+        test = 0;
+    if (test == 0)
+        exit;
 }
 
-if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objBoss)+instance_number(objFiles)+instance_number(objMiscEnemy)+instance_number(objBossgun)=0 {
-if global.done=0 {
-if place_meeting(x,y,objPlayer) {
-touch=1
-objPlayer.addx=0
-objPlayer.addy=0
-if objPlayer.x&lt;x-2 objPlayer.x+=2
-if objPlayer.x&gt;x+2 objPlayer.x-=2
-if objPlayer.y&lt;y-2 objPlayer.y+=2
-if objPlayer.y&gt;y+2 objPlayer.y-=2
-if objPlayer.x&lt;x+2 and objPlayer.x&gt;x-2 and objPlayer.y&gt;y-2 and objPlayer.y&lt;y+2 nothing=1 else {
-objPlayer.image_index+=0.15
-objPlayer.legindex+=0.4
-}
-objPlayer.persistent=1
-if image_angle=0 {
-if objPlayer.y&gt;y objPlayer.addy=0
-}
-if image_angle=90 {
-if objPlayer.x&gt;x objPlayer.addx=0
-}
-if image_angle=180 {
-if objPlayer.y&lt;y objPlayer.addy=0
-}
-if image_angle=270 {
-if objPlayer.x&lt;x objPlayer.addx=0
-}
+if (instance_number(objEnemy) + instance_number(objKnockedOut) + instance_number(objBoss) + instance_number(objFiles) + instance_number(objMiscEnemy) + instance_number(objBossgun) == 0) {
+    if (!global.done) {
+        if (place_meeting(x, y, objPlayer)) {
+            touch = 1;
+            objPlayer.addx = 0;
+            objPlayer.addy = 0;
+            if (objPlayer.x &lt; x - 2)
+                objPlayer.x += 2;
+            if (objPlayer.x &gt; x + 2)
+                objPlayer.x -= 2;
+            if (objPlayer.y &lt; y - 2)
+                objPlayer.y += 2;
+            if (objPlayer.y &gt; y + 2)
+                objPlayer.y -= 2;
+            if (objPlayer.x &lt; x + 2 &amp;&amp; objPlayer.x &gt; x - 2 &amp;&amp; objPlayer.y &gt; y - 2 &amp;&amp; objPlayer.y &lt; y + 2) {
+                // do nothing
+            } else {
+                objPlayer.image_index += 0.15;
+                objPlayer.legindex += 0.4;
+            }
+            objPlayer.persistent = 1;
+            if (image_angle == 0) {
+                if (objPlayer.y &gt; y)
+                    objPlayer.addy = 0;
+            }
+            if (image_angle == 90) {
+                if (objPlayer.x &gt; x)
+                    objPlayer.addx = 0;
+            }
+            if (image_angle == 180) {
+                if (objPlayer.y &lt; y)
+                    objPlayer.addy = 0;
+            }
+            if (image_angle == 270) {
+                if (objPlayer.x &lt; x)
+                    objPlayer.addx = 0;
+            }
 
+            if (wait &gt; 0)
+                wait--;
+            else {
+                if (index &gt; 0)
+                    index -= 0.5;
+                if (!objEffector.fade) {
+                    objPlayer.movex = movex;
+                    objPlayer.movey = movey;
+                    if (abs(movex) &gt; 0 || abs(movey) &gt; 0)
+                        objPlayer.move = 1;
+                    objEffector.next = 1;
+                    objEffector.fade = 1;
+                    objEffector.nextroom = nextroom;
 
+                }
+            }
 
-if wait&gt;0 wait-=1 else {
-if index&gt;0 index-=0.5
-if objEffector.fade=0 {
-objPlayer.movex=movex
-objPlayer.movey=movey
-if abs(movex)&gt;0 or abs(movey)&gt;0 objPlayer.move=1
-objEffector.next=1
-objEffector.fade=1
-objEffector.nextroom=nextroom
+        } else {
+            if (index &lt; 6)
+                index += 0.2;
+        }
+    } else {
+        if (place_meeting(x, y, objPlayer)) {
+            if (instance_exists(objPlayerCarEnter) || instance_exists(objMCBike)) {
+                if (wait &gt; 0) {
+                    index = 0;
+                    wait--;
+                } else {
+                    if (index &lt; 6)
+                        index += 0.5;
+                }
+            } else {
+                touch = 1;
+                objPlayer.addx = 0;
+                objPlayer.addy = 0;
+                if (objPlayer.x &lt; x - 2)
+                    objPlayer.x += 2;
+                if (objPlayer.x &gt; x + 2) objPlayer.x -= 2;
+                if (objPlayer.y &lt; y - 2) objPlayer.y += 2;
+                if (objPlayer.y &gt; y + 2) objPlayer.y -= 2;
+                if (objPlayer.x &lt; x + 2 &amp;&amp; objPlayer.x &gt; x - 2 &amp;&amp; objPlayer.y &gt; y - 2 &amp;&amp; objPlayer.y &lt; y + 2) {
+                    // do nothing
+                } else {
+                    objPlayer.image_index += 0.15;
+                    objPlayer.legindex += 0.15;
+                }
+                objPlayer.persistent = 1;
+                if (image_angle == 0) {
+                    if (objPlayer.y &gt; y)
+                        objPlayer.addy = 0;
+                }
+                if (image_angle == 90) {
+                    if (objPlayer.x &gt; x)
+                        objPlayer.addx = 0;
+                }
+                if (image_angle == 180) {
+                    if (objPlayer.y &lt; y)
+                        objPlayer.addy = 0;
+                }
+                if (image_angle == 270) {
+                    if (objPlayer.x &lt; x)
+                        objPlayer.addx = 0;
+                }
 
+                if (wait &gt; 0)
+                    wait--;
+                else {
+                    if (index &gt; 0)
+                        index -= 0.5;
+                    if (!objEffector.fade) {
+                        objPlayer.movex = movexl
+                        objPlayer.movey = moveyl
+                        if (abs(movex) &gt; 0 || abs(movey) &gt; 0)
+                            objPlayer.move = 1;
+                        objEffector.next = 1;
+                        objEffector.fade = 1;
+                        objEffector.nextroom = nextroom;
+                        objPlayer.persistent = 1;
+                    }
+                }
+            }
+        }
+    }
 }
-}
+if (index &lt; 3)
+    mask_index = sprite_index;
+else mask_index = sprElevatorMask;
+image_index = index;
 
-} else {
-{if index&lt;6 index+=0.2}
-}
-} else {
-if place_meeting(x,y,objPlayer) {
-if instance_exists(objPlayerCarEnter) or instance_exists(objMCBike) {
-if wait&gt;0 {index=0 wait-=1} else {if index&lt;6 index+=0.5}
-} else {
-touch=1
-objPlayer.addx=0
-objPlayer.addy=0
-if objPlayer.x&lt;x-2 objPlayer.x+=2
-if objPlayer.x&gt;x+2 objPlayer.x-=2
-if objPlayer.y&lt;y-2 objPlayer.y+=2
-if objPlayer.y&gt;y+2 objPlayer.y-=2
-if objPlayer.x&lt;x+2 and objPlayer.x&gt;x-2 and objPlayer.y&gt;y-2 and objPlayer.y&lt;y+2 nothing=1 else {
-objPlayer.image_index+=0.15
-objPlayer.legindex+=0.15
-}
-objPlayer.persistent=1
-if image_angle=0 {
-if objPlayer.y&gt;y objPlayer.addy=0
-}
-if image_angle=90 {
-if objPlayer.x&gt;x objPlayer.addx=0
-}
-if image_angle=180 {
-if objPlayer.y&lt;y objPlayer.addy=0
-}
-if image_angle=270 {
-if objPlayer.x&lt;x objPlayer.addx=0
-}
-
-
-
-if wait&gt;0 wait-=1 else {if index&gt;0 index-=0.5
-if objEffector.fade=0 {
-objPlayer.movex=movex
-objPlayer.movey=movey
-if abs(movex)&gt;0 or abs(movey)&gt;0 objPlayer.move=1
-objEffector.next=1
-objEffector.fade=1
-objEffector.nextroom=nextroom
-objPlayer.persistent=1
-}
-}
-}
-}
-}
-}
-if index&lt;3 mask_index=sprite_index else mask_index=sprElevatorMask
-image_index=index
-
-
-valid=1</string>
+valid = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -214,7 +260,8 @@ valid=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wait=80</string>
+            <string>wait = 80;
+</string>
           </argument>
         </arguments>
       </action>
@@ -236,22 +283,25 @@ valid=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprElevatorFloor,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+            <string>draw_sprite_ext(sprElevatorFloor, 0, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
-if room=rmHotelEntrance {
-test=1
-if objFatmanEating.sprite_index=sprFatmanEating or objFatmanEating.sprite_index=sprFatmanEatingGiveUp or objFatmanTelephone.sprite_index=sprFatmanTelephone or objFatmanTelephone.sprite_index=sprFatmanTelephoneGiveUp test=0
-if test=0 exit
+if (room == rmHotelEntrance) {
+    test = 1;
+    if (objFatmanEating.sprite_index == sprFatmanEating || objFatmanEating.sprite_index == sprFatmanEatingGiveUp || objFatmanTelephone.sprite_index == sprFatmanTelephone || objFatmanTelephone.sprite_index == sprFatmanTelephoneGiveUp)
+        test = 0;
+    if (test == 0)
+        exit;
 }
 
-if !instance_exists(objEnemy) and !instance_exists(objKnockedOut) and !instance_exists(objBoss) and !instance_exists(objFiles) and !instance_exists(objBossgun) and !instance_exists(objMiscEnemy) {
-if !instance_exists(objPlayerCarEnter) or global.done=0 {
-draw_sprite_ext(sprArrow,image_index,x+lengthdir_x(lengthdir_x(3,dir),image_angle-90),y+lengthdir_y(lengthdir_x(3,dir),image_angle-90),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-dir+=8
+if (!instance_exists(objEnemy) &amp;&amp; !instance_exists(objKnockedOut) &amp;&amp; !instance_exists(objBoss) &amp;&amp; !instance_exists(objFiles) &amp;&amp; !instance_exists(objBossgun) &amp;&amp; !instance_exists(objMiscEnemy)) {
+    if (!instance_exists(objPlayerCarEnter) || !global.done) {
+        draw_sprite_ext(sprArrow, image_index, x + lengthdir_x(lengthdir_x(3, dir), image_angle - 90), y + lengthdir_y(lengthdir_x(3, dir), image_angle - 90), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+        dir += 8;
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>

@@ -25,10 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle=random(360)
-image_speed=0
-dir=90
-if global.xbox=1 scrInitXboxButtons()</string>
+            <string>image_angle = random(360);
+image_speed = 0;
+dir = 90;
+if (global.xbox)
+    scrInitXboxButtons();
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,7 +52,9 @@ if global.xbox=1 scrInitXboxButtons()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrXboxGolfbag()</string>
+            <string>if (global.xbox)
+    scrXboxGolfbag();
+</string>
           </argument>
         </arguments>
       </action>
@@ -72,13 +76,13 @@ if global.xbox=1 scrInitXboxButtons()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objPlayerMouse) or instance_exists(objPlayerMouseHouse) {
-if place_meeting(x,y,objPlayer) and image_index=0 {
-objPlayer.sprite_index=sprPWalkClub
-objPlayer.reload=10
-image_index=1
-audio_play_sound(sndPickupWeapon,0,false)
-}
+            <string>if (instance_exists(objPlayerMouse) || instance_exists(objPlayerMouseHouse)) {
+    if (place_meeting(x, y, objPlayer) &amp;&amp; image_index == 0) {
+        objPlayer.sprite_index = sprPWalkClub;
+        objPlayer.reload = 10;
+        image_index = 1;
+        audio_play_sound(sndPickupWeapon, 0, false);
+    }
 }
 </string>
           </argument>
@@ -102,18 +106,22 @@ audio_play_sound(sndPickupWeapon,0,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index=0 {
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-d3d_set_fog(true,c_white,0,0)
-if room=rmPhoneHomUpstairs draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
-d3d_set_fog(0,0,0,0)
-if image_index=0 and room=rmPhoneHomUpstairs draw_sprite_ext(sprArrow,0,x,y-12+lengthdir_x(4,dir*2),1,1,0,c_white,1)
+            <string>if (image_index == 0) {
+    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, 0.5);
+    draw_sprite_ext(sprite_index, image_index, x - 1 + lengthdir_x(1, dir), y - 1 + lengthdir_x(1, dir), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+    d3d_set_fog(true, c_white, 0, 0);
+    if (room == rmPhoneHomUpstairs)
+        draw_sprite_ext(sprite_index, image_index, x - 1 + lengthdir_x(1, dir), y - 1 + lengthdir_x(1, dir), image_xscale, image_yscale, image_angle, image_blend, 0.1 + lengthdir_x(0.1, dir));
+    d3d_set_fog(0, 0, 0, 0);
+    if (image_index == 0 &amp;&amp; room == rmPhoneHomUpstairs)
+        draw_sprite_ext(sprArrow, 0, x, y - 12 + lengthdir_x(4, dir * 2), 1, 1, 0, c_white, 1);
 } else {
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+    draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 }
-if room=rmPhoneHomUpstairs dir+=4</string>
+if (room == rmPhoneHomUpstairs)
+    dir += 4;
+</string>
           </argument>
         </arguments>
       </action>

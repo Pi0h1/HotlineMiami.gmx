@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index=sprSewerFall2Water
-image_speed=0.25</string>
+            <string>sprite_index = sprSewerFall2Water;
+image_speed = 0.25;
+</string>
           </argument>
         </arguments>
       </action>
@@ -48,8 +49,9 @@ image_speed=0.25</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-draw_sprite_ext(sprSewerFall2,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_sprite_ext(sprSewerFall2, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

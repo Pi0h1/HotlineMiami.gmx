@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>startx=x
-starty=y
-direction=random(360)
-speed=4
-h=random(255)
-color=make_color_hsv(h,255,255)</string>
+            <string>startx = x;
+starty = y;
+direction = random(360);
+speed = 4;
+h = random(255);
+color = make_color_hsv(h, 255, 255);
+</string>
           </argument>
         </arguments>
       </action>
@@ -52,27 +53,41 @@ color=make_color_hsv(h,255,255)</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle=point_direction(startx,starty,x,y)
-if y-16&lt;ylimit1 vspeed=abs(vspeed)
-if y+16&gt;ylimit2 vspeed=-abs(vspeed)
+            <string>image_angle = point_direction(startx, starty, x, y);
+if (y - 16 &lt; ylimit1)
+    vspeed = abs(vspeed);
+if (y + 16 &gt; ylimit2)
+    vspeed = -abs(vspeed);
 
-if x-16&lt;xlimit1 hspeed=abs(hspeed)
-if x+16&gt;xlimit2 hspeed=-abs(hspeed)
+if (x - 16 &lt; xlimit1)
+    hspeed = abs(hspeed);
+if (x + 16 &gt; xlimit2)
+    hspeed = -abs(hspeed);
 
-if !place_free(x+hspeed*1.5,y) hspeed=-hspeed
-if !place_free(x,y+vspeed) y-=vspeed
+if (!place_free(x + hspeed * 1.5, y))
+    hspeed = -hspeed;
+if (!place_free(x, y + vspeed))
+    y -= vspeed;
 
-if round(random(15))=2 direction+=-45+random(90)
+if (round(random(15)) == 2)
+    direction += -45 + random(90);
 
-h+=1
-if h&gt;255 h-=255
-color=make_color_hsv(random(255),random(255),255)
+h++;
+if (h &gt; 255)
+    h -= 255;
+color = make_color_hsv(random(255), random(255), 255);
 
-image_xscale=1+point_distance(x,y,startx,starty)*(1/256)
-image_yscale=image_xscale
-if round(random(50+10*speed))=2 {
-if speed&gt;0 speed=0 else {speed=4 direction=random(360)}
-}</string>
+image_xscale = 1 + point_distance(x, y, startx, starty) * (1 / 256);
+image_yscale = image_xscale;
+if (round(random(50 + 10 * speed)) == 2) {
+    if (speed &gt; 0)
+        speed = 0;
+    else {
+        speed = 4;
+        direction = random(360);
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -94,7 +109,8 @@ if speed&gt;0 speed=0 else {speed=4 direction=random(360)}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprSpotLight,0,startx,starty,1,1,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprSpotLight, 0, startx, starty, 1, 1, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

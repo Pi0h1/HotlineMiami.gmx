@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vspeed=0
-image_speed=0
-state=0
-image_angle=270
-direction=270
-siren=0</string>
+            <string>vspeed = 0;
+image_speed = 0;
+state = 0;
+image_angle = 270;
+direction = 270;
+siren = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -52,68 +53,91 @@ siren=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if siren=0 {
-if instance_number(objEnemy)+instance_number(objKnockedOut)=10 { 
-siren=1
-audio_play_sound(sndPolice,0,true)
+            <string>if (!siren) {
+    if (instance_number(objEnemy) + instance_number(objKnockedOut) == 10) {
+        siren = 1;
+        audio_play_sound(sndPolice, 0, true);
+    }
 }
+if (state = 0) {
+    if (instance_number(objEnemy) + instance_number(objKnockedOut) == 3) {
+        state = 1;
+        vspeed = 1;
+        visible = 1;
+        with (objLaser)
+            on = 1;
+    } else exit;
 }
-if state=0 {
-if instance_number(objEnemy)+instance_number(objKnockedOut)=3 {
-state=1
-vspeed=1
-visible=1
-with objLaser on=1
-} else exit
+if (state == 1) {
+    image_index += speed * 0.2;
+    if (y &gt;= 72) {
+        speed = 0;
+        sprite_index = sprSwatSign;
+        image_index = 0;
+        state = 2;
+    }
 }
-if state=1 {
-image_index+=speed*0.2
-if y&gt;=72 {
-speed=0
-sprite_index=sprSwatSign
-image_index=0
-state=2
+if (state == 2) {
+    if (image_index &lt; 20)
+        image_index += 0.15;
+    else {
+        sprite_index = sprSwatKickDoor;
+        image_index = 0;
+        state = 3;
+    }
 }
+if (state == 3) {
+    if (image_index &lt; 9)
+        image_index += 0.25;
+    else {
+        objSwatSpawn.alarm[0] = 1;
+        state = 4;
+        sprite_index = sprSwatWalkM16;
+    }
+    if (image_index &gt; 4) {
+        with (objDoorH) {
+            if (solid &amp;&amp; x == 288) {
+                if (!global.done) {
+                    instance_create(x, y, objLevelComplete);
+                    with (objEnemy) {
+                        if (scrCantGetHit(object_index)) {
+                            // do nothing
+                        } else {
+                            my_id = instance_create(x, y, objEGiveUp);
+                            my_id.image_angle = angle;
+                            if (sprite_index == sprEWalkUnarmed || sprite_index == sprEGiveUp) {
+                                // do nothing
+                            } else {
+                                my_id = instance_create(x, y, objWeaponThrow);
+                                my_id.direction = random(360);
+                                my_id.image_index = scrCurrentWeaponExt(sprite_index);
+                                my_id.ammo = ammo;
+                            }
+                            instance_destroy();
+                        }
+                    }
+                }
+                global.done = 1;
+                solid = 0;
+                audio_play_sound(sndDoorHit, 0, false);
+                audio_play_sound(sndPunch, 0, false);
+                swingspeed = -12;
+                swinger = 2;
+            }
+        }
+    }
 }
-if state=2 {
-if image_index&lt;20 image_index+=0.15 else {sprite_index=sprSwatKickDoor image_index=0 state=3}
-}
-if state=3 {
-if image_index&lt;9 image_index+=0.25 else {objSwatSpawn.alarm[0]=1 state=4 sprite_index=sprSwatWalkM16}
-if image_index&gt;4 with objDoorH {if solid=1 and x=288 {
-if global.done=0 {
-instance_create(x,y,objLevelComplete) 
-with objEnemy {
-if scrCantGetHit(object_index) nothing=1 else {
-my_id=instance_create(x,y,objEGiveUp)
-my_id.image_angle=angle
-if sprite_index=sprEWalkUnarmed or sprite_index=sprEGiveUp nothing=1 else {
-my_id=instance_create(x,y,objWeaponThrow)
-my_id.direction=random(360)
-my_id.image_index=scrCurrentWeaponExt(sprite_index)
-my_id.ammo=ammo
-}
-instance_destroy()
-}
-}
-}
-global.done=1 
-solid=0 
-audio_play_sound(sndDoorHit,0,false) 
-audio_play_sound(sndPunch,0,false) 
-swingspeed=-12 
-swinger=2
-}
-}
-}
-if state=4 {
-global.done=1
-if y&lt;96 {
-y+=2
-image_index+=0.2
-} else {
-my_id=instance_create(x,y,objSwat) my_id.direction=270 my_id.diradd=1 instance_destroy()
-}
+if (state == 4) {
+    global.done = 1;
+    if (y &lt; 96) {
+        y += 2;
+        image_index += 0.2;
+    } else {
+        my_id = instance_create(x, y, objSwat);
+        my_id.direction = 270;
+        my_id.diradd = 1;
+        instance_destroy();
+    }
 }
 </string>
           </argument>
@@ -137,8 +161,8 @@ my_id=instance_create(x,y,objSwat) my_id.direction=270 my_id.diradd=1 instance_d
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(objPlayerDead) {
-audio_stop_sound(sndPolice)
+            <string>if (instance_exists(objPlayerDead)) {
+    audio_stop_sound(sndPolice);
 }
 </string>
           </argument>
@@ -162,13 +186,14 @@ audio_stop_sound(sndPolice)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction=270
-if sprite_index=sprSwatWalkM16 {
-draw_sprite_ext(sprSwatLegs,image_index*2,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprSwatLegs,image_index*2,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+            <string>direction = 270;
+if (sprite_index == sprSwatWalkM16) {
+    draw_sprite_ext(sprSwatLegs, image_index * 2, x + 1, y + 1, image_xscale, image_yscale, direction, c_black, 0.5);
+    draw_sprite_ext(sprSwatLegs, image_index * 2, x, y, image_xscale, image_yscale, direction, image_blend, image_alpha);
 }
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)</string>
+draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, direction, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, direction, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

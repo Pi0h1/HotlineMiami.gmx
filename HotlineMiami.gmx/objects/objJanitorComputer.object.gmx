@@ -25,11 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.5
-active=1
-dir=0
-check=0
-if global.xbox=1 scrInitXboxButtons()</string>
+            <string>image_speed = 0.5;
+active = 1;
+dir = 0;
+check = 0;
+if (global.xbox)
+    scrInitXboxButtons();
+</string>
           </argument>
         </arguments>
       </action>
@@ -51,9 +53,12 @@ if global.xbox=1 scrInitXboxButtons()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.puzzledone=1 global.ending=1 else global.ending=0
-scrGetMessage(1+global.ending)
-check=1</string>
+            <string>if (global.puzzledone)
+    global.ending = 1;
+else global.ending = 0;
+scrGetMessage(1 + global.ending);
+check = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -75,17 +80,19 @@ check=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrXboxJanitorComputer()
-
-if check=0 exit
-if !instance_exists(objPhoneConversation) {
-if instance_exists(objPlayerBikerHack) {
-with objPlayerBikerHack {
-instance_create(x,y,objPlayerBikerHouse)
-instance_destroy()
+            <string>if (global.xbox)
+    scrXboxJanitorComputer();
+if (!check)
+    exit;
+if (!instance_exists(objPhoneConversation)) {
+    if (instance_exists(objPlayerBikerHack)) {
+        with (objPlayerBikerHack) {
+            instance_create(x, y, objPlayerBikerHouse);
+            instance_destroy();
+        }
+    }
 }
-}
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -107,16 +114,20 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if active=0 exit
-if !instance_exists(objPlayer) exit
-if objPlayer.x&gt;x-12 and objPlayer.x&lt;x+12 {
-if place_meeting(x,y-8,objPlayer) {
-with objPlayer instance_destroy()
-instance_create(x,y-21,objPlayerBikerHack)
-alarm[0]=120
-active=0
+            <string>if (!active)
+    exit;
+if (!instance_exists(objPlayer))
+    exit;
+if (objPlayer.x &gt; x - 12 &amp;&amp; objPlayer.x &lt; x + 12) {
+    if (place_meeting(x, y - 8, objPlayer)) {
+        with (objPlayer)
+            instance_destroy();
+        instance_create(x, y - 21, objPlayerBikerHack);
+        alarm[0] = 120;
+        active = 0;
+    }
 }
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -138,7 +149,9 @@ active=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.done=1 active=0</string>
+            <string>if (global.done)
+    active = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -160,11 +173,12 @@ active=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited()
-if active=1 {
-draw_sprite_ext(sprArrow,0,x,y-20+lengthdir_x(3,dir),1,1,0,c_white,1)
-dir+=3
-}</string>
+            <string>event_inherited();
+if (active) {
+    draw_sprite_ext(sprArrow, 0, x, y - 20 + lengthdir_x(3, dir), 1, 1, 0, c_white, 1);
+    dir += 3;
+}
+</string>
           </argument>
         </arguments>
       </action>

@@ -25,12 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle=random(360)
-image_speed=0
-dir=random(360)
-clothes=0
-if room=rmSequence13 clothes=1
-if global.xbox=1 scrInitXboxButtons()</string>
+            <string>image_angle = random(360);
+image_speed = 0;
+dir = random(360);
+clothes = 0;
+if (room == rmSequence13)
+    clothes = 1;
+if (global.xbox)
+    scrInitXboxButtons();
+</string>
           </argument>
         </arguments>
       </action>
@@ -52,7 +55,9 @@ if global.xbox=1 scrInitXboxButtons()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 scrXboxLaundry()</string>
+            <string>if (global.xbox)
+    scrXboxLaundry();
+</string>
           </argument>
         </arguments>
       </action>
@@ -74,7 +79,8 @@ if global.xbox=1 scrInitXboxButtons()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_perform(ev_mouse,ev_global_left_press)</string>
+            <string>event_perform(ev_mouse, ev_global_left_press);
+</string>
           </argument>
         </arguments>
       </action>
@@ -96,18 +102,21 @@ if global.xbox=1 scrInitXboxButtons()</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room=rmSequence13 {
-with objPlayerMouseHouse {
-if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objLaundryBasket) {
-if objLaundryBasket.clothes=1 {
-objLaundryBasket.clothes=0
-with objPlayerPants visible=1
-with objPlayerJacket visible=1
-mouse_clear(mb_left)
+            <string>if (room == rmSequence13) {
+    with (objPlayerMouseHouse) {
+        if (place_meeting(x + lengthdir_x(12, dir), y + lengthdir_y(12, dir), objLaundryBasket)) {
+            if (objLaundryBasket.clothes) {
+                objLaundryBasket.clothes = 0;
+                with (objPlayerPants)
+                    visible = 1;
+                with (objPlayerJacket)
+                    visible = 1;
+                mouse_clear(mb_left);
+            }
+        }
+    }
 }
-}
-}
-}</string>
+</string>
           </argument>
         </arguments>
       </action>
@@ -129,13 +138,14 @@ mouse_clear(mb_left)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+            <string>draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
-if clothes=1 {
-draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,dir),y,1,1,90,image_blend,image_alpha)
-dir+=4
-}</string>
+if (clothes) {
+    draw_sprite_ext(sprArrow, 0, x - 12 + lengthdir_x(3, dir), y, 1, 1, 90, image_blend, image_alpha);
+    dir += 4;
+}
+</string>
           </argument>
         </arguments>
       </action>

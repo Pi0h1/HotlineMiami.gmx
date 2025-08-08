@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir=random(10000)
+            <string>dir = random(10000);
 </string>
           </argument>
         </arguments>
@@ -48,7 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,dir,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, dir, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

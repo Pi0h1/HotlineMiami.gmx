@@ -25,28 +25,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wait=80
-index=0
-if image_angle=0 {
-addx=0
-addy=0.5
+            <string>wait = 80;
+index = 0;
+if (image_angle == 0) {
+    addx = 0;
+    addy = 0.5;
 }
-if image_angle=90 {
-addx=0.5
-addy=0
+if (image_angle == 90) {
+    addx = 0.5;
+    addy = 0;
 }
-if image_angle=180 {
-addx=0
-addy=-0.5
+if (image_angle == 180) {
+    addx = 0;
+    addy = -0.5;
 }
-if image_angle=270 {
-addx=-0.5
-addy=0
+if (image_angle == 270) {
+    addx = -0.5;
+    addy = 0;
 }
-touch=0
-wait2=15
-image_speed=0
-saved=0</string>
+touch = 0;
+wait2 = 15;
+image_speed = 0;
+saved = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -68,80 +69,114 @@ saved=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mask_index=sprElevatorFloor 
-touch=0
+            <string>mask_index = sprElevatorFloor;
+touch = 0;
 
-if room=rmHospitalEntrance {
-if place_meeting(x,y,objPlayer) {
-if wait&gt;0 wait-=1 else {
-if saved=0 {
-saved=1
-global.loaded=1
-objPlayer.persistent=0
-game_save(working_directory+"\tempsave.sav")
-global.loaded=0
-}
-if image_index&lt;6 image_index+=0.5 else wait=30
-}
-} else {
-if wait&gt;0 wait-=1 else {
-if image_index&gt;0 image_index-=0.5
-}
-}
-if image_index&lt;3 mask_index=sprite_index else mask_index=sprElevatorMask
-exit
+if (room == rmHospitalEntrance) {
+    if (place_meeting(x, y, objPlayer)) {
+        if (wait &gt; 0)
+            wait--;
+        else {
+            if (!saved) {
+                saved = 1;
+                global.loaded = 1;
+                objPlayer.persistent = 0;
+                game_save(working_directory + "\tempsave.sav");
+                global.loaded = 0;
+            }
+            if (image_index &lt; 6)
+                image_index += 0.5;
+            else wait = 30;
+        }
+    } else {
+        if (wait &gt; 0)
+            wait--;
+        else {
+            if (image_index &gt; 0)
+                image_index -= 0.5;
+        }
+    }
+    if (image_index &lt; 3)
+        mask_index = sprite_index;
+    else mask_index = sprElevatorMask;
+    exit;
 }
 
-if !place_meeting(x,y,objPlayer) {
-if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;96 {
-if wait&gt;0 wait-=1 else {if image_index&lt;6 image_index+=0.5}
-} else {if image_index&gt;0 image_index-=0.5 wait=10}
-}
-
-
-if place_meeting(x,y,objPlayer) {
-touch=1
-objPlayer.addx=0
-objPlayer.addy=0
-if objPlayer.x&lt;x-2 objPlayer.x+=2
-if objPlayer.x&gt;x+2 objPlayer.x-=2
-if objPlayer.y&lt;y-2 objPlayer.y+=2
-if objPlayer.y&gt;y+2 objPlayer.y-=2
-if objPlayer.x&lt;x+2 and objPlayer.x&gt;x-2 and objPlayer.y&gt;y-2 and objPlayer.y&lt;y+2 nothing=1 else {
-objPlayer.image_index+=0.15
-objPlayer.legindex+=0.4
-}
-objPlayer.persistent=1
-if image_angle=0 {
-if objPlayer.y&gt;y objPlayer.addy=0
-}
-if image_angle=90 {
-if objPlayer.x&gt;x objPlayer.addx=0
-}
-if image_angle=180 {
-if objPlayer.y&lt;y objPlayer.addy=0
-}
-if image_angle=270 {
-if objPlayer.x&lt;x objPlayer.addx=0
+if (!place_meeting(x, y, objPlayer)) {
+    if (point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 96) {
+        if (wait &gt; 0)
+            wait--;
+        else {
+            if (image_index &lt; 6)
+                image_index += 0.5;
+        }
+    } else {
+        if (image_index &gt; 0)
+            image_index -= 0.5;
+        wait = 10;
+    }
 }
 
 
+if (place_meeting(x, y, objPlayer)) {
+    touch = 1;
+    objPlayer.addx = 0;
+    objPlayer.addy = 0;
+    if (objPlayer.x &lt; x - 2)
+        objPlayer.x += 2;
+    if (objPlayer.x &gt; x + 2)
+        objPlayer.x -= 2;
+    if (objPlayer.y &lt; y - 2)
+        objPlayer.y += 2;
+    if (objPlayer.y &gt; y + 2)
+        objPlayer.y -= 2;
+    if (objPlayer.x &lt; x + 2 &amp;&amp; objPlayer.x &gt; x - 2 &amp;&amp; objPlayer.y &gt; y - 2 &amp;&amp; objPlayer.y &lt; y + 2) {
+        // do nothing
+    } else {
+        objPlayer.image_index += 0.15;
+        objPlayer.legindex += 0.4;
+    }
+    objPlayer.persistent = 1;
+    if (image_angle == 0) {
+        if (objPlayer.y &gt; y)
+            objPlayer.addy = 0;
+    }
+    if (image_angle == 90) {
+        if (objPlayer.x &gt; x)
+            objPlayer.addx = 0;
+    }
+    if (image_angle == 180) {
+        if (objPlayer.y &lt; y)
+            objPlayer.addy = 0;
+    }
+    if (image_angle == 270) {
+        if (objPlayer.x &lt; x)
+            objPlayer.addx = 0;
+    }
 
-if wait2&gt;0 wait2-=1 else {
-if image_index&gt;0 image_index-=0.5
-if objEffector.fade=0 {
-objPlayer.movex=movex
-objPlayer.movey=movey
-if abs(movex)&gt;0 or abs(movey)&gt;0 objPlayer.move=1
-objEffector.next=1
-objEffector.fade=1
-objEffector.nextroom=nextroom
 
-}
-}
+
+    if (wait2 &gt; 0)
+        wait2--;
+    else {
+        if (image_index &gt; 0)
+            image_index -= 0.5;
+        if (!objEffector.fade) {
+            objPlayer.movex = movex;
+            objPlayer.movey = movey;
+            if (abs(movex) &gt; 0 || abs(movey) &gt; 0)
+                objPlayer.move = 1;
+            objEffector.next = 1;
+            objEffector.fade = 1;
+            objEffector.nextroom = nextroom;
+        }
+    }
 }
 
-if image_index&lt;3 mask_index=sprite_index else mask_index=sprElevatorMask</string>
+if (image_index &lt; 3)
+    mask_index = sprite_index;
+else mask_index = sprElevatorMask;
+</string>
           </argument>
         </arguments>
       </action>
@@ -163,7 +198,8 @@ if image_index&lt;3 mask_index=sprite_index else mask_index=sprElevatorMask</str
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wait=80</string>
+            <string>wait = 80;
+</string>
           </argument>
         </arguments>
       </action>
@@ -185,9 +221,10 @@ if image_index&lt;3 mask_index=sprite_index else mask_index=sprElevatorMask</str
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprElevatorFloor,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+            <string>draw_sprite_ext(sprElevatorFloor, 0, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+</string>
           </argument>
         </arguments>
       </action>

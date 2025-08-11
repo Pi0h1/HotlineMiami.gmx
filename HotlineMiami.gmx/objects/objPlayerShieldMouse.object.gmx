@@ -160,7 +160,7 @@ switch (sprite_index) {
     if (!mouse_check_button(mb_right))
         reset = 0;
 }
-if (sprite_index == sprShieldSnapUzi or sprite_index == sprShieldSnapMP5 or sprite_index == sprShieldSnapDoubleBarrel or sprite_index == sprShieldSnapSilencer or sprite_index == sprShieldSnapScorpion or sprite_index == sprShieldSnapMagnum) {
+if (sprite_index == sprShieldSnapUzi || sprite_index == sprShieldSnapMP5 || sprite_index == sprShieldSnapDoubleBarrel || sprite_index == sprShieldSnapSilencer || sprite_index == sprShieldSnapScorpion || sprite_index == sprShieldSnapMagnum) {
     if (image_index &gt;= 3 &amp;&amp; snap == 0) {
         snap = 1;
         audio_play_sound(sndNeck, 0, false);

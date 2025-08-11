@@ -1,2 +1,4 @@
-if fade=1 exit
-if repeats>8 repeats-=8
+if (fade)
+    exit;
+if (repeats > 8)
+    repeats -= 8;

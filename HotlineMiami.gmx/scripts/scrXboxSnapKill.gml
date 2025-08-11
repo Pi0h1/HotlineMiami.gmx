@@ -1,6 +1,5 @@
-if gettrigger_r()>100 {
-if pressrtrig=0 {
-pressrtrig=1
-
-}
-} else pressrtrig=0
+if (gettrigger_r() > 100) {
+    if (!pressrtrig) {
+        pressrtrig = 1;
+    }
+} else pressrtrig = 0;

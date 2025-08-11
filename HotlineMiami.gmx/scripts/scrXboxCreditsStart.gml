@@ -1,1 +1,1 @@
-endfade=1
+endfade = 1;

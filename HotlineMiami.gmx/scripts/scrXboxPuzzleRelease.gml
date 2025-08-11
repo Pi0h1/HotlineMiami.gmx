@@ -1,1 +1,4 @@
-with objLetter {check=follow follow=0}
+with (objLetter) {
+    check = follow;
+    follow = 0;
+}

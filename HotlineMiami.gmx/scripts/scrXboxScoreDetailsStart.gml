@@ -1,1 +1,2 @@
-if gradeon=1 fade=1
+if (gradeon)
+    fade = 1;

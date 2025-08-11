@@ -2439,7 +2439,6 @@
         <script>scripts\scrXboxControlsRight.gml</script>
         <script>scripts\scrXboxControlsBack.gml</script>
         <script>scripts\scrXboxConversationStart.gml</script>
-        <script>scripts\scrXboxEffectorHouseStart.gml</script>
         <script>scripts\scrXboxEffectorHousePause.gml</script>
         <script>scripts\scrXboxPauseUp.gml</script>
         <script>scripts\scrXboxPauseDown.gml</script>
@@ -2464,7 +2463,6 @@
         <script>scripts\scrXboxPuzzlePress.gml</script>
         <script>scripts\scrXboxPuzzleRelease.gml</script>
         <script>scripts\scrXboxPuzzleQuit.gml</script>
-        <script>scripts\scrXboxPuzzleMove.gml</script>
         <script>scripts\scrXboxPlayerMouse.gml</script>
         <script>scripts\scrXboxPlayerShoot.gml</script>
         <script>scripts\scrXboxPlayerLook.gml</script>
@@ -2499,8 +2497,6 @@
         <script>scripts\scrXboxClipRead1.gml</script>
         <script>scripts\scrXboxClipRead2.gml</script>
         <script>scripts\scrXboxGolfbag.gml</script>
-        <script>scripts\scrXboxHackComputerEnd.gml</script>
-        <script>scripts\scrXboxHackComputerPhoneHom.gml</script>
         <script>scripts\scrXboxHospitalDoor.gml</script>
         <script>scripts\scrXboxLaundry.gml</script>
         <script>scripts\scrXboxClothes.gml</script>
@@ -2521,14 +2517,13 @@
         <script>scripts\scrXboxPlayerHospitalMouse.gml</script>
         <script>scripts\scrXboxPlayerMoveWindow.gml</script>
         <script>scripts\scrXboxPlayerMouseWindow.gml</script>
-        <script>scripts\scrXboxTakeGirlfriend.gml</script>
         <script>scripts\scrXboxEffectorHospitalStart.gml</script>
         <script>scripts\scrXboxRestartDead.gml</script>
         <script>scripts\scrXboxAssassinTalkBar.gml</script>
         <script>scripts\scrXboxMenuLeft.gml</script>
         <script>scripts\scrXboxMenuRight.gml</script>
+        <script>scripts\scrXboxPlayerMove.gml</script>
       </scripts>
-      <script>scripts\scrXboxPlayerMove.gml</script>
     </scripts>
     <scripts name="Surfaces">
       <script>scripts\addToSurface.gml</script>

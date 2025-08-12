@@ -11,7 +11,7 @@ return = REAL - Successful (1) or failure (0)
 // Com:
        Stops the currently playing audio
 */
-audio_stop_sound(global.currentsong)
+audio_stop_sound(global.currentsong);
 
 //if (!sxms.easyPlay) { return 0; };
 //sxfmod_channel_stop()

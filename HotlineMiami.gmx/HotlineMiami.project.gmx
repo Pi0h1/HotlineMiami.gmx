@@ -2304,7 +2304,7 @@
   <scripts name="scripts">
     <scripts name="Player">
       <scripts name="HUD">
-        <script>scripts\scrScoreDrawStory.gml</script>
+        <script>scripts\scrDrawHUD.gml</script>
         <scripts name="Unused">
           <script>scripts\scrScoreDraw.gml</script>
         </scripts>

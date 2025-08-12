@@ -12,7 +12,7 @@ return = REAL - Successful (1) or failure (0);
 
 
 //audio_sound_gain(global.currentsong,(argument0/100)+global.mvol*2,0)
-audio_sound_gain(global.currentsong,(argument0/100)+global.mvol,0)
+audio_sound_gain(global.currentsong, (argument0 / 100) + global.mvol, 0);
 
 
 //if (!sxms.easyPlay) { return 0; };

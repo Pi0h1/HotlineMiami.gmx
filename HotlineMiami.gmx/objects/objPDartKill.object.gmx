@@ -84,7 +84,7 @@ ammo = 0;
         global.combotime = 12;
     exit;
 }
-if (image_index &gt;= 5 &amp;&amp; !bled) {
+if (image_index &gt;= 5 &amp;&amp; bled == 0) {
     bled = 1;
     audio_play_sound(choose(sndCut1, sndCut2), 0, false);
     audio_play_sound(sndHit, 0, false);
@@ -99,7 +99,7 @@ if (image_index &gt;= 5 &amp;&amp; !bled) {
     }
 }
 
-if (image_index &gt;= 13 &amp;&amp; bled) {
+if (image_index &gt;= 13 &amp;&amp; bled == 1) {
     bled = 2;
     audio_play_sound(choose(sndCut1, sndCut2), 0, false);
     audio_play_sound(sndHit, 0, false);

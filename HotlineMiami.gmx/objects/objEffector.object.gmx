@@ -364,7 +364,7 @@ with (objDiscoLights) {
 draw_set_blend_mode(bm_normal);
 if (!instance_exists(objMaskMenu) &amp;&amp; !instance_exists(objPhoneConversation))
     global.time++;
-scrScoreDrawStory();
+scrDrawHUD();
 
 if (instance_exists(objMaskMenu)) {
     scrDrawMaskMenu();

@@ -99,7 +99,7 @@ if (image_index &gt;= 2 &amp;&amp; bled == 0) {
     }
 }
 
-if (image_index &gt;= 7 &amp;&amp; bled) {
+if (image_index &gt;= 7 &amp;&amp; bled == 1) {
     bled = 2;
     audio_play_sound(choose(sndCut1, sndCut2), 0, false);
     audio_play_sound(sndHit, 0, false);

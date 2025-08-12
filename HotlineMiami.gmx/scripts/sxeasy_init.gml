@@ -1,2 +1,2 @@
 /*bgm_Init();*/
-global.currentsong=""
+global.currentsong = "";

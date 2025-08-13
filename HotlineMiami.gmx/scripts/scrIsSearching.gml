@@ -1,15 +1,20 @@
-if argument0=sprESearchShotgun return true
-if argument0=sprESearchM16 return true
-if argument0=sprESearchDoubleBarrel return true
-if argument0=sprESearchKnife return true
-if argument0=sprESearchBat return true
-if argument0=sprESearchClub return true
-if argument0=sprESearchPipe return true
-if argument0=sprESearchSilencer return true
-if argument0=sprPoliceSearchGun return true
-if argument0=sprPoliceSearchNightStick return true
-if argument0=sprPoliceSearchM16 return true
-if argument0=sprPoliceSearchShotgun return true
-if argument0=sprESearchFat return true
-if argument0=sprPInspectorSearch return true
-return false
+switch (argument0) {
+    case sprESearchShotgun:
+    case sprESearchM16:
+    case sprESearchDoubleBarrel:
+    case sprESearchKnife:
+    case sprESearchBat:
+    case sprESearchClub:
+    case sprESearchPipe:
+    case sprESearchSilencer:
+    case sprESearchFat:
+    
+    case sprPoliceSearchGun:
+    case sprPoliceSearchNightStick:
+    case sprPoliceSearchM16:
+    case sprPoliceSearchShotgun:
+    case sprPInspectorSearch:
+    
+    return true;
+}
+return false;

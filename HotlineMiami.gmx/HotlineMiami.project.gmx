@@ -2348,8 +2348,6 @@
       <script>scripts\scrEStaticStep.gml</script>
       <script>scripts\scrEPatrolInit.gml</script>
       <script>scripts\scrEPatrolStep.gml</script>
-      <script>scripts\scrEMobileInit.gml</script>
-      <script>scripts\scrEMobileStep.gml</script>
       <script>scripts\scrSeePlayer.gml</script>
       <script>scripts\scrSeePlayerStationary.gml</script>
       <script>scripts\scrEMeleeInit.gml</script>
@@ -2372,7 +2370,6 @@
       <script>scripts\scrDogChase.gml</script>
       <script>scripts\scrChaseSearch.gml</script>
       <script>scripts\scrMeleeChaseSearch.gml</script>
-      <script>scripts\scrFindWeapon.gml</script>
       <script>scripts\scrPatrol.gml</script>
       <script>scripts\scrFollowWall.gml</script>
       <script>scripts\scrERandomInit.gml</script>
@@ -2382,13 +2379,14 @@
       <script>scripts\scrDogSearch.gml</script>
       <script>scripts\scrDogLook.gml</script>
       <script>scripts\scrDogCollision.gml</script>
+      <script>scripts\scrDogChasePlayer.gml</script>
       <script>scripts\scrDPatrolStep.gml</script>
       <script>scripts\scrSearchSprite.gml</script>
       <script>scripts\scrIsSearching.gml</script>
       <script>scripts\scrStopSearch.gml</script>
       <scripts name="Police">
-        <script>scripts\scrPolicePatrolStep.gml</script>
         <script>scripts\scrPolicePatrolInit.gml</script>
+        <script>scripts\scrPolicePatrolStep.gml</script>
         <script>scripts\scrIsPolice.gml</script>
         <script>scripts\scrPoliceGetWeapon.gml</script>
         <script>scripts\scrPoliceRandomInit.gml</script>
@@ -2399,13 +2397,12 @@
         <script>scripts\scrPoliceMeleeStep.gml</script>
         <script>scripts\scrPoliceMeleeStationaryInit.gml</script>
         <script>scripts\scrPoliceMeleeStationaryStep.gml</script>
+        <script>scripts\scrPInspectorInit.gml</script>
+        <script>scripts\scrPInspectorStep.gml</script>
       </scripts>
       <script>scripts\scrEFatInit.gml</script>
       <script>scripts\scrEFatStep.gml</script>
-      <script>scripts\scrPInspectorInit.gml</script>
-      <script>scripts\scrPInspectorStep.gml</script>
       <script>scripts\scrCantGetHit.gml</script>
-      <script>scripts\scrDogChasePlayer.gml</script>
     </scripts>
     <scripts name="Xbox Controller Support">
       <scripts name="GMX Input">
@@ -2533,7 +2530,6 @@
       <script>scripts\scrSurfaceTiles.gml</script>
       <script>scripts\scrSaveTiles.gml</script>
       <scripts name="cleanmem">
-        <script>scripts\cleanmem_init.gml</script>
         <script>scripts\cleanmem.gml</script>
         <script>scripts\cleanmem_get_mem.gml</script>
       </scripts>
@@ -3640,6 +3636,7 @@
         <object>objects\objMolotov</object>
         <object>objects\objBurningGuy</object>
         <object>objects\objBoss3</object>
+        <object>objects\objBoss3Kneel</object>
         <object>objects\_objBoss3Kneel</object>
         <object>objects\objBoss3Dead</object>
         <object>objects\objDeadBurning</object>

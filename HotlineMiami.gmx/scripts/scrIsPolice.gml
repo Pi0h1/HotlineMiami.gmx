@@ -1,7 +1,11 @@
-if argument0=objPolicePatrol return true
-if argument0=objPolice return true
-if argument0=objPoliceStationary return true
-if argument0=objPoliceMelee return true
-if argument0=objPoliceMeleeStationary return true
-if argument0=objInspector return true
-return false
+switch (argument0) {
+    case objPolicePatrol:
+    case objPolice:
+    case objPoliceStationary:
+    case objPoliceMelee:
+    case objPoliceMeleeStationary:
+    case objInspector:
+    
+    return true;
+}
+return false;

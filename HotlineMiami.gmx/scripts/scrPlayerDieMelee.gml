@@ -78,31 +78,6 @@ with (objPlayer) {
         my_id.image_speed = 0.25;
         break;
     }
-    /*
-    if (global.my_id.sprite_index == sprHoboAttack || global.my_id.sprite_index == sprEAttackBat || global.my_id.sprite_index == sprEAttackPipe) {
-        audio_play_sound(sndHit, 0, false);
-        my_id.sprite_index = choose(sprPBackBlunt, sprPBackBlunt, sprPFrontBlunt);
-    }
-    
-    if (global.my_id.sprite_index == sprEAttackKnife || global.my_id.sprite_index == sprPantherHitback || global.my_id.sprite_index == sprBodyguardAttack || global.my_id.sprite_index == sprBoss2AttackCleaver || global.my_id.sprite_index == sprCleaver) {
-        my_id.sprite_index = sprPBackCut;
-        audio_play_sound(choose(sndCut1, sndCut2), 0, false);
-    }
-    if (global.my_id.sprite_index == sprEFatAttack || global.my_id.sprite_index == sprBoss1Attack) {
-        my_id.sprite_index = choose(sprPBackBlunt, sprPBackBlunt, sprPFrontBlunt);
-        audio_play_sound(sndHit, 0, false);
-        audio_play_sound(sndPunch, 0, false);
-    }
-    
-    if (global.my_id.sprite_index == sprPInspectorAttack) {
-        my_id.sprite_index = sprPBackElectrified;
-        my_id.image_speed = 0.25;
-    }
-    
-    if (global.my_id.sprite_index == sprEAttackClub || global.my_id.sprite_index == sprHoboAttack || global.my_id.sprite_index == sprEAttackBat || global.my_id.sprite_index == sprEAttackPipe || global.my_id.sprite_index == sprEFatAttack || global.my_id.sprite_index == sprBoss1Attack)
-        my_id.image_index = 4 + floor(random(11));
-    else my_id.image_index = 2 + floor(random(3));
-    */
     my_id.direction = pdir;
     my_id.speed = 1.5 + random(1);
     my_id.image_angle = my_id.direction;

@@ -218,8 +218,8 @@ if (instance_number(objEnemy) + instance_number(objKnockedOut) + instance_number
                     if (index &gt; 0)
                         index -= 0.5;
                     if (!objEffector.fade) {
-                        objPlayer.movex = movexl
-                        objPlayer.movey = moveyl
+                        objPlayer.movex = movex;
+                        objPlayer.movey = movey;
                         if (abs(movex) &gt; 0 || abs(movey) &gt; 0)
                             objPlayer.move = 1;
                         objEffector.next = 1;

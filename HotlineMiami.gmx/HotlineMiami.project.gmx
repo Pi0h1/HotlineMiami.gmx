@@ -2305,6 +2305,7 @@
     <scripts name="Player">
       <scripts name="HUD">
         <script>scripts\scrDrawHUD.gml</script>
+        <script>scripts\scrStoryDrawAmmo.gml</script>
         <scripts name="Unused">
           <script>scripts\scrScoreDraw.gml</script>
         </scripts>
@@ -2529,6 +2530,7 @@
       <script>scripts\scrFreeSurfaces.gml</script>
       <script>scripts\scrSurfaceTiles.gml</script>
       <script>scripts\scrSaveTiles.gml</script>
+      <script>scripts\surface_alpha.gml</script>
       <scripts name="cleanmem">
         <script>scripts\cleanmem.gml</script>
         <script>scripts\cleanmem_get_mem.gml</script>
@@ -2614,9 +2616,6 @@
     <script>scripts\scrPointsDraw.gml</script>
     <script>scripts\scrCurrentWeaponExt.gml</script>
     <script>scripts\scrGetAttack.gml</script>
-    <script>scripts\scrPickUp360.gml</script>
-    <script>scripts\scrShoot360.gml</script>
-    <script>scripts\scrControllerMisc.gml</script>
     <script>scripts\scrGoGetWeapon.gml</script>
     <script>scripts\scrInstanceNearest.gml</script>
     <script>scripts\scrCollisionLineExt.gml</script>
@@ -2629,7 +2628,6 @@
     <script>scripts\scrGetMessage.gml</script>
     <script>scripts\scrCheckMissionComplete.gml</script>
     <script>scripts\scrResetStory.gml</script>
-    <script>scripts\scrGetSequenceOld.gml</script>
     <script>scripts\scrGetSong.gml</script>
     <script>scripts\scrInitScore.gml</script>
     <script>scripts\scrCountMobilityScore.gml</script>
@@ -2640,7 +2638,6 @@
     <script>scripts\scrGetSequence.gml</script>
     <script>scripts\scrShowDate.gml</script>
     <script>scripts\scrInitControls.gml</script>
-    <script>scripts\scrControlsAnimationEnd.gml</script>
     <script>scripts\scrLoadUnlocked.gml</script>
     <script>scripts\scrSaveUnlocked.gml</script>
     <script>scripts\scrKillShield.gml</script>
@@ -2650,16 +2647,10 @@
     <script>scripts\scrInitDistortion.gml</script>
     <script>scripts\scrDrawDistortion.gml</script>
     <script>scripts\scrPlayerHospitalMove.gml</script>
-    <script>scripts\surface_alpha.gml</script>
-    <script>scripts\scrCountSpritesSize.gml</script>
     <script>scripts\scrSaveBonusList.gml</script>
     <script>scripts\scrLoadBonusList.gml</script>
-    <script>scripts\scrCompileBonusList.gml</script>
     <script>scripts\scrCheckBack.gml</script>
-    <script>scripts\scrStoryDrawAmmo.gml</script>
-    <script>scripts\scrCreateBonusList.gml</script>
     <script>scripts\scrPlayerDiePantherBite.gml</script>
-    <script>scripts\scrLoadSounds.gml</script>
     <script>scripts\scrLoadMask.gml</script>
     <script>scripts\scrGetRoom.gml</script>
     <script>scripts\scrGetMaskPowers.gml</script>
@@ -2673,23 +2664,17 @@
     <script>scripts\scrNth.gml</script>
     <script>scripts\scrMeetDoor.gml</script>
     <script>scripts\scrDialogueGetAnswers.gml</script>
-    <script>scripts\scrEMeleeStep2.gml</script>
     <script>scripts\scrGetMaxpoints.gml</script>
     <script>scripts\scrGradeToNumber.gml</script>
-    <script>scripts\scrGetCurrentLevel2.gml</script>
     <script>scripts\scrNumberToGrade.gml</script>
     <script>scripts\scrLevelGetMask.gml</script>
-    <script>scripts\scrEPatrolStep3.gml</script>
-    <script>scripts\scrPolicePatrolStep2.gml</script>
     <script>scripts\scrDogChaseSearch.gml</script>
     <script>scripts\scrEnemyIsAttacking.gml</script>
-    <script>scripts\scrRevertToMaxAmmo.gml</script>
     <script>scripts\scrMaskGetName.gml</script>
     <script>scripts\scrLevelGetPuzzle.gml</script>
     <script>scripts\scrCreateLetters.gml</script>
     <script>scripts\scrGetLetterSprite.gml</script>
     <script>scripts\scrGetGlowSprite.gml</script>
-    <script>scripts\scrInitLetters.gml</script>
     <script>scripts\scrGetTokenLetter.gml</script>
     <script>scripts\scrSetPort.gml</script>
     <script>scripts\scrGunIndexGetAmmo.gml</script>
@@ -2699,7 +2684,6 @@
     <script>scripts\scrInstanceNearestExt.gml</script>
     <script>scripts\scrLoadVol.gml</script>
     <script>scripts\scrSaveVol.gml</script>
-    <script>scripts\scrExportSprites.gml</script>
     <scripts name="Obsolete functions">
       <script>scripts\sleep.gml</script>
       <script>scripts\set_automatic_draw.gml</script>

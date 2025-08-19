@@ -1,31 +1,35 @@
-if argument0="1" return "st"
-if argument0="2" return "nd"
-if argument0="3" return "rd"
-if argument0="4" return "th"
-if argument0="5" return "th"
-if argument0="6" return "th"
-if argument0="7" return "th"
-if argument0="8" return "th"
-if argument0="9" return "th"
-if argument0="10" return "th"
-if argument0="11" return "th"
-if argument0="12" return "th"
-if argument0="13" return "th"
-if argument0="14" return "th"
-if argument0="15" return "th"
-if argument0="16" return "th"
-if argument0="17" return "th"
-if argument0="18" return "th"
-if argument0="19" return "th"
-if argument0="20" return "th"
-if argument0="21" return "st"
-if argument0="22" return "nd"
-if argument0="23" return "rd"
-if argument0="24" return "th"
-if argument0="25" return "th"
-if argument0="26" return "th"
-if argument0="27" return "th"
-if argument0="28" return "th"
-if argument0="29" return "th"
-if argument0="30" return "th"
-if argument0="31" return "st"
+// add the suffix to the date numbers
+
+switch (argument0) {
+    case "1": return "st";
+    case "2": return "nd";
+    case "3": return "rd";
+    case "4": return "th";
+    case "5": return "th";
+    case "6": return "th";
+    case "7": return "th";
+    case "8": return "th";
+    case "9": return "th";
+    case "10": return "th";
+    case "11": return "th";
+    case "12": return "th";
+    case "13": return "th";
+    case "14": return "th";
+    case "15": return "th";
+    case "16": return "th";
+    case "17": return "th";
+    case "18": return "th";
+    case "19": return "th";
+    case "20": return "th";
+    case "21": return "st";
+    case "22": return "nd";
+    case "23": return "rd";
+    case "24": return "th";
+    case "25": return "th";
+    case "26": return "th";
+    case "27": return "th";
+    case "28": return "th";
+    case "29": return "th";
+    case "30": return "th";
+    case "31": return "st";
+}

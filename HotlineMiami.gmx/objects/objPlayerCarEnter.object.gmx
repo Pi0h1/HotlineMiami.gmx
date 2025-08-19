@@ -152,7 +152,7 @@ if (place_meeting(x, y, objPlayer)) {
                 } else {
                     objEffector.nextroom = nextroom;
                     objEffector.newsong = 1;
-                    bjEffector.song = scrGetSong(room);
+                    objEffector.song = scrGetSong(room);
                 }
             }
         }

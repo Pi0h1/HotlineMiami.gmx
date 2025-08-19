@@ -1,16 +1,18 @@
-if argument0=0 return "I"
-if argument0=1 return "W"
-if argument0=2 return "A"
-if argument0=3 return "S"
-if argument0=4 return "B"
-if argument0=5 return "O"
-if argument0=6 return "R"
-if argument0=7 return "N"
-if argument0=8 return "I"
-if argument0=9 return "N"
-if argument0=10 return "T"
-if argument0=11 return "H"
-if argument0=12 return "E"
-if argument0=13 return "U"
-if argument0=14 return "S"
-if argument0=15 return "A"
+switch (argument0) {
+    case 0: return "I";
+    case 1: return "W";
+    case 2: return "A";
+    case 3: return "S";
+    case 4: return "B";
+    case 5: return "O";
+    case 6: return "R";
+    case 7: return "N";
+    case 8: return "I";
+    case 9: return "N";
+    case 10: return "T";
+    case 11: return "H";
+    case 12: return "E";
+    case 13: return "U";
+    case 14: return "S";
+    case 15: return "A";
+}

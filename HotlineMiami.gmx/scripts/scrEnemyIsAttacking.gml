@@ -1,5 +1,7 @@
-if sprite_index=sprEAttackBat return true
-if sprite_index=sprEAttackKnife return true
-if sprite_index=sprEAttackPipe return true
-if sprite_index=sprEAttackClub return true
-return false
+switch (sprite_index) {
+    case sprEAttackBat: return true;
+    case sprEAttackKnife: return true;
+    case sprEAttackPipe: return true;
+    case sprEAttackClub: return true;
+    default: return false;
+}

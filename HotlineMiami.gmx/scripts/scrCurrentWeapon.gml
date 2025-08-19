@@ -1,57 +1,62 @@
-if objPlayer.sprite_index=sprPWalkM16 return 0
-if objPlayer.sprite_index=sprPWalkShotgun return 1
-if objPlayer.sprite_index=sprPWalkPipe return 3 
-if objPlayer.sprite_index=sprPWalkClub return 2
-if objPlayer.sprite_index=sprPWalkBat return 4
-if objPlayer.sprite_index=sprPWalkKnife return 5
-if objPlayer.sprite_index=sprPWalkDoubleBarrel return 6
-if objPlayer.sprite_index=sprPWalkSilencer return 7
-if objPlayer.sprite_index=sprPWalkSword return 8
-if objPlayer.sprite_index=sprPWalkUzi return 9
-if objPlayer.sprite_index=sprPWalkMagnum return 10
-if objPlayer.sprite_index=sprPWalkScorpion return 11
-if objPlayer.sprite_index=sprPWalkMP5 return 12
-if objPlayer.sprite_index=sprPWalkPool return 13
-if objPlayer.sprite_index=sprPWalkPoolBroke return 14
-if objPlayer.sprite_index=sprPWalkAxe return 15
-if objPlayer.sprite_index=sprPWalkNightStick return 16
-if objPlayer.sprite_index=sprPWalkCrowbar return 17
-if objPlayer.sprite_index=sprPWalkMachete return 18
-if objPlayer.sprite_index=sprPWalkSledgeHammer return 19
-if objPlayer.sprite_index=sprPWalkTrophy return 20
-if objPlayer.sprite_index=sprPWalkDrill return 21
-if objPlayer.sprite_index=sprPWalkPan return 22
-if objPlayer.sprite_index=sprPWalkBoilingPot return 23
-if objPlayer.sprite_index=sprPWalkPot return 24
-if objPlayer.sprite_index=sprPWalkSilencedUzi return 25
-if objPlayer.sprite_index=sprPWalkThrow return 27+throwindex
-if objPlayer.sprite_index=sprPWalkUnarmed or objPlayer.sprite_index=sprPAttackPunch or sprite_index=sprPAttackThrow  return -123
-if objPlayer.sprite_index=sprPAttackM16 return 0
-if objPlayer.sprite_index=sprPAttackShotgun return 1
-if objPlayer.sprite_index=sprPAttackClub return 2
-if objPlayer.sprite_index=sprPAttackPipe return 3 
-if objPlayer.sprite_index=sprPAttackBat return 4
-if objPlayer.sprite_index=sprPAttackKnife return 5
-if objPlayer.sprite_index=sprPAttackDoubleBarrel1 or objPlayer.sprite_index=sprPAttackDoubleBarrel2 return 6
-if objPlayer.sprite_index=sprPAttackSilencer return 7
-if objPlayer.sprite_index=sprPAttackSword return 8
-if objPlayer.sprite_index=sprPAttackUzi return 9
-if objPlayer.sprite_index=sprPAttackMagnum return 10
-if objPlayer.sprite_index=sprPAttackScorpion return 11
-if objPlayer.sprite_index=sprPAttackMP5 return 12
-if objPlayer.sprite_index=sprPAttackPool return 13
-if objPlayer.sprite_index=sprPAttackPoolBroke return 14
-if objPlayer.sprite_index=sprPAttackAxe return 15
-if objPlayer.sprite_index=sprPAttackNightStick return 16
-if objPlayer.sprite_index=sprPAttackCrowbar return 17
-if objPlayer.sprite_index=sprPAttackMachete return 18
-if objPlayer.sprite_index=sprPAttackSledgeHammer return 19
-if objPlayer.sprite_index=sprPAttackTrophy return 20
-if objPlayer.sprite_index=sprPAttackDrill return 21
-if objPlayer.sprite_index=sprPAttackPan return 22
-if objPlayer.sprite_index=sprPAttackBoilingPot return 23
-if objPlayer.sprite_index=sprPAttackPot return 24
-if objPlayer.sprite_index=sprPAttackSilencedUzi return 25
-if objPlayer.sprite_index=sprPAttackThrow return 27+throwindex
-if objPlayer.sprite_index=sprPWalkUnarmed or objPlayer.sprite_index=sprPAttackPunch or sprite_index=sprPAttackThrow  return -123
+switch (objPlayer.sprite_index) {
+    case sprPWalkM16: return 0;
+    case sprPWalkShotgun: return 1;
+    case sprPWalkClub: return 2;
+    case sprPWalkPipe: return 3;
+    case sprPWalkBat: return 4;
+    case sprPWalkKnife: return 5;
+    case sprPWalkDoubleBarrel: return 6;
+    case sprPWalkSilencer: return 7;
+    case sprPWalkSword: return 8;
+    case sprPWalkUzi: return 9;
+    case sprPWalkMagnum: return 10;
+    case sprPWalkScorpion: return 11;
+    case sprPWalkMP5: return 12;
+    case sprPWalkPool: return 13;
+    case sprPWalkPoolBroke: return 14;
+    case sprPWalkAxe: return 15;
+    case sprPWalkNightStick: return 16;
+    case sprPWalkCrowbar: return 17;
+    case sprPWalkMachete: return 18;
+    case sprPWalkSledgeHammer: return 19;
+    case sprPWalkTrophy: return 20;
+    case sprPWalkDrill: return 21;
+    case sprPWalkPan: return 22;
+    case sprPWalkBoilingPot: return 23;
+    case sprPWalkPot: return 24;
+    case sprPWalkSilencedUzi: return 25;
+    case sprPWalkThrow: return 27 + throwindex;
+    
+    case sprPAttackM16: return 0;
+    case sprPAttackShotgun: return 1;
+    case sprPAttackClub: return 2;
+    case sprPAttackPipe: return 3;
+    case sprPAttackBat: return 4;
+    case sprPAttackKnife: return 5;
+    case sprPAttackDoubleBarrel1: case sprPAttackDoubleBarrel2: return 6;
+    case sprPAttackSilencer: return 7;
+    case sprPAttackSword: return 8;
+    case sprPAttackUzi: return 9;
+    case sprPAttackMagnum: return 10;
+    case sprPAttackScorpion: return 11;
+    case sprPAttackMP5: return 12;
+    case sprPAttackPool: return 13;
+    case sprPAttackPoolBroke: return 14;
+    case sprPAttackAxe: return 15;
+    case sprPAttackNightStick: return 16;
+    case sprPAttackCrowbar: return 17;
+    case sprPAttackMachete: return 18;
+    case sprPAttackSledgeHammer: return 19;
+    case sprPAttackTrophy: return 20;
+    case sprPAttackDrill: return 21;
+    case sprPAttackPan: return 22;
+    case sprPAttackBoilingPot: return 23;
+    case sprPAttackPot: return 24;
+    case sprPAttackSilencedUzi: return 25;
+    case sprPAttackThrow: return 27 + throwindex;
+    
+    case sprPWalkUnarmed:
+    case sprPAttackPunch:
+    return -123;
+}
 

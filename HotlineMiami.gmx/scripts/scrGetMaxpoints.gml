@@ -1,17 +1,19 @@
-if string_upper(global.title)="THE METRO" return 28000
-if string_upper(global.title)="NO TALK" return 18000
-if string_upper(global.title)="FULL HOUSE" return 60000
-if string_upper(global.title)="CLEAN HIT" return 34000
-if string_upper(global.title)="NEIGHBOURS" return 58000
-if string_upper(global.title)="PUSH IT" return 70000
-if string_upper(global.title)="HOT&HEAVY" return 138000
-if string_upper(global.title)="VENGEANCE" return 74000
-if string_upper(global.title)="OVERDOSE" return 38000
-if string_upper(global.title)="DECADENCE" return 47000
-if string_upper(global.title)="TENSION" return 50000
-if string_upper(global.title)="ASSAULT" return 100000
-if string_upper(global.title)="CRACKDOWN" return 68000
-if string_upper(global.title)="DEADLINE" return 74000
-if string_upper(global.title)="SAFEHOUSE" return 18000
-if string_upper(global.title)="FUN&GAMES" return 50000
-return 40000
+switch (string_upper(global.title)) {
+    case "THE METRO": return 28000;
+    case "NO TALK": return 18000;
+    case "FULL HOUSE": return 60000;
+    case "CLEAN HIT": return 34000;
+    case "NEIGHBOURS": return 58000;
+    case "PUSH IT": return 70000;
+    case "HOT&HEAVY": return 138000;
+    case "VENGEANCE": return 74000;
+    case "OVERDOSE": return 38000;
+    case "DECADENCE": return 47000;
+    case "TENSION": return 50000;
+    case "ASSAULT": return 100000;
+    case "CRACKDOWN": return 68000;
+    case "DEADLINE": return 74000;
+    case "SAFEHOUSE": return 18000;
+    case "FUN&GAMES": return 50000;
+    default: return 40000;
+}

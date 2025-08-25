@@ -1,9 +1,12 @@
+//When you die, you will restart with the weapon/power that the mask gived you (on the first floor after you selected it)
+// Note: you also need to apply the same ability logic for when the player puts on the mask the first time!
+
+// Rufus
 if (global.maskindex = 9)
     energie = 1;
+// Earl
 if (global.maskindex = 21)
     energie = 2;
-
-//When you die, you will restart with the weapon/power that the mask gived you (on the first floor after you selected it)
 
 //Carl
 if (global.maskindex == 23)

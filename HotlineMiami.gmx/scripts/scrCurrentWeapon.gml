@@ -1,3 +1,5 @@
+// Returns the weapon index based on currently held weapon.
+// scrCurrentWeaponExt() is essentially the same thing but extended, almost virtually no reason to use this.
 switch (objPlayer.sprite_index) {
     case sprPWalkM16: return 0;
     case sprPWalkShotgun: return 1;

@@ -1,3 +1,4 @@
+// If player's current sprite is a walking sprite, add to the list.
 switch (argument0) {
     case sprBoss2WalkCleaver:
     case sprBoss2Walk:

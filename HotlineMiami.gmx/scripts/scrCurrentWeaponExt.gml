@@ -1,3 +1,6 @@
+// Returns weapon index.
+// Like scrCurrentWeapon() but you can pick which sprite index to check (most of the time, objPlayer.sprite_index)
+// Use this instead of scrCurrentWeapon() tbh
 switch (argument0) {
     case sprPWalkM16: return 0;
     case sprPWalkShotgun: return 1;

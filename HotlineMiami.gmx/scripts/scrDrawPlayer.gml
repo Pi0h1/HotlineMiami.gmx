@@ -71,9 +71,12 @@ with (objPlayerBiker) {
         if (myspeed == 2.25)
             legsprite = sprBikerLegsStairs;
         else legsprite = sprBikerLegs;
+        // Render circular light around player
         draw_set_blend_mode(bm_add);
         draw_circle_color(x, y, 48 + random(6) + light, make_color_hsv(0, 0, 30 + light * 2), c_black, 0);
         draw_set_blend_mode(bm_normal);
+        
+        // Render biker sprites
         draw_sprite_ext(legsprite, legindex, x + 1, y + 1, image_xscale, image_yscale, legdir, c_black, 0.5);
         draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale * left, dir, c_black, 0.5);
         draw_sprite_ext(legsprite, legindex, x, y, image_xscale, image_yscale, legdir, image_blend, image_alpha);
@@ -95,9 +98,13 @@ with (objPlayerBikerHouse) {
         if (myspeed = 2.25)
             legsprite = sprBikerLegsStairs;
         else legsprite = sprBikerLegs;
+        
+        // Render circular light aroudn player
         draw_set_blend_mode(bm_add);
         draw_circle_color(x, y, 48 + random(6) + light, make_color_hsv(0, 0, 30 + light * 2), c_black, 0);
         draw_set_blend_mode(bm_normal);
+        
+        // Render biker sprites
         draw_sprite_ext(legsprite, legindex, x + 1, y + 1, image_xscale, image_yscale, legdir, c_black, 0.5);
         draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale * left, dir, c_black, 0.5);
         draw_sprite_ext(legsprite, legindex, x, y, image_xscale, image_yscale, legdir, image_blend, image_alpha);

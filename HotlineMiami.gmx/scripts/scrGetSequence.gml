@@ -1,3 +1,4 @@
+//
 switch (argument0) {
     case rmSequence1:
         global.sequence = rmSequence2;

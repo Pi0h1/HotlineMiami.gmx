@@ -1,3 +1,4 @@
+// Hud used alongside objPlayerMouseHouse (especially during boss fights)
 d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
 showammo = 0;
 if (instance_exists(objPlayer) && !instance_exists(objPhoneConversation)) {

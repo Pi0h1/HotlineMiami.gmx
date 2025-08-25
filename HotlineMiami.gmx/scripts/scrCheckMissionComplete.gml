@@ -1,3 +1,5 @@
+// This script details all of the requirements needed for a level to be considered "complete".
+// These requirements typically involve checks to make sure that each floor or the final floor is cleared of enemies.
 if (instance_exists(objPlayer)) {
     if (room == rmApartment1Upstairs) {
         if (!instance_exists(objEnemy)) {

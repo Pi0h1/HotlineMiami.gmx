@@ -1,5 +1,6 @@
 var nextroom;
 nextroom = rmScore;
+// Instead of finishing the level, take the player to some other room.
 if (argument0 == rmTrainstationEntrance)
     nextroom = rmAlley;
 if (argument0 == rmBuildingFloor1)

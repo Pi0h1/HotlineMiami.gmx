@@ -1,6 +1,6 @@
 switch (argument0) {
     case sprPWalkKnife: case sprPAttackKnife:
-        global.usedkill[3] = 1;
+        global.usedkill[3] = 1; // can safely remove this if you don't care about achievements.
         return objPKnifeKill;
 
     case sprPWalkMachete: case sprPAttackMachete:

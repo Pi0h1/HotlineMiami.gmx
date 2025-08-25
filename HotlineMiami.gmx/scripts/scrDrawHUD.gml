@@ -1,12 +1,18 @@
 d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+
+// Combo logic
 if (global.combo > 0) {
+    // Limit global.combotime so it can't extend infinitely
     if (global.combotime > 120)
         global.combotime = 120;
+    // Decrement combo timer
     if (global.combotime > 0) {
         global.combotime--;
+        // Decrement combo timer slower if using Zach
         if (global.maskindex == 13)
             global.combotime += 0.25;
     } else {
+        // If combo is more than 1, add to combo.
         if (global.combo > 1) {
             global.myscore += (300 + global.combo * 125) * global.combo;
             global.comboscore += (300 + global.combo * 125) * global.combo;
@@ -32,6 +38,9 @@ if (global.combo > 0) {
         global.combo = 0;
     }
 } else global.combotime = 0;
+// if you plan on writing the hud from scratch, I recommend keeping all of the above
+
+
 if (global.drawscore < global.myscore)
     update = 1;
 else update = 0;
@@ -62,6 +71,8 @@ global.dir++;
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 showammo = 0;
+
+// If using a gun, show ammo widget
 if (instance_exists(objPlayer)) {
     if (objPlayer.sprite_index == sprPWalkM16 || objPlayer.sprite_index == sprPAttackM16) {
         showammo = 1;
@@ -99,12 +110,15 @@ if (instance_exists(objPlayer)) {
         showammo = 1;
         maxammo = 32;
     }
+    
     if (showammo) {
+        // Text to display ammo
         ammostring = string(objPlayer.ammo) + "/" + string(maxammo) + "rnds";
         if (ammoy < 16)
             ammoy += 4;
         else ammoy = 20;
     } else {
+        // No gun
         ammostring = "NO GUN!";
         if (instance_number(objEnemy) + instance_number(objKnockedOut) > 0) {
             if (ammoy > -32)
@@ -115,11 +129,13 @@ if (instance_exists(objPlayer)) {
     if (instance_exists(objPlayerBiker) || instance_exists(objPlayerBikerHouse)) {
         if (objPlayer.ammo > 0) {
             showammo = 1;
+            // Text to display knives if playing as biker
             ammostring = string(objPlayer.ammo) + " KNIVES";
             if (ammoy < 16)
                 ammoy += 4;
             else ammoy = 20;
         } else {
+            // No knives
             ammostring = "NO KNIVES!";
             if (instance_number(objEnemy) + instance_number(objKnockedOut) > 0) {
                 if (ammoy > -32)
@@ -128,6 +144,7 @@ if (instance_exists(objPlayer)) {
         }
     }
 
+    // Finished text
     if (global.done) {
         if (showfinished > 0)
             showfinished -= 1;
@@ -143,6 +160,7 @@ if (instance_exists(objPlayer)) {
         else ammoy = 20;
     }
 } else {
+    // Dead text
     if (instance_exists(objPlayerDead)) {
         scorestring = "YOU'RE DEAD!";
         if (!global.xbox)
@@ -155,6 +173,7 @@ if (instance_exists(objPlayer)) {
 }
 finish = 0;
 
+// Tutorial widget during the Metro level
 if (room == rmTrainstationEntrance || room == rmTrainstationDownstairs || room == rmAlley) {
     if (instance_exists(objPlayer)) {
         finish = 1;
@@ -207,13 +226,14 @@ draw_set_color(color1);
 draw_text_transformed(view_wview[0] - 18 - string_width(scorestring) * 0.5 + lengthdir_x(1, dir), 20 + lengthdir_y(1, dir), scorestring, 1, 1, lengthdir_x(2, dir * 1.34));
 draw_set_font(fntScore);
 
+// Draw finished level widget
 if (finish)
     draw_text_transformed(view_wview[0] / 2 + lengthdir_x(0.5, dir), view_hview[0] - 11 + lengthdir_x(0.5, dir), finishstring, 0.75, 0.75, lengthdir_x(2, dir * 1.34 + 90));
+
+// Draw ammo widget
 if (ammoy > -32)
     draw_text_transformed(18 + string_width(ammostring) * 0.5 + lengthdir_x(1, dir), view_hview[0] - ammoy + lengthdir_y(1, dir), ammostring, 1, 1, lengthdir_x(2, dir * 1.34));
-
 draw_set_color(color2);
-
 if (ammoy > -32)
     draw_text_transformed(18 + string_width(ammostring) * 0.5 + lengthdir_x(1, dir - 180), view_hview[0] - ammoy + lengthdir_y(1, dir - 180), ammostring, 1, 1, lengthdir_x(2, dir * 1.34 - 10));
 if (finish)

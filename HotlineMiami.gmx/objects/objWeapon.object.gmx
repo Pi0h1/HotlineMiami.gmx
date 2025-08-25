@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>image_angle = random(360);
 image_index = floor(random(35));
+// If a picked weapon isn't available, re-roll until a weapon that is available is picked
 while ((global.newgun[15] == 0 &amp;&amp; image_index == 7) ||
        (global.newgun[0] == 0 &amp;&amp; image_index == 8) ||
        (global.newgun[8] == 0 &amp;&amp; image_index == 9) ||
@@ -57,11 +58,14 @@ while ((global.newgun[15] == 0 &amp;&amp; image_index == 7) ||
     image_index = floor(random(35));
 }
 ammo = 0;
+// If using Charlie, only pick from specific melee weapons
 if (global.maskindex == 17)
     image_index = choose(2, 3, 4, 5);
+// If using Aubrey, only pick from specific guns
 if (global.maskindex == 3)
     image_index = choose(0, 1, 6);
 
+// Set ammo based on image index (always gun)
 switch (image_index) {
     case  0: ammo = 24; break;
     case  1: ammo =  6; break;

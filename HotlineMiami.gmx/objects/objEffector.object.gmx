@@ -60,6 +60,7 @@ leveltitle = "";
 levelshow = 240;
 gridon = 0;
 uzisnd = 0;
+// Addresses used for display when level starts
 if (instance_exists(objMaskMenu)) {
     switch (global.sequence) {
         case rmSequence1: leveltitle = "Brickell Metro Station"; break;
@@ -78,7 +79,7 @@ if (instance_exists(objMaskMenu)) {
         case rmSequence14: leveltitle = "South 86th St"; break;
     }
 }
-if (instance_exists(objPlayerBiker)) {
+if (instance_exists(objPlayerBiker)) { // This check is actually irrelevant but okay
     switch (global.sequence) {
         case rmNoodleShop: leveltitle = "North East 56th St"; break;
         case rmArcadeDownstairs: leveltitle = "South West 107th Place"; break;
@@ -125,6 +126,7 @@ scrLockInEffectInit();
         }
     } else pressback = 0;
 }
+// Play uzi sound for the waiters in Clean Hit (I believe this was done to not blast your eardrums when all of the waiters shoot at the player at once)
 if (uzisnd) {
     uzisnd = 0;
     audio_play_sound(sndUzi, 0, false);
@@ -132,9 +134,11 @@ if (uzisnd) {
 if (keyboard_check_pressed(ord(global.restartkey)))
     event_perform(ev_keypress, ord('R'));
 SteamRunCallbacks();
+// Load masks when dying on the first floor (due to how the checkpoint system works)
 if (global.maskload) {
     scrLoadMask();
     global.maskload = 0;
+    // Load mask abilities when player dies on the first floor
     with (objPlayer)
         scrGetMaskPowers();
 }
@@ -143,6 +147,7 @@ if (global.loaded) {
     scrLoadAchievements();
     if (room == rmSwatUpstairs) {
         audio_stop_sound(sndPolice);
+        // If player restarts during the police section of crackdown, set music back to crystals
         if (file_exists(working_directory + "\restartmusic")) {
             sxeasy_play(working_directory + "\Crystals.mp3");
             sxeasy_setVolume(1);
@@ -156,6 +161,7 @@ if (global.loaded) {
         scrSurfaceTiles();
     }
     
+    // I think this generates a new weapon when dying and restarting?
     with (objWeapon) {
         if (object_index == objSpecificWeapon) {
             // do nothing
@@ -174,7 +180,6 @@ if (global.loaded) {
         objPlayer.energie = 2;
 }
 scrCheckMissionComplete();
-
 
 if (!fade) {
     if (amount &lt; 180) {
@@ -221,6 +226,8 @@ if (fade) {
 
 vlastx = view_xview[0];
 vlasty = view_yview[0];
+
+// Screen shake code
 if (global.shake &gt; 0) {
     global.shake -= 0.5;
     if (global.xbox)
@@ -253,6 +260,7 @@ scrLockInEffectStep();;
           <argument>
             <kind>1</kind>
             <string>if (!instance_exists(objMaskMenu)) {
+    // Oscar's Darken Room Effect
     if (global.maskindex == 14)
         bamount = 1;
 }
@@ -352,10 +360,13 @@ if (room == rmHotelSuite) {
         }
     }
 }
+
+// Draw cursor.
 draw_sprite_ext(sprite_index, image_index, global.mousex + 1, global.mousey + 1, 1, 1, -view_angle[0], c_black, 0.5);
 draw_set_blend_mode(bm_cursor);
 draw_sprite_ext(sprite_index, image_index, global.mousex, global.mousey, 1, 1, -view_angle[0], c_cursor, 1);
 draw_set_blend_mode(bm_normal);
+
 with (objDiscoLights) {
     d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
     draw_set_blend_mode(bm_subtract);
@@ -364,14 +375,18 @@ with (objDiscoLights) {
 draw_set_blend_mode(bm_normal);
 if (!instance_exists(objMaskMenu) &amp;&amp; !instance_exists(objPhoneConversation))
     global.time++;
+    
+// Draw hud
 scrDrawHUD();
 
+// Draw mask menu
 if (instance_exists(objMaskMenu)) {
     scrDrawMaskMenu();
 } else {
     if (leveltitle == "") {
         // do nothing
     } else {
+        // Render and animate address of level that displays when level starts
         if (levelshow &gt; 0)
             levelshow -= 1;
         else leveltitle = "";
@@ -415,6 +430,7 @@ coldir++;
 
 scrDrawPlayer();
 
+// Render Oscar Darkness
 if (global.maskindex == 14 &amp;&amp; global.maskon) {
     draw_set_blend_mode(bm_subtract);
     draw_circle_color(view_wview[0] / 2, view_hview[0] / 2, 240 + 24 + random(24) + 24, merge_color(c_black, merge_color(c_white, c_aqua, 0.6 + lengthdir_x(0.4, global.dir * 4)), bamount), merge_color(c_black, c_white, bamount), 0);
@@ -490,11 +506,12 @@ if (instance_exists(objPlayer)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (fade = 0 &amp;&amp; amount == 180) {
+            <string>if (!fade &amp;&amp; amount == 180) {
     if (instance_exists(objPlayer)) {
         if (objPlayer.persistent)
             objPlayer.persistent = 0;
     }
+    // Pause game by going to a new room
     global.lastroom = room;
     room_persistent = 1;
     screen_save(working_directory + "\pause.bmp");

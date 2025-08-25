@@ -52,8 +52,10 @@ legdir = 0;
 legindex = 0;
 left = 1;
 ammo = 0;
-energie = round(random(1));
 
+// Default health value
+energie = round(random(1));
+// Set health if using a specific mask
 if (global.maskon == 1) {
     if (global.maskindex == 9) 
         energie = 1;
@@ -75,12 +77,6 @@ maskon = global.maskon;
 release = 0;
 shieldwait = 0;
 aim = 0;
-if (global.maskon == 1) {
-    if (global.maskindex == 9) 
-        energie = 1;
-    if (global.maskindex == 21) 
-        energie = 2;
-}
 
 global.enemy = -1234;
 
@@ -141,7 +137,8 @@ if (!place_free(x,y)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.xbox) {
+            <string>// Xbox controls
+if (global.xbox) {
     scrXboxPlayerMouse();
 }
 
@@ -167,9 +164,11 @@ if (room == rmTrainstationDownstairs || room = rmPoliceHQFloor3 || instance_exis
     clear = 1;
 }
 
+// If all enemies are dead (and there are no enemy bullets), floor is clear.
 if (instance_number(objEnemy) + instance_number(objKnockedOut) + instance_number(objECrawl) + instance_number(objMiscEnemy) + instance_number(objBoss) + instance_number(objEHideM16) + instance_number(objEBullet) == 0) {
-    test = 1
+    test = 1;
 
+    // In Clean Hit, also check if the politician fats are dead.
     if (room == rmHotelEntrance) {
         if (objFatmanEating.sprite_index == sprFatmanEating || objFatmanEating.sprite_index == sprFatmanEatingGiveUp || objFatmanTelephone.sprite_index == sprFatmanTelephone || objFatmanTelephone.sprite_index == sprFatmanTelephoneGiveUp) {
             test = 0;
@@ -189,6 +188,7 @@ if (instance_number(objEnemy) + instance_number(objKnockedOut) + instance_number
     }
 } else clear = 0;
 
+// Bind for looking further.
 if (!global.xbox) {
     aimfar = keyboard_check_direct(vk_shift);
 } else {
@@ -197,20 +197,26 @@ if (!global.xbox) {
 
 global.test = 0;
 
+// Distance required to pick up weapons
 with (objWeapon) {
     if (point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 32) {
         global.test = 2;
     }
 }
 
+// Distance required to execute enemies (in this case, if player is touching the knocked down enemy)
 if (place_meeting(x, y, objKnockedOut)) {
     global.test = 1;
 }
 objEffector.action = global.test;
+// throwreload is an unused variable
 if (throwreload &gt; 0) {
-    throwreload -= 1;
+    throwreload --;
 }
+
+// Code for looking further
 if (aimfar) {
+    // Set look further scale if using George
     if (global.maskindex == 7) {
         factor = 2;
     }
@@ -259,6 +265,7 @@ if (persistent == 1 &amp;&amp; objEffector.fade == 1) {
 
 scrPlayerMoveKeyboard();
 
+// If player is attacking with melee
 if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_index == sprPAttackCrowbar || sprite_index == sprPAttackPan || sprite_index == sprPAttackPot || sprite_index == sprPAttackMachete || sprite_index == sprPAttackSledgeHammer || sprite_index == sprPigButcherAttack || sprite_index == sprPAttackNightStick || sprite_index == sprPAttackPipe || sprite_index == sprPAttackClub || sprite_index == sprPAttackSword || sprite_index == sprPAttackAxe || sprite_index == sprPAttackPool || sprite_index == sprPAttackPoolBroke) ||(global.maskindex == 2 &amp;&amp; sprite_index == sprPAttackPunch) {
     lastx = x;
     lasty = y;
@@ -267,6 +274,8 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
     x += global.spacex;
     y += global.spacey;
     global.my_id = id;
+    
+    // Break windows
     with (objGlassPanelH) {
         if (place_meeting(x, y, global.my_id)) {
             SteamIncStat("Windows", 1);
@@ -318,10 +327,11 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
     x += lengthdir_x(12, dir);
     y += lengthdir_y(12, dir);
 
-
+    // Kill enemies
     with (objEnemy) {
         if (place_meeting(x, y, objPlayer) || place_meeting(x + global.spacex, y + global.spacey, objPlayer)) {
-            mask_index = sprWeaponMask;
+            mask_index = sprWeaponMask; // Set melee hitbox
+            // If trying to kill a fat enemy...
             if (scrCollisionLineExt(x, y, objPlayer.lastx, objPlayer.lasty, 4, objSolid, objDoorV, objWallSoftH) || object_index == objEnemyFat || object_index == objInspector) {
                 // do nothing.  
             } else {
@@ -333,26 +343,28 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
                         sprite_index = sprEWalkKnife;
                     else sprite_index = choose(sprEWalkShotgun, sprEWalkM16);
                 }
+                // Give less points if enemies were killed while unarmed
                 if (sprite_index == sprEWalkUnarmed || sprite_index == sprPoliceWalkUnarmed) {
                     my_id.text = "+" + string((100) + 100 * global.factor) + "pts";
                     global.myscore += (100) + 100 * global.factor;
                     global.boldscore = 100 * global.factor;
                     global.killscore += 100;
-                    global.combo += 1;
+                    global.combo++;
                     global.combotime = 240;
                     global.killx[global.kills] = x;
                     global.killy[global.kills] = y;
-                    global.kills += 1;
+                    global.kills++;
                 } else {
+                    // Otherwise, if they were armed, give more points.
                     my_id.text = "+" + string((200) + 200 * global.factor) + "pts";
                     global.myscore += (200) + 200 * global.factor;
                     global.killscore += 200;
                     global.boldscore += 200 * global.factor;
-                    global.combo += 1;
+                    global.combo++;
                     global.combotime = 240;
                     global.killx[global.kills] = x;
                     global.killy[global.kills] = y;
-                    global.kills += 1;
+                    global.kills++;
                     if (global.bonustime &lt; 12 + global.factor * 4) {
                         global.bonustime = 12 + global.factor * 4;
                     }
@@ -365,6 +377,7 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
                     if (global.factor &gt; 4) 
                         ds_list_add(global.bonuslist, "Severe Exposure")
                 }
+                // Create blood effects when killing
                 edir = point_direction(objPlayer.lastx, objPlayer.lasty, x, y);
                 repeat(8) {
                     my_id = instance_create(x - 3 + random(6) + lengthdir_x(8, edir), y - 3 + random(6) + lengthdir_y(8, edir), objBloodDrop);
@@ -392,28 +405,35 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
                     my_id.speed = 2 + random(1);
                     my_id.friction = 0.15;
                 }
+                // Create dead body sprite
                 my_id = instance_create(x, y, objDeadBody);
+                // If enemy is a dog
                 if (object_index == objDogPatrol) {
                     SteamIncStat("Dogs", 1);
+                    // Blunt Weapons
                     if (objPlayer.sprite_index == sprPAttackClub || objPlayer.sprite_index == sprPAttackBat || objPlayer.sprite_index == sprPAttackCrowbar || objPlayer.sprite_index == sprPAttackPan || objPlayer.sprite_index == sprPAttackPot || objPlayer.sprite_index == sprPAttackSledgeHammer || objPlayer.sprite_index == sprPigButcherAttack || objPlayer.sprite_index == sprPAttackPipe || objPlayer.sprite_index == sprPAttackPool || objPlayer.sprite_index == sprPAttackPunch) {
                         audio_play_sound(sndHit, 0, false);
                         audio_play_sound(sndPunch, 0, false);
                         my_id.sprite_index = sprDogDeadBlunt;
                         my_id.image_index = 3 + floor(random(3));
                     } else {
+                        // Sharp weapons
                         my_id.sprite_index = sprDogDeadCut;
                         audio_play_sound(choose(sndCut1, sndCut2), 0, false);
                         my_id.image_index = 4 + floor(random(3));
                     }
                 } else {
+                    // Russian death sprites
                     if (objPlayer.sprite_index == sprPAttackClub || objPlayer.sprite_index == sprPAttackBat || objPlayer.sprite_index == sprPAttackCrowbar || objPlayer.sprite_index == sprPigButcherAttack || objPlayer.sprite_index == sprPAttackPan || objPlayer.sprite_index == sprPAttackPot || objPlayer.sprite_index == sprPAttackSledgeHammer || objPlayer.sprite_index == sprPAttackPipe || objPlayer.sprite_index == sprPAttackPool || objPlayer.sprite_index == sprPAttackPunch) {
                         audio_play_sound(sndHit, 0, false);
                         audio_play_sound(sndPunch, 0, false);
                         my_id.sprite_index = choose(sprEBackBlunt, sprEBackBlunt, sprEFrontBlunt);
                         my_id.image_index = 4 + floor(random(11));
+                        // If the player is using the unbroken pool cue, switch to broken pool cue.
                         if (objPlayer.sprite_index == sprPAttackPool) 
                             objPlayer.sprite_index = sprPWalkPoolBroke;
                     }
+                    // Police death sprites
                     if (scrIsPolice(object_index) &amp;&amp; (objPlayer.sprite_index == sprPAttackPunch || objPlayer.sprite_index == sprPAttackNightStick)) {
                         my_id1 = instance_create(x, y, objPoliceHat);
                         my_id1.direction = edir - 10 + random(20);
@@ -432,6 +452,7 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
                             else scrGoreBash(x, y, edir - 180, 0, 0);
                         }
                     }
+                    // Jones gore
                     if (my_id.sprite_index == sprEBackBlunt) {
                         if (my_id.image_index == 6 || my_id.image_index == 12 || my_id.image_index == 14) 
                             scrGoreBash(x, y, edir - 180, 1, 1);
@@ -496,6 +517,7 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
                 if (global.pigkill = 1)
                     my_id.sprite_index = sprOscarDead;
                 global.pigkill = 0;
+                // Enemy has a random chance of crawling if hit with a blunt weapon
                 if (my_id.sprite_index == sprEBackBlunt &amp;&amp; round(random(11)) == 2) {
                     with (my_id) {
                         my_id = instance_create(x, y, objECrawl);
@@ -509,10 +531,11 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
                             }
                         }
                         if (global.test == 0)
-                        instance_destroy();
+                            instance_destroy();
                     }
                 }
-
+                
+                // Random chance of playing special animation when hit with a blunt weapon
                 if (instance_exists(my_id)) {
                     if (my_id.sprite_index == sprEBackBlunt &amp;&amp; round(random(24)) == 2) {
                         my_id.sprite_index = sprEBackCracked;
@@ -520,6 +543,7 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
                     }
                 }
 
+                // If enemy was armed, drop what weapon they were holding.
                 if (sprite_index == sprEWalkUnarmed || sprite_index == sprPoliceWalkUnarmed || sprite_index == sprEGiveUp || object_index == objDogPatrol)
                     noweapon = 1;
                 else noweapon = 0;
@@ -539,6 +563,7 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
     y = lasty;
 }
 
+// Knock down enemies instead of killing them based on attack (punches, for example)
 if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBag || sprite_index == sprPAttackDrill) {
     lastx = x;
     lasty = y;
@@ -547,7 +572,8 @@ if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBag || sprite_i
     x += global.spacex;
     y += global.spacey;
     global.my_id = id;
-    
+
+    // Break glass
     with (objGlassPanelH) {
         if (place_meeting(x, y, global.my_id)) {
             SteamIncStat("Windows", 1);
@@ -599,6 +625,7 @@ if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBag || sprite_i
     x += lengthdir_x(12, dir);
     y += lengthdir_y(12, dir);
 
+    // With enemy
     with (objEnemy) {
         if (scrCantGetHit(object_index)) 
             valid = 0;
@@ -616,6 +643,7 @@ if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBag || sprite_i
             edir = point_direction(objPlayer.lastx, objPlayer.lasty, x, y);
             audio_play_sound(sndDoorHit, 0, false);
             global.shake = 3;
+            // Knock down enemy
             my_id = instance_create(x, y, objKnockedOut);
             my_id.type = object_index;
             if (scrIsPolice(object_index))
@@ -626,6 +654,7 @@ if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBag || sprite_i
                 move_outside_solid(angle - 180, 16);
             my_id.speed = 3;
             scrIdleGetEnemy();
+            // Drop weapon if enemy was holding a weapon
             if (sprite_index == sprEWalkUnarmed || sprite_index == sprPoliceWalkUnarmed)
                 noweapon = 1;
             else noweapon = 0;
@@ -633,8 +662,9 @@ if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBag || sprite_i
                 global.test = 0
                 with (objEnemy)
                     if (alert == 1) 
-                        global.test += 1;
-                        
+                        global.test++;
+                
+                // Create score
                 my_id = instance_create(x, y - 12, objScore);
                 my_id.text = "+" + string(200 + 400 * global.factor) + "pts";
                 global.myscore += 200 + 400 * global.factor;
@@ -642,7 +672,7 @@ if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBag || sprite_i
                 global.combotime += 100;
                 global.killx[global.kills] = x;
                 global.killy[global.kills] = y;
-                global.kills += 1;
+                global.kills++;
                 my_id = instance_create(x, y, objWeaponThrow);
                 my_id.direction = direction - 70 + random(40);
                 my_id.image_index = scrCurrentWeaponExt(sprite_index);
@@ -690,7 +720,8 @@ global.my_id = id;
 image_xscale = 1.5;
 image_yscale = 1.5;
 bullets = 0;
-energie -= 1;
+energie--; // Reduce health
+// Create blood Smoke when shot
 with(objEBullet) {
     if (place_meeting(x, y, global.my_id)) {
         my_id = instance_create(x, y, objBloodSmoke);
@@ -700,13 +731,14 @@ with(objEBullet) {
         my_id.image_xscale = 0.8 + random(0.2);
         my_id.image_yscale = my_id.image_xscale;
         instance_destroy();
-        global.my_id.bullets += 1;
+        global.my_id.bullets++;
     }
 }
 image_xscale = 1;
 image_yscale = 1;
 edir = other.direction;
 test = 0;
+// Create blood effects when shot
 repeat(2 * bullets) {
     my_id = instance_create(x - 3 + random(6) + lengthdir_x(8, edir), y - 3 + random(6) + lengthdir_y(8, edir), objBloodDrop);
     my_id.image_xscale = 1 - random(0.2);
@@ -733,9 +765,13 @@ repeat(bullets) {
     my_id.speed = 2 + random(1);
     my_id.friction = 0.15;
 }
-if (bullets &gt; 1 or round(random(1)) or energie &lt; 0) {
+// Kill player, if hit by shotgun, random chance, or player runs out of health
+if (bullets &gt; 1 or round(random(1)) || energie &lt; 0) {
+    // Create player dead body sprite
     my_id = instance_create(x, y, objPlayerDead);
-    if bullets &gt; 1 my_id.sprite_index = sprPBackShotgun;
+    // If shotgunned, use appropriate sprite
+    if (bullets &gt; 1)
+        /my_id.sprite_index = sprPBackShotgun;
     else my_id.sprite_index = sprPBackMachinegun;
     my_id.image_index = 1 + floor(random(4));
     my_id.direction = edir;
@@ -770,6 +806,7 @@ if (bullets &gt; 1 or round(random(1)) or energie &lt; 0) {
             <kind>1</kind>
             <string>if (global.xbox == 1) 
     exit;
+// Time required for the button to be held before being picked up
 if (release &lt; 20) {
     scrPlayerPickUp();
     release = 0;
@@ -900,8 +937,9 @@ image_yscale = 1;
             <kind>1</kind>
             <string>if (global.xbox == 1)
     exit;
+// Time required for the button to be held before being picked up
 if (release &lt; 20) {
-    release += 1;
+    release++;
 } else scrPlayerPickUp2();
 </string>
           </argument>
@@ -927,6 +965,7 @@ if (release &lt; 20) {
             <kind>1</kind>
             <string>if (global.xbox == 1)
     exit;
+// Enter window in Clean Hit
 if (room == rmHotelSuite) {
     with (objWindowV) {
         if (x == 480) {
@@ -967,6 +1006,8 @@ if (room == rmHotelSuite) {
         }
     }
 }
+
+
 scrPlayerShoot();
 </string>
           </argument>
@@ -1013,7 +1054,8 @@ scrPlayerShoot();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (persistent == 1) {
+            <string>// Force player and camera to move when transitioning
+if (persistent) {
     if (move == 1) {
         move = 0;
         x += movex;
@@ -1053,13 +1095,16 @@ if (room == rmTutorial) {
 if (global.paused == 1) {
     exit;
 }
+
+// If objects below doesn't exist yet, create them upon room start.
 if (!instance_exists(objEffector))
     instance_create(x, y, objEffector);
 if (!instance_exists(objBackgroundColor)) 
     instance_create(x, y, objBackgroundColor);
 if (!instance_exists(objSurfacer)) 
     instance_create(x, y, objSurfacer);
-if (persistent == 1) {
+
+if (persistent) {
     view_xview[0] = xview;
     view_yview[0] = yview;
     with (objEffector) {
@@ -1108,26 +1153,38 @@ if (sprite_index == last_sprite) {
     scrUpdateMaskPos(sprite_index);
     last_sprite = sprite_index;
 }
-if (myspeed = 2.25) {
+//
+if (myspeed == 2.25) {
     legsprite = sprLegsStairs;
 } else legsprite = sprLegs;
+
+// Create a circular light around the player (primarily used to create a muzzleflash effect)
 draw_set_blend_mode(bm_add);
 draw_circle_color(x, y, 48 + random(6) + light, make_color_hsv(0, 0, 30 + light * 2), c_black, 0);
 draw_set_blend_mode(bm_normal);
+
+// Render player
 draw_sprite_ext(legsprite, legindex, x + 1, y + 1, image_xscale, image_yscale, legdir, c_black, 0.5);
 draw_sprite_ext(sprite_index, image_index, x + 1, y + 1, image_xscale, image_yscale * left, dir, c_black, 0.5);
 draw_sprite_ext(legsprite, legindex, x, y, image_xscale, image_yscale, legdir, image_blend, image_alpha);
-if (global.xbox == 1) {
+
+if (global.xbox) {
     dir = scrXboxPlayerLook();
 } else dir = point_direction(x, y, global.mousex, global.mousey);
 if (sprite_index == sprPLeaveBag) {
     dir = point_direction(x, y, objDumpster.x + 20, objDumpster.y + 12);
 }
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale * left, dir, image_blend, image_alpha);
+
+// Decrement timer for when player can shoot again.
 if (reload &gt; 0)
     reload--;
+
+// Reduce flash that appears when shooitng
 if (light &gt; 3)
     light -= 3;
+
+    // Render throwing item when holding a throwing weapon    
 if (sprite_index == sprPWalkThrow) {
     left = 1;
     draw_sprite_ext(sprThrowWeapons, throwindex, x + lengthdir_x(throwadd[floor(image_index)], dir) + lengthdir_x(7, dir - 90) + 1, y + 1 + lengthdir_y(throwadd[floor(image_index)], dir) + lengthdir_y(7, dir - 90), image_xscale, image_yscale, dir + lengthdir_x(20, 360 * (image_index * (1 / 8))), c_black, 0.5);
@@ -1206,7 +1263,8 @@ if (maskon)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>aim = !aim;
+            <string>// Toggle look further
+aim = !aim;
 </string>
           </argument>
         </arguments>

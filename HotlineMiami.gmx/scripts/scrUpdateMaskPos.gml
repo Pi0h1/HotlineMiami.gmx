@@ -18,13 +18,13 @@ if (argument0 == sprPPipeKill || argument0 == sprPKillCrowbar || argument0 == sp
 if (argument0 == sprPClimbWindow) {
     i = 0;
     repeat(9) {
-        maskaddx[i] = 0;
-        maskaddy[i] = 0;
+        maskaddx[i] = 0; // don't move mask
+        maskaddy[i] = 0; // don't move mask
         i++;
     }
-    maskaddx[9] = 2  maskaddy[9] = 0;
-    maskaddx[10] = 4 maskaddy[10] = 0;
-    maskaddx[11] = 7 maskaddy[11] = 0;
+    maskaddx[9] = 2  maskaddy[9] = 0; // on frame 10, move mask 2 pixels forward
+    maskaddx[10] = 4 maskaddy[10] = 0; // on frame 11, move mask 4 pixels forward
+    maskaddx[11] = 7 maskaddy[11] = 0; // on frame 12, move mask 7 pixels forward, etc.
     maskaddx[12] = 7 maskaddy[12] = 0;
     maskaddx[13] = 9 maskaddy[13] = 0;
     maskaddx[14] = 9 maskaddy[14] = 0;
@@ -45,9 +45,9 @@ if (argument0 == sprClubOwnerDie) {
         maskaddy[i] = 0;
         i++;;
     }
-    maskaddy[3] = 1;
-    maskaddy[4] = 1;
-    maskaddy[8] = -1;
+    maskaddy[3] = 1; // Move mask a pixel down
+    maskaddy[4] = 1; // Move mask a pixel down
+    maskaddy[8] = -1; // Move mask a pixel up
     maskaddy[9] = -1;
     maskaddy[13] = 1;
     maskaddy[14] = 1;

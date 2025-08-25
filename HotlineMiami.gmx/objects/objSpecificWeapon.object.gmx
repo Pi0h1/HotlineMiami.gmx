@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = random(360);
+            <string>// Actually use this for a specific weapon.
+// You must input the amount of ammo you want in its creaation code in the room editor!
+image_angle = random(360);
 ammo = 0;
 switch (image_index) {
     case  0: ammo = 24; break;

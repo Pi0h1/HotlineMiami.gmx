@@ -1,3 +1,4 @@
+// After picking up a weapon, give the appropriate sprite.
 switch (image_index) {
     case 0: objPlayer.sprite_index = sprPWalkM16; break;
     case 1: objPlayer.sprite_index = sprPWalkShotgun; break;

@@ -4,6 +4,8 @@ if (objPlayer.sprite_index == sprPLeaveBag || sprite_index == sprPWalkBossgun ||
     sprite = mask_index;
 
     if (reload <= 0) {
+    
+    // Melee weapons
         if (sprite_index == sprPWalkUnarmed) {
             audio_play_sound(choose(sndSwing1, sndSwing2), 0, false);
             sprite_index = sprPAttackPunch;
@@ -98,16 +100,19 @@ if (objPlayer.sprite_index == sprPLeaveBag || sprite_index == sprPWalkBossgun ||
             reload = 20;
         }
 
+    // Guns
         if (ammo > 0) {
 
-            mask_index = sprBullet;
+            mask_index = sprBullet; // Set bullet hitbox
             image_angle = dir;
-            if (sprite_index == sprPWalkM16) {
-                audio_play_sound(sndM16, 0, false);
-                scrHearPlayer();
-                ammo--;
-                reload = 2;
-                global.shake = 3;
+            if (sprite_index == sprPWalkM16) { // Player is holding gun
+                audio_play_sound(sndM16, 0, false); // Play sound
+                scrHearPlayer(); // Remove line if using silenced weapon
+                ammo--; // Decrement ammo
+                reload = 2; // Set delay (this is basically rate of fire)
+                global.shake = 3; // How much should the screen shake?
+                
+                // If leaned up against a door, create shoot effects
                 if (place_meeting(x + lengthdir_x(12, dir), y + lengthdir_y(12, dir), objSolid) or place_meeting(x + lengthdir_x(12, dir), y + lengthdir_y(12, dir), objDoorV)) {
                     my_id = instance_create(x, y, objSmokeHit);
                     my_id.image_angle = image_angle;
@@ -123,16 +128,17 @@ if (objPlayer.sprite_index == sprPLeaveBag || sprite_index == sprPWalkBossgun ||
                         my_id.image_angle = my_id.direction;
                     }
                 }
+                // Create shells after shooting that land on the floor
                 my_id = instance_create(x + lengthdir_x(5, dir - 5 * left), y + lengthdir_y(5, dir - 5 * left), objShell);
                 my_id.sprite_index = sprM16Shell;
                 my_id.image_angle = dir;
                 my_id.direction = dir - 90 * left - 20 + random(30);
                 my_id.speed = 1 + random(3);
-                sprite_index = sprPAttackM16;
+                sprite_index = sprPAttackM16; // set player sprite to attack
                 image_speed = 0.5;
                 image_index = 0;
                 light = 12;
-                global.usedgun[0] = 1;
+                global.usedgun[0] = 1; // Used for tracking how many weapons were used for achievements. Can safely remove this.
             }
 
             if (sprite_index == sprPWalkShotgun) {

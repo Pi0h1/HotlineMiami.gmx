@@ -60,10 +60,13 @@ switch (sprite_index) {
     // Misc
     case sprPAttackThrow: sprite_index = sprPWalkUnarmed; break;
 }
+
+// Set masmk abilities after play puts on mask animation (note: must also edit scrGetMaskPowers for abilities to transfer over when dying on the first floor)
 if (sprite_index == sprPMaskSlip) {
     sprite_index = sprPWalkUnarmed;
     maskon = 1;
     global.maskon = 1;
+    
     if (global.maskindex == 9)
         energie = 1;
     if (global.maskindex == 21)

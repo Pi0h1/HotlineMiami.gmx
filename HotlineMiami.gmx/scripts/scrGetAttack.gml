@@ -1,3 +1,4 @@
+// Give enemy attack melee sprite based on what weapon they're holding
 if (argument0 == sprEWalkClub || sprite_index == sprEWalkClub)
     return sprEAttackClub;
 

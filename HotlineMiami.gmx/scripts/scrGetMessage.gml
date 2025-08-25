@@ -1,9 +1,9 @@
 if (global.maskindex == 19 && global.maskon) {
     scrGetMessageFrench(argument0);
 } else {
-    my_id = instance_create(x, y, objPhoneConversation)
-    objEffector.image_xscale = 1
-    objEffector.image_yscale = 1
+    my_id = instance_create(x, y, objPhoneConversation);
+    objEffector.image_xscale = 1;
+    objEffector.image_yscale = 1;
     if (room == rmSequence1) {
         if (argument0 == objAnsweringMachine) {
             my_id.sprite = sprPhone;

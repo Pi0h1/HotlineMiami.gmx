@@ -122,7 +122,7 @@ if (objPlayer.x &lt; x + 40) {
     }
     if (global.test == 0)
         exit;
-    if (on) {
+    if (!on) {
         xview = view_xview[0];
         yview = view_yview[0];
         angle = view_angle[0];

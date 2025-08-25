@@ -43,7 +43,7 @@ if (room == rmMCBar) {
         draw_text(view_wview[0] / 2, view_hview[0] / 2, text);
         if (i < 60)
             i++;
-        sleep(1000 / 60);
+//        sleep(1000 / 60);
         screen_refresh();
     }
 }

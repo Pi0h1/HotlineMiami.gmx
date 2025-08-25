@@ -199,9 +199,9 @@ if (on) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!on)
+            <string>if (on == 0)
     exit;
-if (on) {
+if (on == 1) {
     if (amount &lt; 1)
         amount += 0.02;
     if (wait &gt; 0)
@@ -212,12 +212,14 @@ if (on == 2) {
     if (amount &gt; 0)
         amount -= 0.001;
 }
+
 draw_set_blend_mode(bm_subtract);
 draw_sprite_ext(sprExplosionSmoke, 0, x, y, image_xscale, image_yscale, image_angle, merge_color(merge_color(c_black, c_gray, amount), merge_color(c_black, c_white, amount), 0.5 + lengthdir_x(0.5, dir)), 1);
 draw_sprite_ext(sprExplosionSmoke, 1, x, y, image_xscale, image_yscale, image_angle, merge_color(merge_color(c_black, c_gray, amount), merge_color(c_black, c_white, amount), 0.5 + lengthdir_x(0.5, dir * 0.6 + 90)), 1);
 draw_sprite_ext(sprExplosionSmoke, 2, x, y, image_xscale, image_yscale, image_angle, merge_color(merge_color(c_black, c_gray, amount), merge_color(c_black, c_white, amount), 0.5 + lengthdir_x(0.5, dir * 1.2 + 180)), 1);
 draw_sprite_ext(sprExplosionSmoke, 3, x, y, image_xscale, image_yscale, image_angle, merge_color(merge_color(c_black, c_gray, amount), merge_color(c_black, c_white, amount), 0.5 + lengthdir_x(0.5, dir * 0.8 + 270)), 1);
 draw_set_blend_mode(bm_normal);
+
 dir += 2;
 
 if (index &lt; 20) {

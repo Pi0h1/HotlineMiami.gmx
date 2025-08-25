@@ -1176,7 +1176,7 @@ if (level == 4) {
     }
 }
 
-if (level) {
+if (level == 1) {
     if (select == 0) {
         if (global.xbox) {
             global.xbox = 0;

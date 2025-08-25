@@ -25,7 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.barehanded &amp;&amp; scrGetCurrentLevel() == 5)
+            <string>/*-Combos = Combo Bonus
+-Total time = Time Bonus
+-Weapons used = Flexibility Bonus
+-Distance between kills = Mobility Bonus
+-Only melee bonus = Melee Bonus
+-Shots fired during combat = Artillery Bonus
+-People who see you kill someone = Boldness Bonus*/
+
+
+
+
+
+
+if (global.barehanded &amp;&amp; scrGetCurrentLevel() == 5)
     SteamSetAchievement("ACH_THESE_ARE_MY_GUNS");
 scrSaveAchievements();
 scrCheckGuns();
@@ -162,14 +175,7 @@ switch (global.sequence) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*-Combos = Combo Bonus
--Total time = Time Bonus
--Weapons used = Flexibility Bonus
--Distance between kills = Mobility Bonus
--Only melee bonus = Melee Bonus
--Shots fired during combat = Artillery Bonus
--People who see you kill someone = Boldness Bonus*/
-if (global.xbox) {
+            <string>if (global.xbox) {
     fastforward = 0;
     if (checkbutton(0, getid(5))) {
         if (!presstart) {
@@ -225,13 +231,13 @@ repeat(6) {
             }
             draw_set_halign(fa_right);
             draw_set_color(merge_color(c_teal, c_black, 0.35 + lengthdir_x(0.35, dir * 24)));
-            draw_text_transformed(334, 64 + i * 16, string(drawbonus[i]), 1, 1, 0);
+            draw_text_transformed(room_width - 66, 64 + i * 16, string(drawbonus[i]), 1, 1, 0);
             draw_set_color(merge_color(c_aqua, c_teal, 0.35 + lengthdir_x(0.35, dir * 24)));
-            draw_text_transformed(332, 64 + i * 16, string(drawbonus[i]), 1, 1, 0);
+            draw_text_transformed(room_width - 68, 64 + i * 16, string(drawbonus[i]), 1, 1, 0);
             draw_set_color(c_white);
-            draw_text_transformed(330, 64 + i * 16, string(drawbonus[i]), 1, 1, 0);
+            draw_text_transformed(room_width - 70, 64 + i * 16, string(drawbonus[i]), 1, 1, 0);
             draw_set_halign(fa_center);
-            if (current == i &amp;&amp; drawbonus[i] = bonus[i])
+            if (current == i &amp;&amp; drawbonus[i] == bonus[i])
                 current++;
         }
     }
@@ -251,7 +257,7 @@ if (drawbonus[5] == bonus[5]) {
     else color1 = c_lime;
     repeat(times) {
         draw_set_color(merge_color(color1, c_white, 0.5 - lengthdir_x(0.5, i * 16)));
-        draw_text_transformed(200, view_hview[0] - 64, string(global.myscore) + parscore, 0.65 + i * 0.005, 1 + i * 0.05, lengthdir_x(4, dir * 8));
+        draw_text_transformed((room_width / 2), view_hview[0] - 64, string(global.myscore) + parscore, 0.65 + i * 0.005, 1 + i * 0.05, lengthdir_x(4, dir * 8));
         i++;
     }
 }

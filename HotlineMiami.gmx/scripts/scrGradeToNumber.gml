@@ -1,4 +1,4 @@
-switch (argument) {
+switch (argument0) {
     case "F-": return 1;
     case "F": return 2;
     case "F+": return 3;

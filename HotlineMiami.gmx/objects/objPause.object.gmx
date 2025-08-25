@@ -194,7 +194,7 @@ repeat(4) {
             else addx = 260 * (1 - factor);
         }
         amount = 0.5 + lengthdir_x(0.5, dir * 2);
-        if (test == 1 &amp;&amp; i == 1)
+        if (test &amp;&amp; i == 1)
             draw_set_color(merge_color(c_white, c_dkgray, amount));
         else draw_set_color(merge_color(c_white, c_aqua, amount));
         

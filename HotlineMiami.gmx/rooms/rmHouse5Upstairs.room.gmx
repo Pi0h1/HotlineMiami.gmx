@@ -132,7 +132,7 @@
     <instance objName="objSpecificWeapon" x="232" y="40" name="inst_1493149F" locked="0" code="image_index=13" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyPatrol" x="252" y="340" name="inst_72B2FA95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyPatrol" x="468" y="240" name="inst_29C4CBBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objEnemyStationary" x="192" y="80" name="inst_53A620CC" locked="0" code="sprite_index=sprEWalkShotgun" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objEnemyStationary" x="192" y="80" name="inst_53A620CC" locked="0" code="sprite_index=sprEWalkShotgun&#xA;ammo=6&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyStationary" x="380" y="88" name="inst_B7B260BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMelee" x="348" y="528" name="inst_41F80FBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyMelee" x="448" y="528" name="inst_6F0FE0EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>swingspeed=0
-y+=5
-swinger=0</string>
+            <string>swingspeed = 0;
+y += 5;
+swinger = 0;
+</string>
           </argument>
         </arguments>
       </action>

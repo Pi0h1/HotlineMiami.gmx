@@ -267,7 +267,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_id = instance_create(x + lengthdir_x(14, direction), y + lengthdir_y(14, direction), objHit);
+            <string>/*my_id = instance_create(x + lengthdir_x(14, direction), y + lengthdir_y(14, direction), objHit);
 my_id.image_angle = direction;
 my_id = instance_create(x + lengthdir_x(14, direction), y + lengthdir_y(14, direction), objSmokeHit);
 my_id.image_angle = direction;
@@ -278,6 +278,21 @@ if (other.solid)
     exit;
 if (abs(other.swingspeed) &lt; 8) {
     other.swingspeed += hspeed * 0.2;
+    if (other.swingspeed &gt; 3.5)
+        other.swinger = 1;
+}
+*/
+my_id = instance_create(x + lengthdir_x(14, direction), y + lengthdir_y(14, direction), objHit);
+my_id.image_angle = direction;
+my_id = instance_create(x + lengthdir_x(14, direction), y + lengthdir_y(14, direction), objSmokeHit);
+my_id.image_angle = direction;
+my_id.direction = random(360);
+my_id.speed = random(0.5);
+instance_destroy();
+if (other.solid)
+    exit;
+if (abs(other.swingspeed) &lt; 8) {
+    other.swingspeed += vspeed * 0.2;
     if (other.swingspeed &gt; 3.5)
         other.swinger = 1;
 }

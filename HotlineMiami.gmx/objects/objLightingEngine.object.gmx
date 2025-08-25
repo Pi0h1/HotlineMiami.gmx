@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>surface_free(global.surf1);
-global.surf1 = surface_create(500, 272);
+global.surf1 = surface_create(527, 287);
 surface_set_target(global.surf1);
 draw_clear(c_white);
 surface_reset_target();
@@ -225,6 +225,9 @@ else {
 draw_surface(global.surf1, view_xview[0] - 16, view_yview[0] - 16);
 draw_set_blend_mode(bm_normal);
 texture_set_interpolation(false);
+
+show_debug_message("surface width: " + string(surface_get_width(global.surf1)));
+show_debug_message("surface height: " + string(surface_get_height(global.surf1)));
 </string>
           </argument>
         </arguments>

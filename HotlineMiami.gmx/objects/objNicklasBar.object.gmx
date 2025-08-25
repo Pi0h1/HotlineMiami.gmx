@@ -52,7 +52,7 @@ served = 0;
           <argument>
             <kind>1</kind>
             <string>if (talked &amp;&amp; !instance_exists(objPhoneConversation)) {
-    if (!served) {
+    if (served == 0) {
         served = 1;
         sprite_index = sprNicklasServe;
         image_index = 0;
@@ -61,7 +61,7 @@ served = 0;
 
 if (sprite_index == sprNicklasServe) {
     if (image_index &gt;= 21) {
-        if (served) {
+        if (served == 1) {
             instance_create(x - 10, y + 14, objDrink);
             served = 2;
         }

@@ -2328,6 +2328,10 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="3D Camera">
+      <script>scripts\scrCamera3D_Start.gml</script>
+      <script>scripts\scrCamera3D_End.gml</script>
+    </scripts>
     <scripts name="Player">
       <scripts name="HUD">
         <script>scripts\scrScoreDrawStory.gml</script>
@@ -2781,6 +2785,7 @@
     <font>fonts\fntWarning</font>
   </fonts>
   <objects name="objects">
+    <object>objects\objWall</object>
     <objects name="Player">
       <objects name="Jacket">
         <object>objects\objPlayerMouse</object>
@@ -3801,6 +3806,8 @@
       <object>objects\objDevolver</object>
       <object>objects\objSplash</object>
     </objects>
+    <object>objects\objCamera3D</object>
+    <object>objects\objCamera3DEnd</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Interface">

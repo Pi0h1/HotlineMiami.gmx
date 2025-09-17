@@ -110,6 +110,77 @@ scrLockInEffectInit();
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !instance_exists(objCamera3D) {
+    instance_create(0,0,objCamera3D);
+}
+
+if instance_exists(objPlayer) {
+width=display_get_width()
+height=display_get_height()
+factor=1
+if global.xbox=1 {
+if checkbutton(0,getid(9)) {
+global.mousex=objPlayer.x+rightthumb_x(0)*0.009
+global.mousey=objPlayer.y-rightthumb_y(0)*0.006
+} else {
+if instance_exists(objPlayerShieldMouse) {
+mousedir=objPlayer.dir
+if point_distance(0,0,rightthumb_x(0),-rightthumb_y(0))&gt;12000 mousedir=point_direction(0,0,rightthumb_x(0),-rightthumb_y(0)) else
+{
+if abs(objPlayer.myxspeed)+abs(objPlayer.myyspeed)&gt;0.2 {
+mousedir=point_direction(0,0,objPlayer.myxspeed,objPlayer.myyspeed)
+}
+}
+global.mousex=objPlayer.x+lengthdir_x(64,mousedir)
+global.mousey=objPlayer.y+lengthdir_y(64,mousedir)
+} else {
+if objPlayer.object_index=objPlayerMouse or objPlayer.object_index=objPlayerMouseHouse or objPlayer.object_index=objPlayerBiker or objPlayer.object_index=objPlayerBikerHouse {
+global.mousex=objPlayer.x+lengthdir_x(64,objPlayer.dir)
+global.mousey=objPlayer.y+lengthdir_y(64,objPlayer.dir)
+} else {global.mousex=objPlayer.x global.mousey=objPlayer.y}
+}
+}
+} else {
+if keyboard_check_direct(vk_shift) factor=1.8
+    if (global.camera3D) {
+        var _dis = 80*factor
+        var _dir = objCamera3D.angle;
+        global.mousex = objPlayer.x+lengthdir_x(_dis,_dir);
+        global.mousey = objPlayer.y+lengthdir_y(_dis,_dir);
+    } else {
+        global.mousex = objPlayer.x+((display_mouse_get_x()-width*0.5)*(view_wview[0]/width))*factor
+        global.mousey = objPlayer.y+((display_mouse_get_y()-height*0.5)*(view_hview[0]/height))*factor
+    }
+}
+x=global.mousex
+y=global.mousey
+if instance_exists(global.enemy) {
+global.mousex=global.enemy.x
+global.mousey=global.enemy.y
+} else global.enemy=-1234
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -336,7 +407,8 @@ room_persistent=true
 if global.paused=0 {scrInitPathFinding() if !instance_exists(objMaskMenu) scrCheckpoint()} else global.paused=0
 /*while file_exists("ccReplay"+room_get_name(room)+string(i)+".avi") i+=1
 vcapture_begin( window_handle(), "ccReplay"+room_get_name(room)+string(i)+".avi", 30)
-global.videofile="ccReplay"+room_get_name(room)+string(i)+".avi"</string>
+global.videofile="ccReplay"+room_get_name(room)+string(i)+".avi"*/
+</string>
           </argument>
         </arguments>
       </action>
@@ -359,44 +431,7 @@ global.videofile="ccReplay"+room_get_name(room)+string(i)+".avi"</string>
           <argument>
             <kind>1</kind>
             <string>if gridon=1 {draw_set_alpha(0.25) mp_grid_draw(global.grid) draw_set_alpha(1)}
-if instance_exists(objPlayer) {
-width=display_get_width()
-height=display_get_height()
-factor=1
-if global.xbox=1 {
-if checkbutton(0,getid(9)) {
-global.mousex=objPlayer.x+rightthumb_x(0)*0.009
-global.mousey=objPlayer.y-rightthumb_y(0)*0.006
-} else {
-if instance_exists(objPlayerShieldMouse) {
-mousedir=objPlayer.dir
-if point_distance(0,0,rightthumb_x(0),-rightthumb_y(0))&gt;12000 mousedir=point_direction(0,0,rightthumb_x(0),-rightthumb_y(0)) else
-{
-if abs(objPlayer.myxspeed)+abs(objPlayer.myyspeed)&gt;0.2 {
-mousedir=point_direction(0,0,objPlayer.myxspeed,objPlayer.myyspeed)
-}
-}
-global.mousex=objPlayer.x+lengthdir_x(64,mousedir)
-global.mousey=objPlayer.y+lengthdir_y(64,mousedir)
-} else {
-if objPlayer.object_index=objPlayerMouse or objPlayer.object_index=objPlayerMouseHouse or objPlayer.object_index=objPlayerBiker or objPlayer.object_index=objPlayerBikerHouse {
-global.mousex=objPlayer.x+lengthdir_x(64,objPlayer.dir)
-global.mousey=objPlayer.y+lengthdir_y(64,objPlayer.dir)
-} else {global.mousex=objPlayer.x global.mousey=objPlayer.y}
-}
-}
-} else {
-if keyboard_check_direct(vk_shift) factor=1.8
-global.mousex=objPlayer.x+((display_mouse_get_x()-width*0.5)*(view_wview[0]/width))*factor
-global.mousey=objPlayer.y+((display_mouse_get_y()-height*0.5)*(view_hview[0]/height))*factor
-}
-x=global.mousex
-y=global.mousey
-if instance_exists(global.enemy) {
-global.mousex=global.enemy.x
-global.mousey=global.enemy.y
-} else global.enemy=-1234
-}
+
 if action&gt;0 {image_blend=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,global.dir*3.27)),c_white,0.5+lengthdir_y(0.5,global.dir*1.97))
 draw_sprite_ext(sprCursorAction,action-1,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
 draw_sprite_ext(sprCursorAction,action-1,global.mousex,global.mousey,1,1,-view_angle[0],image_blend,1)
@@ -571,6 +606,29 @@ room=rmPause
 fade=1
 restart=1
 */
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.camera3D = !global.camera3D;
 </string>
           </argument>
         </arguments>

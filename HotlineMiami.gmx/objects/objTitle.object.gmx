@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//disable for steam version
 //global.steamon=0
-
+global.camera3D = true;
 //Initialize Xbox Controls
 global.xbox=0
 scrInitXboxButtons()

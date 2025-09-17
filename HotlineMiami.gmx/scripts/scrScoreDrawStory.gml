@@ -1,3 +1,4 @@
+scrCamera3D_End();
 d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0)
 if global.combo > 0 {
     if global.combotime > 120 global.combotime = 120

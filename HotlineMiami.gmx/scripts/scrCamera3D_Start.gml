@@ -1,5 +1,6 @@
 /// scrSetCamera3D(id)
 if (!global.camera3D) exit;
+draw_set_alpha_test(true);
 var instance = argument0;
 var angle = 180 + self.angle//instance.image_angle;//temp1;
 /*

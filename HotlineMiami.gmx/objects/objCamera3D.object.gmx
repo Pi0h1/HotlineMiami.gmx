@@ -28,6 +28,7 @@
             <string>angle = 0;
 if instance_exists(objPlayer) angle = objPlayer.dir;
 
+
 //-------------
 
 temp1 = -90;
@@ -146,7 +147,8 @@ display_mouse_set(_midx, _midy);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(16,16,"temp1="+string(temp1));
+            <string>exit;
+draw_text(16,16,"temp1="+string(temp1));
 
 draw_text(16,16+32,"temp2="+string(temp2));
 </string>

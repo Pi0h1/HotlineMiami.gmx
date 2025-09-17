@@ -1163,14 +1163,26 @@ if myspeed=2.25 legsprite=sprLegsStairs else legsprite=sprLegs
 draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30+light*2),c_black,0)
 draw_set_blend_mode(bm_normal)
-draw_sprite_ext(legsprite,legindex,x+1,y+1,image_xscale,image_yscale,legdir,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale*left,dir,c_black,0.5)
-draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,image_blend,image_alpha)
+
 if global.xbox=1 dir=scrXboxPlayerLook() else dir=point_direction(x,y,global.mousex,global.mousey)
 if sprite_index=sprPLeaveBag {
-dir=point_direction(x,y,objDumpster.x+20,objDumpster.y+12)
+    dir=point_direction(x,y,objDumpster.x+20,objDumpster.y+12)
 }
+
+var z = 0;
+var height = 24;
+
+// Shadow
+d3d_set_depth(-1)
+draw_sprite_ext(legsprite,legindex,x+1,y+1,image_xscale,image_yscale,legdir,c_black,0.5)
+draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale*left,dir,c_black,0.5)
+
+// Player
+d3d_set_depth(-height*.45);
+draw_sprite_ext(legsprite,legindex,x,y,image_xscale,image_yscale,legdir,image_blend,image_alpha)
+d3d_set_depth(-height);
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
+
 if reload&gt;0 reload-=1
 if light&gt;3 light-=3
 if sprite_index=sprPWalkThrow {
@@ -1181,6 +1193,7 @@ draw_sprite_ext(sprThrowWeapons,throwindex,x+lengthdir_x(throwadd[floor(image_in
 if sprite_index=sprPMaskSlip {
 draw_sprite_ext(masksprite,image_index,x,y,image_xscale,image_yscale*left,dir,image_blend,image_alpha)
 }
+d3d_set_depth(-(height+1));
 if maskon=1 scrDrawMask(0)
 </string>
           </argument>

@@ -176,7 +176,11 @@ ammo=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=sprite0 sprite_index=lastsprite
+            <string>event_inherited();
+exit;
+
+
+if sprite_index=sprite0 sprite_index=lastsprite
 if light&gt;0 light-=1
 draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
@@ -189,7 +193,8 @@ draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direc
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
 draw_set_color(c_white)
 //draw_path(my_path,0,0,1)
-lastsprite=sprite_index</string>
+lastsprite=sprite_index
+</string>
           </argument>
         </arguments>
       </action>

@@ -134,8 +134,8 @@ image_speed=0
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-
 exit;
+
 if shake&gt;0 shake-=0.5
 if light&gt;0 light-=1
 draw_set_blend_mode(bm_add)

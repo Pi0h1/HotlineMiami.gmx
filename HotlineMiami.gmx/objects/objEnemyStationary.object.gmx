@@ -152,7 +152,11 @@ image_speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if shake&gt;0 shake-=0.5
+            <string>event_inherited();
+exit;
+
+
+if shake&gt;0 shake-=0.5
 angle=direction
 
 if light&gt;0 light-=1
@@ -166,7 +170,8 @@ draw_sprite_ext(sprELegs,image_index*2,x,y,image_xscale,image_yscale,angle,image
 draw_sprite_ext(sprite_index,image_index,x+1-shake+random(shake*0.5),y+1-shake+random(shake*0.5),image_xscale,image_yscale,angle,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x-shake+random(shake*0.5),y-shake+random(shake*0.5),image_xscale,image_yscale,angle,image_blend,image_alpha)
 draw_set_color(c_white)
-//draw_path(my_path,0,0,1)</string>
+//draw_path(my_path,0,0,1)
+</string>
           </argument>
         </arguments>
       </action>

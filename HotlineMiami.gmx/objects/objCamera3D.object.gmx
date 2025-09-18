@@ -27,12 +27,15 @@
             <kind>1</kind>
             <string>angle = 0;
 pitch = 0;
-if instance_exists(objPlayer) angle = objPlayer.image_angle;
+if ( instance_exists(objPlayer) )
+    angle = objPlayer.image_angle;
 
 xview = view_xview[0];
 yview = view_yview[0];
 wview = view_wview[0];
 hview = view_hview[0];
+
+billboard_mat = matrix_build( 0, 0, 0, 0, 0, 0, 1, 1, 1 );
 
 //-------------
 
@@ -43,11 +46,25 @@ if !instance_exists(objCamera3DEnd) {
     instance_create(0,0,objCamera3DEnd);
 }
 
-tile_layer_depth(1000000, 2);
-tile_layer_depth(100000, 2);
-tile_layer_depth(10000, 2);
-tile_layer_depth(1000, 2);
-tile_layer_depth(-99, -64);
+floorz = 0;
+ceilz = -64
+
+var tiles = tile_get_ids();
+
+for ( var i = 0, count = array_length_1d( tiles ); i &lt; count; ++i )
+{
+    var tilez = tile_get_depth( tiles[i] );
+    if ( tilez &lt; ceilz )
+        tile_layer_depth( tilez, ceilz );
+    else if ( tilez &gt; floorz )
+        tile_layer_depth( tilez, floorz );
+}
+
+tile_layer_depth(1000000, floorz);
+tile_layer_depth(100000, floorz);
+tile_layer_depth(10000, floorz);
+tile_layer_depth(1000, floorz);
+tile_layer_depth(-99, ceilz);
 </string>
           </argument>
         </arguments>

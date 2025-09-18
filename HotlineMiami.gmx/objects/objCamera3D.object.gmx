@@ -28,6 +28,10 @@
             <string>angle = 0;
 if instance_exists(objPlayer) angle = objPlayer.dir;
 
+xview = view_xview[0];
+yview = view_yview[0];
+wview = view_wview[0];
+hview = view_hview[0];
 
 //-------------
 
@@ -43,6 +47,37 @@ tile_layer_depth(100000, 2);
 tile_layer_depth(10000, 2);
 tile_layer_depth(1000, 2);
 tile_layer_depth(-99, -64);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>xview = view_xview[0];
+yview = view_yview[0];
+wview = view_wview[0];
+hview = view_hview[0];
+if !global.camera3D exit;
+view_xview[0] = 0;
+view_yview[0] = 0;
+view_wview[0] = room_width;
+view_hview[0] = room_height;
 </string>
           </argument>
         </arguments>

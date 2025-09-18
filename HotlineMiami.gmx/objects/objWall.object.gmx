@@ -25,36 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var z = depth-50;
-d3d_set_depth(-2);
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5);
-d3d_set_depth(z);
-
-var x1 = x;
-var y1 = y;
-var z1 = z;
-var x2 = x;
-var y2 = y;
-var z2 = 0;
-var texid=-1; //sprite_get_texture(sprite_index,0);
-
-if (sprite_width &gt; sprite_height) {
-    x2 = (x+sprite_width);
-    y1 = (y+sprite_height/2);
-    y2 = (y1);
-} else {
-    x1 = x+(sprite_width/2);
-    x2 = (x1);
-    y2 = y+(sprite_height);
+            <string>if (!global.camera3D) {
+    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+    exit;
 }
 
-var col = make_colour_rgb(192,192,192);
-if (depth &lt; -10) col = make_colour_rgb(127,0,20);
-draw_set_color(col);
-d3d_draw_wall(x1,y1,z1,x2,y2,z2,texid,true,true);
-draw_set_color(c_white);
-
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+scrDrawWall3D();
 </string>
           </argument>
         </arguments>

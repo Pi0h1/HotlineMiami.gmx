@@ -431,7 +431,24 @@ draw_sprite_ext(sprite_index,image_index,x+1-shake+random(shake*0.5),y+1-shake+r
 draw_sprite_ext(sprite_index,image_index,x-shake+random(shake*0.5),y-shake+random(shake*0.5),image_xscale,image_yscale,angle,image_blend,image_alpha)
 draw_set_color(c_white)
 //draw_path(my_path,0,0,1)
-lastsprite=sprite_index</string>
+lastsprite=sprite_index
+
+if !global.camera3D exit;
+var z = 0;
+var height = 50;
+var size = (16/2);
+var x1 = x-size;
+var y1 = y-size;
+var z1 = z-height;
+var x2 = x+size;
+var y2 = y+size;
+var z2 = z;
+var texid = -1;
+// d3d_draw_cylinder(x)
+d3d_set_depth(height);
+draw_set_colour(c_aqua);
+d3d_draw_cylinder(x1,y1,z1,x2,y2,z2,texid,1,1,true,24);
+</string>
           </argument>
         </arguments>
       </action>

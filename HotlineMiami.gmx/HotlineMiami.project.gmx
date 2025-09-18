@@ -1496,6 +1496,8 @@
       <sprite>sprites\sprWallBrickH</sprite>
       <sprite>sprites\sprWallBrickV</sprite>
       <sprite>sprites\sprWallHeavyH</sprite>
+      <sprite>sprites\sprWallTexture</sprite>
+      <sprite>sprites\sprWallTextureBrick</sprite>
       <sprite>sprites\sprWallHeavyV</sprite>
       <sprite>sprites\sprWallHospitalH</sprite>
       <sprite>sprites\sprWallHospitalV</sprite>
@@ -2330,6 +2332,7 @@
   <scripts name="scripts">
     <scripts name="3D Camera">
       <script>scripts\scrCamera3D_Start.gml</script>
+      <script>scripts\scrDrawWall3D.gml</script>
       <script>scripts\scrCamera3D_End.gml</script>
     </scripts>
     <scripts name="Player">

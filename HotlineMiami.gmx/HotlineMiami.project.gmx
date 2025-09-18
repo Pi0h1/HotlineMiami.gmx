@@ -2331,9 +2331,8 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="3D Camera">
-      <script>scripts\scrCamera3D_Start.gml</script>
+      <script>scripts\scrCamera3D.gml</script>
       <script>scripts\scrDrawWall3D.gml</script>
-      <script>scripts\scrCamera3D_End.gml</script>
     </scripts>
     <scripts name="Player">
       <scripts name="HUD">

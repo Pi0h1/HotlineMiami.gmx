@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>angle = 0;
-if instance_exists(objPlayer) angle = objPlayer.dir;
+pitch = 0;
+if instance_exists(objPlayer) angle = objPlayer.image_angle;
 
 xview = view_xview[0];
 yview = view_yview[0];
@@ -100,12 +101,21 @@ view_hview[0] = room_height;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !global.camera3D exit;
+            <string>if ( !global.camera3D )
+    exit;
 
 var _midx = floor(window_get_x()+(window_get_width() /2));
 var _midy = floor(window_get_y()+(window_get_height()/2));
-angle -= (display_mouse_get_x() - _midx) * (1/16);
-display_mouse_set(_midx, _midy);
+
+var xaim = ( display_mouse_get_x() - _midx );
+var yaim = ( display_mouse_get_y() - _midy );
+
+var sens = ( 1 / 16 );
+
+angle -= ( xaim  * sens );
+pitch = clamp( pitch + ( yaim * sens ), -89.995, 89.995 );
+
+display_mouse_set( _midx, _midy );
 </string>
           </argument>
         </arguments>
@@ -212,15 +222,20 @@ draw_text(16,16+32,"temp2 = "+string(temp2));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var inst = noone;
-if ( instance_exists( objPlayer ) )
-    inst = objPlayer;
-else if ( instance_exists( objPlayerDead ) )
-    inst = objPlayerDead;
-if ( !instance_exists( inst ) )
-    exit;
+            <string>var inst = objPlayer;
 
-scrCamera3D_Start(inst);
+if ( !instance_exists( inst ) )
+{
+    if ( instance_exists( objPlayer ) )
+        inst = objPlayer;
+    else if ( instance_exists( objPlayerDead ) )
+        inst = objPlayerDead;
+    else
+        exit;
+}
+
+scrCamera3D(inst);
+
 </string>
           </argument>
         </arguments>

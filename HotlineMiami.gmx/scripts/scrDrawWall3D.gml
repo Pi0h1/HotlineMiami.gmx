@@ -4,7 +4,7 @@ var height = (64+offset);
 
 d3d_set_culling(true);
 
-d3d_set_depth(-2);
+d3d_set_depth(-1);
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5);
 d3d_set_depth(z-height);
 
@@ -25,17 +25,16 @@ if (object_index == objWallBrickH || object_index == objWallBrickV) {
     height  = (64);
 }
 
+texid = sprite_get_texture(tex,0);
+v = height/sprite_get_height(tex);
+draw_set_color(col);
+
 var x1      = x;
 var y1      = y;
 var z1      = (z-height);
 var x2      = x;
 var y2      = y;
 var z2      = z;
-
-texid = sprite_get_texture(tex,0);
-
-v = height/sprite_get_height(tex);
-draw_set_color(col);
 
 if (sprite_width > sprite_height) {
     // Horizontal Wall

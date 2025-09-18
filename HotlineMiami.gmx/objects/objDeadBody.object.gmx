@@ -331,7 +331,7 @@ if surface_exists(global.surf2) and global.surfaces=1 addToSurface(global.surf2,
 }
 
 var z = 0;
-var height = 4;
+var height = 2;
 d3d_set_depth( -1 );
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,image_angle,c_black,0.5)
 d3d_set_depth( z - height );

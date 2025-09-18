@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>angle = 0;
+            <string>eye_height = 32.5;
+
+angle = 0;
 pitch = 0;
 if ( instance_exists(objPlayer) )
     angle = objPlayer.image_angle;
@@ -91,11 +93,26 @@ tile_layer_depth(-99, ceilz);
 yview = view_yview[0];
 wview = view_wview[0];
 hview = view_hview[0];
-if !global.camera3D exit;
+if ( !global.camera3D )
+    exit;
 view_xview[0] = 0;
 view_yview[0] = 0;
 view_wview[0] = room_width;
 view_hview[0] = room_height;
+
+
+if ( instance_exists( objPlayerDead ) )
+&amp;&amp; ( !instance_exists( objCamera3DTarget_PlayerDead ) )
+{
+    var inst = instance_create( objPlayerDead.x, objPlayerDead.y, objCamera3DTarget_PlayerDead );
+    inst.z = -40.5;
+    inst.angle = self.angle;
+    inst.pitch = self.pitch;
+    
+}
+
+
+
 </string>
           </argument>
         </arguments>
@@ -130,7 +147,7 @@ if ( window_has_focus() )
     var yaim = ( display_mouse_get_y() - _midy );
     var sens = ( 1 / 12 );
     angle = ( angle + 360 - ( xaim  * sens ) ) % 360;
-    pitch = clamp( pitch + ( yaim * sens ), -89.995, 89.995 );
+    pitch = clamp( pitch + ( yaim * sens ), -90, 90 );
     display_mouse_set( _midx, _midy );
 }
 </string>
@@ -239,7 +256,10 @@ draw_text(16,16+32,"temp2 = "+string(temp2));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var inst = objPlayer;
+            <string>if ( !global.camera3D )
+    exit;
+
+var inst = objCamera3DTarget;
 
 if ( !instance_exists( inst ) )
 {
@@ -253,6 +273,50 @@ if ( !instance_exists( inst ) )
 
 scrCamera3D(inst);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///debug
+
+with objEnemy
+{
+    var z = 0;
+    var height = 35;
+    var legheight = 22;
+    var size = ( 16 / 2 );
+    var texid = -1;
+    // 
+    var x1 = x-size;
+    var y1 = y-size;
+    var z1 = z-height;
+    var x2 = x+size;
+    var y2 = y+size;
+    var z2 = z;
+    // 
+    draw_set_colour( c_white );
+    d3d_draw_block( x1, y1, z - height, x2, y2, z, texid, 1, 1 );
+    
+    draw_set_colour( c_aqua );
+    var sphere_z = ( z - ( height / 2 ) );
+    d3d_draw_ellipsoid( x1, y1, sphere_z - size, x2, y2, sphere_z + size, texid, 1, 1, 24 );
+}
 </string>
           </argument>
         </arguments>

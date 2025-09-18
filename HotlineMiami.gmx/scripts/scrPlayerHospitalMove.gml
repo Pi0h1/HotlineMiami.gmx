@@ -1,3 +1,10 @@
+if ( true )
+{
+    scrPlayerMoveKeyboard();
+    exit;
+}
+
+
 if global.xbox=1 scrXboxPlayerHospitalMove() else {
 if sprite_index=sprPHospitalHeadache nothing=1 else {
 

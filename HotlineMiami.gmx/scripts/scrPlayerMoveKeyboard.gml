@@ -1,4 +1,4 @@
-if (global.xbox) {
+if false && (global.xbox) {
     scrXboxPlayerMove() //Xbox Controls.
 } else { // Keyboard Controls
     if instance_exists(objMaskMenu) or instance_exists(objPhoneConversation) {
@@ -33,7 +33,8 @@ if (global.xbox) {
             if sprite_index=sprPWalkHospital myspeed=2
             if object_index=objPlayerHospital  {factor=2 myspeed=1.5}
             
-            if global.camera3D {
+            if ( true || global.camera3D )
+            {
                 // properties
                 var _acc = 0.5;
                 var _dec = _acc;
@@ -44,19 +45,53 @@ if (global.xbox) {
                 var _up = keyboard_check_direct( ord( global.upkey ) );
                 var _down = keyboard_check_direct( ord( global.downkey ) );
                 // translate keys to movement
-                var xmove = ( _right - _left );
-                var ymove = ( _down - _up );
+                var xmove = 0;
+                var ymove = 0;
+                if ( false )
+                {
+                    // Gamepad
+                    
+                }
+                xmove += ( _right - _left );
+                ymove += ( _down - _up );
                 var throttle_dis = min( point_distance( 0, 0, xmove, ymove ), 1 );
                 var throttle_dir = point_direction( 0, 0, xmove, ymove );
-                if ( global.camera3D ) {
+                if ( global.maskindex == 20 ) // Nigel (Reversed controls)
+                    throttle_dir += 180;
+                
+                if ( global.camera3D )
                     throttle_dir += ( dir + 270 );
-                }
+                
                 xmove = lengthdir_x( throttle_dis, throttle_dir );
                 ymove = lengthdir_y( throttle_dis, throttle_dir );
                 
-                myxspeed = xmove * _maxspeed;
-                myyspeed = ymove * _maxspeed;
-            } else {
+                var xdest = xmove * _maxspeed;
+                var ydest = ymove * _maxspeed;
+                
+                if ( true )
+                {
+                    var destdir = point_direction( myxspeed, myyspeed, xdest, ydest );
+                    var destdis = point_distance( myxspeed, myyspeed, xdest, ydest );
+                    var inc = min( destdis, _acc );
+                    if ( destdis > inc )
+                    {
+                        myxspeed += lengthdir_x( inc, destdir );
+                        myyspeed += lengthdir_y( inc, destdir );
+                    }
+                    else
+                    {
+                        myxspeed = xdest;
+                        myyspeed = ydest;
+                    }
+                }
+                else
+                {
+                    myxspeed = xdest;
+                    myyspeed = ydest;
+                }
+            }
+            else
+            {
                 //Nigel (Reversed Controls).
                 if global.maskindex=20 {
                 if keyboard_check_direct(ord(global.rightkey)) {
@@ -118,21 +153,39 @@ if (global.xbox) {
             
             
             //Leg index.
-            if abs(myxspeed)=0 and abs(myyspeed)=0 legindex=0 else {
+            if abs(myxspeed)=0 and abs(myyspeed)=0
+                legindex=0
+            else
+            {
                 legindex+=(abs(myxspeed)+abs(myyspeed))*0.1*factor
                 
                 //Trauma's dizziness effect.
-                with objDizzy {if dizziness<1 dizziness+=0.01}
+                with objDizzy
+                {
+                    if ( dizziness < 1 )
+                        dizziness += 0.01;
+                }
                 
                 //Is the player moving? if yes, increase the image_index of the legs' sprites.
                 if scrIsWalking(sprite_index) image_index+=(abs(myxspeed)+abs(myyspeed))*0.05
             }
             legdir=point_direction(0,0,myxspeed,myyspeed)
-            if abs(myxspeed)>0 {
-                if place_free(x+myxspeed,y) x+=myxspeed else {
-                    if myyspeed=0 {
-                        if place_free(x+myxspeed,y-8) y-=myspeed else {
-                            if place_free(x+myxspeed,y+8) y+=myspeed else {
+            if abs(myxspeed)>0
+            {
+                if place_free(x+myxspeed,y)
+                    x+=myxspeed
+                else
+                {
+                    if myyspeed=0
+                    {
+                        if place_free(x+myxspeed,y-8)
+                            y-=myspeed
+                        else
+                        {
+                            if place_free(x+myxspeed,y+8)
+                                y+=myspeed
+                            else
+                            {
                                 move_contact_solid(90-sign(myxspeed)*90,abs(myxspeed)) 
                                 myxspeed=0
                             }

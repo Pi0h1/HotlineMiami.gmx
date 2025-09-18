@@ -3,33 +3,53 @@
 if (!global.camera3D) exit;
 draw_set_alpha_test(true);
 var instance = argument0;
-var angle = 180 + self.angle//instance.image_angle;//temp1;
+var angle = self.angle//instance.image_angle;//temp1;
+var pitch = self.pitch;
 /*
 if  (instance.object_index == objPlayerMouse) {
     angle = 180 + point_direction(objPlayer.x,objPlayer.y,objEffector.x,objEffector.y)//instance.dir;
 }*/
 var xpos = instance.x;
 var ypos = instance.y;
-var zpos = 0;
+var zpos = eye_height;
 var xlook = instance.x;
 var ylook = instance.y;
 var zlook = instance.depth;
 
 var distance = 256;
 
-if ( true )
+
+if ( object_is_ancestor( instance.object_index, objCamera3DTarget ) )
+{
+    zpos = instance.z;
+    angle = instance.angle;
+    pitch = clamp( instance.pitch, -89.995, 89.995 );
+    
+    var dcos_angle = dcos( angle );
+    var dsin_angle = dsin( angle );
+    var dcos_pitch = dcos( pitch );
+    var dsin_pitch = dsin( pitch );
+    zlook = zpos;
+    
+    xlook += ( distance * dcos_angle * dcos_pitch );
+    ylook += ( distance * -dsin_angle * dcos_pitch );
+    zlook += ( distance * dsin_pitch );
+    
+}
+else if ( true )
 {
     // First person
+    pitch = clamp( pitch, -89.995, 89.995 );
     var dcos_angle = dcos( angle );
     var dsin_angle = dsin( angle );
     var dcos_pitch = dcos( pitch );
     var dsin_pitch = dsin( pitch );
     
-    zpos = -32; // eye height
+    zpos = -eye_height; // eye height
     zlook = zpos;
     
-    xlook += ( distance * dcos_angle * -dcos_pitch );
-    ylook += ( distance * -dsin_angle * -dcos_pitch );
+    xlook += ( distance * dcos_angle * dcos_pitch );
+    ylook += ( distance * -dsin_angle * dcos_pitch );
     zlook += ( distance * dsin_pitch );
     
 }
@@ -38,8 +58,8 @@ else
     var distance = 128-20;
     zpos-=distance;
     distance2 = (distance*.75)-55-11-3-5+temp2
-    ypos+=lengthdir_y(distance2,angle); //distance*.75;
-    xpos+=lengthdir_x(distance2,angle); //
+    ypos-=lengthdir_y(distance2,angle); //distance*.75;
+    xpos-=lengthdir_x(distance2,angle); //
 }
 var fov = -(64);
 var aspect = 16/9;
@@ -51,7 +71,8 @@ if surface_exists(gamesurf) {
 }
 
 d3d_start();
-d3d_set_projection_ext(xpos, ypos, zpos, xlook, ylook, zlook, 0, 0, -1, fov, aspect, .1, 16000);
+if !( xpos == xlook && ypos == ylook ) // not possible
+    d3d_set_projection_ext(xpos, ypos, zpos, xlook, ylook, zlook, 0, 0, -1, fov, aspect, .1, 16000);
 //d3d_set_projection_ext(xpos, ypos, zpos+82, xlook, ylook, zlook-26, 0, 0, -1, fov, aspect, .1, 16000);
 var new_proj = matrix_get(matrix_projection);
 new_proj[5] *= -1;

@@ -2788,6 +2788,12 @@
   </fonts>
   <objects name="objects">
     <object>objects\objWall</object>
+    <objects name="3D">
+      <object>objects\objCamera3D</object>
+      <object>objects\objCamera3DEnd</object>
+      <object>objects\objCamera3DTarget</object>
+      <object>objects\objCamera3DTarget_PlayerDead</object>
+    </objects>
     <objects name="Player">
       <objects name="Jacket">
         <object>objects\objPlayerMouse</object>
@@ -3808,8 +3814,6 @@
       <object>objects\objDevolver</object>
       <object>objects\objSplash</object>
     </objects>
-    <object>objects\objCamera3D</object>
-    <object>objects\objCamera3DEnd</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Interface">

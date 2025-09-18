@@ -36,26 +36,27 @@ var x2      = x;
 var y2      = y;
 var z2      = z;
 
-if (sprite_width > sprite_height) {
+if (sprite_width > sprite_height)
+{
     // Horizontal Wall
     u = sprite_width /sprite_get_width(tex);
     x2 = (x+sprite_width);
     y1 = y;
     y2 = (y1);
     d3d_draw_wall(x2,y1,z1,x1,y2,z2,texid,u,v);
-    
     y1 += sprite_height;
     y2 += sprite_height;    
     d3d_draw_wall(x1,y1,z1,x2,y2,z2,texid,u,v);
 
-} else {
+}
+else
+{
     // Vertical Wall
     u = sprite_height /sprite_get_width(tex);
     x1 = x;
     x2 = (x1);
     y2 = y+(sprite_height);
     d3d_draw_wall(x1,y1,z1,x2,y2,z2,texid,u,v);
-    
     x1 += sprite_width;
     x2 += sprite_width;    
     d3d_draw_wall(x1,y2,z1,x2,y1,z2,texid,u,v);

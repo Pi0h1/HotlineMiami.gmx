@@ -417,6 +417,7 @@ image_speed=0
           <argument>
             <kind>1</kind>
             <string>angle = direction;
+shake = 0;
 if ( shake &gt; 0 )
     shake -= 0.5;
 if ( light &gt; 0 )
@@ -444,7 +445,7 @@ lastsprite=sprite_index
 
 
 var z = 0;
-var height = 50;
+var height = 35;
 var legheight = 22;
 var size = (16/2);
 var texid = -1;
@@ -454,23 +455,9 @@ draw_sprite_ext( sprite_index, image_index, x + 1 - shake + random( shake * 0.5 
 
 d3d_set_depth( z - legheight );
 
-d3d_set_depth( height );
+d3d_set_depth( z - ( height - 5 ) );
 draw_sprite_ext( sprite_index, image_index, x - shake + random( shake * 0.5 ), y - shake + random( shake * 0.5 ), image_xscale, image_yscale, angle, image_blend, image_alpha );
 
-
-
-var x1 = x-size;
-var y1 = y-size;
-var z1 = z-height;
-var x2 = x+size;
-var y2 = y+size;
-var z2 = z;
-
-draw_set_colour(c_aqua);
-var sphere_z = ( z - ( height / 2 ) );
-d3d_draw_ellipsoid( x1, y1, sphere_z - size, x2, y2, sphere_height + size, texid, 1, 1, 24 );
-
-// d3d_draw_cylinder(x1,y1,z1,x2,y2,z2,texid,1,1,true,24);
 </string>
           </argument>
         </arguments>

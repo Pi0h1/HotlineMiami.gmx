@@ -104,18 +104,18 @@ view_hview[0] = room_height;
             <string>if ( !global.camera3D )
     exit;
 
-var _midx = floor(window_get_x()+(window_get_width() /2));
-var _midy = floor(window_get_y()+(window_get_height()/2));
-
-var xaim = ( display_mouse_get_x() - _midx );
-var yaim = ( display_mouse_get_y() - _midy );
-
-var sens = ( 1 / 16 );
-
-angle -= ( xaim  * sens );
-pitch = clamp( pitch + ( yaim * sens ), -89.995, 89.995 );
-
-display_mouse_set( _midx, _midy );
+if ( window_has_focus() )
+{
+    // Mouse Aiming
+    var _midx = floor(window_get_x()+(window_get_width() /2));
+    var _midy = floor(window_get_y()+(window_get_height()/2));
+    var xaim = ( display_mouse_get_x() - _midx );
+    var yaim = ( display_mouse_get_y() - _midy );
+    var sens = ( 1 / 12 );
+    angle = ( angle + 360 - ( xaim  * sens ) ) % 360;
+    pitch = clamp( pitch + ( yaim * sens ), -89.995, 89.995 );
+    display_mouse_set( _midx, _midy );
+}
 </string>
           </argument>
         </arguments>

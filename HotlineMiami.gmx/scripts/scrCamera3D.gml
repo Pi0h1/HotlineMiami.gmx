@@ -28,8 +28,8 @@ if ( true )
     zpos = -32; // eye height
     zlook = zpos;
     
-    xlook += ( distance * dcos_angle * -dsin_pitch );
-    ylook += ( distance * -dsin_angle * -dsin_pitch );
+    xlook += ( distance * dcos_angle * -dcos_pitch );
+    ylook += ( distance * -dsin_angle * -dcos_pitch );
     zlook += ( distance * dsin_pitch );
     
 }

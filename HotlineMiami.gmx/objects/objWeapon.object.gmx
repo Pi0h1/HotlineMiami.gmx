@@ -67,12 +67,47 @@ dir=random(360)</string>
 draw_sprite_ext(sprite_index,image_index,x,y+1,image_xscale,image_yscale,image_angle,c_black,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y-1,image_xscale,image_yscale,image_angle,c_black,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x+1,y,image_xscale,image_yscale,image_angle,c_black,image_alpha)*/
+
+dir+=4
+
+if ( !global.camera3D )
+{
+    // Default behaviour
+    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5)
+    draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+    d3d_set_fog(true,c_white,0,0)
+    draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
+    d3d_set_fog(0,0,0,0)    
+    exit;
+}
+// 3D
+var z = -8;
+var height = 5;
+d3d_set_depth( -1 );
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-d3d_set_fog(true,c_white,0,0)
-draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
-d3d_set_fog(0,0,0,0)
-dir+=4</string>
+if ( true ) // billboard
+{
+    var bump = 1+lengthdir_x(1,dir);
+    scrCamera3D_Billboard( x, y, z - ( bump ) );
+    // 
+    draw_sprite_ext(sprite_index,image_index,0, 0,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+    d3d_set_fog(true,c_white,0,0)
+    draw_sprite_ext(sprite_index,image_index,0 ,0,image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
+    d3d_set_fog(0,0,0,0)
+    // 
+    scrCamera3D_BillboardEnd();
+    
+}
+
+
+
+
+
+
+
+
+
+</string>
           </argument>
         </arguments>
       </action>

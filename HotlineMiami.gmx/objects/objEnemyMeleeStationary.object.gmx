@@ -3,7 +3,7 @@
   <spriteName>sprEWalkClub</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-50</depth>
   <persistent>0</persistent>
   <parentName>objEnemy</parentName>
   <maskName>sprBodyMask</maskName>
@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrEMeleeStationaryInit()
+            <string>depth = -50;
+
+scrEMeleeStationaryInit()
 image_speed=0
 image_index=random(1000)
 image_speed=0
@@ -42,7 +44,8 @@ light=0
 start_x=x
 start_y=y
 weaponfind=0
-lastsprite=sprite_index</string>
+lastsprite=sprite_index
+</string>
           </argument>
         </arguments>
       </action>

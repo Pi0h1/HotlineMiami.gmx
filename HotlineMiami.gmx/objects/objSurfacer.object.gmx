@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if surface_exists(global.surf2) {
+            <string>depth = -1;
+depth = -0.5
+
+if surface_exists(global.surf2) {
 surface_free(global.surf2)
 global.surf2=surface_create(room_width*3,room_height*3)
 }
@@ -50,7 +53,8 @@ save=0
 testsurface=0
 surf2=1
 surf3=1
-check=0</string>
+check=0
+</string>
           </argument>
         </arguments>
       </action>

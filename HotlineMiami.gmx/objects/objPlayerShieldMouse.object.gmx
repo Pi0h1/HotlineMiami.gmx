@@ -3,7 +3,7 @@
   <spriteName>sprHumanShield</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>-50</depth>
   <persistent>0</persistent>
   <parentName>objPlayer</parentName>
   <maskName>sprMask</maskName>
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
+            <string>depth = -50;
+image_speed=0
 currentweapon=0
 dir=0
 if global.xbox=1 scrInitXboxButtons()
@@ -59,7 +60,8 @@ reset=mouse_check_button(mb_right)
 shotgunned=0
 aim=0
 SteamSetAchievement("ACH_NIGEL_LOWRIE")
-snap=0</string>
+snap=0
+</string>
           </argument>
         </arguments>
       </action>

@@ -3,7 +3,7 @@
   <spriteName>sprEM16Crouching</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-50</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>sprMask</maskName>
@@ -25,11 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
+            <string>depth = -50;
+
+image_speed=0
 shake=0
 image_index=5
 energie=0
-ammo=20</string>
+ammo=20
+</string>
           </argument>
         </arguments>
       </action>

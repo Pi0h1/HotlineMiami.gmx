@@ -3,7 +3,7 @@
   <spriteName>sprWallHeavyV</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>-10</depth>
+  <depth>-80</depth>
   <persistent>0</persistent>
   <parentName>objWall</parentName>
   <maskName>&lt;undefined&gt;</maskName>

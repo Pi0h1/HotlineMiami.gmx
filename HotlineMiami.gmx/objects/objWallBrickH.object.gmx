@@ -3,9 +3,9 @@
   <spriteName>sprWallBrickH</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>-11</depth>
+  <depth>-80</depth>
   <persistent>0</persistent>
-  <parentName>objWall</parentName>
+  <parentName>objWallBrickV</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events/>
   <PhysicsObject>0</PhysicsObject>

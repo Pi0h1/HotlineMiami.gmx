@@ -92,3 +92,19 @@ var _angle = view_angle[0] + 0;
 d3d_set_projection( xx, yy, -16000, xx, yy, 16000, dcos( _angle ) , -dsin( _angle ), 0 );
 d3d_set_projection_ortho( xx, yy, view_wview[0], view_hview[0], _angle );
 
+
+#define scrCamera3D_Billboard
+/// Billboard( x, y, z )
+var xpos = argument0;
+var ypos = argument1;
+var zpos = argument2;
+
+d3d_set_depth( 0 );
+var angle = objCamera3D.angle + 180;
+var pitch = 270; // - objCamera3D.pitch;
+matrix_set( matrix_world, matrix_build( xpos, ypos, zpos, 0, pitch, angle, 1, 1, 1 ) );
+
+
+#define scrCamera3D_BillboardEnd
+matrix_set( matrix_world, objCamera3D.world_mat );
+

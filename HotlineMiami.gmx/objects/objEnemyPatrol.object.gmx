@@ -3,7 +3,7 @@
   <spriteName>sprEWalkM16</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-50</depth>
   <persistent>0</persistent>
   <parentName>objEnemy</parentName>
   <maskName>sprBodyMask</maskName>
@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrEPatrolInit()
+            <string>depth = -50;
+
+scrEPatrolInit()
 
 image_speed=0
 image_index=random(1000)
@@ -42,7 +44,8 @@ start_x=x
 start_y=y
 weaponfind=0
 angle=direction
-shake=0</string>
+shake=0
+</string>
           </argument>
         </arguments>
       </action>

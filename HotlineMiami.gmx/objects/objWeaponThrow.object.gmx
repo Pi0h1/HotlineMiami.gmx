@@ -3,7 +3,7 @@
   <spriteName>sprWeapons</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-5</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>sprWeaponMask</maskName>
@@ -297,8 +297,22 @@ bounce=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale*left,angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,angle,image_blend,image_alpha)</string>
+            <string>if ( !global.camera3D )
+{
+    draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale*left,angle,c_black,0.5)
+    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,angle,image_blend,image_alpha)
+    exit;
+}
+
+
+var z = -clamp( abs( speed ) * 4, 4, 20  );
+
+d3d_set_depth( -1 );
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,angle,c_black,0.5)
+d3d_set_depth( z );
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,angle,image_blend,image_alpha)
+
+</string>
           </argument>
         </arguments>
       </action>

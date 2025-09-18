@@ -3,7 +3,7 @@
   <spriteName>sprPWalkUnarmed</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-50</depth>
   <persistent>0</persistent>
   <parentName>objPlayer</parentName>
   <maskName>sprMask</maskName>
@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox = 1 
+            <string>depth = -50;
+
+if global.xbox = 1 
     {
     scrInitXboxButtons()
     }
@@ -55,6 +57,13 @@ legindex = 0
 left = 1
 ammo = 0
 energie = round(random(1))
+
+// LOOK AT NEAREST DOOR
+if ( instance_exists( objDoorH ) )
+{
+    var _inst = instance_nearest( x, y, objDoorH );
+    dir = point_direction( x, y, _inst.x + ( _inst.sprite_width / 2 ), _inst.y + ( _inst.sprite_height / 2 ) );
+}
 
 if global.maskon = 1 
     {

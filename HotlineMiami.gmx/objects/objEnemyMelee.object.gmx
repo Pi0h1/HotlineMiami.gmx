@@ -3,7 +3,7 @@
   <spriteName>sprEWalkClub</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-50</depth>
   <persistent>0</persistent>
   <parentName>objEnemy</parentName>
   <maskName>sprBodyMask</maskName>
@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Weapons
+            <string>depth = -50;
+
+///Weapons
 sprite_index=choose(sprEWalkClub,sprEWalkPipe,sprEWalkKnife,sprEWalkBat)
 ammo=0
 </string>

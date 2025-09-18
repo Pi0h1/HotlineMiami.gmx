@@ -3,7 +3,7 @@
   <spriteName>sprDoorH</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-60</depth>
   <persistent>0</persistent>
   <parentName>objDoorV</parentName>
   <maskName>&lt;undefined&gt;</maskName>

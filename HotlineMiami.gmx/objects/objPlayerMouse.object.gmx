@@ -3,7 +3,7 @@
   <spriteName>sprPWalkUnarmed</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>objPlayer</parentName>
   <maskName>sprMask</maskName>
@@ -1170,7 +1170,7 @@ if sprite_index=sprPLeaveBag {
 }
 
 var z = 0;
-var height = 24;
+var height = 0// 16;
 
 // Shadow
 d3d_set_depth(-1)

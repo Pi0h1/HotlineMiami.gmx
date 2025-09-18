@@ -413,6 +413,49 @@ global.videofile="ccReplay"+room_get_name(room)+string(i)+".avi"*/
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !global.camera3D exit;
+
+var middle_x = (display_get_gui_width()/2);
+var middle_y = (display_get_gui_height()/2);
+
+draw_sprite_ext(sprCursor,image_index,middle_x+1,middle_y+1,1,1,0,c_black,.5);
+draw_sprite_ext(sprCursor,image_index,middle_x,middle_y,1,1,0,c_white,1);
+
+if !instance_exists(objPlayer) exit;
+var origin_scale = 4;
+var origin_x = middle_x+(0)//(512*2)
+var origin_y = middle_y+(128)+32//+(512*2)
+var origin_dir = point_direction(origin_x,origin_y,middle_x,middle_y);
+
+if instance_exists(objPlayerDead) exit;
+draw_sprite_ext(objPlayer.sprite_index,objPlayer.image_index,origin_x,origin_y,origin_scale,origin_scale,origin_dir,c_white,1);
+
+/*
+display_set_gui_size(480,256);
+draw_rectangle_colour(0,256-4,(480),(400),c_black,c_black,c_black,c_black,false);
+display_set_gui_size(-1,-1);*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -446,14 +489,16 @@ draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,objBackgroundColor.dir*32),y+16,1,
 }
 }
 }
-draw_sprite_ext(sprite_index,image_index,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
-draw_set_blend_mode(bm_cursor);
-draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_cursor,1)
-draw_set_blend_mode(bm_normal)
-with objDiscoLights {
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_set_blend_mode(bm_subtract)
-draw_surface(surf,0,0)
+if !global.camera3D {
+    draw_sprite_ext(sprite_index,image_index,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
+    draw_set_blend_mode(bm_cursor);
+    draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_cursor,1)
+    draw_set_blend_mode(bm_normal)
+    with objDiscoLights {
+    d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
+    draw_set_blend_mode(bm_subtract)
+    draw_surface(surf,0,0)
+    }
 }
 draw_set_blend_mode(bm_normal)
 if !instance_exists(objMaskMenu) and !instance_exists(objPhoneConversation) global.time+=1
@@ -611,7 +656,7 @@ restart=1
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="81">
+    <event eventtype="10" enumb="86">
       <action>
         <libid>1</libid>
         <id>603</id>

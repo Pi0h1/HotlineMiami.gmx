@@ -48,8 +48,8 @@ if (sprite_width &gt; sprite_height) {
     y2 = y+(sprite_height);
 }
 
-var col = c_white;
-if (depth &lt; -10) col = c_red;
+var col = make_colour_rgb(192,192,192);
+if (depth &lt; -10) col = make_colour_rgb(127,0,20);
 draw_set_color(col);
 d3d_draw_wall(x1,y1,z1,x2,y2,z2,texid,true,true);
 draw_set_color(c_white);

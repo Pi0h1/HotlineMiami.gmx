@@ -13,10 +13,11 @@ var zpos = 0;
 var xlook = instance.x;
 var ylook = instance.y;
 var zlook = instance.depth;
-var distance = 128+temp2;
+var distance = 128-20;
     zpos-=distance;
-    ypos+=lengthdir_y(distance*.75,angle); //distance*.75;
-    xpos+=lengthdir_x(distance*.75,angle); //
+    distance2 = ((distance*.75)-55-11)-4+temp2
+    ypos+=lengthdir_y(distance2,angle); //distance*.75;
+    xpos+=lengthdir_x(distance2,angle); //
 var fov = -(64);
 var aspect = 16/9;
 var gamesurf = application_surface;
@@ -27,7 +28,8 @@ if surface_exists(gamesurf) {
 }
 
 d3d_start();
-d3d_set_projection_ext(xpos, ypos, zpos, xlook, ylook, zlook, 0, 0, -1, fov, aspect, .1, 16000);
+//d3d_set_projection_ext(xpos, ypos, zpos, xlook, ylook, zlook, 0, 0, -1, fov, aspect, .1, 16000);
+d3d_set_projection_ext(xpos, ypos, zpos+82, xlook, ylook, zlook-26, 0, 0, -1, fov, aspect, .1, 16000);
 var new_proj = matrix_get(matrix_projection);
 new_proj[5] *= -1;
 matrix_set(matrix_projection, new_proj);

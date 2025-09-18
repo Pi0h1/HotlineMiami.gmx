@@ -147,10 +147,14 @@ display_mouse_set(_midx, _midy);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>exit;
-draw_text(16,16,"temp1="+string(temp1));
+            <string>//exit;
+draw_set_font(-1);
+draw_set_color(c_white);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
 
-draw_text(16,16+32,"temp2="+string(temp2));
+draw_text(16,16,"temp1 = "+string(temp1));
+draw_text(16,16+32,"temp2 = "+string(temp2));
 </string>
           </argument>
         </arguments>

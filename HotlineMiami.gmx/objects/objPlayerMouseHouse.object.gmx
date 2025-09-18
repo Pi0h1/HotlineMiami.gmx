@@ -3,7 +3,7 @@
   <spriteName>sprPWalkUnarmed</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>objPlayer</parentName>
   <maskName>sprMask</maskName>

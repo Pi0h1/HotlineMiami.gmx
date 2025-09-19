@@ -93,4 +93,3 @@ matrix_set( matrix_world, matrix_build( xpos, ypos, zpos, pitch, 0, angle, 1, 1,
 
 #define scrCamera3D_BillboardEnd
 matrix_set( matrix_world, objCamera3D.world_mat );
-

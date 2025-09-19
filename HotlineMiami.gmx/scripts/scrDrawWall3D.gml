@@ -21,7 +21,7 @@ switch ( sprite_index )
         case sprDoorH:
         case sprDoorV:
             col     = make_colour_rgb( 98, 29, 0 );
-            tex     = sprWallTexture;
+            tex     = sprDoorTexture;
             height = 60;
             
             break;

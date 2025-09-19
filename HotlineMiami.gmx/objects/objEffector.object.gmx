@@ -478,7 +478,8 @@ var origin_y = middle_y+(128)+32//+(512*2)
 var origin_dir = point_direction(origin_x,origin_y,middle_x,middle_y);
 
 if instance_exists(objPlayerDead) exit;
-//draw_sprite_ext(objPlayer.sprite_index,objPlayer.image_index,origin_x,origin_y,origin_scale,origin_scale,origin_dir,c_white,1);
+if !instance_exists(objPlayer) exit;
+draw_sprite_ext(objPlayer.sprite_index,objPlayer.image_index,origin_x,origin_y,origin_scale,origin_scale*(objPlayer.left),origin_dir,c_white,1);
 
 /*
 display_set_gui_size(480,256);

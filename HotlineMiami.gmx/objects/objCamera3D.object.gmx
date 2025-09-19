@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>z = 0;
-
+debug = false;
 target = noone;
 
 eye_height = 45.5;
@@ -378,7 +378,7 @@ if ( instance_exists( objCamera3DTarget ) )
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//exit;
+            <string>if !debug exit;
 draw_set_font(-1);
 draw_set_color(c_white);
 draw_set_halign(fa_left);
@@ -467,6 +467,29 @@ with objEnemy
         draw_set_color( make_color_rgb( 255, 228, 191 ) );
     d3d_draw_ellipsoid( x1, y1, sphere_z - size, x2, y2, sphere_z + size, texid, 1, 1, 12 );
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="114">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>debug = !debug;
 </string>
           </argument>
         </arguments>

@@ -164,6 +164,10 @@ if keyboard_check_direct(vk_shift) factor=1.8
         var _dir = objCamera3D.angle;
         global.mousex = objPlayer.x+lengthdir_x(_dis,_dir);
         global.mousey = objPlayer.y+lengthdir_y(_dis,_dir);
+        
+        global.mousex = objCamera3D.xlook;
+        global.mousey = objCamera3D.ylook;
+        
     } else {
         global.mousex = objPlayer.x+((display_mouse_get_x()-width*0.5)*(view_wview[0]/width))*factor
         global.mousey = objPlayer.y+((display_mouse_get_y()-height*0.5)*(view_hview[0]/height))*factor
@@ -176,6 +180,32 @@ global.mousex=global.enemy.x
 global.mousey=global.enemy.y
 } else global.enemy=-1234
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !instance_exists(objCamera3D) {
+    instance_create(0,0,objCamera3D);
+}
+
 </string>
           </argument>
         </arguments>
@@ -435,8 +465,11 @@ global.videofile="ccReplay"+room_get_name(room)+string(i)+".avi"*/
 var middle_x = (display_get_gui_width()/2);
 var middle_y = (display_get_gui_height()/2);
 
-draw_sprite_ext(sprCursor,image_index,middle_x+1,middle_y+1,1,1,0,c_black,.5);
-draw_sprite_ext(sprCursor,image_index,middle_x,middle_y,1,1,0,c_white,1);
+if ( false )
+{
+    draw_sprite_ext(sprCursor,image_index,middle_x+1,middle_y+1,1,1,0,c_black,.5);
+    draw_sprite_ext(sprCursor,image_index,middle_x,middle_y,1,1,0,c_white,1);
+}
 
 if !instance_exists(objPlayer) exit;
 var origin_scale = 4;
@@ -445,7 +478,7 @@ var origin_y = middle_y+(128)+32//+(512*2)
 var origin_dir = point_direction(origin_x,origin_y,middle_x,middle_y);
 
 if instance_exists(objPlayerDead) exit;
-draw_sprite_ext(objPlayer.sprite_index,objPlayer.image_index,origin_x,origin_y,origin_scale,origin_scale,origin_dir,c_white,1);
+//draw_sprite_ext(objPlayer.sprite_index,objPlayer.image_index,origin_x,origin_y,origin_scale,origin_scale,origin_dir,c_white,1);
 
 /*
 display_set_gui_size(480,256);
@@ -489,15 +522,27 @@ draw_sprite_ext(sprArrow,0,x-12+lengthdir_x(3,objBackgroundColor.dir*32),y+16,1,
 }
 }
 }
-if !global.camera3D {
+
+if ( global.camera3D )
+{
+    
+}
+else
+{
     draw_sprite_ext(sprite_index,image_index,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
     draw_set_blend_mode(bm_cursor);
     draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_cursor,1)
     draw_set_blend_mode(bm_normal)
-    with objDiscoLights {
-    d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-    draw_set_blend_mode(bm_subtract)
-    draw_surface(surf,0,0)
+}
+if ( !global.camera3D )
+{
+    with objDiscoLights
+    {
+        if ( !surface_exists( surf ) )
+            break;
+        d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
+        draw_set_blend_mode(bm_subtract)
+        draw_surface(surf,0,0)
     }
 }
 draw_set_blend_mode(bm_normal)

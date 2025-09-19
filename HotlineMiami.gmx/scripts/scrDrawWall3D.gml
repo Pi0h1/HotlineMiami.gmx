@@ -48,6 +48,8 @@ switch ( sprite_index )
         break;
     case sprGlassPanelH:
     case sprGlassPanelV:
+    case sprGlassPanelBrokenH:
+    case sprGlassPanelBrokenV:
         col     = make_colour_rgb( 192, 192, 192 );
         tex     = sprWallTexture;
         height  = 24;
@@ -67,27 +69,45 @@ draw_set_color(col);
 var x1      = x;
 var y1      = y;
 var z1      = (z-height);
-var x2      = x;
-var y2      = y;
+var x2      = x + sprite_width;
+var y2      = y + sprite_height;
 var z2      = z;
 
 switch object_index
 {
     case objDoorH:
-        
-        break;
     case objDoorV:
-        
+        var len = sprite_width;
+        var wallangle = image_angle;
+        if ( object_index == objDoorV )
+        {
+            wallangle += 270;
+            len = sprite_height;
+        }
+        var offx = dcos( wallangle + 90 );
+        var offy = -dsin( wallangle + 90 );
+        u = len / sprite_get_width(tex);
+        x1 = x + ( offx * 2 );
+        y1 = y + ( offy * 2 );
+        x2 = x1 + lengthdir_x( len, wallangle );
+        y2 = y1 + lengthdir_y( len, wallangle );
+        d3d_set_depth( z2 );
+        draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+        d3d_draw_wall(x2,y2,z1,x1,y1,z2,texid,u,v);
+        x1 -= offx * 4;
+        y1 -= offy * 4;
+        x2 -= offx * 4;
+        y2 -= offy * 4;
+        d3d_draw_wall(x1,y1,z1,x2,y2,z2,texid,u,v);
         break;
     default:
         if (sprite_width > sprite_height)
         {
             // Horizontal Wall
-            u = sprite_width /sprite_get_width(tex);
-            x2 = (x+sprite_width);
+            u = sprite_width / sprite_get_width(tex);
             y1 = y;
             y2 = (y1);
-            d3d_draw_wall(x2,y1,z1,x1,y2,z2,texid,u,v);
+            d3d_draw_wall(x2,y2,z1,x1,y1,z2,texid,u,v);
             y1 += sprite_height;
             y2 += sprite_height;    
             d3d_draw_wall(x1,y1,z1,x2,y2,z2,texid,u,v);
@@ -96,18 +116,17 @@ switch object_index
         else
         {
             // Vertical Wall
-            u = sprite_height /sprite_get_width(tex);
+            u = sprite_height / sprite_get_width(tex);
             x1 = x;
             x2 = (x1);
-            y2 = y+(sprite_height);
             d3d_draw_wall(x1,y1,z1,x2,y2,z2,texid,u,v);
             x1 += sprite_width;
             x2 += sprite_width;    
-            d3d_draw_wall(x1,y2,z1,x2,y1,z2,texid,u,v);
+            d3d_draw_wall(x2,y2,z1,x1,y1,z2,texid,u,v);
         }
         break;
 }
 d3d_set_depth(z-height);
 draw_set_color(c_white);
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 d3d_set_culling(false)
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);

@@ -2793,6 +2793,7 @@
       <object>objects\objCamera3DEnd</object>
       <object>objects\objCamera3DTarget</object>
       <object>objects\objCamera3DTarget_PlayerDead</object>
+      <object>objects\objCamera3DTarget_PlayerKill</object>
     </objects>
     <objects name="Player">
       <objects name="Jacket">
@@ -2848,6 +2849,7 @@
           <object>objects\objPBoilingPotKill</object>
           <object>objects\objPKillBodyguard</object>
           <object>objects\objPHammerKill</object>
+          <object>objects\objPlayerKill</object>
         </objects>
       </objects>
       <objects name="Biker">

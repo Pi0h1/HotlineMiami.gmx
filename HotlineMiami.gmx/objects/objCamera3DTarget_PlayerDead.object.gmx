@@ -29,8 +29,27 @@
 
 targetdir = 0;
 
-zsp = -3.5;
-friction = 0.035;
+time = 60 * 6;
+timer = time;
+
+
+midx = room_width / 2;
+midy = room_height / 2;
+
+var _left = room_width;
+var _right = 0;
+var _top = room_height;
+var _bottom = 0;
+with objWall
+{
+    _left = min( _left, bbox_left );
+    _right = max( _right, bbox_right );
+    _top = min( _top, bbox_top );
+    _bottom = max( _bottom, bbox_bottom );
+}
+midx = _left + ( _right / 2 );
+midy = _top + ( _bottom / 2 );
+
 </string>
           </argument>
         </arguments>
@@ -53,19 +72,28 @@ friction = 0.035;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>z += zsp;
-zsp = max( 0, abs( zsp ) - friction ) * sign( zsp );
-
-
-if ( instance_exists( objPlayerDead ) )
+            <string>if ( instance_exists( objPlayerDead ) )
 {
     targetdir = objPlayerDead.image_angle;
 }
 
 
 
-pitch = lerp( pitch, 90, 0.1 );
+pitch = lerp( pitch, 90, 0.025 );
 
+timer = max( 0, timer - 1 );
+var amount = dcos( lerp( 0, 90, ( timer / time ) ) );
+
+fov = lerp( objCamera3D.fov_desired, 16, amount );
+z = lerp( z, -360 / ( fov / objCamera3D.fov_desired ), 0.005 );
+
+// angle += lerp( 0, 1, amount );
+
+var pull = 0.01 * power( amount, 24 );
+x = lerp( x, midx, pull );
+y = lerp( y, midy, pull );
+
+angle -= ( angle_difference( angle, 90 ) * pull );
 </string>
           </argument>
         </arguments>

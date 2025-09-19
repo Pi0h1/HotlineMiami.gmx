@@ -1169,6 +1169,8 @@ scrUpdateMaskPos(sprite_index)
 last_sprite=sprite_index
 }
 if myspeed=2.25 legsprite=sprLegsStairs else legsprite=sprLegs
+
+d3d_set_depth( -1 );
 draw_set_blend_mode(bm_add)
 draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30+light*2),c_black,0)
 draw_set_blend_mode(bm_normal)

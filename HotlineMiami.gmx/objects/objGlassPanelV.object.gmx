@@ -3,9 +3,9 @@
   <spriteName>sprGlassPanelV</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-80</depth>
   <persistent>0</persistent>
-  <parentName>objGlassPanelH</parentName>
+  <parentName>objShootThrough</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="8" enumb="0">
@@ -25,10 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-exit;
-draw_sprite_ext(sprite_index,image_index,x+3,y,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+            <string>if ( !global.camera3D )
+{
+    draw_sprite_ext(sprite_index,image_index,x,y+3,image_xscale,image_yscale,image_angle,c_black,0.5)
+    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+    exit;
+}
+
+scrDrawWall3D();
 </string>
           </argument>
         </arguments>

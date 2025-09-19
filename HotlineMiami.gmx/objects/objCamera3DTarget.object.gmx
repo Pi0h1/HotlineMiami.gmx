@@ -28,6 +28,16 @@
             <string>z = 0;
 angle = 0;
 pitch = 0;
+fov = 75;
+
+if ( instance_exists( objCamera3D ) )
+{
+    x = objCamera3D.x;
+    y = objCamera3D.y;
+    z = objCamera3D.z;
+    angle = objCamera3D.angle;
+    pitch = objCamera3D.pitch;
+}
 </string>
           </argument>
         </arguments>

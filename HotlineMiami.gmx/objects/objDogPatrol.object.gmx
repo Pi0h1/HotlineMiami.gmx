@@ -3,7 +3,7 @@
   <spriteName>sprDogWalk</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-24</depth>
   <persistent>0</persistent>
   <parentName>objEnemy</parentName>
   <maskName>sprMask</maskName>

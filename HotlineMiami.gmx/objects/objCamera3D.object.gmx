@@ -25,12 +25,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>eye_height = 45.5;
+            <string>z = 0;
+
+target = noone;
+
+eye_height = 45.5;
 
 ready = false;
 
 angle = 0;
 pitch = 0;
+
+xlook = 0;
+ylook = 0;
+zlook = 0;
+lookdis = 0;
+
+fov_desired = 75;
+fov = 75;
 
 if ( instance_exists( objPlayerMouse ) )
     angle = objPlayerMouse.dir;
@@ -99,7 +111,8 @@ tile_layer_depth(-99, ceilz);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xview = view_xview[0];
+            <string>/// Camera
+xview = view_xview[0];
 yview = view_yview[0];
 wview = view_wview[0];
 hview = view_hview[0];
@@ -110,17 +123,134 @@ view_yview[0] = 0;
 view_wview[0] = room_width;
 view_hview[0] = room_height;
 
+target = objCamera3DTarget;
+if ( !instance_exists( target ) )
+{
+    if ( instance_exists( objPlayer ) )
+        target = objPlayer;
+    else if ( instance_exists( objPlayerDead ) )
+        target = objPlayerDead;
+    else
+        target = noone;
+}
+if ( instance_exists( target ) )
+{
+    x = target.x;
+    y = target.y;
+}
+
 
 if ( instance_exists( objPlayerDead ) )
 &amp;&amp; ( !instance_exists( objCamera3DTarget_PlayerDead ) )
 {
-    var inst = instance_create( objPlayerDead.x, objPlayerDead.y, objCamera3DTarget_PlayerDead );
-    inst.z = -40.5;
-    inst.angle = self.angle;
-    inst.pitch = self.pitch;
+    target = instance_create( objPlayerDead.x, objPlayerDead.y, objCamera3DTarget_PlayerDead );
+    target.z = -40.5;
+    target.angle = self.angle;
+    target.pitch = self.pitch;
+    
+}
+if ( instance_exists( objPlayerKill ) )
+&amp;&amp; ( !instance_exists( objCamera3DTarget_PlayerKill ) )
+{
+    target = instance_create( objPlayerKill.x, objPlayerKill.y, objCamera3DTarget_PlayerKill );
     
 }
 
+
+/// Position 3D Camera
+
+var instance = self.target;
+if ( !instance_exists( instance ) )
+    exit;
+
+x = instance.x;
+y = instance.y;
+
+z = eye_height;
+xlook = instance.x;
+ylook = instance.y;
+zlook = instance.depth;
+
+fov = fov_desired;
+
+lookdis = 256;
+
+if ( object_is_ancestor( instance.object_index, objCamera3DTarget ) )
+{
+    // objCamera3DTarget instance
+    x = instance.x;
+    y = instance.y;
+    z = instance.z;
+    angle = instance.angle;
+    pitch = clamp( instance.pitch, -89.995, 89.995 );
+    var dcos_angle = dcos( angle );
+    var dsin_angle = dsin( angle );
+    var dcos_pitch = dcos( pitch );
+    var dsin_pitch = dsin( pitch );
+    zlook = z;
+    
+    xlook += ( lookdis * dcos_angle * dcos_pitch );
+    ylook += ( lookdis * -dsin_angle * dcos_pitch );
+    zlook += ( lookdis * dsin_pitch );
+    
+    fov = instance.fov;
+    
+}
+else if ( true )
+{
+    // First person
+    pitch = clamp( pitch, -89.995, 89.995 );
+    var dcos_angle = dcos( angle );
+    var dsin_angle = dsin( angle );
+    var dcos_pitch = dcos( pitch );
+    var dsin_pitch = dsin( pitch );
+    
+    x = instance.x;
+    y = instance.y;
+    z = -eye_height; // eye height
+    xlook = x;
+    ylook = y;
+    zlook = z;
+    lookdis = 256;
+    xlook += ( lookdis * dcos_angle * dcos_pitch );
+    ylook += ( lookdis * -dsin_angle * dcos_pitch );
+    zlook += ( lookdis * dsin_pitch );
+    var _inst = noone;
+    do
+    {
+        _inst = collision_line( x, y, xlook, ylook, objEnemy, false, false );
+        if ( _inst )
+        {
+            lookdis *= 0.5;
+        }
+        else
+            break;
+    }
+    until ( lookdis &lt;= 32 )
+    if ( _inst != noone )
+    {
+        lookdis = point_distance( x, y, _inst.x, _inst.y ) - 4;
+    }
+    xlook = x;
+    ylook = y;
+    zlook = z;
+    lookdis = 256;
+    xlook += ( lookdis * dcos_angle * dcos_pitch );
+    ylook += ( lookdis * -dsin_angle * dcos_pitch );
+    zlook += ( lookdis * dsin_pitch );
+}
+else
+{
+    // Third person (old)
+    x = instance.x;
+    y = instance.y;
+    z = instance.z;
+    var distance = 128-20;
+    z-=distance;
+    distance2 = (distance*.75)-55-11-3-5+temp2
+    y -= lengthdir_y(distance2,angle); //distance*.75;
+    x -= lengthdir_x(distance2,angle); //
+}
 
 
 </string>
@@ -166,6 +296,12 @@ if ( window_has_focus() )
 }
 else
     ready = false;
+if ( instance_exists( objCamera3DTarget ) )
+{
+    angle = objCamera3DTarget.angle;
+    pitch = objCamera3DTarget.pitch;
+}
+
 </string>
           </argument>
         </arguments>
@@ -275,66 +411,61 @@ draw_text(16,16+32,"temp2 = "+string(temp2));
             <string>if ( !global.camera3D )
     exit;
 
-var inst = objCamera3DTarget;
-if ( !instance_exists( inst ) )
-{
-    if ( instance_exists( objPlayer ) )
-        inst = objPlayer;
-    else if ( instance_exists( objPlayerDead ) )
-        inst = objPlayerDead;
-    else
-        inst = noone;
-}
 
-scrCamera3D(inst);
+scrCamera3D( target );
 
 world_mat = matrix_get( matrix_world );
 view_mat = matrix_get( matrix_view );
 //billboard_mat = matrix_build( 0, 0, 0, 0, angle + 90, 270, 1, 1, 1 );
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///debug
+///debug
 
 with objEnemy
 {
+    // Marker
+    
     var z = 0;
     var height = 48;
     var legheight = 22;
-    var size = ( 16 / 2 );
-    var texid = -1;
-    // 
+    var size = 1;
+    var texid = -1;    
+    
     var x1 = x-size;
     var y1 = y-size;
     var z1 = z-height;
     var x2 = x+size;
     var y2 = y+size;
     var z2 = z;
-    // 
-    draw_set_colour( c_white );
-    d3d_draw_block( x1, y1, z - ( height / 2 ), x2, y2, z, texid, 1, 1 );
     
     draw_set_colour( c_aqua );
-    var sphere_z = ( z - ( height / 2 ) );
-    d3d_draw_ellipsoid( x1, y1, sphere_z - size, x2, y2, sphere_z + size, texid, 1, 1, 24 );
+    d3d_draw_cylinder( x1, y1, z1, x2, y2, z2, texid, 1, 1, false, 4 );
+    
+    // Collision
+    size = 8;
+    x1 = x-size;
+    y1 = y-size;
+    z1 = z-height;
+    x2 = x+size;
+    y2 = y+size;
+    z2 = z;
+    // 
+    draw_set_colour( c_white );
+    d3d_draw_block( x1, y1, z - ( height * 0.5 ), x2, y2, z, texid, 1, 1 );
+    
+    // Head
+    size = 8;
+    x1 = x-size;
+    y1 = y-size;
+    z1 = z-height;
+    x2 = x+size;
+    y2 = y+size;
+    z2 = z;
+    var sphere_z = ( z - ( height ) );
+    if ( object_index == objEnemyFat )
+        draw_set_color( make_color_rgb( 99, 56, 29 ) );
+    else
+        draw_set_color( make_color_rgb( 255, 228, 191 ) );
+    d3d_draw_ellipsoid( x1, y1, sphere_z - size, x2, y2, sphere_z + size, texid, 1, 1, 12 );
 }
 </string>
           </argument>

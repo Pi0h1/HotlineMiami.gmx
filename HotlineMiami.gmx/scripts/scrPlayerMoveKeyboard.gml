@@ -59,8 +59,8 @@ if false && (global.xbox) {
                 if ( global.maskindex == 20 ) // Nigel (Reversed controls)
                     throttle_dir += 180;
                 
-                if ( global.camera3D )
-                    throttle_dir += ( dir + 270 );
+                if ( global.camera3D && instance_exists( objCamera3D ) )
+                    throttle_dir += ( objCamera3D.angle + 270 );
                 
                 xmove = lengthdir_x( throttle_dis, throttle_dir );
                 ymove = lengthdir_y( throttle_dis, throttle_dir );

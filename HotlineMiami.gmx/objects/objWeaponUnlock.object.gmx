@@ -200,9 +200,9 @@ if current=i {
 draw_sprite_ext(sprite_index,i,start_x+i*100,room_height/2,2+factor,2+factor,25+lengthdir_x(4,dir*3-i*70),color,1)
 if shine&gt;0 {
 draw_set_blend_mode(bm_add)
-d3d_set_fog(1,merge_color(c_black,c_white,shine),0,0)
+scrColorize(1,merge_color(c_black,c_white,shine),0,0)
 draw_sprite_ext(sprite_index,i,start_x+i*100,room_height/2,2+factor,2+factor,25+lengthdir_x(4,dir*3-i*70),color,1)
-d3d_set_fog(0,0,0,0)
+scrColorize(0,0,0,0)
 shine-=0.05
 draw_set_blend_mode(bm_normal)
 }

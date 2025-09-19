@@ -57,8 +57,8 @@ if ( global.camera3D && !instance_exists( objPlayerDead ) )
     //draw_text( 24, 24, "test" );
     scrCamera3D_BillboardEnd();
 }
+d3d_set_fog(0,0,0,0);
 d3d_end();
-
 view_xview[0] = objCamera3D.xview;
 view_yview[0] = objCamera3D.yview;
 view_wview[0] = objCamera3D.wview;

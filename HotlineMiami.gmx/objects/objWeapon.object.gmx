@@ -75,9 +75,9 @@ if ( !global.camera3D )
     // Default behaviour
     draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5)
     draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-    d3d_set_fog(true,c_white,0,0)
+    scrColorize(true,c_white,0,0)
     draw_sprite_ext(sprite_index,image_index,x-1+lengthdir_x(1,dir),y-1+lengthdir_x(1,dir),image_xscale,image_yscale,image_angle,image_blend,0.1+lengthdir_x(0.1,dir))
-    d3d_set_fog(0,0,0,0)    
+    scrColorize(0,0,0,0)    
     exit;
 }
 var angle = objCamera3D.angle + 180;
@@ -94,7 +94,7 @@ if ( true ) // billboard
     angle = 5;
     draw_sprite_ext(sprite_index,image_index,0, 0,image_xscale,abs( image_yscale ),angle,image_blend,image_alpha)
     //draw_sprite_ext(sprite_index,image_index,0 ,0,image_xscale,image_yscale,angle,image_blend,0.1+lengthdir_x(0.1,dir))
-    d3d_set_fog(0,0,0,0)
+    scrColorize(0,0,0,0)
     // 
     scrCamera3D_BillboardEnd();
     

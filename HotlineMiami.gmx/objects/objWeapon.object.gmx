@@ -41,7 +41,9 @@ if image_index=11 ammo=20
 if image_index=12 ammo=32
 
 image_speed=0
-dir=random(360)</string>
+dir=random(360)
+dirstart = dir;
+</string>
           </argument>
         </arguments>
       </action>
@@ -83,6 +85,11 @@ if ( !global.camera3D )
 var angle = objCamera3D.angle + 180;
 // 3D
 var z = -6;
+
+var amount = min( 1, power( ( ( dir - dirstart ) / ( 60 * 4 ) ), 3 ) );
+
+z-= ( 16 * amount );
+
 var height = 5;
 d3d_set_depth( -1 );
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, abs( image_yscale ), angle + 90 ,c_black, 0.5 );
@@ -91,7 +98,7 @@ if ( true ) // billboard
     var bump = 2 + lengthdir_x( 2, dir );
     scrCamera3D_Billboard( x, y, z - ( bump ) );
     // 
-    angle = 5;
+    angle = 35 * amount;
     draw_sprite_ext(sprite_index,image_index,0, 0,image_xscale,abs( image_yscale ),angle,image_blend,image_alpha)
     //draw_sprite_ext(sprite_index,image_index,0 ,0,image_xscale,image_yscale,angle,image_blend,0.1+lengthdir_x(0.1,dir))
     scrColorize(0,0,0,0)

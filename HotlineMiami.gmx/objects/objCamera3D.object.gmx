@@ -89,6 +89,39 @@ tile_layer_depth(100000, floorz);
 tile_layer_depth(10000, floorz);
 tile_layer_depth(1000, floorz);
 tile_layer_depth(-99, ceilz);
+
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -211,10 +244,11 @@ else if ( true )
     xlook = x;
     ylook = y;
     zlook = z;
-    lookdis = 256;
+    lookdis = 32 * 16;
     xlook += ( lookdis * dcos_angle * dcos_pitch );
     ylook += ( lookdis * -dsin_angle * dcos_pitch );
     zlook += ( lookdis * dsin_pitch );
+    // Aim cursor
     var _inst = noone;
     do
     {
@@ -231,10 +265,12 @@ else if ( true )
     {
         lookdis = point_distance( x, y, _inst.x, _inst.y ) - 4;
     }
+    else
+        lookdis = 32 * 3;
     xlook = x;
     ylook = y;
     zlook = z;
-    lookdis = 256;
+    
     xlook += ( lookdis * dcos_angle * dcos_pitch );
     ylook += ( lookdis * -dsin_angle * dcos_pitch );
     zlook += ( lookdis * dsin_pitch );
@@ -378,8 +414,7 @@ if ( instance_exists( objCamera3DTarget ) )
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>d3d_set_fog(true,c_black,128,512);
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

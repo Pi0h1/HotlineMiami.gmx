@@ -18,6 +18,8 @@ if surface_exists(gamesurf) {
 }
 
 d3d_start();
+d3d_set_zwriteenable( true );
+
 if !( x == xlook && y == ylook ) // not possible
     d3d_set_projection_ext(x, y, z, xlook, ylook, zlook, 0, 0, -1, -fov, aspect, 1 / 8, 16000 + abs( z ));
 //d3d_set_projection_ext(xpos, , zpos+82, xlook, ylook, zlook-26, 0, 0, -1, fov, aspect, .1, 16000);
@@ -25,12 +27,28 @@ var new_proj = matrix_get(matrix_projection);
 new_proj[5] *= -1;
 matrix_set(matrix_projection, new_proj);
 
+fog_colour = c_fuchsia;
+if ( instance_exists( objBackgroundColor ) )
+    fog_colour = merge_color( merge_color( c_blue, merge_color( objBackgroundColor.color2, objBackgroundColor.color1, 0.5 ), 0.35 ), c_black, 0.5 );
+
+var fogscale = ( fov_desired / fov );
+    
+fog_start = 32 * 4 * fogscale;
+fog_end = ( 32 * 20 ) * fogscale;
+
+scrCamera3D_Fog();
+
+
 #define scrCamera3D_End
 // 3D Cursor
 
+d3d_set_fog(0,0,0,0);
+
 if ( global.camera3D && !instance_exists( objPlayerDead ) )
 {
-    var scale = 1;// max( 1, point_distance_3d( objCamera3D.x, objCamera3D.y, objCamera3D.z, objCamera3D.lookx, objCamera3D.looky, objCamera3D.lookz ) / 64 );
+    d3d_set_zwriteenable( false );    
+    
+    var scale = max( 0.1, point_distance_3d( objCamera3D.x, objCamera3D.y, objCamera3D.z, objCamera3D.xlook, objCamera3D.ylook, objCamera3D.zlook ) / ( 32 * 6 ) );
     
     var xx = objCamera3D.xlook;
     var yy = objCamera3D.ylook;
@@ -57,8 +75,10 @@ if ( global.camera3D && !instance_exists( objPlayerDead ) )
     //draw_text( 24, 24, "test" );
     scrCamera3D_BillboardEnd();
 }
-d3d_set_fog(0,0,0,0);
+d3d_set_zwriteenable( true );   
 d3d_end();
+
+
 view_xview[0] = objCamera3D.xview;
 view_yview[0] = objCamera3D.yview;
 view_wview[0] = objCamera3D.wview;
@@ -93,3 +113,13 @@ matrix_set( matrix_world, matrix_build( xpos, ypos, zpos, pitch, 0, angle, 1, 1,
 
 #define scrCamera3D_BillboardEnd
 matrix_set( matrix_world, objCamera3D.world_mat );
+#define scrCamera3D_Fog
+// Turn on fog
+if ( !global.camera3D )
+    exit;
+
+    
+d3d_set_fog( true, objCamera3D.fog_colour, objCamera3D.fog_start, objCamera3D.fog_end );
+
+
+

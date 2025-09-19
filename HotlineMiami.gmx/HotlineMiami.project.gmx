@@ -2334,6 +2334,7 @@
     <scripts name="3D Camera">
       <script>scripts\scrCamera3D.gml</script>
       <script>scripts\scrDrawWall3D.gml</script>
+      <script>scripts\scrColorize.gml</script>
     </scripts>
     <scripts name="Player">
       <scripts name="HUD">
@@ -2761,7 +2762,6 @@
     </scripts>
     <script>scripts\scrLockInEffectInit.gml</script>
     <script>scripts\scrLockInEffectStep.gml</script>
-    <script>scripts\scrColorize.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>

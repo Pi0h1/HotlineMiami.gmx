@@ -4,7 +4,7 @@ var offset = 0;
 var z = 0;
 var height = ( base_wallheight );
 
-d3d_set_culling(true);
+d3d_set_culling(false);
 d3d_set_depth(-1);
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_black,0.5);
 
@@ -73,6 +73,11 @@ var x2      = x + sprite_width;
 var y2      = y + sprite_height;
 var z2      = z;
 
+// DRAWING START
+
+d3d_set_culling( true );
+scrCamera3D_Fog();
+
 switch object_index
 {
     case objDoorH:
@@ -130,3 +135,13 @@ d3d_set_depth(z-height);
 draw_set_color(c_white);
 d3d_set_culling(false)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+
+
+
+
+
+
+
+
+
+

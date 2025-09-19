@@ -3,7 +3,7 @@
   <spriteName>sprWeapons</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>objWeapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -36,7 +36,9 @@ if image_index=10 ammo=6
 if image_index=11 ammo=20
 if image_index=12 ammo=32
 image_speed=0
-dir=random(360)</string>
+dir=random(360)
+dirstart = dir;
+</string>
           </argument>
         </arguments>
       </action>
@@ -82,7 +84,11 @@ if round(random(5))=2 instance_create(x+lengthdir_x(3,image_angle),y+lengthdir_y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*draw_sprite_ext(sprite_index,image_index,x-1,y,image_xscale,image_yscale,image_angle,c_black,image_alpha)
+            <string>event_inherited();
+exit;
+
+
+/*draw_sprite_ext(sprite_index,image_index,x-1,y,image_xscale,image_yscale,image_angle,c_black,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y+1,image_xscale,image_yscale,image_angle,c_black,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x,y-1,image_xscale,image_yscale,image_angle,c_black,image_alpha)
 draw_sprite_ext(sprite_index,image_index,x+1,y,image_xscale,image_yscale,image_angle,c_black,image_alpha)*/

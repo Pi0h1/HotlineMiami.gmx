@@ -3,7 +3,7 @@
   <spriteName>sprWeapons</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -86,25 +86,48 @@ var angle = objCamera3D.angle + 180;
 // 3D
 var z = -6;
 
-var amount = min( 1, power( ( ( dir - dirstart ) / ( 60 * 4 ) ), 3 ) );
+var amount = ( ( ( dir - dirstart ) / 4 ) / ( 60 * 1.5 ) );
+amount = min( 1, power( amount, 2 ) );
+
+
 
 z-= ( 16 * amount );
-
 var height = 5;
 d3d_set_depth( -1 );
-draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, abs( image_yscale ), angle + 90 ,c_black, 0.5 );
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle ,c_black, 0.5 );
 if ( true ) // billboard
 {
-    var bump = 2 + lengthdir_x( 2, dir );
-    scrCamera3D_Billboard( x, y, z - ( bump ) );
+    var bump = ( 2 + lengthdir_x( 2, dir ) ) * amount;
+    var _angle = undefined; // billboard
+    var _pitch = undefined // billboard
+    if ( amount &lt; 1 &amp;&amp; instance_exists( objCamera3D ) )
+    {
+        var angdif = angle_difference( image_angle, objCamera3D.angle + 270 );
+        _angle = image_angle - ( angdif * amount );
+        var angdif = angle_difference( 90, objCamera3D.pitch );
+        _pitch = 90 - ( angdif * amount );
+    }
+    
+    scrCamera3D_Billboard( x, y, z - ( bump ), _angle, _pitch );
     // 
-    angle = 35 * amount;
-    draw_sprite_ext(sprite_index,image_index,0, 0,image_xscale,abs( image_yscale ),angle,image_blend,image_alpha)
+    if ( image_yscale &lt; 0 )
+        angle = 180-30 * amount;
+    else
+        angle = 30 * amount;
+    
+    
+    draw_sprite_ext(sprite_index,image_index,0, 0,image_xscale,image_yscale,angle,image_blend,image_alpha);
+    
+    //draw_set_color( c_lime );
+    //draw_set_font( -1 );
+    //draw_set_halign( fa_left );
+    //draw_set_valign( fa_top );
+    //draw_text( 8, -8, amount );
+    
     //draw_sprite_ext(sprite_index,image_index,0 ,0,image_xscale,image_yscale,angle,image_blend,0.1+lengthdir_x(0.1,dir))
-    scrColorize(0,0,0,0)
+    //scrColorize(0,0,0,0)
     // 
     scrCamera3D_BillboardEnd();
-    
 }
 
 

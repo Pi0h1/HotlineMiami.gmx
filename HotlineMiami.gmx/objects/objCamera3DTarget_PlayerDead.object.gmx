@@ -94,6 +94,9 @@ x = lerp( x, midx, pull );
 y = lerp( y, midy, pull );
 
 angle -= ( angle_difference( angle, 90 ) * pull );
+if ( angle &lt; -89.9995 )
+    angle = -90;
+
 </string>
           </argument>
         </arguments>

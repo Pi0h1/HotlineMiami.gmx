@@ -3,7 +3,7 @@
   <spriteName>sprWeapons</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-5</depth>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>sprWeaponMask</maskName>
@@ -34,7 +34,10 @@ image_speed=0
 hits=0
 bounce=0
 enemy=0
-ammo=0</string>
+ammo=0
+
+startspd = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -304,13 +307,15 @@ bounce=1
     exit;
 }
 
+startspd = max( startspd, speed );
+z = lerp( -40, depth, 1 - ( speed / startspd ) );
 
-var z = -clamp( abs( speed ) * 4, 4, 20  );
 
 d3d_set_depth( -1 );
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,angle,c_black,0.5)
 d3d_set_depth( z );
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale*left,angle,image_blend,image_alpha)
+
 
 </string>
           </argument>

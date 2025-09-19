@@ -6,7 +6,7 @@ var instance = argument0;
 if ( !instance_exists( instance ) )
     exit;
 
-var angle = self.angle//instance.image_angle;//temp1;
+var angle = self.angle; //instance.image_angle;//temp1;
 var pitch = self.pitch;
 
 var aspect = 16/9;
@@ -27,9 +27,12 @@ var new_proj = matrix_get(matrix_projection);
 new_proj[5] *= -1;
 matrix_set(matrix_projection, new_proj);
 
-fog_colour = c_fuchsia;
+fog_colour = c_white;
 if ( instance_exists( objBackgroundColor ) )
-    fog_colour = merge_color( merge_color( c_blue, merge_color( objBackgroundColor.color2, objBackgroundColor.color1, 0.5 ), 0.35 ), c_black, 0.5 );
+    fog_colour = merge_color( objBackgroundColor.color2, objBackgroundColor.color1, 0.5 );
+else
+    fog_colour = merge_color( c_fuchsia, c_aqua, 0.5 );
+fog_colour = merge_color( merge_color( c_blue, fog_colour, 0.35 ), c_black, 0.5 );
 
 var fogscale = ( fov_desired / fov );
     
@@ -93,23 +96,31 @@ d3d_set_projection_ortho( xx, yy, view_wview[0], view_hview[0], _angle );
 
 
 #define scrCamera3D_Billboard
-/// Billboard( x, y, z, upright )
+///scrCamera3D_Billboard( x, y, z, [angle=face_camera], [pitch=face_camera] )
 
 objCamera3D.world_mat = matrix_get( matrix_world );
 
 var xpos = argument[0];
 var ypos = argument[1];
 var zpos = argument[2];
-var upright = ( ( argument_count > 3 ) && argument[3] )
+var angle = 0; 
+var pitch = 270; //objCamera3D.pitch + 270;
+
+if ( argument_count > 3 && ( argument[3] != undefined ) )
+    angle = argument[3];
+else
+    angle = objCamera3D.angle + 270;
+
+if ( argument_count > 4 && ( argument[4] != undefined ) )
+    pitch = argument[4];
+else
+    pitch = objCamera3D.pitch;
+
+
+
+matrix_set( matrix_world, matrix_build( xpos, ypos, zpos, pitch + 270, 0, angle, 1, 1, 1 ) );
 
 d3d_set_depth( 0 );
-var angle = objCamera3D.angle + 270;
-var pitch = 270;
-if ( !upright )
-    pitch += objCamera3D.pitch;
-matrix_set( matrix_world, matrix_build( xpos, ypos, zpos, pitch, 0, angle, 1, 1, 1 ) );
-
-
 
 #define scrCamera3D_BillboardEnd
 matrix_set( matrix_world, objCamera3D.world_mat );

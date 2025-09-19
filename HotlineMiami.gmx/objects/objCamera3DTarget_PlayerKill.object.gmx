@@ -58,14 +58,16 @@ targetdir = 0;
 }
 else
 {
-    if ( pitch &lt; 10 )
+    var dif = angle_difference( pitch, 0 );
+    if ( abs( dif ) &lt; 1 || instance_number( objCamera3DTarget ) &gt; 1 )
     {
         instance_destroy();
     }
-    pitch = lerp( pitch, 0, 0.175 );
-  
+    pitch -= angle_difference( pitch, 0 ) * ( 1 / 8 );
+    if ( abs( dif ) &lt; 1 )
+        pitch = 0;
 }
-angle = scrRotate( angle, targetdir, abs( angle_difference( angle, targetdir ) ) * ( 1 / 16 ) );
+angle -= angle_difference( angle, targetdir ) * ( 1 / 16 );
 
 
 

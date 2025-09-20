@@ -480,8 +480,9 @@ var origin_dir = point_direction(origin_x,origin_y,middle_x,middle_y);
 if instance_exists(objPlayerDead) exit;
 if !instance_exists(objPlayer) exit;
 if ( !instance_exists( objPlayerMouse ) )
+|| ( instance_exists( objPlayerMouseHouse ) )
     exit;
-
+    
 // draw_sprite_ext(objPlayer.sprite_index,objPlayer.image_index,origin_x,origin_y,origin_scale,origin_scale*(objPlayer.left),origin_dir,c_white,1);
 
 /*

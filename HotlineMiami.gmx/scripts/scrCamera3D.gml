@@ -51,7 +51,7 @@ if ( global.camera3D && !instance_exists( objPlayerDead ) )
 {
     d3d_set_zwriteenable( false );    
     
-    var scale = max( 0.1, point_distance_3d( objCamera3D.x, objCamera3D.y, objCamera3D.z, objCamera3D.xlook, objCamera3D.ylook, objCamera3D.zlook ) / ( 32 * 6 ) );
+    var scale = max( 0.1, point_distance_3d( objCamera3D.x, objCamera3D.y, objCamera3D.z, objCamera3D.xlook, objCamera3D.ylook, objCamera3D.zlook ) / ( 32 * 8 ) );
     
     var xx = objCamera3D.xlook;
     var yy = objCamera3D.ylook;
@@ -131,6 +131,5 @@ if ( !global.camera3D )
 
     
 d3d_set_fog( true, objCamera3D.fog_colour, objCamera3D.fog_start, objCamera3D.fog_end );
-
 
 

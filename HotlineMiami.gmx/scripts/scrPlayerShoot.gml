@@ -26,7 +26,7 @@ if ( reload <= 0 )
             global.usedmelee[12] = 1;
             break;
         case sprPWalkCrowbar:
-            scrPlayerAttackMelee( sprPAttackPan );
+            scrPlayerAttackMelee( sprPAttackCrowbar );
             image_index = 1;
             global.usedmelee[9] = 1;
             break;

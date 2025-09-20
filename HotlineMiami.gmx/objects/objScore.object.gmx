@@ -25,11 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scale=0.6
+            <string>z = -32;
+
+scale=0.6
 done=0
 vspeed=-0.5
 dir=random(1000)
-global.comboflash=0</string>
+global.comboflash=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -78,7 +81,7 @@ var yy = self.y;
 
 if ( global.camera3D )
 {
-    var z = -64;
+    var z = -32;
     scrCamera3D_Billboard( x, y, z + ( y - ystart ), undefined, 270 );
     d3d_set_zwriteenable( false );
     xx = 0;

@@ -482,7 +482,7 @@ scrCamera3D( target );
 world_mat = matrix_get( matrix_world );
 view_mat = matrix_get( matrix_view );
 //billboard_mat = matrix_build( 0, 0, 0, 0, angle + 90, 270, 1, 1, 1 );
-
+    
 ///debug
 
 with objEnemy

@@ -53,7 +53,7 @@ timer = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var ztarget = -objCamera3D.eye_height * 0.45;
+            <string>var ztarget = -objCamera3D.eye_height * 0.65;
 if ( instance_exists( objPlayerKill ) )
 {
     targetdir = objPlayerKill.image_angle;

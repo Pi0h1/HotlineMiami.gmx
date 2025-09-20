@@ -58,7 +58,7 @@ if ( instance_exists( objPlayerKill ) )
 {
     targetdir = objPlayerKill.image_angle;
     pitch = lerp( pitch, 80, 0.175 );
-    z = lerp( z, -ztarget, 1 / 16 );
+    z = lerp( z, ztarget, 1 / 16 );
 }
 else
 {
@@ -76,7 +76,7 @@ else
         instance_destroy();
     }
     pitch = lerp( 80, 0, amount );
-    z = lerp( ztarget, objCamera3D.eye_height, amount );
+    z = lerp( ztarget, -objCamera3D.eye_height, amount );
 }
 angle -= angle_difference( angle, targetdir ) * ( 1 / 16 );
 

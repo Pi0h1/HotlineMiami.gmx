@@ -3,7 +3,7 @@
   <spriteName>sprEGetUp</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>sprMask</maskName>
@@ -241,7 +241,7 @@ var z = 0;
 var height = 4;
 d3d_set_depth( -1 );
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,angle,c_black,0.5)
-height = lerp( 4, 50 - 8, ( image_index / image_number ) );
+height = lerp( 4, 24, ( image_index / image_number ) );
 d3d_set_depth( z - height );
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
 

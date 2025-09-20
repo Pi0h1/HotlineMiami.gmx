@@ -73,35 +73,74 @@ global.comboflash=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if visible=1 {
-color2=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*2.32)),c_white,0.5+lengthdir_x(0.5,dir*3))
-color1=merge_color(c_maroon,merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*2.32)),0.75+lengthdir_x(0.25,dir*3))
-draw_set_color(c_black)
-draw_set_font(fntPointShow)
-draw_set_halign(fa_center)
-draw_set_valign(fa_center)
-draw_set_color(c_black)
-draw_text_transformed(x+lengthdir_x(1,dir*4)-1,y+lengthdir_y(1,dir*4),text,scale,scale,image_angle)
-draw_text_transformed(x+lengthdir_x(1,dir*4)+1,y+lengthdir_y(1,dir*4),text,scale,scale,image_angle)
-draw_text_transformed(x+lengthdir_x(1,dir*4-180)+1,y+lengthdir_y(1,dir*4-180),text,scale,scale,image_angle)
-draw_text_transformed(x+lengthdir_x(1,dir*4-180)-1,y+lengthdir_y(1,dir*4-180),text,scale,scale,image_angle)
-draw_text_transformed(x+lengthdir_x(1,dir*4),y+lengthdir_y(1,dir*4)-1,text,scale,scale,image_angle)
-draw_text_transformed(x+lengthdir_x(1,dir*4),y+lengthdir_y(1,dir*4)+1,text,scale,scale,image_angle)
-draw_text_transformed(x+lengthdir_x(1,dir*4-180),y+lengthdir_y(1,dir*4-180)+1,text,scale,scale,image_angle)
-draw_text_transformed(x+lengthdir_x(1,dir*4-180),y+lengthdir_y(1,dir*4-180)-1,text,scale,scale,image_angle)
-draw_set_color(color1)
-draw_text_transformed(x+lengthdir_x(1,dir*4),y+lengthdir_y(1,dir*4),text,scale,scale,image_angle)
-draw_set_color(color2)
-draw_text_transformed(x+lengthdir_x(1,dir*4-180),y+lengthdir_y(1,dir*4-180),text,scale,scale,image_angle)
-if done=1 {
-if scale&gt;0 scale-=0.1 else instance_destroy()
-vspeed+=0.2
+            <string>var xx = self.x;
+var yy = self.y;
+
+if ( global.camera3D )
+{
+    var z = -64;
+    scrCamera3D_Billboard( x, y, z + ( y - ystart ), undefined, 270 );
+    d3d_set_zwriteenable( false );
+    xx = 0;
+    yy = 0;
 }
-if done=0 {
-if scale&lt;0.9 scale+=0.006125 else done=1
+
+if visible=1 {
+    color2=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*2.32)),c_white,0.5+lengthdir_x(0.5,dir*3))
+    color1=merge_color(c_maroon,merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*2.32)),0.75+lengthdir_x(0.25,dir*3))
+    draw_set_color(c_black)
+    draw_set_font(fntPointShow)
+    draw_set_halign(fa_center)
+    draw_set_valign(fa_center)
+    draw_set_color(c_black)
+    var i = 0;
+    var gap = 0.1;
+    draw_text_transformed(xx+lengthdir_x(1,dir*4)-1,yy+lengthdir_y(1,dir*4),text,scale,scale,image_angle)
+    d3d_set_depth( ( i-- ) * gap );
+    draw_text_transformed(xx+lengthdir_x(1,dir*4)+1,yy+lengthdir_y(1,dir*4),text,scale,scale,image_angle)
+    d3d_set_depth( ( i-- ) * gap );
+    draw_text_transformed(xx+lengthdir_x(1,dir*4-180)+1,yy+lengthdir_y(1,dir*4-180),text,scale,scale,image_angle)
+    d3d_set_depth( ( i-- ) * gap );
+    draw_text_transformed(xx+lengthdir_x(1,dir*4-180)-1,yy+lengthdir_y(1,dir*4-180),text,scale,scale,image_angle)
+    d3d_set_depth( ( i-- ) * gap );
+    draw_text_transformed(xx+lengthdir_x(1,dir*4),yy+lengthdir_y(1,dir*4)-1,text,scale,scale,image_angle)
+    d3d_set_depth( ( i-- ) * gap );
+    draw_text_transformed(xx+lengthdir_x(1,dir*4),yy+lengthdir_y(1,dir*4)+1,text,scale,scale,image_angle)
+    d3d_set_depth( ( i-- ) * gap );
+    draw_text_transformed(xx+lengthdir_x(1,dir*4-180),yy+lengthdir_y(1,dir*4-180)+1,text,scale,scale,image_angle)
+    d3d_set_depth( ( i-- ) * gap );
+    draw_text_transformed(xx+lengthdir_x(1,dir*4-180),yy+lengthdir_y(1,dir*4-180)-1,text,scale,scale,image_angle)
+    draw_set_color(color1)
+    d3d_set_depth( ( i-- ) * gap );
+    draw_text_transformed(xx+lengthdir_x(1,dir*4),yy+lengthdir_y(1,dir*4),text,scale,scale,image_angle)
+    draw_set_color(color2)
+    d3d_set_depth( ( i-- ) * gap );
+    draw_text_transformed(xx+lengthdir_x(1,dir*4-180),yy+lengthdir_y(1,dir*4-180),text,scale,scale,image_angle)
+    if done=1 {
+        if scale&gt;0 scale-=0.1 else instance_destroy()
+        vspeed+=0.2
+    }
+    if done=0 {
+        if scale&lt;0.9 scale+=0.006125 else done=1
+    }
+        dir+=4
 }
-dir+=4
-}</string>
+
+if ( global.camera3D )
+{
+    scrCamera3D_BillboardEnd();
+    d3d_set_zwriteenable( true );
+}
+
+
+
+
+
+
+
+
+
+</string>
           </argument>
         </arguments>
       </action>

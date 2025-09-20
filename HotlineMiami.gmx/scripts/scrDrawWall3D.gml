@@ -56,7 +56,7 @@ switch ( sprite_index )
         break;
     // 
     default:
-        col     = base_wallcolor;
+        col     = objCamera3D.base_wallcolor;
         tex     = sprWallTexture;
         height  = (base_wallheight);
         break;

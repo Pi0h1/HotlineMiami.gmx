@@ -3,7 +3,7 @@
   <spriteName>sprEFatWalk</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-50</depth>
   <persistent>0</persistent>
   <parentName>objEnemy</parentName>
   <maskName>sprMask</maskName>
@@ -324,17 +324,44 @@ image_yscale=-image_yscale
           <argument>
             <kind>1</kind>
             <string>if light&gt;0 light-=1
-draw_set_blend_mode(bm_add)
-draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
-draw_set_blend_mode(bm_normal)
-if sprite_index=sprEFatDie or scrIsSearching(sprite_index) nothing=1 else {
-draw_sprite_ext(sprEFatLegs,image_index*2,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprEFatLegs,image_index*2,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+if ( !global.camera3D )
+{
+    draw_set_blend_mode(bm_add)
+    draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
+    draw_set_blend_mode(bm_normal)
+    if ( sprite_index=sprEFatDie )
+    or scrIsSearching(sprite_index)
+        nothing=1
+    else {
+        draw_sprite_ext(sprEFatLegs,image_index*2,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
+        draw_sprite_ext(sprEFatLegs,image_index*2,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+    }
+    draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
+    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+    draw_set_color(c_white)
+    exit;
 }
+
+var z = 0;
+var height = 50;
+var legheight = 26;
+var bodyheight = height - 8;
+
+d3d_set_depth( -1 );
 draw_sprite_ext(sprite_index,image_index,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
-draw_set_color(c_white)
-//draw_path(my_path,0,0,1)</string>
+
+d3d_set_depth( z - legheight );
+draw_sprite_ext(sprEFatLegs,image_index*2,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+d3d_set_depth( z - bodyheight );
+ draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+
+
+//draw_path(my_path,0,0,1)
+
+
+
+
+</string>
           </argument>
         </arguments>
       </action>

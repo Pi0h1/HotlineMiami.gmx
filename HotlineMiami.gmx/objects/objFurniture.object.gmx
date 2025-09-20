@@ -32,11 +32,26 @@
     exit;
 }
 
+var z = 0
+var height = max( 4, abs( depth ) );
+
+if ( scrDrawSprite3D( x, y, z, sprite_index, image_index, image_angle, image_xscale, image_yscale ) )
+{
+    // drew a 3d sprite instead - all good.
+}
+else
+{
+    // try sprite stacking
+    for ( var i = z; i &gt; ( z - height ); i -= 0.25 )
+    {
+        d3d_set_depth( i );
+        draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+    }
+    d3d_set_depth( z - height );
+    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+}
 d3d_set_depth( -1 );
 draw_sprite_ext(sprite_index,image_index,x+2,y+3,image_xscale,image_yscale,image_angle,c_black,0.5)
-var z = min( 0, ( depth - 3 ) * 4 );
-d3d_set_depth( z );
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 </string>
           </argument>
         </arguments>

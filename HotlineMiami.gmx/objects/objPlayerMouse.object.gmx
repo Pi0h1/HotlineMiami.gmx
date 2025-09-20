@@ -1218,8 +1218,13 @@ if sprite_index=sprPMaskSlip
 }
 
 // Mask
-d3d_set_depth( z - ( height + 1 ) );
-if maskon=1 scrDrawMask(0)
+
+if ( maskon=1 &amp;&amp; ( !global.camera3D ) )
+{
+    d3d_set_depth( z - ( height + 1 ) );
+    scrDrawMask(0)
+}
+
 
 if reload&gt;0 reload-=1
 if light&gt;3 light-=3

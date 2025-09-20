@@ -71,7 +71,7 @@ if !instance_exists(objCamera3DEnd) {
 }
 
 floorz = 0;
-ceilz = -80.5;
+ceilz = -81;
 
 var tiles = tile_get_ids();
 
@@ -95,7 +95,11 @@ tile_layer_depth(-99, ceilz);
 base_wallcolor = make_colour_rgb( 192, 192, 192 );
 
 
-
+with objFurniture
+{
+    if ( depth &gt; -1 )
+        depth = -24;
+}
 
 
 
@@ -256,24 +260,26 @@ else if ( true )
     ylook += ( lookdis * -dsin_angle * dcos_pitch );
     zlook += ( lookdis * dsin_pitch );
     // Aim cursor
+    var _target = noone;
     var _inst = noone;
     do
     {
         _inst = collision_line( x, y, xlook, ylook, objEnemy, false, false );
         if ( _inst )
         {
-            lookdis *= 0.5;
+            _target = _inst;
+            lookdis -= 8;
         }
         else
             break;
     }
     until ( lookdis &lt;= 32 )
-    if ( _inst != noone )
+    if ( _target != noone )
     {
-        lookdis = point_distance( x, y, _inst.x, _inst.y ) - 4;
+        lookdis = max( 6, point_distance( x, y, _inst.x, _inst.y ) - 4 );
     }
     else
-        lookdis = 8
+        lookdis = 5
     xlook = x;
     ylook = y;
     zlook = z;
@@ -479,8 +485,7 @@ draw_text(16,16+32,"temp2 = "+string(temp2));
 
 scrCamera3D( target );
 
-world_mat = matrix_get( matrix_world );
-view_mat = matrix_get( matrix_view );
+
 //billboard_mat = matrix_build( 0, 0, 0, 0, angle + 90, 270, 1, 1, 1 );
     
 ///debug
@@ -527,7 +532,7 @@ with objEnemy
     x2 = x+size;
     y2 = y+size;
     z2 = z;
-    var sphere_z = ( ( z - height ) + ( size ) );
+    var sphere_z = ( ( z - ( height + 24 ) ) + ( size ) );
     if ( object_index == objEnemyFat )
         draw_set_color( make_color_rgb( 99, 56, 29 ) );
     else

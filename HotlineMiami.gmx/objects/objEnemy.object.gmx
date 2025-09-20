@@ -425,9 +425,11 @@ if ( true )
     if ( light &gt; 0 )
         light -= 1;
 }
+lastsprite=sprite_index
 
 if ( !global.camera3D )
 {
+    // Draw normally
     draw_set_blend_mode(bm_add)
     draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
     draw_set_blend_mode(bm_normal)
@@ -443,10 +445,12 @@ if ( !global.camera3D )
     exit;
 }
 //draw_path(my_path,0,0,1)
-lastsprite=sprite_index
+
+// 3D
 
 var height = 50;
 var headheight = 8;
+var bodyheight = ( height - headheight ) - 8;
 
 var z = 0;
 var legheight = 26;
@@ -471,8 +475,13 @@ if ( true || !scrIsSearching(sprite_index) )
 }
 
 
-d3d_set_depth( z - ( height - headheight ) );
-draw_sprite_ext( sprite_index, image_index, x - shake + random( shake * 0.5 ), y - shake + random( shake * 0.5 ), image_xscale, image_yscale, angle, image_blend, image_alpha );
+d3d_set_depth( z - ( bodyheight ) );
+if ( true )
+{
+    scrDrawSprite3D( x + lengthdir_x( 1, objCamera3D.angle + 180 ), y + lengthdir_y( 1, objCamera3D.angle + 180 ), z - legheight, sprEWalkUnarmed, image_index, angle, 1, 1 );
+}
+else
+    draw_sprite_ext( sprite_index, image_index, x - shake + random( shake * 0.5 ), y - shake + random( shake * 0.5 ), image_xscale, image_yscale, angle, image_blend, image_alpha );
 
 
 

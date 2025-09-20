@@ -657,14 +657,27 @@
   <sprites name="sprites">
     <sprites name="3D">
       <sprites name="Enemies">
-        <sprite>sprites\sprEWalkUnarmed_3D0</sprite>
+        <sprites name="WalkUnarmed">
+          <sprite>sprites\sprEWalkUnarmed_3D1</sprite>
+          <sprite>sprites\sprEWalkUnarmed_3D5</sprite>
+        </sprites>
         <sprite>sprites\sprEWalkGun_3D0</sprite>
-        <sprite>sprites\sprELegs_3D0</sprite>
+        <sprite>sprites\sprELegs_3D1</sprite>
+        <sprite>sprites\sprELegs_3D5</sprite>
       </sprites>
       <sprites name="Walls">
         <sprite>sprites\sprDoorTexture</sprite>
         <sprite>sprites\sprWallTexture</sprite>
         <sprite>sprites\sprWallTextureBrick</sprite>
+      </sprites>
+      <sprites name="Furniture">
+        <sprites name="sprChairDown">
+          <sprite>sprites\sprChairDown_3D1</sprite>
+          <sprite>sprites\sprChairDown_3D2</sprite>
+          <sprite>sprites\sprChairDown_3D3</sprite>
+          <sprite>sprites\sprChairDown_3D4</sprite>
+          <sprite>sprites\sprChairDown_3D5</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Player">

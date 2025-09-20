@@ -3,7 +3,7 @@
   <spriteName>sprChairDown</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>objFurniture</parentName>
   <maskName>&lt;undefined&gt;</maskName>

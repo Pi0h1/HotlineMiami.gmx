@@ -84,8 +84,8 @@ pitch = lerp( pitch, 90, 0.025 );
 timer = max( 0, timer - 1 );
 var amount = dcos( lerp( 0, 90, ( timer / time ) ) );
 
-fov = lerp( objCamera3D.fov_desired, 16, amount );
-z = lerp( z, -360 / ( fov / objCamera3D.fov_desired ), 0.005 );
+fov = lerp( objCamera3D.fov_desired, 4, amount );
+z = lerp( z, -380 / ( fov / objCamera3D.fov_desired ), 0.005 );
 
 // angle += lerp( 0, 1, amount );
 

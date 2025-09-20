@@ -42,6 +42,9 @@ fog_end = ( 32 * 20 ) * fogscale;
 scrCamera3D_Fog();
 
 
+world_mat = matrix_get( matrix_world );
+view_mat = matrix_get( matrix_view );
+
 #define scrCamera3D_End
 // 3D Cursor
 
@@ -51,7 +54,7 @@ if ( global.camera3D && !instance_exists( objPlayerDead ) )
 {
     d3d_set_zwriteenable( false );    
     
-    var scale = max( 0.1, point_distance_3d( objCamera3D.x, objCamera3D.y, objCamera3D.z, objCamera3D.xlook, objCamera3D.ylook, objCamera3D.zlook ) / ( 32 * 8 ) );
+    var scale = max( 0.05, point_distance_3d( objCamera3D.x, objCamera3D.y, objCamera3D.z, objCamera3D.xlook, objCamera3D.ylook, objCamera3D.zlook ) / ( 32 * 10 ) );
     
     var xx = objCamera3D.xlook;
     var yy = objCamera3D.ylook;
@@ -95,6 +98,7 @@ d3d_set_projection( xx, yy, -16000, xx, yy, 16000, dcos( _angle ) , -dsin( _angl
 d3d_set_projection_ortho( xx, yy, view_wview[0], view_hview[0], _angle );
 
 
+
 #define scrCamera3D_Billboard
 ///scrCamera3D_Billboard( x, y, z, [angle=face_camera], [pitch=face_camera] )
 
@@ -109,7 +113,10 @@ var pitch = 270; //objCamera3D.pitch + 270;
 if ( argument_count > 3 && ( argument[3] != undefined ) )
     angle = argument[3];
 else
+{
     angle = objCamera3D.angle + 270;
+    // angle = point_direction( objCamera3D.x, objCamera3D.y, x, y ) + 270;
+}
 
 if ( argument_count > 4 && ( argument[4] != undefined ) )
     pitch = argument[4];

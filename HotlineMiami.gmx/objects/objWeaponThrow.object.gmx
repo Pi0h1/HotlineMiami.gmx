@@ -308,7 +308,7 @@ bounce=1
 }
 
 startspd = max( startspd, speed );
-z = lerp( -40, depth, 1 - ( speed / startspd ) );
+z = lerp( -40, depth, 1 - ( ( speed / startspd ) ) );
 
 
 d3d_set_depth( -1 );

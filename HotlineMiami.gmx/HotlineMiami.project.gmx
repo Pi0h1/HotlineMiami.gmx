@@ -655,6 +655,18 @@
     <sound>sound\sndLock</sound>
   </sounds>
   <sprites name="sprites">
+    <sprites name="3D">
+      <sprites name="Enemies">
+        <sprite>sprites\sprEWalkUnarmed_3D0</sprite>
+        <sprite>sprites\sprEWalkGun_3D0</sprite>
+        <sprite>sprites\sprELegs_3D0</sprite>
+      </sprites>
+      <sprites name="Walls">
+        <sprite>sprites\sprDoorTexture</sprite>
+        <sprite>sprites\sprWallTexture</sprite>
+        <sprite>sprites\sprWallTextureBrick</sprite>
+      </sprites>
+    </sprites>
     <sprites name="Player">
       <sprites name="Jacket">
         <sprites name="Walking">
@@ -1496,9 +1508,6 @@
       <sprite>sprites\sprWallBrickH</sprite>
       <sprite>sprites\sprWallBrickV</sprite>
       <sprite>sprites\sprWallHeavyH</sprite>
-      <sprite>sprites\sprWallTexture</sprite>
-      <sprite>sprites\sprDoorTexture</sprite>
-      <sprite>sprites\sprWallTextureBrick</sprite>
       <sprite>sprites\sprWallHeavyV</sprite>
       <sprite>sprites\sprWallHospitalH</sprite>
       <sprite>sprites\sprWallHospitalV</sprite>
@@ -2331,9 +2340,10 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="3D Camera">
+    <scripts name="3D">
       <script>scripts\scrCamera3D.gml</script>
       <script>scripts\scrDrawWall3D.gml</script>
+      <script>scripts\scrDrawSprite3D.gml</script>
       <script>scripts\scrColorize.gml</script>
     </scripts>
     <scripts name="Player">

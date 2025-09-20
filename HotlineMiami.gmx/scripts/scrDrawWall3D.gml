@@ -29,7 +29,7 @@ switch ( sprite_index )
     // Heavy
     case sprWallHeavyH:
     case sprWallHeavyV:
-        col     = make_colour_rgb( 192, 192, 192 );
+        col     = objCamera3D.base_wallcolor;
         tex     = sprWallTexture;
         height  = (base_wallheight);
         break;
@@ -56,7 +56,7 @@ switch ( sprite_index )
         break;
     // 
     default:
-        col     = make_colour_rgb( 192, 192, 192 );
+        col     = base_wallcolor;
         tex     = sprWallTexture;
         height  = (base_wallheight);
         break;
@@ -82,12 +82,16 @@ switch object_index
 {
     case objDoorH:
     case objDoorV:
-        var len = sprite_width;
+        var len = abs( sprite_width );
         var wallangle = image_angle;
+        if ( image_xscale < 0 )
+            wallangle += 180;
         if ( object_index == objDoorV )
         {
             wallangle += 270;
             len = sprite_height;
+            if ( image_yscale < 0 )
+                wallangle += 180;
         }
         var offx = dcos( wallangle + 90 );
         var offy = -dsin( wallangle + 90 );
@@ -99,11 +103,15 @@ switch object_index
         d3d_set_depth( z2 );
         draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
         d3d_draw_wall(x2,y2,z1,x1,y1,z2,texid,u,v);
-        x1 -= offx * 4;
-        y1 -= offy * 4;
-        x2 -= offx * 4;
-        y2 -= offy * 4;
-        d3d_draw_wall(x1,y1,z1,x2,y2,z2,texid,u,v);
+        var x4 = x1 - offx * 4;
+        var y4 = y1 - offy * 4;
+        var x3 = x2 - offx * 4;
+        var y3 = y2 - offy * 4;
+        d3d_draw_wall(x4,y4,z1,x3,y3,z2,texid,u,v);
+        
+        d3d_draw_wall(x3,y3,z1,x2,y2,z2,texid,u,v);
+        d3d_draw_wall(x1,y1,z1,x4,y4,z2,texid,u,v);
+        
         break;
     default:
         if (sprite_width > sprite_height)
@@ -112,10 +120,16 @@ switch object_index
             u = sprite_width / sprite_get_width(tex);
             y1 = y;
             y2 = (y1);
-            d3d_draw_wall(x2,y2,z1,x1,y1,z2,texid,u,v);
-            y1 += sprite_height;
-            y2 += sprite_height;    
-            d3d_draw_wall(x1,y1,z1,x2,y2,z2,texid,u,v);
+            var y4 = y1 + sprite_height;
+            var y3 = y2 + sprite_height;  
+            // N
+            d3d_draw_wall(x2,y2,z1,x1,y1,z2,texid,u,v);  
+            // S
+            d3d_draw_wall(x1,y4,z1,x2,y3,z2,texid,u,v);
+            // W
+            d3d_draw_wall(x1,y1,z1,x1,y3,z2,texid,u,v);
+            // E
+            d3d_draw_wall(x2,y3,z1,x2,y2,z2,texid,u,v);
         
         }
         else
@@ -124,10 +138,16 @@ switch object_index
             u = sprite_height / sprite_get_width(tex);
             x1 = x;
             x2 = (x1);
+            var x4 = x1 + sprite_width;
+            var x3 = x2 + sprite_width;    
+            // W
             d3d_draw_wall(x1,y1,z1,x2,y2,z2,texid,u,v);
-            x1 += sprite_width;
-            x2 += sprite_width;    
-            d3d_draw_wall(x2,y2,z1,x1,y1,z2,texid,u,v);
+            // E
+            d3d_draw_wall(x3,y2,z1,x4,y1,z2,texid,u,v);
+            // N
+            d3d_draw_wall( x4, y1, z1, x1, y1, z2, texid, u, v );
+            // S
+            d3d_draw_wall( x2, y2, z1, x3, y2, z2, texid, u, v );
         }
         break;
 }

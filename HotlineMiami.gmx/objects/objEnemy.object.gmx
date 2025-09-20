@@ -445,30 +445,37 @@ if ( !global.camera3D )
 //draw_path(my_path,0,0,1)
 lastsprite=sprite_index
 
+var height = 50;
+var headheight = 8;
 
 var z = 0;
-var height = 35;
-var legheight = 22;
+var legheight = 26;
 var size = (16/2);
 var texid = -1;
 
 d3d_set_depth( -0.5 );
-draw_set_blend_mode(bm_add)
-draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
-draw_set_blend_mode(bm_normal)
+//draw_set_blend_mode(bm_add)
+//draw_circle_color(x,y,48+random(6)+light,make_color_hsv(0,0,30),c_black,0)
+//draw_set_blend_mode(bm_normal)
 d3d_set_depth( -1 );
 draw_sprite_ext( sprite_index, image_index, x + 1 - shake + random( shake * 0.5 ), y + 1 - shake + random( shake * 0.5 ), image_xscale, image_yscale, angle, c_black, 0.5 );
 
 
 d3d_set_depth( z - legheight );
-if ( !scrIsSearching(sprite_index) )
+if ( true || !scrIsSearching(sprite_index) )
 {
-    draw_sprite_ext(sprELegs,image_index*2,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
+    // Draw Legs
+    scrDrawSprite3D( x, y, z - legheight, sprELegs, image_index * 2, angle, image_xscale, image_yscale, image_blend, image_alpha );
+    //draw_sprite_ext(sprELegs,image_index*2,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
+    
 }
 
 
-d3d_set_depth( z - ( height - 5 ) );
+d3d_set_depth( z - ( height - headheight ) );
 draw_sprite_ext( sprite_index, image_index, x - shake + random( shake * 0.5 ), y - shake + random( shake * 0.5 ), image_xscale, image_yscale, angle, image_blend, image_alpha );
+
+
+
 
 </string>
           </argument>

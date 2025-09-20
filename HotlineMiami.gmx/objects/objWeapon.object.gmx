@@ -82,32 +82,33 @@ if ( !global.camera3D )
     scrColorize(0,0,0,0)    
     exit;
 }
+
 var angle = objCamera3D.angle + 180;
 // 3D
-var z = -6;
+var z = -4;
 
 var amount = ( ( ( dir - dirstart ) / 4 ) / ( 60 * 1.5 ) );
 amount = min( 1, power( amount, 2 ) );
+
+var _angle = image_angle;
+var _pitch = 0 // billboard
+if ( amount &lt;= 1 &amp;&amp; instance_exists( objCamera3D ) )
+{
+    var angdif = angle_difference( image_angle, objCamera3D.angle + 270 );
+    _angle = image_angle - ( angdif * amount );
+    var angdif = angle_difference( 0, objCamera3D.pitch + 270 );
+    _pitch = 0 - ( angdif * amount );
+}
 
 
 
 z-= ( 16 * amount );
 var height = 5;
 d3d_set_depth( -1 );
-draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle ,c_black, 0.5 );
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, _angle ,c_black, 0.5 );
 if ( true ) // billboard
 {
     var bump = ( 2 + lengthdir_x( 2, dir ) ) * amount;
-    var _angle = undefined; // billboard
-    var _pitch = undefined // billboard
-    if ( amount &lt; 1 &amp;&amp; instance_exists( objCamera3D ) )
-    {
-        var angdif = angle_difference( image_angle, objCamera3D.angle + 270 );
-        _angle = image_angle - ( angdif * amount );
-        var angdif = angle_difference( 90, objCamera3D.pitch );
-        _pitch = 90 - ( angdif * amount );
-    }
-    
     scrCamera3D_Billboard( x, y, z - ( bump ), _angle, _pitch );
     // 
     if ( image_yscale &lt; 0 )

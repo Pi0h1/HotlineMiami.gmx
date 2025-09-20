@@ -29,6 +29,8 @@
 
 targetdir = 0;
 
+time = 15;
+timer = 0;
 </string>
           </argument>
         </arguments>
@@ -51,21 +53,30 @@ targetdir = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ( instance_exists( objPlayerKill ) )
+            <string>var ztarget = -objCamera3D.eye_height * 0.45;
+if ( instance_exists( objPlayerKill ) )
 {
     targetdir = objPlayerKill.image_angle;
     pitch = lerp( pitch, 80, 0.175 );
+    z = lerp( z, -ztarget, 1 / 16 );
 }
 else
 {
-    var dif = angle_difference( pitch, 0 );
-    if ( abs( dif ) &lt; 1 || instance_number( objCamera3DTarget ) &gt; 1 )
+    if ( instance_exists( objPlayer ) )
+    {
+        x = objPlayer.x;
+        y = objPlayer.y;
+        targetdir = objPlayer.dir;
+    }
+    ++timer;
+    var amount = ( timer / time );
+    
+    if ( ( amount &gt;= 1 ) || instance_number( objCamera3DTarget ) &gt; 1 )
     {
         instance_destroy();
     }
-    pitch -= angle_difference( pitch, 0 ) * ( 1 / 8 );
-    if ( abs( dif ) &lt; 1 )
-        pitch = 0;
+    pitch = lerp( 80, 0, amount );
+    z = lerp( ztarget, objCamera3D.eye_height, amount );
 }
 angle -= angle_difference( angle, targetdir ) * ( 1 / 16 );
 

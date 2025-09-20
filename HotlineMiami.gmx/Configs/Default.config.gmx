@@ -460,8 +460,56 @@
     <option_textureGroup0_parent>&lt;none&gt;</option_textureGroup0_parent>
     <option_textureGroup0_scaled>0</option_textureGroup0_scaled>
     <option_textureGroup0_targets>9223372036854775807</option_textureGroup0_targets>
-    <option_textureGroup_count>1</option_textureGroup_count>
+    <option_textureGroup1_border>2</option_textureGroup1_border>
+    <option_textureGroup1_nocropping>0</option_textureGroup1_nocropping>
+    <option_textureGroup1_parent>Default</option_textureGroup1_parent>
+    <option_textureGroup1_scaled>0</option_textureGroup1_scaled>
+    <option_textureGroup1_targets>9223372036854775807</option_textureGroup1_targets>
+    <option_textureGroup2_border>2</option_textureGroup2_border>
+    <option_textureGroup2_nocropping>0</option_textureGroup2_nocropping>
+    <option_textureGroup2_parent>Default</option_textureGroup2_parent>
+    <option_textureGroup2_scaled>0</option_textureGroup2_scaled>
+    <option_textureGroup2_targets>9223372036854775807</option_textureGroup2_targets>
+    <option_textureGroup3_border>2</option_textureGroup3_border>
+    <option_textureGroup3_nocropping>0</option_textureGroup3_nocropping>
+    <option_textureGroup3_parent>Default</option_textureGroup3_parent>
+    <option_textureGroup3_scaled>0</option_textureGroup3_scaled>
+    <option_textureGroup3_targets>9223372036854775807</option_textureGroup3_targets>
+    <option_textureGroup4_border>2</option_textureGroup4_border>
+    <option_textureGroup4_nocropping>0</option_textureGroup4_nocropping>
+    <option_textureGroup4_parent>&lt;none&gt;</option_textureGroup4_parent>
+    <option_textureGroup4_scaled>0</option_textureGroup4_scaled>
+    <option_textureGroup4_targets>9223372036854775807</option_textureGroup4_targets>
+    <option_textureGroup5_border>2</option_textureGroup5_border>
+    <option_textureGroup5_nocropping>0</option_textureGroup5_nocropping>
+    <option_textureGroup5_parent>&lt;none&gt;</option_textureGroup5_parent>
+    <option_textureGroup5_scaled>0</option_textureGroup5_scaled>
+    <option_textureGroup5_targets>9223372036854775807</option_textureGroup5_targets>
+    <option_textureGroup6_border>2</option_textureGroup6_border>
+    <option_textureGroup6_nocropping>0</option_textureGroup6_nocropping>
+    <option_textureGroup6_parent>3D</option_textureGroup6_parent>
+    <option_textureGroup6_scaled>0</option_textureGroup6_scaled>
+    <option_textureGroup6_targets>9223372036854775807</option_textureGroup6_targets>
+    <option_textureGroup7_border>2</option_textureGroup7_border>
+    <option_textureGroup7_nocropping>0</option_textureGroup7_nocropping>
+    <option_textureGroup7_parent>3D</option_textureGroup7_parent>
+    <option_textureGroup7_scaled>0</option_textureGroup7_scaled>
+    <option_textureGroup7_targets>9223372036854775807</option_textureGroup7_targets>
+    <option_textureGroup8_border>2</option_textureGroup8_border>
+    <option_textureGroup8_nocropping>0</option_textureGroup8_nocropping>
+    <option_textureGroup8_parent>3D</option_textureGroup8_parent>
+    <option_textureGroup8_scaled>0</option_textureGroup8_scaled>
+    <option_textureGroup8_targets>9223372036854775807</option_textureGroup8_targets>
+    <option_textureGroup_count>9</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
+    <option_textureGroups1>Player</option_textureGroups1>
+    <option_textureGroups2>Enemy</option_textureGroups2>
+    <option_textureGroups3>Walls</option_textureGroups3>
+    <option_textureGroups4>Furniture</option_textureGroups4>
+    <option_textureGroups5>3D</option_textureGroups5>
+    <option_textureGroups6>3D_Player</option_textureGroups6>
+    <option_textureGroups7>3D_Enemy</option_textureGroups7>
+    <option_textureGroups8>3D_Walls</option_textureGroups8>
     <option_tizen_app_id>http://yourdomain/HotlineMiamiStudio</option_tizen_app_id>
     <option_tizen_build_version>0</option_tizen_build_version>
     <option_tizen_display_name>HotlineMiamiStudio</option_tizen_display_name>
@@ -681,10 +729,10 @@
     <option_xbone_require_xbox_live>True</option_xbone_require_xbox_live>
     <option_xbone_revision_version>0</option_xbone_revision_version>
     <option_xbone_scale>-1</option_xbone_scale>
-    <option_xbone_service_config_id></option_xbone_service_config_id>
+    <option_xbone_service_config_id>1234ABCD-1234-1234-1234-123456789ABC</option_xbone_service_config_id>
     <option_xbone_splash_screen_colour>#FFFFFF</option_xbone_splash_screen_colour>
     <option_xbone_texture_page>1024</option_xbone_texture_page>
-    <option_xbone_title_id></option_xbone_title_id>
+    <option_xbone_title_id>1234ABCD</option_xbone_title_id>
   </Options>
   <ConfigConstants/>
 </Config>

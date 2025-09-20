@@ -92,7 +92,7 @@ tile_layer_depth(-99, ceilz);
 
 // 
 
-
+base_wallcolor = make_colour_rgb( 192, 192, 192 );
 
 
 
@@ -160,7 +160,14 @@ target = objCamera3DTarget;
 if ( !instance_exists( target ) )
 {
     if ( instance_exists( objPlayer ) )
+    {
         target = objPlayer;
+        fov = fov_desired;
+        if ( keyboard_check( vk_shift ) )
+        {
+            fov = 55;
+        }
+    }
     else if ( instance_exists( objPlayerDead ) )
         target = objPlayerDead;
     else
@@ -266,7 +273,7 @@ else if ( true )
         lookdis = point_distance( x, y, _inst.x, _inst.y ) - 4;
     }
     else
-        lookdis = 32 * 3;
+        lookdis = 8
     xlook = x;
     ylook = y;
     zlook = z;
@@ -483,9 +490,10 @@ with objEnemy
     // Marker
     
     var z = 0;
-    var height = 48;
-    var legheight = 22;
-    var size = 1;
+    var height = 50;
+    var legheight = 25;
+    var headheight = 8;
+    var size = 0.25;
     var texid = -1;    
     
     var x1 = x-size;
@@ -508,17 +516,18 @@ with objEnemy
     z2 = z;
     // 
     draw_set_colour( c_white );
-    d3d_draw_block( x1, y1, z - ( height * 0.5 ), x2, y2, z, texid, 1, 1 );
+    // d3d_draw_block( x1, y1, z - ( 1 ), x2, y2, z, texid, 1, 1 );
     
     // Head
-    size = 8;
+    var headsize = 8;
+    size = headsize / 2;
     x1 = x-size;
     y1 = y-size;
     z1 = z-height;
     x2 = x+size;
     y2 = y+size;
     z2 = z;
-    var sphere_z = ( z - ( height ) );
+    var sphere_z = ( ( z - height ) + ( size ) );
     if ( object_index == objEnemyFat )
         draw_set_color( make_color_rgb( 99, 56, 29 ) );
     else

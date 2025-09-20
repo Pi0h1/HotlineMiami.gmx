@@ -114,11 +114,11 @@ else
 if ( argument_count > 4 && ( argument[4] != undefined ) )
     pitch = argument[4];
 else
-    pitch = objCamera3D.pitch;
+    pitch = objCamera3D.pitch + 270;
 
 
 
-matrix_set( matrix_world, matrix_build( xpos, ypos, zpos, pitch + 270, 0, angle, 1, 1, 1 ) );
+matrix_set( matrix_world, matrix_build( xpos, ypos, zpos, pitch, 0, angle, 1, 1, 1 ) );
 
 d3d_set_depth( 0 );
 

@@ -2785,6 +2785,7 @@
     </scripts>
     <script>scripts\scrLockInEffectInit.gml</script>
     <script>scripts\scrLockInEffectStep.gml</script>
+    <script>scripts\scrDrawMinimap.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>

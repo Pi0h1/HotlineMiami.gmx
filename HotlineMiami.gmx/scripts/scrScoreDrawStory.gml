@@ -119,6 +119,8 @@ if instance_exists(objPlayer) {
         if ammoy < 20 ammoy += 1
         else ammoy = 20
     }
+    
+    scrDrawMinimap(40, 300, 10, dir);
 } else {
     if instance_exists(objPlayerDead) {
         scorestring = "YOU'RE DEAD!"

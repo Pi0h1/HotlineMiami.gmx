@@ -62,7 +62,7 @@ if (bullets > 1 or round(random(1)) || energie < 0) {
     my_id = instance_create(x, y, objPlayerDead);
     // If shotgunned, use appropriate sprite
     if (bullets > 1)
-        /my_id.sprite_index = sprPBackShotgun;
+		my_id.sprite_index = sprPBackShotgun;
     else my_id.sprite_index = sprPBackMachinegun;
     my_id.image_index = 1 + floor(random(4));
     my_id.direction = edir;

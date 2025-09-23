@@ -10,7 +10,8 @@
   <persistent>0</persistent>
   <colour>14609130</colour>
   <showcolour>-1</showcolour>
-  <code>//scrExportSprites()</code>
+  <code>//scrExportSprites()
+global.isTonyPlaying = true;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

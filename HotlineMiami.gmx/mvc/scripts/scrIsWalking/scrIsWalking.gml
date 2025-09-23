@@ -1,0 +1,48 @@
+// If player's current sprite is a walking sprite, add to the list.
+switch (argument0) {
+    case sprBoss2WalkCleaver:
+    case sprBoss2Walk:
+    case sprMCWalkNoHelmet:
+    case sprPigButcher:
+    case sprPWalkUnarmed:
+    case sprPWalkKnife:
+    case sprPWalkBat:
+    case sprPWalkDrill:
+    case sprPWalkPipe:
+    case sprPWalkClub:
+    case sprPWalkSword:
+    case sprPWalkAxe:
+    case sprPWalkCrowbar:
+    case sprPWalkPool:
+    case sprPWalkPoolBroke:
+    case sprPWalkThrow:
+    case sprPWalkNightStick:
+    case sprPWalkM16:
+    case sprPWalkShotgun:
+    case sprPWalkMagnum:
+    case sprPWalkDoubleBarrel:
+    case sprPWalkScorpion:
+    case sprPWalkUzi:
+    case sprPWalkSilencedUzi:
+    case sprPWalkMP5:
+    case sprPWalkPot:
+    case sprPWalkPan:
+    case sprPWalkMachete:
+    case sprPWalkSledgeHammer:
+    case sprPWalkBoilingPot:
+    case sprPWalkTaser:
+    case sprPWalkSilencer:
+    case sprPWalkHospital:
+    case sprPWalkBag:
+    case sprPHumanShieldSilencer:
+    case sprPHumanShieldUzi:
+    case sprPHumanShieldMagnum:
+    case sprPHumanShieldDoubleBarrel:
+    case sprPHumanShieldMP5:
+    case sprPWalkGirlfriend:
+    case sprPWalkBossgun:
+    case sprPigButcherWalkMP5:
+    
+    return true;
+}
+return false;

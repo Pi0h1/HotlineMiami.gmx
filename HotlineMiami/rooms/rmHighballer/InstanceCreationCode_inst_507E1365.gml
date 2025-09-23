@@ -1,0 +1,1 @@
+image_angle=choose(-45,45,135,315)

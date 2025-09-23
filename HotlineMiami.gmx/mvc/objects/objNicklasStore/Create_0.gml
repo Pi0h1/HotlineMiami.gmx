@@ -1,0 +1,4 @@
+image_speed = 0.15;
+dir = random(360);
+talked = 0;
+

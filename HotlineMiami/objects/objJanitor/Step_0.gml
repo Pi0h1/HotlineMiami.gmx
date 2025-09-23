@@ -1,0 +1,97 @@
+with (objBackgroundColor)
+    instance_destroy();
+if (active) {
+    if (vol > 0.35)
+        vol -= 0.01;
+    sxeasy_setVolume(vol);
+    if (point_distance(x, y, objPlayerBiker.x, objPlayerBiker.y) < 60) {
+        if (global.ending)
+            instance_create(x, y, objFinalDialogue2);
+        else instance_create(x, y, objFinalDialogue);
+        with (objPlayerBikerHouse) {
+            legindex = 0;
+            active = 0;
+            aimon = 0;
+            dir = point_direction(x, y, 324, 128);
+        }
+        active = 0;
+    }
+}
+
+if (!instance_exists(objPlayerBiker))
+    exit;
+
+if (point_distance(x, y, objPlayerBiker.x, objPlayerBiker.y) < 120) {
+    direction = scrRotate(direction, point_direction(x, y, objPlayerBiker.x, objPlayerBiker.y), 6);
+}
+global.test = 0;
+global.my_id = id;
+
+if (instance_exists(objJanitorDennisDie)) {
+    if (point_distance(x, y, objPlayerBiker.x, objPlayerBiker.y) < 22) {
+        my_id = instance_create((x + objPlayerBiker.x) * 0.5, (y + objPlayerBiker.y) * 0.5, objBikerKillJonatan);
+        my_id.image_angle = point_direction(objPlayer.x, objPlayer.y, x, y);
+        with (objPlayerBiker)
+            instance_destroy();
+        instance_destroy();
+    }
+} else {
+    with (objPlayer) {
+        if (sprite_index == sprBoss2AttackCleaver) {
+            if (place_meeting(x + lengthdir_x(12, dir), y + lengthdir_y(12, dir), global.my_id))
+                global.test = 1;
+        }
+    }
+    if (global.test) {
+        pdir = point_direction(objPlayer.x, objPlayer.y, x, y);
+        repeat(8) {
+            my_id = instance_create(x - 3 + random(6) + lengthdir_x(8, pdir), y - 3 + random(6) + lengthdir_y(8, pdir), objBloodDrop);
+            my_id.image_xscale = 1 - random(0.2);
+            my_id.image_yscale = my_id.image_xscale;
+            my_id.image_angle = point_direction(x + lengthdir_x(8, pdir), y + lengthdir_y(8, pdir), my_id.x, my_id.y);
+            my_id.sprite_index = sprBloodSplatSmall;
+            my_id.direction = my_id.image_angle;
+            my_id.speed = 2 + random(4);
+        }
+        repeat(2 + random(3)) {
+            my_id = instance_create(x - 3 + random(6) + lengthdir_x(8, pdir), y - 3 + random(6) + lengthdir_y(8, pdir), objBloodDrop);
+            my_id.image_xscale = 1 - random(0.2);
+            my_id.image_yscale = my_id.image_xscale;
+            my_id.image_angle = point_direction(x + lengthdir_x(8, pdir), y + lengthdir_y(8, pdir), my_id.x, my_id.y);
+            my_id.direction = my_id.image_angle;
+            my_id.speed = 1 + random(5);
+        }
+        repeat(4) {
+            my_id = instance_create(x - 3 + random(6) + lengthdir_x(16, pdir), y - 3 + random(6) + lengthdir_y(16, pdir), objBloodSmoke);
+            my_id.image_xscale = 1.2 - random(0.2);
+            my_id.image_yscale = my_id.image_xscale;
+            my_id.image_angle = pdir - 20 + random(40);
+            my_id.direction = my_id.image_angle;
+            my_id.speed = 2 + random(1);
+            my_id.friction = 0.15;
+        }
+        my_id = instance_create(x, y, objJanitorDennisDie);
+        my_id.direction = point_direction(objPlayer.x, objPlayer.y, x, y);
+        my_id.speed = 2;
+
+        my_id2 = instance_create(x - 3 + random(6), y - 3 + random(6), objMCHelmet);
+        my_id2.sprite_index = sprJanitorCap;
+        my_id2.direction = random(360);
+        my_id2.speed = 2 + random(1);
+        audio_play_sound(choose(sndCut1, sndCut2), 0, false);
+        my_id.image_angle = my_id.direction;
+        audio_play_sound(sndDoorHit, 0, false);
+        audio_play_sound(sndHit, 0, false);
+        instance_destroy();
+    }
+}
+
+if (instance_exists(objJanitorDennisDie)) {
+    if (sprite_index == sprJanitorWalk) {
+        image_index = 0;
+        sprite_index = sprJanitorFinger;
+    }
+    if (image_index < 18)
+        image_index += 0.1;
+}
+

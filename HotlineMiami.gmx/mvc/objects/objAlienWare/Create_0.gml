@@ -1,0 +1,3 @@
+scrAlienWareInit();
+scrAlienWareYellow();
+

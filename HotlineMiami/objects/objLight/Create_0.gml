@@ -1,0 +1,2 @@
+strength = 0;
+

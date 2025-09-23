@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrSurfaceTiles",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrSurfaceTiles",
+  "parent":{
+    "name":"Surfaces",
+    "path":"folders/Scripts/Surfaces.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

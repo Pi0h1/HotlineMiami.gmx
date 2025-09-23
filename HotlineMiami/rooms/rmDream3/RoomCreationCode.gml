@@ -1,0 +1,5 @@
+if surface_exists(global.surf1) surface_free(global.surf1)
+global.surf1=surface_create(530,300)
+surface_set_target(global.surf1)
+draw_clear_alpha(make_color_hsv(0,0,2),0)
+surface_reset_target()

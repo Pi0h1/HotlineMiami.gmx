@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrStoryDrawAmmo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrStoryDrawAmmo",
+  "parent":{
+    "name":"HUD",
+    "path":"folders/Scripts/Player/HUD.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

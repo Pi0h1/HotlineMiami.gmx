@@ -1,0 +1,3 @@
+sprite_index=sprLockedDoor
+image_blend=c_gray
+solid=1

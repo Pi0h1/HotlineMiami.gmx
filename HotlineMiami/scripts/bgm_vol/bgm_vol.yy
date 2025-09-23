@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"bgm_vol",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"bgm_vol",
+  "parent":{
+    "name":"bgm",
+    "path":"folders/Scripts/Audio/bgm.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

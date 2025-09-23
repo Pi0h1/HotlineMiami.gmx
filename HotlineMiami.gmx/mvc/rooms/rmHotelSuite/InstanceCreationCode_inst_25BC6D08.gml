@@ -1,0 +1,2 @@
+sprite_index=sprWhiteTigerCarpet
+image_angle=270

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrPInspectorStep",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrPInspectorStep",
+  "parent":{
+    "name":"Police",
+    "path":"folders/Scripts/Enemies/Police.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

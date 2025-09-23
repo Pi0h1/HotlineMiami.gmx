@@ -1,0 +1,18 @@
+if (global.xbox)
+    exit;
+if (!on) {
+    global.masks[global.currentmask] = 1;
+    on = 1;
+} else {
+    if (maskamount == 0) {
+        if (currentmask < global.newmasks) {
+            global.currentmask = global.newmask[currentmask];
+            currentmask++;
+            shine = 1;
+        } else {
+            scrCheckMasks();
+            fade = 1;
+        }
+    }
+}
+

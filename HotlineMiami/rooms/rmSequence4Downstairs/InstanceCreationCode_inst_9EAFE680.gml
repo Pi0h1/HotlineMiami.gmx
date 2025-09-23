@@ -1,0 +1,2 @@
+nextroom=rmTrainstationEntrance
+nextroom=rmApartment1Entrance

@@ -1,0 +1,5 @@
+if (sprite_index == sprPantherSit)
+    image_speed = 0;
+if (sprite_index == sprPantherHitback)
+    sprite_index = sprPantherRun;
+

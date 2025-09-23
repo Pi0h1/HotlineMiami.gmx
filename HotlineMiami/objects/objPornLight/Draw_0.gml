@@ -1,0 +1,6 @@
+draw_set_blend_mode(bm_add);
+draw_triangle_color(x, y, x + lengthdir_x(28, image_angle - 35), y + lengthdir_y(28, image_angle - 35), x + lengthdir_x(28, image_angle + 35), y + lengthdir_y(28, image_angle + 35), merge_color(c_gray, c_dkgray, random(0.3)), c_black, c_black, 0);
+draw_set_blend_mode(bm_normal);
+draw_sprite_ext(sprite_index, image_index, x + 2, y + 3, image_xscale, image_yscale, image_angle, c_black, 0.5);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+

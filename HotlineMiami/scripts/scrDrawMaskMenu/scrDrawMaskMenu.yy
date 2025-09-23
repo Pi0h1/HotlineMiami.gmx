@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrDrawMaskMenu",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrDrawMaskMenu",
+  "parent":{
+    "name":"Masks",
+    "path":"folders/Scripts/Player/Masks.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

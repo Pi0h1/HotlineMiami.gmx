@@ -1,0 +1,2 @@
+// don't draw sprite
+

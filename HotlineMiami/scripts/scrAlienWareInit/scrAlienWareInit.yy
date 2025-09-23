@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrAlienWareInit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrAlienWareInit",
+  "parent":{
+    "name":"Alienware",
+    "path":"folders/Scripts/Alienware.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

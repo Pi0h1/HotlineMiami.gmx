@@ -3,10 +3,10 @@ surface_set_target(global.surf1);
 draw_clear(make_color_hsv(155, 5 - random(5), 250 + random(5)));
 draw_set_blend_mode(bm_subtract);
 with (objLight) {
-    draw_circle_color(x - __view_get( e__VW.XView, 0 ) + 16, y - __view_get( e__VW.YView, 0 ) + 16, radius * (1 + random(0.1)), merge_color(c_black, color, strength * (0.9 + random(0.1))), c_black, 0);
+    draw_circle_color(x - camera_get_view_x(view_camera[0]) + 16, y - camera_get_view_y(view_camera[0]) + 16, radius * (1 + random(0.1)), merge_color(c_black, color, strength * (0.9 + random(0.1))), c_black, 0);
 }
 with (objPlayer) {
-    draw_circle_color(x - __view_get( e__VW.XView, 0 ) + 16, y - __view_get( e__VW.YView, 0 ) + 16, 32 + random(4), c_gray, c_black, 0);
+    draw_circle_color(x - camera_get_view_x(view_camera[0]) + 16, y - camera_get_view_y(view_camera[0]) + 16, 32 + random(4), c_gray, c_black, 0);
 }
 
 draw_set_blend_mode(bm_add);

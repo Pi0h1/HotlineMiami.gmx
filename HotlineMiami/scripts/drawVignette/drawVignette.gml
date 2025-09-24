@@ -1,14 +1,14 @@
 function drawVignette() {
 	switch (room) {
 	    case rmDennatonSplash:
-	        _x = __view_get( e__VW.WView, 0 );
-	        _y = __view_get( e__VW.HView, 0 );
+	        _x = camera_get_view_width(view_camera[0]);
+	        _y = camera_get_view_height(view_camera[0]);
 	        _r = (room_width*0.60)+random(24);
 	    break;
 	    default:
-	        _x = __view_get( e__VW.WView, 0 )/2;
-	        _y = __view_get( e__VW.HView, 0 )/2;
-	        _r = (__view_get( e__VW.WView, 0 )*0.60)+random(24);
+	        _x = camera_get_view_width(view_camera[0])/2;
+	        _y = camera_get_view_height(view_camera[0])/2;
+	        _r = (camera_get_view_width(view_camera[0])*0.60)+random(24);
 	    break;
 	}
 

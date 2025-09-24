@@ -35,8 +35,8 @@ if (room == rmSequence13Downstairs)
 global.loaded = 0;
 width = display_get_width();
 height = display_get_height();
-global.mousex = (display_mouse_get_x() - width * 0.5) * (__view_get( e__VW.WView, 0 ) / width);
-global.mousey = (display_mouse_get_y() - height * 0.5) * (__view_get( e__VW.HView, 0 ) / height);
+global.mousex = (display_mouse_get_x() - width * 0.5) * (camera_get_view_width(view_camera[0]) / width);
+global.mousey = (display_mouse_get_y() - height * 0.5) * (camera_get_view_height(view_camera[0]) / height);
 lastbrus = 0;
 brus = 0;
 ammoy = -32;

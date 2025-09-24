@@ -1,6 +1,5 @@
 global.test = 0;
-__view_set( e__VW.XView, 0, xview );
-__view_set( e__VW.YView, 0, yview );
+camera_set_view_pos(view_camera[0], xview, yview);
 if (sprite_index == sprPKeyLockOpen) {
     if (image_index < 4){
         image_index += 0.2;
@@ -34,34 +33,31 @@ if (aimfar && valid) {
         viewy = objPlayer.y - rightthumb_y(0) * 0.003;
     } else {
         factor = 1.8;
-        viewx = objPlayer.x + ((display_mouse_get_x() - display_get_width() * 0.5) * (__view_get( e__VW.WView, 0 ) / display_get_width())) * factor;
-        viewy = objPlayer.y + ((display_mouse_get_y() - display_get_height() * 0.5) * (__view_get( e__VW.HView, 0 ) / display_get_height())) * factor;
+        viewx = objPlayer.x + ((display_mouse_get_x() - display_get_width() * 0.5) * (camera_get_view_width(view_camera[0]) / display_get_width())) * factor;
+        viewy = objPlayer.y + ((display_mouse_get_y() - display_get_height() * 0.5) * (camera_get_view_height(view_camera[0]) / display_get_height())) * factor;
     }
-    viewspeed = point_distance(__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) / 2, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) / 2, viewx, viewy) * 0.1;
-    viewdir = point_direction(__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) / 2, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) / 2, viewx, viewy);
-    __view_set( e__VW.XView, 0, __view_get( e__VW.XView, 0 ) + (lengthdir_x(viewspeed, viewdir)) );
-    __view_set( e__VW.YView, 0, __view_get( e__VW.YView, 0 ) + (lengthdir_y(viewspeed, viewdir)) );
+    viewspeed = point_distance(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, viewx, viewy) * 0.1;
+    viewdir = point_direction(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, viewx, viewy);
+    camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + (lengthdir_x(viewspeed, viewdir)), camera_get_view_y(view_camera[0]) + (lengthdir_y(viewspeed, viewdir)));
     vdist = point_distance(x, y, room_width / 2, room_height / 2);
     vdir = point_direction(room_width / 2, room_height / 2, x, y);
-    __view_set( e__VW.Angle, 0, lengthdir_y(objDizzy.dizziness * 20, lengthdir_x(objDizzy.dizziness * 30, global.dir * 3)) );
+	camera_set_view_angle(view_camera[0], lengthdir_y(objDizzy.dizziness * 20, lengthdir_x(objDizzy.dizziness * 30, global.dir * 3)));
 } else {
     if (objPlayer.active == 0 && instance_exists(objPhoneConversation)) {
         with (global.doctor) {
             valid = 0;
             vdist = point_distance(x, y, room_width / 2 - (1 - valid) * 88, room_height / 2);
             vdir = point_direction(room_width / 2 - (1 - valid) * 88, room_height / 2, x, y);
-            viewspeed = point_distance(__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) / 2 - (1 - valid) * 88, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) / 2, x + lengthdir_x(vdist * 0.2, vdir - 180), y + lengthdir_y(vdist * 0.2, vdir - 180)) * 0.1;
-            viewdir = point_direction(__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) / 2 - (1 - valid) * 88, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) / 2, x + lengthdir_x(vdist * 0.2, vdir - 180), y + lengthdir_y(vdist * 0.2, vdir - 180));
-            __view_set( e__VW.XView, 0, __view_get( e__VW.XView, 0 ) + (lengthdir_x(viewspeed, viewdir)) );
-            __view_set( e__VW.YView, 0, __view_get( e__VW.YView, 0 ) + (lengthdir_y(viewspeed, viewdir)) );
-            __view_set( e__VW.Angle, 0, lengthdir_y(objDizzy.dizziness * 20, lengthdir_x(objDizzy.dizziness * 30, global.dir * 3)) );
+            viewspeed = point_distance(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2 - (1 - valid) * 88, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x + lengthdir_x(vdist * 0.2, vdir - 180), y + lengthdir_y(vdist * 0.2, vdir - 180)) * 0.1;
+            viewdir = point_direction(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2 - (1 - valid) * 88, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x + lengthdir_x(vdist * 0.2, vdir - 180), y + lengthdir_y(vdist * 0.2, vdir - 180));
+            camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + (lengthdir_x(viewspeed, viewdir)), camera_get_view_y(view_camera[0]) + (lengthdir_y(viewspeed, viewdir)));
+			camera_set_view_angle(view_camera[0], lengthdir_y(objDizzy.dizziness * 20, lengthdir_x(objDizzy.dizziness * 30, global.dir * 3)));
         }
     } else {
-        viewspeed = point_distance(__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) / 2, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) / 2, x + lengthdir_x(24, dir), y + lengthdir_y(24, dir)) * 0.1;
-        viewdir = point_direction(__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) / 2, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) / 2, x + lengthdir_x(24, dir), y + lengthdir_y(24, dir));
-        __view_set( e__VW.XView, 0, __view_get( e__VW.XView, 0 ) + (lengthdir_x(viewspeed, viewdir)) );
-        __view_set( e__VW.YView, 0, __view_get( e__VW.YView, 0 ) + (lengthdir_y(viewspeed, viewdir)) );
-        __view_set( e__VW.Angle, 0, lengthdir_y(objDizzy.dizziness * 20, lengthdir_x(objDizzy.dizziness * 30, global.dir * 3)) );
+        viewspeed = point_distance(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x + lengthdir_x(24, dir), y + lengthdir_y(24, dir)) * 0.1;
+        viewdir = point_direction(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x + lengthdir_x(24, dir), y + lengthdir_y(24, dir));
+        camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + (lengthdir_x(viewspeed, viewdir)), camera_get_view_y(view_camera[0]) + (lengthdir_y(viewspeed, viewdir)));
+        camera_set_view_angle(view_camera[0], lengthdir_y(objDizzy.dizziness * 20, lengthdir_x(objDizzy.dizziness * 30, global.dir * 3)));
     }
 }
 if (sprite_index == sprPHospitalHeadache) {
@@ -75,10 +71,9 @@ if (sprite_index == sprPHospitalHeadache) {
     if (global.shake > 0)
         global.shake -= 0.5;
 }
-xview = __view_get( e__VW.XView, 0 );
-yview = __view_get( e__VW.YView, 0 );
-__view_set( e__VW.XView, 0, xview - global.shake + global.shake * 2 );
-__view_set( e__VW.YView, 0, yview - global.shake + global.shake * 2 );
+xview = camera_get_view_x(view_camera[0]);
+yview = camera_get_view_y(view_camera[0]);
+camera_set_view_pos(view_camera[0], xview - global.shake + global.shake * 2, yview - global.shake + global.shake * 2);
 
 if (persistent && objEffector.fade) {
     if (place_free(x + addx, y))

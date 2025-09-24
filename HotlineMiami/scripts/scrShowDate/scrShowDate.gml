@@ -34,14 +34,14 @@ function scrShowDate(argument0) {
 	    draw_set_font(fntDate);
 	    draw_set_halign(fa_center);
 	    draw_set_valign(fa_center);
-	    d3d_set_projection_ortho(0, 0, __view_get( e__VW.WView, 0 ), __view_get( e__VW.HView, 0 ), 0);
+	    d3d_set_projection_ortho(0, 0, camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]), 0);
 	    i = 0;
 	    draw_clear(c_black);
 	    repeat(100) {
 	        draw_set_color(merge_color(c_black, c_gray, i * (1 / 60)));
-	        draw_text(__view_get( e__VW.WView, 0 ) / 2 + 1, __view_get( e__VW.HView, 0 ) / 2 + 1, string_hash_to_newline(text));
+	        draw_text(camera_get_view_width(view_camera[0]) / 2 + 1, camera_get_view_height(view_camera[0]) / 2 + 1, string_hash_to_newline(text));
 	        draw_set_color(merge_color(c_black, c_white, i * (1 / 60)));
-	        draw_text(__view_get( e__VW.WView, 0 ) / 2, __view_get( e__VW.HView, 0 ) / 2, string_hash_to_newline(text));
+	        draw_text(camera_get_view_width(view_camera[0]) / 2, camera_get_view_height(view_camera[0]) / 2, string_hash_to_newline(text));
 	        if (i < 60)
 	            i++;
 	//        sleep(1000 / 60);

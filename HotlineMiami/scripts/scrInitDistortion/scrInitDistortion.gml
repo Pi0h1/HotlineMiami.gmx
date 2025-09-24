@@ -4,8 +4,8 @@ function scrInitDistortion() {
 	grid_speed = 0.05; // speed the grid animates
 
 	// Create the variables for the water grid
-	grid_xsize = __view_get( e__VW.WPort, 0 )/grid_tilesize;
-	grid_ysize = __view_get( e__VW.HPort, 0 )/grid_tilesize;
+	grid_xsize = view_get_wport(0)/grid_tilesize;
+	grid_ysize = view_get_hport(0)/grid_tilesize;
 	xx = -1;
 	repeat grid_xsize + 1
 	begin

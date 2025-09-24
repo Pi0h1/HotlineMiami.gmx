@@ -1,11 +1,11 @@
 dir += 0.25;
 color2 = merge_color(c_red, c_orange, 0.7 + lengthdir_x(0.25, dir));
 color1 = merge_color(c_yellow, merge_color(merge_color(c_white, c_fuchsia, 0.25 + lengthdir_x(0.2, dir * 3.12)), c_white, 0.625 + lengthdir_y(0.225, dir * 1.73)), 0.5 + lengthdir_y(0.5, dir * 1.73));
-d3d_set_projection_ortho(0, 0, __view_get( e__VW.WView, 0 ), __view_get( e__VW.HView, 0 ), 0);
-draw_rectangle_color(__view_get( e__VW.XView, 0 ), __view_get( e__VW.YView, 0 ) + 60, __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ), __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) - 60, color2, color2, color1, color1, 0);
+d3d_set_projection_ortho(0, 0, camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]), 0);
+draw_rectangle_color(camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]) + 60, camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]), camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) - 60, color2, color2, color1, color1, 0);
 draw_set_blend_mode(bm_normal);
 global.color = c_black;
-d3d_set_projection_ortho(0, 0, __view_get( e__VW.WView, 0 ), __view_get( e__VW.HView, 0 ), lengthdir_x(3.5, dir * 4));
+d3d_set_projection_ortho(0, 0, camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]), lengthdir_x(3.5, dir * 4));
 with objHouseReturn draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, global.color, image_alpha);
 with objHouse draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, global.color, image_alpha);
 i = 0;
@@ -21,7 +21,7 @@ repeat(5) {
 
 
 
-d3d_set_projection_ortho(0, 0, __view_get( e__VW.WView, 0 ), __view_get( e__VW.HView, 0 ), 0);
+d3d_set_projection_ortho(0, 0, camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]), 0);
 if (!fade) {
     if (c_amount < 180) {
         c_amount += 10;
@@ -30,7 +30,7 @@ if (!fade) {
             color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
         else color2 = c_white;
         draw_set_blend_mode(bm_subtract);
-        draw_rectangle_color(__view_get( e__VW.XView, 0 ) - 10, __view_get( e__VW.YView, 0 ) - 10, __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) + 10, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) + 10, color1, color2, color2, color1, 0);
+        draw_rectangle_color(camera_get_view_x(view_camera[0]) - 10, camera_get_view_y(view_camera[0]) - 10, camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) + 10, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) + 10, color1, color2, color2, color1, 0);
         draw_set_blend_mode(bm_normal);
     }
 }
@@ -43,7 +43,7 @@ if (fade) {
             color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
         else color2 = c_white;
         draw_set_blend_mode(bm_subtract);
-        draw_rectangle_color(__view_get( e__VW.XView, 0 ) - 10, __view_get( e__VW.YView, 0 ) - 10, __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) + 10, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) + 10, color2, color1, color1, color2, 0);
+        draw_rectangle_color(camera_get_view_x(view_camera[0]) - 10, camera_get_view_y(view_camera[0]) - 10, camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) + 10, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) + 10, color2, color1, color1, color2, 0);
         draw_set_blend_mode(bm_normal);
     } else {
         room_goto(rmSequence13Downstairs);

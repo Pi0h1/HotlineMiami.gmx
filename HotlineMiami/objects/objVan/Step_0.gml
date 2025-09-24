@@ -185,8 +185,8 @@ else {
                     instance_destroy();
                 my_id = instance_create(x + lengthdir_x(24, image_angle + 90), y + lengthdir_y(24, image_angle + 90), objBoss3);
                 my_id.direction = 90;
-                viewx = __view_get( e__VW.XView, 0 );
-                viewy = __view_get( e__VW.YView, 0 );
+                viewx = camera_get_view_x(view_camera[0]);
+                viewy = camera_get_view_y(view_camera[0]);
                 with (objPlayerMouse) {
                     my_id = instance_create(x, y, objPlayerMouseHouse);
                     my_id.dir = dir;
@@ -195,8 +195,7 @@ else {
                     instance_destroy();
                 }
                 objPlayer.active = 0;
-                __view_set( e__VW.XView, 0, viewx );
-                __view_set( e__VW.YView, 0, viewy );
+				camera_set_view_pos(view_camera[0], viewx, viewy);
                 state = 6;
                 sxeasy_play(working_directory + "\\Static.mp3");
             }

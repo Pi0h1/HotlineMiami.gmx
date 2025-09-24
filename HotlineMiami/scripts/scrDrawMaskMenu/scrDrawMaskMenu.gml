@@ -4,11 +4,11 @@ function scrDrawMaskMenu() {
 	    with (objMaskMenu) {
 	        dir++;
 	        draw_set_color(c_black);
-	        draw_rectangle(-1, -1, __view_get( e__VW.WView, 0 ) + 1, blacky * 2, 0);
-	        draw_rectangle(-1, __view_get( e__VW.HView, 0 ) + 1, __view_get( e__VW.WView, 0 ) + 1, __view_get( e__VW.HView, 0 ) - blacky * 2, 0);
+	        draw_rectangle(-1, -1, camera_get_view_width(view_camera[0]) + 1, blacky * 2, 0);
+	        draw_rectangle(-1, camera_get_view_height(view_camera[0]) + 1, camera_get_view_width(view_camera[0]) + 1, camera_get_view_height(view_camera[0]) - blacky * 2, 0);
 	        color1 = merge_color(merge_color(c_orange, c_yellow, 0.5 + lengthdir_x(0.5, dir * 1.6436)), c_red, 0.25 + lengthdir_y(0.25, dir * 2.3234));
 	        color2 = merge_color(merge_color(c_fuchsia, c_purple, 0.5 + lengthdir_x(0.5, dir * 2.55)), c_maroon, 0.4 + lengthdir_x(0.4, dir * 1.567));
-	        draw_rectangle_color(-48 + maskx * 4 - 32, -2, -48 + maskx * 4 + 32, __view_get( e__VW.HView, 0 ) + 2, color1, color2, color2, color1, 0);
+	        draw_rectangle_color(-48 + maskx * 4 - 32, -2, -48 + maskx * 4 + 32, camera_get_view_height(view_camera[0]) + 2, color1, color2, color2, color1, 0);
 
 	        draw_sprite(sprPhoneLine, 0, -48 + maskx * 4 - 32, 0);
 	        draw_sprite(sprPhoneLine, 0, -48 + maskx * 4 + 32, 0);
@@ -16,7 +16,7 @@ function scrDrawMaskMenu() {
 	            if (maskx < 32)
 	                maskx += 8;
 	            else {
-	                targety = __view_get( e__VW.HView, 0 ) / 2 - select * 80;
+	                targety = camera_get_view_height(view_camera[0]) / 2 - select * 80;
 	                masky += ((targety) - masky) * 0.1;
 	            }
 	        }
@@ -57,9 +57,9 @@ function scrDrawMaskMenu() {
 	        }
 
 	        draw_set_blend_mode(bm_subtract);
-	        draw_rectangle_color(-1, -1, __view_get( e__VW.WView, 0 ) + 1, maskx + random(4), c_white, c_white, c_black, c_black, 0);
-	        draw_rectangle_color(-1, __view_get( e__VW.HView, 0 ) + 1, __view_get( e__VW.WView, 0 ) + 1, __view_get( e__VW.HView, 0 ) - maskx - random(4), c_black, c_black, c_white, c_white, 0);
-	        draw_rectangle_color(__view_get( e__VW.WView, 0 ) - maskx * 7, __view_get( e__VW.HView, 0 ) + 1, __view_get( e__VW.WView, 0 ) + 1, -2, c_black, c_white, c_white, c_black, 0);
+	        draw_rectangle_color(-1, -1, camera_get_view_width(view_camera[0]) + 1, maskx + random(4), c_white, c_white, c_black, c_black, 0);
+	        draw_rectangle_color(-1, camera_get_view_height(view_camera[0]) + 1, camera_get_view_width(view_camera[0]) + 1, camera_get_view_height(view_camera[0]) - maskx - random(4), c_black, c_black, c_white, c_white, 0);
+	        draw_rectangle_color(camera_get_view_width(view_camera[0]) - maskx * 7, camera_get_view_height(view_camera[0]) + 1, camera_get_view_width(view_camera[0]) + 1, -2, c_black, c_white, c_white, c_black, 0);
 	        color1 = merge_color(c_aqua, c_white, 0.5 + lengthdir_x(0.5, dir * 4));
 	        color2 = merge_color(c_white, c_aqua, 0.5 + lengthdir_x(0.5, dir * 4));
 	        draw_set_blend_mode(bm_normal);
@@ -67,22 +67,22 @@ function scrDrawMaskMenu() {
 	        draw_set_halign(fa_left);
 	        draw_set_valign(fa_center);
 	        draw_set_color(c_black);
-	        draw_text(150 + 32 * 9 - maskx * 9 - 1, __view_get( e__VW.HView, 0 ) / 2 + 12, string_hash_to_newline(name[select]));
-	        draw_text(150 + 32 * 9 - maskx * 9 + 1, __view_get( e__VW.HView, 0 ) / 2 + 12, string_hash_to_newline(name[select]));
-	        draw_text(150 + 32 * 9 - maskx * 9 + 2, __view_get( e__VW.HView, 0 ) / 2 + 12, string_hash_to_newline(name[select]));
-	        draw_text(150 + 32 * 9 - maskx * 9, __view_get( e__VW.HView, 0 ) / 2 + 12 - 1, string_hash_to_newline(name[select]));
-	        draw_text(150 + 32 * 9 - maskx * 9, __view_get( e__VW.HView, 0 ) / 2 + 12 + 1, string_hash_to_newline(name[select]));
-	        draw_text(150 + 32 * 9 - maskx * 9, __view_get( e__VW.HView, 0 ) / 2 + 12 + 2, string_hash_to_newline(name[select]));
+	        draw_text(150 + 32 * 9 - maskx * 9 - 1, camera_get_view_height(view_camera[0]) / 2 + 12, string_hash_to_newline(name[select]));
+	        draw_text(150 + 32 * 9 - maskx * 9 + 1, camera_get_view_height(view_camera[0]) / 2 + 12, string_hash_to_newline(name[select]));
+	        draw_text(150 + 32 * 9 - maskx * 9 + 2, camera_get_view_height(view_camera[0]) / 2 + 12, string_hash_to_newline(name[select]));
+	        draw_text(150 + 32 * 9 - maskx * 9, camera_get_view_height(view_camera[0]) / 2 + 12 - 1, string_hash_to_newline(name[select]));
+	        draw_text(150 + 32 * 9 - maskx * 9, camera_get_view_height(view_camera[0]) / 2 + 12 + 1, string_hash_to_newline(name[select]));
+	        draw_text(150 + 32 * 9 - maskx * 9, camera_get_view_height(view_camera[0]) / 2 + 12 + 2, string_hash_to_newline(name[select]));
 	        draw_set_color(color1);
-	        draw_text(150 + 32 * 9 - maskx * 9 + 1, __view_get( e__VW.HView, 0 ) / 2 + 12 + 1, string_hash_to_newline(name[select]));
+	        draw_text(150 + 32 * 9 - maskx * 9 + 1, camera_get_view_height(view_camera[0]) / 2 + 12 + 1, string_hash_to_newline(name[select]));
 	        draw_set_color(color2);
-	        draw_text(150 + 32 * 9 - maskx * 9, __view_get( e__VW.HView, 0 ) / 2 + 12, string_hash_to_newline(name[select]));
+	        draw_text(150 + 32 * 9 - maskx * 9, camera_get_view_height(view_camera[0]) / 2 + 12, string_hash_to_newline(name[select]));
 	        if (global.masks[select] == 1) {
 	            draw_set_font(fntDescription);
 	            draw_set_color(c_black);
-	            draw_text(150 + 32 * 9 - maskx * 9 + 2, __view_get( e__VW.HView, 0 ) / 2 + 29 + 1, string_hash_to_newline(string_upper(description[select])));
+	            draw_text(150 + 32 * 9 - maskx * 9 + 2, camera_get_view_height(view_camera[0]) / 2 + 29 + 1, string_hash_to_newline(string_upper(description[select])));
 	            draw_set_color(c_white);
-	            draw_text(150 + 32 * 9 - maskx * 9 + 1, __view_get( e__VW.HView, 0 ) / 2 + 29, string_hash_to_newline(string_upper(description[select])));
+	            draw_text(150 + 32 * 9 - maskx * 9 + 1, camera_get_view_height(view_camera[0]) / 2 + 29, string_hash_to_newline(string_upper(description[select])));
 	        }
 	    }
 	}

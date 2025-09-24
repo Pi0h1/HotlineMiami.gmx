@@ -17,9 +17,8 @@ myxspeed = 0;
 myyspeed = 0;
 myspeed = 0;
 last_sprite = sprPWalkHospital;
-__view_set( e__VW.XView, 0, x - __view_get( e__VW.WView, 0 ) / 2 );
-__view_set( e__VW.YView, 0, y - __view_get( e__VW.HView, 0 ) / 2 );
-xview = __view_get( e__VW.XView, 0 );
-yview = __view_get( e__VW.YView, 0 );
+camera_set_view_pos(view_camera[0], x - camera_get_view_width(view_camera[0]) / 2, y - camera_get_view_height(view_camera[0]) / 2);
+xview = camera_get_view_x(view_camera[0]);
+yview = camera_get_view_y(view_camera[0]);
 alarm[1] = 2;
 

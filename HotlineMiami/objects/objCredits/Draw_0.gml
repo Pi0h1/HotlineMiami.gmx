@@ -1,12 +1,12 @@
 d3d_set_projection_ortho(0, 0, 400, 256, 0);
 draw_rectangle_color(0, 60, room_width, room_height - 60, merge_color(c_black, c_navy, 0.1 + lengthdir_x(0.1, dir * 0.5)), merge_color(c_black, c_navy, 0.1 + lengthdir_x(0.1, dir * 2)), merge_color(c_maroon, c_red, 0.4 + lengthdir_x(0.3, dir * 0.76) + random(0.05)), merge_color(c_maroon, c_red, 0.4 + lengthdir_x(0.3, dir * 0.76) + random(0.05)), 0);
 if (!rollcredits)
-    __view_set( e__VW.Angle, 0, lengthdir_x(2, dir * 0.2) );
+	camera_set_view_angle(view_camera[0], lengthdir_x(2, dir * 0.2));
 else {
     if (topicalpha <= 0.05)
-        __view_set( e__VW.Angle, 0, 0 );
+        camera_set_view_angle(view_camera[0], 0);
 }
-d3d_set_projection_ortho(0, 0, 400, 256, __view_get( e__VW.Angle, 0 ));
+d3d_set_projection_ortho(0, 0, 400, 256, camera_get_view_angle(view_camera[0]));
 if (rollcredits) {
     draw_set_font(fntCreditList);
     if (credit_y < string_height(string_hash_to_newline(creditlist)) + 128) {
@@ -40,7 +40,7 @@ if (!endfade) {
             color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
         else color2 = c_white;
         draw_set_blend_mode(bm_subtract);
-        draw_rectangle_color(__view_get( e__VW.XView, 0 ) - 10, __view_get( e__VW.YView, 0 ) - 10, __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) + 10, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) + 10, color1, color2, color2, color1, 0);
+        draw_rectangle_color(camera_get_view_x(view_camera[0]) - 10, camera_get_view_y(view_camera[0]) - 10, camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) + 10, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) + 10, color1, color2, color2, color1, 0);
         draw_set_blend_mode(bm_normal);
     }
 }
@@ -54,7 +54,7 @@ if (endfade) {
             color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
         else color2 = c_white;
         draw_set_blend_mode(bm_subtract);
-        draw_rectangle_color(__view_get( e__VW.XView, 0 ) - 10, __view_get( e__VW.YView, 0 ) - 10, __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) + 10, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) + 10, color2, color1, color1, color2, 0);
+        draw_rectangle_color(camera_get_view_x(view_camera[0]) - 10, camera_get_view_y(view_camera[0]) - 10, camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) + 10, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) + 10, color2, color1, color1, color2, 0);
         draw_set_blend_mode(bm_normal);
     } else {
         sxeasy_stop();
@@ -65,6 +65,6 @@ if (endfade) {
     }
 }
 
-d3d_set_projection_ortho(0, 0, __view_get( e__VW.WView, 0 ), __view_get( e__VW.HView, 0 ), 0);
+d3d_set_projection_ortho(0, 0, camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]), 0);
 drawVignette();
 

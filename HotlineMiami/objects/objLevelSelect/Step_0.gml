@@ -57,7 +57,7 @@ if (keyboard_check_pressed(ord(global.rightkey)))
 
 
 if (!surface_exists(global.surf1)) {
-    global.surf1 = surface_create(__view_get( e__VW.WView, 0 ), __view_get( e__VW.HView, 0 ));
+    global.surf1 = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
     surface_set_target(global.surf1);
     draw_clear_alpha(c_black, 0);
     surface_reset_target();

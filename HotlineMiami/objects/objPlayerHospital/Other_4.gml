@@ -1,10 +1,8 @@
 if (persistent) {
-    __view_set( e__VW.XView, 0, xview );
-    __view_set( e__VW.YView, 0, yview );
+    camera_set_view_pos(view_camera[0], xview, yview);
     alarm[0] = 36;
 } else {
-    __view_set( e__VW.Angle, 0, 1 );
-    __view_set( e__VW.XView, 0, x - __view_get( e__VW.WView, 0 ) / 2 );
-    __view_set( e__VW.YView, 0, y - __view_get( e__VW.HView, 0 ) / 2 );
+	camera_set_view_angle(view_camera[0], 1);
+    camera_set_view_pos(view_camera[0], x - camera_get_view_width(view_camera[0]) / 2, y - camera_get_view_height(view_camera[0]) / 2);
 }
 

@@ -1,5 +1,5 @@
 function scrDrawHUD() {
-	d3d_set_projection_ortho(0, 0, __view_get( e__VW.WView, 0 ), __view_get( e__VW.HView, 0 ), 0);
+	d3d_set_projection_ortho(0, 0, camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]), 0);
 
 	// Combo logic
 	if (global.combo > 0) {
@@ -213,32 +213,32 @@ function scrDrawHUD() {
 	    draw_set_font(fntScore);
 	else draw_set_font(fntScoreUpdate);
 	draw_set_color(c_black);
-	draw_rectangle(__view_get( e__VW.WView, 0 ) - 18 - string_width(string_hash_to_newline(scorestring)) - 6, 8, __view_get( e__VW.WView, 0 ), 32, 0);
+	draw_rectangle(camera_get_view_width(view_camera[0]) - 18 - string_width(string_hash_to_newline(scorestring)) - 6, 8, camera_get_view_width(view_camera[0]), 32, 0);
 	draw_set_font(fntScore);
-	draw_rectangle(0, __view_get( e__VW.HView, 0 ) - ammoy - 11, 18 + string_width(string_hash_to_newline(ammostring)) + 6, __view_get( e__VW.HView, 0 ) - ammoy + 11, 0);
+	draw_rectangle(0, camera_get_view_height(view_camera[0]) - ammoy - 11, 18 + string_width(string_hash_to_newline(ammostring)) + 6, camera_get_view_height(view_camera[0]) - ammoy + 11, 0);
 
 	if (finish)
-	    draw_rectangle(__view_get( e__VW.WView, 0 ) / 2 - string_width(string_hash_to_newline(finishstring)) * 0.375 - 3, __view_get( e__VW.HView, 0 ) - 22, __view_get( e__VW.WView, 0 ) / 2 + string_width(string_hash_to_newline(finishstring)) * 0.375 + 3, __view_get( e__VW.HView, 0 ) + 3, 0);
+	    draw_rectangle(camera_get_view_width(view_camera[0]) / 2 - string_width(string_hash_to_newline(finishstring)) * 0.375 - 3, camera_get_view_height(view_camera[0]) - 22, camera_get_view_width(view_camera[0]) / 2 + string_width(string_hash_to_newline(finishstring)) * 0.375 + 3, camera_get_view_height(view_camera[0]) + 3, 0);
 	if (!update)
 	    draw_set_font(fntScore);
     
 	else draw_set_font(fntScoreUpdate);
 	draw_set_color(color1);
-	draw_text_transformed(__view_get( e__VW.WView, 0 ) - 18 - string_width(string_hash_to_newline(scorestring)) * 0.5 + lengthdir_x(1, dir), 20 + lengthdir_y(1, dir), string_hash_to_newline(scorestring), 1, 1, lengthdir_x(2, dir * 1.34));
+	draw_text_transformed(camera_get_view_width(view_camera[0]) - 18 - string_width(string_hash_to_newline(scorestring)) * 0.5 + lengthdir_x(1, dir), 20 + lengthdir_y(1, dir), string_hash_to_newline(scorestring), 1, 1, lengthdir_x(2, dir * 1.34));
 	draw_set_font(fntScore);
 
 	// Draw finished level widget
 	if (finish)
-	    draw_text_transformed(__view_get( e__VW.WView, 0 ) / 2 + lengthdir_x(0.5, dir), __view_get( e__VW.HView, 0 ) - 11 + lengthdir_x(0.5, dir), string_hash_to_newline(finishstring), 0.75, 0.75, lengthdir_x(2, dir * 1.34 + 90));
+	    draw_text_transformed(camera_get_view_width(view_camera[0]) / 2 + lengthdir_x(0.5, dir), camera_get_view_height(view_camera[0]) - 11 + lengthdir_x(0.5, dir), string_hash_to_newline(finishstring), 0.75, 0.75, lengthdir_x(2, dir * 1.34 + 90));
 
 	// Draw ammo widget
 	if (ammoy > -32)
-	    draw_text_transformed(18 + string_width(string_hash_to_newline(ammostring)) * 0.5 + lengthdir_x(1, dir), __view_get( e__VW.HView, 0 ) - ammoy + lengthdir_y(1, dir), string_hash_to_newline(ammostring), 1, 1, lengthdir_x(2, dir * 1.34));
+	    draw_text_transformed(18 + string_width(string_hash_to_newline(ammostring)) * 0.5 + lengthdir_x(1, dir), camera_get_view_height(view_camera[0]) - ammoy + lengthdir_y(1, dir), string_hash_to_newline(ammostring), 1, 1, lengthdir_x(2, dir * 1.34));
 	draw_set_color(color2);
 	if (ammoy > -32)
-	    draw_text_transformed(18 + string_width(string_hash_to_newline(ammostring)) * 0.5 + lengthdir_x(1, dir - 180), __view_get( e__VW.HView, 0 ) - ammoy + lengthdir_y(1, dir - 180), string_hash_to_newline(ammostring), 1, 1, lengthdir_x(2, dir * 1.34 - 10));
+	    draw_text_transformed(18 + string_width(string_hash_to_newline(ammostring)) * 0.5 + lengthdir_x(1, dir - 180), camera_get_view_height(view_camera[0]) - ammoy + lengthdir_y(1, dir - 180), string_hash_to_newline(ammostring), 1, 1, lengthdir_x(2, dir * 1.34 - 10));
 	if (finish)
-	    draw_text_transformed(__view_get( e__VW.WView, 0 ) / 2 + lengthdir_x(0.5, dir - 180), __view_get( e__VW.HView, 0 ) - 11 + lengthdir_x(0.5, dir - 180), string_hash_to_newline(finishstring), 0.75, 0.75, lengthdir_x(2, dir * 1.34 + 100));
+	    draw_text_transformed(camera_get_view_width(view_camera[0]) / 2 + lengthdir_x(0.5, dir - 180), camera_get_view_height(view_camera[0]) - 11 + lengthdir_x(0.5, dir - 180), string_hash_to_newline(finishstring), 0.75, 0.75, lengthdir_x(2, dir * 1.34 + 100));
 	if (!update)
 	    draw_set_font(fntScore);
 
@@ -247,7 +247,7 @@ function scrDrawHUD() {
 	    draw_set_font(fntScoreUpdate);
 	}
 
-	draw_text_transformed(__view_get( e__VW.WView, 0 ) - 18 - string_width(string_hash_to_newline(scorestring)) * 0.5 + lengthdir_x(1, dir - 180), 20 + lengthdir_y(1, dir - 180), string_hash_to_newline(scorestring), 1, 1, lengthdir_x(2, dir * 1.34 - 10));
+	draw_text_transformed(camera_get_view_width(view_camera[0]) - 18 - string_width(string_hash_to_newline(scorestring)) * 0.5 + lengthdir_x(1, dir - 180), 20 + lengthdir_y(1, dir - 180), string_hash_to_newline(scorestring), 1, 1, lengthdir_x(2, dir * 1.34 - 10));
 
 
 

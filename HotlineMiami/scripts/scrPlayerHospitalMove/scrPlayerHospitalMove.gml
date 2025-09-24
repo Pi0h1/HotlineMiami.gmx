@@ -6,23 +6,23 @@ function scrPlayerHospitalMove() {
 	        // do nothing
 	    } else {
 	        if (keyboard_check_direct(ord(global.upkey))) {
-	            myxspeed += lengthdir_x(0.25, 90 - __view_get( e__VW.Angle, 0 ));
-	            myyspeed += lengthdir_y(0.25, 90 - __view_get( e__VW.Angle, 0 ));
+	            myxspeed += lengthdir_x(0.25, 90 - camera_get_view_angle(view_camera[0]));
+	            myyspeed += lengthdir_y(0.25, 90 - camera_get_view_angle(view_camera[0]));
 	        }
 
 	        if (keyboard_check_direct(ord(global.downkey))) {
-	            myxspeed += lengthdir_x(0.25, 270 - __view_get( e__VW.Angle, 0 ));
-	            myyspeed += lengthdir_y(0.25, 270 - __view_get( e__VW.Angle, 0 ));
+	            myxspeed += lengthdir_x(0.25, 270 - camera_get_view_angle(view_camera[0]));
+	            myyspeed += lengthdir_y(0.25, 270 - camera_get_view_angle(view_camera[0]));
 	        }
 
 	        if (keyboard_check_direct(ord(global.leftkey))) {
-	            myxspeed += lengthdir_x(0.25, 180 - __view_get( e__VW.Angle, 0 ));
-	            myyspeed += lengthdir_y(0.25, 180 - __view_get( e__VW.Angle, 0 ));
+	            myxspeed += lengthdir_x(0.25, 180 - camera_get_view_angle(view_camera[0]));
+	            myyspeed += lengthdir_y(0.25, 180 - camera_get_view_angle(view_camera[0]));
 	        }
 
 	        if (keyboard_check_direct(ord(global.rightkey))) {
-	            myxspeed += lengthdir_x(0.25, -__view_get( e__VW.Angle, 0 ));
-	            myyspeed += lengthdir_y(0.25, -__view_get( e__VW.Angle, 0 ));
+	            myxspeed += lengthdir_x(0.25, -camera_get_view_angle(view_camera[0]));
+	            myyspeed += lengthdir_y(0.25, -camera_get_view_angle(view_camera[0]));
 	        }
 
 	        if (keyboard_check_direct(ord(global.upkey)) + keyboard_check_direct(ord(global.downkey)) + keyboard_check_direct(ord(global.leftkey)) + keyboard_check_direct(ord(global.rightkey)) == 0) {

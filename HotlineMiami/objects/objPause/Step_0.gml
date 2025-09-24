@@ -67,7 +67,7 @@ i = 0;
 draw_set_font(fntUnlock);
 draw_set_halign(fa_left);
 draw_set_valign(fa_center);
-start_x = __view_get( e__VW.WView, 0 ) / 2 - string_width(string_hash_to_newline(text)) * 0.5;
+start_x = camera_get_view_width(view_camera[0]) / 2 - string_width(string_hash_to_newline(text)) * 0.5;
 repeat(string_length(text)) * factor {
     letter = string_copy(text, 1 + i, 1);
     ii = 0;

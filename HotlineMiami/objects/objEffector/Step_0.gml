@@ -111,16 +111,15 @@ if (fade) {
     }
 }
 
-vlastx = __view_get( e__VW.XView, 0 );
-vlasty = __view_get( e__VW.YView, 0 );
+vlastx = camera_get_view_x(view_camera[0]);
+vlasty = camera_get_view_y(view_camera[0]);
 
 // Screen shake code
 if (global.shake > 0) {
     global.shake -= 0.5;
     if (global.xbox)
         setrumble(0, 0, global.shake * (1 / 15) * 65535);
-    __view_set( e__VW.XView, 0, __view_get( e__VW.XView, 0 ) + (-global.shake * 0.33 + random(global.shake * 0.66)) );
-    __view_set( e__VW.YView, 0, __view_get( e__VW.YView, 0 ) + (-global.shake * 0.33 + random(global.shake * 0.66)) );
+	camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + (-global.shake * 0.33 + random(global.shake * 0.66)), camera_get_view_y(view_camera[0]) + (-global.shake * 0.33 + random(global.shake * 0.66)));
 }
 
 scrLockInEffectStep();;

@@ -44,15 +44,14 @@ if (speed == 0) {
                     my_id.maskon = 1;
                     instance_destroy();
                 }
-                viewx = __view_get( e__VW.XView, 0 );
-                viewy = __view_get( e__VW.YView, 0 );
+                viewx = camera_get_view_x(view_camera[0]);
+                viewy = camera_get_view_y(view_camera[0]);
                 with (objEffector)
                     instance_destroy();
                 my_id = instance_create(x, y, objEffector);
                 my_id.blackx = 15;
                 my_id.amount = 180;
-                __view_set( e__VW.XView, 0, viewx );
-                __view_set( e__VW.YView, 0, viewy );
+                camera_set_view_pos(view_camera[0], viewx, viewy);
                 state = 2;
             }
         }

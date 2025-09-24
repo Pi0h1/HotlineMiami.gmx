@@ -1,7 +1,7 @@
 draw_clear(c_black);
 screen_refresh();
 surface_free(global.surf2);
-global.surf2 = surface_create(__view_get( e__VW.WPort, 0 ), __view_get( e__VW.HPort, 0 ));
+global.surf2 = surface_create(view_get_wport(0), view_get_hport(0));
 surface_set_target(global.surf2);
 draw_clear_alpha(make_color_hsv(0, 0, 2), 0);
 surface_alpha();

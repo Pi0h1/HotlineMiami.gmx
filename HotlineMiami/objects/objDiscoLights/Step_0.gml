@@ -2,7 +2,7 @@ if (strobeon)
     global.strobe = !global.strobe;
 else global.strobe = 1;
 surface_set_target(surf);
-d3d_set_projection_ortho(__view_get( e__VW.XView, 0 ), __view_get( e__VW.YView, 0 ), __view_get( e__VW.WView, 0 ), __view_get( e__VW.HView, 0 ), __view_get( e__VW.Angle, 0 ));
+d3d_set_projection_ortho(camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]), camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]), camera_get_view_angle(view_camera[0]));
 draw_clear(c_gray);
 draw_set_blend_mode(bm_subtract);
 with (objDiscoLight) {

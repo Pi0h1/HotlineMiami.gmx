@@ -1,6 +1,6 @@
 function scrStoryDrawAmmo() {
 	// Hud used alongside objPlayerMouseHouse (especially during boss fights)
-	d3d_set_projection_ortho(0, 0, __view_get( e__VW.WView, 0 ), __view_get( e__VW.HView, 0 ), 0);
+	d3d_set_projection_ortho(0, 0, camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]), 0);
 	showammo = 0;
 	if (instance_exists(objPlayer) && !instance_exists(objPhoneConversation)) {
 	    if (objPlayer.sprite_index == sprPWalkM16 || objPlayer.sprite_index == sprPAttackM16) {
@@ -75,15 +75,15 @@ function scrStoryDrawAmmo() {
 	    draw_set_font(fntScore);
 	    draw_set_color(merge_color(c_black, c_maroon, 0.25 + lengthdir_x(0.25, dir * 4)));
 	    draw_set_halign(fa_left);
-	    draw_text_transformed(8 + 1, __view_get( e__VW.HView, 0 ) - 44 + 1, string_hash_to_newline(ammostring), 1, 1, 0);
+	    draw_text_transformed(8 + 1, camera_get_view_height(view_camera[0]) - 44 + 1, string_hash_to_newline(ammostring), 1, 1, 0);
 	    draw_set_halign(fa_right);
-	    draw_text_transformed(__view_get( e__VW.HView, 0 ) - 8 + 1, __view_get( e__VW.HView, 0 ) + 32 + 1, string_hash_to_newline(ammostring), 1, 1, 0);
+	    draw_text_transformed(camera_get_view_height(view_camera[0]) - 8 + 1, camera_get_view_height(view_camera[0]) + 32 + 1, string_hash_to_newline(ammostring), 1, 1, 0);
 	    draw_set_color(merge_color(c_white, c_red, 0.25 + lengthdir_x(0.25, dir * 4)));
 	    dir += 8;
 	    draw_set_halign(fa_left);
-	    draw_text_transformed(8, __view_get( e__VW.HView, 0 ) - 44, string_hash_to_newline(ammostring), 1, 1, 0);
+	    draw_text_transformed(8, camera_get_view_height(view_camera[0]) - 44, string_hash_to_newline(ammostring), 1, 1, 0);
 	    draw_set_halign(fa_right);
-	    draw_text_transformed(__view_get( e__VW.HView, 0 ) - 8, __view_get( e__VW.HView, 0 ) + 32, string_hash_to_newline(ammostring), 1, 1, 0);
+	    draw_text_transformed(camera_get_view_height(view_camera[0]) - 8, camera_get_view_height(view_camera[0]) + 32, string_hash_to_newline(ammostring), 1, 1, 0);
 	}
 
 

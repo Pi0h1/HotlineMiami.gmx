@@ -18,17 +18,17 @@ if (instance_exists(objPlayer)) {
         factor = 1;
         if (keyboard_check_direct(vk_shift))
             factor = 1.8;
-        global.mousex = objPlayer.x + ((display_mouse_get_x() - width * 0.5) * (__view_get( e__VW.WView, 0 ) / width)) * factor;
-        global.mousey = objPlayer.y + ((display_mouse_get_y() - height * 0.5) * (__view_get( e__VW.HView, 0 ) / height)) * factor;
+        global.mousex = objPlayer.x + ((display_mouse_get_x() - width * 0.5) * (camera_get_view_width(view_camera[0]) / width)) * factor;
+        global.mousey = objPlayer.y + ((display_mouse_get_y() - height * 0.5) * (camera_get_view_height(view_camera[0]) / height)) * factor;
     }
     x = global.mousex;
     y = global.mousey;
 }
 
 if (!instance_exists(objPhoneConversation)) {
-    draw_sprite_ext(sprite_index, image_index, global.mousex + 1, global.mousey + 1, 1, 1, -__view_get( e__VW.Angle, 0 ), c_black, 0.5);
+    draw_sprite_ext(sprite_index, image_index, global.mousex + 1, global.mousey + 1, 1, 1, -camera_get_view_angle(view_camera[0]), c_black, 0.5);
     draw_set_blend_mode(bm_add);
-    draw_sprite_ext(sprite_index, image_index, global.mousex, global.mousey, 1, 1, -__view_get( e__VW.Angle, 0 ), c_white, 1);
+    draw_sprite_ext(sprite_index, image_index, global.mousex, global.mousey, 1, 1, -camera_get_view_angle(view_camera[0]), c_white, 1);
     draw_set_blend_mode(bm_normal);
 }
 

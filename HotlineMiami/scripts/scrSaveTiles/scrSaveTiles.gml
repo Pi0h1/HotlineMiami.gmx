@@ -8,7 +8,7 @@ function scrSaveTiles() {
 	set_automatic_draw(false)
 	instance_deactivate_all(true)
 	view_enabled=0
-	__view_set( e__VW.Visible, 0, 0 )
+	view_set_visible(0,0)
 	draw_clear_alpha(make_color_hsv(0,0,2),0)
 	screen_refresh()
 	draw_clear_alpha(make_color_hsv(0,0,2),0)
@@ -29,7 +29,7 @@ function scrSaveTiles() {
 	surface_alpha()
 	surface_reset_target()
 	view_enabled=1
-	__view_set( e__VW.Visible, 0, 1 )
+	view_set_visible(0,1)
 	set_automatic_draw(true)
 	instance_activate_all()
 	draw_clear(c_black)

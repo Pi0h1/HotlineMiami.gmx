@@ -80,7 +80,7 @@ if (drawbonus[5] == bonus[5]) {
     else color1 = c_lime;
     repeat(times) {
         draw_set_color(merge_color(color1, c_white, 0.5 - lengthdir_x(0.5, i * 16)));
-        draw_text_transformed((room_width / 2), __view_get( e__VW.HView, 0 ) - 64, string_hash_to_newline(string(global.myscore) + parscore), 0.65 + i * 0.005, 1 + i * 0.05, lengthdir_x(4, dir * 8));
+        draw_text_transformed((room_width / 2), camera_get_view_height(view_camera[0]) - 64, string_hash_to_newline(string(global.myscore) + parscore), 0.65 + i * 0.005, 1 + i * 0.05, lengthdir_x(4, dir * 8));
         i++;
     }
 }

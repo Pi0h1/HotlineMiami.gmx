@@ -28,24 +28,24 @@ function scrXboxPlayerHospitalMove() {
 
 
 	    if (up) {
-	        myxspeed += lengthdir_x(0.25, 90 - __view_get( e__VW.Angle, 0 ));
-	        myyspeed += lengthdir_y(0.25, 90 - __view_get( e__VW.Angle, 0 ));
+	        myxspeed += lengthdir_x(0.25, 90 - camera_get_view_angle(view_camera[0]));
+	        myyspeed += lengthdir_y(0.25, 90 - camera_get_view_angle(view_camera[0]));
 	    }
 
 
 	    if (down) {
-	        myxspeed += lengthdir_x(0.25, 270 - __view_get( e__VW.Angle, 0 ));
-	        myyspeed += lengthdir_y(0.25, 270 - __view_get( e__VW.Angle, 0 ));
+	        myxspeed += lengthdir_x(0.25, 270 - camera_get_view_angle(view_camera[0]));
+	        myyspeed += lengthdir_y(0.25, 270 - camera_get_view_angle(view_camera[0]));
 	    }
 
 	    if (left) {
-	        myxspeed += lengthdir_x(0.25, 180 - __view_get( e__VW.Angle, 0 ));
-	        myyspeed += lengthdir_y(0.25, 180 - __view_get( e__VW.Angle, 0 ));
+	        myxspeed += lengthdir_x(0.25, 180 - camera_get_view_angle(view_camera[0]));
+	        myyspeed += lengthdir_y(0.25, 180 - camera_get_view_angle(view_camera[0]));
 	    }
 
 	    if (right) {
-	        myxspeed += lengthdir_x(0.25, -__view_get( e__VW.Angle, 0 ));
-	        myyspeed += lengthdir_y(0.25, -__view_get( e__VW.Angle, 0 ));
+	        myxspeed += lengthdir_x(0.25, -camera_get_view_angle(view_camera[0]));
+	        myyspeed += lengthdir_y(0.25, -camera_get_view_angle(view_camera[0]));
 	    }
 
 	    if (up + down + left + right == 0) {

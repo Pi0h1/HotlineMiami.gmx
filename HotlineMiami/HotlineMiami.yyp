@@ -1568,6 +1568,7 @@
     {"id":{"name":"scrSaveKeys","path":"scripts/scrSaveKeys/scrSaveKeys.yy",},},
     {"id":{"name":"scrSaveLegacy","path":"scripts/scrSaveLegacy/scrSaveLegacy.yy",},},
     {"id":{"name":"scrSaveSurface","path":"scripts/scrSaveSurface/scrSaveSurface.yy",},},
+    {"id":{"name":"scrSaveSystem","path":"scripts/scrSaveSystem/scrSaveSystem.yy",},},
     {"id":{"name":"scrSaveTiles","path":"scripts/scrSaveTiles/scrSaveTiles.yy",},},
     {"id":{"name":"scrSaveUnlocked","path":"scripts/scrSaveUnlocked/scrSaveUnlocked.yy",},},
     {"id":{"name":"scrSaveVol","path":"scripts/scrSaveVol/scrSaveVol.yy",},},

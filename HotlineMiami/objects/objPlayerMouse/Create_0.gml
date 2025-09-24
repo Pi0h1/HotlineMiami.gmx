@@ -61,3 +61,17 @@ if (!place_free(x,y)) {
     y = global.executiony;
 }
 
+// See scrSaveGame() and scrLoadGame() for details regarding restarting a floor.
+DoSave = function() {
+	buffer_write(global.tempSave, buffer_u32, sprite_index);
+	buffer_write(global.tempSave, buffer_u32, image_index);
+	buffer_write(global.tempSave, buffer_f32, ammo);
+	buffer_write(global.tempSave, buffer_f32, energie);
+}
+// Everything must be loaded in the same order you save them, as well as the same read type!
+DoLoad = function() {
+	sprite_index = buffer_read(global.tempSave, buffer_u32);	
+	image_index = buffer_read(global.tempSave, buffer_u32);
+	ammo = buffer_read(global.tempSave, buffer_f32);
+	energie = buffer_read(global.tempSave, buffer_f32);
+}

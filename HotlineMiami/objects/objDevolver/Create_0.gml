@@ -16,3 +16,5 @@ if (file_exists(working_directory + "\\skip")) {
 }
 
 global.factor = 1;
+global.done = 0;
+global.tempSave = array_create(real(room_last) - 1, -1);

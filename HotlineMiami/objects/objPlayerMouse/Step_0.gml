@@ -99,9 +99,7 @@ if (aimfar) {
 } else {
     viewspeed = point_distance(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x + lengthdir_x(24, dir), y + lengthdir_y(24, dir)) * 0.1;
     viewdir = point_direction(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x + lengthdir_x(24, dir), y + lengthdir_y(24, dir));
-
     camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + (lengthdir_x(viewspeed, viewdir)), camera_get_view_y(view_camera[0]) + (lengthdir_y(viewspeed, viewdir)));
-
     vdist = point_distance(x, y, room_width / 2, room_height / 2);
     vdir = point_direction(room_width / 2, room_height / 2, x, y);
     camera_set_view_angle(view_camera[0], lengthdir_y(vdist * (1 / 160), vdir * 2));
@@ -110,7 +108,7 @@ if (aimfar) {
 xview = camera_get_view_x(view_camera[0]);
 yview = camera_get_view_y(view_camera[0]);
 
-if (persistent == 1 && objEffector.fade == 1) {
+if (persistent && objEffector.fade) {
     if (place_free(x + addx, y))
         x += addx;
     if (place_free(x, y + addy)) 

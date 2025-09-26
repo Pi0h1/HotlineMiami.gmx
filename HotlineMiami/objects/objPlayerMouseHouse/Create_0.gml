@@ -2,7 +2,6 @@ if (global.xbox == 1) {
     scrInitXboxButtons();
 }
 image_speed = 0;
-currentweapon = 0;
 dir = 0;
 aimon = 1;
 viewspeed = 0;

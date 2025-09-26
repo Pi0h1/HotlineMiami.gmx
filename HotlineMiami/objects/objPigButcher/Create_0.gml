@@ -5,7 +5,6 @@ if (room == rmTutorial) {
 }
 global.pigkill = 0;
 image_speed = 0;
-currentweapon = 0;
 dir = 0;
 movex = 0;
 movey = 0;

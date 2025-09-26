@@ -1,5 +1,4 @@
 image_speed = 0;
-currentweapon = 0;
 dir = 0;
 if (global.xbox)
     scrInitXboxButtons();

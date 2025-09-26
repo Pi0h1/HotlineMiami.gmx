@@ -1,7 +1,6 @@
 if (global.xbox)
     scrInitXboxButtons();
 image_speed = 0;
-currentweapon = 0;
 dir = 0;
 viewspeed = 0;
 reload = 0;

@@ -371,9 +371,7 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
                 my_id.direction = edir;
                 my_id.speed = 1.5 + random(1);
                 my_id.image_angle = my_id.direction;
-                if (global.pigkill = 1)
-                    my_id.sprite_index = sprOscarDead;
-                global.pigkill = 0;
+				
                 // Enemy has a random chance of crawling if hit with a blunt weapon
                 if (my_id.sprite_index == sprEBackBlunt && round(random(11)) == 2) {
                     with (my_id) {

@@ -17,8 +17,8 @@ left = 1;
 ammo = 3;
 energie = 1;
 global.enemy = -1234;
-if (!variable_local_exists("clear"))
-    clear = 0;
+//if (!variable_local_exists("clear"))
+clear = 0;
 aim = 0;
 if (!place_free(x, y)) {
     x = global.executionx;

@@ -651,6 +651,7 @@
     {"id":{"name":"objFridge","path":"objects/objFridge/objFridge.yy",},},
     {"id":{"name":"objFryingKitchen","path":"objects/objFryingKitchen/objFryingKitchen.yy",},},
     {"id":{"name":"objFurniture","path":"objects/objFurniture/objFurniture.yy",},},
+    {"id":{"name":"objGameController","path":"objects/objGameController/objGameController.yy",},},
     {"id":{"name":"objGargoyle","path":"objects/objGargoyle/objGargoyle.yy",},},
     {"id":{"name":"objGate","path":"objects/objGate/objGate.yy",},},
     {"id":{"name":"objGirlfriend","path":"objects/objGirlfriend/objGirlfriend.yy",},},

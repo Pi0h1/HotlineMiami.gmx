@@ -1,0 +1,1 @@
+toggleLog = false;

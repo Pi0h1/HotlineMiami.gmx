@@ -7,3 +7,4 @@ wait = 2;
 image_xscale = 0.8 + random(0.2);
 image_yscale = image_xscale * choose(-1, 1);
 
+addToSaveExt();

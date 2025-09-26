@@ -22,13 +22,14 @@ if (keyboard_check_pressed(ord(global.restartkey)))
     event_perform(ev_keypress, ord("R"));
 SteamRunCallbacks();
 // Load masks when dying on the first floor (due to how the checkpoint system works)
-if (global.maskload) {
+/*if (global.maskload) {
     scrLoadMask();
     global.maskload = 0;
     // Load mask abilities when player dies on the first floor
     with (objPlayer)
         scrGetMaskPowers();
 }
+*/
 
 if (global.loaded) {
     scrLoadAchievements();
@@ -100,12 +101,12 @@ if (fade) {
                     }
                 room = nextroom;
             } else {
-                if (room == rmSwatUpstairs && file_exists(working_directory + "\\restarmusic")) {
+                if (room == rmSwatUpstairs && file_exists(working_directory + "\\restartmusic")) {
                     sxeasy_stop(1);
                     bgm_Unload(global.currentsong);
                 }
                 scrResetSurfaces();
-                legacy_load(working_directory + "\\tempsave.sav");
+                checkpoint_load(working_directory + "\\tempsave.sav");
             }
         }
     }

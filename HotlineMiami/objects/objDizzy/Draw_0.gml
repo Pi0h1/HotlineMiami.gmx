@@ -151,7 +151,7 @@ with (objEffectorHospital) {
                     }
                     room = nextroom;
                 } else {
-                    legacy_load(working_directory + "\\tempsave.sav");
+                    checkpoint_load(working_directory + "\\tempsave.sav");
                 }
             }
         }

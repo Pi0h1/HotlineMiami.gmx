@@ -4,3 +4,12 @@ friction = 0.1 + random(0.1);
 image_xscale = 0.8 + random(0.2);
 image_yscale = image_xscale * choose(-1, 1);
 
+DoSave = function() {
+	scrSaveGeneric(global.tempSave[room]);
+	buffer_write( global.tempSave[room], buffer_f32, friction );
+}
+
+DoLoad = function() {
+	scrLoadGeneric(global.tempSave[room]);	
+	friction = buffer_read(global.tempSave[room], buffer_f32 );
+}

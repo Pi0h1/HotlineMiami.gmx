@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"rmPhoneHomEntrance",
-  "creationCodeFile":"RoomCreationCode.gml",
+  "creationCodeFile":"rooms/rmPhoneHomEntrance/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,

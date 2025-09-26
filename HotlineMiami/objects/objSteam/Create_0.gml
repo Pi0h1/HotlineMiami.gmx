@@ -3,3 +3,4 @@ image_alpha = 0.25;
 image_angle = random(360);
 friction = 0.1;
 
+addToSaveExt();

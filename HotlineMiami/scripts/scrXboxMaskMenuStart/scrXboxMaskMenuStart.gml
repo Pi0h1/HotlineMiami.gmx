@@ -41,12 +41,6 @@ function scrXboxMaskMenuStart() {
 	}
 	global.maskindex = select;
 	objPlayer.maskindex = select;
-	if (file_exists(working_directory + "\\mask.nfo"))
-	    file_delete(working_directory + "\\mask.nfo");
-	file = file_text_open_write(working_directory + "\\mask.nfo");
-	file_text_write_string(file, string(select));
-	file_text_close(file);
-
 
 
 }

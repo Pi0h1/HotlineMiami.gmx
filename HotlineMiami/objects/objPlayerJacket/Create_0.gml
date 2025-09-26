@@ -4,3 +4,4 @@ reload = 10;
 if (global.xbox)
     scrInitXboxButtons();
 
+addToSave();

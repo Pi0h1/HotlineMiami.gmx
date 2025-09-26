@@ -29,7 +29,7 @@ objPlayer.persistent = 0;
 thrown = 0;
 global.loaded = 1;
 objEffectorHouse.amount = 0;
-legacy_save(working_directory + "\\tempsave.sav");
+checkpoint_save(working_directory + "\\tempsave.sav");
 global.loaded = 0;
 objEffectorHouse.amount = 180;
 objPlayer.persistent = test;

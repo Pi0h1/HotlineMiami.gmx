@@ -5,3 +5,4 @@ image_angle = random(360);
 image_xscale = 0.75 + random(0.5);
 image_yscale = image_xscale;
 
+addToSaveExt();

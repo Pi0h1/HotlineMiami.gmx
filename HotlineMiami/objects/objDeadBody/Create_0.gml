@@ -6,3 +6,4 @@ wait = 500;
 life = 100 + random(60);
 SteamIncStat("Kills", 1);
 
+addToSave();

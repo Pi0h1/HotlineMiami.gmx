@@ -65,7 +65,7 @@ if (fade) {
         draw_set_blend_mode(bm_normal);
     } else {
         room_goto(global.level);
-        legacy_save("restart.dat");
+        restart_create("restart.dat");
     }
 }
 

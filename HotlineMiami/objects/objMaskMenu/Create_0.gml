@@ -71,14 +71,13 @@ global.maskindex = 0;
 i = 0;
 repeat(26) {
     if (global.masks[i] == 0)
-        name[i] = "Unavailable"
+        name[i] = "Unavailable";
     i++;
 }
 
 global.selectmask = 0;
 save = 1;
 
-global.maskload = 1;
 with (objPlayer) {
     vdist = point_distance(x, y, room_width / 2, room_height / 2);
     vdir = point_direction(room_width / 2, room_height / 2, x, y);
@@ -87,3 +86,4 @@ with (objPlayer) {
 }
 alarm[0] = 1;
 
+addToSave();

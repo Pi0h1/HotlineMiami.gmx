@@ -14,7 +14,7 @@ if (state == 0) {
         state = 1;
     }
     if (select == 2) {
-        legacy_load("restart.dat");
+        restart_load("restart.dat");
     }
     if (select == 3) {
         if (on)

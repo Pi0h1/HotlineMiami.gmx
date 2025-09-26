@@ -5,3 +5,4 @@ angle_speed = -1 + round(random(1)) * 2;
 if (global.xbox)
     scrInitXboxButtons();
 
+addToSaveExt();

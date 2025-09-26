@@ -4,3 +4,4 @@ dir = random(360);
 if (global.xbox)
     scrInitXboxButtons();
 
+addToSave();

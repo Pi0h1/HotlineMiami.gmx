@@ -4,3 +4,4 @@ diradd = choose(-1, 1);
 image_index = random(100);
 wait = 60 + random(40);
 
+addToSaveExt();

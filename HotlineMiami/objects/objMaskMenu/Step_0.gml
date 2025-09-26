@@ -1,3 +1,11 @@
+if (global.maskload >= 0) {
+    scrLoadMask();
+    // Load mask abilities when player dies on the first floor
+    with (objPlayer)
+        scrGetMaskPowers();
+	instance_destroy(self, false);
+}
+
 if (global.xbox) {
     if (checkbutton(0, getid(5))) {
         if (presstart == 0) {

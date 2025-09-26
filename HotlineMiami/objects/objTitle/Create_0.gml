@@ -33,8 +33,8 @@ global.rightkey = "D";
 global.restartkey = "R";
 scrLoadKeys();
 
-//Loads saved Masks
-global.maskload = 0;
+// Save mask index for loading
+global.maskload = -1;
 
 //Determinated variable used for switching colours
 coldir = 0;

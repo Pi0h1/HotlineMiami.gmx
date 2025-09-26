@@ -105,7 +105,6 @@ DoLoad = function() {
 	image_index = buffer_read(global.tempSave[room], buffer_u32);
 	image_speed = buffer_read(global.tempSave[room], buffer_f32);
 	
-	// involves mask.nfo
 	global.maskindex = buffer_read(global.tempSave[room], buffer_f32);
 	global.maskon = buffer_read(global.tempSave[room], buffer_f32);
 	

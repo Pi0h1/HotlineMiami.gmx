@@ -6,3 +6,4 @@ image_angle = random(360);
 sprite_index = choose(sprMaskDropFront, sprMaskDropBack);
 image_index = global.maskindex;
 
+addToSaveExt();

@@ -3,3 +3,4 @@ image_xscale = 1 + random(0.1);
 image_yscale = image_xscale;
 image_speed = 1 - random(0.3);
 
+addToSaveExt();

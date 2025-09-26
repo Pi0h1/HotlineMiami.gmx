@@ -3,7 +3,7 @@ with (objEffector) {
     global.amount = amount;
     amount = 0;
 }
-legacy_save(working_directory + "\\tempsave.sav");
+checkpoint_save(working_directory + "\\tempsave.sav");
 with (objEffector) {
     amount = global.amount;
 }

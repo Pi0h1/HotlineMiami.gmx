@@ -288,7 +288,7 @@ if (fade) {
                 room = nextroom;
             } else {
                 scrResetSurfaces();
-                legacy_load(working_directory + "\\tempsave.sav");
+                checkpoint_load(working_directory + "\\tempsave.sav");
             }
         }
     }

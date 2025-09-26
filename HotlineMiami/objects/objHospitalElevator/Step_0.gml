@@ -10,7 +10,7 @@ if (room == rmHospitalEntrance) {
                 saved = 1;
                 global.loaded = 1;
                 objPlayer.persistent = 0;
-                legacy_save(working_directory + "\\tempsave.sav");
+                checkpoint_save(working_directory + "\\tempsave.sav");
                 global.loaded = 0;
             }
             if (image_index < 6)

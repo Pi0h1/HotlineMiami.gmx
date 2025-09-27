@@ -1,2 +1,1 @@
-instance_destroy(objEnemy);
-
+instance_destroy();

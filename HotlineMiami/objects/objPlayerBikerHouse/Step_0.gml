@@ -71,4 +71,3 @@ if (sprite_index == sprMCPutOnHelmet) {
         active = 1;
     }
 }
-

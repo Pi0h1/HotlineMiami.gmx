@@ -51,7 +51,7 @@ if (aimfar && valid) {
     viewdir = point_direction(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, viewx, viewy);
     camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + (lengthdir_x(viewspeed, viewdir)), camera_get_view_y(view_camera[0]) + (lengthdir_y(viewspeed, viewdir)));
     vdist = point_distance(x, y, room_width / 2, room_height / 2);
-    vdir = point_diction(room_width / 2, room_height / 2, x, y);
+    vdir = point_direction(room_width / 2, room_height / 2, x, y);
     camera_set_view_angle(view_camera[0], lengthdir_y(vdist * (1 / 160), vdir * 2));
 } else {
     if (objPlayer.active == 0 && instance_exists(objPhoneConversation) || instance_exists(objFocus)) {
@@ -603,4 +603,3 @@ if (sprite_index == sprPAttackPunch) {
     x = lastx;
     y = lasty;
 }
-

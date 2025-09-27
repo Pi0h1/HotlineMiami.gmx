@@ -540,4 +540,3 @@ if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBag || sprite_i
     x = lastx;
     y = lasty;
 }
-

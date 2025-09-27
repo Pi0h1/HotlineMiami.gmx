@@ -112,9 +112,6 @@ if (fade) {
     }
 }
 
-vlastx = camera_get_view_x(view_camera[0]);
-vlasty = camera_get_view_y(view_camera[0]);
-
 // Screen shake code
 if (global.shake > 0) {
     global.shake -= 0.5;

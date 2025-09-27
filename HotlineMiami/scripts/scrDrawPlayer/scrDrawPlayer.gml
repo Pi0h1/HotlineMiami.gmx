@@ -2,7 +2,6 @@ function scrDrawPlayer() {
 	if (instance_exists(objPlayerMouse) || instance_exists(objPlayerMouseHouse)) {
 	    with (objPlayer) {
 	        if (persistent) {
-
 	            if (object_index == objPlayerHospital) {
 	                draw_set_blend_mode(bm_add);
 	                draw_circle_color(x, y, 48 + random(6) + light, make_color_hsv(0, 0, 30 + light * 2), c_black, 0);
@@ -19,8 +18,10 @@ function scrDrawPlayer() {
 	                if (light > 3)
 	                    light -= 3;
 	            } else {
+					
 	                // for objPlayerMouse
-	                x -= camera_get_view_x(view_camera[0]);
+	                
+					x -= camera_get_view_x(view_camera[0]);
 	                y -= camera_get_view_y(view_camera[0]);
 
 

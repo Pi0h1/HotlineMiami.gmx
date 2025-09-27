@@ -445,8 +445,8 @@ draw_set_blend_mode(bm_normal);
 
 
 if (instance_exists(objPlayerMouse)) {
-    //view_xview[0] = vlastx;
-    //view_yview[0] = vlasty;
+    view_xview[0] = vlastx;
+    view_yview[0] = vlasty;
 }
 
 if (blackx &gt; 0) {

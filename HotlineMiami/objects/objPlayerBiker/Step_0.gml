@@ -255,4 +255,3 @@ if (sprite_index == sprBoss2AttackCleaver) {
     x = lastx;
     y = lasty;
 }
-

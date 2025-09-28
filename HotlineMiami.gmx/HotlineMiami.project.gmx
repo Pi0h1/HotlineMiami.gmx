@@ -2764,6 +2764,7 @@
       <script>scripts\scrLockInEffectInit.gml</script>
       <script>scripts\scrLockInEffectStep.gml</script>
     </scripts>
+    <script>scripts\scrInitAmmo.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>

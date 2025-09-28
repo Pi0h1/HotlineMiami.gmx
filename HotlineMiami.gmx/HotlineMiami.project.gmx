@@ -585,6 +585,15 @@
   </datafiles>
   <NewExtensions/>
   <sounds name="sound">
+    <sounds name="AG">
+      <sound>sound\sndLock</sound>
+      <sound>sound\sndMenuAccept</sound>
+      <sound>sound\sndMenuBack</sound>
+      <sound>sound\sndMenuDown</sound>
+      <sound>sound\sndMenuError</sound>
+      <sound>sound\sndMenuUp</sound>
+      <sound>sound\sndRelease</sound>
+    </sounds>
     <sound>sound\sndDoubleBarrel</sound>
     <sound>sound\sndM16</sound>
     <sound>sound\sndShotgun</sound>
@@ -652,7 +661,6 @@
     <sound>sound\sndManhole</sound>
     <sound>sound\sndLadder</sound>
     <sound>sound\sndTinnitusHospital</sound>
-    <sound>sound\sndLock</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">

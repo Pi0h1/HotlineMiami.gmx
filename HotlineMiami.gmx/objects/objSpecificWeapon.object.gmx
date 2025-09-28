@@ -60,7 +60,7 @@ alarm[0]=10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrInitAmmo();
+            <string>scrAmmoPatch();
 </string>
           </argument>
         </arguments>

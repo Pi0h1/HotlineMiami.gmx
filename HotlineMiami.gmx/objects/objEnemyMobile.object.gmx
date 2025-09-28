@@ -41,7 +41,10 @@ start_x=x
 start_y=y
 weaponfind=0
 diradd=1
-findwall=0</string>
+findwall=0
+
+alarm[2]=2; // Ammo Patch
+</string>
           </argument>
         </arguments>
       </action>

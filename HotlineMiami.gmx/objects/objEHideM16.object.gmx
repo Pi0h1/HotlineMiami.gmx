@@ -29,7 +29,10 @@
 shake=0
 image_index=5
 energie=0
-ammo=20</string>
+ammo=20
+
+alarm[2]=2; // Ammo Patch
+</string>
           </argument>
         </arguments>
       </action>

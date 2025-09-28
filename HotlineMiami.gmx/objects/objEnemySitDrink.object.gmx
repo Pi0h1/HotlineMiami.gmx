@@ -36,7 +36,10 @@ type=choose(objEnemy,objEnemyMeleeStationary)
 if room=rmTrainstationEntrance or room=rmHighballer type=objEnemyMeleeStationary
 if room=rmHotelEntrance type=choose(objEnemy)
 on=0
-alarm[1]=random(250)</string>
+alarm[1]=random(250)
+
+alarm[2]=2; // Ammo Patch
+</string>
           </argument>
         </arguments>
       </action>

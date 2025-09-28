@@ -42,7 +42,10 @@ start_x=x
 start_y=y
 weaponfind=0
 angle=direction
-shake=0</string>
+shake=0
+
+alarm[2]=2; // Ammo Patch
+</string>
           </argument>
         </arguments>
       </action>

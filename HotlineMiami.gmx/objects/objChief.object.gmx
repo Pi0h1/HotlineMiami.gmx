@@ -38,7 +38,10 @@ path=-1234
 
 alarm[0]=1
 ammo=10
-scrInitPathFinding()</string>
+scrInitPathFinding()
+
+alarm[2]=2; // Ammo Patch
+</string>
           </argument>
         </arguments>
       </action>

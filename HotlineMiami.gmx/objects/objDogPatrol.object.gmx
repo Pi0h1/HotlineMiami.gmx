@@ -42,7 +42,10 @@ start_y=y
 stopchase=0
 add=1
 
-gotowall=0</string>
+gotowall=0
+
+alarm[2]=2; // Ammo Patch
+</string>
           </argument>
         </arguments>
       </action>

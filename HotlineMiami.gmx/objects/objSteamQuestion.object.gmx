@@ -100,7 +100,7 @@ draw_text(room_width/2+60-lengthdir_x(1,dir2),room_height/2+16-lengthdir_x(1,dir
 view_angle[0]=lengthdir_x(2,dir)
 dir+=1
 
-d3d_set_projection_ortho(0,0,400,256,0)
+d3d_set_projection_ortho(0,0,481,271,0)
 draw_set_font(fntDate)
 draw_set_color(c_dkgray)
 draw_text(room_width/2+1,room_height*0.8+1,disclaimer)
@@ -130,7 +130,8 @@ draw_set_blend_mode(bm_normal)
 } else {if select=0 {
 steamdll_init() SteamInit() global.steamon=1 file=file_text_open_write(working_directory+"\steamon") file_text_close(file)} else {
 global.steamon=0 file=file_text_open_write(working_directory+"\steamoff") file_text_close(file)} room_goto_next()}
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

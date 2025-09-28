@@ -48,7 +48,10 @@ weaponfind=0
 hits=0
 blood=120
 wait=0
-shotgunned=0</string>
+shotgunned=0
+
+alarm[2]=2; // Ammo Patch
+</string>
           </argument>
         </arguments>
       </action>

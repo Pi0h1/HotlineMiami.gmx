@@ -2763,7 +2763,7 @@
       <script>scripts\scrExportSprites.gml</script>
     </scripts>
     <scripts name="BTPP Patches">
-      <script>scripts\txtWhatIsThis.gml</script>
+      <script>scripts\txtExplanation.gml</script>
       <scripts name="AG">
         <scripts name="Main Menu">
           <script>scripts\scrMainMenuReset.gml</script>
@@ -2782,8 +2782,9 @@
         </scripts>
       </scripts>
       <scripts name="Custom">
-        <script>scripts\scrInitAmmo.gml</script>
+        <script>scripts\scrAmmoPatch.gml</script>
         <script>scripts\scrExtraAmmoPerk.gml</script>
+        <script>scripts\txtReset.gml</script>
       </scripts>
       <scripts name="Obsolete">
         <script>scripts\sleep.gml</script>
@@ -3846,8 +3847,12 @@
       </objects>
     </objects>
     <objects name="BTPP Patches">
+      <objects name="AG">
+        <object>objects\objTitleUpdated</object>
+        <object>objects\objPauseUpdated</object>
+        <object>objects\objLeaderboards</object>
+      </objects>
       <object>objects\objGame</object>
-      <object>objects\objTitleUpdated</object>
     </objects>
   </objects>
   <rooms name="rooms">

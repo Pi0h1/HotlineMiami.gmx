@@ -42,7 +42,10 @@ light=0
 start_x=x
 start_y=y
 weaponfind=0
-lastsprite=sprite_index</string>
+lastsprite=sprite_index
+
+alarm[2]=2; // Ammo Patch
+</string>
           </argument>
         </arguments>
       </action>

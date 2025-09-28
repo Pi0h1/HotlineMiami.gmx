@@ -49,7 +49,10 @@ hits=0
 blood=120
 wait=0
 shotgunned=0
-hat=1</string>
+hat=1
+
+alarm[2]=2; // Ammo Patch
+</string>
           </argument>
         </arguments>
       </action>

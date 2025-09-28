@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (objGame.isUpdated) {instance_destroy(); instance_create(x,y,objPauseUpdated); exit;}
-if global.xbox=1 scrInitXboxButtons()
+            <string>if global.xbox=1 scrInitXboxButtons()
 sprw=sprite_get_width(global.sprite)
 sprh=sprite_get_height(global.sprite)
 sprx=room_width/sprw
@@ -50,7 +49,8 @@ i+=1
 }
 choice[0]="Resume"
 choice[1]="Puzzle"
-choice[2]="Quit"
+choice[2]="Restart"
+choice[3]="Quit"
 select=0
 fade=0
 c_amount=180
@@ -211,7 +211,8 @@ if blacky&gt;=1 on=0
 }
 } 
 if select=1 {on=2 state=1}
-if select=2 {if on=1 fade=1}
+if select=2 {game_load("restart.dat") if global.done=1 {sxeasy_play(objGame.lastTrack)}}
+if select=3 {if on=1 fade=1}
 }
 </string>
           </argument>
@@ -321,7 +322,7 @@ draw_rectangle(0,room_height-44*blacky,room_width+1,room_height,0)
             <kind>1</kind>
             <string>if on=0 or fade=1 or wait&gt;0 exit
 wait=3
-if select&gt;0 select-=1 else select=2
+if select&gt;0 select-=1 else select=3
 if select=1 and test=1 select=0
 </string>
           </argument>
@@ -347,7 +348,7 @@ if select=1 and test=1 select=0
             <kind>1</kind>
             <string>if on=0 or fade=1 or wait&gt;0 exit
 wait=3
-if select&lt;2 select+=1 else select=0
+if select&lt;3 select+=1 else select=0
 if select=1 and test=1 select=2
 </string>
           </argument>

@@ -33,7 +33,10 @@ ammo=0
 path=path_add()
 with instance_nearest(x,y,objToilet) {
 image_index=0
-}</string>
+}
+
+alarm[2]=2; // Ammo Patch
+</string>
           </argument>
         </arguments>
       </action>

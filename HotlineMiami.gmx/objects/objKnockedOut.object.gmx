@@ -31,7 +31,8 @@ image_index=1
 reload=100+random(120)
 type=objEnemy
 startx=x
-starty=y</string>
+starty=y
+</string>
           </argument>
         </arguments>
       </action>

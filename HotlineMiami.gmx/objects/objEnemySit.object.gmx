@@ -35,7 +35,10 @@ path=path_add()
 type=choose(objEnemy,objEnemyMeleeStationary)
 if room=rmTrainstationEntrance or room=rmBossClubFloor1 type=objEnemyMeleeStationary
 if room=rmHotelEntrance type=choose(objEnemy)
-on=0</string>
+on=0
+
+alarm[2]=2; // Ammo Patch
+</string>
           </argument>
         </arguments>
       </action>

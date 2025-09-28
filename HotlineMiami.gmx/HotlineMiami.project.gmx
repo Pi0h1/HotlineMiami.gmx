@@ -2760,8 +2760,10 @@
     <scripts name="Visual Effects">
       <script>scripts\drawVignette.gml</script>
     </scripts>
-    <script>scripts\scrLockInEffectInit.gml</script>
-    <script>scripts\scrLockInEffectStep.gml</script>
+    <scripts name="AG">
+      <script>scripts\scrLockInEffectInit.gml</script>
+      <script>scripts\scrLockInEffectStep.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntAnswers</font>

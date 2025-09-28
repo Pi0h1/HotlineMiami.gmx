@@ -18,6 +18,4 @@ switch (sprite_index) {
     default:                    ammo = 24;  break;
 }
 
-if (global.maskindex == 10) {
-    ammo = ceil(ammo * 1.33);
-}
+scrExtraAmmoPerk();

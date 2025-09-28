@@ -2765,8 +2765,21 @@
     <scripts name="BTPP Patches">
       <script>scripts\txtWhatIsThis.gml</script>
       <scripts name="AG">
-        <script>scripts\scrLockInEffectInit.gml</script>
-        <script>scripts\scrLockInEffectStep.gml</script>
+        <scripts name="Main Menu">
+          <script>scripts\scrMainMenuReset.gml</script>
+          <script>scripts\scrInitMainMenu.gml</script>
+          <script>scripts\scrInitMenuOptions.gml</script>
+          <script>scripts\scrInitMenuMusic.gml</script>
+          <script>scripts\scrMainMenuAspectRatio.gml</script>
+          <script>scripts\scrMainMenuSurfaceDraw.gml</script>
+          <script>scripts\scrMainMenuFadingDraw.gml</script>
+          <script>scripts\scrMainMenuBackgroundDraw.gml</script>
+          <script>scripts\scrMainMenuSelections.gml</script>
+        </scripts>
+        <scripts name="Gameplay">
+          <script>scripts\scrLockInEffectInit.gml</script>
+          <script>scripts\scrLockInEffectStep.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Custom">
         <script>scripts\scrInitAmmo.gml</script>
@@ -3832,6 +3845,10 @@
         </objects>
       </objects>
     </objects>
+    <objects name="BTPP Patches">
+      <object>objects\objGame</object>
+      <object>objects\objTitleUpdated</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Hotline Miami">
@@ -4039,6 +4056,9 @@
       <room>rooms\rmTestLevel9</room>
       <room>rooms\rmTestLevel10</room>
       <room>rooms\rmTestRoom</room>
+    </rooms>
+    <rooms name="AG">
+      <room>rooms\rmLeaderboards</room>
     </rooms>
   </rooms>
   <help>

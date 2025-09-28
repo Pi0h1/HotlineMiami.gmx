@@ -1,3 +1,5 @@
+if (!objGame.isUpdated) exit;
+
 var isInGameSession     = instance_exists(objEnemy) && (!instance_exists(objPlayerDead) && !instance_exists(objPlayerMouseHouse)) && !instance_exists(objEffectorHouse);
 var lockInCondition     = (global.enemy != -1234 && isInGameSession);
 var releaseCondition    = (isInGameSession);

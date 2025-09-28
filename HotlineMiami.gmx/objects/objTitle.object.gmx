@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//disable for steam version
 //global.steamon=0
-
+if (objGame.isUpdated) {instance_destroy(); instance_create(x,y,objTitleUpdated); exit;}
 //Initialize Xbox Controls
 global.xbox=0
 scrInitXboxButtons()

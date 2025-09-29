@@ -469,7 +469,7 @@ d3d_set_depth( z - legheight );
 if ( true || !scrIsSearching(sprite_index) )
 {
     // Draw Legs
-    scrDrawSprite3D( x, y, z - legheight, sprELegs, image_index * 2, angle, image_xscale, image_yscale, image_blend, image_alpha );
+    scrDrawSprite3D( x, y, z - legheight, sprELegs, image_index * 2, angle, image_yscale, image_xscale, image_blend, image_alpha );
     //draw_sprite_ext(sprELegs,image_index*2,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha)
     
 }

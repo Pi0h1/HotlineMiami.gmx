@@ -35,7 +35,7 @@
 var z = 0
 var height = max( 4, abs( depth ) );
 
-if ( scrDrawSprite3D( x, y, z, sprite_index, image_index, image_angle, image_xscale, image_yscale ) )
+if ( scrDrawSprite3D( x, y, z, sprite_index, image_index, image_angle + 270, image_xscale, image_yscale ) )
 {
     // drew a 3d sprite instead - all good.
 }

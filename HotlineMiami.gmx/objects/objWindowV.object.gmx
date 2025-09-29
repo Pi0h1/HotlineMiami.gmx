@@ -3,9 +3,9 @@
   <spriteName>sprWindowRight</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-24</depth>
   <persistent>0</persistent>
-  <parentName>objSolid</parentName>
+  <parentName>objWall</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -50,7 +50,10 @@ image_index=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x+3,y,image_xscale,image_yscale,image_angle,c_black,0.5)
+            <string>event_inherited();
+exit;
+
+draw_sprite_ext(sprite_index,image_index,x+3,y,image_xscale,image_yscale,image_angle,c_black,0.5)
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 </string>
           </argument>

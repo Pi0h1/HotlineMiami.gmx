@@ -36,10 +36,6 @@ switch ( sprite_index )
     // Brick
     case sprWallBrickH:
     case sprWallBrickV:
-    case sprWindowLeft:
-    case sprWindowRight:
-    case sprWindowUp:
-    case sprWindowDown:
         col     = make_colour_rgb( 127, 0, 20 );
         tex     = sprWallTextureBrick
         height  = (base_wallheight);
@@ -56,6 +52,14 @@ switch ( sprite_index )
     case sprGlassPanelBrokenV:
         col     = make_colour_rgb( 192, 192, 192 );
         tex     = sprWallTexture;
+        height  = 24;
+        break;
+    case sprWindowRight:
+    case sprWindowLeft:
+    case sprWindowUp:
+    case sprWindowDown:
+        col     = make_colour_rgb( 127, 0, 20 );
+        tex     = sprWallTextureBrick
         height  = 24;
         break;
     case sprRailH:

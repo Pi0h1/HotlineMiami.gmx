@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-24</depth>
   <persistent>0</persistent>
-  <parentName>objGlassPanelV</parentName>
+  <parentName>objWall</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">

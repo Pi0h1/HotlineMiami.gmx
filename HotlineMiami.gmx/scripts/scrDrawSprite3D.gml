@@ -73,13 +73,13 @@ if ( global.camera3D && instance_exists( objCamera3D ) )
         draw3D = true;
         scrCamera3D_Billboard( xPos, yPos, zPos, undefined, 270 );
         draw_sprite_ext( sprite3D, imageIndex, 0, 0, xScale, yScale, 0, color, alpha );
-        // 
+        /* 
         draw_set_color( c_lime );
         draw_set_font( -1 );
         draw_set_halign( fa_left );
         draw_set_valign( fa_top );
         draw_text( 12, 8, angnum );
-        // 
+        */ 
         scrCamera3D_BillboardEnd();
         return true;
     }

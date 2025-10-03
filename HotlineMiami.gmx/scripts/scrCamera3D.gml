@@ -138,4 +138,3 @@ if ( !global.camera3D )
 
     
 d3d_set_fog( true, objCamera3D.fog_colour, objCamera3D.fog_start, objCamera3D.fog_end );
-

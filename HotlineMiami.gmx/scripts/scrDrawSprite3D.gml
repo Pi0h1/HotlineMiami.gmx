@@ -86,7 +86,7 @@ if ( global.camera3D && instance_exists( objCamera3D ) )
 }
 if ( !draw3D )
 {
-    draw_sprite_ext( spriteIndex, imageIndex, xPos, yPos, xScale, yScale, angle, color, alpha );
+    draw_sprite_ext( spriteIndex, imageIndex, xPos, yPos, xScale, yScale, angle + 90, color, alpha );
     return false;
 }
 

@@ -29,6 +29,7 @@ switch ( sprite_index )
     // Heavy
     case sprWallHeavyH:
     case sprWallHeavyV:
+    case sprCorner:
         col     = objCamera3D.base_wallcolor;
         tex     = sprWallTexture;
         height  = (base_wallheight);
@@ -36,6 +37,7 @@ switch ( sprite_index )
     // Brick
     case sprWallBrickH:
     case sprWallBrickV:
+    case sprCornerBrick:
         col     = make_colour_rgb( 127, 0, 20 );
         tex     = sprWallTextureBrick
         height  = (base_wallheight);

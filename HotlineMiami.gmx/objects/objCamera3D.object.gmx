@@ -89,6 +89,7 @@ tile_layer_depth(100000, floorz);
 tile_layer_depth(10000, floorz);
 tile_layer_depth(1000, floorz);
 tile_layer_depth(-99, ceilz);
+tile_layer_hide(ceilz);
 
 // 
 
@@ -324,9 +325,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ( !global.camera3D )
-    exit;
-
+            <string>if ( !global.camera3D ) {tile_layer_show(ceilz); exit;}
+tile_layer_hide(ceilz);
 if ( window_has_focus() )
 {
     // Mouse Aiming
@@ -349,6 +349,10 @@ if ( instance_exists( objCamera3DTarget ) )
 {
     angle = objCamera3DTarget.angle;
     pitch = objCamera3DTarget.pitch;
+}
+
+if instance_exists(objPlayerDead) {
+    tile_layer_show(ceilz);
 }
 
 </string>

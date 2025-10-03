@@ -1533,14 +1533,14 @@
       <sprite>sprites\sprBalconyV</sprite>
       <sprite>sprites\sprCellDoor</sprite>
       <sprite>sprites\sprWindow</sprite>
-      <sprite>sprites\sprWindowDown</sprite>
-      <sprite>sprites\sprWindowExplode</sprite>
       <sprite>sprites\sprWindowframe</sprite>
       <sprite>sprites\sprWindowLeft</sprite>
-      <sprite>sprites\sprWindowOpen</sprite>
       <sprite>sprites\sprWindowRight</sprite>
-      <sprite>sprites\sprWindowSill</sprite>
       <sprite>sprites\sprWindowUp</sprite>
+      <sprite>sprites\sprWindowDown</sprite>
+      <sprite>sprites\sprWindowSill</sprite>
+      <sprite>sprites\sprWindowOpen</sprite>
+      <sprite>sprites\sprWindowExplode</sprite>
       <sprite>sprites\sprBrokenWindow</sprite>
       <sprite>sprites\sprRailH</sprite>
       <sprite>sprites\sprRailV</sprite>
@@ -2962,6 +2962,7 @@
       <object>objects\objVertBarrier</object>
       <object>objects\objSolid</object>
       <object>objects\objCorner</object>
+      <object>objects\objCornerBrick</object>
       <object>objects\objTransitioner</object>
       <object>objects\objElevator</object>
     </objects>

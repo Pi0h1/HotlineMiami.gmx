@@ -37,7 +37,7 @@ switch ( sprite_index )
     // Brick
     case sprWallBrickH:
     case sprWallBrickV:
-    case sprCornerBrick:
+    case sprCornerBrick3D:
         col     = make_colour_rgb( 127, 0, 20 );
         tex     = sprWallTextureBrick
         height  = (base_wallheight);

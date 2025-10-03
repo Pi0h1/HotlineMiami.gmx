@@ -669,7 +669,7 @@
         <sprite>sprites\sprDoorTexture</sprite>
         <sprite>sprites\sprWallTexture</sprite>
         <sprite>sprites\sprWallTextureBrick</sprite>
-        <sprite>sprites\sprCornerBrick</sprite>
+        <sprite>sprites\sprCornerBrick3D</sprite>
       </sprites>
       <sprites name="Furniture">
         <sprites name="sprChairDown">
@@ -1559,6 +1559,7 @@
         <sprite>sprites\sprDoorH2</sprite>
         <sprite>sprites\sprDoorV2</sprite>
         <sprite>sprites\sprCorner</sprite>
+        <sprite>sprites\sprCornerBrick</sprite>
         <sprite>sprites\sprCellWallH</sprite>
         <sprite>sprites\sprCellWallV</sprite>
         <sprite>sprites\sprHorBarrier</sprite>
@@ -2832,6 +2833,7 @@
       <object>objects\objCamera3DTarget_PlayerDead</object>
       <object>objects\objCamera3DTarget_PlayerKill</object>
       <object>objects\objWall</object>
+      <object>objects\objCornerBrick</object>
     </objects>
     <objects name="Hotline Miami">
       <objects name="Player">
@@ -2975,7 +2977,6 @@
         <object>objects\objVertBarrier</object>
         <object>objects\objSolid</object>
         <object>objects\objCorner</object>
-        <object>objects\objCornerBrick</object>
         <object>objects\objTransitioner</object>
         <object>objects\objElevator</object>
       </objects>

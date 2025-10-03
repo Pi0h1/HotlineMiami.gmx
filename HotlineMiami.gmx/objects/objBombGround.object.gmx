@@ -3,7 +3,7 @@
   <spriteName>sprBombGround</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>3</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>

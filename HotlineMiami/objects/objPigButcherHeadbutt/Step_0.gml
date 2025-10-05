@@ -1,4 +1,8 @@
 if (image_index < 10.25) {
+	if (image_index == 0) {
+		audio_play_sound(sndHitWall, 0, false);	
+		global.shake = 4;
+	}
     image_index += 0.25;
 } else {
     myx = x + lengthdir_x(7, image_angle);

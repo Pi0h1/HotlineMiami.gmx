@@ -31,8 +31,8 @@ function scrCurrentWeaponExt(argument0) {
 	    case sprPWalkSilencedUzi: return 25;
 	    case sprPWalkThrow: return 27 + throwindex;
 
-	    case sprPAttackM16: case sprPoliceWalkM16: case sprEM16Crouching: return 0;
-	    case sprPAttackShotgun: case sprPoliceWalkShotgun: return 1;
+	    case sprPAttackM16: return 0;
+	    case sprPAttackShotgun: return 1;
 	    case sprPAttackClub: return 2;
 	    case sprPAttackPipe: return 3;
 	    case sprPAttackBat: return 4;
@@ -72,14 +72,15 @@ function scrCurrentWeaponExt(argument0) {
 	    case sprPHumanShieldScorpionShoot: return 11;
 	    case sprPHumanShieldMP5Shoot: return 12;
     
-	    case sprEWalkM16: return 0;
-	    case sprEWalkShotgun: return 1;
+	    case sprEWalkM16: case sprPoliceWalkM16: case sprEM16Crouching: return 0;
+	    case sprEWalkShotgun: case sprPoliceWalkShotgun: return 1;
 	    case sprEWalkClub: return 2;
 	    case sprEWalkPipe: return 3;
 	    case sprEWalkBat: return 4;
 	    case sprEWalkKnife: return 5;
 	    case sprEWalkDoubleBarrel: return 6;
 	    case sprEWalkSilencer: return 7;
+		case sprPoliceWalkNightStick: return 16;
 
 	    case sprEAttackM16: return 0;
 	    case sprEAttackShotgun: return 1;
@@ -88,6 +89,7 @@ function scrCurrentWeaponExt(argument0) {
 	    case sprEAttackBat: return 4;
 	    case sprEAttackKnife: return 5;
 	    case sprEAttackDoubleBarrel1: case sprEAttackDoubleBarrel2: return 6;
+		case sprPoliceAttackNightStick: return 16;
     
 	    case sprESearchM16: return 0;
 	    case sprESearchShotgun: return 1;
@@ -101,7 +103,6 @@ function scrCurrentWeaponExt(argument0) {
 	    case sprPoliceSearchM16: return 0;
 	    case sprPoliceSearchShotgun: return 1;
 	    case sprPoliceSearchNightStick: return 16;
-    
     
 	    case sprEIdlePeeStop: case sprEIdlePee: case sprEnemySit: case sprEIdleSmoke: case sprEStandGuard: case sprEDrinking: return round(random(6));
 	    case sprWaiterWalkUzi: case sprWaiterWalkFood: case sprWaiterWalkWine: return 9;

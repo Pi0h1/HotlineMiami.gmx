@@ -6,4 +6,13 @@ image_angle = random(360);
 image_index = floor(random(10000));
 image_blend = c_aqua;
 
-addToSaveExt();
+DoSave = function() {
+	scrSaveGeneric(global.tempSave[room]);
+	buffer_write( global.tempSave[room], buffer_f32, rotspeed );
+	buffer_write( global.tempSave[room], buffer_f32, startspeed );
+}
+DoLoad = function() {
+	scrLoadGeneric(global.tempSave[room]);
+	rotspeed = buffer_read(global.tempSave[room], buffer_f32 );
+	startspeed = buffer_read(global.tempSave[room], buffer_f32 );
+}

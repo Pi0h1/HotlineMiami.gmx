@@ -7,8 +7,10 @@ if (global.xbox)
     scrInitXboxButtons();
 
 DoSave = function() {
+	scrSaveGeneric(global.tempSave[room]);
 	buffer_write( global.tempSave[room], buffer_f32, on );
 }
-DoSave = function() {
+DoLoad = function() {
+	scrLoadGeneric(global.tempSave[room]);
 	on = buffer_read( global.tempSave[room], buffer_f32 );
 }

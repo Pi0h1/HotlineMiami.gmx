@@ -157,4 +157,3 @@ if (blackx > 0) {
     draw_rectangle(0, camera_get_view_height(view_camera[0]), camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]) - blackx * 1.5, 0);
     blackx -= 3;
 }
-

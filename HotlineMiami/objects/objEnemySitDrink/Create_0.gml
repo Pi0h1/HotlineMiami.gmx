@@ -13,3 +13,20 @@ if (room == rmHotelEntrance)
 on = 0;
 alarm[1] = random(250);
 
+DoSave = function() {
+	scrSaveGeneric(global.tempSave[room]);
+	buffer_write( global.tempSave[room], buffer_f32, reload );
+	buffer_write( global.tempSave[room], buffer_f32, alert );
+	buffer_write( global.tempSave[room], buffer_f32, ammo );
+	buffer_write( global.tempSave[room], buffer_f32, on );
+	buffer_write( global.tempSave[room], buffer_f32, type );
+}
+
+DoLoad = function() {
+	scrLoadGeneric(global.tempSave[room]);
+	reload = buffer_read(global.tempSave[room], buffer_f32 );
+	alert = buffer_read(global.tempSave[room], buffer_f32 );
+	ammo = buffer_read(global.tempSave[room], buffer_f32 );
+	on = buffer_read(global.tempSave[room], buffer_f32 );
+	type = buffer_read(global.tempSave[room], buffer_f32 );
+}	

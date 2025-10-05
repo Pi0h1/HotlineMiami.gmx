@@ -6,4 +6,11 @@ image_angle = random(360);
 sprite_index = choose(sprMaskDropFront, sprMaskDropBack);
 image_index = global.maskindex;
 
-addToSaveExt();
+DoSave = function() {
+	buffer_write(global.tempSave[room], buffer_f32, rotspeed);
+	buffer_write(global.tempSave[room], buffer_f32, startspeed);
+}
+DoLoad = function () {
+	rotspeed = buffer_read(global.tempSave[room], buffer_f32);
+	startspeed = buffer_read(global.tempSave[room], buffer_f32);
+}

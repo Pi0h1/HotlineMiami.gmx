@@ -1,4 +1,5 @@
 if (global.maskload >= 0) {
+//	//global.loaded = 1;
     scrLoadMask();
     // Load mask abilities when player dies on the first floor
     with (objPlayer)

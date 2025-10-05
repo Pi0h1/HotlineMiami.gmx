@@ -24,3 +24,19 @@ surf2 = 1;
 surf3 = 1;
 check = 0;
 
+DoSave = function() {
+	buffer_write( global.tempSave[room], buffer_f32, save );
+	buffer_write( global.tempSave[room], buffer_f32, testsurface );
+	buffer_write( global.tempSave[room], buffer_f32, surf2 );
+	buffer_write( global.tempSave[room], buffer_f32, surf3 );
+	buffer_write( global.tempSave[room], buffer_f32, check );
+
+
+}
+DoLoad = function() {
+	save = buffer_read(global.tempSave[room], buffer_f32 );
+	testsurface = buffer_read(global.tempSave[room], buffer_f32 );
+	surf2 = buffer_read(global.tempSave[room], buffer_f32 );
+	surf3 = buffer_read(global.tempSave[room], buffer_f32 );
+	check = buffer_read(global.tempSave[room], buffer_f32 );
+}

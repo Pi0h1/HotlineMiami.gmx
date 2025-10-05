@@ -1,8 +1,4 @@
 if (other.object_index == objWallSoftH || other.object_index == objWallSoftV) {
-    if (solid) {
-        x += hspeed;
-        y += vspeed;
-    }
     my_id = instance_create(x + lengthdir_x(14, direction), y + lengthdir_y(14, direction), objHit);
     my_id.image_angle = direction;
     my_id = instance_create(x + lengthdir_x(14, direction), y + lengthdir_y(14, direction), objSmokeHit);
@@ -15,16 +11,10 @@ if (other.object_index == objWallSoftH || other.object_index == objWallSoftV) {
         my_id.direction = random(360);
         my_id.speed = random(4);
     }
-    if (!passed) {
-        passed = 1;
-        dirx = x - lengthdir_x(16, direction);
-        diry = y - lengthdir_y(16, direction);
-    }
     exit;
 }
 
 if (other.object_index == objGlassPanelH) {
-    SteamIncStat("Windows", 1);
     if (vspeed > 0) {
         other.add = -1;
     } else {
@@ -40,7 +30,7 @@ if (other.object_index == objGlassPanelH) {
         }
         instance_create(x, y, objGlassPanelHBroken);
         instance_destroy();
-        if (!audio_is_playing(sndGlass1) && !audio_is_playing(sndGlass2)) {
+        if (!audio_is_playing(sndGlass1) and!audio_is_playing(sndGlass2)) {
             audio_play_sound(choose(sndGlass1, sndGlass2), 0, false);
         }
     }
@@ -48,7 +38,6 @@ if (other.object_index == objGlassPanelH) {
 }
 
 if (other.object_index == objGlassPanelV) {
-    SteamIncStat("Windows", 1);
     if (hspeed > 0) {
         other.add = -1;
     } else {
@@ -64,10 +53,9 @@ if (other.object_index == objGlassPanelV) {
         }
         instance_create(x, y, objGlassPanelVBroken);
         instance_destroy();
-        if (!audio_is_playing(sndGlass1) && !audio_is_playing(sndGlass2)) {
+        if (!audio_is_playing(sndGlass1) and!audio_is_playing(sndGlass2)) {
             audio_play_sound(choose(sndGlass1, sndGlass2), 0, false);
         }
     }
     exit;
 }
-

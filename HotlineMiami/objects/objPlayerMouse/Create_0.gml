@@ -23,6 +23,9 @@ legdir = 0;
 legindex = 0;
 left = 1;
 ammo = 0;
+viewdir = 0;
+vdist = 0;
+vdir = 0;
 
 // Default health value
 energie = round(random(1));
@@ -48,6 +51,8 @@ maskon = global.maskon;
 release = 0;
 shieldwait = 0;
 aim = 0;
+aimfar = 0;
+factor = 1;
 
 global.enemy = -1234; // for lock-on
 
@@ -63,9 +68,27 @@ if (!place_free(x,y)) {
 
 // See scrSaveGame() and scrLoadGame() for details regarding restarting a floor.
 DoSave = function() {
-	buffer_write(global.tempSave[room], buffer_u32, sprite_index);
-	buffer_write(global.tempSave[room], buffer_u32, image_index);
-	buffer_write(global.tempSave[room], buffer_f32, image_speed);
+
+	// save xbox vars
+	// NOTE: THIS WILL BREAK IF GLOBAL.XBOX IS CHANGED INGAME.
+	if (global.xbox) {
+		buffer_write( global.tempSave[room], buffer_f32, presstart );
+		buffer_write( global.tempSave[room], buffer_f32, pressup );
+		buffer_write( global.tempSave[room], buffer_f32, pressdown );
+		buffer_write( global.tempSave[room], buffer_f32, pressleft );
+		buffer_write( global.tempSave[room], buffer_f32, pressright );
+		buffer_write( global.tempSave[room], buffer_f32, pressback );
+		buffer_write( global.tempSave[room], buffer_f32, pressltrig );
+		buffer_write( global.tempSave[room], buffer_f32, pressrtrig );
+		buffer_write( global.tempSave[room], buffer_f32, presslb );
+		buffer_write( global.tempSave[room], buffer_f32, pressrb );
+		buffer_write( global.tempSave[room], buffer_f32, pressrstick );
+		buffer_write( global.tempSave[room], buffer_f32, presslstick );
+		buffer_write( global.tempSave[room], buffer_f32, pressa );
+	}
+
+	// basic vars
+	scrSaveGeneric(global.tempSave[room]);
 	
 	buffer_write(global.tempSave[room], buffer_f32, global.maskindex);
 	buffer_write(global.tempSave[room], buffer_f32, global.maskon);
@@ -98,12 +121,39 @@ DoSave = function() {
 	buffer_write(global.tempSave[room], buffer_f32, release);
 	buffer_write(global.tempSave[room], buffer_f32, shieldwait);
 	buffer_write(global.tempSave[room], buffer_f32, clear);
+	buffer_write(global.tempSave[room], buffer_u8, aim);
+	buffer_write(global.tempSave[room], buffer_u8, aimfar);
+	buffer_write(global.tempSave[room], buffer_f16, factor);
+	
+	buffer_write(global.tempSave[room], buffer_f32, global.enemy);
+	
+	buffer_write(global.tempSave[room], buffer_f32, viewdir);
+	buffer_write(global.tempSave[room], buffer_f32, vdist);
+	buffer_write(global.tempSave[room], buffer_f32, vdir);
 }
 // Everything must be loaded in the same order you save them, as well as the same read type!
 DoLoad = function() {
-	sprite_index = buffer_read(global.tempSave[room], buffer_u32);	
-	image_index = buffer_read(global.tempSave[room], buffer_u32);
-	image_speed = buffer_read(global.tempSave[room], buffer_f32);
+
+	// load xbox vars
+	// NOTE: THIS WILL BREAK IF GLOBAL.XBOX IS CHANGED INGAME.
+	if (global.xbox) {
+		presstart = buffer_read(global.tempSave[room], buffer_f32 );
+		pressup = buffer_read(global.tempSave[room], buffer_f32 );
+		pressdown = buffer_read(global.tempSave[room], buffer_f32 );
+		pressleft = buffer_read(global.tempSave[room], buffer_f32 );
+		pressright = buffer_read(global.tempSave[room], buffer_f32 );
+		pressback = buffer_read(global.tempSave[room], buffer_f32 );
+		pressltrig = buffer_read(global.tempSave[room], buffer_f32 );
+		pressrtrig = buffer_read(global.tempSave[room], buffer_f32 );
+		presslb = buffer_read(global.tempSave[room], buffer_f32 );
+		pressrb = buffer_read(global.tempSave[room], buffer_f32 );
+		pressrstick = buffer_read(global.tempSave[room], buffer_f32 );
+		presslstick = buffer_read(global.tempSave[room], buffer_f32 );
+		pressa = buffer_read(global.tempSave[room], buffer_f32 );
+	}
+
+	// basic vars
+	scrLoadGeneric(global.tempSave[room]);
 	
 	global.maskindex = buffer_read(global.tempSave[room], buffer_f32);
 	global.maskon = buffer_read(global.tempSave[room], buffer_f32);
@@ -136,4 +186,13 @@ DoLoad = function() {
 	release = buffer_read(global.tempSave[room], buffer_f32);
 	shieldwait = buffer_read(global.tempSave[room], buffer_f32);
 	clear = buffer_read(global.tempSave[room], buffer_f32);
+	aim = buffer_read(global.tempSave[room], buffer_u8);
+	aimfar = buffer_read(global.tempSave[room], buffer_u8);
+	factor = buffer_read(global.tempSave[room], buffer_f16);
+	
+	global.enemy = buffer_read(global.tempSave[room], buffer_f32);
+	
+	viewdir = buffer_read(global.tempSave[room], buffer_f32);
+	vdist = buffer_read(global.tempSave[room], buffer_f32);
+	vdir = buffer_read(global.tempSave[room], buffer_f32);
 }

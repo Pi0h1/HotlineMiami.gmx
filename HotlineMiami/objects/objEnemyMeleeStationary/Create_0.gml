@@ -29,6 +29,14 @@ DoSave = function() {
 	buffer_write( global.tempSave[room], buffer_f32, start_y );
 	buffer_write( global.tempSave[room], buffer_f32, weaponfind );
 	buffer_write( global.tempSave[room], buffer_u32, lastsprite );
+	buffer_write( global.tempSave[room], buffer_f32, check );
+	buffer_write( global.tempSave[room], buffer_f32, startx );
+	buffer_write( global.tempSave[room], buffer_f32, starty );
+	buffer_write( global.tempSave[room], buffer_f32, startdir );
+	buffer_write( global.tempSave[room], buffer_f32, returning );
+	buffer_write( global.tempSave[room], buffer_f32, armed );
+	buffer_write( global.tempSave[room], buffer_f32, turn );
+	buffer_write( global.tempSave[room], buffer_f32, alertwait );
 }
 DoLoad = function() {
 	scrLoadGeneric(global.tempSave[room]);
@@ -42,4 +50,12 @@ DoLoad = function() {
 	start_y = buffer_read(global.tempSave[room], buffer_f32 );
 	weaponfind = buffer_read(global.tempSave[room], buffer_f32 );
 	lastsprite = buffer_read(global.tempSave[room], buffer_u32 );
+	check = buffer_read(global.tempSave[room], buffer_f32 );
+	startx = buffer_read(global.tempSave[room], buffer_f32 );
+	starty = buffer_read(global.tempSave[room], buffer_f32 );
+	startdir = buffer_read(global.tempSave[room], buffer_f32 );
+	returning = buffer_read(global.tempSave[room], buffer_f32 );
+	armed = buffer_read(global.tempSave[room], buffer_f32 );
+	turn = buffer_read(global.tempSave[room], buffer_f32 );
+	alertwait = buffer_read(global.tempSave[room], buffer_f32 );
 }

@@ -3,3 +3,4 @@ if (x < room_width / 2 && sprite_index == sprWindowRight)
 image_speed = 0;
 image_index = 0;
 
+addToSaveExt();

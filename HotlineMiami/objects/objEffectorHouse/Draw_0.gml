@@ -294,7 +294,6 @@ if (fade) {
     }
 }
 coldir++;
-
 scrDrawPlayer();
 
 if (show_date) {

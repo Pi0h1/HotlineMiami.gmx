@@ -32,7 +32,7 @@ if (room == rmSequence1 || room == rmSequence2 || room == rmSequence3 || room ==
 } else start = 0;
 if (room == rmSequence13Downstairs)
     start = 1;
-global.loaded = 0;
+//global.loaded = 0;
 width = display_get_width();
 height = display_get_height();
 global.mousex = (display_mouse_get_x() - width * 0.5) * (camera_get_view_width(view_camera[0]) / width);
@@ -55,3 +55,83 @@ if (instance_exists(objPlayerBiker)) {
 }
 scrLockInEffectInit();
 
+DoSave = function() {
+	scrSaveGeneric(global.tempSave[room]);
+	buffer_write( global.tempSave[room], buffer_f32, alpha );
+	buffer_write( global.tempSave[room], buffer_f32, global.enemy );
+	buffer_write( global.tempSave[room], buffer_f32, coldir );
+	buffer_write( global.tempSave[room], buffer_f32, amount );
+	buffer_write( global.tempSave[room], buffer_f32, fade );
+	buffer_write( global.tempSave[room], buffer_f32, my_y );
+	buffer_write( global.tempSave[room], buffer_f32, global.dir );
+	buffer_write( global.tempSave[room], buffer_f32, restart );
+	buffer_write( global.tempSave[room], buffer_f32, update );
+	buffer_write( global.tempSave[room], buffer_f32, ammoy );
+	buffer_write( global.tempSave[room], buffer_f32, next );
+	buffer_write( global.tempSave[room], buffer_f32, showfinished );
+	buffer_write( global.tempSave[room], buffer_f32, image_speed );
+	buffer_write( global.tempSave[room], buffer_f32, action );
+	buffer_write( global.tempSave[room], buffer_f32, wait );
+	buffer_write( global.tempSave[room], buffer_f32, phonex );
+	buffer_write( global.tempSave[room], buffer_f32, blackx );
+	buffer_write( global.tempSave[room], buffer_f32, line1x );
+	buffer_write( global.tempSave[room], buffer_f32, line2x );
+	buffer_write( global.tempSave[room], buffer_f32, nextroom );
+	buffer_write( global.tempSave[room], buffer_f32, newsong );
+	buffer_write( global.tempSave[room], buffer_f32, song );
+	buffer_write( global.tempSave[room], buffer_f32, index );
+	buffer_write( global.tempSave[room], buffer_f32, show_date );
+	buffer_write( global.tempSave[room], buffer_u32, sprite );
+	buffer_write( global.tempSave[room], buffer_f32, start );
+	buffer_write( global.tempSave[room], buffer_f32, global.loaded );
+	buffer_write( global.tempSave[room], buffer_f32, width );
+	buffer_write( global.tempSave[room], buffer_f32, height );
+	buffer_write( global.tempSave[room], buffer_f32, global.mousex );
+	buffer_write( global.tempSave[room], buffer_f32, global.mousey );
+	buffer_write( global.tempSave[room], buffer_f32, lastbrus );
+	buffer_write( global.tempSave[room], buffer_f32, brus );
+	buffer_write( global.tempSave[room], buffer_f32, ammoy );
+	buffer_write( global.tempSave[room], buffer_f32, levelshow );
+	buffer_write( global.tempSave[room], buffer_f32, save );
+	buffer_write( global.tempSave[room], buffer_string, leveltitle );
+}
+DoLoad = function() {
+	scrLoadGeneric(global.tempSave[room]);
+	alpha = buffer_read(global.tempSave[room], buffer_f32 );
+	global.enemy = buffer_read(global.tempSave[room], buffer_f32 );
+	coldir = buffer_read(global.tempSave[room], buffer_f32 );
+	amount = buffer_read(global.tempSave[room], buffer_f32 );
+	fade = buffer_read(global.tempSave[room], buffer_f32 );
+	my_y = buffer_read(global.tempSave[room], buffer_f32 );
+	global.dir = buffer_read(global.tempSave[room], buffer_f32 );
+	restart = buffer_read(global.tempSave[room], buffer_f32 );
+	update = buffer_read(global.tempSave[room], buffer_f32 );
+	ammoy = buffer_read(global.tempSave[room], buffer_f32 );
+	next = buffer_read(global.tempSave[room], buffer_f32 );
+	showfinished = buffer_read(global.tempSave[room], buffer_f32 );
+	image_speed = buffer_read(global.tempSave[room], buffer_f32 );
+	action = buffer_read(global.tempSave[room], buffer_f32 );
+	wait = buffer_read(global.tempSave[room], buffer_f32 );
+	phonex = buffer_read(global.tempSave[room], buffer_f32 );
+	blackx = buffer_read(global.tempSave[room], buffer_f32 );
+	line1x = buffer_read(global.tempSave[room], buffer_f32 );
+	line2x = buffer_read(global.tempSave[room], buffer_f32 );
+	nextroom = buffer_read(global.tempSave[room], buffer_f32 );
+	newsong = buffer_read(global.tempSave[room], buffer_f32 );
+	song = buffer_read(global.tempSave[room], buffer_f32 );
+	index = buffer_read(global.tempSave[room], buffer_f32 );
+	show_date = buffer_read(global.tempSave[room], buffer_f32 );
+	sprite = buffer_read(global.tempSave[room], buffer_u32 );
+	start = buffer_read(global.tempSave[room], buffer_f32 );
+	global.loaded = buffer_read(global.tempSave[room], buffer_f32 );
+	width = buffer_read(global.tempSave[room], buffer_f32 );
+	height = buffer_read(global.tempSave[room], buffer_f32 );
+	global.mousex = buffer_read(global.tempSave[room], buffer_f32 );
+	global.mousey = buffer_read(global.tempSave[room], buffer_f32 );
+	lastbrus = buffer_read(global.tempSave[room], buffer_f32 );
+	brus = buffer_read(global.tempSave[room], buffer_f32 );
+	ammoy = buffer_read(global.tempSave[room], buffer_f32 );
+	levelshow = buffer_read(global.tempSave[room], buffer_f32 );
+	save = buffer_read(global.tempSave[room], buffer_f32 );
+	leveltitle = buffer_read(global.tempSave[room], buffer_string );
+}

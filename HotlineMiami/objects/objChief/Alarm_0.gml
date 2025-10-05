@@ -1,4 +1,4 @@
-global.loaded = 1;
+//global.loaded = 1;
 scrCheckpoint();
-global.loaded = 0;
+//global.loaded = 0;
 

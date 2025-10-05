@@ -45,7 +45,7 @@ function scrPlayerAnimationEnd() {
 	    case sprPAttackAxe: sprite_index = sprPWalkAxe; left = -left; break;
 	    case sprPAttackSledgeHammer: sprite_index = sprPWalkSledgeHammer; left = -left; break;
 	    case sprPAttackPot: sprite_index = sprPWalkPot; left = -left; break;
-	    case sprPAttackBoilingPot: sprite_index = sprPWalkBoilingPot; left = -left; break;
+	    case sprPAttackBoilingPot: sprite_index = sprPWalkPot; left = -left; break;
 	    case sprPAttackMachete: sprite_index = sprPWalkMachete; left = -left; break;
 	    case sprPAttackKnife: sprite_index = sprPWalkKnife; left = -left; break;
 	    case sprPAttackSword: sprite_index = sprPWalkSword; left = -left; break;

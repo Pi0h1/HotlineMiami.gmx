@@ -25,12 +25,12 @@ if (currentmask >= 0) {
     if (global.masks[currentmask] == 0)
         color = c_black;
     else color = c_white;
-    draw_sprite_ext(sprMaskDropFront, currentmask, 400 + 156 + addx * 3.3, 125, 1, 1, -90, color, 1);
-} else draw_sprite_ext(sprNoMask, 0, 400 + 156 + addx * 3.3, 125, 1, 1, 0, c_white, 1);
+    draw_sprite_ext(sprMaskDropFront, currentmask, 400 + 156 + addx * 3.3, 130, 1, 1, -90, color, 1);
+} else draw_sprite_ext(sprNoMask, 0, 400 + 156 + addx * 3.3, 130, 1, 1, 0, c_white, 1);
 if (select <= 15) {
     if (global.letter[scrLevelGetPuzzle(select)] == 1)
-        draw_sprite_ext(sprToken, 0, 400 + 156 + addx * 3.3 + 11, 125, 1, 1, 0, c_white, 1);
-    else draw_sprite_ext(sprToken, 0, 400 + 156 + addx * 3.3 + 11, 125, 1, 1, 0, c_black, 1);
+        draw_sprite_ext(sprToken, 0, 400 + 156 + addx * 3.3 + 11, 130, 1, 1, 0, c_white, 1);
+    else draw_sprite_ext(sprToken, 0, 400 + 156 + addx * 3.3 + 11, 130, 1, 1, 0, c_black, 1);
 }
 if (!fade) {
     if (c_amount < 180) {

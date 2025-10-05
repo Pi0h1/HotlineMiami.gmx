@@ -45,8 +45,8 @@ if (maskamount < 45)
     color4 = merge_color(c_black, c_white, 0.5 + lengthdir_x(0.5, maskamount * (180 / 45)));
 scale = 2 + lengthdir_x(0.5, maskamount) + lengthdir_x(0.05 + lengthdir_x(0.025, maskamount), dir * 10);
 
-draw_sprite_general(sprMasksBig, global.currentmask, 0, 0, 120, 120, room_width / 2 - 55 * scale + 2, room_height / 2 - 65 * scale + 2 - add3, scale, scale, 0, c_black, c_black, c_black, c_black, 0.5);
-draw_sprite_general(sprMasksBig, global.currentmask, 0, 0, 120, 120, room_width / 2 - 55 * scale, room_height / 2 - 65 * scale - add3, scale, scale, 0, color1, color2, color3, color4, 1);
+draw_sprite_general(sprMasksBig, global.currentmask, 0, 0, 120, 120, room_width / 2 - 67 * scale + 2, room_height / 2 - 65 * scale + 2 - add3, scale, scale, 0, c_black, c_black, c_black, c_black, 0.5);
+draw_sprite_general(sprMasksBig, global.currentmask, 0, 0, 120, 120, room_width / 2 - 67 * scale, room_height / 2 - 65 * scale - add3, scale, scale, 0, color1, color2, color3, color4, 1);
 
 d3d_set_projection_ortho(0, 0, 399, 255, 0);
 if (surface_exists(global.surf1)) {

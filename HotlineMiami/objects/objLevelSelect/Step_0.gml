@@ -94,29 +94,29 @@ if (addx < 0) {
         draw_set_halign(fa_center);
         draw_set_valign(fa_top);
         draw_set_color(c_yellow);
-        draw_text(400 + 180 + addx * 3.3, 92, string_hash_to_newline("HIGHSCORE:"));
+        draw_text(403 + 180 + addx * 3.3, 92, string_hash_to_newline("HIGHSCORE:"));
         draw_set_color(c_white);
-        draw_text(400 + 180 + addx * 3.3 + string_width(string_hash_to_newline("HIGHSCORE: ")) * 0.5 + string_width(string_hash_to_newline(string(global.highscore[select]))) * 0.5, 92, string_hash_to_newline(string(global.highscore[select])));
+        draw_text(403 + 180 + addx * 3.3 + string_width(string_hash_to_newline("HIGHSCORE: ")) * 0.5 + string_width(string_hash_to_newline(string(global.highscore[select]))) * 0.5, 92, string_hash_to_newline(string(global.highscore[select])));
         draw_set_font(fntDate);
         draw_set_color(c_lime);
         draw_text(400 + 180 + addx * 3.3, 106, string_hash_to_newline("GRADE:    "));
         draw_set_font(fntGradeSmall);
         draw_set_color(c_red);
-        draw_text(400 + 202 + addx * 3.3, 93, string_hash_to_newline(scrNumberToGrade(global.grade[select])));
+        draw_text(407 + 202 + addx * 3.3, 97, string_hash_to_newline(scrNumberToGrade(global.grade[select])));
     } else {
         draw_set_font(fntDate);
         draw_set_halign(fa_center);
         draw_set_valign(fa_top);
         draw_set_color(c_yellow);
-        draw_text(400 + 180 + addx * 3.3, 92, string_hash_to_newline("HIGHSCORE:"));
+        draw_text(403 + 180 + addx * 3.3, 92, string_hash_to_newline("HIGHSCORE:"));
         draw_set_color(c_white);
-        draw_text(400 + 180 + addx * 3.3 + string_width(string_hash_to_newline("HIGHSCORE: ")) * 0.5 + string_width(string_hash_to_newline("-")) * 0.5, 92, string_hash_to_newline("-"));
+        draw_text(403 + 180 + addx * 3.3 + string_width(string_hash_to_newline("HIGHSCORE: ")) * 0.5 + string_width(string_hash_to_newline("-")) * 0.5, 92, string_hash_to_newline("-"));
         draw_set_font(fntDate);
         draw_set_color(c_lime);
         draw_text(400 + 180 + addx * 3.3, 106, string_hash_to_newline("GRADE:    "));
         draw_set_font(fntGradeSmall);
         draw_set_color(c_red);
-        draw_text(400 + 202 + addx * 3.3, 93, string_hash_to_newline("-"));
+        draw_text(407 + 202 + addx * 3.3, 97, string_hash_to_newline("-"));
     }
 
     draw_set_font(fntDate);

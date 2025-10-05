@@ -31,7 +31,7 @@ if (!on) {
 }
 repeat(draws) {
     draw_set_color(merge_color(color, c_white, i * (1 / draws)));
-    draw_text_transformed(room_width / 2 - draws * 0.5 + i, room_height * 0.75 + add + i * 0.5, string_hash_to_newline(text), 0.9 + i * 0.01, 0.9 + i * 0.03, lengthdir_x(3, dir * 6));
+    draw_text_transformed((room_width - 61) / 2 - draws * 0.5 + i, room_height * 0.75 + add + i * 0.5, string_hash_to_newline(text), 0.9 + i * 0.01, 0.9 + i * 0.03, lengthdir_x(3, dir * 6));
     i++;
 }
 surface_reset_target();

@@ -1368,6 +1368,7 @@
     {"id":{"name":"getstate","path":"scripts/getstate/getstate.yy",},},
     {"id":{"name":"gettrigger_l","path":"scripts/gettrigger_l/gettrigger_l.yy",},},
     {"id":{"name":"gettrigger_r","path":"scripts/gettrigger_r/gettrigger_r.yy",},},
+    {"id":{"name":"HotlineMiamiGameSettings","path":"scripts/HotlineMiamiGameSettings/HotlineMiamiGameSettings.yy",},},
     {"id":{"name":"instance_create","path":"scripts/instance_create/instance_create.yy",},},
     {"id":{"name":"leftthumb_x","path":"scripts/leftthumb_x/leftthumb_x.yy",},},
     {"id":{"name":"leftthumb_y","path":"scripts/leftthumb_y/leftthumb_y.yy",},},

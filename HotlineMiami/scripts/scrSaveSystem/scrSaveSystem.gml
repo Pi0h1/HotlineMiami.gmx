@@ -84,11 +84,19 @@ function scrSaveGame(buf){
 	}
 		
 	buffer_seek( buf, 0, 0 );
-	// globals
+
 	buffer_write( buf, buffer_f32, camera_get_view_x(view_camera[0]) );
 	buffer_write( buf, buffer_f32, camera_get_view_y(view_camera[0]) );
+	
 	buffer_write( buf, buffer_u8, global.done );
 	buffer_write( buf, buffer_u8, global.noguns );
+	
+	// letters
+	var len = array_length(global.letter) ;
+	buffer_write( global.tempSave[room], buffer_u16, len );
+	for (var i = 0; i < len; ++i) {
+		buffer_write( global.tempSave[room], buffer_u16, global.letter[i]);
+	}
 
 	// instances
 	with (all) {
@@ -100,7 +108,7 @@ function scrSaveGame(buf){
 		buffer_write( buf, buffer_f32, x );
 		buffer_write( buf, buffer_f32, y );
 		buffer_write( buf, buffer_f32, depth );
-		// Save extra value
+		// Save extra value	
 		if ( is_method( self[$ "DoSave"] ) ) {
 			DoSave(buf);
 		}
@@ -118,11 +126,19 @@ function scrLoadGame(buf ){
 	buffer_seek( buf, 0, 0 );
 		
 	// globals
+	
 	var loadedCamX = buffer_read( buf, buffer_f32 );
 	var loadedCamY = buffer_read( buf, buffer_f32 );
 	camera_set_view_pos(view_camera[0], loadedCamX, loadedCamY);
+
 	global.done = buffer_read( buf, buffer_u8 );
 	global.noguns = buffer_read( buf, buffer_u8 );
+	
+	// letters
+	var len = buffer_read(global.tempSave[room], buffer_u16 );
+	for (i = 0; i < len; ++i) {
+		global.letter[i] = buffer_read( global.tempSave[room], buffer_u16);
+	}
 	
 	// instances
 	// Load everything in the order you save them!

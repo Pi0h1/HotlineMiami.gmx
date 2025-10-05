@@ -31,7 +31,8 @@ if (factor > 0) {
     draw_set_valign(fa_top);
     draw_set_font(fntDate);
     text = string(nextgun - leftgun) + " POINTS UNTIL NEXT WEAPON UNLOCK";
-    if global.newguns > 0 text = "NEW WEAPON UNLOCKED!";
+    if (global.newguns > 0)
+		text = "NEW WEAPON UNLOCKED!";
     if (allguns)
         text = "";
     else {

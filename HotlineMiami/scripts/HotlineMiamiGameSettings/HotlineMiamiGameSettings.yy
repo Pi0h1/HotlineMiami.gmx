@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"HotlineMiamiGameSettings",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"HotlineMiamiGameSettings",
+  "parent":{
+    "name":"HotlineMiami",
+    "path":"HotlineMiami.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

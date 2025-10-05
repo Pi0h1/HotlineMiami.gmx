@@ -34,7 +34,7 @@ function scrLoadUnlocked() {
 
 	global.totalscore = 0;
 	global.puzzledone = 0;
-
+		
 	if (file_exists(working_directory + "\\saves.dat")) {
 	    file = file_text_open_read(working_directory + "\\saves.dat");
 	    masks = file_text_read_string(file);
@@ -104,7 +104,5 @@ function scrLoadUnlocked() {
 	    file_text_write_string(file, "0");
 	    file_text_close(file);
 	}
-
-
 
 }

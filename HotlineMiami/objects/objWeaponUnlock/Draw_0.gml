@@ -7,7 +7,7 @@ draw_set_color(merge_color(c_black, c_dkgray, shine));
 draw_rectangle(0, 0, room_width, 45 + factor * 40, 0);
 draw_rectangle(0, room_height - 45 - factor * 40, room_width, room_height, 0);
 if (c_amount == 180)
-    start_x += ((200 - start_x - current * 100)) * 0.05;
+    start_x += ((200 - start_x - current * 98)) * 0.05;
 if (fade)
     start_x -= 10;
     
@@ -81,7 +81,7 @@ if (fade) {
         else color2 = c_white;
         draw_set_blend_mode(bm_subtract);
         draw_rectangle_color(camera_get_view_x(view_camera[0]) - 10, camera_get_view_y(view_camera[0]) - 10, camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) + 10, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) + 10, color2, color1, color1, color2, 0);
-        draw_set_blend_mode(bm_normal);
+        draw_set_blend_mode(bm_normal); 
     } else {
         song = working_directory + "\\Daisuke.mp3";
         next = scrGetSequence(global.sequence);

@@ -1,0 +1,4740 @@
+﻿1
+00:00:00,000 --> 00:00:00,400
+Yes?
+
+2
+00:00:00,520 --> 00:00:01,520
+Okay.
+
+3
+00:00:02,200 --> 00:00:04,840
+I am Frans Kasper, I work at Abstraction
+Games.
+
+4
+00:00:05,300 --> 00:00:08,140
+And we recently ported Hotline Miami.
+
+5
+00:00:09,670 --> 00:00:11,560
+Who is familiar with Hotline Miami?
+
+6
+00:00:11,800 --> 00:00:12,520
+Who has played it?
+
+7
+00:00:12,660 --> 00:00:13,660
+Everyone, okay.
+
+8
+00:00:14,480 --> 00:00:15,720
+I don't have to show it to you.
+
+9
+00:00:17,160 --> 00:00:18,160
+What about GameMaker?
+
+10
+00:00:18,240 --> 00:00:19,360
+Have you ever used it?
+
+11
+00:00:19,410 --> 00:00:20,410
+Are you familiar with it?
+
+12
+00:00:21,920 --> 00:00:23,780
+And C, C++ programming?
+
+13
+00:00:25,240 --> 00:00:26,240
+Okay.
+
+14
+00:00:26,300 --> 00:00:27,300
+Lucky.
+
+15
+00:00:27,680 --> 00:00:29,680
+Okay, then I will just start with the
+presentation.
+
+16
+00:00:38,160 --> 00:00:39,160
+Yes.
+
+17
+00:00:39,330 --> 00:00:40,580
+So, Abstraction Games.
+
+18
+00:00:43,600 --> 00:00:44,680
+We have had one impression.
+
+19
+00:00:47,200 --> 00:00:47,800
+Abstraction Games.
+
+20
+00:00:48,060 --> 00:00:50,960
+These are some of the titles we have
+recently done.
+
+21
+00:00:51,220 --> 00:00:52,340
+In the last couple of years.
+
+22
+00:00:52,710 --> 00:00:54,360
+Some of you may be familiar with them.
+
+23
+00:00:54,500 --> 00:00:55,660
+Hotline Miami is one of them.
+
+24
+00:00:56,920 --> 00:00:58,680
+Duke Nukem 3D, we ported it to
+PlayStation.
+
+25
+00:00:58,970 --> 00:01:00,290
+Rogue Legacy is also one of them.
+
+26
+00:01:01,470 --> 00:01:02,596
+A fairly well-known indie game.
+
+27
+00:01:02,620 --> 00:01:07,080
+Last month we also released Danganronpa
+for PC, Mac and Linux.
+
+28
+00:01:07,880 --> 00:01:11,000
+Last year we released a title every month,
+so we are doing quite a lot.
+
+29
+00:01:12,440 --> 00:01:15,227
+And we are working
+with all the platforms that
+
+30
+00:01:15,251 --> 00:01:17,500
+are modern, that are
+still being used today.
+
+31
+00:01:18,360 --> 00:01:19,720
+That are being actively developed.
+
+32
+00:01:20,490 --> 00:01:22,800
+And we are working with several companies.
+
+33
+00:01:23,850 --> 00:01:26,103
+It is fun and nice in itself,
+but what I have already said is
+
+34
+00:01:26,127 --> 00:01:29,797
+that we have seen quite a
+few different projects and things.
+
+35
+00:01:29,821 --> 00:01:32,421
+We have seen different games, we have
+worked with different codes.
+
+36
+00:01:34,500 --> 00:01:37,085
+And one of the things that
+remains from that is that Hotline Miami
+
+37
+00:01:37,109 --> 00:01:40,120
+has been quite a
+technical and interesting project.
+
+38
+00:01:40,480 --> 00:01:42,280
+And that is why I am going to talk about
+that.
+
+39
+00:01:45,160 --> 00:01:47,920
+Before I get really in-depth about that.
+
+40
+00:01:47,980 --> 00:01:52,440
+A little overview of how we port.
+
+41
+00:01:52,740 --> 00:01:54,700
+A little bit of the technology we have
+about that.
+
+42
+00:01:56,260 --> 00:01:57,560
+And what comes with it.
+
+43
+00:01:59,233 --> 00:02:01,721
+You can do porting in a number of
+different ways.
+
+44
+00:02:02,120 --> 00:02:04,800
+For example, you can make a complete
+remake.
+
+45
+00:02:05,240 --> 00:02:10,156
+That means that you just use the original
+game as reference material.
+
+46
+00:02:10,190 --> 00:02:13,600
+You can maybe use some assets or some
+pictures or anything.
+
+47
+00:02:13,625 --> 00:02:15,696
+And polish something.
+
+48
+00:02:15,721 --> 00:02:20,920
+But usually this is done for games that
+are played on such old hardware.
+
+49
+00:02:21,200 --> 00:02:22,760
+Or made in such a strange way
+
+50
+00:02:22,990 --> 00:02:25,340
+that they can not be salvaged.
+
+51
+00:02:25,740 --> 00:02:28,017
+So you actually have to start from
+scratch
+
+52
+00:02:28,041 --> 00:02:31,337
+and try to get close to the original look.
+
+53
+00:02:31,361 --> 00:02:32,841
+And then you actually have something.
+
+54
+00:02:33,260 --> 00:02:34,700
+It is usually quite intensive work.
+
+55
+00:02:34,970 --> 00:02:36,810
+But sometimes there is
+just nothing else you can do
+
+56
+00:02:38,225 --> 00:02:39,740
+What you can also do is port.
+
+57
+00:02:39,960 --> 00:02:41,640
+That is what we actually do.
+
+58
+00:02:42,410 --> 00:02:47,040
+And there you just use the code from the
+original game as much as possible .
+
+59
+00:02:48,320 --> 00:02:51,280
+And all assets and all tools and
+everything that comes with it.
+
+60
+00:02:52,460 --> 00:02:54,300
+To get that working on a different
+platform.
+
+61
+00:02:55,860 --> 00:02:57,157
+That is not always possible.
+
+62
+00:02:57,181 --> 00:03:02,640
+It can be for example that a game is made
+in a tool or a language.
+
+63
+00:03:02,780 --> 00:03:05,380
+Or something that is not supported on the
+platform you wish to port to.
+
+64
+00:03:05,760 --> 00:03:07,400
+Like for example with
+Hotline Miami in this case.
+
+65
+00:03:08,420 --> 00:03:12,960
+GameMaker did not work on
+PlayStation in this case
+
+66
+00:03:13,495 --> 00:03:14,540
+or on Mac or Linux.
+
+67
+00:03:15,930 --> 00:03:19,060
+And that means that you have to change the
+source code
+
+68
+00:03:21,030 --> 00:03:22,550
+from one language to another language.
+
+69
+00:03:25,359 --> 00:03:27,966
+And what you can also do is emulation.
+
+70
+00:03:28,000 --> 00:03:32,868
+That is almost impossible for most modern
+games.
+
+71
+00:03:32,893 --> 00:03:37,700
+Because emulating has a higher performance
+overhead.
+
+72
+00:03:38,231 --> 00:03:40,336
+You have to make it act it as if you are on a
+certain processor.
+
+73
+00:03:40,360 --> 00:03:44,518
+And then you will actually be playing the
+original game.
+
+74
+00:03:44,580 --> 00:03:45,620
+Wine does not do that.
+
+75
+00:03:46,500 --> 00:03:51,144
+There are a number of fairly modern games...
+
+76
+00:03:51,169 --> 00:03:55,816
+... that are ported in this way. 
+But it is difficult to do that across the board.
+
+77
+00:03:57,285 --> 00:03:59,438
+And it is often much more performance
+intensive.
+
+78
+00:04:01,096 --> 00:04:03,575
+So what we usually do is ports.
+
+79
+00:04:03,600 --> 00:04:05,863
+That is where we are specialized.
+
+80
+00:04:06,403 --> 00:04:10,156
+And where possible, we actually
+always try to normalize it first.
+
+81
+00:04:10,250 --> 00:04:14,516
+And what that kind of entails is...
+We actually go for games that...
+
+82
+00:04:15,220 --> 00:04:22,093
+were created in an engine or
+environment that is not supported at all...
+
+83
+00:04:22,121 --> 00:04:23,136
+... on the platform we want to port to
+
+84
+00:04:23,160 --> 00:04:24,955
+So, for example GameMaker.
+
+85
+00:04:25,000 --> 00:04:31,253
+Or just standard C, C++. But designed
+without cross-platform in the background.
+
+86
+00:04:31,278 --> 00:04:36,104
+What we usually do then is normalize it
+to our own internal framework we made.
+
+87
+00:04:37,750 --> 00:04:40,464
+Which is built to run on multiple platforms.
+
+88
+00:04:40,670 --> 00:04:41,670
+It is fairly low level.
+
+89
+00:04:42,180 --> 00:04:44,300
+It is about on the same line.
+
+90
+00:04:44,420 --> 00:04:46,720
+As what you get with normal platform APIs.
+
+91
+00:04:47,080 --> 00:04:48,440
+And then we port everything there.
+
+92
+00:04:48,960 --> 00:04:52,920
+And then it eventually turns to our own
+technology.
+
+93
+00:04:53,190 --> 00:04:55,390
+And from there we can go much easier to
+other platforms.
+
+94
+00:04:57,030 --> 00:04:58,257
+But if you have a game for example.
+
+95
+00:04:58,281 --> 00:04:59,940
+That is made in Unity or in Unreal.
+
+96
+00:05:00,140 --> 00:05:01,540
+Then that is usually not necessary.
+
+97
+00:05:01,760 --> 00:05:03,380
+Because that platform itself...
+
+98
+00:05:04,500 --> 00:05:05,660
+Has relatively good support.
+
+99
+00:05:06,480 --> 00:05:07,480
+For where you are porting.
+
+100
+00:05:10,680 --> 00:05:11,680
+And yes.
+
+101
+00:05:11,740 --> 00:05:14,000
+A kind of subset of the ports that we do.
+
+102
+00:05:14,100 --> 00:05:15,540
+Are therefore Blackbox ports.
+
+103
+00:05:15,740 --> 00:05:18,260
+Where actually the total.
+
+104
+00:05:18,720 --> 00:05:21,180
+Or a part of the port that you do.
+
+105
+00:05:22,260 --> 00:05:25,540
+Is actually made in a piece of closed
+source software.
+
+106
+00:05:25,720 --> 00:05:26,297
+Where you just don't know.
+
+107
+00:05:26,321 --> 00:05:28,320
+How exactly it is made.
+
+108
+00:05:29,520 --> 00:05:30,000
+Or how it is built.
+
+109
+00:05:30,510 --> 00:05:31,990
+You just don't have complete control.
+
+110
+00:05:32,160 --> 00:05:33,160
+Or complete insight.
+
+111
+00:05:33,870 --> 00:05:36,460
+About how that specific part of the game
+is made.
+
+112
+00:05:38,700 --> 00:05:39,460
+And yes.
+
+113
+00:05:39,600 --> 00:05:40,881
+That is what you have to do sometimes.
+
+114
+00:05:40,905 --> 00:05:41,905
+For reverse engineering.
+
+115
+00:05:41,980 --> 00:05:42,980
+You just have to.
+
+116
+00:05:43,170 --> 00:05:43,917
+There is nothing else to do.
+
+117
+00:05:43,941 --> 00:05:44,480
+Than just go and look.
+
+118
+00:05:44,620 --> 00:05:45,820
+Okay how does it work roughly.
+
+119
+00:05:46,530 --> 00:05:48,330
+And depending on what you can learn from
+that.
+
+120
+00:05:48,540 --> 00:05:49,540
+And yes.
+
+121
+00:05:49,720 --> 00:05:50,720
+Do something.
+
+122
+00:05:50,950 --> 00:05:51,950
+To get it to work.
+
+123
+00:05:52,180 --> 00:05:54,580
+And that is also what we mainly had to do
+with Hotmail Miami.
+
+124
+00:05:56,545 --> 00:05:58,400
+Because it is made in GameMaker.
+
+125
+00:05:58,530 --> 00:05:59,930
+Which was completely closed source.
+
+126
+00:06:00,320 --> 00:06:00,800
+Or is.
+
+127
+00:06:01,000 --> 00:06:02,000
+Even.
+
+128
+00:06:03,380 --> 00:06:04,100
+And yes.
+
+129
+00:06:04,180 --> 00:06:04,840
+All those things.
+
+130
+00:06:04,960 --> 00:06:05,360
+Those are sort of.
+
+131
+00:06:05,520 --> 00:06:05,880
+Yes.
+
+132
+00:06:05,980 --> 00:06:07,176
+A bit of the terms that we use.
+
+133
+00:06:07,200 --> 00:06:08,200
+To say.
+
+134
+00:06:08,680 --> 00:06:09,680
+The process of.
+
+135
+00:06:09,780 --> 00:06:09,980
+Okay.
+
+136
+00:06:10,040 --> 00:06:10,880
+We have a game.
+
+137
+00:06:10,980 --> 00:06:12,180
+And it is now running roughly.
+
+138
+00:06:12,520 --> 00:06:13,380
+On another platform.
+
+139
+00:06:13,460 --> 00:06:14,460
+Where we want to go.
+
+140
+00:06:15,160 --> 00:06:16,720
+And then there will be more to look at.
+
+141
+00:06:17,160 --> 00:06:17,520
+Optimization.
+
+142
+00:06:17,740 --> 00:06:19,020
+And make sure that it runs well.
+
+143
+00:06:19,280 --> 00:06:20,640
+But at the moment that it sort of.
+
+144
+00:06:22,220 --> 00:06:22,580
+Runs.
+
+145
+00:06:22,640 --> 00:06:24,860
+Then we are going to make an adaptation of
+it.
+
+146
+00:06:25,040 --> 00:06:25,680
+And that is actually.
+
+147
+00:06:25,740 --> 00:06:26,740
+Make sure that.
+
+148
+00:06:27,600 --> 00:06:29,461
+Outside of the fact that it is technically
+correct.
+
+149
+00:06:29,485 --> 00:06:31,020
+That it will then expand further.
+
+150
+00:06:31,060 --> 00:06:32,276
+And make sure that it really feels.
+
+151
+00:06:32,300 --> 00:06:34,060
+As if it belongs to that particular platform.
+
+152
+00:06:34,690 --> 00:06:36,160
+At the moment that we go to the APC.
+
+153
+00:06:36,240 --> 00:06:38,136
+Because at the moment we have done that in
+Europa.
+
+154
+00:06:38,160 --> 00:06:39,960
+Then we will make sure that it runs at 60
+FPS.
+
+155
+00:06:40,120 --> 00:06:41,820
+That we have mouse controls for free look.
+
+156
+00:06:42,580 --> 00:06:43,160
+That kind of thing.
+
+157
+00:06:43,440 --> 00:06:44,757
+So then we just go as far as possible.
+
+158
+00:06:44,781 --> 00:06:46,781
+From the things that are for a particular
+platform.
+
+159
+00:06:47,380 --> 00:06:48,000
+Continuously important.
+
+160
+00:06:48,380 --> 00:06:49,620
+We're going to build over it.
+
+161
+00:06:50,960 --> 00:06:51,680
+So that it really feels.
+
+162
+00:06:51,860 --> 00:06:53,520
+As if it is made for that.
+
+163
+00:06:54,860 --> 00:06:55,500
+And yes.
+
+164
+00:06:55,700 --> 00:06:56,380
+Our goal.
+
+165
+00:06:56,405 --> 00:07:03,767
+For example for Hotline Miami, a number of people
+actually thought that the game played best on Vita.
+
+166
+00:07:03,800 --> 00:07:07,663
+And that was not the platform it was originally made for.
+
+167
+00:07:07,730 --> 00:07:11,789
+So we have been able to add enough value that people thought that.
+
+168
+00:07:12,910 --> 00:07:15,803
+And we were happy about that.
+That is actually what we are trying to achieve if possible.
+
+169
+00:07:16,020 --> 00:07:19,206
+It does not always work.
+But we do our best.
+
+170
+00:07:21,260 --> 00:07:23,375
+Yes, then Silverware.
+
+171
+00:07:23,400 --> 00:07:26,686
+That is our own cross-platform technology.
+
+172
+00:07:26,711 --> 00:07:27,760
+Which I just talked about.
+
+173
+00:07:28,140 --> 00:07:31,928
+It is in itself quite low level.
+Not really a game engine because... it does nothing.
+
+174
+00:07:31,953 --> 00:07:37,595
+It has no concept of game objects
+or animation even, I think.
+
+175
+00:07:37,620 --> 00:07:40,395
+And it is just a pretty low level SDK.
+
+176
+00:07:40,420 --> 00:07:41,516
+Which actually is very much like.
+
+177
+00:07:41,540 --> 00:07:42,360
+For example an open helper.
+
+178
+00:07:42,560 --> 00:07:42,880
+DirectX.
+
+179
+00:07:43,180 --> 00:07:44,380
+If you tap on the transmitter.
+
+180
+00:07:44,610 --> 00:07:45,660
+That looks like an FMOD.
+
+181
+00:07:45,720 --> 00:07:46,720
+If you tap on the audio.
+
+182
+00:07:47,020 --> 00:07:47,840
+But it is just.
+
+183
+00:07:47,940 --> 00:07:48,240
+It lies.
+
+184
+00:07:48,820 --> 00:07:49,976
+Very close to what you are on.
+
+185
+00:07:50,000 --> 00:07:51,000
+Each platform.
+
+186
+00:07:51,680 --> 00:07:52,680
+Individually offered.
+
+187
+00:07:54,260 --> 00:07:54,580
+Only.
+
+188
+00:07:54,800 --> 00:07:55,640
+Then it is a kind of.
+
+189
+00:07:55,800 --> 00:07:55,960
+Yes.
+
+190
+00:07:56,000 --> 00:07:56,057
+Yes.
+
+191
+00:07:56,081 --> 00:07:56,100
+Well.
+
+192
+00:07:56,300 --> 00:07:57,300
+Within our own control.
+
+193
+00:07:57,580 --> 00:07:58,177
+And that is then.
+
+194
+00:07:58,201 --> 00:07:59,601
+Then we can build on all platforms.
+
+195
+00:08:00,560 --> 00:08:01,340
+Our audio interface.
+
+196
+00:08:01,520 --> 00:08:01,880
+Yes.
+
+197
+00:08:02,250 --> 00:08:03,760
+You just write some code.
+
+198
+00:08:03,800 --> 00:08:04,820
+Against our own audio.
+
+199
+00:08:05,020 --> 00:08:05,380
+Interface.
+
+200
+00:08:05,420 --> 00:08:06,116
+And then it works.
+
+201
+00:08:06,140 --> 00:08:07,140
+On all platforms.
+
+202
+00:08:07,435 --> 00:08:08,436
+At least that is the idea behind it.
+
+203
+00:08:08,460 --> 00:08:08,580
+Right.
+
+204
+00:08:08,660 --> 00:08:08,937
+It is.
+
+205
+00:08:08,961 --> 00:08:10,041
+It is still in development.
+
+206
+00:08:11,680 --> 00:08:12,680
+But.
+
+207
+00:08:12,720 --> 00:08:13,080
+Yes.
+
+208
+00:08:13,200 --> 00:08:13,380
+That.
+
+209
+00:08:13,480 --> 00:08:15,080
+It also starts to get better and better.
+
+210
+00:08:15,880 --> 00:08:16,880
+And it is not only.
+
+211
+00:08:17,080 --> 00:08:17,740
+Low level stuff.
+
+212
+00:08:17,900 --> 00:08:18,720
+There are also some high level.
+
+213
+00:08:18,780 --> 00:08:19,780
+Utility libraries in.
+
+214
+00:08:20,720 --> 00:08:21,380
+Like for example.
+
+215
+00:08:21,490 --> 00:08:22,140
+Cloud saving.
+
+216
+00:08:22,320 --> 00:08:22,416
+Right.
+
+217
+00:08:22,440 --> 00:08:22,860
+That is in itself.
+
+218
+00:08:22,940 --> 00:08:24,020
+A high level functionality.
+
+219
+00:08:25,460 --> 00:08:25,820
+But.
+
+220
+00:08:26,080 --> 00:08:26,260
+We still offer it.
+
+221
+00:08:26,700 --> 00:08:26,880
+Because.
+
+222
+00:08:26,940 --> 00:08:27,160
+Yes.
+
+223
+00:08:27,700 --> 00:08:28,817
+It is just very handy for us.
+
+224
+00:08:28,841 --> 00:08:29,260
+To have something in it.
+
+225
+00:08:29,480 --> 00:08:29,620
+Right.
+
+226
+00:08:29,720 --> 00:08:30,100
+Because it is.
+
+227
+00:08:30,670 --> 00:08:31,736
+We can't do it with every game anymore.
+
+228
+00:08:31,760 --> 00:08:32,840
+And if they can just do it.
+
+229
+00:08:34,260 --> 00:08:34,540
+Programming.
+
+230
+00:08:34,620 --> 00:08:35,120
+And it works everywhere.
+
+231
+00:08:35,360 --> 00:08:35,460
+Then.
+
+232
+00:08:35,560 --> 00:08:35,740
+Yes.
+
+233
+00:08:35,780 --> 00:08:36,780
+That is nicely taken.
+
+234
+00:08:37,000 --> 00:08:38,000
+It becomes a kind of.
+
+235
+00:08:38,100 --> 00:08:39,580
+Sometimes it becomes a bit of a dump.
+
+236
+00:08:40,120 --> 00:08:40,680
+For functionality.
+
+237
+00:08:40,980 --> 00:08:41,980
+That we otherwise.
+
+238
+00:08:42,100 --> 00:08:42,760
+For every game.
+
+239
+00:08:42,840 --> 00:08:43,420
+We would have to make.
+
+240
+00:08:43,520 --> 00:08:43,780
+Yes.
+
+241
+00:08:44,200 --> 00:08:44,820
+If it is not.
+
+242
+00:08:44,940 --> 00:08:45,520
+Not specifically.
+
+243
+00:08:45,620 --> 00:08:45,960
+A high level.
+
+244
+00:08:46,455 --> 00:08:47,620
+That is no problem.
+
+245
+00:08:50,380 --> 00:08:50,660
+So.
+
+246
+00:08:50,780 --> 00:08:51,060
+Yes.
+
+247
+00:08:51,100 --> 00:08:52,100
+Hop on Miami itself.
+
+248
+00:08:53,220 --> 00:08:53,500
+Yes.
+
+249
+00:08:53,600 --> 00:08:55,240
+It is made in GameMaker.
+
+250
+00:08:56,000 --> 00:08:57,480
+If you don't know what GameMaker is.
+
+251
+00:08:58,060 --> 00:08:58,176
+Well.
+
+252
+00:08:58,200 --> 00:08:59,200
+It is a.
+
+253
+00:08:59,650 --> 00:09:00,980
+A kind of tool for.
+
+254
+00:09:01,060 --> 00:09:02,140
+Beginning game development.
+
+255
+00:09:02,260 --> 00:09:02,917
+It is made for.
+
+256
+00:09:02,941 --> 00:09:03,280
+In any case.
+
+257
+00:09:03,460 --> 00:09:04,460
+By.
+
+258
+00:09:04,760 --> 00:09:05,340
+In children.
+
+259
+00:09:05,460 --> 00:09:06,020
+Mark Overmars.
+
+260
+00:09:06,180 --> 00:09:07,180
+Dutchman.
+
+261
+00:09:07,360 --> 00:09:08,700
+And he really made it.
+
+262
+00:09:08,880 --> 00:09:09,280
+Mainly.
+
+263
+00:09:09,870 --> 00:09:10,480
+With the goal.
+
+264
+00:09:10,560 --> 00:09:11,560
+On education.
+
+265
+00:09:12,260 --> 00:09:12,660
+To.
+
+266
+00:09:12,720 --> 00:09:13,060
+Yes.
+
+267
+00:09:13,120 --> 00:09:13,600
+Actually children.
+
+268
+00:09:13,900 --> 00:09:14,120
+And.
+
+269
+00:09:14,240 --> 00:09:14,516
+And.
+
+270
+00:09:14,540 --> 00:09:14,880
+People.
+
+271
+00:09:15,220 --> 00:09:16,260
+With no experience at all.
+
+272
+00:09:16,745 --> 00:09:18,397
+To let them start a bit.
+
+273
+00:09:18,421 --> 00:09:19,421
+With making games.
+
+274
+00:09:20,680 --> 00:09:21,477
+The idea was also.
+
+275
+00:09:21,501 --> 00:09:21,676
+That you.
+
+276
+00:09:21,700 --> 00:09:21,900
+Let's say.
+
+277
+00:09:22,020 --> 00:09:22,417
+With your.
+
+278
+00:09:22,441 --> 00:09:23,441
+Drag and drop.
+
+279
+00:09:23,600 --> 00:09:24,260
+With your clicking.
+
+280
+00:09:24,400 --> 00:09:24,560
+And tapping.
+
+281
+00:09:24,780 --> 00:09:25,176
+That you.
+
+282
+00:09:25,200 --> 00:09:25,420
+That you.
+
+283
+00:09:25,460 --> 00:09:25,580
+Come somewhere.
+
+284
+00:09:25,990 --> 00:09:27,110
+That you can make something.
+
+285
+00:09:28,020 --> 00:09:28,300
+Only.
+
+286
+00:09:28,440 --> 00:09:28,640
+That is.
+
+287
+00:09:29,240 --> 00:09:30,240
+Yes.
+
+288
+00:09:30,960 --> 00:09:31,500
+In the end.
+
+289
+00:09:31,640 --> 00:09:32,640
+It is also used.
+
+290
+00:09:32,680 --> 00:09:33,680
+To make more.
+
+291
+00:09:33,880 --> 00:09:34,160
+Deep.
+
+292
+00:09:34,300 --> 00:09:34,580
+Games.
+
+293
+00:09:34,920 --> 00:09:35,200
+Where.
+
+294
+00:09:35,260 --> 00:09:35,620
+Hotline Miami.
+
+295
+00:09:35,740 --> 00:09:36,740
+Is one of them.
+
+296
+00:09:38,240 --> 00:09:39,240
+And that.
+
+297
+00:09:39,780 --> 00:09:40,060
+Yes.
+
+298
+00:09:40,120 --> 00:09:40,360
+That went.
+
+299
+00:09:40,740 --> 00:09:41,020
+Eventually.
+
+300
+00:09:41,320 --> 00:09:41,516
+Especially.
+
+301
+00:09:41,540 --> 00:09:41,836
+In the case.
+
+302
+00:09:41,860 --> 00:09:42,860
+Of Hotline Miami 2.
+
+303
+00:09:42,940 --> 00:09:43,497
+It really went.
+
+304
+00:09:43,521 --> 00:09:44,060
+The capabilities.
+
+305
+00:09:44,280 --> 00:09:45,280
+Of a GameMaker.
+
+306
+00:09:45,320 --> 00:09:46,320
+Past.
+
+307
+00:09:46,970 --> 00:09:47,970
+Hotline Miami 2 itself.
+
+308
+00:09:48,300 --> 00:09:48,880
+Is actually.
+
+309
+00:09:48,960 --> 00:09:49,180
+Not even.
+
+310
+00:09:49,260 --> 00:09:49,580
+Playable.
+
+311
+00:09:49,660 --> 00:09:50,260
+With a GameMaker.
+
+312
+00:09:50,600 --> 00:09:51,080
+Because he.
+
+313
+00:09:51,620 --> 00:09:52,040
+It is.
+
+314
+00:09:52,320 --> 00:09:52,640
+Made.
+
+315
+00:09:52,800 --> 00:09:53,360
+In GameMaker 7.
+
+316
+00:09:53,540 --> 00:09:53,680
+That is.
+
+317
+00:09:53,740 --> 00:09:53,997
+A bit.
+
+318
+00:09:54,021 --> 00:09:54,360
+An old version.
+
+319
+00:09:54,560 --> 00:09:54,720
+But.
+
+320
+00:09:55,220 --> 00:09:55,760
+It is also.
+
+321
+00:09:55,820 --> 00:09:56,260
+So old.
+
+322
+00:09:56,580 --> 00:09:56,940
+That they just.
+
+323
+00:09:57,060 --> 00:09:57,360
+No longer.
+
+324
+00:09:57,400 --> 00:09:57,700
+Yes.
+
+325
+00:09:57,740 --> 00:09:59,020
+They can no longer run the game.
+
+326
+00:09:59,800 --> 00:10:00,440
+They run.
+
+327
+00:10:00,580 --> 00:10:00,740
+Against.
+
+328
+00:10:00,840 --> 00:10:01,460
+The 32 bit.
+
+329
+00:10:01,640 --> 00:10:02,640
+Memory.
+
+330
+00:10:03,840 --> 00:10:04,160
+Bounding.
+
+331
+00:10:04,360 --> 00:10:04,837
+And that.
+
+332
+00:10:04,861 --> 00:10:05,240
+That goes.
+
+333
+00:10:05,380 --> 00:10:06,380
+Completely wrong.
+
+334
+00:10:07,120 --> 00:10:07,440
+But.
+
+335
+00:10:07,540 --> 00:10:07,880
+That is.
+
+336
+00:10:07,920 --> 00:10:08,240
+Yes.
+
+337
+00:10:08,320 --> 00:10:08,640
+It is.
+
+338
+00:10:08,740 --> 00:10:09,140
+A bit.
+
+339
+00:10:09,400 --> 00:10:09,720
+Expanded.
+
+340
+00:10:09,780 --> 00:10:10,780
+As Mr. Overmars.
+
+341
+00:10:11,000 --> 00:10:11,560
+Had provided.
+
+342
+00:10:11,720 --> 00:10:12,720
+I think.
+
+343
+00:10:12,760 --> 00:10:13,080
+But.
+
+344
+00:10:13,200 --> 00:10:13,340
+It is.
+
+345
+00:10:13,480 --> 00:10:13,860
+Sort of.
+
+346
+00:10:14,040 --> 00:10:15,040
+A kind of.
+
+347
+00:10:16,520 --> 00:10:17,160
+And yes.
+
+348
+00:10:17,240 --> 00:10:18,240
+And what we do.
+
+349
+00:10:18,700 --> 00:10:19,700
+The.
+
+350
+00:10:20,340 --> 00:10:20,660
+Yes.
+
+351
+00:10:20,740 --> 00:10:21,180
+GameMaker.
+
+352
+00:10:21,300 --> 00:10:21,416
+What.
+
+353
+00:10:21,440 --> 00:10:21,560
+What.
+
+354
+00:10:21,640 --> 00:10:21,860
+He actually.
+
+355
+00:10:22,080 --> 00:10:22,400
+Offers.
+
+356
+00:10:22,460 --> 00:10:22,900
+As a project.
+
+357
+00:10:23,060 --> 00:10:23,216
+Is.
+
+358
+00:10:23,240 --> 00:10:23,440
+In.
+
+359
+00:10:23,840 --> 00:10:24,120
+One.
+
+360
+00:10:24,220 --> 00:10:24,320
+Big.
+
+361
+00:10:24,420 --> 00:10:24,537
+Game.
+
+362
+00:10:24,561 --> 00:10:24,700
+K.
+
+363
+00:10:24,800 --> 00:10:25,000
+File.
+
+364
+00:10:25,040 --> 00:10:25,180
+Is.
+
+365
+00:10:25,220 --> 00:10:25,320
+Just.
+
+366
+00:10:25,360 --> 00:10:26,440
+A binary encoded.
+
+367
+00:10:26,500 --> 00:10:27,500
+File.
+
+368
+00:10:27,560 --> 00:10:27,840
+Where.
+
+369
+00:10:27,960 --> 00:10:28,140
+Actually.
+
+370
+00:10:28,180 --> 00:10:28,380
+Everything.
+
+371
+00:10:28,460 --> 00:10:28,620
+Is.
+
+372
+00:10:28,680 --> 00:10:28,860
+So.
+
+373
+00:10:28,960 --> 00:10:29,060
+All.
+
+374
+00:10:29,240 --> 00:10:29,520
+Sprites.
+
+375
+00:10:29,640 --> 00:10:29,740
+All.
+
+376
+00:10:30,280 --> 00:10:30,537
+Backgrounds.
+
+377
+00:10:30,561 --> 00:10:30,700
+All.
+
+378
+00:10:30,760 --> 00:10:31,040
+Information.
+
+379
+00:10:31,500 --> 00:10:31,780
+From.
+
+380
+00:10:31,840 --> 00:10:31,940
+Everything.
+
+381
+00:10:32,040 --> 00:10:32,120
+What.
+
+382
+00:10:32,380 --> 00:10:33,380
+Happens.
+
+383
+00:10:33,440 --> 00:10:33,720
+In.
+
+384
+00:10:33,820 --> 00:10:34,820
+The.
+
+385
+00:10:50,040 --> 00:10:51,040
+Game.
+
+386
+00:10:51,560 --> 00:10:52,560
+That.
+
+387
+00:10:53,300 --> 00:10:54,300
+Case.
+
+388
+00:10:59,820 --> 00:11:00,820
+And.
+
+389
+00:11:07,360 --> 00:11:07,920
+That.
+
+390
+00:11:08,100 --> 00:11:09,100
+Is.
+
+391
+00:11:09,900 --> 00:11:10,437
+That.
+
+392
+00:11:10,461 --> 00:11:11,461
+And there.
+
+393
+00:11:11,960 --> 00:11:12,520
+The.
+
+394
+00:11:12,980 --> 00:11:13,980
+Very.
+
+395
+00:11:14,400 --> 00:11:15,400
+Big.
+
+396
+00:11:15,520 --> 00:11:16,080
+And.
+
+397
+00:11:16,460 --> 00:11:17,460
+Or.
+
+398
+00:11:17,960 --> 00:11:18,520
+At.
+
+399
+00:11:18,620 --> 00:11:19,157
+The.
+
+400
+00:11:19,181 --> 00:11:19,337
+Main.
+
+401
+00:11:19,361 --> 00:11:19,700
+Of.
+
+402
+00:11:19,820 --> 00:11:19,840
+Your.
+
+403
+00:11:20,020 --> 00:11:22,100
+This is a GameMaker that people were
+working on.
+
+404
+00:11:22,180 --> 00:11:23,180
+It's called Enigma.
+
+405
+00:11:24,520 --> 00:11:26,580
+It was made in Java.
+
+406
+00:11:26,800 --> 00:11:27,940
+That was a bit...
+
+407
+00:11:28,900 --> 00:11:30,420
+I'd rather not call it that, if I can.
+
+408
+00:11:32,660 --> 00:11:38,760
+It was based on the fact that they wanted
+a GameMaker-like interface.
+
+409
+00:11:39,120 --> 00:11:40,600
+To be able to make the games with it.
+
+410
+00:11:41,580 --> 00:11:44,920
+More than what we were actually looking
+for.
+
+411
+00:11:46,760 --> 00:11:48,246
+And it wasn't completely complete yet.
+
+412
+00:11:48,270 --> 00:11:51,840
+But what it did offer was a bit of
+documentation.
+
+413
+00:11:52,000 --> 00:11:56,660
+About how to use the binary format to make
+our own tools.
+
+414
+00:11:57,660 --> 00:11:58,660
+So that's what we did.
+
+415
+00:11:58,700 --> 00:11:59,700
+We made C-Sharp tools.
+
+416
+00:12:00,890 --> 00:12:03,090
+C-Sharp is nice to work with, as far as
+we're concerned.
+
+417
+00:12:04,660 --> 00:12:07,420
+Especially for tools that aren't specific
+to the cross-platform group.
+
+418
+00:12:09,210 --> 00:12:10,290
+The code goes away quickly.
+
+419
+00:12:10,390 --> 00:12:11,390
+So that's pretty relaxed.
+
+420
+00:12:12,370 --> 00:12:13,977
+And what we did in the first instance
+was...
+
+421
+00:12:14,001 --> 00:12:16,840
+We made a tool that goes through the
+binary file.
+
+422
+00:12:17,020 --> 00:12:19,340
+And tries to get all the assets out of it.
+
+423
+00:12:20,470 --> 00:12:22,150
+And converts to something that we can use.
+
+424
+00:12:22,240 --> 00:12:24,020
+So we convert all the images to .png.
+
+425
+00:12:24,930 --> 00:12:26,740
+Audio files to .wav.
+
+426
+00:12:26,800 --> 00:12:27,800
+Everything.
+
+427
+00:12:28,130 --> 00:12:31,080
+In any case, so that we can see what's
+exactly in it.
+
+428
+00:12:31,870 --> 00:12:34,280
+And that we can verify if our approach is
+correct.
+
+429
+00:12:35,905 --> 00:12:37,717
+And what we eventually had with it was...
+
+430
+00:12:37,741 --> 00:12:39,581
+Well, this is a level from World of
+Warcraft 1.
+
+431
+00:12:40,460 --> 00:12:42,660
+Which then ran in our own environment.
+
+432
+00:12:44,820 --> 00:12:46,320
+That we just exported out of it.
+
+433
+00:12:47,710 --> 00:12:49,000
+And for comparison materials.
+
+434
+00:12:49,280 --> 00:12:51,260
+You can see it in the GameMaker editor.
+
+435
+00:12:51,720 --> 00:12:54,160
+So it looks a lot like each other.
+
+436
+00:12:54,450 --> 00:12:57,840
+And that was a good proof of concept.
+
+437
+00:12:57,980 --> 00:13:00,540
+So we knew we were doing well there.
+
+438
+00:13:02,080 --> 00:13:05,800
+And the next thing we had to do after
+that was... Converting the code itself.
+
+439
+00:13:06,560 --> 00:13:07,920
+And that was a bit more difficult.
+
+440
+00:13:09,220 --> 00:13:11,581
+GameMaker has its own... I don't know.
+
+441
+00:13:12,220 --> 00:13:13,460
+Its own coding language.
+
+442
+00:13:13,580 --> 00:13:14,820
+It's called GameMaker Language.
+
+443
+00:13:15,110 --> 00:13:16,960
+And we had to do something with that.
+
+444
+00:13:17,060 --> 00:13:18,060
+We didn't want to...
+
+445
+00:13:18,470 --> 00:13:19,870
+We could have built an interpreter.
+
+446
+00:13:19,940 --> 00:13:20,640
+If we wanted to.
+
+447
+00:13:20,820 --> 00:13:21,820
+Maybe.
+
+448
+00:13:21,960 --> 00:13:23,720
+That's also how GameMaker worked at the
+time.
+
+449
+00:13:24,200 --> 00:13:25,200
+Only...
+
+450
+00:13:25,760 --> 00:13:27,080
+We noticed on PC already.
+
+451
+00:13:27,220 --> 00:13:28,220
+That just on PC.
+
+452
+00:13:28,720 --> 00:13:30,160
+The interpreter was already so slow.
+
+453
+00:13:30,735 --> 00:13:32,140
+That on medium-sized machines.
+
+454
+00:13:32,240 --> 00:13:32,740
+Sometimes it didn't work at all.
+
+455
+00:13:33,100 --> 00:13:35,460
+So we actually had a different solution
+for that.
+
+456
+00:13:35,820 --> 00:13:37,880
+And what we actually started doing is...
+
+457
+00:13:38,550 --> 00:13:39,740
+Just looking to begin with.
+
+458
+00:13:39,840 --> 00:13:40,840
+Okay, how can we...
+
+459
+00:13:41,670 --> 00:13:43,701
+In a tool environment...
+Understand this language.
+
+460
+00:13:43,930 --> 00:13:45,410
+And then we can do something with it.
+
+461
+00:13:45,920 --> 00:13:47,420
+So that we... You know.
+
+462
+00:13:47,680 --> 00:13:48,780
+Can get to a birth version.
+
+463
+00:13:49,980 --> 00:13:52,860
+And then we eventually came
+up with... Irony.net That is...
+
+464
+00:13:53,260 --> 00:13:56,021
+In their own words... A development
+kit for implementing languages.
+
+465
+00:13:56,260 --> 00:13:57,940
+Well, that seems straightforward in itself.
+
+466
+00:13:58,520 --> 00:14:00,080
+For something that makes sense to us.
+
+467
+00:14:00,610 --> 00:14:01,880
+It was also C-sharp once.
+
+468
+00:14:03,060 --> 00:14:04,200
+A C-sharp library.
+
+469
+00:14:04,560 --> 00:14:07,260
+So that... Drives nicely with
+the tools we already have.
+
+470
+00:14:08,080 --> 00:14:09,200
+We can easily connect to it.
+
+471
+00:14:09,280 --> 00:14:10,280
+And...
+
+472
+00:14:10,780 --> 00:14:11,180
+Yeah.
+
+473
+00:14:11,430 --> 00:14:13,220
+It was inside our ballpark.
+
+474
+00:14:14,290 --> 00:14:16,581
+And the advantage of
+that... Is that we can do...
+
+475
+00:14:17,130 --> 00:14:18,780
+Yeah, you have comparable tools.
+
+476
+00:14:18,900 --> 00:14:19,900
+Which are the...
+
+477
+00:14:20,440 --> 00:14:22,396
+Just... Do something
+with language parsers.
+
+478
+00:14:22,420 --> 00:14:24,096
+So that we can do something with them in
+the future.
+
+479
+00:14:24,120 --> 00:14:28,220
+What is often included is... That you
+have a separate definition language...
+
+480
+00:14:28,445 --> 00:14:29,445
+For your grammar.
+
+481
+00:14:30,380 --> 00:14:32,796
+So you usually have a folder of files...
+On which you have to define your grammar.
+
+482
+00:14:32,820 --> 00:14:33,820
+And then you have a tool.
+
+483
+00:14:34,000 --> 00:14:35,860
+Uses that file and then generates a
+parser.
+
+484
+00:14:37,050 --> 00:14:37,860
+That in itself is C-code.
+
+485
+00:14:38,040 --> 00:14:42,860
+So you just connect it and then...
+That was a bit of a hassle for us.
+
+486
+00:14:44,240 --> 00:14:47,260
+Difficult to connect, difficult to
+understand and to debug.
+
+487
+00:14:48,240 --> 00:14:51,840
+And the advantage of Irony was that it had
+everything straight up in C-sharp.
+
+488
+00:14:52,840 --> 00:14:54,640
+And we could easily hang it in our
+tool chain.
+
+489
+00:14:57,040 --> 00:15:02,560
+And what it looks like is that you create
+a grammar for a certain language.
+
+490
+00:15:02,970 --> 00:15:04,840
+In this case it is GameMaker Language.
+
+491
+00:15:05,770 --> 00:15:09,889
+And you can define statements
+by saying that the switch
+
+492
+00:15:09,913 --> 00:15:12,940
+statement is the word
+switch plus the expression.
+
+493
+00:15:13,750 --> 00:15:15,910
+And some braces, but maybe there is
+another expression.
+
+494
+00:15:17,360 --> 00:15:19,160
+And this is how we built up the whole
+grammar.
+
+495
+00:15:19,560 --> 00:15:22,820
+In the end it is a big file of almost 2000
+code rules.
+
+496
+00:15:24,620 --> 00:15:28,740
+Which tells Irony how GameMaker Language
+works.
+
+497
+00:15:29,840 --> 00:15:31,100
+How it is built up.
+
+498
+00:15:33,100 --> 00:15:34,816
+And it is still a bit of a nasty material.
+
+499
+00:15:34,840 --> 00:15:36,151
+I don't know how it was built up.
+
+500
+00:15:36,175 --> 00:15:37,815
+But I will come back to that in a moment.
+
+501
+00:15:39,090 --> 00:15:45,040
+And that gave us the basic idea of how the
+language works.
+
+502
+00:15:45,780 --> 00:15:46,836
+And what we could do with it.
+
+503
+00:15:46,860 --> 00:15:48,200
+If you take a look at...
+
+504
+00:15:48,940 --> 00:15:51,500
+I will zoom in on this in a moment.
+
+505
+00:15:52,660 --> 00:15:56,220
+On the right side you see a piece of
+GameMaker code.
+
+506
+00:15:56,980 --> 00:15:58,980
+It looks pretty much the same as on C or
+C++.
+
+507
+00:15:59,300 --> 00:16:00,300
+Pretty straightforward.
+
+508
+00:16:01,000 --> 00:16:02,777
+And on the right side you see the parse
+tree.
+
+509
+00:16:02,801 --> 00:16:05,160
+Which was generated by Irony.
+
+510
+00:16:06,760 --> 00:16:08,360
+Thank you.
+
+511
+00:16:08,540 --> 00:16:09,540
+That might help a little.
+
+512
+00:16:11,820 --> 00:16:15,160
+And then you can see how it was built up.
+
+513
+00:16:15,200 --> 00:16:16,840
+It is just a syntactic...
+
+514
+00:16:17,390 --> 00:16:20,700
+A tree representation of everything that
+happens in that piece of code.
+
+515
+00:16:23,340 --> 00:16:25,220
+And that tells us that it is a function body.
+
+516
+00:16:26,420 --> 00:16:28,100
+And there is a statement in it.
+
+517
+00:16:28,350 --> 00:16:30,600
+And that is apparently a variable
+declaration.
+
+518
+00:16:31,140 --> 00:16:32,757
+And there is an identifier and a
+semicolon.
+
+519
+00:16:32,781 --> 00:16:33,840
+So you have...
+
+520
+00:16:34,710 --> 00:16:36,440
+This is sort of what Irony makes of it.
+
+521
+00:16:36,840 --> 00:16:39,480
+The moment you have generated the
+grammatical plus a piece of code.
+
+522
+00:16:39,720 --> 00:16:42,000
+Then it makes a sort of tree out of it in
+memory.
+
+523
+00:16:42,140 --> 00:16:43,140
+And that...
+
+524
+00:16:43,910 --> 00:16:45,840
+It just goes on for a bit of everything.
+
+525
+00:16:47,190 --> 00:16:49,480
+The same idea for the switch statement.
+
+526
+00:16:49,820 --> 00:16:51,220
+And the case label.
+
+527
+00:16:54,055 --> 00:16:55,455
+It is getting a bit more difficult.
+
+528
+00:16:56,690 --> 00:16:59,260
+And that makes the whole tree in the end.
+
+529
+00:16:59,400 --> 00:17:02,080
+So this is an abstract syntax tree.
+
+530
+00:17:03,500 --> 00:17:09,020
+And that is just a representation of the
+piece of code in memory.
+
+531
+00:17:09,220 --> 00:17:10,620
+Where you can do something with it.
+
+532
+00:17:11,380 --> 00:17:13,140
+Let me see if I can do this.
+
+533
+00:17:15,240 --> 00:17:16,240
+Yes, okay.
+
+534
+00:17:17,230 --> 00:17:18,230
+As an example.
+
+535
+00:17:18,540 --> 00:17:19,800
+Here you have a piece of the...
+
+536
+00:17:22,360 --> 00:17:25,400
+This is a sort of zoomed out version of
+the piece of code.
+
+537
+00:17:26,030 --> 00:17:29,541
+You have a function body, a switch
+statement, a section with a statements list.
+
+538
+00:17:29,820 --> 00:17:31,761
+And this is a... Yes.
+
+539
+00:17:32,640 --> 00:17:36,040
+This is a sort of collapsed version of the
+complete syntax tree.
+
+540
+00:17:37,680 --> 00:17:40,800
+Which actually only takes the sort of
+nodes.
+
+541
+00:17:41,380 --> 00:17:43,460
+Which you have specified as oh this is
+interesting.
+
+542
+00:17:43,640 --> 00:17:44,720
+I want something with this.
+
+543
+00:17:46,650 --> 00:17:47,820
+And for that kind of thing.
+
+544
+00:17:48,540 --> 00:17:49,540
+For that kind of node.
+
+545
+00:17:49,620 --> 00:17:50,700
+For which you specify that.
+
+546
+00:17:50,790 --> 00:17:52,360
+You can write a piece of C sharp code.
+
+547
+00:17:52,780 --> 00:17:53,400
+Okay good.
+
+548
+00:17:53,595 --> 00:17:55,240
+As soon as you traverse the tree.
+
+549
+00:17:55,760 --> 00:17:57,920
+We are just going to walk that tree from
+top to bottom.
+
+550
+00:17:58,285 --> 00:18:00,060
+And you come across a switch statement.
+
+551
+00:18:00,400 --> 00:18:02,521
+Then... Then you have to
+execute this piece of code.
+
+552
+00:18:03,260 --> 00:18:07,240
+And here you can see that we are just
+doing some simple code there.
+
+553
+00:18:07,320 --> 00:18:10,000
+And eventually a piece of C++ code output.
+
+554
+00:18:11,090 --> 00:18:14,740
+That is the assignment of that C code
+variable at the bottom.
+
+555
+00:18:14,960 --> 00:18:18,120
+That is actually the output that the node
+in the tree is going to generate.
+
+556
+00:18:20,300 --> 00:18:23,040
+And yes, that is the basis of the setup.
+
+557
+00:18:23,180 --> 00:18:25,060
+As we call the code conversion.
+
+558
+00:18:26,335 --> 00:18:27,775
+Then we will just take a quick look.
+
+559
+00:18:28,360 --> 00:18:28,777
+Yes.
+
+560
+00:18:28,801 --> 00:18:34,040
+This is just a variable declaration in
+GameMaker language.
+
+561
+00:18:34,480 --> 00:18:35,680
+So that is just var test.
+
+562
+00:18:36,060 --> 00:18:37,060
+And that output is...
+
+563
+00:18:37,640 --> 00:18:40,480
+Here you see the output of the C++ code
+that we then generate.
+
+564
+00:18:41,860 --> 00:18:44,480
+And so we actually go through that whole
+tree again.
+
+565
+00:18:44,640 --> 00:18:47,300
+And that is all the same joke.
+
+566
+00:18:47,870 --> 00:18:52,500
+Most of it is relatively straightforward
+to convert to C++.
+
+567
+00:18:53,600 --> 00:18:56,780
+Of course, we just had to do a number of
+things on the C side.
+
+568
+00:18:56,940 --> 00:18:57,940
+To...
+
+569
+00:18:58,420 --> 00:19:00,520
+To keep the behavior the same, right?
+
+570
+00:19:01,240 --> 00:19:03,680
+Because there are still some weird things
+happening.
+
+571
+00:19:04,560 --> 00:19:07,200
+But in general, the syntax looks pretty
+much the same.
+
+572
+00:19:09,020 --> 00:19:11,000
+And yes, you can see here that we have
+a...
+
+573
+00:19:12,400 --> 00:19:15,400
+In this case, we had a sort of instance
+var helper for that.
+
+574
+00:19:15,800 --> 00:19:17,180
+To do a lot of magic.
+
+575
+00:19:17,460 --> 00:19:18,860
+I'll come back to that in a moment.
+
+576
+00:19:19,650 --> 00:19:22,580
+But that was kind of the basic setup that
+we made.
+
+577
+00:19:22,980 --> 00:19:26,100
+To just convert the code to a little bit
+of C++.
+
+578
+00:19:26,150 --> 00:19:32,100
+And from there, we started doing all the
+further implementation on the C++ side.
+
+579
+00:19:32,780 --> 00:19:33,900
+To make sure that it just...
+
+580
+00:19:34,400 --> 00:19:36,480
+Yes, for the rest it just runs like a
+GameMaker game.
+
+581
+00:19:37,800 --> 00:19:39,560
+And that's where we have that GML for.
+
+582
+00:19:39,660 --> 00:19:43,900
+That's just a class that actually emulates
+a variable within GameMaker.
+
+583
+00:19:44,200 --> 00:19:47,600
+And says, okay, well, I behave in exactly
+the same way.
+
+584
+00:19:49,370 --> 00:19:54,957
+And all the built-in scripts and functions
+that are available in GameMaker
+
+585
+00:19:54,981 --> 00:19:57,780
+we have implemented in C++ ourselves.
+
+586
+00:19:58,330 --> 00:20:00,530
+Plus all the underlying things that are
+needed for that.
+
+587
+00:20:01,350 --> 00:20:03,070
+So rendering and audio and all those
+things.
+
+588
+00:20:04,520 --> 00:20:06,677
+And then, yes, then it's just...
+
+589
+00:20:06,701 --> 00:20:10,980
+The moment we've done that, then we can
+just convert the code from GameMaker to C++.
+
+590
+00:20:11,140 --> 00:20:14,220
+And that's just a compiler and debugger,
+as you would do with any C++ project.
+
+591
+00:20:17,130 --> 00:20:21,520
+So there are some weird things in it,
+as you may have heard.
+
+592
+00:20:24,090 --> 00:20:24,956
+It's a GameMaker project.
+
+593
+00:20:24,980 --> 00:20:26,620
+The GameMaker language is not orthogonal.
+
+594
+00:20:28,180 --> 00:20:32,797
+What it actually contains is that you can
+do the same thing
+
+595
+00:20:32,821 --> 00:20:35,040
+in a number of different ways in GameMaker
+language.
+
+596
+00:20:35,890 --> 00:20:38,460
+And yes, there are a number of examples of
+that.
+
+597
+00:20:39,320 --> 00:20:42,200
+But what it basically contains is that it
+is irritating to work with.
+
+598
+00:20:44,300 --> 00:20:49,680
+It could be that depending on the code
+style of who made the original game
+
+599
+00:20:49,955 --> 00:20:51,640
+that something works or doesn't work.
+
+600
+00:20:51,680 --> 00:20:51,860
+Right?
+
+601
+00:20:52,080 --> 00:20:52,560
+Yes.
+
+602
+00:20:52,860 --> 00:20:55,600
+Yes, it just makes it a bit more complex.
+
+603
+00:20:56,960 --> 00:20:59,356
+And there are also complex variables in
+it.
+
+604
+00:20:59,380 --> 00:21:03,660
+For example, if you look at purely the x-
+and y-coordinate of an object.
+
+605
+00:21:04,290 --> 00:21:07,740
+The moment you adjust that, the bounding
+box will also be updated.
+
+606
+00:21:07,980 --> 00:21:13,760
+And the bounding box can now be controlled
+and read as a variable.
+
+607
+00:21:14,580 --> 00:21:17,940
+So just a regular code that says x is 5.
+
+608
+00:21:18,040 --> 00:21:20,217
+That can do a lot of other things under
+the hood.
+
+609
+00:21:20,241 --> 00:21:23,700
+And those are things that are not
+immediately clear.
+
+610
+00:21:24,120 --> 00:21:26,520
+The moment you look at the language,
+they are not documented.
+
+611
+00:21:27,540 --> 00:21:30,480
+And you just have to find out how to find
+out.
+
+612
+00:21:31,680 --> 00:21:33,820
+And then just fix it.
+
+613
+00:21:35,160 --> 00:21:38,400
+And the most annoying thing in the whole
+GameMaker is with.
+
+614
+00:21:39,720 --> 00:21:42,480
+Sounds simple, but what it actually does
+is you can...
+
+615
+00:21:44,485 --> 00:21:46,296
+Anywhere in your code you can say,
+well, okay, good.
+
+616
+00:21:46,320 --> 00:21:48,680
+I actually want to execute a piece of code
+with that object.
+
+617
+00:21:49,360 --> 00:21:54,060
+And that code is completely separate from
+where that object is defined.
+
+618
+00:21:55,415 --> 00:21:59,661
+It makes a very large web of vague
+dependencies that are very difficult to pull.
+
+619
+00:22:00,120 --> 00:22:05,120
+And that is mainly difficult for, you know,
+just reading the code understandably.
+
+620
+00:22:05,340 --> 00:22:08,840
+But there were also some technical things
+that were a bit tricky.
+
+621
+00:22:11,625 --> 00:22:18,460
+This is a slightly broader example of a
+piece of converted code.
+
+622
+00:22:19,830 --> 00:22:23,220
+What you see here, for example,
+is we have the getSwitchValue.
+
+623
+00:22:23,990 --> 00:22:25,630
+We had to introduce that fairly recently.
+
+624
+00:22:25,880 --> 00:22:29,980
+Because another game, for me it was
+Cotswim, you didn't use it.
+
+625
+00:22:30,060 --> 00:22:35,720
+But what you can do in GameMaker is you
+can as a switch case value.
+
+626
+00:22:35,780 --> 00:22:37,156
+You can just have a constant string.
+
+627
+00:22:37,180 --> 00:22:40,200
+Well, C++ doesn't really do that that fast.
+
+628
+00:22:41,640 --> 00:22:45,700
+So that's what we made an extra operator
+for.
+
+629
+00:22:46,230 --> 00:22:48,456
+In this case, a hash value return.
+
+630
+00:22:48,480 --> 00:22:50,440
+Of the actual value.
+
+631
+00:22:50,700 --> 00:22:54,160
+And that hard code, even though we code
+generation here in the C++ code.
+
+632
+00:22:54,300 --> 00:22:55,420
+A bit tricky, but it works.
+
+633
+00:22:58,390 --> 00:23:00,480
+And there are, look, you can see here too.
+
+634
+00:23:02,280 --> 00:23:05,320
+Look, these are four different variable
+accesses.
+
+635
+00:23:07,080 --> 00:23:08,080
+Assignments of variables.
+
+636
+00:23:09,000 --> 00:23:11,300
+And those are actually different things.
+
+637
+00:23:11,440 --> 00:23:13,340
+Look, this is a local variable.
+
+638
+00:23:13,480 --> 00:23:15,780
+Because test is pre-declared here.
+
+639
+00:23:16,440 --> 00:23:18,377
+And that is in the case of the C++ code.
+
+640
+00:23:18,401 --> 00:23:20,100
+Also just some local variables.
+
+641
+00:23:21,440 --> 00:23:23,800
+But you also have variables that belong to
+an instance.
+
+642
+00:23:24,100 --> 00:23:27,260
+So just a member variable of a certain
+instance of an object.
+
+643
+00:23:28,260 --> 00:23:29,260
+Global variables.
+
+644
+00:23:29,480 --> 00:23:33,180
+And even from an object itself.
+
+645
+00:23:33,430 --> 00:23:36,320
+So OBA test in this case is the name of an
+object.
+
+646
+00:23:37,020 --> 00:23:39,157
+And if you have a variable of access
+there.
+
+647
+00:23:39,181 --> 00:23:43,620
+What it does then is it looks for the
+first instance of that object.
+
+648
+00:23:44,520 --> 00:23:47,080
+And there it will ask, hey, what is your
+test variable by chance?
+
+649
+00:23:47,915 --> 00:23:50,477
+Again, these are things that are not
+really clearly documented anywhere.
+
+650
+00:23:50,501 --> 00:23:52,640
+And it's just how someone writes their
+code.
+
+651
+00:23:52,920 --> 00:23:54,740
+Whether you're going to run into it or not.
+
+652
+00:23:56,640 --> 00:24:00,340
+And yes, we've had some trouble with that.
+
+653
+00:24:02,320 --> 00:24:03,320
+To get it all right.
+
+654
+00:24:05,515 --> 00:24:07,900
+Yes, this is another piece of example.
+
+655
+00:24:08,120 --> 00:24:09,460
+This is from the with statement.
+
+656
+00:24:10,520 --> 00:24:13,560
+Again, here you have a piece of code that
+says, yes, with OBA test.
+
+657
+00:24:14,560 --> 00:24:15,477
+Let's do something, right?
+
+658
+00:24:15,501 --> 00:24:18,360
+And that is a totally unrelated object.
+
+659
+00:24:18,990 --> 00:24:20,110
+This code can be everywhere.
+
+660
+00:24:20,280 --> 00:24:21,200
+And then it knows the same thing.
+
+661
+00:24:21,240 --> 00:24:23,640
+So in itself it is very handy if you want
+to write that code.
+
+662
+00:24:24,215 --> 00:24:25,896
+It is handy if you know very little about
+programming.
+
+663
+00:24:25,920 --> 00:24:27,437
+Then you can get started here quickly.
+
+664
+00:24:27,461 --> 00:24:29,020
+And if you just have an indication.
+
+665
+00:24:29,200 --> 00:24:30,676
+Oh, I actually want to do something with
+this object.
+
+666
+00:24:30,700 --> 00:24:31,860
+Then it's very easy to do.
+
+667
+00:24:32,040 --> 00:24:33,040
+That's fun.
+
+668
+00:24:33,220 --> 00:24:35,537
+But the moment you start engineering that
+language.
+
+669
+00:24:35,561 --> 00:24:36,561
+That's less nice.
+
+670
+00:24:38,250 --> 00:24:39,490
+And what you get there is that.
+
+671
+00:24:39,560 --> 00:24:43,460
+Yes, what we do is we make a list of all
+instances of that object.
+
+672
+00:24:43,720 --> 00:24:45,120
+And that's where we're going to go.
+
+673
+00:24:45,500 --> 00:24:48,336
+Because this is also executed for each
+instance of that specific object.
+
+674
+00:24:48,360 --> 00:24:49,920
+Unless you do something else with it.
+
+675
+00:24:51,520 --> 00:24:53,480
+And then we're going to loop over that.
+
+676
+00:24:53,700 --> 00:24:54,180
+Right?
+
+677
+00:24:54,445 --> 00:24:56,336
+And this list that we take here.
+
+678
+00:24:56,360 --> 00:24:57,360
+The GML instances.
+
+679
+00:24:57,520 --> 00:24:58,000
+Class.
+
+680
+00:24:58,300 --> 00:25:00,660
+That is a fairly complex list
+implementation.
+
+681
+00:25:01,120 --> 00:25:03,420
+Because there are all kinds of edge cases.
+
+682
+00:25:03,560 --> 00:25:07,020
+What happens if you destroy an instance in
+the width statement.
+
+683
+00:25:07,240 --> 00:25:08,376
+Because that can also be done.
+
+684
+00:25:08,400 --> 00:25:10,020
+And then that list is updated.
+
+685
+00:25:10,480 --> 00:25:14,177
+And I was doing this at control.
+
+686
+00:25:14,201 --> 00:25:16,620
+At the conference.
+
+687
+00:25:16,900 --> 00:25:17,900
+The same talk you did.
+
+688
+00:25:17,960 --> 00:25:19,096
+And Mark Overmars was there.
+
+689
+00:25:19,120 --> 00:25:20,120
+He was there.
+
+690
+00:25:21,620 --> 00:25:23,716
+And he had to laugh quite hard when I
+showed this slide.
+
+691
+00:25:23,740 --> 00:25:26,420
+Because he already knew that he had really
+done a lot of shit there.
+
+692
+00:25:27,780 --> 00:25:30,300
+That was fair.
+
+693
+00:25:30,580 --> 00:25:31,020
+Because that is.
+
+694
+00:25:31,260 --> 00:25:32,260
+Yes.
+
+695
+00:25:32,420 --> 00:25:33,840
+Again, it is very handy to use.
+
+696
+00:25:34,100 --> 00:25:35,100
+But it is just.
+
+697
+00:25:35,600 --> 00:25:35,960
+Yes.
+
+698
+00:25:36,060 --> 00:25:39,300
+There are quite a few vague things
+attached to it.
+
+699
+00:25:43,220 --> 00:25:43,880
+This is.
+
+700
+00:25:43,960 --> 00:25:44,157
+Yes.
+
+701
+00:25:44,181 --> 00:25:47,040
+A very good example of complex variables.
+
+702
+00:25:48,640 --> 00:25:50,020
+Is it a complex variable?
+
+703
+00:25:51,240 --> 00:25:51,880
+It fits.
+
+704
+00:25:52,060 --> 00:25:53,060
+Yes.
+
+705
+00:25:55,120 --> 00:25:56,540
+What we have done for that is.
+
+706
+00:25:58,330 --> 00:26:00,130
+We have to do something for certain
+variables.
+
+707
+00:26:00,820 --> 00:26:01,980
+Before it is read out.
+
+708
+00:26:02,080 --> 00:26:03,200
+Or after it is written down.
+
+709
+00:26:04,120 --> 00:26:05,620
+Because GameMaker is so strange.
+
+710
+00:26:06,350 --> 00:26:09,080
+Among others, in the case of setting your
+x variables.
+
+711
+00:26:09,340 --> 00:26:10,860
+The bounding box must also be updated.
+
+712
+00:26:11,290 --> 00:26:12,797
+For Hotline Miami 1 we solved this.
+
+713
+00:26:12,821 --> 00:26:20,220
+This was solved by using the GML var,
+the basic variable class that we use,
+
+714
+00:26:20,910 --> 00:26:22,340
+to make a virtual class out of it.
+
+715
+00:26:22,540 --> 00:26:24,260
+And then specialization for certain
+things.
+
+716
+00:26:25,200 --> 00:26:29,140
+That worked in itself, the code was not
+very clearly readable anymore,
+
+717
+00:26:29,280 --> 00:26:30,280
+but it worked.
+
+718
+00:26:30,400 --> 00:26:31,880
+We shipped Hotline Miami in with that.
+
+719
+00:26:32,620 --> 00:26:37,100
+Hotline Miami 2 was a lot more
+complex than the first one in terms of code.
+
+720
+00:26:37,250 --> 00:26:38,885
+And it quickly became
+clear that it could no
+
+721
+00:26:38,909 --> 00:26:41,421
+longer work that way
+in terms of performance.
+
+722
+00:26:42,770 --> 00:26:47,460
+We had really overrun too much of
+interactions and retable look ups.
+
+723
+00:26:47,680 --> 00:26:48,680
+That just had to go.
+
+724
+00:26:49,580 --> 00:26:54,797
+So what we have in place now is,
+when we have a variable request that needs
+
+725
+00:26:54,821 --> 00:26:59,440
+to do something more complex, we return a
+temporary instance of a GML instance var.
+
+726
+00:26:59,580 --> 00:27:05,320
+This is just an object that we instantiate
+with some information.
+
+727
+00:27:05,500 --> 00:27:07,076
+Okay, it's about this and this variable.
+
+728
+00:27:07,100 --> 00:27:08,160
+This and this instance.
+
+729
+00:27:09,105 --> 00:27:13,540
+And there, in the constructor and in the
+destruct or, or in the changed behavior,
+
+730
+00:27:13,760 --> 00:27:14,960
+we can execute a lot of logic.
+
+731
+00:27:16,690 --> 00:27:18,882
+Among other things, in the
+case of x, we are going to
+
+732
+00:27:18,906 --> 00:27:23,880
+call a function that does
+both x and the bounding box.
+
+733
+00:27:26,045 --> 00:27:28,980
+Now we will quickly go to the architecture
+of how this was set up.
+
+734
+00:27:30,100 --> 00:27:35,380
+Again, we have the gmk file here,
+which is just the GameMaker source code.
+
+735
+00:27:35,580 --> 00:27:37,240
+And essence and so on.
+
+736
+00:27:37,680 --> 00:27:38,480
+Then we have GameMaker.
+
+737
+00:27:38,640 --> 00:27:43,520
+That is our set of conversion tools that
+we use to convert all the code and assets.
+
+738
+00:27:45,160 --> 00:27:48,900
+And there is also the core simulation.
+
+739
+00:27:49,120 --> 00:27:52,120
+So there is all the implementation of the
+scripts of the GameMaker.
+
+740
+00:27:52,240 --> 00:27:54,400
+All the logic to execute everything in the
+right order.
+
+741
+00:27:56,380 --> 00:27:59,040
+A placeholder to start an application that
+has a window.
+
+742
+00:28:00,065 --> 00:28:03,480
+Actually, there is more or less the
+platform for the speaker.
+
+743
+00:28:03,600 --> 00:28:04,600
+I'll say that again.
+
+744
+00:28:05,380 --> 00:28:08,131
+And then for your game,
+in this case Hotline Miami 2, you
+
+745
+00:28:08,155 --> 00:28:11,861
+actually only have your
+generated C++ code.
+
+746
+00:28:12,410 --> 00:28:13,730
+Which is automatically generated.
+
+747
+00:28:14,645 --> 00:28:19,600
+Because metadata, to send that converter,
+all the content that we have converted.
+
+748
+00:28:19,820 --> 00:28:21,380
+And so tailored scripts.
+
+749
+00:28:21,720 --> 00:28:25,237
+And that basically means code that we have
+to implement differently for our version
+
+750
+00:28:25,261 --> 00:28:29,180
+of the game than the original GameMaker
+version.
+
+751
+00:28:29,670 --> 00:28:31,900
+They said it because something has to be
+tailored.
+
+752
+00:28:32,040 --> 00:28:33,797
+So we have to show a different picture,
+for example.
+
+753
+00:28:33,821 --> 00:28:34,657
+Because we are running on a console.
+
+754
+00:28:34,681 --> 00:28:38,820
+Or we have to implement some game pad
+controls.
+
+755
+00:28:40,300 --> 00:28:40,940
+Touchscreen controls.
+
+756
+00:28:41,060 --> 00:28:42,060
+Anything, right?
+
+757
+00:28:42,170 --> 00:28:43,216
+We can just do that in there.
+
+758
+00:28:43,240 --> 00:28:45,356
+And we can just say, okay, well,
+this specific script.
+
+759
+00:28:45,380 --> 00:28:47,020
+We just want to adjust that a little bit.
+
+760
+00:28:47,100 --> 00:28:49,100
+And we just want to do something different
+with it.
+
+761
+00:28:49,170 --> 00:28:51,010
+And we can just do that on a per-project
+basis.
+
+762
+00:28:52,695 --> 00:28:53,896
+And then we still have Silverware.
+
+763
+00:28:53,920 --> 00:28:56,620
+That is our platform's specific layer.
+
+764
+00:28:56,870 --> 00:28:57,950
+Actually, all these things.
+
+765
+00:28:58,040 --> 00:29:01,400
+So rendering and threading, appflow.
+
+766
+00:29:01,580 --> 00:29:03,657
+Everything in a kind of
+platform-independent way.
+
+767
+00:29:03,681 --> 00:29:06,300
+In any case, code against each other.
+
+768
+00:29:06,700 --> 00:29:07,937
+So that we just have to do it once.
+
+769
+00:29:07,961 --> 00:29:10,400
+Instead of doing it once for each
+platform.
+
+770
+00:29:12,340 --> 00:29:15,620
+Yes, there are a number of things that are
+fun in itself.
+
+771
+00:29:15,720 --> 00:29:17,680
+And a number of things that are a little
+less fun.
+
+772
+00:29:17,935 --> 00:29:20,000
+The advantage is that
+we just have complete
+
+773
+00:29:20,024 --> 00:29:22,380
+control over everything
+in the entire pipeline.
+
+774
+00:29:22,460 --> 00:29:23,460
+From start to finish.
+
+775
+00:29:24,280 --> 00:29:26,960
+We have no dependence on a YoYo Games.
+
+776
+00:29:27,100 --> 00:29:31,480
+Or another party that has control over a
+project.
+
+777
+00:29:31,630 --> 00:29:33,390
+Or a piece of software that needs to be
+used.
+
+778
+00:29:34,640 --> 00:29:36,640
+We also do a lot of projects with Unity.
+
+779
+00:29:37,560 --> 00:29:39,440
+And if we run into a problem there.
+
+780
+00:29:39,580 --> 00:29:40,920
+Then sometimes it's just okay.
+
+781
+00:29:42,010 --> 00:29:43,677
+We just have to wait until Unity has fixed
+it.
+
+782
+00:29:43,701 --> 00:29:45,221
+Because we can't do anything about it.
+
+783
+00:29:45,430 --> 00:29:46,576
+We don't have that here at all.
+
+784
+00:29:46,600 --> 00:29:48,760
+Because we actually have everything in our
+own control.
+
+785
+00:29:49,780 --> 00:29:52,120
+In addition, we can debug better.
+
+786
+00:29:52,320 --> 00:29:54,440
+Especially because this was made in
+GameMaker 7.
+
+787
+00:29:55,165 --> 00:29:56,540
+Which had no debug.
+
+788
+00:29:56,660 --> 00:29:57,660
+As in, not at all.
+
+789
+00:29:57,720 --> 00:30:02,653
+The only way you can debug there is... Yes, print.
+
+790
+00:30:03,880 --> 00:30:08,680
+And that leads to a considerable amount of
+bugs that were in the original game.
+
+791
+00:30:10,020 --> 00:30:12,650
+I still have a lot of respect for Jonathan
+Soderstrom.
+
+792
+00:30:13,100 --> 00:30:14,100
+Who made the game.
+
+793
+00:30:14,380 --> 00:30:17,240
+Who managed to put it together without a
+debug.
+
+794
+00:30:18,300 --> 00:30:19,620
+I don't know how you can do that.
+
+795
+00:30:20,140 --> 00:30:25,420
+I think it's about 70,000 or 80,000 lines
+of code.
+
+796
+00:30:27,160 --> 00:30:28,660
+I wouldn't be able to do that.
+
+797
+00:30:29,600 --> 00:30:30,277
+But anyway.
+
+798
+00:30:30,301 --> 00:30:32,584
+But in the end, the
+moral of the story is that
+
+799
+00:30:32,608 --> 00:30:35,701
+there were some bugs
+that he couldn't pull at all.
+
+800
+00:30:36,250 --> 00:30:38,820
+He just couldn't understand where it came
+from.
+
+801
+00:30:39,240 --> 00:30:41,900
+And because we are just generating C++
+code.
+
+802
+00:30:41,940 --> 00:30:43,620
+We can use all the tools we look at there.
+
+803
+00:30:44,060 --> 00:30:45,596
+So we can just use the data break point.
+
+804
+00:30:45,620 --> 00:30:47,700
+Because if this variable changes.
+
+805
+00:30:48,100 --> 00:30:49,136
+Just the break point.
+
+806
+00:30:49,160 --> 00:30:50,400
+We can see where it comes from.
+
+807
+00:30:50,815 --> 00:30:56,221
+And so we can solve quite a few things that
+the original developer couldn't fix at all.
+
+808
+00:30:58,000 --> 00:30:58,697
+Optimization opportunities.
+
+809
+00:30:58,721 --> 00:31:05,200
+This is more about the fact that we have
+full control over the engine under the hood.
+
+810
+00:31:05,500 --> 00:31:09,900
+Not so much about the fact that we run C++
+compared to GameMaker.
+
+811
+00:31:10,660 --> 00:31:14,660
+But it does mean that we can make texture
+atlases.
+
+812
+00:31:15,650 --> 00:31:19,220
+Make sure that we put everything that is
+used a lot in one big texture.
+
+813
+00:31:19,520 --> 00:31:21,240
+So that we don't have to swap less
+textures.
+
+814
+00:31:21,600 --> 00:31:24,140
+All kinds of optimizations that you can
+do.
+
+815
+00:31:24,415 --> 00:31:27,600
+Again, because you have full control over
+the whole stack.
+
+816
+00:31:28,720 --> 00:31:29,440
+We can do that.
+
+817
+00:31:29,480 --> 00:31:31,880
+And so if we couldn't do this.
+
+818
+00:31:31,960 --> 00:31:37,260
+We could have chosen to
+port Hotline Miami 2 to GameMaker Studio.
+
+819
+00:31:37,440 --> 00:31:39,720
+The last variation of GameMaker.
+
+820
+00:31:40,120 --> 00:31:41,720
+And then try to get that on the console.
+
+821
+00:31:43,110 --> 00:31:44,110
+But then again.
+
+822
+00:31:44,240 --> 00:31:45,640
+There are just things you can't do.
+
+823
+00:31:45,680 --> 00:31:47,600
+Because it is not exposed by that tool.
+
+824
+00:31:48,390 --> 00:31:51,400
+Or because in some way a strange choice
+has been made.
+
+825
+00:31:51,520 --> 00:31:52,860
+By your original authors.
+
+826
+00:31:52,980 --> 00:31:54,280
+So it's not possible.
+
+827
+00:31:55,980 --> 00:31:58,260
+Plus we have made usable technology.
+
+828
+00:31:58,780 --> 00:32:01,520
+We have used GameMaker for four projects.
+
+829
+00:32:02,110 --> 00:32:03,110
+Four games I have to say.
+
+830
+00:32:03,300 --> 00:32:04,300
+Four or five.
+
+831
+00:32:04,740 --> 00:32:06,700
+And there are still a few coming that we
+might do.
+
+832
+00:32:07,350 --> 00:32:08,377
+It is not complete yet.
+
+833
+00:32:08,401 --> 00:32:09,601
+But it gets better every time.
+
+834
+00:32:10,650 --> 00:32:12,300
+We are in a position where we can say.
+
+835
+00:32:12,440 --> 00:32:13,980
+You have a GameMaker game.
+
+836
+00:32:14,540 --> 00:32:17,006
+You want to have a platform that is not
+supported by GameMaker.
+
+837
+00:32:17,030 --> 00:32:18,176
+Okay, we can do that for you.
+
+838
+00:32:18,200 --> 00:32:19,200
+You arrange.
+
+839
+00:32:19,290 --> 00:32:21,120
+And that is an advantage in itself.
+
+840
+00:32:22,000 --> 00:32:23,000
+It took a lot of time.
+
+841
+00:32:23,200 --> 00:32:26,540
+But we have something that we as a company
+also have something to do.
+
+842
+00:32:28,720 --> 00:32:29,720
+The disadvantages.
+
+843
+00:32:29,820 --> 00:32:31,160
+It took a lot of time.
+
+844
+00:32:31,780 --> 00:32:37,360
+For example, at MME we really went over
+the estimated time.
+
+845
+00:32:40,460 --> 00:32:41,660
+And it will never be finished.
+
+846
+00:32:42,090 --> 00:32:43,090
+Really not.
+
+847
+00:32:43,380 --> 00:32:46,120
+GameMaker itself evaluates that as well.
+
+848
+00:32:47,140 --> 00:32:52,000
+We still come across things today that
+just happen to have a vague code style.
+
+849
+00:32:52,320 --> 00:32:54,640
+That suddenly throw our converter
+tool chain in their face.
+
+850
+00:32:55,100 --> 00:32:56,100
+In their face.
+
+851
+00:32:56,940 --> 00:32:57,940
+So that...
+
+852
+00:32:59,300 --> 00:33:00,300
+It just won't work.
+
+853
+00:33:01,145 --> 00:33:02,380
+It will never be finished.
+
+854
+00:33:04,120 --> 00:33:05,120
+And...
+
+855
+00:33:05,470 --> 00:33:07,360
+Developing in parallel can be a bit
+difficult.
+
+856
+00:33:07,640 --> 00:33:09,160
+Especially in the case of Hotline Miami 2.
+
+857
+00:33:09,940 --> 00:33:12,600
+The guys at Dennaton were still working
+on finishing the game.
+
+858
+00:33:12,940 --> 00:33:14,180
+While we were already on board.
+
+859
+00:33:16,340 --> 00:33:17,340
+And...
+
+860
+00:33:17,620 --> 00:33:19,460
+That is more because of GameMaker.
+
+861
+00:33:19,620 --> 00:33:20,796
+The fact that this is difficult.
+
+862
+00:33:20,820 --> 00:33:21,820
+But...
+
+863
+00:33:22,380 --> 00:33:23,700
+GameMaker is one big binary file.
+
+864
+00:33:23,820 --> 00:33:25,560
+You can't easily control that.
+
+865
+00:33:26,220 --> 00:33:27,257
+You're going to have problems with that.
+
+866
+00:33:27,281 --> 00:33:29,640
+We have done a lot to fix that.
+
+867
+00:33:32,960 --> 00:33:33,736
+Among other things.
+
+868
+00:33:33,760 --> 00:33:35,320
+We export everything to plain text.
+
+869
+00:33:35,420 --> 00:33:37,100
+When we convert the code.
+
+870
+00:33:37,820 --> 00:33:41,080
+And that... At least we have a version
+control history of what has changed.
+
+871
+00:33:42,860 --> 00:33:46,740
+And... We have thrown a number
+of hacks into the converter tool chain.
+
+872
+00:33:46,960 --> 00:33:49,640
+So that we can put code in the GameMaker
+editor.
+
+873
+00:33:50,760 --> 00:33:52,760
+Which is only executed on our side of the
+game.
+
+874
+00:33:53,600 --> 00:33:55,120
+And GameMaker itself just denies that.
+
+875
+00:33:55,980 --> 00:33:57,660
+And we have been able to fix some
+problems.
+
+876
+00:33:59,220 --> 00:34:00,720
+Which we had with Hotline Miami 1.
+
+877
+00:34:01,140 --> 00:34:04,340
+With Hotline Miami 1 we got the project
+file.
+
+878
+00:34:04,960 --> 00:34:05,960
+And...
+
+879
+00:34:07,020 --> 00:34:08,956
+Success if you don't want to run it in
+GameMaker itself.
+
+880
+00:34:08,980 --> 00:34:10,180
+Because we had to fix so much.
+
+881
+00:34:11,415 --> 00:34:12,916
+And a lot of hacking to get it working.
+
+882
+00:34:12,940 --> 00:34:14,440
+That was just not possible.
+
+883
+00:34:15,115 --> 00:34:16,440
+Hotline Miami 2 is still running.
+
+884
+00:34:18,040 --> 00:34:18,600
+Not good.
+
+885
+00:34:18,800 --> 00:34:19,800
+Because...
+
+886
+00:34:20,040 --> 00:34:21,760
+It goes against the limits of GameMaker itself.
+
+887
+00:34:22,100 --> 00:34:22,280
+But...
+
+888
+00:34:23,030 --> 00:34:24,217
+In itself the code is still correct.
+
+889
+00:34:24,241 --> 00:34:25,521
+And it still works a little bit.
+
+890
+00:34:26,760 --> 00:34:27,200
+And...
+
+891
+00:34:27,350 --> 00:34:28,350
+It is just...
+
+892
+00:34:28,740 --> 00:34:29,740
+Complex.
+
+893
+00:34:30,170 --> 00:34:31,216
+The whole tool chain is complex.
+
+894
+00:34:31,240 --> 00:34:32,240
+It is...
+
+895
+00:34:33,660 --> 00:34:38,361
+Difficult to... To... To... To... To
+involve someone on such a project.
+
+896
+00:34:38,800 --> 00:34:43,280
+Because... It has a very
+big stack of different things.
+
+897
+00:34:43,660 --> 00:34:46,380
+Which are very difficult to get running.
+
+898
+00:34:46,700 --> 00:34:48,440
+And you have to know a bit of everything.
+
+899
+00:34:48,960 --> 00:34:51,160
+If you want to work on such a project.
+
+900
+00:34:51,600 --> 00:34:54,700
+And I am actually the only
+one... Who has done a lot with it.
+
+901
+00:34:57,010 --> 00:34:59,290
+And every time there is a project going on
+with GameMaker.
+
+902
+00:35:00,220 --> 00:35:01,220
+Then I get called back.
+
+903
+00:35:01,260 --> 00:35:02,000
+Hey, come and help me.
+
+904
+00:35:02,060 --> 00:35:02,720
+Because I don't understand it.
+
+905
+00:35:02,960 --> 00:35:03,960
+You know.
+
+906
+00:35:04,480 --> 00:35:06,100
+So that is a bit of a disadvantage.
+
+907
+00:35:06,260 --> 00:35:07,260
+To have such an approach.
+
+908
+00:35:12,060 --> 00:35:13,060
+Yes.
+
+909
+00:35:13,280 --> 00:35:15,140
+If you ever start making games again.
+
+910
+00:35:15,770 --> 00:35:16,770
+Please use...
+
+911
+00:35:17,185 --> 00:35:18,660
+The right tools for the job.
+
+912
+00:35:18,760 --> 00:35:20,840
+If you know that you are making a game.
+
+913
+00:35:21,000 --> 00:35:21,957
+That you might want to bring to a console.
+
+914
+00:35:21,981 --> 00:35:24,600
+Then don't take an old version of
+GameMaker.
+
+915
+00:35:25,340 --> 00:35:26,340
+Take a new one.
+
+916
+00:35:26,420 --> 00:35:26,740
+Take Unity.
+
+917
+00:35:26,840 --> 00:35:27,160
+Take Unreal.
+
+918
+00:35:27,460 --> 00:35:28,460
+Anything, right?
+
+919
+00:35:29,080 --> 00:35:31,200
+And if you ever start your own game.
+
+920
+00:35:31,440 --> 00:35:32,440
+Or your own engine.
+
+921
+00:35:32,520 --> 00:35:33,520
+Or anything.
+
+922
+00:35:33,930 --> 00:35:35,016
+If you have aspirations for that.
+
+923
+00:35:35,040 --> 00:35:36,317
+Or anything that you actually want to
+have.
+
+924
+00:35:36,341 --> 00:35:37,341
+A cross-platform.
+
+925
+00:35:38,520 --> 00:35:41,497
+Then it makes sense to normalize that.
+
+926
+00:35:41,521 --> 00:35:42,521
+To actually...
+
+927
+00:35:42,720 --> 00:35:44,040
+Purely the concept of a platform.
+
+928
+00:35:44,140 --> 00:35:44,920
+To abstract that.
+
+929
+00:35:45,120 --> 00:35:46,120
+And code against that.
+
+930
+00:35:46,340 --> 00:35:48,240
+So that you can go much easier from there.
+
+931
+00:35:48,360 --> 00:35:49,660
+To all kinds of other platforms.
+
+932
+00:35:50,740 --> 00:35:51,740
+And can fix things.
+
+933
+00:35:52,680 --> 00:35:54,160
+That is about it.
+
+934
+00:35:58,830 --> 00:36:06,780
+If you have any questions.
+
+935
+00:36:09,380 --> 00:36:16,960
+Or visuals of the becoming of You are
+back.
+
+936
+00:36:20,460 --> 00:36:21,556
+We must come back.
+
+937
+00:36:21,580 --> 00:36:22,660
+A little bit of everything.
+
+938
+00:36:24,700 --> 00:36:26,877
+Things like when we are going to connect
+touch screen controls
+
+939
+00:36:26,901 --> 00:36:28,940
+we are going to do that partially in
+GameMaker.
+
+940
+00:36:29,940 --> 00:36:34,377
+Because there we have pieces of... there
+is some code that controls the camera,
+
+941
+00:36:34,401 --> 00:36:36,521
+and we have to be able to control it with
+a touch pad.
+
+942
+00:36:37,060 --> 00:36:38,720
+So there is always something in it.
+
+943
+00:36:39,930 --> 00:36:42,620
+On the other hand, on the Cephs Plus
+side
+
+944
+00:36:42,670 --> 00:36:46,040
+we have implemented things like cloud
+saving, leader boards, things like that.
+
+945
+00:36:46,180 --> 00:36:48,960
+So it is always a bit of a mingle of
+things where it happens.
+
+946
+00:36:50,140 --> 00:36:52,980
+For example, we have to optimise a lot
+with the Cephs Plus 2.
+
+947
+00:36:53,380 --> 00:36:54,960
+It is also a sort of tailoring, right?
+
+948
+00:36:55,040 --> 00:36:56,880
+To make sure that it runs on a good frame
+rate.
+
+949
+00:36:57,410 --> 00:36:58,890
+And that happens with the Cephs Plus.
+
+950
+00:36:58,930 --> 00:37:01,897
+It also happens that we convert a piece of
+GameMaker code
+
+951
+00:37:01,921 --> 00:37:04,081
+to C++, purely to get the extra
+performance.
+
+952
+00:37:04,890 --> 00:37:06,250
+And not even to change logic-wise.
+
+953
+00:37:19,550 --> 00:37:20,630
+Yes, I don't know.
+
+954
+00:37:20,790 --> 00:37:23,610
+A few years ago, GameMaker already sold
+it.
+
+955
+00:37:24,330 --> 00:37:26,250
+So it doesn't work actively anymore.
+
+956
+00:37:26,450 --> 00:37:27,950
+It was... Yes, it was...
+
+957
+00:37:28,230 --> 00:37:29,230
+Sporty, let's say.
+
+958
+00:37:29,430 --> 00:37:29,910
+It was fun.
+
+959
+00:37:30,090 --> 00:37:32,230
+It was just a bit... My
+presentation was over.
+
+960
+00:37:32,350 --> 00:37:33,550
+I had a psycho psychotic room.
+
+961
+00:37:33,930 --> 00:37:35,610
+And he also had a presentation afterwards.
+
+962
+00:37:35,955 --> 00:37:37,790
+And he just stood there and walked away.
+
+963
+00:37:37,930 --> 00:37:38,930
+That was a bit...
+
+964
+00:37:41,830 --> 00:37:42,870
+Do you have anything else?
+
+965
+00:37:53,560 --> 00:37:55,480
+Yes, that is very different per project.
+
+966
+00:37:56,040 --> 00:37:57,520
+In the case of the Hotline Miami 1...
+
+967
+00:37:58,120 --> 00:37:59,560
+I think we have been working with...
+
+968
+00:38:00,080 --> 00:38:02,420
+I would say three people for almost a
+year.
+
+969
+00:38:04,090 --> 00:38:07,300
+And at Hotline Miami 2... We
+are also in that direction a little bit.
+
+970
+00:38:08,020 --> 00:38:09,180
+That could have been shorter.
+
+971
+00:38:09,360 --> 00:38:12,420
+But for Hotline Miami 2 we have to
+change a lot... of things at the bottom.
+
+972
+00:38:13,040 --> 00:38:14,146
+We have changed from engine.
+
+973
+00:38:14,170 --> 00:38:15,610
+We started using our own technology.
+
+974
+00:38:17,620 --> 00:38:21,497
+But most of the time... most of
+what we see with projects that we do
+
+975
+00:38:21,521 --> 00:38:22,761
+most of it depends on projects.
+
+976
+00:38:23,240 --> 00:38:25,240
+But mostly for half a year and one and a
+half year.
+
+977
+00:38:33,580 --> 00:38:36,380
+That does differ slightly per project.
+
+978
+00:38:36,640 --> 00:38:38,337
+At least the way we work.
+
+979
+00:38:38,361 --> 00:38:42,300
+We actually always try to find a solution
+that works for everyone.
+
+980
+00:38:43,520 --> 00:38:48,000
+Some projects have an original developer
+who says, you know what, go and solve it.
+
+981
+00:38:48,220 --> 00:38:50,966
+It doesn't matter anymore, I can already
+see that the product is ready.
+
+982
+00:38:50,990 --> 00:38:52,670
+That was Hotline Miami 1 for the most
+part.
+
+983
+00:38:54,180 --> 00:38:57,117
+And actually only when everything was
+running a bit, about a year and a half
+
+984
+00:38:57,141 --> 00:39:01,740
+after the project started, we went to
+Derrent and said, here you have the picture.
+
+985
+00:39:02,160 --> 00:39:04,781
+Can you take a look at what we want to
+change and so on and so forth.
+
+986
+00:39:04,805 --> 00:39:07,420
+At Hotline Miami 2 we have been very
+active with our people.
+
+987
+00:39:10,020 --> 00:39:12,380
+Usually we had contact a couple of times a
+week.
+
+988
+00:39:12,800 --> 00:39:15,460
+And we also helped to solve problems.
+
+989
+00:39:15,720 --> 00:39:18,040
+And that really makes a difference for the
+project.
+
+990
+00:39:18,940 --> 00:39:22,417
+Personally, I do like to be in contact with the original developers
+as much as possible.
+
+991
+00:39:22,890 --> 00:39:25,440
+If they need that, then I would be happy
+to do that.
+
+992
+00:39:27,640 --> 00:39:30,690
+Do you use the bug fixes or the
+streamcams?
+
+993
+00:39:32,250 --> 00:39:32,990
+Yes, sometimes.
+
+994
+00:39:33,130 --> 00:39:34,130
+It depends.
+
+995
+00:39:35,950 --> 00:39:40,007
+In the case of Hotline Miami...
+source control... those guys don't understand that.
+
+996
+00:39:40,031 --> 00:39:41,031
+They don't do that.
+
+997
+00:39:44,770 --> 00:39:48,510
+So what we do is, we get that file in and
+we convert it.
+
+998
+00:39:48,610 --> 00:39:51,706
+And we have to do a couple of things with
+our patch and we just send that file back.
+
+999
+00:39:51,730 --> 00:39:55,130
+It's a bit spartan, but that happens in
+the case of Hotline Miami.
+
+1000
+00:39:56,570 --> 00:39:59,169
+I think mostly in projects
+that are still in active
+
+1001
+00:39:59,193 --> 00:40:01,731
+development, then it
+sometimes goes back to stream.
+
+1002
+00:40:02,490 --> 00:40:03,490
+If that's possible.
+
+1003
+00:40:04,810 --> 00:40:12,810
+Do you have anything else to add?
+
+1004
+00:40:17,200 --> 00:40:18,380
+It's hard to say.
+
+1005
+00:40:19,620 --> 00:40:22,643
+Look, I think that in
+the end it doesn't really
+
+1006
+00:40:22,667 --> 00:40:25,261
+matter to us what kind of technology it is.
+
+1007
+00:40:25,740 --> 00:40:29,260
+I prefer to look at whether we like a
+game, at least personally.
+
+1008
+00:40:29,735 --> 00:40:32,110
+If I like a game, then
+I'm more inclined to go
+
+1009
+00:40:32,134 --> 00:40:34,260
+lobby and say, hey, can
+you please report that?
+
+1010
+00:40:34,665 --> 00:40:37,960
+If it's GameMaker, I wouldn't say no
+because it's GameMaker.
+
+1011
+00:40:38,140 --> 00:40:40,191
+I wouldn't say, oh, we already have this
+
+1012
+00:40:40,215 --> 00:40:42,360
+technology, so it's only
+five minutes to work.
+
+1013
+00:40:42,485 --> 00:40:43,720
+That's the whole point.
+
+1014
+00:40:44,970 --> 00:40:47,570
+That's a bit of a shame, but in the end we
+want to do that, maybe.
+
+1015
+00:40:48,380 --> 00:40:51,280
+But that also depends a lot on the future
+of GameMaker itself.
+
+1016
+00:40:51,620 --> 00:40:55,722
+YoYo Games has recently
+been sold to a Korean
+
+1017
+00:40:55,746 --> 00:40:58,900
+company, which mainly
+makes casino games.
+
+1018
+00:40:59,420 --> 00:41:03,897
+So it could be that their entire support
+department will no longer exist in a year.
+
+1019
+00:41:03,921 --> 00:41:06,796
+And that we still have a long list of
+people who were making GameMaker games,
+
+1020
+00:41:06,820 --> 00:41:08,700
+who were actually supporting them
+somewhere.
+
+1021
+00:41:10,490 --> 00:41:11,770
+We'll have to see how that goes.
+
+1022
+00:41:13,600 --> 00:41:17,220
+Is the performance of the final port you
+have better?
+
+1023
+00:41:18,560 --> 00:41:19,560
+Yes, much better.
+
+1024
+00:41:20,960 --> 00:41:26,260
+The original developer has said,
+we're going to use GameMaker: Studio soon.
+
+1025
+00:41:26,710 --> 00:41:28,540
+And that works on the best platforms.
+
+1026
+00:41:29,490 --> 00:41:32,330
+But we would like to work with you for the
+ports and run on your engine.
+
+1027
+00:41:32,640 --> 00:41:34,320
+Because it runs a lot smoother and better.
+
+1028
+00:41:35,450 --> 00:41:40,520
+So the running of the game is now on their
+own, or on GameMaker's?
+
+1029
+00:41:41,120 --> 00:41:41,920
+No, it runs on ours.
+
+1030
+00:41:42,040 --> 00:41:42,320
+Okay.
+
+1031
+00:41:42,360 --> 00:41:43,360
+Yes.
+
+1032
+00:41:43,690 --> 00:41:44,277
+Yes, yes, yes.
+
+1033
+00:41:44,301 --> 00:41:45,301
+No, no.
+
+1034
+00:41:45,340 --> 00:41:46,920
+The Hotline Miami 2 certainly not.
+
+1035
+00:41:47,000 --> 00:41:47,943
+They really couldn't bring us out with.
+
+1036
+00:41:47,967 --> 00:41:50,801
+GameMaker itself,
+because it was just too much.
+
+1037
+00:41:51,270 --> 00:41:52,950
+Hotline Miami 1 we eventually also
+updated.
+
+1038
+00:41:53,900 --> 00:41:56,270
+And now we have a launcher
+where you can still select the
+
+1039
+00:41:56,294 --> 00:41:58,741
+old version, if you happen to
+have problems with our version.
+
+1040
+00:41:59,580 --> 00:42:03,760
+Gunpoint is also a 2D game made with
+GameMaker.
+
+1041
+00:42:04,110 --> 00:42:05,550
+We also updated it with our version.
+
+1042
+00:42:06,410 --> 00:42:07,596
+And then we have Gods Be Watching.
+
+1043
+00:42:07,620 --> 00:42:11,840
+That is also a 2D point-and-click game,
+which we then ported to Android and iOS.
+
+1044
+00:42:12,780 --> 00:42:15,620
+It is no longer purely ported,
+but actually part of the development.
+
+1045
+00:42:16,340 --> 00:42:17,340
+Yes.
+
+1046
+00:42:17,540 --> 00:42:18,540
+Yes.
+
+1047
+00:42:32,165 --> 00:42:33,165
+It is very specific.
+
+1048
+00:42:34,010 --> 00:42:36,990
+And we also have...
+Yes, it is a bit of a niche.
+
+1049
+00:42:37,090 --> 00:42:38,090
+That is true.
+
+1050
+00:42:38,150 --> 00:42:39,150
+We do have competition.
+
+1051
+00:42:39,680 --> 00:42:42,560
+I would not say that we are the only
+people who do these kinds of things.
+
+1052
+00:42:43,990 --> 00:42:46,150
+And sometimes it can be difficult to find
+a job.
+
+1053
+00:42:47,815 --> 00:42:48,970
+But that just depends on it.
+
+1054
+00:42:49,330 --> 00:42:50,330
+Look.
+
+1055
+00:42:50,420 --> 00:42:53,047
+You will always have people who... Yes.
+
+1056
+00:42:53,071 --> 00:42:53,970
+Who are more independent, right?
+
+1057
+00:42:54,070 --> 00:42:56,631
+People who are not so
+technically trained, but
+
+1058
+00:42:56,655 --> 00:42:58,850
+who are still very
+creative to make a game.
+
+1059
+00:42:59,490 --> 00:43:00,730
+And they can make a game.
+
+1060
+00:43:00,930 --> 00:43:02,146
+They can release it on Windows.
+
+1061
+00:43:02,170 --> 00:43:03,890
+And it has all become very low-key
+nowadays.
+
+1062
+00:43:04,775 --> 00:43:06,026
+But if you want to have that
+on a console, because you
+
+1063
+00:43:06,050 --> 00:43:10,350
+want more exposure, or
+because you just want to see it.
+
+1064
+00:43:11,620 --> 00:43:13,247
+Apart from the fact that you might be able
+to do it relatively easily with a Unity or
+
+1065
+00:43:13,271 --> 00:43:16,593
+a Unreal, there are still a
+lot of people who say, well,
+
+1066
+00:43:16,617 --> 00:43:19,011
+yes, but I am not interested
+in that technology at all.
+
+1067
+00:43:19,130 --> 00:43:20,870
+So I will look for another party for that.
+
+1068
+00:43:21,550 --> 00:43:25,187
+So I think there is still work to be done
+in the meantime, until we ever come to a
+
+1069
+00:43:25,211 --> 00:43:27,270
+point where port is completely no longer
+needed.
+
+1070
+00:43:28,305 --> 00:43:32,750
+Because it has just been solved in one way
+or another that our work is redundant.
+
+1071
+00:43:33,340 --> 00:43:34,740
+Well fine, we'll do something else.
+
+1072
+00:43:34,880 --> 00:43:35,880
+That will be fine.
+
+1073
+00:43:42,880 --> 00:43:43,880
+Cool bugs.
+
+1074
+00:43:44,150 --> 00:43:44,757
+No, nice ones.
+
+1075
+00:43:44,781 --> 00:43:45,781
+Oh, nice ones.
+
+1076
+00:43:45,820 --> 00:43:47,340
+How many times did you play Suivlacks?
+
+1077
+00:43:49,000 --> 00:43:50,080
+More than enough.
+
+1078
+00:43:52,090 --> 00:43:52,696
+It's difficult to say.
+
+1079
+00:43:52,720 --> 00:43:53,756
+I would like to say something specific.
+
+1080
+00:43:53,780 --> 00:44:01,757
+I think with Hotline, what was a constant
+problem there was that, especially with.
+
+1081
+00:44:01,781 --> 00:44:06,297
+Hotline Miami 2, we have 8 or 9 different characters
+and then 11 and a half different enemy factions
+
+1082
+00:44:06,321 --> 00:44:12,277
+and that is all made by someone
+who can't debug and all of that has
+
+1083
+00:44:12,301 --> 00:44:15,496
+to be fixed in his head so there are
+quite a few things that have come out,
+
+1084
+00:44:15,520 --> 00:44:19,159
+but oh, but if I hit that
+enemy with this character, with
+
+1085
+00:44:19,183 --> 00:44:22,180
+this weapon, that crashes the
+game or something goes wrong.
+
+1086
+00:44:23,030 --> 00:44:25,036
+That's where the numbers have come from,
+so to speak.
+
+1087
+00:44:25,060 --> 00:44:27,900
+It's really a nice bug hunt.
+
+1088
+00:44:36,500 --> 00:44:43,260
+Well, we do indeed have Rogue Legacy,
+which is a 2D rogue like, which we ported.
+
+1089
+00:44:44,840 --> 00:44:50,320
+I think we just used an existing random
+implementation of X and A in this case.
+
+1090
+00:44:51,250 --> 00:44:55,257
+And I think we just reverse-engineered it
+or searched for which random uses X and A
+
+1091
+00:44:55,281 --> 00:44:57,281
+specifically, and that's actually just the
+new one.
+
+1092
+00:44:57,450 --> 00:45:02,060
+As long as you, at least if your
+procedural game has been well set up to
+
+1093
+00:45:02,260 --> 00:45:03,525
+begin with, right, then you
+just have to get the same
+
+1094
+00:45:03,549 --> 00:45:05,749
+result with the same random
+generator and the same seed.
+
+1095
+00:45:07,135 --> 00:45:10,300
+So we didn't have any specific problems
+with that or anything like that.
+
+1096
+00:45:12,530 --> 00:45:13,530
+Okay, thank you.
+

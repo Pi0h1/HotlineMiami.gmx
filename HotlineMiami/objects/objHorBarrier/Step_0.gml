@@ -10,7 +10,5 @@ if (ylimit > 0) {
         solid = 1;
     else solid = 0;
 }
-
 if (global.done)
     solid = 0;
-

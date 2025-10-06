@@ -1,5 +1,13 @@
-if (keyboard_check_pressed(vk_f7)) {
+if (keyboard_check_pressed(192)) {
 	toggleLog = !toggleLog;
 }
 show_debug_log(toggleLog);
 window_set_cursor(toggleLog ? cr_default : cr_none);
+
+if (keyboard_check_pressed(vk_f5)) {
+	checkpoint_save(working_directory + "\\tempsave.sav");
+}
+
+if (keyboard_check_pressed(vk_f7)) {
+	checkpoint_load(working_directory + "\\tempsave.sav");
+}

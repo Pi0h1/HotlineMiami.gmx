@@ -11,7 +11,7 @@ if (global.loaded) {
             instance_destroy();
         }
     }
-    //global.loaded = 0;
+    global.loaded = 0;
     scrSaveTiles();
 }
 if (global.xbox) {

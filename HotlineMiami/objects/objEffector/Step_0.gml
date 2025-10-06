@@ -31,6 +31,7 @@ SteamRunCallbacks();
 }
 */
 
+// eventually move to objGame
 if (global.loaded) {
     scrLoadAchievements();
     if (room == rmSwatUpstairs) {

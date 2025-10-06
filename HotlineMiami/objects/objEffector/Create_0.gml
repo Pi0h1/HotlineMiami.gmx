@@ -17,7 +17,6 @@ action = 0;
 wait = 0;
 phonex = 0;
 //global.loaded = 0;
-global.loaded = 0;
 nextroom = room_next(room);
 newsong = 0;
 song = -1;

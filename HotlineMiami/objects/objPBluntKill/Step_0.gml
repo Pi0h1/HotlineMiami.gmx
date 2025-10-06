@@ -1,3 +1,6 @@
+
+
+
 if (global.xbox)
     scrXboxBluntKill();
 if (hurtindex == 11) {

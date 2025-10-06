@@ -5,6 +5,7 @@ scrInitMaskPos();
 scrUpdateMaskPos(sprite_index);
 ammo = 0;
 bottom = sprEBluntKill;
+
 if (global.xbox)
     scrInitXboxButtons();
 

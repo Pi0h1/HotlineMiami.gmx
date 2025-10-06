@@ -147,9 +147,6 @@ draw_circle_color(camera_get_view_width(view_camera[0]) / 2, camera_get_view_hei
 draw_set_blend_mode(bm_normal);
 
 
-if (instance_exists(objPlayer)) {
-    camera_set_view_pos(view_camera[0], vlastx, vlasty);
-}
 
 if (blackx > 0) {
     draw_set_color(c_black);

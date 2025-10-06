@@ -169,7 +169,8 @@ if (visible) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (spawned) exit
+            <string>if (spawned)
+    exit;
 visible = 0;
 if (x &lt; room_width / 2) {
     visible = global.done;

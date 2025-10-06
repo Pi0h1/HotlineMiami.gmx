@@ -1,4 +1,5 @@
-if (spawned) exit
+if (spawned)
+	exit;
 visible = 0;
 if (x < room_width / 2) {
     visible = global.done;

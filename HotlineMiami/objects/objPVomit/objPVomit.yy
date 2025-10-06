@@ -13,7 +13,10 @@
     "name":"Misc",
     "path":"folders/Objects/Player/Jacket/Misc.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"objPlayer",
+    "path":"objects/objPlayer/objPlayer.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

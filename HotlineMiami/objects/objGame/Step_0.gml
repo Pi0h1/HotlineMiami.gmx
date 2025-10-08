@@ -11,3 +11,10 @@ if (keyboard_check_pressed(vk_f5)) {
 if (keyboard_check_pressed(vk_f7)) {
 	checkpoint_load(working_directory + "\\tempsave.sav");
 }
+
+if (keyboard_check_pressed(ord("V"))) {
+	with (objPlayer) {
+		x = global.mousex;
+		y = global.mousey;
+	}
+}

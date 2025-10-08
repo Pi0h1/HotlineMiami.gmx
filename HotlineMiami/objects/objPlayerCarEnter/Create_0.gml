@@ -6,7 +6,8 @@ if (sprite_index == sprCarThrashed) {
     my_id = instance_create(x, y, objCarBottom);
     my_id.image_angle = image_angle;
 }
-instance_deactivate_object(objSwat);
+// this may be here for a purpose?
+//instance_deactivate_object(objSwat);
 revisit = 0;
 
 DoSave = function() {

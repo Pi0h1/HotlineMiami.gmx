@@ -30,6 +30,17 @@ DoSave = function() {
 	buffer_write( global.tempSave[room], buffer_f32, stopchase );
 	buffer_write( global.tempSave[room], buffer_f32, add );
 	buffer_write( global.tempSave[room], buffer_f32, gotowall );
+	buffer_write( global.tempSave[room], buffer_u8, findwall );
+	buffer_write( global.tempSave[room], buffer_u8, check );
+	buffer_write( global.tempSave[room], buffer_u8, armed );
+	buffer_write( global.tempSave[room], buffer_f32, startx );
+	buffer_write( global.tempSave[room], buffer_f32, starty );
+	buffer_write( global.tempSave[room], buffer_f32, startdir );
+	buffer_write( global.tempSave[room], buffer_f32, returning );
+	buffer_write( global.tempSave[room], buffer_f32, turn );
+	buffer_write( global.tempSave[room], buffer_f32, diradd );
+	buffer_write( global.tempSave[room], buffer_f32, dir );
+	buffer_write( global.tempSave[room], buffer_f32, alertwait );
 }
 DoLoad = function() {
 	scrLoadGeneric(global.tempSave[room]);
@@ -44,4 +55,15 @@ DoLoad = function() {
 	stopchase = buffer_read(global.tempSave[room], buffer_f32 );
 	add = buffer_read(global.tempSave[room], buffer_f32 );
 	gotowall = buffer_read(global.tempSave[room], buffer_f32 );
+	findwall = buffer_read(global.tempSave[room], buffer_u8 );
+	check = buffer_read(global.tempSave[room], buffer_u8 );
+	armed = buffer_read(global.tempSave[room], buffer_u8 );
+	startx = buffer_read(global.tempSave[room], buffer_f32 );
+	starty = buffer_read(global.tempSave[room], buffer_f32 );
+	startdir = buffer_read(global.tempSave[room], buffer_f32 );
+	returning = buffer_read(global.tempSave[room], buffer_f32 );
+	turn = buffer_read(global.tempSave[room], buffer_f32 );
+	diradd = buffer_read(global.tempSave[room], buffer_f32 );
+	dir = buffer_read(global.tempSave[room], buffer_f32 );
+	alertwait = buffer_read(global.tempSave[room], buffer_f32 );
 }

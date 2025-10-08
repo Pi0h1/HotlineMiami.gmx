@@ -68,7 +68,8 @@ if (state == 2) {
                 sprite_index = sprPWalkGirlfriend;
                 instance_create(x, y, objGoToCar);
                 scrUpdateMaskPos(sprite_index);
-                with objDoorV solid = 0;
+                with (objDoorV)
+					solid = 0;
                 global.test = 1;
             }
         }

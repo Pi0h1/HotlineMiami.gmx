@@ -18,7 +18,7 @@ if (alert == 0 || alert == 2) {
 
 if image_index = 0 {
     if (reload > 0) {
-        reload -= 1;
+        reload--;
         exit;
     }
     shake = 1;

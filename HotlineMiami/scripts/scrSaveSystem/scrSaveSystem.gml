@@ -7,30 +7,32 @@ function showLoaded() {
 function scrSaveGeneric(buf) {
 	buffer_write( buf, buffer_u32, sprite_index );
 	buffer_write( buf, buffer_f32, image_index );
-	buffer_write( buf, buffer_f32, image_speed );
-	buffer_write( buf, buffer_f32, image_xscale );
-	buffer_write( buf, buffer_f32, image_yscale );
+	buffer_write( buf, buffer_f16, image_speed );
+	buffer_write( buf, buffer_f16, image_xscale );
+	buffer_write( buf, buffer_f16, image_yscale );
 	buffer_write( buf, buffer_f32, image_angle );
 	buffer_write( buf, buffer_f32, image_blend );
-	buffer_write( buf, buffer_f32, image_alpha );
+	buffer_write( buf, buffer_f16, image_alpha );
 	buffer_write( buf, buffer_f32, friction );
 	buffer_write( buf, buffer_f32, speed );
 	buffer_write( buf, buffer_f32, direction );
+	buffer_write( buf, buffer_u8, visible );
 }
 
 // Same for DoLoad()
 function scrLoadGeneric(buf) {
 	sprite_index = buffer_read(buf, buffer_u32 );
 	image_index = buffer_read(buf, buffer_f32 );
-	image_speed = buffer_read(buf, buffer_f32 );
-	image_xscale = buffer_read(buf, buffer_f32 );
-	image_yscale = buffer_read(buf, buffer_f32 );
+	image_speed = buffer_read(buf, buffer_f16 );
+	image_xscale = buffer_read(buf, buffer_f16 );
+	image_yscale = buffer_read(buf, buffer_f16 );
 	image_angle = buffer_read(buf, buffer_f32 );
 	image_blend = buffer_read(buf, buffer_f32 );
-	image_alpha = buffer_read(buf, buffer_f32 );
+	image_alpha = buffer_read(buf, buffer_f16 );
 	friction = buffer_read(buf, buffer_f32 );
 	speed = buffer_read(buf, buffer_f32 );
 	direction = buffer_read(buf, buffer_f32 );
+	visible = buffer_read(buf, buffer_u8 );
 }
 
 function checkpoint_save(file) {
@@ -89,6 +91,7 @@ function scrSaveGame(buf){
 	buffer_write( buf, buffer_f32, camera_get_view_y(view_camera[0]) );
 	
 	buffer_write( buf, buffer_u8, global.done );
+	buffer_write( buf, buffer_u8, global.test );
 	buffer_write( buf, buffer_u8, global.noguns );
 	
 	// letters
@@ -96,6 +99,21 @@ function scrSaveGame(buf){
 	buffer_write( global.tempSave[room], buffer_u16, len );
 	for (var i = 0; i < len; ++i) {
 		buffer_write( global.tempSave[room], buffer_u16, global.letter[i]);
+	}
+	
+	// masks
+	buffer_write( global.tempSave[room], buffer_u16, global.newmasks );
+	
+	var len = array_length(global.masks) ;
+	buffer_write( global.tempSave[room], buffer_u16, len );
+	for (var i = 0; i < len; ++i) {
+		buffer_write( global.tempSave[room], buffer_u16, global.masks[i]);
+	}
+	// new masks array
+	var len = array_length(global.newmasks) ;
+	buffer_write( global.tempSave[room], buffer_u16, len );
+	for (var i = 0; i < len; ++i) {
+		buffer_write( global.tempSave[room], buffer_u16, global.newmasks[i]);
 	}
 
 	// instances
@@ -132,6 +150,7 @@ function scrLoadGame(buf ){
 	camera_set_view_pos(view_camera[0], loadedCamX, loadedCamY);
 
 	global.done = buffer_read( buf, buffer_u8 );
+	global.test = buffer_read( buf, buffer_u8 );
 	global.noguns = buffer_read( buf, buffer_u8 );
 	
 	// letters
@@ -139,6 +158,19 @@ function scrLoadGame(buf ){
 	for (i = 0; i < len; ++i) {
 		global.letter[i] = buffer_read( global.tempSave[room], buffer_u16);
 	}
+	
+	// masks
+	global.newmasks = buffer_read(global.tempSave[room], buffer_u16 );
+	var len = buffer_read(global.tempSave[room], buffer_u16 );
+	for (i = 0; i < len; ++i) {
+		global.masks[i] = buffer_read( global.tempSave[room], buffer_u16);
+	}
+	// new masks array
+	var len = buffer_read(global.tempSave[room], buffer_u16 );
+	for (i = 0; i < len; ++i) {
+		global.newmasks[i] = buffer_read( global.tempSave[room], buffer_u16);
+	}
+	
 	
 	// instances
 	// Load everything in the order you save them!

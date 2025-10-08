@@ -34,7 +34,7 @@ DoSave = function() {
 	buffer_write( global.tempSave[room], buffer_f32, start_x );
 	buffer_write( global.tempSave[room], buffer_f32, start_y );
 	buffer_write( global.tempSave[room], buffer_f32, stopchase );
-	buffer_write( global.tempSave[room], buffer_f32, weaponfind );
+	buffer_write( global.tempSave[room], buffer_u8, weaponfind );
 	buffer_write( global.tempSave[room], buffer_f32, hits );
 	buffer_write( global.tempSave[room], buffer_f32, blood );
 	buffer_write( global.tempSave[room], buffer_f32, wait );
@@ -60,7 +60,7 @@ DoLoad = function() {
 	start_x = buffer_read(global.tempSave[room], buffer_f32 );
 	start_y = buffer_read(global.tempSave[room], buffer_f32 );
 	stopchase = buffer_read(global.tempSave[room], buffer_f32 );
-	weaponfind = buffer_read(global.tempSave[room], buffer_f32 );
+	weaponfind = buffer_read(global.tempSave[room], buffer_u8 );
 	hits = buffer_read(global.tempSave[room], buffer_f32 );
 	blood = buffer_read(global.tempSave[room], buffer_f32 );
 	wait = buffer_read(global.tempSave[room], buffer_f32 );

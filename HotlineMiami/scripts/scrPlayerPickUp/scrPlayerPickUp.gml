@@ -16,7 +16,7 @@ function scrPlayerPickUp() {
 	    with (objSecretMask) {
 	        global.masks[image_index] = 1;
 	        global.newmask[global.newmasks] = image_index;
-	        global.newmasks += 1;
+	        global.newmasks++;
 	        audio_play_sound(sndToken, 0, false);
 	        my_id = instance_create(x, y, objLetterFound);
 	        my_id.text = "\"" + scrMaskGetName(image_index) + "\"";
@@ -48,7 +48,7 @@ function scrPlayerPickUp() {
 	            taken = 1;
 	            global.masks[23] = 1;
 	            global.newmask[global.newmasks] = 23;
-	            global.newmasks += 1;
+	            global.newmasks++;
 	            audio_play_sound(sndToken, 0, false);
 	            my_id = instance_create(x, y, objLetterFound);
 	            my_id.text = "\"" + scrMaskGetName(23) + "\"";
@@ -63,7 +63,7 @@ function scrPlayerPickUp() {
 	            taken = 1;
 	            global.masks[21] = 1;
 	            global.newmask[global.newmasks] = 21;
-	            global.newmasks += 1;
+	            global.newmasks++;
 	            audio_play_sound(sndToken, 0, false);
 	            my_id = instance_create(x, y, objLetterFound);
 	            my_id.text = "\"" + scrMaskGetName(21) + "\"";

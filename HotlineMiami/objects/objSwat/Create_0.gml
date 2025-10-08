@@ -4,7 +4,7 @@ image_index = random(1000);
 speed = 2;
 image_speed = 0.1;
 energie = round(random(1));
-
+angle = direction;
 checkreload = floor(random(30));
 ammo = 24;
 alert = 0;
@@ -16,3 +16,49 @@ weaponfind = 0;
 diradd = 1;
 findwall = 0;
 
+DoSave = function() {
+	scrSaveGeneric(global.tempSave[room]);
+	buffer_write( global.tempSave[room], buffer_f32, energie );
+	buffer_write( global.tempSave[room], buffer_f32, angle );
+	buffer_write( global.tempSave[room], buffer_f32, checkreload );
+	buffer_write( global.tempSave[room], buffer_f32, ammo );
+	buffer_write( global.tempSave[room], buffer_f16, alert );
+	buffer_write( global.tempSave[room], buffer_f32, reload );
+	buffer_write( global.tempSave[room], buffer_f32, light );
+	buffer_write( global.tempSave[room], buffer_f32, start_x );
+	buffer_write( global.tempSave[room], buffer_f32, start_y );
+	buffer_write( global.tempSave[room], buffer_u8, weaponfind );
+	buffer_write( global.tempSave[room], buffer_f32, diradd );
+	buffer_write( global.tempSave[room], buffer_u8, findwall );
+	buffer_write( global.tempSave[room], buffer_u8, check );
+	buffer_write( global.tempSave[room], buffer_f32, dir );
+	buffer_write( global.tempSave[room], buffer_f32, startx );
+	buffer_write( global.tempSave[room], buffer_f32, starty );
+	buffer_write( global.tempSave[room], buffer_f32, startdir );
+	buffer_write( global.tempSave[room], buffer_u8, armed );
+	buffer_write( global.tempSave[room], buffer_f32, turn );
+	buffer_write( global.tempSave[room], buffer_f32, alertwait );
+}
+DoLoad = function() {
+	scrLoadGeneric(global.tempSave[room]);
+	energie = buffer_read(global.tempSave[room], buffer_f32 );
+	angle = buffer_read(global.tempSave[room], buffer_f32 );
+	checkreload = buffer_read(global.tempSave[room], buffer_f32 );
+	ammo = buffer_read(global.tempSave[room], buffer_f32 );
+	alert = buffer_read(global.tempSave[room], buffer_f16 );
+	reload = buffer_read(global.tempSave[room], buffer_f32 );
+	light = buffer_read(global.tempSave[room], buffer_f32 );
+	start_x = buffer_read(global.tempSave[room], buffer_f32 );
+	start_y = buffer_read(global.tempSave[room], buffer_f32 );
+	weaponfind = buffer_read(global.tempSave[room], buffer_u8 );
+	diradd = buffer_read(global.tempSave[room], buffer_f32 );
+	findwall = buffer_read(global.tempSave[room], buffer_u8 );
+	check = buffer_read(global.tempSave[room], buffer_u8 );
+	dir = buffer_read(global.tempSave[room], buffer_f32 );
+	startx = buffer_read(global.tempSave[room], buffer_f32 );
+	starty = buffer_read(global.tempSave[room], buffer_f32 );
+	startdir = buffer_read(global.tempSave[room], buffer_f32 );
+	armed = buffer_read(global.tempSave[room], buffer_u8 );
+	turn = buffer_read(global.tempSave[room], buffer_f32 );
+	alertwait = buffer_read(global.tempSave[room], buffer_f32 );
+}

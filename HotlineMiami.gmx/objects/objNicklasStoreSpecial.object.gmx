@@ -94,6 +94,8 @@ if (talked &gt; 3) {
 
 if (global.xbox)
     scrXboxNickeTalkSpecial();
+
+
 </string>
           </argument>
         </arguments>
@@ -116,15 +118,17 @@ if (global.xbox)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!instance_exists(objPlayerMouseHouse) || talked)
+            <string>if (!instance_exists(objPlayerMouseHouse) || talked &gt; 3 || instance_exists(objPhoneConversation) || !objPlayer.active)
     exit;
 if (place_meeting(x + lengthdir_x(32, 90), y + lengthdir_y(32, 90), objPlayer)) {
     objPlayer.image_index = 0;
     objPlayer.active = 0;
     image_index = 1;
-    scrGetMessage(0);
-    talked = 1;
+    scrGetMessage(talked);
+    talked++;
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -170,17 +174,19 @@ if (place_meeting(x + lengthdir_x(32, 90), y + lengthdir_y(32, 90), objPlayer)) 
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!instance_exists(objPhoneConversation) &amp;&amp; talked) {
+            <string>if (!instance_exists(objPhoneConversation) &amp;&amp; talked &gt; 2) {
     with (objPlayerMouseHouse) {
         active = 1;
     }
 }
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, 0.5);
 draw_sprite_ext(sprite_index, image_index, x - 1, y - 1, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-if (!talked) {
+if (talked == 0) {
     draw_sprite_ext(sprArrow, 0, x + lengthdir_x(16 - lengthdir_x(3, dir), image_angle + 90), y + lengthdir_y(16 - lengthdir_x(3, dir), image_angle + 90), 1, 1, image_angle, image_blend, image_alpha);
     dir += 8;
 }
+
+
 </string>
           </argument>
         </arguments>

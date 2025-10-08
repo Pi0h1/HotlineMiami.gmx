@@ -12,4 +12,3 @@ if (image_index > 25 && vomit == 0) {
     vomit = 1;
     audio_play_sound(sndVomit, 0, false);
 }
-

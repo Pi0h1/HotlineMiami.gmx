@@ -1,4 +1,4 @@
-if (!instance_exists(objPlayerMouseHouse) || talked)
+if (!instance_exists(objPlayerMouseHouse) || talked == 1)
     exit;
 if (place_meeting(x + lengthdir_x(32, 90), y + lengthdir_y(32, 90), objPlayer)) {
     objPlayer.image_index = 0;

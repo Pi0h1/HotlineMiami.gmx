@@ -11,9 +11,8 @@ with (objDoorH2) {
             global.test = 1;
     }
 }
-
 if (global.test) {
-    if (!on) {
+    if (on == 0) {
         image_index = 2;
         audio_play_sound(sndBigExplosion, 0, false);
         sxeasy_setVolume(0.1);
@@ -113,7 +112,7 @@ if (global.test) {
     on = 1;
 }
 
-if (on) {
+if (on == 1) {
     if (current_time - starttime > 4000) {
         if (vol < 1) {
             vol += 0.01;

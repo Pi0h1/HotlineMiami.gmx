@@ -21,4 +21,40 @@ turnwait = 0;
 wait = 700;
 attackwait = 0;
 vol = 1;
+ammo = 0;
+test = 0;
 
+DoSave = function() {
+	scrSaveGeneric(global.tempSave[room]);
+	buffer_write( global.tempSave[room], buffer_f32, energie );
+	buffer_write( global.tempSave[room], buffer_u16, state );
+	buffer_write( global.tempSave[room], buffer_f32, wait );
+	buffer_write( global.tempSave[room], buffer_f32, reload );
+	buffer_write( global.tempSave[room], buffer_f32, light );
+	buffer_write( global.tempSave[room], buffer_u8, attack );
+	buffer_write( global.tempSave[room], buffer_f32, attackwait );
+	buffer_write( global.tempSave[room], buffer_f32, pdir );
+	buffer_write( global.tempSave[room], buffer_f32, diradd );
+	buffer_write( global.tempSave[room], buffer_f32, turnwait );
+	buffer_write( global.tempSave[room], buffer_f16, vol );
+	buffer_write( global.tempSave[room], buffer_f16, ammo );
+	buffer_write( global.tempSave[room], buffer_f16, test );
+
+
+}
+DoLoad = function() {
+	scrLoadGeneric(global.tempSave[room]);
+	energie = buffer_read(global.tempSave[room], buffer_f32 );
+	state = buffer_read(global.tempSave[room], buffer_u16 );
+	wait = buffer_read(global.tempSave[room], buffer_f32 );
+	reload = buffer_read(global.tempSave[room], buffer_f32 );
+	light = buffer_read(global.tempSave[room], buffer_f32 );
+	attack = buffer_read(global.tempSave[room], buffer_u8 );
+	attackwait = buffer_read(global.tempSave[room], buffer_f32 );
+	pdir = buffer_read(global.tempSave[room], buffer_f32 );
+	diradd = buffer_read(global.tempSave[room], buffer_f32 );
+	turnwait = buffer_read(global.tempSave[room], buffer_f32 );
+	vol = buffer_read(global.tempSave[room], buffer_f16 );
+	ammo = buffer_read(global.tempSave[room], buffer_f16 );
+	test = buffer_read(global.tempSave[room], buffer_f16 );
+}

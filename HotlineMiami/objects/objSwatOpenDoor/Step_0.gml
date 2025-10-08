@@ -4,7 +4,7 @@ if (!siren) {
         audio_play_sound(sndPolice, 0, true);
     }
 }
-if (state = 0) {
+if (state == 0) {
     if (instance_number(objEnemy) + instance_number(objKnockedOut) == 3) {
         state = 1;
         vspeed = 1;

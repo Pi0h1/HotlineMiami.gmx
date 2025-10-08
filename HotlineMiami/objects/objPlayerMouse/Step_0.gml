@@ -485,7 +485,7 @@ if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBag || sprite_i
         if (scrCantGetHit(object_index)) 
             valid = 0;
         else valid = 1;
-        if (place_meeting(x, y, objPlayer) || place_meeting(x + global.spacex, y + global.spacey, objPlayer) && valid == 1) {
+        if (valid == 1 && (place_meeting(x, y, objPlayer) || place_meeting(x + global.spacex, y + global.spacey, objPlayer))) {
             mask_index = sprWeaponMask;
             if (scrCollisionLineExt(x, y, objPlayer.lastx, objPlayer.lasty, 4, objSolid, objDoorV, objWallSoftH)) {
                 scrMoveSolidOff();

@@ -1,4 +1,4 @@
-if (global.talked) {
+if (global.talked == 1) {
     if (objPlayer.x > x) {
         global.talked = 2;
         scrGetMessage(1);

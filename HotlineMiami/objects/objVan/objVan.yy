@@ -17,8 +17,8 @@
   "name":"objVan",
   "overriddenProperties":[],
   "parent":{
-    "name":"Office",
-    "path":"folders/Objects/Furniture/Office.yy",
+    "name":"Boss 3 (Van driver)",
+    "path":"folders/Objects/Boss Fights/Boss 3 (Van driver).yy",
   },
   "parentObjectId":{
     "name":"objSolid",

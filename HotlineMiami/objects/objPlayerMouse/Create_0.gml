@@ -125,6 +125,8 @@ DoSave = function() {
 	buffer_write(global.tempSave[room], buffer_u8, aimfar);
 	buffer_write(global.tempSave[room], buffer_f16, factor);
 	
+	buffer_write(global.tempSave[room], buffer_u8, persistent);
+	
 	buffer_write(global.tempSave[room], buffer_f32, global.enemy);
 	
 	buffer_write(global.tempSave[room], buffer_f32, viewdir);
@@ -189,6 +191,8 @@ DoLoad = function() {
 	aim = buffer_read(global.tempSave[room], buffer_u8);
 	aimfar = buffer_read(global.tempSave[room], buffer_u8);
 	factor = buffer_read(global.tempSave[room], buffer_f16);
+	
+	persistent = buffer_read(global.tempSave[room], buffer_u8);
 	
 	global.enemy = buffer_read(global.tempSave[room], buffer_f32);
 	

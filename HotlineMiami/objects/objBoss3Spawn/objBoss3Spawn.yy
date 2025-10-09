@@ -3,13 +3,14 @@
   "%Name":"objBoss3Spawn",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"objBoss3Spawn",
   "overriddenProperties":[],
   "parent":{
-    "name":"UI & Miscelaneous",
-    "path":"folders/Objects/UI & Miscelaneous.yy",
+    "name":"Boss 3 (Van driver)",
+    "path":"folders/Objects/Boss Fights/Boss 3 (Van driver).yy",
   },
   "parentObjectId":null,
   "persistent":false,

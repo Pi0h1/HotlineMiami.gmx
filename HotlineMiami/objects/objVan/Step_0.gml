@@ -17,6 +17,7 @@ if (place_meeting(x, y, objPlayerMouse)) {
 if (speed > 0) {
     if (y > 72) {
         if (!brake) {
+			/*
             tile = tile_layer_find(-99, 320, 128);
             if (tile_exists(tile))
                 tile_delete(tile);
@@ -26,6 +27,7 @@ if (speed > 0) {
             tile = tile_layer_find(-99, 320, 192);
             if (tile_exists(tile))
                 tile_delete(tile);
+			*/
         }
     }
     if y > 216 {

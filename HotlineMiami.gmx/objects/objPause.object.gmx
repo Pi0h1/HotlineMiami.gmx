@@ -146,7 +146,7 @@ i+=1
 draw_set_font(fntMenu)
 i=0
 ii=0
-repeat (4) {
+repeat (3) {
 if select=i {
 repeats=6+lengthdir_x(5,dir*2)
 if on=1 {

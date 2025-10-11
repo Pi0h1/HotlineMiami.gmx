@@ -12,7 +12,7 @@ DoSave = function() {
 	buffer_write( global.tempSave[room], buffer_f32, reload );
 	buffer_write( global.tempSave[room], buffer_f32, alert );
 	buffer_write( global.tempSave[room], buffer_f32, ammo );
-	buffer_write( global.tempSave[room], buffer_f32, on );
+	buffer_write( global.tempSave[room], buffer_u8, on );
 }
 
 DoLoad = function() {

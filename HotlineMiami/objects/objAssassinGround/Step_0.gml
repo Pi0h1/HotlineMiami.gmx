@@ -58,28 +58,31 @@ if (speed == 0) {
     }
 }
 
+
 if (state == 2) {
-    if (point_distance(x, y, objPlayer.x, objPlayer.y) < 6) {
-        with (objPlayer) {
-            if (sprite_index == sprPWalkUnarmed || sprite_index == sprPAttackPunch) {
-                // do nothing
-            } else {
-                global.executionx = objPlayer.x;
-                global.executiony = objPlayer.y;
-                my_id = instance_create(objPlayer.x + lengthdir_x(8, objPlayer.dir + 90), objPlayer.y + lengthdir_y(8, objPlayer.dir + 90), objWeaponThrow);
-                my_id.image_index = scrCurrentWeaponExt(sprite_index);
-                my_id.direction = dir + 70 + random(40);
-                my_id.speed = 1 + random(2);
-                my_id.ammo = ammo;
-            }
-            instance_destroy();
-        }
-        my_id = instance_create(x, y, objAssassinDie);
-        my_id.image_angle = image_angle;
-        if (sprite_index == sprAssassinTalk)
-            my_id.shot = 0;
-        else my_id.shot = 1;
-        instance_destroy();
-    }
+	if (instance_exists(objPlayer)) {
+	    if (point_distance(x, y, objPlayer.x, objPlayer.y) < 6) {
+	        with (objPlayer) {
+	            if (sprite_index == sprPWalkUnarmed || sprite_index == sprPAttackPunch) {
+	                // do nothing
+	            } else {
+	                global.executionx = objPlayer.x;
+	                global.executiony = objPlayer.y;
+	                my_id = instance_create(objPlayer.x + lengthdir_x(8, objPlayer.dir + 90), objPlayer.y + lengthdir_y(8, objPlayer.dir + 90), objWeaponThrow);
+	                my_id.image_index = scrCurrentWeaponExt(sprite_index);
+	                my_id.direction = dir + 70 + random(40);
+	                my_id.speed = 1 + random(2);
+	                my_id.ammo = ammo;
+	            }
+	            instance_destroy();
+	        }
+	        my_id = instance_create(x, y, objAssassinDie);
+	        my_id.image_angle = image_angle;
+	        if (sprite_index == sprAssassinTalk)
+	            my_id.shot = 0;
+	        else my_id.shot = 1;
+	        instance_destroy();
+	    }
+	}
 }
 

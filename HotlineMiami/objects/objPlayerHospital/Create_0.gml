@@ -72,7 +72,8 @@ DoSave = function() {
 	buffer_write(global.tempSave[room], buffer_f32, vdist);
 	buffer_write(global.tempSave[room], buffer_f32, vdir);
 	
-	buffer_write(global.tempSave[room], buffer_f32, active);
+	buffer_write(global.tempSave[room], buffer_u8, active);
+	buffer_write(global.tempSave[room], buffer_u8, persistent);
 }
 // Everything must be loaded in the same order you save them, as well as the same read type!
 DoLoad = function() {
@@ -121,5 +122,6 @@ DoLoad = function() {
 	vdist = buffer_read(global.tempSave[room], buffer_f32);
 	vdir = buffer_read(global.tempSave[room], buffer_f32);
 	
-	active = buffer_read(global.tempSave[room], buffer_f32);
+	active = buffer_read(global.tempSave[room], buffer_u8);
+	persistent = buffer_read(global.tempSave[room], buffer_u8);
 }

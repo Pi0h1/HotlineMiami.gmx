@@ -13,7 +13,7 @@ if (alert == 0 || alert == 2) {
 if (on) {
     if (speed > 0)
         image_speed = 0.1;
-    else {
+    else { 
         image_speed = 0;
         image_index = 0;
     }

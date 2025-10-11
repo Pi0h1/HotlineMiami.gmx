@@ -76,7 +76,7 @@ DoSave = function() {
 	buffer_write(global.tempSave[room], buffer_f32, reload);
 	buffer_write(global.tempSave[room], buffer_f32, throwreload);
 	buffer_write(global.tempSave[room], buffer_f32, light);
-	buffer_write(global.tempSave[room], buffer_f32, left);
+	buffer_write(global.tempSave[room], buffer_s8, left);
 	buffer_write(global.tempSave[room], buffer_f32, dir);
 	
 	buffer_write(global.tempSave[room], buffer_f32, viewspeed);
@@ -87,9 +87,9 @@ DoSave = function() {
 	buffer_write(global.tempSave[room], buffer_f32, legindex);
 	
 	buffer_write(global.tempSave[room], buffer_u32, last_sprite);
-	buffer_write(global.tempSave[room], buffer_f32, throwindex);
-	buffer_write(global.tempSave[room], buffer_f32, maskindex);
-	buffer_write(global.tempSave[room], buffer_f32, maskon);
+	buffer_write(global.tempSave[room], buffer_f16, throwindex);
+	buffer_write(global.tempSave[room], buffer_f16, maskindex);
+	buffer_write(global.tempSave[room], buffer_u8, maskon);
 	
 	buffer_write(global.tempSave[room], buffer_u8, aim);
 	buffer_write(global.tempSave[room], buffer_u8, aimfar);
@@ -101,8 +101,8 @@ DoSave = function() {
 	buffer_write(global.tempSave[room], buffer_f32, vdist);
 	buffer_write(global.tempSave[room], buffer_f32, vdir);
 	
-	buffer_write(global.tempSave[room], buffer_f32, active);
-	buffer_write(global.tempSave[room], buffer_f32, valid);
+	buffer_write(global.tempSave[room], buffer_u8, active);
+	buffer_write(global.tempSave[room], buffer_u8, valid);
 	
 	buffer_write(global.tempSave[room], buffer_f32, previousx);
 	buffer_write(global.tempSave[room], buffer_f32, previousy);
@@ -141,7 +141,7 @@ DoLoad = function() {
 	reload = buffer_read(global.tempSave[room], buffer_f32);
 	throwreload = buffer_read(global.tempSave[room], buffer_f32);
 	light = buffer_read(global.tempSave[room], buffer_f32);
-	left = buffer_read(global.tempSave[room], buffer_f32);
+	left = buffer_read(global.tempSave[room], buffer_s8);
 	dir = buffer_read(global.tempSave[room], buffer_f32);
 	
 	viewspeed = buffer_read(global.tempSave[room], buffer_f32);
@@ -152,9 +152,9 @@ DoLoad = function() {
 	legindex = buffer_read(global.tempSave[room], buffer_f32);
 	
 	last_sprite = buffer_read(global.tempSave[room], buffer_u32);
-	throwindex = buffer_read(global.tempSave[room], buffer_f32);
-	maskindex = buffer_read(global.tempSave[room], buffer_f32);
-	maskon = buffer_read(global.tempSave[room], buffer_f32);
+	throwindex = buffer_read(global.tempSave[room], buffer_f16);
+	maskindex = buffer_read(global.tempSave[room], buffer_f16);
+	maskon = buffer_read(global.tempSave[room], buffer_u8);
 	
 	aim = buffer_read(global.tempSave[room], buffer_u8);
 	aimfar = buffer_read(global.tempSave[room], buffer_u8);
@@ -166,8 +166,8 @@ DoLoad = function() {
 	vdist = buffer_read(global.tempSave[room], buffer_f32);
 	vdir = buffer_read(global.tempSave[room], buffer_f32);
 	
-	active = buffer_read(global.tempSave[room], buffer_f32);
-	valid = buffer_read(global.tempSave[room], buffer_f32);
+	active = buffer_read(global.tempSave[room], buffer_u8);
+	valid = buffer_read(global.tempSave[room], buffer_u8);
 	
 	previousx = buffer_read(global.tempSave[room], buffer_f32);
 	previousy = buffer_read(global.tempSave[room], buffer_f32);

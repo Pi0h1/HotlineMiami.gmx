@@ -151,7 +151,7 @@ if (aimfar && valid) {
         }
 
         with (objDeadTable) {
-            if global.talked = 2 {
+            if (global.talked == 2) {
                 valid = 0;
                 vdist = point_distance(x, y, room_width / 2 - (1 - valid) * 88, room_height / 2);
                 vdir = point_direction(room_width / 2 - (1 - valid) * 88, room_height / 2, x, y);

@@ -1,1 +1,2 @@
 toggleLog = false;
+toggleGridDraw = false;

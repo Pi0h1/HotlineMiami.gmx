@@ -84,13 +84,13 @@ DoSave = function() {
 	}
 
 	// basic vars
-	buffer_write( global.tempSave[room], buffer_f32, alpha );
+	buffer_write( global.tempSave[room], buffer_f16, alpha );
 	buffer_write( global.tempSave[room], buffer_f32, coldir );
 	buffer_write( global.tempSave[room], buffer_f32, amount );
-	buffer_write( global.tempSave[room], buffer_f32, fade );
+	buffer_write( global.tempSave[room], buffer_u8, fade );
 	buffer_write( global.tempSave[room], buffer_f32, my_y );
 	buffer_write( global.tempSave[room], buffer_f32, global.dir );
-	buffer_write( global.tempSave[room], buffer_f32, restart );
+	buffer_write( global.tempSave[room], buffer_u8, restart );
 	buffer_write( global.tempSave[room], buffer_f32, update );
 	buffer_write( global.tempSave[room], buffer_f32, dir );
 	buffer_write( global.tempSave[room], buffer_f32, ammoy );
@@ -138,13 +138,13 @@ DoLoad = function() {
 	}
 
 	// basic vars
-	alpha = buffer_read(global.tempSave[room], buffer_f32 );
+	alpha = buffer_read(global.tempSave[room], buffer_f16 );
 	coldir = buffer_read(global.tempSave[room], buffer_f32 );
 	amount = buffer_read(global.tempSave[room], buffer_f32 );
-	fade = buffer_read(global.tempSave[room], buffer_f32 );
+	fade = buffer_read(global.tempSave[room], buffer_u8 );
 	my_y = buffer_read(global.tempSave[room], buffer_f32 );
 	global.dir = buffer_read(global.tempSave[room], buffer_f32 );
-	restart = buffer_read(global.tempSave[room], buffer_f32 );
+	restart = buffer_read(global.tempSave[room], buffer_u8 );
 	update = buffer_read(global.tempSave[room], buffer_f32 );
 	dir = buffer_read(global.tempSave[room], buffer_f32 );
 	ammoy = buffer_read(global.tempSave[room], buffer_f32 );

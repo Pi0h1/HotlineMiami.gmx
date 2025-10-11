@@ -1,4 +1,10 @@
 function scrInitPathFinding() {
+	
+	if (global[$ "grid"] ?? -1 != -1) {
+		mp_grid_destroy( global.grid );
+		global.grid = -1;
+	}
+	
 	global.grid = mp_grid_create(0, 0, room_width / 16, room_height / 16, 16, 16);
 	mp_grid_add_instances(global.grid, objWallBrickH, 1);
 	mp_grid_add_instances(global.grid, objWallBrickV, 1);

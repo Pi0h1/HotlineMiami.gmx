@@ -333,7 +333,4 @@ if (brus > 0) {
 }
 
 
-draw_set_blend_mode(bm_subtract);
-draw_circle_color(camera_get_view_width(view_camera[0]) / 2, camera_get_view_height(view_camera[0]) / 2, 240 + 24 + random(24) + 24, c_black, merge_color(c_navy, c_aqua, 0.25 + random(0.25)), 0);
-draw_set_blend_mode(bm_normal);
-
+drawVignette();

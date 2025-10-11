@@ -18,3 +18,7 @@ if (keyboard_check_pressed(ord("V"))) {
 		y = global.mousey;
 	}
 }
+
+if (keyboard_check_pressed(vk_f8)) {
+	toggleGridDraw = !toggleGridDraw;
+}

@@ -104,7 +104,7 @@ if (alpha < 0)
 draw_set_blend_mode(bm_add);
 draw_sprite_tiled_ext(sprNoise, dir, x, y, 1, 1, merge_color(c_black, make_color_hsv(random(255), random(255), random(255)), alpha), 1);
 draw_set_blend_mode(bm_normal);
-draw_rectangle(0, 0, room_width, blackx, 0);
-draw_rectangle(0, room_height, room_width, room_height - blackx, 0);
+draw_rectangle(0, 0, camera_get_view_width(view_camera[0]), blackx, 0);
+draw_rectangle(0, camera_get_view_height(view_camera[0]), camera_get_view_width(view_camera[0]), room_height - blackx, 0);
 drawVignette();;
 

@@ -2,7 +2,6 @@ function scrXboxMenuQuit() {
 	if (fade)
 	    exit;
 	if (level == 0) {
-	    file_delete(working_directory + "\\skip");
 	    fade = 1;
 	    select = 3;
 	}

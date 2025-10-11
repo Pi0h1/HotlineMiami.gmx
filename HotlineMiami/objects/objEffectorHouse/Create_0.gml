@@ -57,14 +57,14 @@ scrLockInEffectInit();
 
 DoSave = function() {
 	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, alpha );
+	buffer_write( global.tempSave[room], buffer_f16, alpha );
 	buffer_write( global.tempSave[room], buffer_f32, global.enemy );
 	buffer_write( global.tempSave[room], buffer_f32, coldir );
 	buffer_write( global.tempSave[room], buffer_f32, amount );
-	buffer_write( global.tempSave[room], buffer_f32, fade );
+	buffer_write( global.tempSave[room], buffer_u8, fade );
 	buffer_write( global.tempSave[room], buffer_f32, my_y );
 	buffer_write( global.tempSave[room], buffer_f32, global.dir );
-	buffer_write( global.tempSave[room], buffer_f32, restart );
+	buffer_write( global.tempSave[room], buffer_u8, restart );
 	buffer_write( global.tempSave[room], buffer_f32, update );
 	buffer_write( global.tempSave[room], buffer_f32, ammoy );
 	buffer_write( global.tempSave[room], buffer_f32, next );
@@ -79,10 +79,10 @@ DoSave = function() {
 	buffer_write( global.tempSave[room], buffer_f32, nextroom );
 	buffer_write( global.tempSave[room], buffer_f32, newsong );
 	buffer_write( global.tempSave[room], buffer_f32, song );
-	buffer_write( global.tempSave[room], buffer_f32, index );
-	buffer_write( global.tempSave[room], buffer_f32, show_date );
+	buffer_write( global.tempSave[room], buffer_f16, index );
+	buffer_write( global.tempSave[room], buffer_u8, show_date );
 	buffer_write( global.tempSave[room], buffer_u32, sprite );
-	buffer_write( global.tempSave[room], buffer_f32, start );
+	buffer_write( global.tempSave[room], buffer_u8, start );
 	buffer_write( global.tempSave[room], buffer_f32, global.loaded );
 	buffer_write( global.tempSave[room], buffer_f32, width );
 	buffer_write( global.tempSave[room], buffer_f32, height );
@@ -97,14 +97,14 @@ DoSave = function() {
 }
 DoLoad = function() {
 	scrLoadGeneric(global.tempSave[room]);
-	alpha = buffer_read(global.tempSave[room], buffer_f32 );
+	alpha = buffer_read(global.tempSave[room], buffer_f16 );
 	global.enemy = buffer_read(global.tempSave[room], buffer_f32 );
 	coldir = buffer_read(global.tempSave[room], buffer_f32 );
 	amount = buffer_read(global.tempSave[room], buffer_f32 );
-	fade = buffer_read(global.tempSave[room], buffer_f32 );
+	fade = buffer_read(global.tempSave[room], buffer_u8 );
 	my_y = buffer_read(global.tempSave[room], buffer_f32 );
 	global.dir = buffer_read(global.tempSave[room], buffer_f32 );
-	restart = buffer_read(global.tempSave[room], buffer_f32 );
+	restart = buffer_read(global.tempSave[room], buffer_u8 );
 	update = buffer_read(global.tempSave[room], buffer_f32 );
 	ammoy = buffer_read(global.tempSave[room], buffer_f32 );
 	next = buffer_read(global.tempSave[room], buffer_f32 );
@@ -119,10 +119,10 @@ DoLoad = function() {
 	nextroom = buffer_read(global.tempSave[room], buffer_f32 );
 	newsong = buffer_read(global.tempSave[room], buffer_f32 );
 	song = buffer_read(global.tempSave[room], buffer_f32 );
-	index = buffer_read(global.tempSave[room], buffer_f32 );
-	show_date = buffer_read(global.tempSave[room], buffer_f32 );
+	index = buffer_read(global.tempSave[room], buffer_f16 );
+	show_date = buffer_read(global.tempSave[room], buffer_u8 );
 	sprite = buffer_read(global.tempSave[room], buffer_u32 );
-	start = buffer_read(global.tempSave[room], buffer_f32 );
+	start = buffer_read(global.tempSave[room], buffer_u8 );
 	global.loaded = buffer_read(global.tempSave[room], buffer_f32 );
 	width = buffer_read(global.tempSave[room], buffer_f32 );
 	height = buffer_read(global.tempSave[room], buffer_f32 );

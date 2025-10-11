@@ -5,16 +5,14 @@ addx = 0;
 addy = 0;
 
 DoSave = function() {
-	buffer_write( global.tempSave[room], buffer_f16, image_speed );
-	buffer_write( global.tempSave[room], buffer_f32, image_angle );
+	scrSaveGeneric(global.tempSave[room]);
 	buffer_write( global.tempSave[room], buffer_f32, start_x );
 	buffer_write( global.tempSave[room], buffer_f32, start_y );
 	buffer_write( global.tempSave[room], buffer_f32, addx );
 	buffer_write( global.tempSave[room], buffer_f32, addy );
 }
 DoLoad = function() {
-	image_speed = buffer_read(global.tempSave[room], buffer_f16 );
-	image_angle = buffer_read(global.tempSave[room], buffer_f32 );
+	scrLoadGeneric(global.tempSave[room]);
 	start_x = buffer_read(global.tempSave[room], buffer_f32 );
 	start_y = buffer_read(global.tempSave[room], buffer_f32 );
 	addx = buffer_read(global.tempSave[room], buffer_f32 );

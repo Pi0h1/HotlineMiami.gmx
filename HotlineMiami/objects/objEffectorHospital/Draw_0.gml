@@ -31,6 +31,3 @@ if (!instance_exists(objPhoneConversation)) {
     draw_sprite_ext(sprite_index, image_index, global.mousex, global.mousey, 1, 1, -camera_get_view_angle(view_camera[0]), c_white, 1);
     draw_set_blend_mode(bm_normal);
 }
-
-drawVignette();
-

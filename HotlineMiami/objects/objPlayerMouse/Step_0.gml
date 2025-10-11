@@ -225,11 +225,11 @@ if (sprite_index == sprPAttackKnife || sprite_index == sprPAttackBat || sprite_i
                     if (global.bonustime < 12 + global.factor * 4) {
                         global.bonustime = 12 + global.factor * 4;
                     }
-                    if (global.factor = 2) 
+                    if (global.factor == 2) 
                         ds_list_add(global.bonuslist, "Exposure");
-                    if (global.factor = 3) 
+                    if (global.factor == 3) 
                         ds_list_add(global.bonuslist, "Double Exposure")
-                    if (global.factor = 4) 
+                    if (global.factor == 4) 
                         ds_list_add(global.bonuslist, "Triple Exposure")
                     if (global.factor > 4) 
                         ds_list_add(global.bonuslist, "Severe Exposure")

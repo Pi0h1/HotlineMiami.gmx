@@ -13,7 +13,7 @@ if (global.xbox)
 DoSave = function() {
 	buffer_write( global.tempSave[room], buffer_f32, reload );	
 	buffer_write( global.tempSave[room], buffer_f32, current );
-	buffer_write( global.tempSave[room], buffer_f32, index );
+	buffer_write( global.tempSave[room], buffer_f16, index );
 	buffer_write( global.tempSave[room], buffer_f32, skip );
 	buffer_write( global.tempSave[room], buffer_f32, indexspeed );
 	buffer_write( global.tempSave[room], buffer_u16, messages );
@@ -30,7 +30,7 @@ DoSave = function() {
 DoLoad = function() {
 	reload = buffer_read(global.tempSave[room], buffer_f32 );
 	current = buffer_read(global.tempSave[room], buffer_f32 );
-	index = buffer_read(global.tempSave[room], buffer_f32 );
+	index = buffer_read(global.tempSave[room], buffer_f16 );
 	skip = buffer_read(global.tempSave[room], buffer_f32 );
 	indexspeed = buffer_read(global.tempSave[room], buffer_f32 );
 	messages = buffer_read(global.tempSave[room], buffer_u16 );

@@ -23,7 +23,7 @@ draw_circle_color(view_get_wport(0) / 2, view_get_hport(0) / 2, view_get_wport(0
 draw_set_blend_mode(bm_add);
 noiseindex += 0.25;
 d3d_set_projection_ortho(0, 0, camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]), 0);
-draw_sprite_ext(sprNoise, noiseindex, 0, 0, 1, 1, 0, merge_color(c_black, c_ltgray, dizziness * 0.5), 1);
+draw_sprite_tiled_ext(sprNoise, noiseindex, 0, 0, 1, 1, merge_color(c_black, c_ltgray, dizziness * 0.5), 1);
 draw_set_blend_mode(bm_normal);
 with (objEffectorHospital) {
     if (blackx < 15)
@@ -170,7 +170,6 @@ with (objEffectorHospital) {
         draw_text(camera_get_view_width(view_camera[0]) / 2, camera_get_view_height(view_camera[0]) / 2, string_hash_to_newline(text));
         draw_set_alpha(1);
     }
-
     drawVignette();
 }
 

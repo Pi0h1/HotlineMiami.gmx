@@ -98,7 +98,7 @@ DoSave = function() {
 	buffer_write(global.tempSave[room], buffer_f32, reload);
 	buffer_write(global.tempSave[room], buffer_f32, throwreload);
 	buffer_write(global.tempSave[room], buffer_f32, light);
-	buffer_write(global.tempSave[room], buffer_f32, left);
+	buffer_write(global.tempSave[room], buffer_s8, left);
 	buffer_write(global.tempSave[room], buffer_f32, dir);
 	
 	buffer_write(global.tempSave[room], buffer_f32, movex);
@@ -110,13 +110,13 @@ DoSave = function() {
 	buffer_write(global.tempSave[room], buffer_f32, myyspeed);
 	buffer_write(global.tempSave[room], buffer_f32, myspeed);
 	buffer_write(global.tempSave[room], buffer_f32, legdir);
-	buffer_write(global.tempSave[room], buffer_f32, legindex);
+	buffer_write(global.tempSave[room], buffer_f16, legindex);
 	
 	buffer_write(global.tempSave[room], buffer_u32, last_sprite);
 	buffer_write(global.tempSave[room], buffer_f32, throwindex);
 	buffer_write(global.tempSave[room], buffer_u32, masksprite);
-	buffer_write(global.tempSave[room], buffer_f32, maskindex);
-	buffer_write(global.tempSave[room], buffer_f32, maskon);
+	buffer_write(global.tempSave[room], buffer_f16, maskindex);
+	buffer_write(global.tempSave[room], buffer_u8, maskon);
 	
 	buffer_write(global.tempSave[room], buffer_f32, release);
 	buffer_write(global.tempSave[room], buffer_f32, shieldwait);
@@ -165,7 +165,7 @@ DoLoad = function() {
 	reload = buffer_read(global.tempSave[room], buffer_f32);
 	throwreload = buffer_read(global.tempSave[room], buffer_f32);
 	light = buffer_read(global.tempSave[room], buffer_f32);
-	left = buffer_read(global.tempSave[room], buffer_f32);
+	left = buffer_read(global.tempSave[room], buffer_s8);
 	dir = buffer_read(global.tempSave[room], buffer_f32);
 	
 	movex = buffer_read(global.tempSave[room], buffer_f32);
@@ -177,13 +177,13 @@ DoLoad = function() {
 	myyspeed = buffer_read(global.tempSave[room], buffer_f32);
 	myspeed = buffer_read(global.tempSave[room], buffer_f32);
 	legdir = buffer_read(global.tempSave[room], buffer_f32);
-	legindex = buffer_read(global.tempSave[room], buffer_f32);
+	legindex = buffer_read(global.tempSave[room], buffer_f16);
 	
 	last_sprite = buffer_read(global.tempSave[room], buffer_u32);
 	throwindex = buffer_read(global.tempSave[room], buffer_f32);
 	masksprite = buffer_read(global.tempSave[room], buffer_u32);
-	maskindex = buffer_read(global.tempSave[room], buffer_f32);
-	maskon = buffer_read(global.tempSave[room], buffer_f32);
+	maskindex = buffer_read(global.tempSave[room], buffer_f16);
+	maskon = buffer_read(global.tempSave[room], buffer_u8);
 	
 	release = buffer_read(global.tempSave[room], buffer_f32);
 	shieldwait = buffer_read(global.tempSave[room], buffer_f32);

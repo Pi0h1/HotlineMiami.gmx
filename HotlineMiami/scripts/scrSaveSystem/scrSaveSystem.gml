@@ -3,6 +3,83 @@ function showLoaded() {
 	return "global.loaded = " + string(global.loaded);
 }
 
+// You must save globals in the same order they are loaded!
+// They must also have matching data types (i.e. buffer_f32)
+function scrSaveGlobals(buf) {
+	buffer_write( buf, buffer_f32, camera_get_view_x(view_camera[0]) );
+	buffer_write( buf, buffer_f32, camera_get_view_y(view_camera[0]) );
+	
+	buffer_write( buf, buffer_u8, global.done );
+	buffer_write( buf, buffer_f16, global.factor );
+	buffer_write( buf, buffer_u8, global.test );
+	buffer_write( buf, buffer_u8, global.noguns );
+	buffer_write( buf, buffer_u8, global.talked );
+	
+	// trauma
+	if (variable_global_exists("doctor")) {
+		buffer_write( buf, buffer_f32, global.doctor );
+	}
+	
+	// letters
+	var len = array_length(global.letter) ;
+	buffer_write( global.tempSave[room], buffer_u16, len );
+	for (var i = 0; i < len; ++i) {
+		buffer_write( global.tempSave[room], buffer_u16, global.letter[i]);
+	}
+	
+	// masks
+	buffer_write( global.tempSave[room], buffer_u16, global.newmasks );
+	
+	var len = array_length(global.masks) ;
+	buffer_write( global.tempSave[room], buffer_u16, len );
+	for (var i = 0; i < len; ++i) {
+		buffer_write( global.tempSave[room], buffer_u16, global.masks[i]);
+	}
+	// new masks array
+	var len = array_length(global.newmasks) ;
+	buffer_write( global.tempSave[room], buffer_u16, len );
+	for (var i = 0; i < len; ++i) {
+		buffer_write( global.tempSave[room], buffer_u16, global.newmasks[i]);
+	}
+}
+
+// You must load globals in the same order you save them!
+// They must also have matching data types (i.e. buffer_f32)
+function scrLoadGlobals(buf) {	
+	var loadedCamX = buffer_read( buf, buffer_f32 );
+	var loadedCamY = buffer_read( buf, buffer_f32 );
+	camera_set_view_pos(view_camera[0], loadedCamX, loadedCamY);
+
+	global.done = buffer_read( buf, buffer_u8 );
+	global.factor = buffer_read( buf, buffer_f16 );
+	global.test = buffer_read( buf, buffer_u8 );
+	global.noguns = buffer_read( buf, buffer_u8 );
+	global.talked = buffer_read( buf, buffer_u8 );
+	
+	// trauma
+	if (variable_global_exists("doctor")) {
+		global.doctor = buffer_read( buf, buffer_f32 );
+	}
+	
+	// letters
+	var len = buffer_read(global.tempSave[room], buffer_u16 );
+	for (i = 0; i < len; ++i) {
+		global.letter[i] = buffer_read( global.tempSave[room], buffer_u16);
+	}
+	
+	// masks
+	global.newmasks = buffer_read(global.tempSave[room], buffer_u16 );
+	var len = buffer_read(global.tempSave[room], buffer_u16 );
+	for (i = 0; i < len; ++i) {
+		global.masks[i] = buffer_read( global.tempSave[room], buffer_u16);
+	}
+	// new masks array
+	var len = buffer_read(global.tempSave[room], buffer_u16 );
+	for (i = 0; i < len; ++i) {
+		global.newmasks[i] = buffer_read( global.tempSave[room], buffer_u16);
+	}
+}
+
 // You can call this script to add onto DoSave().
 function scrSaveGeneric(buf) {
 	buffer_write( buf, buffer_u32, sprite_index );
@@ -84,37 +161,10 @@ function scrSaveGame(buf){
 		buf = buffer_create(1, buffer_grow, 1);
 		global.tempSave[room] = buf;
 	}
-		
+	
 	buffer_seek( buf, 0, 0 );
-
-	buffer_write( buf, buffer_f32, camera_get_view_x(view_camera[0]) );
-	buffer_write( buf, buffer_f32, camera_get_view_y(view_camera[0]) );
 	
-	buffer_write( buf, buffer_u8, global.done );
-	buffer_write( buf, buffer_u8, global.test );
-	buffer_write( buf, buffer_u8, global.noguns );
-	
-	// letters
-	var len = array_length(global.letter) ;
-	buffer_write( global.tempSave[room], buffer_u16, len );
-	for (var i = 0; i < len; ++i) {
-		buffer_write( global.tempSave[room], buffer_u16, global.letter[i]);
-	}
-	
-	// masks
-	buffer_write( global.tempSave[room], buffer_u16, global.newmasks );
-	
-	var len = array_length(global.masks) ;
-	buffer_write( global.tempSave[room], buffer_u16, len );
-	for (var i = 0; i < len; ++i) {
-		buffer_write( global.tempSave[room], buffer_u16, global.masks[i]);
-	}
-	// new masks array
-	var len = array_length(global.newmasks) ;
-	buffer_write( global.tempSave[room], buffer_u16, len );
-	for (var i = 0; i < len; ++i) {
-		buffer_write( global.tempSave[room], buffer_u16, global.newmasks[i]);
-	}
+	scrSaveGlobals(buf);
 
 	// instances
 	with (all) {
@@ -126,6 +176,7 @@ function scrSaveGame(buf){
 		buffer_write( buf, buffer_f32, x );
 		buffer_write( buf, buffer_f32, y );
 		buffer_write( buf, buffer_f32, depth );
+		show_debug_message(object_get_name(object_index));
 		// Save extra value	
 		if ( is_method( self[$ "DoSave"] ) ) {
 			DoSave(buf);
@@ -142,35 +193,8 @@ function scrLoadGame(buf ){
 	}
 	var saveLen = buffer_tell( buf );
 	buffer_seek( buf, 0, 0 );
-		
-	// globals
 	
-	var loadedCamX = buffer_read( buf, buffer_f32 );
-	var loadedCamY = buffer_read( buf, buffer_f32 );
-	camera_set_view_pos(view_camera[0], loadedCamX, loadedCamY);
-
-	global.done = buffer_read( buf, buffer_u8 );
-	global.test = buffer_read( buf, buffer_u8 );
-	global.noguns = buffer_read( buf, buffer_u8 );
-	
-	// letters
-	var len = buffer_read(global.tempSave[room], buffer_u16 );
-	for (i = 0; i < len; ++i) {
-		global.letter[i] = buffer_read( global.tempSave[room], buffer_u16);
-	}
-	
-	// masks
-	global.newmasks = buffer_read(global.tempSave[room], buffer_u16 );
-	var len = buffer_read(global.tempSave[room], buffer_u16 );
-	for (i = 0; i < len; ++i) {
-		global.masks[i] = buffer_read( global.tempSave[room], buffer_u16);
-	}
-	// new masks array
-	var len = buffer_read(global.tempSave[room], buffer_u16 );
-	for (i = 0; i < len; ++i) {
-		global.newmasks[i] = buffer_read( global.tempSave[room], buffer_u16);
-	}
-	
+	scrLoadGlobals(buf);
 	
 	// instances
 	// Load everything in the order you save them!
@@ -186,4 +210,7 @@ function scrLoadGame(buf ){
 			inst.DoLoad(buf);
 		}
 	}
+	
+	// recreate mp grid for path finding
+	scrInitPathFinding();
 }

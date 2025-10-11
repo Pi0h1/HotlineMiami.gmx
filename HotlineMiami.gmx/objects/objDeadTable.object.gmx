@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.talked) {
+            <string>if (global.talked == 1) {
     if (objPlayer.x &gt; x) {
         global.talked = 2;
         scrGetMessage(1);

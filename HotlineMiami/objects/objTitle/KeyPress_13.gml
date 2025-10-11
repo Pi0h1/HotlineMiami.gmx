@@ -23,7 +23,7 @@ if (level == 0) {
     }
     if (select == 3) {
         fade = 1;
-        file_delete(working_directory + "\\skip");
+		global.skip = 0;
     }
 }
 

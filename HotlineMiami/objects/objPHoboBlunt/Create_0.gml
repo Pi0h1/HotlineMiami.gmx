@@ -18,8 +18,8 @@ DoSave = function() {
 }
 DoLoad = function() {
 	scrLoadGeneric(global.tempSave[room]);
-	hurtindex = buffer_read(global.tempSave[room], buffer_f32 );
-	targetindex = buffer_read(global.tempSave[room], buffer_f32 );
-	maskindex = buffer_read(global.tempSave[room], buffer_f32 );
+	hurtindex = buffer_read(global.tempSave[room], buffer_f16 );
+	targetindex = buffer_read(global.tempSave[room], buffer_f16 );
+	maskindex = buffer_read(global.tempSave[room], buffer_f16 );
 	ammo = buffer_read(global.tempSave[room], buffer_f32 );
 }

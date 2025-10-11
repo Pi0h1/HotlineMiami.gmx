@@ -1,0 +1,3 @@
+[submodule "HotlineMuseum"]
+	path = HotlineMuseum
+	url = git@github.com:Pi0h1-Pro/HotlineMuseum.git

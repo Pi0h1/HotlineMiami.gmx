@@ -2795,6 +2795,12 @@
         <script>scripts\screen_redraw.gml</script>
       </scripts>
     </scripts>
+    <scripts name="OriginalGame Fixes">
+      <script>scripts\scrMoveShieldUp.gml</script>
+      <script>scripts\scrMoveShieldDown.gml</script>
+      <script>scripts\scrMoveShieldLeft.gml</script>
+      <script>scripts\scrMoveShieldRight.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <fonts name="Hotline Miami">

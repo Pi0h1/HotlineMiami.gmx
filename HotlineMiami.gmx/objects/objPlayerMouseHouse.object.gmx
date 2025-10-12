@@ -141,7 +141,7 @@ if (aimfar &amp;&amp; valid) {
     vdir = point_direction(room_width / 2, room_height / 2, x, y);
     view_angle[0] = lengthdir_y(vdist * (1 / 160), vdir * 2);
 } else {
-    if (objPlayer.active == 0 &amp;&amp; instance_exists(objPhoneConversation) || instance_exists(objFocus)) {
+    if (!objPlayer.active &amp;&amp; (instance_exists(objPhoneConversation) || instance_exists(objFocus))) {
         if (instance_exists(objLightingEngine) || instance_exists(objTutorialLight)) {
             with (objLight) {
                 if (targetstrength) {

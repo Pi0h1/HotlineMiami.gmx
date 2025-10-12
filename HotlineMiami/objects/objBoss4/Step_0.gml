@@ -326,7 +326,7 @@ if (state == 7) {
         exit;
         state = 8;
     }
-    if (image_index > 12 && image_index - 0.2 < 12) {
+    if (image_index >= 12 && image_index < 12.2) {
         repeat(8) {
             my_id = instance_create(x - 3 + random(6), y - 3 + random(6), objBloodDrop);
             my_id.image_xscale = 1 - random(0.2);
@@ -356,7 +356,8 @@ if (state == 7) {
         global.shake = 10;
         my_id = instance_create(x + 12, y, objEBullet);
         my_id.speed = 12;
-        with objPlayer energie = 100;
+        with (objPlayer)
+			energie = 100;
         instance_create(x, y, objLevelComplete);
         audio_play_sound(sndMagnum, 0, false);
     }

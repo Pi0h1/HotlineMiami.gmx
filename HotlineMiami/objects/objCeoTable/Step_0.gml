@@ -3,6 +3,7 @@ if (global.xbox)
 
 if (state == 1) {
     if (!instance_exists(objPhoneConversation)) {
+		checkpoint_save(working_directory + "\\tempsave.sav");
         state = 2;
         instance_create(320, 40, objPlayerBoss);
     }

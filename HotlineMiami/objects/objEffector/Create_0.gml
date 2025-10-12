@@ -31,7 +31,7 @@ vlasty = camera_get_view_y(view_camera[0]);
 global.enemy = -1234;
 leveltitle = "";
 levelshow = 240;
-gridon = 0;
+gridon = 0; // debug command that draws debug for the ai
 uzisnd = 0;
 // Addresses used for display when level starts
 if (instance_exists(objMaskMenu)) {

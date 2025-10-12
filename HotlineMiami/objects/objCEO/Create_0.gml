@@ -10,4 +10,33 @@ checkreload = floor(random(8));
 alert = 0;
 light = 0;
 talked = 0;
+dist = 0;
+dir = 0;
+pdir = 0;
 
+DoSave = function() {
+	scrSaveGeneric(global.tempSave[room]);
+	buffer_write( global.tempSave[room], buffer_u8, alert );
+	buffer_write( global.tempSave[room], buffer_u8, talked );
+	buffer_write( global.tempSave[room], buffer_f32, energie );
+	buffer_write( global.tempSave[room], buffer_f32, angle );
+	buffer_write( global.tempSave[room], buffer_f32, checkreload );
+	buffer_write( global.tempSave[room], buffer_f32, light );
+	buffer_write( global.tempSave[room], buffer_f32, alarm[0] );
+	buffer_write( global.tempSave[room], buffer_f32, dist );
+	buffer_write( global.tempSave[room], buffer_f32, dir );
+	buffer_write( global.tempSave[room], buffer_f32, pdir );
+}
+DoLoad = function() {
+	scrLoadGeneric(global.tempSave[room]);
+	alert = buffer_read(global.tempSave[room], buffer_u8 );
+	talked = buffer_read(global.tempSave[room], buffer_u8 );
+	energie = buffer_read(global.tempSave[room], buffer_f32 );
+	angle = buffer_read(global.tempSave[room], buffer_f32 );
+	checkreload = buffer_read(global.tempSave[room], buffer_f32 );
+	light = buffer_read(global.tempSave[room], buffer_f32 );
+	alarm[0] = buffer_read(global.tempSave[room], buffer_f32 );
+	dist = buffer_read(global.tempSave[room], buffer_f32 );
+	dir = buffer_read(global.tempSave[room], buffer_f32 );
+	pdir = buffer_read(global.tempSave[room], buffer_f32 );
+}

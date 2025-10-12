@@ -21,5 +21,5 @@ DoLoad = function() {
 	reload = buffer_read(global.tempSave[room], buffer_f32 );
 	alert = buffer_read(global.tempSave[room], buffer_f32 );
 	ammo = buffer_read(global.tempSave[room], buffer_f32 );
-	on = buffer_read(global.tempSave[room], buffer_f32 );
+	on = buffer_read(global.tempSave[room], buffer_u8 );
 }	

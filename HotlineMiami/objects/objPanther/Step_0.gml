@@ -4,7 +4,7 @@ if (!instance_exists(objPlayer)) {
     speed = 0;
     if (sprite_index == sprPantherRun || sprite_index == sprPantherWalk) {
         sprite_index = sprPantherSit;
-        image_speed = 0.075;;
+        image_speed = 0.075;
     }
     speed = 0;
     exit;

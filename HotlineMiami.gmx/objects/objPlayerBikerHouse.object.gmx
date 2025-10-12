@@ -76,7 +76,7 @@ aimfar = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if active = 0 {
+            <string>if (active) {
     // do nothing.
 } else {
     if (global.xbox)

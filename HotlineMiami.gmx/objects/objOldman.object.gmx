@@ -212,14 +212,14 @@ if (state == 6) {
                 image_index += 0.15;
             if (image_index &gt;= 13 &amp;&amp; image_index - 0.15 &lt; 13)
                 audio_play_sound(sndLighter, 0, false);
-            if (image_index &gt; 52 &amp;&amp; !global.smoke) {
+            if (image_index &gt; 52 &amp;&amp; global.smoke == 0) {
                 global.smoke = 1;
                 my_id = instance_create(x + lengthdir_x(8, dir), y + lengthdir_y(8, dir), objSmokeHit);
                 my_id.depth = -1;
                 my_id.image_angle = dir;
                 my_id.image_speed = 0.15;
             }
-            if (image_index &gt; 92 &amp;&amp; global.smoke) {
+            if (image_index &gt; 92 &amp;&amp; global.smoke == 1) {
                 global.smoke = 2;
                 my_id = instance_create(x + lengthdir_x(12, dir), y + lengthdir_y(12, dir), objSmokeHit);
                 my_id.depth = -1;

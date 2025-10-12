@@ -54,7 +54,7 @@ if (aimfar && valid) {
     vdir = point_direction(room_width / 2, room_height / 2, x, y);
     camera_set_view_angle(view_camera[0], lengthdir_y(vdist * (1 / 160), vdir * 2));
 } else {
-    if (objPlayer.active == 0 && instance_exists(objPhoneConversation) || instance_exists(objFocus)) {
+    if (objPlayer.active == 0 && (instance_exists(objPhoneConversation) || instance_exists(objFocus))) {
         if (instance_exists(objLightingEngine) || instance_exists(objTutorialLight)) {
             with (objLight) {
                 if (targetstrength) {

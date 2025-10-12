@@ -176,7 +176,6 @@ function scrSaveGame(buf){
 		buffer_write( buf, buffer_f32, x );
 		buffer_write( buf, buffer_f32, y );
 		buffer_write( buf, buffer_f32, depth );
-		show_debug_message(object_get_name(object_index));
 		// Save extra value	
 		if ( is_method( self[$ "DoSave"] ) ) {
 			DoSave(buf);

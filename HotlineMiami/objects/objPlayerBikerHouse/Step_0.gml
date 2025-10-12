@@ -1,4 +1,4 @@
-if active = 0 {
+if (!active) {
     // do nothing.
 } else {
     if (global.xbox)

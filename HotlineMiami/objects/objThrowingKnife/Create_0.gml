@@ -10,6 +10,7 @@ DoSave = function() {
 	buffer_write(global.tempSave[room], buffer_f32, dir_add);
 }
 DoLoad = function () {
+	scrLoadGeneric(global.tempSave[room]);
 	angle = buffer_read(global.tempSave[room], buffer_f32);
 	bounced = buffer_read(global.tempSave[room], buffer_u8);
 	dir_add = buffer_read(global.tempSave[room], buffer_f32);

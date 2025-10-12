@@ -2796,6 +2796,7 @@
       </scripts>
     </scripts>
     <scripts name="OriginalGame Fixes">
+      <script>scripts\txtExplanation2.gml</script>
       <script>scripts\scrMoveShieldUp.gml</script>
       <script>scripts\scrMoveShieldDown.gml</script>
       <script>scripts\scrMoveShieldLeft.gml</script>

@@ -23,7 +23,7 @@ if (speed > 2.5) {
                         global.bonustime = 20;
                     exit;
                 }
-                if (global.my_id.image_index == 1 && global.my_id.image_index == 2) {
+                if (global.my_id.image_index == 1 || global.my_id.image_index == 2) {
                     with (global.my_id) {
                         direction = direction + 160 + random(40);
                         speed *= 0.3;

@@ -31,9 +31,10 @@ if (!stop) {
     if (!global.xbox) {
         if (question) {
             select = -1;
-            if (mousey > 256 - 58.5 && mousey < 256 - 40.5)
+			// bounding box for selecting questions
+            if (mousey > 270 - 58.5 && mousey < 270 - 40.5)
                 select = 0;
-            if (mousey > 256 - 40.5 && mousey < 256 - 22.5)
+            if (mousey > 270 - 40.5 && mousey < 270 - 22.5)
                 select = 1;
         }
     }

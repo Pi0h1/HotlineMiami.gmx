@@ -1,5 +1,6 @@
 if (!on)
-    draw_surface_ext(surf, 0, 0, 1 / 3, 1 / 3, 0, c_white, 1);
+    draw_surface_ext(surf, 14, 7, 1 / 3, 1 / 3, 0, c_white, 1);
+
 else {
     splits = 3 + round(random(10));
     i = 1;
@@ -14,9 +15,9 @@ else {
     split_y2[i] = room_height;
     i = 0;
     repeat(splits) {
-        draw_surface_part_ext(surf, 0, split_y1[i] * 3, room_width * 3, (split_y2[i] * 3) - split_y1[i] * 3, -1 + random(2), split_y1[i], 1 / 3, 1 / 3, c_white, 1);
+        draw_surface_part_ext(surf, 0, split_y1[i] * 3, room_width * 3, (split_y2[i] * 3) - split_y1[i] * 3, 14 + (-1 + random(2)), split_y1[i] + 7, 1 / 3, 1 / 3, c_white, 1);
         texture_set_interpolation(true);
-        draw_surface_part_ext(surf, 0, split_y1[i] * 3, room_width * 3, (split_y2[i] * 3) - split_y1[i] * 3, -1 + random(2), split_y1[i], 1 / 3, 1 / 3, c_white, random(0.3 * factor));
+        draw_surface_part_ext(surf, 0, split_y1[i] * 3, room_width * 3, (split_y2[i] * 3) - split_y1[i] * 3, 14 + (-1 + random(2)), split_y1[i] + 7, 1 / 3, 1 / 3, c_white, random(0.3 * factor));
         texture_set_interpolation(false);
         i++;
     }

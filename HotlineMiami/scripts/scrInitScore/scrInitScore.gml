@@ -26,6 +26,8 @@ function scrInitScore() {
 	global.kills = 0;
 	global.gunkill = 0;
 	global.time = 0;
+	global.killx[0] = 0;
+	global.killy[0] = 0;
 	i = 0;
 	repeat(39) {
 	    global.flexibility[i] = 0;

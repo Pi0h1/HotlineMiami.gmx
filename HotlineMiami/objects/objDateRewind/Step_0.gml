@@ -9,7 +9,7 @@ if (on) {
 surface_set_target(surf);
 draw_set_alpha(1 - random(0.9 * factor));
 draw_set_color(merge_color(c_black, merge_color(c_dkgray, c_black, 0.7 + random(0.3)), factor));
-draw_rectangle(0, 0, room_width * 3, room_height * 3, 0);
+draw_rectangle(0, 0, room_width * 3, room_height * 3, false);
 draw_set_color(merge_color(c_gray, merge_color(c_black, c_ltgray, random(1)), factor));
 draw_set_font(fntDate);
 addx = ((-1 + random(2)) * factor);
@@ -21,7 +21,6 @@ if (!on)
     draw_set_color(c_white);
 else draw_set_color(merge_color(c_ltgray, c_white, random(1)));
 draw_text_transformed((room_width / 2) * 3 + addy, (room_height / 2) * 3 + addy, string_hash_to_newline(month[currentmonth] + " " + string(day) + scrNth(string(day)) + ", 1989#Miami - Florida"), 3 - random(addx * 0.2), 3 - random(addy * 0.4), 0);
-
 
 if (on) {
     if (reload > 0)

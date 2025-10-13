@@ -5,8 +5,8 @@ if (view_current == 0) {
     draw_set_blend_mode(bm_subtract);
     color1 = merge_color(c_olive, c_maroon, 0.5 + lengthdir_x(0.5, dir));
     color2 = merge_color(c_orange, c_purple, 0.5 + lengthdir_x(0.5, dir));
-    draw_rectangle_color(0, 0, 400, 140, color1, color1, color2, color2, 0);
-    draw_rectangle_color(0, 130, 400, 140, c_black, c_black, c_white, c_white, 0);
+    draw_rectangle_color(0, 0, 480, 140, color1, color1, color2, color2, 0);
+    draw_rectangle_color(0, 130, 480, 140, c_black, c_black, c_white, c_white, 0);
     draw_set_blend_mode(bm_normal);
 
     if (!fade) {
@@ -50,10 +50,11 @@ if (view_current == 0) {
     draw_set_font(fntDate);
     draw_set_halign(fa_center);
     draw_set_valign(fa_top);
+	// draw credits text
     draw_set_color(merge_color(c_fuchsia, c_purple, 0.5 + lengthdir_x(0.5, dir)));
-    draw_text(201, credits_y + 1, string_hash_to_newline(credits));
+    draw_text(251, credits_y + 1, string_hash_to_newline(credits));
     draw_set_color(merge_color(c_white, c_aqua, 0.5 + lengthdir_x(0.5, dir - 90)));
-    draw_text(200, credits_y, string_hash_to_newline(credits));
+    draw_text(251, credits_y, string_hash_to_newline(credits));
     draw_set_blend_mode(bm_subtract);
     draw_rectangle_color(0, 140, 400, 150, c_white, c_white, c_black, c_black, 0);
     draw_set_blend_mode(bm_normal);

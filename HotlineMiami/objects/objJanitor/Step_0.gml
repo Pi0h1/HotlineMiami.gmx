@@ -29,6 +29,8 @@ global.my_id = id;
 
 if (instance_exists(objJanitorDennisDie)) {
     if (point_distance(x, y, objPlayerBiker.x, objPlayerBiker.y) < 22) {
+		global.executionx = x;
+		global.executiony = y;
         my_id = instance_create((x + objPlayerBiker.x) * 0.5, (y + objPlayerBiker.y) * 0.5, objBikerKillJonatan);
         my_id.image_angle = point_direction(objPlayer.x, objPlayer.y, x, y);
         with (objPlayerBiker)

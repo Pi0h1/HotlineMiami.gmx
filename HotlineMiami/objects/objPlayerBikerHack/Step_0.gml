@@ -11,4 +11,3 @@ with (objPlayerBoss) {
         camera_set_view_angle(view_camera[0], lengthdir_y(vdist * (1 / 160), vdir * 2));
     }
 }
-

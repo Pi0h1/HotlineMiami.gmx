@@ -1,3 +1,4 @@
+show_debug_message(valid);
 previousx = x;
 previousy = y;
 if (sprite_index == sprPHeadExplode) {
@@ -19,7 +20,7 @@ if (room == rmSequence13Downstairs) {
     }
 }
 if (global.xbox)
-    scrXboxPlayerMouseHouse()
+    scrXboxPlayerMouseHouse();
 
 global.test = 0;
 with (objWeapon) {

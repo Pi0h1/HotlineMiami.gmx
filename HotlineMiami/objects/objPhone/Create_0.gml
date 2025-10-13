@@ -16,9 +16,10 @@ DoSave = function() {
 }
 DoLoad = function() {
 	scrLoadGeneric(global.tempSave[room]);
-	dir = buffer_read(global.tempSave[room], buffer_u8 );
-	called = buffer_read(global.tempSave[room], buffer_f32 );
-	wait = buffer_read(global.tempSave[room], buffer_u8 );
+	dir = buffer_read(global.tempSave[room], buffer_f32 );
+	called = buffer_read(global.tempSave[room], buffer_u8 ); 
+	wait = buffer_read(global.tempSave[room], buffer_f32 );
+	answered = buffer_read(global.tempSave[room], buffer_u8 );
 	alarm[0] = buffer_read(global.tempSave[room], buffer_f32 );
 	alarm[1] = buffer_read(global.tempSave[room], buffer_f32 );
 }

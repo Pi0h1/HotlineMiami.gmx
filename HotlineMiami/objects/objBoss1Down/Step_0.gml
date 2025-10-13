@@ -1,40 +1,43 @@
-scrMoveSolidOn()
-if sprite_index = sprBoss1Beg {
-    if !instance_exists(objPhoneConversation) {
-        with objPlayerMouseHouse {
-            my_id = instance_create(x, y, objPlayerMouse)
-            my_id.active = 1
-            my_id.sprite_index = sprite_index
-            my_id.ammo = ammo
-            my_id.maskon = 1
-            my_id.maskindex = global.maskindex
-            instance_destroy()
+scrMoveSolidOn();
+if (sprite_index == sprBoss1Beg) {
+    if (!instance_exists(objPhoneConversation)) {
+        with (objPlayerMouseHouse) {
+            my_id = instance_create(x, y, objPlayerMouse);
+            my_id.active = 1;
+            my_id.sprite_index = sprite_index;
+            my_id.ammo = ammo;
+            my_id.maskon = 1;
+            my_id.maskindex = global.maskindex;
+            instance_destroy();
         }
-        if point_distance(x, y, objPlayer.x, objPlayer.y) < 12 {
-            global.executionx = objPlayer.x
-            global.executiony = objPlayer.y
-            my_id = instance_create(x, y, objBoss1Die)
-            my_id.image_angle = image_angle
-            my_id.maskindex = objPlayer.maskindex
-            instance_destroy()
-            with objPlayer {
-                if sprite_index = sprPWalkUnarmed or sprite_index = sprPAttackPunch nothing = 1
-                else {
-                    my_id = instance_create(x + lengthdir_x(8, dir + 90), y + lengthdir_y(8, dir + 90), objWeaponThrow)
-                    my_id.image_index = scrCurrentWeaponExt(sprite_index)
-                    my_id.direction = dir + 70 + random(40)
-                    my_id.speed = 1 + random(2)
-                    my_id.ammo = ammo
+        if (point_distance(x, y, objPlayer.x, objPlayer.y) < 12) {
+            global.executionx = objPlayer.x;
+            global.executiony = objPlayer.y;
+            my_id = instance_create(x, y, objBoss1Die);
+            my_id.image_angle = image_angle;
+            my_id.maskindex = objPlayer.maskindex;
+            instance_destroy();
+            with (objPlayer) {
+                if (sprite_index == sprPWalkUnarmed || sprite_index == sprPAttackPunch) {
+						// do nothing
+				} else {
+                    my_id = instance_create(x + lengthdir_x(8, dir + 90), y + lengthdir_y(8, dir + 90), objWeaponThrow);
+                    my_id.image_index = scrCurrentWeaponExt(sprite_index);
+                    my_id.direction = dir + 70 + random(40);
+                    my_id.speed = 1 + random(2);
+                    my_id.ammo = ammo;
                 }
-                instance_destroy()
+                instance_destroy();
             }
         }
     }
-    if image_index < 7.3 image_index += 0.125
-    else image_index = 4
-    exit
+    if (image_index < 7.3)
+		image_index += 0.125;
+    else image_index = 4;
+    exit;
 }
-if !place_free(x + hspeed, y + vspeed) speed = 0
+if (!place_free(x + hspeed, y + vspeed))
+	speed = 0;
 
 if (wait > 0)
     wait--;

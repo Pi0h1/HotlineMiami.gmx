@@ -7,11 +7,14 @@ if (global.xbox) {
     } else presstart = 0;
 }
 
+/*
 if (current_time - start_time > 145000) {
     image_index = 0;
     sprite_index = sprMCDriveOff;
     fade = 1;
 }
+*/
+
 if (sprite_index == sprMCDrive) {
     if (state == 0) {
         if (x < 232)

@@ -31,4 +31,3 @@ repeat(100) {
     sleep(1000 / 60);
     screen_refresh();
 }
-

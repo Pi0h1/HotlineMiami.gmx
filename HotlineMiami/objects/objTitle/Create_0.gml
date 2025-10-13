@@ -75,6 +75,7 @@ alt[3] = "EXIT GAME";
 global.bonuslist = ds_list_create();
 global.bonustime = 0;
 global.newmasks = 0;
+global.newmask = 0;
 
 //Modifies this to be whats on screen once ''start game'' is selected
 nextlevel = rmTutorial;

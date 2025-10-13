@@ -6,7 +6,9 @@ if (objPlayer.x > x - 12 && objPlayer.x < x + 12) {
     if (place_meeting(x, y - 8, objPlayer)) {
         with (objPlayer)
             instance_destroy();
-        instance_create(x, y - 21, objPlayerBikerHack);
+        my_id = instance_create(x, y - 21, objPlayerBikerHack);
+		my_id.vlastx = camera_get_view_x(view_camera[0]);
+		my_id.vlasty = camera_get_view_y(view_camera[0]);
         alarm[0] = 120;
         active = 0;
     }

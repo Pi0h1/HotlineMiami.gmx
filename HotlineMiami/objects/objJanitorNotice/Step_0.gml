@@ -1,4 +1,4 @@
-if (!smirked) {
+if (smirked == 0) {
     if (point_distance(x, y, objPlayer.x, objPlayer.y) < 220) {
         scrGetMessage(0);
         objPlayerBikerHouse.active = 0;
@@ -6,7 +6,7 @@ if (!smirked) {
     }
 }
 
-if (smirked) {
+if (smirked == 1) {
     if (instance_exists(objPhoneConversation)) {
         addx = 80;
         viewspeed = point_distance(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x + addx, y) * 0.1;

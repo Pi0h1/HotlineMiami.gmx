@@ -23,3 +23,4 @@ global.done = 0;
 global.loaded = 0;
 global.tempSave = array_create(real(room_last) - 1, -1);
 global.test = 0;
+global.restart = 0;

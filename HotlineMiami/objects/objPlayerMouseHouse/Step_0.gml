@@ -53,6 +53,7 @@ if (aimfar && valid) {
     vdist = point_distance(x, y, room_width / 2, room_height / 2);
     vdir = point_direction(room_width / 2, room_height / 2, x, y);
     camera_set_view_angle(view_camera[0], lengthdir_y(vdist * (1 / 160), vdir * 2));
+
 } else {
     if (objPlayer.active == 0 && (instance_exists(objPhoneConversation) || instance_exists(objFocus))) {
         if (instance_exists(objLightingEngine) || instance_exists(objTutorialLight)) {
@@ -105,6 +106,16 @@ if (aimfar && valid) {
             vdir = point_direction(room_width / 2 - (1 - valid) * 88, room_height / 2, x, y);
             viewspeed = point_distance(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2 - (1 - valid) * 88, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x + lengthdir_x(vdist * 0.2, vdir - 180), y + lengthdir_y(vdist * 0.2, vdir - 180)) * 0.1;
             viewdir = point_direction(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2 - (1 - valid) * 88, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x + lengthdir_x(vdist * 0.2, vdir - 180), y + lengthdir_y(vdist * 0.2, vdir - 180));
+            camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + (lengthdir_x(viewspeed, viewdir)), camera_get_view_y(view_camera[0]) + (lengthdir_y(viewspeed, viewdir)));
+            camera_set_view_angle(view_camera[0], lengthdir_y(vdist * (1 / 160), vdir * 2));
+        }
+		
+        with (objPicture) {
+            valid = 0;
+            vdist = point_distance(x, y, room_width / 2, room_height / 2);
+            vdir = point_direction(room_width / 2, room_height / 2, x, y);
+            viewspeed = point_distance(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x, y) * 0.2;
+            viewdir = point_direction(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x, y);
             camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + (lengthdir_x(viewspeed, viewdir)), camera_get_view_y(view_camera[0]) + (lengthdir_y(viewspeed, viewdir)));
             camera_set_view_angle(view_camera[0], lengthdir_y(vdist * (1 / 160), vdir * 2));
         }
@@ -302,7 +313,7 @@ if (aimfar && valid) {
         }
 
     } else {
-        if (active || !instance_exists(objPhone) && !instance_exists(objBoss4) && !instance_exists(objBossPhone) && !instance_exists(objTrain) || instance_exists(objBodyguard) && !instance_exists(objPicture)) {
+        if (active || (!instance_exists(objPhone) && !instance_exists(objBoss4) && !instance_exists(objPicture) && !instance_exists(objBossPhone) && !instance_exists(objTrain) || instance_exists(objBodyguard))) {
             vdist = point_distance(x, y, room_width / 2 - (1 - valid) * 88, room_height / 2);
             vdir = point_direction(room_width / 2 - (1 - valid) * 88, room_height / 2, x, y);
             viewspeed = point_distance(camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2 - (1 - valid) * 88, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2, x + lengthdir_x(vdist * 0.2, vdir - 180), y + lengthdir_y(vdist * 0.2, vdir - 180)) * 0.1;

@@ -18,6 +18,11 @@ function scrGetMaskPowers() {
 	    with (objWeapon) {
 	        if (object_index == objWeapon)
 	            image_index = choose(0, 1, 6);
+				switch (image_index) {
+					case 0: ammo = 24; break;
+					case 1: ammo = 6; break;
+					case 6: ammo = 2; break;
+				}
 	    }
 	}
 

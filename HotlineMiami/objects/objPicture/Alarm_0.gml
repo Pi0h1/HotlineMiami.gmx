@@ -1,3 +1,4 @@
+
 with (objEffector) {
     fade = 1;
     nextroom = rmCredits;

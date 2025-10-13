@@ -216,8 +216,10 @@ function restart_create(file){
 
 function restart_load(file){
 	//game_load(file);
-	scrLoadGame(global.tempSave[room]);
-	global.maskload = -1;
+//	scrLoadGame(global.tempSave[room]);
+//	global.maskload = -1;
+	global.restart = 1;
+	room_goto(global.level);
 	show_debug_message("LOADED RESTART: " + file);
 }
 

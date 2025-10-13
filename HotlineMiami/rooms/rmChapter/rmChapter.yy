@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"rmChapter",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rmChapter/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,

@@ -24,55 +24,55 @@ global.mousex = (display_mouse_get_x() - width * 0.5) * (camera_get_view_width(v
 global.mousey = (display_mouse_get_y() - height * 0.5) * (camera_get_view_height(view_camera[0]) / height);
 global.done = 0;
 
-DoSave = function() {
+DoSave = function(buf) {
 	// basic vars
-	buffer_write( global.tempSave[room], buffer_f16, alpha );
-	buffer_write( global.tempSave[room], buffer_f32, coldir );
-	buffer_write( global.tempSave[room], buffer_f32, amount );
-	buffer_write( global.tempSave[room], buffer_u8, fade );
-	buffer_write( global.tempSave[room], buffer_f32, my_y );
-	buffer_write( global.tempSave[room], buffer_f32, global.dir );
-	buffer_write( global.tempSave[room], buffer_u8, restart );
-	buffer_write( global.tempSave[room], buffer_f32, update );
-	buffer_write( global.tempSave[room], buffer_f32, dir );
-	buffer_write( global.tempSave[room], buffer_f32, ammoy );
-	buffer_write( global.tempSave[room], buffer_f32, next );
-	buffer_write( global.tempSave[room], buffer_f32, showfinished );
-	buffer_write( global.tempSave[room], buffer_f32, image_speed );
-	buffer_write( global.tempSave[room], buffer_f32, action );
-	buffer_write( global.tempSave[room], buffer_f32, wait );
-	buffer_write( global.tempSave[room], buffer_f32, phonex );
-	buffer_write( global.tempSave[room], buffer_f32, nextroom );
-	buffer_write( global.tempSave[room], buffer_u32, width );
-	buffer_write( global.tempSave[room], buffer_u32, height );
-	buffer_write( global.tempSave[room], buffer_f32, global.mousex );
-	buffer_write( global.tempSave[room], buffer_f32, global.mousey );
+	buffer_write( buf, buffer_f16, alpha );
+	buffer_write( buf, buffer_f32, coldir );
+	buffer_write( buf, buffer_f32, amount );
+	buffer_write( buf, buffer_u8, fade );
+	buffer_write( buf, buffer_f32, my_y );
+	buffer_write( buf, buffer_f32, global.dir );
+	buffer_write( buf, buffer_u8, restart );
+	buffer_write( buf, buffer_f32, update );
+	buffer_write( buf, buffer_f32, dir );
+	buffer_write( buf, buffer_f32, ammoy );
+	buffer_write( buf, buffer_f32, next );
+	buffer_write( buf, buffer_f32, showfinished );
+	buffer_write( buf, buffer_f32, image_speed );
+	buffer_write( buf, buffer_f32, action );
+	buffer_write( buf, buffer_f32, wait );
+	buffer_write( buf, buffer_f32, phonex );
+	buffer_write( buf, buffer_f32, nextroom );
+	buffer_write( buf, buffer_u32, width );
+	buffer_write( buf, buffer_u32, height );
+	buffer_write( buf, buffer_f32, global.mousex );
+	buffer_write( buf, buffer_f32, global.mousey );
 
 
 
 
 }
-DoLoad = function() {
+DoLoad = function(buf) {
 	// basic vars
-	alpha = buffer_read(global.tempSave[room], buffer_f16 );
-	coldir = buffer_read(global.tempSave[room], buffer_f32 );
-	amount = buffer_read(global.tempSave[room], buffer_f32 );
-	fade = buffer_read(global.tempSave[room], buffer_u8 );
-	my_y = buffer_read(global.tempSave[room], buffer_f32 );
-	global.dir = buffer_read(global.tempSave[room], buffer_f32 );
-	restart = buffer_read(global.tempSave[room], buffer_u8 );
-	update = buffer_read(global.tempSave[room], buffer_f32 );
-	dir = buffer_read(global.tempSave[room], buffer_f32 );
-	ammoy = buffer_read(global.tempSave[room], buffer_f32 );
-	next = buffer_read(global.tempSave[room], buffer_f32 );
-	showfinished = buffer_read(global.tempSave[room], buffer_f32 );
-	image_speed = buffer_read(global.tempSave[room], buffer_f32 );
-	action = buffer_read(global.tempSave[room], buffer_f32 );
-	wait = buffer_read(global.tempSave[room], buffer_f32 );
-	phonex = buffer_read(global.tempSave[room], buffer_f32 );
-	nextroom = buffer_read(global.tempSave[room], buffer_f32 );
-	width = buffer_read(global.tempSave[room], buffer_u32 );
-	height = buffer_read(global.tempSave[room], buffer_u32 );
-	global.mousex = buffer_read(global.tempSave[room], buffer_f32 );
-	global.mousey = buffer_read(global.tempSave[room], buffer_f32 );
+	alpha = buffer_read(buf, buffer_f16 );
+	coldir = buffer_read(buf, buffer_f32 );
+	amount = buffer_read(buf, buffer_f32 );
+	fade = buffer_read(buf, buffer_u8 );
+	my_y = buffer_read(buf, buffer_f32 );
+	global.dir = buffer_read(buf, buffer_f32 );
+	restart = buffer_read(buf, buffer_u8 );
+	update = buffer_read(buf, buffer_f32 );
+	dir = buffer_read(buf, buffer_f32 );
+	ammoy = buffer_read(buf, buffer_f32 );
+	next = buffer_read(buf, buffer_f32 );
+	showfinished = buffer_read(buf, buffer_f32 );
+	image_speed = buffer_read(buf, buffer_f32 );
+	action = buffer_read(buf, buffer_f32 );
+	wait = buffer_read(buf, buffer_f32 );
+	phonex = buffer_read(buf, buffer_f32 );
+	nextroom = buffer_read(buf, buffer_f32 );
+	width = buffer_read(buf, buffer_u32 );
+	height = buffer_read(buf, buffer_u32 );
+	global.mousex = buffer_read(buf, buffer_f32 );
+	global.mousey = buffer_read(buf, buffer_f32 );
 }

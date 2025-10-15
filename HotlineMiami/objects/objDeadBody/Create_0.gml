@@ -6,15 +6,15 @@ wait = 500;
 life = 100 + random(60);
 SteamIncStat("Kills", 1);
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, bled );
-	buffer_write( global.tempSave[room], buffer_f32, wait );
-	buffer_write( global.tempSave[room], buffer_f32, life );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, bled );
+	buffer_write( buf, buffer_f32, wait );
+	buffer_write( buf, buffer_f32, life );
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	bled = buffer_read(global.tempSave[room], buffer_f32 );
-	wait = buffer_read(global.tempSave[room], buffer_f32 );
-	life = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	bled = buffer_read(buf, buffer_f32 );
+	wait = buffer_read(buf, buffer_f32 );
+	life = buffer_read(buf, buffer_f32 );
 }

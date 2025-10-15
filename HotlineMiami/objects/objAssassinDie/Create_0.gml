@@ -4,13 +4,13 @@ shot = 0;
 scrInitMaskPos();
 scrUpdateMaskPos(sprite_index);
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write(global.tempSave[room], buffer_u8, bled);
-	buffer_write(global.tempSave[room], buffer_u8, shot);
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write(buf, buffer_u8, bled);
+	buffer_write(buf, buffer_u8, shot);
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	bled = buffer_read(global.tempSave[room], buffer_u8);
-	shot = buffer_read(global.tempSave[room], buffer_u8);
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	bled = buffer_read(buf, buffer_u8);
+	shot = buffer_read(buf, buffer_u8);
 }

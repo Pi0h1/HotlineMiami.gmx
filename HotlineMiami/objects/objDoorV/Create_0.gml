@@ -2,17 +2,17 @@ swingspeed = 0;
 x += 5;
 swinger = 0;
 
-DoSave = function() {
-	buffer_write( global.tempSave[room], buffer_u32, sprite_index );
-	buffer_write( global.tempSave[room], buffer_f32, image_angle );
-	buffer_write( global.tempSave[room], buffer_f32, swingspeed );
-	buffer_write( global.tempSave[room], buffer_f32, swinger );
-	buffer_write( global.tempSave[room], buffer_u8, solid );
+DoSave = function(buf) {
+	buffer_write( buf, buffer_u32, sprite_index );
+	buffer_write( buf, buffer_f32, image_angle );
+	buffer_write( buf, buffer_f32, swingspeed );
+	buffer_write( buf, buffer_f32, swinger );
+	buffer_write( buf, buffer_u8, solid );
 }
-DoLoad = function() {
-	sprite_index = buffer_read(global.tempSave[room], buffer_u32 );
-	image_angle = buffer_read(global.tempSave[room], buffer_f32 );
-	swingspeed = buffer_read(global.tempSave[room], buffer_f32 );
-	swinger = buffer_read(global.tempSave[room], buffer_f32 );
-	solid = buffer_read(global.tempSave[room], buffer_u8 );
+DoLoad = function(buf) {
+	sprite_index = buffer_read(buf, buffer_u32 );
+	image_angle = buffer_read(buf, buffer_f32 );
+	swingspeed = buffer_read(buf, buffer_f32 );
+	swinger = buffer_read(buf, buffer_f32 );
+	solid = buffer_read(buf, buffer_u8 );
 }

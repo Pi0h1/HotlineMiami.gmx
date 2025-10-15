@@ -6,11 +6,11 @@ dir = 0;
 if (global.xbox)
     scrInitXboxButtons();
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_u8, on );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_u8, on );
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	on = buffer_read( global.tempSave[room], buffer_u8 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	on = buffer_read( buf, buffer_u8 );
 }

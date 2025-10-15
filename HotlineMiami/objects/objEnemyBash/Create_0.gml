@@ -14,30 +14,30 @@ viewdir = 0;
 vdist = 0;
 vdir = 0;
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, energie );
-	buffer_write( global.tempSave[room], buffer_f32, dir );
-	buffer_write( global.tempSave[room], buffer_f32, bled );
-	buffer_write( global.tempSave[room], buffer_f32, ammo );
-	buffer_write( global.tempSave[room], buffer_f16, hurtindex );
-	buffer_write( global.tempSave[room], buffer_f16, targetindex );
-	buffer_write(global.tempSave[room], buffer_f32, viewspeed);
-	buffer_write(global.tempSave[room], buffer_f32, viewdir);
-	buffer_write(global.tempSave[room], buffer_f32, vdist);
-	buffer_write(global.tempSave[room], buffer_f32, vdir);
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, energie );
+	buffer_write( buf, buffer_f32, dir );
+	buffer_write( buf, buffer_f32, bled );
+	buffer_write( buf, buffer_f32, ammo );
+	buffer_write( buf, buffer_f16, hurtindex );
+	buffer_write( buf, buffer_f16, targetindex );
+	buffer_write(buf, buffer_f32, viewspeed);
+	buffer_write(buf, buffer_f32, viewdir);
+	buffer_write(buf, buffer_f32, vdist);
+	buffer_write(buf, buffer_f32, vdir);
 
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	energie = buffer_read(global.tempSave[room], buffer_f32 );
-	dir = buffer_read(global.tempSave[room], buffer_f32 );
-	bled = buffer_read(global.tempSave[room], buffer_f32 );
-	ammo = buffer_read(global.tempSave[room], buffer_f32 );
-	hurtindex = buffer_read(global.tempSave[room], buffer_f16 );
-	targetindex = buffer_read(global.tempSave[room], buffer_f16 );
-	viewspeed = buffer_read(global.tempSave[room], buffer_f32);
-	viewdir = buffer_read(global.tempSave[room], buffer_f32);
-	vdist = buffer_read(global.tempSave[room], buffer_f32);
-	vdir = buffer_read(global.tempSave[room], buffer_f32);
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	energie = buffer_read(buf, buffer_f32 );
+	dir = buffer_read(buf, buffer_f32 );
+	bled = buffer_read(buf, buffer_f32 );
+	ammo = buffer_read(buf, buffer_f32 );
+	hurtindex = buffer_read(buf, buffer_f16 );
+	targetindex = buffer_read(buf, buffer_f16 );
+	viewspeed = buffer_read(buf, buffer_f32);
+	viewdir = buffer_read(buf, buffer_f32);
+	vdist = buffer_read(buf, buffer_f32);
+	vdir = buffer_read(buf, buffer_f32);
 }

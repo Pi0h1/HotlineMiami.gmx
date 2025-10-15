@@ -10,15 +10,15 @@ if (sprite_index == sprCarThrashed) {
 //instance_deactivate_object(objSwat);
 revisit = 0;
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write(global.tempSave[room], buffer_f32, index);
-	buffer_write(global.tempSave[room], buffer_f16, engine);
-	buffer_write(global.tempSave[room], buffer_f16, visited);
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write(buf, buffer_f32, index);
+	buffer_write(buf, buffer_f16, engine);
+	buffer_write(buf, buffer_f16, visited);
 }
 DoLoad = function () {
-	scrLoadGeneric(global.tempSave[room]);
-	index = buffer_read(global.tempSave[room], buffer_f32);
-	engine = buffer_read(global.tempSave[room], buffer_f16);
-	visited = buffer_read(global.tempSave[room], buffer_f16);
+	scrLoadGeneric(buf);
+	index = buffer_read(buf, buffer_f32);
+	engine = buffer_read(buf, buffer_f16);
+	visited = buffer_read(buf, buffer_f16);
 }

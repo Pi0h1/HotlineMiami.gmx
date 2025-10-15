@@ -5,11 +5,11 @@ image_speed = 0;
 image_angle = random(360);
 image_index = choose(0, 1);
 
-DoSave = function() {
-	buffer_write(global.tempSave[room], buffer_f32, rotspeed);
-	buffer_write(global.tempSave[room], buffer_f32, startspeed);
+DoSave = function(buf) {
+	buffer_write(buf, buffer_f32, rotspeed);
+	buffer_write(buf, buffer_f32, startspeed);
 }
 DoLoad = function () {
-	rotspeed = buffer_read(global.tempSave[room], buffer_f32);
-	startspeed = buffer_read(global.tempSave[room], buffer_f32);
+	rotspeed = buffer_read(buf, buffer_f32);
+	startspeed = buffer_read(buf, buffer_f32);
 }

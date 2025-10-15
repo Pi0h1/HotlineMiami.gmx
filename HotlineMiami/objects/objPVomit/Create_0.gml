@@ -30,14 +30,14 @@ switch (global.maskindex) {
 }
 vomit = 0;
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, masksprite );
-	buffer_write( global.tempSave[room], buffer_f16, vomit );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, masksprite );
+	buffer_write( buf, buffer_f16, vomit );
 
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	masksprite = buffer_read(global.tempSave[room], buffer_f32 );
-	vomit = buffer_read(global.tempSave[room], buffer_f16 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	masksprite = buffer_read(buf, buffer_f32 );
+	vomit = buffer_read(buf, buffer_f16 );
 }

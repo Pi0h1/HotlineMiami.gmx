@@ -19,32 +19,32 @@ weaponfind = 0;
 wait = 5;
 state = 0;
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, energie );
-	buffer_write( global.tempSave[room], buffer_f32, checkreload );
-	buffer_write( global.tempSave[room], buffer_f32, ammo );
-	buffer_write( global.tempSave[room], buffer_f32, alert );
-	buffer_write( global.tempSave[room], buffer_f32, reload );
-	buffer_write( global.tempSave[room], buffer_f32, light );
-	buffer_write( global.tempSave[room], buffer_f32, start_x );
-	buffer_write( global.tempSave[room], buffer_f32, start_y );
-	buffer_write( global.tempSave[room], buffer_u8, weaponfind );
-	buffer_write( global.tempSave[room], buffer_f32, wait );
-	buffer_write( global.tempSave[room], buffer_f32, state );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, energie );
+	buffer_write( buf, buffer_f32, checkreload );
+	buffer_write( buf, buffer_f32, ammo );
+	buffer_write( buf, buffer_f32, alert );
+	buffer_write( buf, buffer_f32, reload );
+	buffer_write( buf, buffer_f32, light );
+	buffer_write( buf, buffer_f32, start_x );
+	buffer_write( buf, buffer_f32, start_y );
+	buffer_write( buf, buffer_u8, weaponfind );
+	buffer_write( buf, buffer_f32, wait );
+	buffer_write( buf, buffer_f32, state );
 }
 
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room])
-	energie = buffer_read(global.tempSave[room], buffer_f32 );
-	checkreload = buffer_read(global.tempSave[room], buffer_f32 );
-	ammo = buffer_read(global.tempSave[room], buffer_f32 );
-	alert = buffer_read(global.tempSave[room], buffer_f32 );
-	reload = buffer_read(global.tempSave[room], buffer_f32 );
-	light = buffer_read(global.tempSave[room], buffer_f32 );
-	start_x = buffer_read(global.tempSave[room], buffer_f32 );
-	start_y = buffer_read(global.tempSave[room], buffer_f32 );
-	weaponfind = buffer_read(global.tempSave[room], buffer_u8 );
-	wait = buffer_read(global.tempSave[room], buffer_f32 );
-	state = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(global.tempSave[room]);
+	energie = buffer_read(buf, buffer_f32 );
+	checkreload = buffer_read(buf, buffer_f32 );
+	ammo = buffer_read(buf, buffer_f32 );
+	alert = buffer_read(buf, buffer_f32 );
+	reload = buffer_read(buf, buffer_f32 );
+	light = buffer_read(buf, buffer_f32 );
+	start_x = buffer_read(buf, buffer_f32 );
+	start_y = buffer_read(buf, buffer_f32 );
+	weaponfind = buffer_read(buf, buffer_u8 );
+	wait = buffer_read(buf, buffer_f32 );
+	state = buffer_read(buf, buffer_f32 );
 }

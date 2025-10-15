@@ -5,21 +5,21 @@ dir = random(1000);
 global.comboflash = 0;
 text = "";
 
-DoSave = function() {
-	buffer_write( global.tempSave[room], buffer_f16, scale );
-	buffer_write( global.tempSave[room], buffer_u8, done );
-	buffer_write( global.tempSave[room], buffer_f32, dir );
-	buffer_write( global.tempSave[room], buffer_u8, global.comboflash );
-	buffer_write( global.tempSave[room], buffer_f32, vspeed );
-	buffer_write( global.tempSave[room], buffer_string, text );
+DoSave = function(buf) {
+	buffer_write( buf, buffer_f16, scale );
+	buffer_write( buf, buffer_u8, done );
+	buffer_write( buf, buffer_f32, dir );
+	buffer_write( buf, buffer_u8, global.comboflash );
+	buffer_write( buf, buffer_f32, vspeed );
+	buffer_write( buf, buffer_string, text );
 
 
 }
-DoLoad = function() {
-	scale = buffer_read(global.tempSave[room], buffer_f16 );
-	done = buffer_read(global.tempSave[room], buffer_u8 );
-	dir = buffer_read(global.tempSave[room], buffer_f32 );
-	global.comboflash = buffer_read(global.tempSave[room], buffer_u8 );
-	vspeed = buffer_read(global.tempSave[room], buffer_f32 );
-	text = buffer_read(global.tempSave[room], buffer_string );
+DoLoad = function(buf) {
+	scale = buffer_read(buf, buffer_f16 );
+	done = buffer_read(buf, buffer_u8 );
+	dir = buffer_read(buf, buffer_f32 );
+	global.comboflash = buffer_read(buf, buffer_u8 );
+	vspeed = buffer_read(buf, buffer_f32 );
+	text = buffer_read(buf, buffer_string );
 }

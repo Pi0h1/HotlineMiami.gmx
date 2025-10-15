@@ -4,15 +4,15 @@ color2 = c_black;
 if (global.alienware)
     scrAlienWareYellow();
 
-DoSave = function() {
-	buffer_write( global.tempSave[room], buffer_f32, dir );
-	buffer_write( global.tempSave[room], buffer_f32, color1 );
-	buffer_write( global.tempSave[room], buffer_f32, color2 );
+DoSave = function(buf) {
+	buffer_write( buf, buffer_f32, dir );
+	buffer_write( buf, buffer_f32, color1 );
+	buffer_write( buf, buffer_f32, color2 );
 
 
 }
-DoLoad = function() {
-	dir = buffer_read(global.tempSave[room], buffer_f32 );
-	color1 = buffer_read(global.tempSave[room], buffer_f32 );
-	color2 = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	dir = buffer_read(buf, buffer_f32 );
+	color1 = buffer_read(buf, buffer_f32 );
+	color2 = buffer_read(buf, buffer_f32 );
 }

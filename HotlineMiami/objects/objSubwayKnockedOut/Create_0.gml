@@ -3,13 +3,13 @@ friction = 0.1;
 image_index = 1;
 reload = 100 + random(120);
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, reload );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, reload );
 	
 }
 
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	reload = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	reload = buffer_read(buf, buffer_f32 );
 }

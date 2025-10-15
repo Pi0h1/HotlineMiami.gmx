@@ -8,12 +8,12 @@ repeat(32) {
     i++;
 }
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, wait );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, wait );
 
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	wait = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	wait = buffer_read(buf, buffer_f32 );
 }

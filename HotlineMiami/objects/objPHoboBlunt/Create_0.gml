@@ -8,18 +8,18 @@ maskindex = global.maskindex;
 if (global.xbox)
     scrInitXboxButtons();
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, hurtindex );
-	buffer_write( global.tempSave[room], buffer_f32, targetindex );
-	buffer_write( global.tempSave[room], buffer_f32, maskindex );
-	buffer_write( global.tempSave[room], buffer_f32, ammo );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, hurtindex );
+	buffer_write( buf, buffer_f32, targetindex );
+	buffer_write( buf, buffer_f32, maskindex );
+	buffer_write( buf, buffer_f32, ammo );
 
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	hurtindex = buffer_read(global.tempSave[room], buffer_f16 );
-	targetindex = buffer_read(global.tempSave[room], buffer_f16 );
-	maskindex = buffer_read(global.tempSave[room], buffer_f16 );
-	ammo = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	hurtindex = buffer_read(buf, buffer_f16 );
+	targetindex = buffer_read(buf, buffer_f16 );
+	maskindex = buffer_read(buf, buffer_f16 );
+	ammo = buffer_read(buf, buffer_f32 );
 }

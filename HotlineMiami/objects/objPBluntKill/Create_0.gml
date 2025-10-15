@@ -9,22 +9,22 @@ bottom = sprEBluntKill;
 if (global.xbox)
     scrInitXboxButtons();
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, dir );
-	buffer_write( global.tempSave[room], buffer_f32, bled );
-	buffer_write( global.tempSave[room], buffer_f32, ammo );
-	buffer_write( global.tempSave[room], buffer_f16, hurtindex );
-	buffer_write( global.tempSave[room], buffer_f16, targetindex );
-	buffer_write( global.tempSave[room], buffer_u32, bottom );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, dir );
+	buffer_write( buf, buffer_f32, bled );
+	buffer_write( buf, buffer_f32, ammo );
+	buffer_write( buf, buffer_f16, hurtindex );
+	buffer_write( buf, buffer_f16, targetindex );
+	buffer_write( buf, buffer_u32, bottom );
 
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	dir = buffer_read(global.tempSave[room], buffer_f32 );
-	bled = buffer_read(global.tempSave[room], buffer_f32 );
-	ammo = buffer_read(global.tempSave[room], buffer_f32 );
-	hurtindex = buffer_read(global.tempSave[room], buffer_f16 );
-	targetindex = buffer_read(global.tempSave[room], buffer_f16 );
-	bottom = buffer_read(global.tempSave[room], buffer_u32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	dir = buffer_read(buf, buffer_f32 );
+	bled = buffer_read(buf, buffer_f32 );
+	ammo = buffer_read(buf, buffer_f32 );
+	hurtindex = buffer_read(buf, buffer_f16 );
+	targetindex = buffer_read(buf, buffer_f16 );
+	bottom = buffer_read(buf, buffer_u32 );
 }

@@ -16,19 +16,19 @@ if (room == rmSwatUpstairs) {
     sxeasy_play(working_directory + "\\Static.mp3");
 }
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);	
-	buffer_write(global.tempSave[room], buffer_f32, dir);
-	buffer_write(global.tempSave[room], buffer_f32, dir2);
-	buffer_write(global.tempSave[room], buffer_string, text);
-	buffer_write(global.tempSave[room], buffer_f32, factor);
-	buffer_write(global.tempSave[room], buffer_f32, start_x);
+DoSave = function(buf) {
+	scrSaveGeneric(buf);	
+	buffer_write(buf, buffer_f32, dir);
+	buffer_write(buf, buffer_f32, dir2);
+	buffer_write(buf, buffer_string, text);
+	buffer_write(buf, buffer_f32, factor);
+	buffer_write(buf, buffer_f32, start_x);
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);	
-	dir = buffer_read(global.tempSave[room], buffer_f32);
-	dir2 = buffer_read(global.tempSave[room], buffer_f32);
-	text = buffer_read(global.tempSave[room], buffer_string);
-	factor = buffer_read(global.tempSave[room], buffer_f32);
-	start_x = buffer_read(global.tempSave[room], buffer_f32);
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);	
+	dir = buffer_read(buf, buffer_f32);
+	dir2 = buffer_read(buf, buffer_f32);
+	text = buffer_read(buf, buffer_string);
+	factor = buffer_read(buf, buffer_f32);
+	start_x = buffer_read(buf, buffer_f32);
 }

@@ -5,11 +5,11 @@ image_angle = random(360);
 image_xscale = 0.75 + random(0.5);
 image_yscale = image_xscale;
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, addspeed );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, addspeed );
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	addspeed = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	addspeed = buffer_read(buf, buffer_f32 );
 }

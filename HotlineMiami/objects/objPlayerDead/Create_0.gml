@@ -10,21 +10,21 @@ viewspeed = 0;
 viewdir = 0;
 SteamIncStat("Deaths", 1);
 
-DoSave = function() {
-	buffer_write(global.tempSave[room], buffer_u8, bled);
-	buffer_write(global.tempSave[room], buffer_f32, length);
-	buffer_write(global.tempSave[room], buffer_f32, dir);
-	buffer_write(global.tempSave[room], buffer_f32, vdist);
-	buffer_write(global.tempSave[room], buffer_f32, vdir);
-	buffer_write(global.tempSave[room], buffer_f32, viewspeed);
-	buffer_write(global.tempSave[room], buffer_f32, viewdir);
+DoSave = function(buf) {
+	buffer_write(buf, buffer_u8, bled);
+	buffer_write(buf, buffer_f32, length);
+	buffer_write(buf, buffer_f32, dir);
+	buffer_write(buf, buffer_f32, vdist);
+	buffer_write(buf, buffer_f32, vdir);
+	buffer_write(buf, buffer_f32, viewspeed);
+	buffer_write(buf, buffer_f32, viewdir);
 }
 DoLoad = function () {
-	bled = buffer_read(global.tempSave[room], buffer_u8);
-	length = buffer_read(global.tempSave[room], buffer_f32);
-	dir = buffer_read(global.tempSave[room], buffer_f32);
-	vdist = buffer_read(global.tempSave[room], buffer_f32);
-	vdir = buffer_read(global.tempSave[room], buffer_f32);
-	viewspeed = buffer_read(global.tempSave[room], buffer_f32);
-	viewdir = buffer_read(global.tempSave[room], buffer_f32);
+	bled = buffer_read(buf, buffer_u8);
+	length = buffer_read(buf, buffer_f32);
+	dir = buffer_read(buf, buffer_f32);
+	vdist = buffer_read(buf, buffer_f32);
+	vdir = buffer_read(buf, buffer_f32);
+	viewspeed = buffer_read(buf, buffer_f32);
+	viewdir = buffer_read(buf, buffer_f32);
 }

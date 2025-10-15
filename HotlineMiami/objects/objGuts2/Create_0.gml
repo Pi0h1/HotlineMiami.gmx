@@ -4,13 +4,13 @@ diradd = choose(-1, 1);
 image_index = random(100);
 wait = 60 + random(40);
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, dist );
-	buffer_write( global.tempSave[room], buffer_f32, wait );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, dist );
+	buffer_write( buf, buffer_f32, wait );
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	dist = buffer_read(global.tempSave[room], buffer_f32 );
-	wait = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	dist = buffer_read(buf, buffer_f32 );
+	wait = buffer_read(buf, buffer_f32 );
 }

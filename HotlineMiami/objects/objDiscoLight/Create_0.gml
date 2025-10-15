@@ -1,9 +1,9 @@
 dir = random(10000);
 
 
-DoSave = function() {
-	buffer_write( global.tempSave[room], buffer_f32, dir );
+DoSave = function(buf) {
+	buffer_write( buf, buffer_f32, dir );
 }
-DoLoad = function() {
-	dir = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	dir = buffer_read(buf, buffer_f32 );
 }

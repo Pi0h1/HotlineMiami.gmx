@@ -1,12 +1,12 @@
 bounced = 0;
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_u8, bounced );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_u8, bounced );
 
 
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	bounced = buffer_read(global.tempSave[room], buffer_u8 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	bounced = buffer_read(buf, buffer_u8 );
 }

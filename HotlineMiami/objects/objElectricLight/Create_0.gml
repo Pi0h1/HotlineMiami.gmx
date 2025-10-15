@@ -1,8 +1,8 @@
 r = 20;
 
-DoSave = function() {
-	buffer_write( global.tempSave[room], buffer_f32, r );
+DoSave = function(buf) {
+	buffer_write( buf, buffer_f32, r );
 }
-DoLoad = function() {
-	r = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	r = buffer_read(buf, buffer_f32 );
 }

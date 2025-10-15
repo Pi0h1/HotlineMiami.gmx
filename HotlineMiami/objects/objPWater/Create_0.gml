@@ -3,11 +3,11 @@ image_speed = 0;
 image_index = floor(random(5)) * 2;
 dist = 70 + random(27);
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, dist );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, dist );
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	dist = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	dist = buffer_read(buf, buffer_f32 );
 }

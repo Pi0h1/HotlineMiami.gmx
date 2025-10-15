@@ -63,111 +63,111 @@ if (instance_exists(objPlayerBiker)) { // This check is actually irrelevant but 
 
 scrLockInEffectInit();
 
-DoSave = function() {
+DoSave = function(buf) {
 	
 	// save xbox vars
 	// NOTE: THIS WILL BREAK IF GLOBAL.XBOX IS CHANGED INGAME.
 	if (global.xbox) {
-		buffer_write( global.tempSave[room], buffer_f32, presstart );
-		buffer_write( global.tempSave[room], buffer_f32, pressup );
-		buffer_write( global.tempSave[room], buffer_f32, pressdown );
-		buffer_write( global.tempSave[room], buffer_f32, pressleft );
-		buffer_write( global.tempSave[room], buffer_f32, pressright );
-		buffer_write( global.tempSave[room], buffer_f32, pressback );
-		buffer_write( global.tempSave[room], buffer_f32, pressltrig );
-		buffer_write( global.tempSave[room], buffer_f32, pressrtrig );
-		buffer_write( global.tempSave[room], buffer_f32, presslb );
-		buffer_write( global.tempSave[room], buffer_f32, pressrb );
-		buffer_write( global.tempSave[room], buffer_f32, pressrstick );
-		buffer_write( global.tempSave[room], buffer_f32, presslstick );
-		buffer_write( global.tempSave[room], buffer_f32, pressa );
+		buffer_write( buf, buffer_f32, presstart );
+		buffer_write( buf, buffer_f32, pressup );
+		buffer_write( buf, buffer_f32, pressdown );
+		buffer_write( buf, buffer_f32, pressleft );
+		buffer_write( buf, buffer_f32, pressright );
+		buffer_write( buf, buffer_f32, pressback );
+		buffer_write( buf, buffer_f32, pressltrig );
+		buffer_write( buf, buffer_f32, pressrtrig );
+		buffer_write( buf, buffer_f32, presslb );
+		buffer_write( buf, buffer_f32, pressrb );
+		buffer_write( buf, buffer_f32, pressrstick );
+		buffer_write( buf, buffer_f32, presslstick );
+		buffer_write( buf, buffer_f32, pressa );
 	}
 
 	// basic vars
-	buffer_write( global.tempSave[room], buffer_f16, alpha );
-	buffer_write( global.tempSave[room], buffer_f32, coldir );
-	buffer_write( global.tempSave[room], buffer_f32, amount );
-	buffer_write( global.tempSave[room], buffer_u8, fade );
-	buffer_write( global.tempSave[room], buffer_f32, my_y );
-	buffer_write( global.tempSave[room], buffer_f32, global.dir );
-	buffer_write( global.tempSave[room], buffer_u8, restart );
-	buffer_write( global.tempSave[room], buffer_f32, update );
-	buffer_write( global.tempSave[room], buffer_f32, dir );
-	buffer_write( global.tempSave[room], buffer_f32, ammoy );
-	buffer_write( global.tempSave[room], buffer_f32, next );
-	buffer_write( global.tempSave[room], buffer_f32, showfinished );
-	buffer_write( global.tempSave[room], buffer_f32, image_speed );
-	buffer_write( global.tempSave[room], buffer_f32, action );
-	buffer_write( global.tempSave[room], buffer_f32, wait );
-	buffer_write( global.tempSave[room], buffer_f32, phonex );
-	buffer_write( global.tempSave[room], buffer_f32, nextroom );
-	buffer_write( global.tempSave[room], buffer_f32, newsong );
-	buffer_write( global.tempSave[room], buffer_f32, song );
-	buffer_write( global.tempSave[room], buffer_f32, blackx );
-	buffer_write( global.tempSave[room], buffer_f32, bamount );
-	buffer_write( global.tempSave[room], buffer_u32, width );
-	buffer_write( global.tempSave[room], buffer_u32, height );
-	buffer_write( global.tempSave[room], buffer_f32, global.mousex );
-	buffer_write( global.tempSave[room], buffer_f32, global.mousey );
-	buffer_write( global.tempSave[room], buffer_f32, vlastx );
-	buffer_write( global.tempSave[room], buffer_f32, vlasty );
-	buffer_write( global.tempSave[room], buffer_f32, global.enemy );
-	buffer_write( global.tempSave[room], buffer_string, leveltitle );
-	buffer_write( global.tempSave[room], buffer_f32, levelshow );
-	buffer_write( global.tempSave[room], buffer_f32, gridon );
-	buffer_write( global.tempSave[room], buffer_f32, uzisnd );
+	buffer_write( buf, buffer_f16, alpha );
+	buffer_write( buf, buffer_f32, coldir );
+	buffer_write( buf, buffer_f32, amount );
+	buffer_write( buf, buffer_u8, fade );
+	buffer_write( buf, buffer_f32, my_y );
+	buffer_write( buf, buffer_f32, global.dir );
+	buffer_write( buf, buffer_u8, restart );
+	buffer_write( buf, buffer_f32, update );
+	buffer_write( buf, buffer_f32, dir );
+	buffer_write( buf, buffer_f32, ammoy );
+	buffer_write( buf, buffer_f32, next );
+	buffer_write( buf, buffer_f32, showfinished );
+	buffer_write( buf, buffer_f32, image_speed );
+	buffer_write( buf, buffer_f32, action );
+	buffer_write( buf, buffer_f32, wait );
+	buffer_write( buf, buffer_f32, phonex );
+	buffer_write( buf, buffer_f32, nextroom );
+	buffer_write( buf, buffer_f32, newsong );
+	buffer_write( buf, buffer_f32, song );
+	buffer_write( buf, buffer_f32, blackx );
+	buffer_write( buf, buffer_f32, bamount );
+	buffer_write( buf, buffer_u32, width );
+	buffer_write( buf, buffer_u32, height );
+	buffer_write( buf, buffer_f32, global.mousex );
+	buffer_write( buf, buffer_f32, global.mousey );
+	buffer_write( buf, buffer_f32, vlastx );
+	buffer_write( buf, buffer_f32, vlasty );
+	buffer_write( buf, buffer_f32, global.enemy );
+	buffer_write( buf, buffer_string, leveltitle );
+	buffer_write( buf, buffer_f32, levelshow );
+	buffer_write( buf, buffer_f32, gridon );
+	buffer_write( buf, buffer_f32, uzisnd );
 
 }
-DoLoad = function() {
+DoLoad = function(buf) {
 	// load xbox vars
 	// NOTE: THIS WILL BREAK IF GLOBAL.XBOX IS CHANGED INGAME.
 	if (global.xbox) {
-		presstart = buffer_read(global.tempSave[room], buffer_f32 );
-		pressup = buffer_read(global.tempSave[room], buffer_f32 );
-		pressdown = buffer_read(global.tempSave[room], buffer_f32 );
-		pressleft = buffer_read(global.tempSave[room], buffer_f32 );
-		pressright = buffer_read(global.tempSave[room], buffer_f32 );
-		pressback = buffer_read(global.tempSave[room], buffer_f32 );
-		pressltrig = buffer_read(global.tempSave[room], buffer_f32 );
-		pressrtrig = buffer_read(global.tempSave[room], buffer_f32 );
-		presslb = buffer_read(global.tempSave[room], buffer_f32 );
-		pressrb = buffer_read(global.tempSave[room], buffer_f32 );
-		pressrstick = buffer_read(global.tempSave[room], buffer_f32 );
-		presslstick = buffer_read(global.tempSave[room], buffer_f32 );
-		pressa = buffer_read(global.tempSave[room], buffer_f32 );
+		presstart = buffer_read(buf, buffer_f32 );
+		pressup = buffer_read(buf, buffer_f32 );
+		pressdown = buffer_read(buf, buffer_f32 );
+		pressleft = buffer_read(buf, buffer_f32 );
+		pressright = buffer_read(buf, buffer_f32 );
+		pressback = buffer_read(buf, buffer_f32 );
+		pressltrig = buffer_read(buf, buffer_f32 );
+		pressrtrig = buffer_read(buf, buffer_f32 );
+		presslb = buffer_read(buf, buffer_f32 );
+		pressrb = buffer_read(buf, buffer_f32 );
+		pressrstick = buffer_read(buf, buffer_f32 );
+		presslstick = buffer_read(buf, buffer_f32 );
+		pressa = buffer_read(buf, buffer_f32 );
 	}
 
 	// basic vars
-	alpha = buffer_read(global.tempSave[room], buffer_f16 );
-	coldir = buffer_read(global.tempSave[room], buffer_f32 );
-	amount = buffer_read(global.tempSave[room], buffer_f32 );
-	fade = buffer_read(global.tempSave[room], buffer_u8 );
-	my_y = buffer_read(global.tempSave[room], buffer_f32 );
-	global.dir = buffer_read(global.tempSave[room], buffer_f32 );
-	restart = buffer_read(global.tempSave[room], buffer_u8 );
-	update = buffer_read(global.tempSave[room], buffer_f32 );
-	dir = buffer_read(global.tempSave[room], buffer_f32 );
-	ammoy = buffer_read(global.tempSave[room], buffer_f32 );
-	next = buffer_read(global.tempSave[room], buffer_f32 );
-	showfinished = buffer_read(global.tempSave[room], buffer_f32 );
-	image_speed = buffer_read(global.tempSave[room], buffer_f32 );
-	action = buffer_read(global.tempSave[room], buffer_f32 );
-	wait = buffer_read(global.tempSave[room], buffer_f32 );
-	phonex = buffer_read(global.tempSave[room], buffer_f32 );
-	nextroom = buffer_read(global.tempSave[room], buffer_f32 );
-	newsong = buffer_read(global.tempSave[room], buffer_f32 );
-	song = buffer_read(global.tempSave[room], buffer_f32 );
-	blackx = buffer_read(global.tempSave[room], buffer_f32 );
-	bamount = buffer_read(global.tempSave[room], buffer_f32 );
-	width = buffer_read(global.tempSave[room], buffer_u32 );
-	height = buffer_read(global.tempSave[room], buffer_u32 );
-	global.mousex = buffer_read(global.tempSave[room], buffer_f32 );
-	global.mousey = buffer_read(global.tempSave[room], buffer_f32 );
-	vlastx = buffer_read(global.tempSave[room], buffer_f32 );
-	vlasty = buffer_read(global.tempSave[room], buffer_f32 );
-	global.enemy = buffer_read(global.tempSave[room], buffer_f32 );
-	leveltitle = buffer_read(global.tempSave[room], buffer_string );
-	levelshow = buffer_read(global.tempSave[room], buffer_f32 );
-	gridon = buffer_read(global.tempSave[room], buffer_f32 );
-	uzisnd = buffer_read(global.tempSave[room], buffer_f32 );
+	alpha = buffer_read(buf, buffer_f16 );
+	coldir = buffer_read(buf, buffer_f32 );
+	amount = buffer_read(buf, buffer_f32 );
+	fade = buffer_read(buf, buffer_u8 );
+	my_y = buffer_read(buf, buffer_f32 );
+	global.dir = buffer_read(buf, buffer_f32 );
+	restart = buffer_read(buf, buffer_u8 );
+	update = buffer_read(buf, buffer_f32 );
+	dir = buffer_read(buf, buffer_f32 );
+	ammoy = buffer_read(buf, buffer_f32 );
+	next = buffer_read(buf, buffer_f32 );
+	showfinished = buffer_read(buf, buffer_f32 );
+	image_speed = buffer_read(buf, buffer_f32 );
+	action = buffer_read(buf, buffer_f32 );
+	wait = buffer_read(buf, buffer_f32 );
+	phonex = buffer_read(buf, buffer_f32 );
+	nextroom = buffer_read(buf, buffer_f32 );
+	newsong = buffer_read(buf, buffer_f32 );
+	song = buffer_read(buf, buffer_f32 );
+	blackx = buffer_read(buf, buffer_f32 );
+	bamount = buffer_read(buf, buffer_f32 );
+	width = buffer_read(buf, buffer_u32 );
+	height = buffer_read(buf, buffer_u32 );
+	global.mousex = buffer_read(buf, buffer_f32 );
+	global.mousey = buffer_read(buf, buffer_f32 );
+	vlastx = buffer_read(buf, buffer_f32 );
+	vlasty = buffer_read(buf, buffer_f32 );
+	global.enemy = buffer_read(buf, buffer_f32 );
+	leveltitle = buffer_read(buf, buffer_string );
+	levelshow = buffer_read(buf, buffer_f32 );
+	gridon = buffer_read(buf, buffer_f32 );
+	uzisnd = buffer_read(buf, buffer_f32 );
 }

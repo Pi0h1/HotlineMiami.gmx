@@ -5,18 +5,18 @@ legindex = 0;
 path = path_add();
 pwait = 0;
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_u16, state );
-	buffer_write( global.tempSave[room], buffer_f32, wait );
-	buffer_write( global.tempSave[room], buffer_f32, pwait );
-	buffer_write( global.tempSave[room], buffer_f16, legindex );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_u16, state );
+	buffer_write( buf, buffer_f32, wait );
+	buffer_write( buf, buffer_f32, pwait );
+	buffer_write( buf, buffer_f16, legindex );
 
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	state = buffer_read(global.tempSave[room], buffer_u16 );
-	wait = buffer_read(global.tempSave[room], buffer_f32 );
-	pwait = buffer_read(global.tempSave[room], buffer_f32 );
-	legindex = buffer_read(global.tempSave[room], buffer_f16 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	state = buffer_read(buf, buffer_u16 );
+	wait = buffer_read(buf, buffer_f32 );
+	pwait = buffer_read(buf, buffer_f32 );
+	legindex = buffer_read(buf, buffer_f16 );
 }

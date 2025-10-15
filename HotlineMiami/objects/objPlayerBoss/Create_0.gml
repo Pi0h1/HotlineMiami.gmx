@@ -23,37 +23,37 @@ objPlayer.persistent = 0;
 objPlayer.persistent = test;
 
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_u8, alert );
-	buffer_write( global.tempSave[room], buffer_u8, state );
-	buffer_write( global.tempSave[room], buffer_u8, test );
-	buffer_write( global.tempSave[room], buffer_u8, maskon );
-	buffer_write( global.tempSave[room], buffer_u8, global.maskon );
-	buffer_write( global.tempSave[room], buffer_u32, lastsprite );
-	buffer_write( global.tempSave[room], buffer_f16, legindex );
-	buffer_write( global.tempSave[room], buffer_f16, maskindex );
-	buffer_write( global.tempSave[room], buffer_f16, global.maskindex );
-	buffer_write( global.tempSave[room], buffer_f16, left );
-	buffer_write( global.tempSave[room], buffer_f32, maskdir );
-	buffer_write( global.tempSave[room], buffer_f32, dist );
-	buffer_write( global.tempSave[room], buffer_f16, maddx );
-	buffer_write( global.tempSave[room], buffer_f16, maddy );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_u8, alert );
+	buffer_write( buf, buffer_u8, state );
+	buffer_write( buf, buffer_u8, test );
+	buffer_write( buf, buffer_u8, maskon );
+	buffer_write( buf, buffer_u8, global.maskon );
+	buffer_write( buf, buffer_u32, lastsprite );
+	buffer_write( buf, buffer_f16, legindex );
+	buffer_write( buf, buffer_f16, maskindex );
+	buffer_write( buf, buffer_f16, global.maskindex );
+	buffer_write( buf, buffer_f16, left );
+	buffer_write( buf, buffer_f32, maskdir );
+	buffer_write( buf, buffer_f32, dist );
+	buffer_write( buf, buffer_f16, maddx );
+	buffer_write( buf, buffer_f16, maddy );
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	alert = buffer_read(global.tempSave[room], buffer_u8 );
-	state = buffer_read(global.tempSave[room], buffer_u8 );
-	test = buffer_read(global.tempSave[room], buffer_u8 );
-	maskon = buffer_read(global.tempSave[room], buffer_u8 );
-	global.maskon = buffer_read(global.tempSave[room], buffer_u8 );
-	lastsprite = buffer_read(global.tempSave[room], buffer_u32 );
-	legindex = buffer_read(global.tempSave[room], buffer_f16 );
-	maskindex = buffer_read(global.tempSave[room], buffer_f16 );
-	global.maskindex = buffer_read(global.tempSave[room], buffer_f16 );
-	left = buffer_read(global.tempSave[room], buffer_f16 );
-	maskdir = buffer_read(global.tempSave[room], buffer_f32 );
-	dist = buffer_read(global.tempSave[room], buffer_f32 );
-	maddx = buffer_read(global.tempSave[room], buffer_f16 );
-	maddy = buffer_read(global.tempSave[room], buffer_f16 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	alert = buffer_read(buf, buffer_u8 );
+	state = buffer_read(buf, buffer_u8 );
+	test = buffer_read(buf, buffer_u8 );
+	maskon = buffer_read(buf, buffer_u8 );
+	global.maskon = buffer_read(buf, buffer_u8 );
+	lastsprite = buffer_read(buf, buffer_u32 );
+	legindex = buffer_read(buf, buffer_f16 );
+	maskindex = buffer_read(buf, buffer_f16 );
+	global.maskindex = buffer_read(buf, buffer_f16 );
+	left = buffer_read(buf, buffer_f16 );
+	maskdir = buffer_read(buf, buffer_f32 );
+	dist = buffer_read(buf, buffer_f32 );
+	maddx = buffer_read(buf, buffer_f16 );
+	maddy = buffer_read(buf, buffer_f16 );
 }

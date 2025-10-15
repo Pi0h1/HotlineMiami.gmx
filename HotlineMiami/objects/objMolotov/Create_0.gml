@@ -3,11 +3,11 @@ image_speed = 0.25;
 friction = 0.1;
 dist = 0;
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write(global.tempSave[room], buffer_f32, dist);
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write(buf, buffer_f32, dist);
 }
 DoLoad = function () {
-	scrLoadGeneric(global.tempSave[room]);
-	dist = buffer_read(global.tempSave[room], buffer_f32);
+	scrLoadGeneric(buf);
+	dist = buffer_read(buf, buffer_f32);
 }

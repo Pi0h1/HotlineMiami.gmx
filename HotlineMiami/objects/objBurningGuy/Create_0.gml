@@ -11,13 +11,13 @@ repeat(30) {
 }
 audio_play_sound(sndMolotov, 0, false);
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write(global.tempSave[room], buffer_f32, alarm[0]);
-	buffer_write(global.tempSave[room], buffer_f32, index);
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write(buf, buffer_f32, alarm[0]);
+	buffer_write(buf, buffer_f32, index);
 }
 DoLoad = function () {
-	scrLoadGeneric(global.tempSave[room]);
-	alarm[0] = buffer_read(global.tempSave[room], buffer_f32);
-	index = buffer_read(global.tempSave[room], buffer_f32);
+	scrLoadGeneric(buf);
+	alarm[0] = buffer_read(buf, buffer_f32);
+	index = buffer_read(buf, buffer_f32);
 }

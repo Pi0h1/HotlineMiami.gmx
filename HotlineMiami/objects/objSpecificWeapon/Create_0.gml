@@ -15,12 +15,12 @@ switch (image_index) {
 image_speed = 0;
 dir = random(360);
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, ammo );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, ammo );
 	
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	ammo = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	ammo = buffer_read(buf, buffer_f32 );
 }

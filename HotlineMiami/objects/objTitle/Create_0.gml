@@ -146,11 +146,3 @@ scrLoadAchievements();
 scrCheckLetters();
 scrCheckGuns();
 scrCheckMasks();
-
-if (global.restartLevel) {
-	sxeasy_play(global.levelSong);
-	audio_sound_set_track_position(global.currentsong, global.restartSongPos);
-	global.restartLevel = 0;
-	room_goto(global.level);
-}
-

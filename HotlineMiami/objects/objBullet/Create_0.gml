@@ -7,20 +7,20 @@ startx = x;
 starty = y;
 swat = 0;
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, passed );
-	buffer_write( global.tempSave[room], buffer_f32, caliber );
-	buffer_write( global.tempSave[room], buffer_f32, startx );
-	buffer_write( global.tempSave[room], buffer_f32, starty );
-	buffer_write( global.tempSave[room], buffer_f32, swat );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, passed );
+	buffer_write( buf, buffer_f32, caliber );
+	buffer_write( buf, buffer_f32, startx );
+	buffer_write( buf, buffer_f32, starty );
+	buffer_write( buf, buffer_f32, swat );
 	
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	passed = buffer_read(global.tempSave[room], buffer_f32 );
-	caliber = buffer_read(global.tempSave[room], buffer_f32 );
-	startx = buffer_read(global.tempSave[room], buffer_f32 );
-	starty = buffer_read(global.tempSave[room], buffer_f32 );
-	swat = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	passed = buffer_read(buf, buffer_f32 );
+	caliber = buffer_read(buf, buffer_f32 );
+	startx = buffer_read(buf, buffer_f32 );
+	starty = buffer_read(buf, buffer_f32 );
+	swat = buffer_read(buf, buffer_f32 );
 }

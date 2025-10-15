@@ -1,11 +1,11 @@
 on = 0;
 wait = 40;
 
-DoSave = function() {
-	buffer_write(global.tempSave[room], buffer_u16, on);
-	buffer_write(global.tempSave[room], buffer_u32, wait);
+DoSave = function(buf) {
+	buffer_write(buf, buffer_u16, on);
+	buffer_write(buf, buffer_u32, wait);
 }
-DoLoad = function() {
-	on = buffer_read(global.tempSave[room], buffer_u16);
-	wait = buffer_read(global.tempSave[room], buffer_u32);
+DoLoad = function(buf) {
+	on = buffer_read(buf, buffer_u16);
+	wait = buffer_read(buf, buffer_u32);
 }

@@ -6,15 +6,15 @@ bled = 0;
 rotspeed = -1 + round(random(1)) * 2;
 wait = 100;
 
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);
-	buffer_write( global.tempSave[room], buffer_f32, bled );
-	buffer_write( global.tempSave[room], buffer_f32, wait );
-	buffer_write( global.tempSave[room], buffer_f32, rotspeed );
+DoSave = function(buf) {
+	scrSaveGeneric(buf);
+	buffer_write( buf, buffer_f32, bled );
+	buffer_write( buf, buffer_f32, wait );
+	buffer_write( buf, buffer_f32, rotspeed );
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
-	bled = buffer_read(global.tempSave[room], buffer_f32 );
-	wait = buffer_read(global.tempSave[room], buffer_f32 );
-	rotspeed = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
+	bled = buffer_read(buf, buffer_f32 );
+	wait = buffer_read(buf, buffer_f32 );
+	rotspeed = buffer_read(buf, buffer_f32 );
 }

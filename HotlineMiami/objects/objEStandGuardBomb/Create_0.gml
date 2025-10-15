@@ -1,6 +1,6 @@
-DoSave = function() {
-	scrSaveGeneric(global.tempSave[room]);	
+DoSave = function(buf) {
+	scrSaveGeneric(buf);	
 }
-DoLoad = function() {
-	scrLoadGeneric(global.tempSave[room]);
+DoLoad = function(buf) {
+	scrLoadGeneric(buf);
 }

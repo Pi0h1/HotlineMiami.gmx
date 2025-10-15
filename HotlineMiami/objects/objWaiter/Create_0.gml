@@ -7,22 +7,22 @@ checkreload = 10;
 reload = 12;
 energie = 0;
 
-DoSave = function() {
-	buffer_write( global.tempSave[room], buffer_f32, image_speed );
-	buffer_write( global.tempSave[room], buffer_f32, direction );
-	buffer_write( global.tempSave[room], buffer_f32, speed );
-	buffer_write( global.tempSave[room], buffer_f32, energie );
-	buffer_write( global.tempSave[room], buffer_f32, ammo );
-	buffer_write( global.tempSave[room], buffer_f32, checkreload );
-	buffer_write( global.tempSave[room], buffer_f32, reload );
+DoSave = function(buf) {
+	buffer_write( buf, buffer_f32, image_speed );
+	buffer_write( buf, buffer_f32, direction );
+	buffer_write( buf, buffer_f32, speed );
+	buffer_write( buf, buffer_f32, energie );
+	buffer_write( buf, buffer_f32, ammo );
+	buffer_write( buf, buffer_f32, checkreload );
+	buffer_write( buf, buffer_f32, reload );
 }
 
-DoLoad = function() {
-	image_speed = buffer_read(global.tempSave[room], buffer_f32 );
-	direction = buffer_read(global.tempSave[room], buffer_f32 );
-	speed = buffer_read(global.tempSave[room], buffer_f32 );
-	energie = buffer_read(global.tempSave[room], buffer_f32 );
-	ammo = buffer_read(global.tempSave[room], buffer_f32 );
-	checkreload = buffer_read(global.tempSave[room], buffer_f32 );
-	reload = buffer_read(global.tempSave[room], buffer_f32 );
+DoLoad = function(buf) {
+	image_speed = buffer_read(buf, buffer_f32 );
+	direction = buffer_read(buf, buffer_f32 );
+	speed = buffer_read(buf, buffer_f32 );
+	energie = buffer_read(buf, buffer_f32 );
+	ammo = buffer_read(buf, buffer_f32 );
+	checkreload = buffer_read(buf, buffer_f32 );
+	reload = buffer_read(buf, buffer_f32 );
 }

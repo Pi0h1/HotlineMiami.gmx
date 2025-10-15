@@ -5,7 +5,7 @@ if (sprite_exists(global.sprite)) {
         if (blacky < 1)
             blacky += 0.05;
     } else {
-        if (!on) {
+        if (on == 0) {
             if (blur > 0)
                 blur -= 0.05;
             if (blacky > 0)

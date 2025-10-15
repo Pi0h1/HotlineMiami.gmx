@@ -1,4 +1,4 @@
-if (!on || fade || wait > 0)
+if (on == 0 || fade || wait > 0)
     exit;
 wait = 3;
 if (select > 0)

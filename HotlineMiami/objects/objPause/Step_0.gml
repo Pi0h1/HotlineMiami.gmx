@@ -45,19 +45,19 @@ if (!surface_exists(global.surf1)) {
 surface_set_target(global.surf1);
 draw_clear_alpha(c_black, 0);
 text = "PAUSE";
-if (on) {
+if (on == 1) {
     if (textdir2 < 180)
         textdir2 += 10;
 } else {
     textdir2 = blacky * 180;
 }
-if (on)
+if (on == 1)
     factor = 0.5 - lengthdir_x(0.5, textdir2);
 else {
     if (factor > 0)
         factor -= 0.05;
     else {
-        if (on) {
+        if (on == 2) {
             if (!instance_exists(objPuzzle))
                 instance_create(x, y, objPuzzle);
         }
@@ -85,7 +85,7 @@ ii = 0;
 repeat(4) {
     if (select == i) {
         repeats = 6 + lengthdir_x(5, dir * 2);
-        if (on) {
+        if (on == 1) {
             if (frac(i * 0.5) > 0)
                 addx = 260 * (1 - factor);
             else addx = -260 * (1 - factor);
@@ -100,7 +100,7 @@ repeat(4) {
             ii++;
         }
     } else {
-        if (on) {
+        if (on == 1) {
             if (frac(i * 0.5) > 0)
                 addx = 260 * (1 - factor);
             else addx = -260 * (1 - factor);

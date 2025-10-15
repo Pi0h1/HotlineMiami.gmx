@@ -72,6 +72,7 @@ alt[2] = "OPTIONS";
 alt[3] = "EXIT GAME";
 
 
+scrInitScore();
 global.bonuslist = ds_list_create();
 global.bonustime = 0;
 global.newmasks = 0;
@@ -145,4 +146,11 @@ scrLoadAchievements();
 scrCheckLetters();
 scrCheckGuns();
 scrCheckMasks();
+
+if (global.restartLevel) {
+	sxeasy_play(global.levelSong);
+	audio_sound_set_track_position(global.currentsong, global.restartSongPos);
+	global.restartLevel = 0;
+	room_goto(global.level);
+}
 

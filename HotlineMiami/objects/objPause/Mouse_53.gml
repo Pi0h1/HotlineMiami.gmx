@@ -17,7 +17,7 @@ if (state == 0) {
         restart_load("restart.dat");
     }
     if (select == 3) {
-        if (on)
+        if (on == 1)
             fade = 1;
     }
 }

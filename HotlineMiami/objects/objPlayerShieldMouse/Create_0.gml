@@ -87,7 +87,7 @@ DoSave = function(buf) {
 	buffer_write(buf, buffer_f32, addx);
 	buffer_write(buf, buffer_f32, addy);
 }
-DoLoad = function () {
+DoLoad = function(buf) {
 	myxspeed = buffer_read(buf, buffer_f16);
 	myyspeed = buffer_read(buf, buffer_f16);
 	move = buffer_read(buf, buffer_f16);

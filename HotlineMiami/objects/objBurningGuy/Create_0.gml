@@ -16,7 +16,7 @@ DoSave = function(buf) {
 	buffer_write(buf, buffer_f32, alarm[0]);
 	buffer_write(buf, buffer_f32, index);
 }
-DoLoad = function () {
+DoLoad = function(buf) {
 	scrLoadGeneric(buf);
 	alarm[0] = buffer_read(buf, buffer_f32);
 	index = buffer_read(buf, buffer_f32);

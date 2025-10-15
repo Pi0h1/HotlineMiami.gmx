@@ -17,7 +17,7 @@ DoSave = function(buf) {
 	buffer_write(buf, buffer_f32, dir);
 	buffer_write(buf, buffer_f32, dist);
 }
-DoLoad = function () {
+DoLoad = function(buf) {
 	scrLoadGeneric(buf);
 	index = buffer_read(buf, buffer_f16);
 	dir = buffer_read(buf, buffer_f32);

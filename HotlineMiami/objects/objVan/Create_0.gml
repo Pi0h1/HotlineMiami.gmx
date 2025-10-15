@@ -58,7 +58,7 @@ DoSave = function(buf) {
 	buffer_write(buf, buffer_u16, enemies);
 	buffer_write(buf, buffer_u8, solid);
 }
-DoLoad = function () {
+DoLoad = function(buf) {
 	scrLoadGeneric(buf);
 	test = buffer_read(buf, buffer_u8);
 	brake = buffer_read(buf, buffer_u8);

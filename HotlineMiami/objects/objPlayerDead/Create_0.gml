@@ -19,7 +19,7 @@ DoSave = function(buf) {
 	buffer_write(buf, buffer_f32, viewspeed);
 	buffer_write(buf, buffer_f32, viewdir);
 }
-DoLoad = function () {
+DoLoad = function(buf) {
 	bled = buffer_read(buf, buffer_u8);
 	length = buffer_read(buf, buffer_f32);
 	dir = buffer_read(buf, buffer_f32);

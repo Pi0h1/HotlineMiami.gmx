@@ -5,11 +5,10 @@ if (!instance_exists(objMaskMenu)) {
 }
 scrSaveBonusList();
 i = 0;
-room_set_persistent(room, true);
-room_persistent = true;
+room_set_persistent(room, false);
+room_persistent = false;
 if (!global.paused) {
     scrInitPathFinding();
     if (!instance_exists(objMaskMenu))
         scrCheckpoint();
 } else global.paused = 0;
-

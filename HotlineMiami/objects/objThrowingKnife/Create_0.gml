@@ -9,7 +9,7 @@ DoSave = function(buf) {
 	buffer_write(buf, buffer_u8, bounced);
 	buffer_write(buf, buffer_f32, dir_add);
 }
-DoLoad = function () {
+DoLoad = function(buf) {
 	scrLoadGeneric(buf);
 	angle = buffer_read(buf, buffer_f32);
 	bounced = buffer_read(buf, buffer_u8);

@@ -9,7 +9,7 @@ DoSave = function(buf) {
 	buffer_write(buf, buffer_f32, rotspeed);
 	buffer_write(buf, buffer_f32, startspeed);
 }
-DoLoad = function () {
+DoLoad = function(buf) {
 	rotspeed = buffer_read(buf, buffer_f32);
 	startspeed = buffer_read(buf, buffer_f32);
 }

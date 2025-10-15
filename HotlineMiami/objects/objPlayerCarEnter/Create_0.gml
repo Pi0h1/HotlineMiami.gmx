@@ -16,7 +16,7 @@ DoSave = function(buf) {
 	buffer_write(buf, buffer_f16, engine);
 	buffer_write(buf, buffer_f16, visited);
 }
-DoLoad = function () {
+DoLoad = function(buf) {
 	scrLoadGeneric(buf);
 	index = buffer_read(buf, buffer_f32);
 	engine = buffer_read(buf, buffer_f16);

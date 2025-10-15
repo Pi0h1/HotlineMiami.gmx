@@ -6,7 +6,7 @@ DoSave = function(buf) {
 	scrSaveGeneric(buf);
 	buffer_write(buf, buffer_f32, alarm[0]);
 }
-DoLoad = function () {
+DoLoad = function(buf) {
 	scrLoadGeneric(buf);
 	alarm[0] = buffer_read(buf, buffer_f32);
 }

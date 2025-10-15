@@ -374,7 +374,7 @@ draw_rectangle(0, room_height - 44 * blacky, room_width + 1, room_height, 0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!on || fade || wait &gt; 0)
+            <string>if (on == 0 || fade || wait &gt; 0)
     exit;
 wait = 3;
 if (select &gt; 0)
@@ -404,7 +404,7 @@ if (select == 1 &amp;&amp; test == 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!on || fade || wait &gt; 0)
+            <string>if (on == 0 || fade || wait &gt; 0)
     exit;
 wait = 3;
 if (select &lt; 3)

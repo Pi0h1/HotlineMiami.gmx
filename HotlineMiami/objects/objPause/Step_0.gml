@@ -82,32 +82,35 @@ repeat(string_length(text)) * factor {
 draw_set_font(fntMenu);
 i = 0;
 ii = 0;
+var offset = 37;
 repeat(4) {
+	// selected
     if (select == i) {
         repeats = 6 + lengthdir_x(5, dir * 2);
         if (on == 1) {
             if (frac(i * 0.5) > 0)
-                addx = 260 * (1 - factor);
-            else addx = -260 * (1 - factor);
+                addx = (260 + offset) * (1 - factor);
+            else addx = (-260 - offset) * (1 - factor);
         } else {
             if (frac(i * 0.5) > 0)
-                addx = -260 * (1 - factor);
-            else addx = 260 * (1 - factor);
+                addx = (-260 - offset) * (1 - factor);
+            else addx = (260 + offset) * (1 - factor);
         }
         repeat(repeats) {
             draw_set_color(merge_color(c_fuchsia, c_white, ii * 0.085));
             draw_text(room_width / 2 - 56 + ii + addx, room_height / 2 + i * 20, string_hash_to_newline(choice[i]));
             ii++;
         }
+		// not selected
     } else {
         if (on == 1) {
             if (frac(i * 0.5) > 0)
-                addx = 260 * (1 - factor);
-            else addx = -260 * (1 - factor);
+                addx = (260 + offset) * (1 - factor);
+            else addx = (-260 - offset) * (1 - factor);
         } else {
             if (frac(i * 0.5) > 0)
-                addx = -260 * (1 - factor);
-            else addx = 260 * (1 - factor);
+                addx = (-260 - offset) * (1 - factor);
+            else addx = (260 + offset) * (1 - factor);
         }
         amount = 0.5 + lengthdir_x(0.5, dir * 2);
         if (test && i == 1)

@@ -329,6 +329,8 @@ if (!intro) {
     }
 }
 
+global.levelSong = song;
+
 if (intro) {
     mylevel = global.level;
     if (select == 15)

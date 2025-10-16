@@ -9,7 +9,7 @@
   "bitRate":192,
   "compression":0,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":5.213991,
   "name":"sndPolice",
   "parent":{
     "name":"Sounds",

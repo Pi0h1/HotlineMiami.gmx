@@ -540,9 +540,3 @@ if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBag || sprite_i
     x = lastx;
     y = lasty;
 }
-
-if (keyboard_check_pressed(ord("G"))) {
-	sprite_index = sprPWalkThrow;
-	image_index = 0;
-	throwindex = 1;
-}

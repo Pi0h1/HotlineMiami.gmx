@@ -50,9 +50,13 @@ function scrGetSong(argument0) {
 
 	// Outro to Intro Music
 	switch (room) {
+		// Store
 	    case rmStore1: case rmStore2: case rmStore3:
+		// Pizza Hut
 	    case rmPizzaHut1: case rmPizzaHut2: case rmPizzaHut3:
+		// Vidseo Store
 	    case rmVideoStore1: case rmVideoStore2: case rmVideoStore3:
+		
 	        objEffector.newsong = 0;
 	        global.song = working_directory + "\\DeepCover.mp3";
 	        break;

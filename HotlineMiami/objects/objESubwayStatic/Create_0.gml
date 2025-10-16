@@ -7,6 +7,6 @@ DoSave = function(buf) {
 }
 
 DoLoad = function(buf) {
-	scrLoadGeneric(global.tempSave[room]);
+	scrLoadGeneric(buf);
 	alert = buffer_read(buf, buffer_f32 );
 }

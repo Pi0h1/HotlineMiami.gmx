@@ -47,8 +47,4 @@ hint[13] = "TIP: FINISH OFF FALLEN ENEMIES";
 
 myhint = floor(random(14));
 
-if (global.restart) {
-	global.restart = 0;
-	room_goto(global.level);
-//	restart_create();
-}
+reset_tempSave();

@@ -220,7 +220,7 @@ function scrCheckMissionComplete() {
 	            }
 	        }
 	        if (global.done1 + global.done2 + global.done3 + global.done4 == 4) {
-	            if (global.done = 0 && instance_number(objEBullet) == 0)
+	            if (global.done == 0 && instance_number(objEBullet) == 0)
 	                global.done = 1;
 	        }
 	    }

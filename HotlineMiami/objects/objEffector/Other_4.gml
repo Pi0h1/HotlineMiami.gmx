@@ -5,8 +5,8 @@ if (!instance_exists(objMaskMenu)) {
 }
 scrSaveBonusList();
 i = 0;
-room_set_persistent(room, false);
-room_persistent = false;
+room_set_persistent(room, true);
+room_persistent = true;
 if (!global.paused) {
     scrInitPathFinding();
     if (!instance_exists(objMaskMenu))

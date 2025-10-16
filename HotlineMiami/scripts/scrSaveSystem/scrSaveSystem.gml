@@ -194,9 +194,7 @@ function scrLoadGeneric(buf) {
 
 function checkpoint_save(file) {
 	//game_save(file);
-//	global.loaded = 1;
 	scrSaveGame(global.tempSave[room]);
-//	global.loaded = 0;
 	show_debug_message("SAVED: " + file);
 }
 
@@ -207,19 +205,11 @@ function checkpoint_load(file){
 	show_debug_message("LOADED: " + file);
 }
 
-function restart_create(file){
-	//game_save(file);
-	scrSaveGame(global.tempSave[room]);
-	global.maskload = -1;
-	show_debug_message("SAVED: " + file);
-}
-
 function restart_load(file){
-	//game_load(file);
-//	scrLoadGame(global.tempSave[room]);
-//	global.maskload = -1;
-	global.restart = 1;
-	room_goto(global.level);
+	with (objGame) {
+		// you may need to change this number if you reoriented the rooms at any point or get an error here.
+		roomRestartIndex = 3;
+	}
 	show_debug_message("LOADED RESTART: " + file);
 }
 
@@ -293,4 +283,15 @@ function scrLoadGame(buf ){
 	
 	// recreate mp grid for path finding
 	scrInitPathFinding();
+}
+
+function reset_tempSave(){
+    for ( var i = 0; i < array_length(global.tempSave); ++i) {
+        var buf = global.tempSave[i];
+        if ( buffer_exists( buf ) )
+        {
+            global.tempSave[i] = -1;
+            buffer_delete( buf );
+        }
+    }
 }

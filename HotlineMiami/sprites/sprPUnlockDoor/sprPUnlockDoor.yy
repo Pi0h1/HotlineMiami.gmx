@@ -121,8 +121,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"Player_Jacket",
+    "path":"texturegroups/Player_Jacket",
   },
   "type":0,
   "VTile":false,

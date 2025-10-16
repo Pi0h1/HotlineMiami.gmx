@@ -113,8 +113,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"Player_PigButcher",
+    "path":"texturegroups/Player_PigButcher",
   },
   "type":0,
   "VTile":false,

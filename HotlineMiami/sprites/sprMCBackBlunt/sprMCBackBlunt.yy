@@ -97,8 +97,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"Player_Biker",
+    "path":"texturegroups/Player_Biker",
   },
   "type":0,
   "VTile":false,

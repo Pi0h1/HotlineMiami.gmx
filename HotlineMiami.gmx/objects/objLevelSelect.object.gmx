@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mapdir=0
+            <string>totalLevelCount = 22;
+mapdir=0
 addx=0
 intro=0
 newsong=1
@@ -106,7 +107,7 @@ chapter[19]="CHAPTER NINETEEN"
 chapter[20]="BONUS CHAPTER"
 chapter[21]="SPECIAL CHAPTER"
 chapter[22]="BETA CHAPTERS"
-if global.levels[15]=1 {if file_exists(working_directory+"\exposed.lvl") levels=22 else levels=20} else levels=15
+if global.levels[15]=1 {levels=totalLevelCount} else levels=15
 select=0
 repeats=16
 myrepeats=1
@@ -389,7 +390,7 @@ if (intro == 0) {
         case 19:    scrLoadLevel("RESOLUTION",  "NINETEENTH CHAPTER",   "InnerAnimal.mp3",  rmJanitors,              rmMCSequence4);            break;
         case 20:    scrLoadLevel("HIGHBALL",    "BONUS CHAPTER",        "Perturbator.mp3",  rmHighballer,            rmChapter);                break;
         case 21:    scrLoadLevel("EXPOSED",     "SPECIAL CHAPTER",      "ToTheTop.mp3",     rmEurogamer,             rmChapter);                break;
-        case 22:    scrLoadLevel("COWBOY",      "COCAINE",              "Lady.mp3",         rmTestLevel2,            rmChapter);                break;
+        case 22:    scrLoadLevel("COWBOY",      "COCAINE",              "\CocaineCowboy_Music\Lady.mp3",         rmTestLevel1,            rmChapter);                break;
         default:    scrLoadLevel("ERROR",       "INVALID CHAPTER",      "Crystals.mp3",     rmApartment1Entrance,    rmSequence2);              break;
     }
 } else {
@@ -416,7 +417,7 @@ if (intro == 0) {
         case 19:    scrLoadLevel("RESOLUTION",  "NINETEENTH CHAPTER",   "ItsSafeNow.mp3",    rmMCSequence4,          rmMCSequence4);            break;
         case 20:    scrLoadLevel("HIGHBALL",    "BONUS CHAPTER",        "Perturbator.mp3",   rmHighballer,           rmChapter);                break;
         case 21:    scrLoadLevel("EXPOSED",     "SPECIAL CHAPTER",      "ToTheTop.mp3",      rmEurogamer,            rmChapter);                break;
-        case 22:    scrLoadLevel("COWBOY",      "COCAINE",              "Lady.mp3",          rmTestLevel2,           rmChapter);                break;
+        case 22:    scrLoadLevel("COWBOY",      "COCAINE",              "\CocaineCowboy_Music\Lady.mp3",          rmTestLevel1,           rmChapter);                break;
         default:    scrLoadLevel("ERROR",       "INVALID CHAPTER",      "DeepCover.mp3",     rmApartment1Entrance,   rmSequence2);              break;
     }
 }

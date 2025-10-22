@@ -4,6 +4,25 @@
     <Config>Configs\Default</Config>
   </Configs>
   <datafiles number="36" name="datafiles">
+    <datafiles number="36" name="CocaineCowboy_Music">
+      <datafile>
+        <name>Lady.ogg</name>
+        <exists>-1</exists>
+        <size>3928750</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Lady.ogg</filename>
+      </datafile>
+    </datafiles>
     <datafile>
       <name>AlienInMiami.dll</name>
       <exists>-1</exists>
@@ -581,23 +600,6 @@
         </Config>
       </ConfigOptions>
       <filename>ToTheTop.ogg</filename>
-    </datafile>
-    <datafile>
-      <name>Lady.ogg</name>
-      <exists>-1</exists>
-      <size>3928750</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>Lady.ogg</filename>
     </datafile>
   </datafiles>
   <NewExtensions/>
@@ -2803,6 +2805,8 @@
         <script>scripts\scrAmmoPatch.gml</script>
         <script>scripts\scrExtraAmmoPerk.gml</script>
         <script>scripts\txtReset.gml</script>
+        <script>scripts\scrCocaineCowboy_Patch.gml</script>
+        <script>scripts\scrMaskDrop_DrawPatch.gml</script>
       </scripts>
       <scripts name="Obsolete">
         <script>scripts\sleep.gml</script>
@@ -4074,19 +4078,35 @@
     </rooms>
     <rooms name="Cocaine Cowboy">
       <room>rooms\rmOldHotel</room>
-      <room>rooms\rmNew9</room>
-      <room>rooms\rmNew11</room>
-      <room>rooms\rmNew13</room>
-      <room>rooms\rmNew15</room>
-      <room>rooms\rmInstant2</room>
-      <room>rooms\rmInstant3</room>
-      <room>rooms\rmTestLevel2</room>
-      <room>rooms\rmTestLevel4</room>
-      <room>rooms\rmTestLevel8</room>
-      <room>rooms\rmTestLevel6</room>
-      <room>rooms\rmTestLevel9</room>
-      <room>rooms\rmTestLevel10</room>
       <room>rooms\rmTestRoom</room>
+      <rooms name="TestLevels">
+        <room>rooms\rmTestLevel1</room>
+        <room>rooms\rmTestLevel2</room>
+        <room>rooms\rmTestLevel3</room>
+        <room>rooms\rmTestLevel4</room>
+        <room>rooms\rmTestLevel5</room>
+        <room>rooms\rmTestLevel6</room>
+        <room>rooms\rmTestLevel7</room>
+        <room>rooms\rmTestLevel8</room>
+        <room>rooms\rmTestLevel9</room>
+        <room>rooms\rmTestLevel10</room>
+      </rooms>
+      <rooms name="New">
+        <room>rooms\rmNew2</room>
+        <room>rooms\rmNew4</room>
+        <room>rooms\rmNew5</room>
+        <room>rooms\rmNew6</room>
+        <room>rooms\rmNew7</room>
+        <room>rooms\rmNew8</room>
+        <room>rooms\rmNew9</room>
+        <room>rooms\rmNew10</room>
+        <room>rooms\rmNew11</room>
+        <room>rooms\rmNew12</room>
+        <room>rooms\rmNew13</room>
+        <room>rooms\rmNew14</room>
+        <room>rooms\rmNew15</room>
+        <room>rooms\rmBoss2</room>
+      </rooms>
     </rooms>
     <rooms name="AG">
       <room>rooms\rmLeaderboards</room>

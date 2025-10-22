@@ -26,8 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>txtExplanation(); // Readme
-isUpdated = false;
+isUpdated = true;
 lastTrack = (working_directory+"\Static.mp3");
+
+global.maskon = 0;
 </string>
           </argument>
         </arguments>

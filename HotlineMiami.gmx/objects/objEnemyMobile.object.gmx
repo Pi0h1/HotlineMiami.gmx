@@ -44,6 +44,9 @@ diradd=1
 findwall=0
 
 alarm[2]=2; // Ammo Patch
+
+dir = 0;
+shake = 0;
 </string>
           </argument>
         </arguments>

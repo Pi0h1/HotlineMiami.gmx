@@ -48,6 +48,7 @@ if (place_meeting(x, y, objPlayer)) {
                     objEffector.nextroom = nextroom;
                     objEffector.newsong = 1;
                     objEffector.song = scrGetSong(room);
+					global.levelSong = objEffector.song;
                 }
             }
         }

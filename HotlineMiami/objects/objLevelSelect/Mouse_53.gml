@@ -328,7 +328,6 @@ if (!intro) {
         song = working_directory + "\\ToTheTop.mp3";
     }
 }
-
 global.levelSong = song;
 
 if (intro) {

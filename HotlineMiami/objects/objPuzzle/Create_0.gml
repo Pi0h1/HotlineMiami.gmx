@@ -18,7 +18,7 @@ my_id = instance_create(326 + offset, 118, objLetterSocket) my_id.target = 11;
 my_id = instance_create(348 + offset, 118, objLetterSocket) my_id.target = 3;
 my_id = instance_create(370 + offset, 118, objLetterSocket) my_id.target = 2;
 if (!global.puzzledone)
-//    scrCreateLetters();
+    scrCreateLetters();
 else alarm[0] = 30;
 surf1 = surface_create(room_width, room_height);
 surface_set_target(surf1);

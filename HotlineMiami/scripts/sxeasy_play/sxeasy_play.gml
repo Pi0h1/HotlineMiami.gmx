@@ -7,6 +7,10 @@ function sxeasy_play(argument0) {
 
 	lastsong = global.currentsong;
 	thissong = string_replace(argument0, "mp3", "ogg");
+	
+	// if trying to play the same song, exit.
+	if (global.levelSong == thissong)
+		return;
 
 	global.currentsong = audio_create_stream(thissong);
 	audio_play_sound(global.currentsong, 100, true);

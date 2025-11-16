@@ -29,9 +29,8 @@ if ( roomRestartIndex > 0 )
     // Done
     room_goto(global.level);
 	roomRestartIndex = -1;
-	if (global.currentsong != global.levelSong) {
-		audio_stop_all();
-		sxeasy_play(global.levelSong);
-	}
+	audio_stop_sound(sndPolice);
+	sxeasy_play(global.levelSong);
 	room_speed = 60;
 }
+

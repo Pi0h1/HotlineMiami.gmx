@@ -13,7 +13,9 @@ function sxeasy_setVolume(argument0) {
 
 
 	//audio_sound_gain(global.currentsong,(argument0/100)+global.mvol*2,0)
+	if global.currentsong != -1 {
 	audio_sound_gain(global.currentsong, (argument0 / 100) + global.mvol, 0);
+	}
 
 
 	//if (!sxms.easyPlay) { return 0; };

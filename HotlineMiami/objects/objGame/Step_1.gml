@@ -30,7 +30,10 @@ if ( roomRestartIndex > 0 )
     room_goto(global.level);
 	roomRestartIndex = -1;
 	audio_stop_sound(sndPolice);
-	sxeasy_play(global.levelSong);
+	if (global.levelSong != undefined) {
+		sxeasy_play(global.levelSong);
+	}
 	room_speed = 60;
 }
 
+texture_set_interpolation(false);

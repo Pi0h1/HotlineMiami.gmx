@@ -1,5 +1,5 @@
-///scrLoadLevel("NAME", "CHAPTER", "Song.mp3", rmFirstFloor, rmSequence2)
-//loadLevel("NO TALK", "FIRST CHAPTER", "Crystals.mp3", rmApartment1Entrance, rmSequence2)
+/// scrLoadLevel("NAME", "CHAPTER", "Song.mp3", rmFirstFloor, rmSequence2)
+// Example loadLevel("NO TALK", "FIRST CHAPTER", "Crystals.mp3", rmApartment1Entrance, rmSequence2)
 _title      = argument0;
 _preTitle   = argument1;
 _song       = working_directory+"\"+argument2;

@@ -687,7 +687,9 @@
       <filename>ToTheTop.ogg</filename>
     </datafile>
   </datafiles>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\GMSched</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sounds name="AG">
       <sound>sound\sndLock</sound>
@@ -2890,8 +2892,7 @@
         <script>scripts\scrAmmoPatch.gml</script>
         <script>scripts\scrExtraAmmoPerk.gml</script>
         <script>scripts\txtReset.gml</script>
-        <script>scripts\scrCocaineCowboy_Patch.gml</script>
-        <script>scripts\scrMaskDrop_DrawPatch.gml</script>
+        <script>scripts\scrLevelTitlePatch.gml</script>
       </scripts>
       <scripts name="Obsolete">
         <script>scripts\sleep.gml</script>
@@ -2909,6 +2910,10 @@
       <script>scripts\scrMoveShieldLeft.gml</script>
       <script>scripts\scrMoveShieldRight.gml</script>
       <script>scripts\scrLoadLevel.gml</script>
+      <script>scripts\scrSetCameraView.gml</script>
+      <script>scripts\scrCocaineCowboy_Patch.gml</script>
+      <script>scripts\scrCocaineCowboy_FurniturePatch.gml</script>
+      <script>scripts\scrMaskDrop_DrawPatch.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

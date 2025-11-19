@@ -1,16 +1,17 @@
-view_wview[0] = 480;
-view_hview[0] = 270;
-if instance_exists(objSofaH64) {
-    with objSofaH64 {
-        x += (sprite_get_width(sprite_index)/2);
-        y += (sprite_get_height(sprite_index)/2);
-    }
-}
+// Fixes that should be applied when playing the Cocaine Cowboy levels
 
-if instance_exists(objSofaH48) {
-    with objSofaH48 {
-        x += (sprite_get_width(sprite_index)/2);
-        y += (sprite_get_height(sprite_index)/2);
-    }
+scrSetCameraView();
+switch (room) {
+    case rmTestLevel1: scrCocaineCowboy_FurniturePatch(); break;
+    case rmTestLevel2: scrCocaineCowboy_FurniturePatch(); break;
+    case rmTestLevel3: scrCocaineCowboy_FurniturePatch(); break;
+    case rmTestLevel4: scrCocaineCowboy_FurniturePatch(); break;
+    case rmTestLevel5: scrCocaineCowboy_FurniturePatch(); break;
+    case rmTestLevel6: scrCocaineCowboy_FurniturePatch(); break;
+    case rmTestLevel7: scrCocaineCowboy_FurniturePatch(); break;
+    case rmTestLevel8: scrCocaineCowboy_FurniturePatch(); break;
+    case rmTestLevel9: scrCocaineCowboy_FurniturePatch(); break;
+    case rmTestLevel10: scrCocaineCowboy_FurniturePatch(); break;
+    default: break;
 }
-
+ 

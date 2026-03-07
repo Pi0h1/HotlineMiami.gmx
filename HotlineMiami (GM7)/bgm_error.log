@@ -3,7 +3,7 @@ occured. If you don't want this file to be generated you can deactivate it
 by calling bgm_ErrorReport(false) in your GML code.
 
 --- BGM Error Report ---
-ERROR DATE: 6/23/2018
+ERROR DATE: 12/15/2025
 SRC FILE:   src/bgm_play.c
 LINE NO:    30
 MESSAGE:    "Failed to play song - Invalid song ID."

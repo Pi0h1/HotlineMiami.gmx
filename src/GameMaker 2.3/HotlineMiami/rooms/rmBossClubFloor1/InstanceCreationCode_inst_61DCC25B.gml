@@ -1,0 +1,2 @@
+sprite_index=sprCarThrashed
+image_angle=180

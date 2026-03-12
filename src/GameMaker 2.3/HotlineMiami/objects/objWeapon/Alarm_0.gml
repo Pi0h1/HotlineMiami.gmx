@@ -1,0 +1,2 @@
+scrPatch_Ammo();
+

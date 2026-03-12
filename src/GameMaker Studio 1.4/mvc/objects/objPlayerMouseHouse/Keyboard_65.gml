@@ -1,0 +1,16 @@
+exit
+if persistent=1 and objEffector.fade=1 exit
+if instance_exists(objPhoneConversation) exit
+if active=0 exit
+scrMoveSolidOn()
+if place_free(x-3,y) {x-=3-keyboard_check_direct(vk_shift)} else {
+if place_free(x-3,y-6) y-=3-keyboard_check_direct(vk_shift) else {
+if place_free(x-3,y+6) y+=3-keyboard_check_direct(vk_shift)
+}
+}
+if image_speed=0 image_index+=0.15-keyboard_check_direct(vk_shift)*0.05
+legdir=180 
+if keyboard_check(ord("W")) legdir=135
+if keyboard_check(ord("S")) legdir=225
+legindex+=0.4-keyboard_check_direct(vk_shift)*0.15
+scrMoveSolidOff()

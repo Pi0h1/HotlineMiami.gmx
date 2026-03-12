@@ -1,0 +1,1 @@
+direction=260+random(20)

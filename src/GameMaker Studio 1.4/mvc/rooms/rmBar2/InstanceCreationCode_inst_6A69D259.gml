@@ -1,0 +1,1 @@
+image_angle=270-5+random(10)

@@ -1,0 +1,35 @@
+if other.object_index=objWallSoftH or other.object_index=objWallSoftV {
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objHit)
+my_id.image_angle=direction
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objSmokeHit)
+my_id.image_angle=direction
+my_id.direction=random(360)
+my_id.speed=random(0.5)
+
+repeat (4) {
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objDebris)
+my_id.direction=random(360)
+my_id.speed=random(4)
+}
+if passed=0 {
+passed=1
+dirx=x-lengthdir_x(16,direction)
+diry=y-lengthdir_y(16,direction)
+}
+exit
+}
+//if !place_free(x,y) exit
+move_contact_solid(direction,speed*2)
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objHit)
+my_id.image_angle=direction
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objSmokeHit)
+my_id.image_angle=direction
+my_id.direction=random(360)
+my_id.speed=random(0.5)
+
+repeat (4) {
+my_id=instance_create(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),objDebris)
+my_id.direction=direction-140-random(80)
+my_id.speed=random(4)
+}
+instance_destroy()

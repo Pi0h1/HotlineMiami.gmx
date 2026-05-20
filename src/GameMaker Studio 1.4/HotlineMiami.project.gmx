@@ -4000,10 +4000,11 @@
       </objects>
       <object>objects\objGame</object>
     </objects>
-    <object>objects\objRainGenerator</object>
-    <object>objects\objRainSplash</object>
-    <object>objects\objRain</object>
-    <object>objects\objCloud</object>
+    <objects name="Custom">
+      <object>objects\objRain</object>
+      <object>objects\objRainSplash</object>
+      <object>objects\objRainGenerator</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Hotline Miami">

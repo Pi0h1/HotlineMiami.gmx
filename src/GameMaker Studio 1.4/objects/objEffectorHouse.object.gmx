@@ -176,49 +176,6 @@ scrPatch_RoomStart();
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if show_date=1 {
-if room=rmSequence1 text="April 3rd, 1989#Miami - Florida"
-if room=rmSequence2 text="April 8th, 1989#Miami - Florida"
-if room=rmSequence3 text="April 16th, 1989#Miami - Florida"
-if room=rmSequence4 text="April 25th, 1989#Miami - Florida"
-if room=rmSequence5 text="May 5th, 1989#Miami - Florida"
-if room=rmSequence6 text="May 11th, 1989#Miami - Florida"
-if room=rmSequence7 text="May 13th, 1989#Miami - Florida"
-if room=rmSequence8 text="May 23rd, 1989#Miami - Florida"
-i=0
-draw_set_alpha(0.5+lengthdir_x(0.5,amount))
-draw_set_color(c_gray)
-draw_set_font(fntDate)
-draw_set_halign(fa_center)
-draw_set_valign(fa_center)
-draw_text(view_wview[0]/2+1,view_hview[0]/2+1,text)
-draw_set_color(c_white)
-draw_text(view_wview[0]/2,view_hview[0]/2,text)
-draw_set_alpha(1)
-//d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -467,6 +424,28 @@ coldir+=1
 
 scrDrawPlayer()
 
+if show_date=1 {
+if room=rmSequence1 text="April 3rd, 1989#Miami - Florida"
+if room=rmSequence2 text="April 8th, 1989#Miami - Florida"
+if room=rmSequence3 text="April 16th, 1989#Miami - Florida"
+if room=rmSequence4 text="April 25th, 1989#Miami - Florida"
+if room=rmSequence5 text="May 5th, 1989#Miami - Florida"
+if room=rmSequence6 text="May 11th, 1989#Miami - Florida"
+if room=rmSequence7 text="May 13th, 1989#Miami - Florida"
+if room=rmSequence8 text="May 23rd, 1989#Miami - Florida"
+i=0
+draw_set_alpha(0.5+lengthdir_x(0.5,amount))
+draw_set_color(c_gray)
+draw_set_font(fntDate)
+draw_set_halign(fa_center)
+draw_set_valign(fa_center)
+draw_text(view_wview[0]/2+1,view_hview[0]/2+1,text)
+draw_set_color(c_white)
+draw_text(view_wview[0]/2,view_hview[0]/2,text)
+draw_set_alpha(1)
+//d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
+}
+
 if brus&gt;0 {
 brus-=1
 if lastbrus=0 audio_play_sound(sndNoise,0,false)
@@ -478,11 +457,9 @@ draw_rectangle(0,0,view_wview[0],blackx,0)
 draw_rectangle(0,view_hview[0],view_wview[0],view_hview[0]-blackx*1.5,0)
 }
 
-
 draw_set_blend_mode(bm_subtract)
 draw_circle_color(view_wview[0]/2,view_hview[0]/2,240+24+random(24)+24,c_black,merge_color(c_navy,c_aqua,0.25+random(0.25)),0)
 draw_set_blend_mode(bm_normal)
-
 </string>
           </argument>
         </arguments>

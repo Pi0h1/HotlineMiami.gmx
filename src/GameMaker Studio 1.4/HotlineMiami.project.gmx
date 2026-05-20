@@ -2449,7 +2449,6 @@
     </sprites>
     <sprite>sprites\sprTitleCocaineCowboy</sprite>
     <sprite>sprites\sprRainSplash</sprite>
-    <sprite>sprites\sprCloud</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Hotline Miami">

@@ -1,6 +1,6 @@
 global.masks[0]=1
 i=1 
-repeat (25){
+repeat (sprite_get_number(sprMasksBig)){
 global.masks[i]=0
 i+=1
 }

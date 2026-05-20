@@ -1,4 +1,4 @@
-global.factor=1
+scrGetFactor();
 if testsurface=1 {scrSurfaceTiles() testsurface=0}
 if !surface_exists(global.surf2) {
 global.surf2=surface_create(room_width*3,room_height*3)

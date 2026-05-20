@@ -10,10 +10,10 @@ my_id.maskindex=global.maskindex
 my_id.reload=30
 instance_destroy()
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((600)+400*(global.factor))+"pts"
-global.myscore+=(600)+400*(global.factor)
+my_id.text="+"+string((600)+400*(scrGetFactor()))+"pts"
+global.myscore+=(600)+400*(scrGetFactor())
 global.killscore+=600
-global.boldscore+=400*global.factor
+global.boldscore+=400*scrGetFactor()
 global.combotime=240
 global.combo+=1
 global.killx[global.kills]=x

@@ -1,2 +1,0 @@
-exit
-sprite_index=sprPWalkPipe

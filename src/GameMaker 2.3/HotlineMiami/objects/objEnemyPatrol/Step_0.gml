@@ -1,5 +1,5 @@
 scrMoveSolidOn()
-if sprite_index=sprEWalkUnarmed nothing=0 else global.factor+=sign(alert)
+scrGetFactor();
 if path_index>0 {
 image_speed=0.1
 if path_position=1 {path_end() direction=round(direction*0.1)*10}

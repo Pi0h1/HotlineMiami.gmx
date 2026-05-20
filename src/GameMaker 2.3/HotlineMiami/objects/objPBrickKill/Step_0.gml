@@ -17,10 +17,10 @@ my_id.image_angle=image_angle
 
 instance_destroy()
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((1000)+400*(global.factor))+"pts"
-global.myscore+=(1000)+400*(global.factor)
+my_id.text="+"+string((1000)+400*(scrGetFactor()))+"pts"
+global.myscore+=(1000)+400*(scrGetFactor())
 global.killscore+=200
-global.boldscore+=800+400*global.factor
+global.boldscore+=800+400*scrGetFactor()
 global.combotime=240
 global.combo+=1
 global.killx[global.kills]=x

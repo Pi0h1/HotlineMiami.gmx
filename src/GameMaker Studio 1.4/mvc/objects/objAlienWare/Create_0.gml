@@ -1,2 +1,0 @@
-scrAlienWareInit()
-scrAlienWareYellow()

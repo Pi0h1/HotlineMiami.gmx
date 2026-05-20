@@ -44,8 +44,8 @@ function scrPickUp360() {
 	with objEnemy {if sprite_index=sprEWalkUnarmed nothing=1 else {if alert=1 global.etest=1}}
 	if global.etest=1 {
 	my_id=instance_create(x,y-12,objScore)
-	my_id.text="+"+string(60*global.factor)+"pts"
-	global.myscore+=60*global.factor
+	my_id.text="+"+string(60*scrGetFactor())+"pts"
+	global.myscore+=60*scrGetFactor()
 	}
 	}
 

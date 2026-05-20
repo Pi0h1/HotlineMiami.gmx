@@ -29,7 +29,7 @@
 if room=rmPhoneHomEntrance sxeasy_play(working_directory+"\Bridal.mp3")
 global.barehanded=1
 select=0
-masks=sprite_get_number(sprite_index)
+masks=sprite_get_number(sprite_index)-1; if (objGame.isRussellAvailable){masks=sprite_get_number(sprite_index);}
 maskx=0
 masky=room_height+40
 dir=0
@@ -62,6 +62,7 @@ name[22]="Jones"
 name[23]="Carl"
 name[24]="Jake"
 name[25]="Richter"
+name[26]="Russell"
 description[0]=""
 description[1]="An eye for secrets"
 description[2]="Fists of fury"
@@ -88,13 +89,14 @@ description[22]="More gore"
 description[23]="Start with drill"
 description[24]="Killing throws"
 description[25]="Start with silenced uzi"
+description[26]="Raging bull"
 
 blacky=32
 global.maskon=0
 select=global.maskindex
 global.maskindex=0
 i=0 
-repeat (26) {
+repeat (masks+1) {
 if global.masks[i]=0 name[i]="Unavailable"
 i+=1
 }
@@ -110,7 +112,8 @@ view_xview[0]=x+lengthdir_x(vdist*0.2,vdir-180)-view_wview[0]*0.5
 view_yview[0]=y+lengthdir_y(vdist*0.2,vdir-180)-view_hview[0]*0.5
 view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
 }
-alarm[0]=1</string>
+alarm[0]=1
+</string>
           </argument>
         </arguments>
       </action>
@@ -376,32 +379,37 @@ image_index=0
 image_speed=0.15
 sprite_index=sprPMaskSlip
 }
-if select=0 objPlayer.masksprite=sprRoosterMask
-if select=1 objPlayer.masksprite=sprOwlMask
-if select=2 objPlayer.masksprite=sprTigerMask
-if select=3 objPlayer.masksprite=sprPigMask
-if select=4 objPlayer.masksprite=sprHorseMask
-if select=5 objPlayer.masksprite=sprRabbitMask
-if select=6 objPlayer.masksprite=sprWolfMask
-if select=7 objPlayer.masksprite=sprGiraffeMask
-if select=8 objPlayer.masksprite=sprCollieMask
-if select=9 objPlayer.masksprite=sprElephantMask
-if select=10 objPlayer.masksprite=sprCamelMask
-if select=11 objPlayer.masksprite=sprMonkeyMask
-if select=12 objPlayer.masksprite=sprUnicornMask
-if select=13 objPlayer.masksprite=sprFrogMask
-if select=14 objPlayer.masksprite=sprMoleMask
-if select=15 objPlayer.masksprite=sprFoxMask
-if select=16 objPlayer.masksprite=sprPantherMask
-if select=17 objPlayer.masksprite=sprOctopusMask
-if select=18 objPlayer.masksprite=sprChamelionMask
-if select=19 objPlayer.masksprite=sprFishMask
-if select=20 objPlayer.masksprite=sprBatMask
-if select=21 objPlayer.masksprite=sprWalrusMask
-if select=22 objPlayer.masksprite=sprCrocodileMask
-if select=23 objPlayer.masksprite=sprLocustMask
-if select=24 objPlayer.masksprite=sprCobraMask
-if select=25 objPlayer.masksprite=sprRatMask
+
+switch (select) {
+    case  1: objPlayer.masksprite = sprOwlMask;       break;
+    case  2: objPlayer.masksprite = sprTigerMask;     break;
+    case  3: objPlayer.masksprite = sprPigMask;       break;
+    case  4: objPlayer.masksprite = sprHorseMask;     break;
+    case  5: objPlayer.masksprite = sprRabbitMask;    break;
+    case  6: objPlayer.masksprite = sprWolfMask;      break;
+    case  7: objPlayer.masksprite = sprGiraffeMask;   break;
+    case  8: objPlayer.masksprite = sprCollieMask;    break;
+    case  9: objPlayer.masksprite = sprElephantMask;  break;
+    case 10: objPlayer.masksprite = sprCamelMask;     break;
+    case 11: objPlayer.masksprite = sprMonkeyMask;    break;
+    case 12: objPlayer.masksprite = sprUnicornMask;   break;
+    case 13: objPlayer.masksprite = sprFrogMask;      break;
+    case 14: objPlayer.masksprite = sprMoleMask;      break;
+    case 15: objPlayer.masksprite = sprFoxMask;       break;
+    case 16: objPlayer.masksprite = sprPantherMask;   break;
+    case 17: objPlayer.masksprite = sprOctopusMask;   break;
+    case 18: objPlayer.masksprite = sprChamelionMask; break;
+    case 19: objPlayer.masksprite = sprFishMask;      break;
+    case 20: objPlayer.masksprite = sprBatMask;       break;
+    case 21: objPlayer.masksprite = sprWalrusMask;    break;
+    case 22: objPlayer.masksprite = sprCrocodileMask; break;
+    case 23: objPlayer.masksprite = sprLocustMask;    break;
+    case 24: objPlayer.masksprite = sprCobraMask;     break;
+    case 25: objPlayer.masksprite = sprRatMask;       break;
+    case 26: objPlayer.masksprite = sprCowMask;       break;
+    default: objPlayer.masksprite = sprRoosterMask;   break;
+}
+
 global.usedmask[select]=1
 scrSaveAchievements()
 global.maskindex=select
@@ -409,7 +417,8 @@ objPlayer.maskindex=select
 if file_exists(working_directory+"\mask.nfo") file_delete(working_directory+"\mask.nfo")
 file=file_text_open_write(working_directory+"\mask.nfo")
 file_text_write_string(file,string(select))
-file_text_close(file)</string>
+file_text_close(file)
+</string>
           </argument>
         </arguments>
       </action>

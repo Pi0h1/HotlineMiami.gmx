@@ -29,7 +29,10 @@
 isUpdated = true;
 lastTrack = (working_directory+"\Static.mp3");
 
+isRussellAvailable = false;
+
 global.maskon = 0;
+scrPatchDepth_Reset();
 </string>
           </argument>
         </arguments>

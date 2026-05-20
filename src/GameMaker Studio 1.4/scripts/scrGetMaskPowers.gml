@@ -17,3 +17,4 @@ if global.maskindex=17 {with objWeapon {if object_index=objWeapon image_index=ch
 
 //Richter
 if global.maskindex=25 {sprite_index=sprPWalkSilencedUzi ammo=30} 
+

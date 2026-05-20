@@ -1,2 +1,0 @@
-scrMaskDrop_DrawPatch();
-

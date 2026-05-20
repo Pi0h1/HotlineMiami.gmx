@@ -51,20 +51,20 @@ my_id.friction=0.15
 }
 if bullets>1 or round(random(1)) or energie<0 {
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(((100+bullets*20))+200*global.factor)+"pts"
-global.myscore+=((100+bullets*20))+200*global.factor
+my_id.text="+"+string(((100+bullets*20))+200*scrGetFactor())+"pts"
+global.myscore+=((100+bullets*20))+200*scrGetFactor()
 global.killscore+=(100+bullets*20)
-global.boldscore+=200*global.factor
+global.boldscore+=200*scrGetFactor()
 global.combo+=1
 global.combotime=240
 global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
-if global.bonustime<12+global.factor*4 global.bonustime=12+global.factor*4
-if global.factor=2 ds_list_add(global.bonuslist,"Exposure")
-if global.factor=3 ds_list_add(global.bonuslist,"Double Exposure")
-if global.factor=4 ds_list_add(global.bonuslist,"Triple Exposure")
-if global.factor>4 ds_list_add(global.bonuslist,"Severe Exposure")
+if global.bonustime<12+scrGetFactor()*4 global.bonustime=12+scrGetFactor()*4
+if scrGetFactor()=2 ds_list_add(global.bonuslist,"Exposure")
+if scrGetFactor()=3 ds_list_add(global.bonuslist,"Double Exposure")
+if scrGetFactor()=4 ds_list_add(global.bonuslist,"Triple Exposure")
+if scrGetFactor()>4 ds_list_add(global.bonuslist,"Severe Exposure")
 my_id=instance_create(x,y,objDeadBody)
 my_id.sprite_index=sprDogDeadShot
 SteamIncStat("Dogs",1)

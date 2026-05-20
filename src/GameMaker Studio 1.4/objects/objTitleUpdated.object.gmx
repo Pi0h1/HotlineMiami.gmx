@@ -125,7 +125,7 @@ repeat (10) {
 }
 
 
-global.surfaces = 1;
+global.surfaces = 0;
 global.blood = 1;
 if file_exists(working_directory+"\blood") {global.blood = 0;}
 if file_exists(working_directory+"\surfaces") {global.surfaces = 0;}

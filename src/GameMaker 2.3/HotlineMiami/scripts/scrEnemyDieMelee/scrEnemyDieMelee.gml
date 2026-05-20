@@ -45,10 +45,10 @@ function scrEnemyDieMelee() {
 	my_id.image_angle=my_id.direction
 	if sprite_index=sprEWalkUnarmed or sprite_index=sprEGiveUp or sprite_index=sprPoliceWalkUnarmed noweapon=1 else noweapon=0
 	my_id=instance_create(x,y-12,objScore)
-	my_id.text="+"+string(300+500*global.factor+global.my_id.hits*1000)+"pts"
-	global.myscore+=(300+500*global.factor)+global.my_id.hits*1000
+	my_id.text="+"+string(300+500*scrGetFactor()+global.my_id.hits*1000)+"pts"
+	global.myscore+=(300+500*scrGetFactor())+global.my_id.hits*1000
 	global.killscore+=300
-	global.boldscore+=(500*global.factor)+global.my_id.hits*1000
+	global.boldscore+=(500*scrGetFactor())+global.my_id.hits*1000
 	if global.my_id.hits>1 {
 	my_id=instance_create(x,y+24,objScore)
 	my_id.text=string(global.my_id.hits)+"x"

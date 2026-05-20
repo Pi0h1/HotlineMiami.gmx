@@ -1,4 +1,4 @@
-if sprite_index=sprPoliceWalkUnarmed nothing=0 else global.factor+=sign(alert)
+scrGetFactor();
 scrMoveSolidOn()
 if sprite_index=sprPoliceWalkUnarmed scrPoliceGetWeapon()
 if !place_free(x+hspeed*3,y+vspeed*3) {
@@ -19,7 +19,7 @@ scrPoliceRandomStep()
 
 
 
-if sprite_index=sprPoliceWalkUnarmed nothing=0 else global.factor+=sign(alert)
+if sprite_index=sprPoliceWalkUnarmed nothing=0 else scrGetFactor()+=sign(alert)
 scrMoveSolidOn()
 if path_index>0 {
 image_speed=0.1

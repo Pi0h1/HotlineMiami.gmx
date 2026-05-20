@@ -1,2 +1,0 @@
-exit
-fade=1

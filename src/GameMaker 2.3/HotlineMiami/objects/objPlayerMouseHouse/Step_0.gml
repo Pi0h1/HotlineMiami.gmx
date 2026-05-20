@@ -419,11 +419,11 @@ if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,o
 mask_index=sprMask
 my_id=instance_create(x,y-12,objScore)
 if sprite_index=sprEWalkUnarmed {
-my_id.text="+"+string((100)*global.factor)+"pts" 
-global.myscore+=(100)*global.factor
+my_id.text="+"+string((100)*scrGetFactor())+"pts" 
+global.myscore+=(100)*scrGetFactor()
 } else {
-my_id.text="+"+string((400)*global.factor)+"pts"
-global.myscore+=(400)*global.factor
+my_id.text="+"+string((400)*scrGetFactor())+"pts"
+global.myscore+=(400)*scrGetFactor()
 }
 edir=point_direction(objPlayer.lastx,objPlayer.lasty,x,y)
 repeat (8) {
@@ -555,8 +555,8 @@ if noweapon=0 {
 global.test=0
 with objEnemy if alert=1 global.test+=1
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((300+200*global.test)*global.factor)+"pts"
-global.myscore+=(300+200*global.test)*global.factor
+my_id.text="+"+string((300+200*global.test)*scrGetFactor())+"pts"
+global.myscore+=(300+200*global.test)*scrGetFactor()
 my_id=instance_create(x,y,objWeaponThrow)
 my_id.direction=direction-70+random(40)
 my_id.image_index=scrCurrentWeaponExt(sprite_index)

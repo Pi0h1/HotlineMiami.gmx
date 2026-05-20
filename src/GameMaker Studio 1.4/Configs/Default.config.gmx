@@ -460,80 +460,14 @@
     <option_textureGroup0_parent>&lt;none&gt;</option_textureGroup0_parent>
     <option_textureGroup0_scaled>0</option_textureGroup0_scaled>
     <option_textureGroup0_targets>9223372036854775807</option_textureGroup0_targets>
-    <option_textureGroup10_border>2</option_textureGroup10_border>
-    <option_textureGroup10_nocropping>0</option_textureGroup10_nocropping>
-    <option_textureGroup10_parent>&lt;none&gt;</option_textureGroup10_parent>
-    <option_textureGroup10_scaled>0</option_textureGroup10_scaled>
-    <option_textureGroup10_targets>9223372036854775807</option_textureGroup10_targets>
-    <option_textureGroup11_border>2</option_textureGroup11_border>
-    <option_textureGroup11_nocropping>0</option_textureGroup11_nocropping>
-    <option_textureGroup11_parent>&lt;none&gt;</option_textureGroup11_parent>
-    <option_textureGroup11_scaled>0</option_textureGroup11_scaled>
-    <option_textureGroup11_targets>9223372036854775807</option_textureGroup11_targets>
-    <option_textureGroup12_border>2</option_textureGroup12_border>
-    <option_textureGroup12_nocropping>0</option_textureGroup12_nocropping>
-    <option_textureGroup12_parent>&lt;none&gt;</option_textureGroup12_parent>
-    <option_textureGroup12_scaled>0</option_textureGroup12_scaled>
-    <option_textureGroup12_targets>9223372036854775807</option_textureGroup12_targets>
     <option_textureGroup1_border>2</option_textureGroup1_border>
     <option_textureGroup1_nocropping>0</option_textureGroup1_nocropping>
     <option_textureGroup1_parent>&lt;none&gt;</option_textureGroup1_parent>
     <option_textureGroup1_scaled>0</option_textureGroup1_scaled>
     <option_textureGroup1_targets>9223372036854775807</option_textureGroup1_targets>
-    <option_textureGroup2_border>2</option_textureGroup2_border>
-    <option_textureGroup2_nocropping>0</option_textureGroup2_nocropping>
-    <option_textureGroup2_parent>&lt;none&gt;</option_textureGroup2_parent>
-    <option_textureGroup2_scaled>0</option_textureGroup2_scaled>
-    <option_textureGroup2_targets>9223372036854775807</option_textureGroup2_targets>
-    <option_textureGroup3_border>2</option_textureGroup3_border>
-    <option_textureGroup3_nocropping>0</option_textureGroup3_nocropping>
-    <option_textureGroup3_parent>&lt;none&gt;</option_textureGroup3_parent>
-    <option_textureGroup3_scaled>0</option_textureGroup3_scaled>
-    <option_textureGroup3_targets>9223372036854775807</option_textureGroup3_targets>
-    <option_textureGroup4_border>2</option_textureGroup4_border>
-    <option_textureGroup4_nocropping>0</option_textureGroup4_nocropping>
-    <option_textureGroup4_parent>&lt;none&gt;</option_textureGroup4_parent>
-    <option_textureGroup4_scaled>0</option_textureGroup4_scaled>
-    <option_textureGroup4_targets>9223372036854775807</option_textureGroup4_targets>
-    <option_textureGroup5_border>2</option_textureGroup5_border>
-    <option_textureGroup5_nocropping>0</option_textureGroup5_nocropping>
-    <option_textureGroup5_parent>&lt;none&gt;</option_textureGroup5_parent>
-    <option_textureGroup5_scaled>0</option_textureGroup5_scaled>
-    <option_textureGroup5_targets>9223372036854775807</option_textureGroup5_targets>
-    <option_textureGroup6_border>2</option_textureGroup6_border>
-    <option_textureGroup6_nocropping>0</option_textureGroup6_nocropping>
-    <option_textureGroup6_parent>&lt;none&gt;</option_textureGroup6_parent>
-    <option_textureGroup6_scaled>0</option_textureGroup6_scaled>
-    <option_textureGroup6_targets>9223372036854775807</option_textureGroup6_targets>
-    <option_textureGroup7_border>2</option_textureGroup7_border>
-    <option_textureGroup7_nocropping>0</option_textureGroup7_nocropping>
-    <option_textureGroup7_parent>&lt;none&gt;</option_textureGroup7_parent>
-    <option_textureGroup7_scaled>0</option_textureGroup7_scaled>
-    <option_textureGroup7_targets>9223372036854775807</option_textureGroup7_targets>
-    <option_textureGroup8_border>2</option_textureGroup8_border>
-    <option_textureGroup8_nocropping>0</option_textureGroup8_nocropping>
-    <option_textureGroup8_parent>&lt;none&gt;</option_textureGroup8_parent>
-    <option_textureGroup8_scaled>0</option_textureGroup8_scaled>
-    <option_textureGroup8_targets>9223372036854775807</option_textureGroup8_targets>
-    <option_textureGroup9_border>2</option_textureGroup9_border>
-    <option_textureGroup9_nocropping>0</option_textureGroup9_nocropping>
-    <option_textureGroup9_parent>&lt;none&gt;</option_textureGroup9_parent>
-    <option_textureGroup9_scaled>0</option_textureGroup9_scaled>
-    <option_textureGroup9_targets>9223372036854775807</option_textureGroup9_targets>
-    <option_textureGroup_count>13</option_textureGroup_count>
+    <option_textureGroup_count>2</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>CocaineCowboy</option_textureGroups1>
-    <option_textureGroups10>Enemy_Dog</option_textureGroups10>
-    <option_textureGroups11>Backgrounds</option_textureGroups11>
-    <option_textureGroups12>User_Interface</option_textureGroups12>
-    <option_textureGroups2>Player_Jacket</option_textureGroups2>
-    <option_textureGroups3>Player_Biker</option_textureGroups3>
-    <option_textureGroups4>Player_PigButcher</option_textureGroups4>
-    <option_textureGroups5>Enemy_Mafia</option_textureGroups5>
-    <option_textureGroups6>Enemy_Police</option_textureGroups6>
-    <option_textureGroups7>Enemy_Swat</option_textureGroups7>
-    <option_textureGroups8>Enemy_Employee</option_textureGroups8>
-    <option_textureGroups9>Enemy_Waiters</option_textureGroups9>
     <option_tizen_app_id>http://yourdomain/HotlineMiamiStudio</option_tizen_app_id>
     <option_tizen_build_version>0</option_tizen_build_version>
     <option_tizen_display_name>HotlineMiamiStudio</option_tizen_display_name>

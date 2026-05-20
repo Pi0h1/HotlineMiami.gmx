@@ -1145,7 +1145,7 @@ my_id.messages=5
 }
 }
 
-if room=rmPhoneHomUpstairs {
+if (room == rmPhoneHomUpstairs || room == rmBoss2){
 if argument0=0 {
 my_id.sprite=sprBiker
 my_id.index=0

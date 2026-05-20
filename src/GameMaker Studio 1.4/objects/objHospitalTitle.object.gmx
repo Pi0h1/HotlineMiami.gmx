@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrLevelTitlePatch();
-global.level=rmHospitalCutscene
+            <string>global.level=rmHospitalCutscene
 scrFreeSurfaces()
 if global.resetstory=1 {
 scrResetStory()
@@ -67,6 +66,8 @@ hint[9]="TIP: YOU'RE ALL ALONE NOW"
 hint[10]="TIP: NO MORE PAIN"
 
 myhint=floor(random(11))
+
+scrPatchLevelTitle_Create();
 </string>
           </argument>
         </arguments>

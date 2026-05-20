@@ -25,17 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox = 1 
-    {
+            <string>if global.xbox = 1 {
     scrInitXboxButtons()
-    }
+}
 
-if room = rmTutorial 
-    {
+if room = rmTutorial {
     global.maskindex=3
     global.maskon=1
     global.done=1
-    }
+}
 
 global.pigkill = 0
 image_speed = 0
@@ -1132,7 +1130,8 @@ viewx=objPlayer.x+(display_mouse_get_x()-display_get_width()*0.5)*(view_wview[0]
 viewy=objPlayer.y+(display_mouse_get_y()-display_get_height()*0.5)*(view_hview[0]/display_get_height())-view_hview[0]/2
 view_xview[0]=viewx
 view_yview[0]=viewy*/
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

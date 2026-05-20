@@ -1,7 +1,7 @@
 scrMoveSolidOn()
 
 if reload>0 reload-=1
-if sprite_index=sprPoliceWalkUnarmed nothing=0 else global.factor+=sign(alert)
+scrGetFactor();
 if path_index>0 {
 if image_speed<0.2 image_speed=0.2
 if alert=0 and path_position=1 path_end()
@@ -37,7 +37,7 @@ scrMoveSolidOff()
 scrMoveSolidOn()
 
 if reload>0 reload-=1
-if sprite_index=sprPoliceWalkUnarmed nothing=0 else global.factor+=sign(alert)
+if sprite_index=sprPoliceWalkUnarmed nothing=0 else scrGetFactor()+=sign(alert)
 if path_index>0 {
 if image_speed<0.2 image_speed=0.2
 if path_position=1 path_end()

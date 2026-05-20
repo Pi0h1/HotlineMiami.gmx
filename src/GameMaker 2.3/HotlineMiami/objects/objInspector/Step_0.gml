@@ -38,8 +38,8 @@ if global.enemy=id global.enemy=-1234
 }
 
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(((500+hits*20)+150)*global.factor)+"pts"
-global.myscore+=((500+hits*20)+150)*global.factor
+my_id.text="+"+string(((500+hits*20)+150)*scrGetFactor())+"pts"
+global.myscore+=((500+hits*20)+150)*scrGetFactor()
 global.killscore+=(500+hits*20)
 global.boldscore+=150
 global.combo+=1
@@ -48,11 +48,11 @@ global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
 global.gunkill+=1
-if global.bonustime<12+global.factor*4 global.bonustime=12+global.factor*4
-if global.factor=2 ds_list_add(global.bonuslist,"Exposure")
-if global.factor=3 ds_list_add(global.bonuslist,"Double Exposure")
-if global.factor=4 ds_list_add(global.bonuslist,"Triple Exposure")
-if global.factor>4 ds_list_add(global.bonuslist,"Severe Exposure")
+if global.bonustime<12+scrGetFactor()*4 global.bonustime=12+scrGetFactor()*4
+if scrGetFactor()=2 ds_list_add(global.bonuslist,"Exposure")
+if scrGetFactor()=3 ds_list_add(global.bonuslist,"Double Exposure")
+if scrGetFactor()=4 ds_list_add(global.bonuslist,"Triple Exposure")
+if scrGetFactor()>4 ds_list_add(global.bonuslist,"Severe Exposure")
 scrMoveSolidOff()
 exit
 }

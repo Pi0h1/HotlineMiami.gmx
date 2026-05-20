@@ -47,10 +47,10 @@ my_id.friction=0.15
 }
 if bullets>1 or round(random(1)) or energie<0 {
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(((100+bullets*20))+200*global.factor)+"pts"
-global.myscore+=((100+bullets*20))+200*global.factor
+my_id.text="+"+string(((100+bullets*20))+200*scrGetFactor())+"pts"
+global.myscore+=((100+bullets*20))+200*scrGetFactor()
 global.killscore+=(100+bullets*20)
-global.boldscore+=200*global.factor
+global.boldscore+=200*scrGetFactor()
 global.combo+=1
 global.combotime=240
 global.killx[global.kills]=x

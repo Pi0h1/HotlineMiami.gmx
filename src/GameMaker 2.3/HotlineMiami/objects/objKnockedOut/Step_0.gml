@@ -16,9 +16,9 @@ my_id.speed=2+random(1)
 my_id.friction=0.1
 }
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((100)+100*global.factor)+"pts" 
-global.myscore+=(100)+100*global.factor
-global.boldscore=100*global.factor
+my_id.text="+"+string((100)+100*scrGetFactor())+"pts" 
+global.myscore+=(100)+100*scrGetFactor()
+global.boldscore=100*scrGetFactor()
 global.killscore+=100
 global.combo+=1
 global.combotime=240
@@ -53,9 +53,9 @@ my_id.speed=2+random(1)
 my_id.friction=0.1
 }
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((100)+100*global.factor)+"pts" 
-global.myscore+=(100)+100*global.factor
-global.boldscore=100*global.factor
+my_id.text="+"+string((100)+100*scrGetFactor())+"pts" 
+global.myscore+=(100)+100*scrGetFactor()
+global.boldscore=100*scrGetFactor()
 global.killscore+=100
 global.combo+=1
 global.combotime=240

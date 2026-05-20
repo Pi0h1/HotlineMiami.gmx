@@ -1,6 +1,4 @@
-
-global.factor+=sign(alert)
-
+scrGetFactor();
 if path_index>0 {
 if image_speed<0.3 image_speed=0.3
 if path_position=1 {path_end() gotowall=1}

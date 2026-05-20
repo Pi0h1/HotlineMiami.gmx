@@ -12,7 +12,7 @@ if place_meeting(x,y,global.my_id) {
 scrKnifeThrowHits()
 ds_list_add(global.bonuslist,"Projectile Kill")
 global.combotime=240
-if global.bonustime<12+global.factor*4 global.bonustime=12+global.factor*4
+if global.bonustime<12+scrGetFactor()*4 global.bonustime=12+scrGetFactor()*4
 }
 }
 }

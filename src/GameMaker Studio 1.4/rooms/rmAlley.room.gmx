@@ -215,6 +215,7 @@ global.package=0</code>
     <instance objName="objWallHeavyV" x="608" y="96" name="inst_1A1251C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="608" y="32" name="inst_855BF7C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEffectorHouse" x="24" y="32" name="inst_7539EEFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSecretMask" x="368" y="304" name="inst_C35CD10E" locked="0" code="if (!objGame.isRussellAvailable) instance_destroy();&#xA;&#xA;depth=-1&#xA;image_index=26&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="-105"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTiles" x="256" y="128" w="16" h="16" xo="48" yo="208" id="10017296" name="tile_10BA6423" depth="1000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -118,7 +118,7 @@ alarm[2]=2; // Ammo Patch
           <argument>
             <kind>1</kind>
             <string>/// Ammo Patch
-scrAmmoPatch();
+scrPatchAmmo_Step();
 </string>
           </argument>
         </arguments>

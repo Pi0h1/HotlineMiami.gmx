@@ -769,6 +769,7 @@
       <sound>sound\sndLadder</sound>
       <sound>sound\sndTinnitusHospital</sound>
     </sounds>
+    <sound>sound\sndThunder</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Hotline Miami">
@@ -1005,6 +1006,7 @@
               <sprite>sprites\sprUnicornMask</sprite>
               <sprite>sprites\sprOctopusMask</sprite>
               <sprite>sprites\sprWolfMask</sprite>
+              <sprite>sprites\sprCowMask</sprite>
               <sprite>sprites\sprWalrusMask</sprite>
               <sprite>sprites\sprPigMask</sprite>
               <sprite>sprites\sprOwlMask</sprite>
@@ -2439,7 +2441,15 @@
         <sprite>sprites\sprMartinDead</sprite>
       </sprites>
     </sprites>
+    <sprites name="Cocaine Cowboy">
+      <sprite>sprites\sprCowboy_WindowRight</sprite>
+      <sprite>sprites\sprCowboy_WindowLeft</sprite>
+      <sprite>sprites\sprCowboy_WindowUp</sprite>
+      <sprite>sprites\sprCowboy_WindowDown</sprite>
+    </sprites>
     <sprite>sprites\sprTitleCocaineCowboy</sprite>
+    <sprite>sprites\sprRainSplash</sprite>
+    <sprite>sprites\sprCloud</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Hotline Miami">
@@ -2889,10 +2899,20 @@
         </scripts>
       </scripts>
       <scripts name="Custom">
-        <script>scripts\scrAmmoPatch.gml</script>
-        <script>scripts\scrExtraAmmoPerk.gml</script>
         <script>scripts\txtReset.gml</script>
-        <script>scripts\scrLevelTitlePatch.gml</script>
+        <script>scripts\scrPatch_RoomStart.gml</script>
+        <script>scripts\scrPatchAmmo_Step.gml</script>
+        <script>scripts\scrPatchAmmo_ExtraPerk.gml</script>
+        <scripts name="Patched Depths">
+          <script>scripts\scrPatchDepth_Reset.gml</script>
+          <script>scripts\scrPatchDepth_Create.gml</script>
+          <script>scripts\scrPatchDepthDebris_Create.gml</script>
+          <script>scripts\scrPatchDepthCorpse_Create.gml</script>
+          <script>scripts\scrPatchDepthGore_Create.gml</script>
+          <script>scripts\scrPatchDepthBlood_Create.gml</script>
+          <script>scripts\scrPatchDepthBombGround_Create.gml</script>
+        </scripts>
+        <script>scripts\scrPatchLevelTitle_Create.gml</script>
       </scripts>
       <scripts name="Obsolete">
         <script>scripts\sleep.gml</script>
@@ -3313,24 +3333,30 @@
       </objects>
       <objects name="Effects">
         <objects name="Gore">
-          <objects name="More Gore">
-            <object>objects\objBulletHit</object>
-            <object>objects\objBloodDrop2</object>
-            <object>objects\objBloodCut</object>
-            <object>objects\objBloodHit</object>
-            <object>objects\objBloodSmoke2</object>
-            <object>objects\objBulleter</object>
+          <objects name="Jones - More Gore Perk">
+            <objects name="Flying">
+              <object>objects\objBulletHit</object>
+              <object>objects\objBloodDrop2</object>
+              <object>objects\objBloodCut</object>
+              <object>objects\objBloodHit</object>
+              <object>objects\objBloodSmoke2</object>
+              <object>objects\objBulleter</object>
+            </objects>
             <object>objects\objBloodSplat2</object>
             <object>objects\objBrains2</object>
             <object>objects\objBrainChunk2</object>
             <object>objects\objGuts2</object>
             <object>objects\objSkinPiece2</object>
           </objects>
-          <object>objects\objBloodSmoke</object>
-          <object>objects\objBloodSplat</object>
-          <object>objects\objBloodDrop</object>
-          <object>objects\objBloodPool</object>
-          <object>objects\objBloodSquirt</object>
+          <objects name="Blood">
+            <objects name="Flying">
+              <object>objects\objBloodSmoke</object>
+              <object>objects\objBloodDrop</object>
+              <object>objects\objBloodSquirt</object>
+            </objects>
+            <object>objects\objBloodSplat</object>
+            <object>objects\objBloodPool</object>
+          </objects>
           <object>objects\objBrains</object>
         </objects>
         <object>objects\objHit</object>
@@ -3974,6 +4000,10 @@
       </objects>
       <object>objects\objGame</object>
     </objects>
+    <object>objects\objRainGenerator</object>
+    <object>objects\objRainSplash</object>
+    <object>objects\objRain</object>
+    <object>objects\objCloud</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Hotline Miami">

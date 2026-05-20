@@ -191,9 +191,9 @@ if object_get_parent(object_index)=objEnemyIdle {
 if room=rmTrainstationEntrance sprite_index=sprEWalkKnife else sprite_index=choose(sprEWalkShotgun,sprEWalkM16)
 }
 if sprite_index=sprEWalkUnarmed or sprite_index=sprPoliceWalkUnarmed {
-my_id.text="+"+string((100)+100*global.factor)+"pts" 
-global.myscore+=(100)+100*global.factor
-global.boldscore=100*global.factor
+my_id.text="+"+string((100)+100*scrGetFactor())+"pts" 
+global.myscore+=(100)+100*scrGetFactor()
+global.boldscore=100*scrGetFactor()
 global.killscore+=100
 global.combo+=1
 global.combotime=240
@@ -201,20 +201,20 @@ global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
 } else {
-my_id.text="+"+string((200)+200*global.factor)+"pts"
-global.myscore+=(200)+200*global.factor
+my_id.text="+"+string((200)+200*scrGetFactor())+"pts"
+global.myscore+=(200)+200*scrGetFactor()
 global.killscore+=200
-global.boldscore+=200*global.factor
+global.boldscore+=200*scrGetFactor()
 global.combo+=1
 global.combotime=240
 global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
-if global.bonustime<12+global.factor*4 global.bonustime=12+global.factor*4
-if global.factor=2 ds_list_add(global.bonuslist,"Exposure")
-if global.factor=3 ds_list_add(global.bonuslist,"Double Exposure")
-if global.factor=4 ds_list_add(global.bonuslist,"Triple Exposure")
-if global.factor>4 ds_list_add(global.bonuslist,"Severe Exposure")
+if global.bonustime<12+scrGetFactor()*4 global.bonustime=12+scrGetFactor()*4
+if scrGetFactor()=2 ds_list_add(global.bonuslist,"Exposure")
+if scrGetFactor()=3 ds_list_add(global.bonuslist,"Double Exposure")
+if scrGetFactor()=4 ds_list_add(global.bonuslist,"Triple Exposure")
+if scrGetFactor()>4 ds_list_add(global.bonuslist,"Severe Exposure")
 }
 edir=point_direction(objPlayer.lastx,objPlayer.lasty,x,y)
 repeat (8) {
@@ -426,9 +426,9 @@ if noweapon=0 {
 global.test=0
 with objEnemy if alert=1 global.test+=1
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(200+400*global.factor)+"pts"
-global.myscore+=200+400*global.factor
-global.boldscore+=200+400*global.factor
+my_id.text="+"+string(200+400*scrGetFactor())+"pts"
+global.myscore+=200+400*scrGetFactor()
+global.boldscore+=200+400*scrGetFactor()
 global.combotime+=100
 global.killx[global.kills]=x
 global.killy[global.kills]=y

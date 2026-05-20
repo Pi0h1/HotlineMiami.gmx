@@ -49,17 +49,17 @@ function scrKnifeThrowHits() {
 	if sprite_index=sprEWalkUnarmed or sprite_index=sprEGiveUp noweapon=1 else noweapon=0
 	my_id=instance_create(x,y-12,objScore)
 	if noweapon=0 {
-	my_id.text="+"+string((800)*global.factor)+"pts"
-	global.myscore+=(800)*global.factor
+	my_id.text="+"+string((800)*scrGetFactor())+"pts"
+	global.myscore+=(800)*scrGetFactor()
 	my_id=instance_create(x,y,objWeaponThrow)
 	my_id.direction=other.direction-70+random(40)
 	my_id.speed=2+random(2)
 	my_id.image_index=scrCurrentWeaponExt(sprite_index)
 	my_id.ammo=ammo
 	} else {
-	my_id.text="+"+string((300)*global.factor)+"pts"
-	global.myscore+=(300)*global.factor
-	global.boldscore+=300*global.factor
+	my_id.text="+"+string((300)*scrGetFactor())+"pts"
+	global.myscore+=(300)*scrGetFactor()
+	global.boldscore+=300*scrGetFactor()
 	}
 	instance_destroy()
 	audio_play_sound(choose(sndCut1,sndCut2),0,false)

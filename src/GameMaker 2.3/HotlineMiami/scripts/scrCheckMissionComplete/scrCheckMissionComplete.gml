@@ -25,8 +25,8 @@ function scrCheckMissionComplete() {
 	isBulletFree			= (instance_number(objEBullet) <= 0);
 	isWinCondition			= (isPlayerExists && isBulletFree && (global.done <= 0) && isAllEnemiesDead);
 	// Special conditions
-	isDumpsterFull			= (objDumpster.on);
-	isFatmanDead			= (objFatmanShit.sprite_index == sprFatmanShitDie || objFatmanShit.sprite_index == sprFatmanShitDecapitated);
+	isDumpsterFull			= (instance_exists(objDumpster) && objDumpster.on);
+	isFatmanDead			= (instance_exists(objFatmanShit) && (objFatmanShit.sprite_index == sprFatmanShitDie || objFatmanShit.sprite_index == sprFatmanShitDecapitated));
 	isFloorsCleared			= (global.done1 + global.done2 + global.done3 + global.done4);
 	isPickedUpCaseFile		= (instance_number(objFiles) <=0);
 	

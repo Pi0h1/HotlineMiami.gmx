@@ -1,3 +1,0 @@
-/*  These scripts are intended to fix issues present
-    in the original game that remain officially
-    unresolved. */

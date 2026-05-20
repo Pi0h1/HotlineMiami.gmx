@@ -14,8 +14,8 @@ audio_play_sound(sndPunch,0,false)
 myx=x+lengthdir_x(20,image_angle)
 myy=y+lengthdir_y(24,image_angle)
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((200)+400*(global.factor-1))+"pts"
-global.myscore+=(200)+400*(global.factor-1)
+my_id.text="+"+string((200)+400*(scrGetFactor()-1))+"pts"
+global.myscore+=(200)+400*(scrGetFactor()-1)
 my_id=instance_create(myx,myy,objBloodPool)
 my_id=instance_create(x,y,objDeadBody)
 my_id.sprite_index=sprBodyguardBashed

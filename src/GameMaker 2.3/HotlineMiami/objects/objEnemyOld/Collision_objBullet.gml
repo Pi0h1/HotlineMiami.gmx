@@ -72,8 +72,8 @@ scrIdleGetEnemy()
 global.punchonly=0
 if noweapon=1 factor=0.5 else factor=1
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(((100+bullets*20)+80*factor)*global.factor)+"pts"
-global.myscore+=((100+bullets*20)+80*factor)*global.factor
+my_id.text="+"+string(((100+bullets*20)+80*factor)*scrGetFactor())+"pts"
+global.myscore+=((100+bullets*20)+80*factor)*scrGetFactor()
 global.killscore+=(100+bullets*20)
 global.boldscore+=80*factor
 global.combo+=1

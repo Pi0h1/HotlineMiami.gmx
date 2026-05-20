@@ -60,6 +60,7 @@ name[22]="Jones"
 name[23]="Carl"
 name[24]="Jake"
 name[25]="Richter"
+name[26]="Russell"
 global.currentmask=0
 if global.sequence=rmSequence1 global.currentmask=1
 if global.sequence=rmSequence2 global.currentmask=2
@@ -105,7 +106,8 @@ surface_set_target(global.surf1)
 draw_clear_alpha(c_black,0)
 surface_reset_target()
 alarm[0]=100
-shine=0</string>
+shine=0
+</string>
           </argument>
         </arguments>
       </action>
@@ -257,7 +259,7 @@ if maskamount&gt;0 maskamount-=5 else global.masks[global.currentmask]=1
 }
 
 
-d3d_set_projection_ortho(0,0,399,255,lengthdir_x(3,dir*12))
+d3d_set_projection_ortho(0,0,room_width,room_height,lengthdir_x(3,dir*12))
 color1=c_black
 color2=c_black
 color3=c_black
@@ -271,7 +273,7 @@ scale=2+lengthdir_x(0.5,maskamount)+lengthdir_x(0.05+lengthdir_x(0.025,maskamoun
 draw_sprite_general(sprMasksBig,global.currentmask,0,0,120,120,room_width/2-55*scale+2,room_height/2-65*scale+2-add3,scale,scale,0,c_black,c_black,c_black,c_black,0.5)
 draw_sprite_general(sprMasksBig,global.currentmask,0,0,120,120,room_width/2-55*scale,room_height/2-65*scale-add3,scale,scale,0,color1,color2,color3,color4,1)
 
-d3d_set_projection_ortho(0,0,399,255,0)
+d3d_set_projection_ortho(0,0,room_width,room_height,0)
 if surface_exists(global.surf1) {
 draw_surface_ext(global.surf1,-1,0,1,1,0,c_black,1)
 draw_surface_ext(global.surf1,1,0,1,1,0,c_black,1)

@@ -1536,6 +1536,7 @@
     {"id":{"name":"scrGetAttack","path":"scripts/scrGetAttack/scrGetAttack.yy",},},
     {"id":{"name":"scrGetCurrentLevel","path":"scripts/scrGetCurrentLevel/scrGetCurrentLevel.yy",},},
     {"id":{"name":"scrGetCurrentLevel2","path":"scripts/scrGetCurrentLevel2/scrGetCurrentLevel2.yy",},},
+    {"id":{"name":"scrGetFactor","path":"scripts/scrGetFactor/scrGetFactor.yy",},},
     {"id":{"name":"scrGetGlowSprite","path":"scripts/scrGetGlowSprite/scrGetGlowSprite.yy",},},
     {"id":{"name":"scrGetKill","path":"scripts/scrGetKill/scrGetKill.yy",},},
     {"id":{"name":"scrGetLetterSprite","path":"scripts/scrGetLetterSprite/scrGetLetterSprite.yy",},},

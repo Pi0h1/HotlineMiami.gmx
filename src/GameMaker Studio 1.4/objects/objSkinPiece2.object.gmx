@@ -29,7 +29,10 @@
 image_speed=0
 diradd=choose(-1,1)
 image_index=random(100)
-wait=60+random(40)</string>
+wait=60+random(40)
+
+scrPatchDepth_Create();
+</string>
           </argument>
         </arguments>
       </action>

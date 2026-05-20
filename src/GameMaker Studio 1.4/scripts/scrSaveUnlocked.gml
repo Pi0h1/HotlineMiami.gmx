@@ -3,7 +3,7 @@ file_delete(working_directory+"\saves.dat")
 file=file_text_open_write(working_directory+"\saves.dat")
 i=0
 test=""
-repeat (26) {
+repeat (sprite_get_number(sprMasksBig)+1) {
 test+=string(global.masks[i])
 i+=1
 }

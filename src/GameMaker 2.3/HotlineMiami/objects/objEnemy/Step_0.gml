@@ -2,7 +2,7 @@ if x<0 hspeed=abs(hspeed)
 if x>room_width hspeed=-abs(hspeed)
 if y<0 vspeed=abs(vspeed)
 if y>room_height vspeed=-abs(vspeed)
-if sprite_index=sprEWalkUnarmed nothing=0 else global.factor+=sign(alert)
+scrGetFactor();
 scrMoveSolidOn()
 if sprite_index=sprEWalkUnarmed scrGoGetWeapon()
 if !place_free(x+hspeed*3,y+vspeed*3) {
@@ -28,7 +28,7 @@ if x<0 hspeed=abs(hspeed)
 if x>room_width hspeed=-abs(hspeed)
 if y<0 vspeed=abs(vspeed)
 if y>room_height vspeed=-abs(vspeed)
-if sprite_index=sprEWalkUnarmed nothing=0 else global.factor+=sign(alert)
+if sprite_index=sprEWalkUnarmed nothing=0 else scrGetFactor()+=sign(alert)
 if room=rmTutorial exit
 scrMoveSolidOn()
 if path_index>0 {

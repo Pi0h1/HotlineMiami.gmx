@@ -1,1 +1,0 @@
-life=random(30)

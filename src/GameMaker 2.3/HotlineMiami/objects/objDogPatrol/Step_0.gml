@@ -1,5 +1,4 @@
-
-global.factor+=sign(alert)
+scrGetFactor();
 scrMoveSolidOn()
 if path_index>=0 {
 if image_speed<0.3 image_speed=0.3

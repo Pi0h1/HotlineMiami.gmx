@@ -15,10 +15,10 @@ my_id.reload=30
 with my_id move_outside_solid(global.angle,16)
 instance_destroy()
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((600)+500*(global.factor))+"pts"
-global.myscore+=(600)+500*(global.factor)
+my_id.text="+"+string((600)+500*(scrGetFactor()))+"pts"
+global.myscore+=(600)+500*(scrGetFactor())
 global.killscore+=600
-global.boldscore+=500*global.factor
+global.boldscore+=500*scrGetFactor()
 global.combotime=240
 global.combo+=1
 global.killx[global.kills]=x

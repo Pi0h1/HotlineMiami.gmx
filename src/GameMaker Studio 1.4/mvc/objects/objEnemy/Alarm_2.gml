@@ -1,3 +1,0 @@
-/// @description  Ammo Patch
-scrAmmoPatch();
-

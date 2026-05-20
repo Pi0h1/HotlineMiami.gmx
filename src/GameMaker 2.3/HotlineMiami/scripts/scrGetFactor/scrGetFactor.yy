@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrGetFactor",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrGetFactor",
+  "parent":{
+    "name":"HotlineMiami",
+    "path":"HotlineMiami.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

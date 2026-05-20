@@ -390,7 +390,7 @@ if (intro == 0) {
         case 19:    scrLoadLevel("RESOLUTION",  "NINETEENTH CHAPTER",   "InnerAnimal.mp3",  rmJanitors,              rmMCSequence4);            break;
         case 20:    scrLoadLevel("HIGHBALL",    "BONUS CHAPTER",        "Perturbator.mp3",  rmHighballer,            rmChapter);                break;
         case 21:    scrLoadLevel("EXPOSED",     "SPECIAL CHAPTER",      "ToTheTop.mp3",     rmEurogamer,             rmChapter);                break;
-        case 22:    scrLoadLevel("COWBOY",      "COCAINE",              "\CocaineCowboy_Music\Lady.mp3",         rmTestLevel1,            rmChapter);                break;
+        case 22:    scrLoadLevel("COWBOY",      "COCAINE",              "\CocaineCowboy_Music\Lady.mp3",             rmTestLevel1,rmChapter);   break;
         default:    scrLoadLevel("ERROR",       "INVALID CHAPTER",      "Crystals.mp3",     rmApartment1Entrance,    rmSequence2);              break;
     }
 } else {

@@ -80,8 +80,8 @@ scrIdleGetEnemy()
 if other.swat=0 global.punchonly=0
 if noweapon=1 factor=0.5 else factor=1
 if other.swat=0 {my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(((100+bullets*20)+80*factor)*global.factor)+"pts"
-global.myscore+=((100+bullets*20)+80*factor)*global.factor
+my_id.text="+"+string(((100+bullets*20)+80*factor)*scrGetFactor())+"pts"
+global.myscore+=((100+bullets*20)+80*factor)*scrGetFactor()
 global.killscore+=(100+bullets*20)
 global.boldscore+=80*factor
 global.combo+=1
@@ -90,11 +90,11 @@ global.killx[global.kills]=x
 global.killy[global.kills]=y
 global.kills+=1
 global.gunkill+=1
-if global.bonustime<12+global.factor*4 global.bonustime=12+global.factor*4
-if global.factor=2 ds_list_add(global.bonuslist,"Exposure")
-if global.factor=3 ds_list_add(global.bonuslist,"Double Exposure")
-if global.factor=4 ds_list_add(global.bonuslist,"Triple Exposure")
-if global.factor>4 ds_list_add(global.bonuslist,"Severe Exposure")}
+if global.bonustime<12+scrGetFactor()*4 global.bonustime=12+scrGetFactor()*4
+if scrGetFactor()=2 ds_list_add(global.bonuslist,"Exposure")
+if scrGetFactor()=3 ds_list_add(global.bonuslist,"Double Exposure")
+if scrGetFactor()=4 ds_list_add(global.bonuslist,"Triple Exposure")
+if scrGetFactor()>4 ds_list_add(global.bonuslist,"Severe Exposure")}
 
 my_id=instance_create(x,y,objDeadBody)
 if bullets>1 my_id.sprite_index=choose(sprEBackShotgun,sprEBackShotgun,sprEFrontShotgun) else my_id.sprite_index=choose(sprEBackMachinegun,sprEBackMachinegun,sprEFrontMachinegun)

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>image_speed = 0;
 masksprite = sprRoosterMask;
-switch (select) {
+switch (global.maskindex) {
     case  1: masksprite = sprOwlMask;       break;
     case  2: masksprite = sprTigerMask;     break;
     case  3: masksprite = sprPigMask;       break;

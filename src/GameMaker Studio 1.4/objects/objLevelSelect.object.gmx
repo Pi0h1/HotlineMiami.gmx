@@ -408,7 +408,7 @@ if (intro == 0) {
         case 10:    scrLoadLevel("HOT&amp;HEAVY",   "TENTH CHAPTER",        "DeepCover.mp3",     rmSequence11,           rmSequence11);             break;
         case 11:    scrLoadLevel("DEADLINE",    "ELEVENTH CHAPTER",     "DeepCover.mp3",     rmSequence12,           rmSequence12);             break;
         case 12:    scrLoadLevel("TRAUMA",      "TWELFTH CHAPTER",      "TurfIntro.mp3",     rmSequence12bDownstairs,rmSequence12bDownstairs);  break;
-        case 13:    scrLoadLevel("ASSAULT",     "THIRTEENTH CHAPTER",   "TurfIntro.mp3",     rmSequence13,           rmSequence13);             break;
+        case 13:    scrLoadLevel("ASSAULT",     "THIRTEENTH CHAPTER",   "TurfIntro.mp3",     rmSequence13Downstairs, rmSequence13);             break;
         case 14:    scrLoadLevel("VENGEANCE",   "FOURTEENTH CHAPTER",   "DeepCover.mp3",     rmSequence14,           rmSequence14);             break;
         case 15:    scrLoadLevel("SHOWDOWN",    "FINAL CHAPTER",        "ToTheTop.mp3",      rmMansionEntrance,      rmChapter);                break;
         case 16:    scrLoadLevel("SAFEHOUSE",   "SIXTEENTH CHAPTER",    "ItsSafeNow.mp3",    rmRewind,               rmMCBar);                  break;

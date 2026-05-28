@@ -2934,6 +2934,7 @@
       <script>scripts\scrCocaineCowboy_Patch.gml</script>
       <script>scripts\scrCocaineCowboy_FurniturePatch.gml</script>
       <script>scripts\scrMaskDrop_DrawPatch.gml</script>
+      <script>scripts\scrDrawConversation.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

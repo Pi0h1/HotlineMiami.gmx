@@ -305,7 +305,7 @@ phonecolor2=merge_color(c_maroon,c_navy,0.5+lengthdir_x(0.25,dir*2))
 
 draw_triangle_color(view_wview[0]-phonex,0,view_wview[0],0,view_wview[0],view_hview[0],phonecolor1,phonecolor1,phonecolor2,0)
 draw_triangle_color(view_wview[0]-phonex,0,view_wview[0]-phonex+70,view_hview[0],view_wview[0],view_hview[0],phonecolor1,phonecolor2,phonecolor2,0)
-draw_sprite_ext(sprPhoneLine,0,view_wview[0]-phonex,0,1,2,15,c_white,1)
+scrDrawConversation();
 draw_set_color(c_black)
 draw_rectangle(0,0,view_wview[0],blackx,0)
 draw_rectangle(0,view_hview[0],view_wview[0],view_hview[0]-blackx*1.5,0)
@@ -339,7 +339,7 @@ phonecolor2=merge_color(c_maroon,c_navy,0.5+lengthdir_x(0.25,dir*2))
 }
 draw_triangle_color(view_wview[0]-phonex,0,view_wview[0],0,view_wview[0],view_hview[0],phonecolor1,phonecolor1,phonecolor2,0)
 draw_triangle_color(view_wview[0]-phonex,0,view_wview[0]-phonex+70,view_hview[0],view_wview[0],view_hview[0],phonecolor1,phonecolor2,phonecolor2,0)
-draw_sprite_ext(sprPhoneLine,0,view_wview[0]-phonex,0,1,2,15,c_white,1)
+scrDrawConversation();
 }
 draw_set_color(c_black)
 draw_rectangle(0,0,view_wview[0],blackx,0)

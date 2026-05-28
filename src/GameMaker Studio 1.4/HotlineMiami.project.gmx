@@ -2912,6 +2912,7 @@
           <script>scripts\scrPatchDepthBombGround_Create.gml</script>
         </scripts>
         <script>scripts\scrPatchLevelTitle_Create.gml</script>
+        <script>scripts\scrXboxLevelSelect.gml</script>
       </scripts>
       <scripts name="Obsolete">
         <script>scripts\sleep.gml</script>

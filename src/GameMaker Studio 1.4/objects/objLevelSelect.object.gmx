@@ -25,18 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>totalLevelCount = 21;
-mapdir=0
-addx=0
-intro=0
-newsong=1
-global.levels[20]=1
-global.levels[21]=1
-global.levels[22]=1
-if global.xbox=1 {
-scrInitXboxButtons()
+            <string>mapdir  = 0;
+addx    = 0;
+intro   = 0;
+newsong = 1;
+
+global.levels[20] = 1;
+global.levels[21] = 1;
+global.levels[22] = 1;
+
+if (global.xbox == 1) {
+    scrInitXboxButtons();
 }
-wait=0
+wait = 0;
 scrFreeSurfaces();
 
 a = 0;
@@ -114,52 +115,72 @@ chapter[a++]="BONUS CHAPTER";
 chapter[a++]="SPECIAL CHAPTER";
 chapter[a++]="BETA CHAPTERS";
 
-if global.levels[15]=1 {levels=totalLevelCount} else levels=15
-select=0
-repeats=16
-myrepeats=1
-x=room_width/2
-y=room_height*0.53
+totalLevelCount_Jacket = 15;
+totalLevelCount = a-1;
 
-/*i=0
-repeat (12) {
-global.levels[i]=1
-i+=1
-}*/
-/*i=0
-repeat (20) {
-global.levels[i]=1
-i+=1
-}*/
-
-i=0
-repeat (20) {
-if global.levels[i]=0 {if select=0 and global.levels[1]=1 select=i-1 title[i]="LOCKED"}
-i+=1
+if (global.levels[totalLevelCount_Jacket] == 1) {
+    levels = totalLevelCount // Reveal the real amount of levels once Jacket's campaign is complete. 
+} else {
+    levels = totalLevelCount_Jacket;
 }
 
-restart=0
-dir=90
+select      = 0;
+repeats     = 16;
+myrepeats   = 1;
 
-fade=0
-c_amount=0
-/*repeat (5) instance_create(random(room_width),0,objHouse)
+x = (room_width/2);
+y = (room_height*0.53);
 
-i=0
-repeat (5) {
-palmx[i]=(room_width/4)*i
-palmindex[i]=floor(random(6))
-i+=1
-}*/
+i = 0;
+repeat (20) {
+    if (global.levels[i] == 0) {
+        if (select == 0 &amp;&amp; global.levels[1] == 1) {
+            select = i-1;
+            title[i] = "LOCKED";
+        }
+    } i += 1;
+}
 
-global.i=0
+restart = 0;
+dir = 90;
+
+fade = 0;
+c_amount = 0;
+
+global.i = 0;
 repeat (10) {
-my_id=instance_create(x,y,objPalmTree)
-with my_id {repeat (global.i*45) amount*=1.01}
-global.i+=1
+    my_id = instance_create(x, y, objPalmTree);
+    with (my_id) {
+        repeat(global.i * 45) {
+            amount *= 1.01;
+        }
+    }
+    global.i+=1
 }
-alarm[0]=45
-state=0
+
+alarm[0] = 45;
+state = 0;
+
+x_text       = 0;                                       // Initializes var. The value is affected in step event.
+y_text       = 96 + 8;
+
+x_textGrade  = 0;                                       // This value will be affected by x_text.
+y_textGrade  = y_text + 15;
+
+x_rankGrade  = 46;                                      // This value will be affected by x_text.
+y_rankGrade  = y_textGrade - 8-4;
+
+x_mask       = (sprite_get_width(sprMaskDropFront)/2) - 2;    // This value will be affected by x_text.
+y_mask       = y_textGrade + 17;
+
+x_puzzle     = x_mask + 11;                             // This value will be affected by x_text.
+y_puzzle     = y_mask;
+
+x_textIntro  = 0;                                       // This value will be affected by x_text.
+y_textIntro  = y_text + 44;
+y_textIntroOption  = y_text + 44 + 10;
+
+
 </string>
           </argument>
         </arguments>
@@ -205,151 +226,110 @@ alarm[0]=45</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xbox=1 {
-
-if checkbutton(0,getid(5)) {
-if presstart=0 {
-presstart=1
-scrXboxLevelSelectStart()
-}
-} else presstart=0
-
-if checkbutton(0,getid(6)) {
-if pressback=0 {
-pressback=1
-scrXboxLevelSelectBack()
-} 
-} else pressback=0
-
-if leftthumb_x(0)&gt;15000 {
-if pressright=0 {
-pressright=1
-scrXboxLevelSelectRight()
-}
-} else pressright=0
-
-if leftthumb_x(0)&lt;-15000 {
-if pressleft=0 {
-pressleft=1
-scrXboxLevelSelectLeft()
-}
-} else pressleft=0
-
-if leftthumb_y(0)&gt;5000 {
-if pressup=0 {
-pressup=1
-scrXboxLevelSelectUp()
-}
-} else pressup=0
-
-if leftthumb_y(0)&lt;-5000 {
-if pressdown=0 {
-pressdown=1
-scrXboxLevelSelectDown()
-}
-} else pressdown=0
-
-}
-
-if wait&gt;0 wait-=1
-if keyboard_check_pressed(ord(global.upkey)) event_perform(ev_keypress,ord('W'))
-if keyboard_check_pressed(ord(global.downkey)) event_perform(ev_keypress,ord('S'))
-if keyboard_check_pressed(ord(global.leftkey)) event_perform(ev_keypress,ord('A'))
-if keyboard_check_pressed(ord(global.rightkey)) event_perform(ev_keypress,ord('D'))
-
-
-
+            <string>scrXboxLevelSelect(); if (wait &gt; 0) {wait -= 1;}
+if keyboard_check_pressed(ord(global.upkey))    {event_perform(ev_keypress,ord('W'));}
+if keyboard_check_pressed(ord(global.downkey))  {event_perform(ev_keypress,ord('S'));}
+if keyboard_check_pressed(ord(global.leftkey))  {event_perform(ev_keypress,ord('A'));}
+if keyboard_check_pressed(ord(global.rightkey)) {event_perform(ev_keypress,ord('D'));}
 
 if !surface_exists(global.surf1) {
-global.surf1=surface_create(view_wview[0],view_hview[0])
-surface_set_target(global.surf1)
-draw_clear_alpha(c_black,0)
-surface_reset_target()
+    global.surf1 = surface_create(view_wview[0],view_hview[0]);
+    surface_set_target(global.surf1);
+    draw_clear_alpha(c_black,0);
+    surface_reset_target();
 }
-surface_set_target(global.surf1)
-draw_clear_alpha(c_black,0)
-i=0
-if myrepeats&lt;repeats myrepeats+=0.25
-if myrepeats&gt;repeats myrepeats-=0.25
-dist=point_distance(x,y,mouse_x,mouse_y)*0.01
-if dist&gt;1 dist=1
-if state=1 {if addx&gt;-96 addx-=8} else {if addx&lt;0 addx+=8}
+surface_set_target(global.surf1);
+draw_clear_alpha(c_black,0);
+i=0;
+if (myrepeats&lt;repeats) {myrepeats+=0.25;}
+if (myrepeats&gt;repeats) {myrepeats-=0.25;}
+dist = point_distance(x,y,mouse_x,mouse_y)*0.01;
+if (dist &gt; 1) {dist = 1;}
+if (state == 1) {if (addx&gt;-96) {addx-=8}} else {if (addx&lt;0) {addx+=8}}
 repeat (myrepeats) {
-if title[select]="LOCKED" color=merge_color(c_dkgray,c_black,i*(1/sprite_get_number(sprite_index))) else color=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.12)),c_white,i*(1/sprite_get_number(sprite_index)))
-draw_sprite_ext(sprite_index,i,x+addx*0.75,y-i*0.6,1+i*0.01,1+i*0.01,mapdir,color,1) 
-i+=1
+    if title[select]="LOCKED" color=merge_color(c_dkgray,c_black,i*(1/sprite_get_number(sprite_index))) else color=merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.12)),c_white,i*(1/sprite_get_number(sprite_index)))
+    draw_sprite_ext(sprite_index,i,x+addx*0.75,y-i*0.6,1+i*0.01,1+i*0.01,mapdir,color,1) 
+    i+=1
 }
-mapdir+=0.5
+mapdir += 0.5;
 
-if addx&lt;0 {
-if global.highscore[select]&gt;0 {
-draw_set_font(fntDate)
-draw_set_halign(fa_center)
-draw_set_valign(fa_top)
-draw_set_color(c_yellow)
-draw_text(400+180+addx*3.3,92,"HIGHSCORE:")
-draw_set_color(c_white)
-draw_text(400+180+addx*3.3+string_width("HIGHSCORE: ")*0.5+string_width(string(global.highscore[select]))*0.5,92,string(global.highscore[select]))
-draw_set_font(fntDate)
-draw_set_color(c_lime)
-draw_text(400+180+addx*3.3,106,"GRADE:    ")
-draw_set_font(fntGradeSmall)
-draw_set_color(c_red)
-draw_text(400+202+addx*3.3,93,scrNumberToGrade(global.grade[select]))
-} else {
-draw_set_font(fntDate)
-draw_set_halign(fa_center)
-draw_set_valign(fa_top)
-draw_set_color(c_yellow)
-draw_text(400+180+addx*3.3,92,"HIGHSCORE:")
-draw_set_color(c_white)
-draw_text(400+180+addx*3.3+string_width("HIGHSCORE: ")*0.5+string_width("-")*0.5,92,"-")
-draw_set_font(fntDate)
-draw_set_color(c_lime)
-draw_text(400+180+addx*3.3,106,"GRADE:    ")
-draw_set_font(fntGradeSmall)
-draw_set_color(c_red)
-draw_text(400+202+addx*3.3,93,"-")
-}
+x_text      = 245 + (96*3.3) + (addx * 3.3);
+//x_textGrade = 291 + (96*3.3) + (addx * 3.3);
 
-draw_set_font(fntDate)
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
-draw_set_color(c_yellow)
-draw_text(400+180+addx*3.3-string_width("GRADE:    ")*0.5,140,"START WITH INTRO:")
-if intro=1 draw_set_color(c_white) else draw_set_color(c_gray)
-draw_text(400+180+addx*3.3-string_width("GRADE:    ")*0.5,150,"YES")
-draw_set_color(c_gray)
-draw_text(400+180+addx*3.3-string_width("GRADE:    ")*0.5+string_width("YES"),150,"/")
-if intro=0 draw_set_color(c_white) else draw_set_color(c_gray)
-draw_text(400+180+addx*3.3-string_width("GRADE:    ")*0.5+string_width("YES/"),150,"NO")
-
+if (addx &lt; 0) {
+    if (global.highscore[select] &gt; 0) {
+        draw_set_font(fntDate);
+        draw_set_halign(fa_left);
+        draw_set_valign(fa_top);
+        draw_set_color(c_yellow);
+        draw_text(x_text,y_text,"HIGHSCORE:");
+        draw_set_color(c_white);
+        draw_text(x_text+string_width("HIGHSCORE: "),y_text,string(global.highscore[select]));
+        draw_set_font(fntDate);
+        draw_set_color(c_lime);
+        draw_text(x_text+x_textGrade,y_textGrade,"GRADE:    ");
+        draw_set_font(fntGradeSmall);
+        draw_set_color(c_red);
+        draw_text(x_text+x_textGrade+x_rankGrade,y_rankGrade,scrNumberToGrade(global.grade[select]));
+    } else {
+        draw_set_font(fntDate);
+        draw_set_halign(fa_left);
+        draw_set_valign(fa_top);
+        draw_set_color(c_yellow);
+        draw_text(x_text,y_text,"HIGHSCORE:");
+        draw_set_color(c_white);
+        draw_text(x_text+string_width("HIGHSCORE: "),y_text,"-");
+        draw_set_font(fntDate);
+        draw_set_color(c_lime);
+        draw_text(x_text+x_textGrade,y_textGrade,"GRADE:    ");
+        draw_set_font(fntGradeSmall);
+        draw_set_color(c_red);
+        draw_text(x_text+x_text+x_rankGrade,y_rankGrade,"-");
 }
 
-draw_set_font(fntMenu)
-draw_set_halign(fa_center)
-draw_set_valign(fa_center)
-texts=7+lengthdir_x(15,dir*15)
-if texts&lt;1 texts=1 
-if texts&gt;22 texts=22
-i=0
-repeat (texts) {
-draw_set_color(merge_color(merge_color(c_lime,c_yellow,0.5+lengthdir_x(0.5,dir*3.232)),c_white,i*(1/22)))
-draw_text_transformed(room_width/2,room_height*0.28-i*0.5,chapter[select],1+i*0.01,1+i*0.01,0)
-i+=1
+    draw_set_font(fntDate);
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+    draw_set_color(c_yellow);
+    draw_text(x_text,y_textIntro,"START WITH INTRO:");
+    
+    if intro == 1 draw_set_color(c_white) else {draw_set_color(c_gray)};
+    draw_text(x_text,y_textIntroOption,"YES");
+    draw_set_color(c_gray);
+    draw_text(x_text+string_width("YES"),y_textIntroOption,"/");
+    
+    if intro == 0 {draw_set_color(c_white)} else {draw_set_color(c_gray)};
+    draw_text(x_text+string_width("YES/"),y_textIntroOption,"NO");
+
 }
 
-texts=7+lengthdir_x(15,dir*15-180)
-if texts&lt;1 texts=1 
-if texts&gt;22 texts=22
-i=0
-repeat (texts) {
-draw_set_color(merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.232)),c_white,i*(1/22)))
-draw_text_transformed(room_width/2,room_height-room_height*0.28+i*0.5,title[select],1+i*0.01,1+i*0.01,0)
-i+=1
+draw_set_font(fntMenu);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
+
+texts = 7 + lengthdir_x(15, dir * 15);
+if (texts &lt; 1) {texts = 1;}
+if (texts &gt; 22) {texts = 22;}
+i = 0;
+repeat(texts) {
+    draw_set_color(merge_color(merge_color(c_lime,c_yellow,0.5+lengthdir_x(0.5,dir*3.232)),c_white,i*(1/22)));
+    draw_text_transformed(room_width/2,room_height*0.28-i*0.5,chapter[select],1+i*0.01,1+i*0.01,0);
+    i += 1;
 }
-surface_alpha()
-surface_reset_target()</string>
+
+texts = 7 + lengthdir_x(15, dir * 15 - 180);
+if (texts &lt; 1) {texts = 1;}
+if (texts &gt; 22) {texts = 22;}
+i = 0;
+repeat(texts) {
+    draw_set_color(merge_color(merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.232)),c_white,i*(1/22)));
+    draw_text_transformed(room_width/2,room_height-room_height*0.28+i*0.5,title[select],1+i*0.01,1+i*0.01,0);
+    i += 1;
+}
+
+surface_alpha();
+surface_reset_target();
+</string>
           </argument>
         </arguments>
       </action>
@@ -452,87 +432,144 @@ if intro=1 {mylevel=global.level if select = 15 mylevel = rmChapter;}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*draw_surface_ext(surf,1,0,1,1,0,c_black,1)
-draw_surface_ext(surf,-1,0,1,1,0,c_black,1)
-draw_surface_ext(surf,0,1,1,1,0,c_black,1)
-draw_surface_ext(surf,0,-1,1,1,0,c_black,1)
+            <string>dir += 0.25;
+color2 = merge_color(c_black, merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.12)),0.5+lengthdir_x(0.25,dir*1.13));
+color1 = merge_color(c_black, merge_color(merge_color(c_lime,c_yellow,0.5+lengthdir_x(0.5,dir*3.12)),c_maroon,0.125+lengthdir_y(0.125,dir*1.73)),0.35+lengthdir_y(0.25,dir*1.73));
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+draw_rectangle_color(view_xview[0], view_yview[0] + 44, view_xview[0] + view_wview[0], view_yview[0] + view_hview[0] - 43, color1, color1, color2, color2, 0);
 
-
-draw_surface_ext(surf,0,0,1,1,0,c_white,1)*/
-
-
-dir+=0.25
-color2=merge_color(c_black,merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3.12)),0.5+lengthdir_x(0.25,dir*1.13))
-color1=merge_color(c_black,merge_color(merge_color(c_lime,c_yellow,0.5+lengthdir_x(0.5,dir*3.12)),c_maroon,0.125+lengthdir_y(0.125,dir*1.73)),0.35+lengthdir_y(0.25,dir*1.73))
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_rectangle_color(view_xview[0],view_yview[0]+44,view_xview[0]+view_wview[0],view_yview[0]+view_hview[0]-43,color1,color1,color2,color2,0)
-/*draw_set_blend_mode(bm_max)
-global.color=merge_color(merge_color(color1,color2,0.5+lengthdir_x(0.5,dir*5.17)),c_white,0.25+lengthdir_x(0.25,dir))
-with objHouse draw_sprite_general(sprite_index,image_index,0,0,128,255,x-64,y,image_xscale,image_yscale,image_angle,global.color,global.color,c_black,c_black,image_alpha)
-i=0
-repeat (5) {
-draw_sprite_general(sprPalmTrees,palmindex[i],0,0,82,255,palmx[i]-41,65,1,1,0,global.color,global.color,c_black,c_black,1)
-palmx[i]-=2
-if palmx[i]&lt;=-60 {palmx[i]=room_width+60 palmindex[i]=floor(random(6))}
-i+=1
-}*/
-
-global.color3=merge_color(merge_color(merge_color(c_blue,c_red,0.5+lengthdir_x(0.5,dir*3.12)),c_yellow,0.125+lengthdir_y(0.125,dir*1.73)),merge_color(c_white,c_fuchsia,0.5+lengthdir_x(0.3,dir)),0.5+lengthdir_x(0.5,dir*2.33))
-draw_set_blend_mode(bm_add)
-with objPalmTree {
-draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2+amount,room_height*0.5-(250*(amount/240)),amount/240,(amount/120),0,global.color3,global.color3,c_black,c_black,1)
-draw_sprite_general(sprPalmTrees,image_index,0,0,82,256,room_width/2-amount-(amount/240)*82,room_height*0.5-(250*(amount/240)),-amount/240,amount/120,0,global.color3,global.color3,c_black,c_black,1)
+global.color3 = merge_color(merge_color(merge_color(c_blue,c_red,0.5+lengthdir_x(0.5,dir*3.12)),c_yellow,0.125+lengthdir_y(0.125,dir*1.73)),merge_color(c_white,c_fuchsia,0.5+lengthdir_x(0.3,dir)),0.5+lengthdir_x(0.5,dir*2.33));
+draw_set_blend_mode(bm_add);
+with (objPalmTree) {
+    draw_sprite_general(sprPalmTrees,
+                        image_index,
+                        0,
+                        0,
+                        82,
+                        256,
+                        (room_width/2 + amount),
+                        (room_height * 0.5 - (250 * (amount/240))),
+                        (amount / 240),
+                        (amount / 120),
+                        0,
+                        global.color3,
+                        global.color3,
+                        c_black,
+                        c_black,
+                        1
+                        );
+    
+    draw_sprite_general(sprPalmTrees,
+                        image_index,
+                        0,
+                        0,
+                        82,
+                        256,
+                        (room_width/2 - amount - (amount/240) * 82),
+                        room_height*0.5-(250*(amount / 240)),
+                        (-amount/240),
+                        (amount / 120),
+                        0,
+                        global.color3,
+                        global.color3,
+                        c_black,
+                        c_black,
+                        1
+                        );
 }
 
-draw_set_blend_mode(bm_normal)
+draw_set_blend_mode(bm_normal);
 
-draw_set_blend_mode(bm_normal)
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],view_angle[0])
-if surface_exists(global.surf1) {
-draw_surface_ext(global.surf1,0,-1,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,-1,0,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,0,1,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,1,0,1,1,0,c_black,1)
-draw_surface_ext(global.surf1,0,0,1,1,0,merge_color(c_white,merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3)),0.25+lengthdir_x(0.25,dir)),1)
-}
-currentmask=scrLevelGetMask(select)
-if currentmask&gt;=0 {
-if global.masks[currentmask]=0 color=c_black else color=c_white
-draw_sprite_ext(sprMaskDropFront,currentmask,400+156+addx*3.3,125,1,1,-90,color,1)
-} else draw_sprite_ext(sprNoMask,0,400+156+addx*3.3,125,1,1,0,c_white,1)
-if select&lt;=15 {
-if global.letter[scrLevelGetPuzzle(select)]=1 draw_sprite_ext(sprToken,0,400+156+addx*3.3+11,125,1,1,0,c_white,1) else draw_sprite_ext(sprToken,0,400+156+addx*3.3+11,125,1,1,0,c_black,1)
-}
-//view_angle[0]=lengthdir_y(3,dir*3.33)
-if fade=0 {
-if c_amount&lt;180 {
-c_amount+=10
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color1,color2,color2,color1,0)
-draw_set_blend_mode(bm_normal)
-}
+d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],view_angle[0]);
+
+if (surface_exists(global.surf1)) {
+    draw_surface_ext(global.surf1, 0,-1, 1, 1, 0, c_black ,1);
+    draw_surface_ext(global.surf1,-1, 0, 1, 1, 0, c_black, 1);
+    draw_surface_ext(global.surf1, 0, 1, 1, 1, 0, c_black, 1);
+    draw_surface_ext(global.surf1, 1, 0, 1, 1, 0, c_black, 1);
+    draw_surface_ext(global.surf1, 0, 0, 1, 1, 0, merge_color(c_white,merge_color(c_aqua,c_fuchsia,0.5+lengthdir_x(0.5,dir*3)), 0.25+lengthdir_x(0.25,dir)), 1);
 }
 
-if fade=1 {
-if c_amount&gt;0  {
-c_amount-=5
-if restart=0 sxeasy_setVolume(c_amount*(1/180))
-color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
-if c_amount&gt;90 color2=merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount))) else color2=c_white
-draw_set_blend_mode(bm_subtract)
-draw_rectangle_color(view_xview[0]-10,view_yview[0]-10,view_xview[0]+view_wview[0]+10,view_yview[0]+view_hview[0]+10,color2,color1,color1,color2,0)
-draw_set_blend_mode(bm_normal)
-} else {if restart=0 {sxeasy_stop() sxeasy_setVolume(1) if newsong=1 sxeasy_play(song) if global.level=rmHospitalTitle room_goto(rmHospitalTitle) else  {if intro=1 room_goto(mylevel) else {if select&lt;=15 or select&gt;=20 room_goto(rmChapter) else room_goto(rmMCChapter)}}} else room=rmMenu}
+currentmask = scrLevelGetMask(select);
+if (currentmask &gt;= 0) {
+    if (global.masks[currentmask] == 0) {
+        color = c_black;
+    } else {
+        color = c_white;
+    }
+    draw_sprite_ext(sprMaskDropFront, currentmask, x_text + x_mask, y_mask, 1, 1, -90, color, 1);
+} else {
+    draw_sprite_ext(sprNoMask, 0, x_text + x_mask, y_mask, 1, 1, 0, c_white, 1);
 }
 
+if (select &lt;= 15) {
+    if (global.letter[scrLevelGetPuzzle(select)] == 1) {
+        draw_sprite_ext(sprToken, 0, x_text + x_puzzle, y_puzzle, 1, 1, 0, c_white, 1);
+    } else {
+        draw_sprite_ext(sprToken, 0, x_text + x_puzzle, y_puzzle, 1, 1, 0, c_black, 1);
+    }
+}
 
+if (fade == 0) {
+    if (c_amount&lt;180) {
+        c_amount += 10;
+        color1=merge_color(c_black,merge_color(c_aqua,c_white,0.5+lengthdir_x(0.5,c_amount)),0.5+lengthdir_x(0.5,c_amount))
+        if (c_amount &gt; 90) {
+            color2 = merge_color(c_black,merge_color(c_fuchsia,c_white,abs(lengthdir_y(1,c_amount))),abs(lengthdir_y(1,c_amount)))
+        } else {
+            color2 = c_white;
+        }
+        draw_set_blend_mode(bm_subtract);
+        draw_rectangle_color(view_xview[0]-10, view_yview[0]-10, view_xview[0] + view_wview[0]+10, view_yview[0] + view_hview[0] + 10, color1, color2, color2, color1, 0);
+        draw_set_blend_mode(bm_normal);
+    }
+}
 
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_set_color(c_black)
-draw_rectangle(0,0,room_width,44,0)
-draw_rectangle(0,room_height,room_width,room_height-44,0)
+if (fade == 1) {
+    if (c_amount &gt; 0) {
+        c_amount -= 5;
+        if (restart == 0) {
+            sxeasy_setVolume(c_amount*(1/180));
+        }
+        color1 = merge_color(c_black, merge_color(c_aqua, c_white, 0.5 + lengthdir_x(0.5, c_amount)), 0.5 + lengthdir_x(0.5, c_amount));
+        if (c_amount&gt;90) {
+            color2 = merge_color(c_black, merge_color(c_fuchsia, c_white, abs(lengthdir_y(1, c_amount))), abs(lengthdir_y(1, c_amount)));
+        } else {
+            color2 = c_white;
+        }
+        draw_set_blend_mode(bm_subtract);
+        draw_rectangle_color(view_xview[0] - 10, view_yview[0] - 10, view_xview[0] + view_wview[0] + 10, view_yview[0] + view_hview[0] + 10, color2, color1, color1, color2, 0);
+        draw_set_blend_mode(bm_normal);
+    } else {
+        if (restart == 0) {
+            sxeasy_stop();
+            sxeasy_setVolume(1);
+            if (newsong == 1) {
+                sxeasy_play(song);
+            }
+            if global.level = rmHospitalTitle {
+                room_goto(rmHospitalTitle);
+            } else {
+                if (intro == 1) {
+                    room_goto(mylevel)
+                } else {
+                    if (select&lt;=15 || select&gt;=20) {
+                        room_goto(rmChapter)
+                    } else {
+                        room_goto(rmMCChapter)
+                    }
+                }
+            }
+        } else {
+            room = rmMenu;
+        }
+    }
+}
+
+d3d_set_projection_ortho(0, 0, view_wview[0], view_hview[0], 0);
+draw_set_color(c_black);
+draw_rectangle(0, 0, room_width, 44, 0);
+draw_rectangle(0, room_height, room_width, room_height-44, 0);
 
 drawVignette();
 </string>

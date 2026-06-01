@@ -2910,7 +2910,9 @@
           <script>scripts\scrPatchDepthGore_Create.gml</script>
           <script>scripts\scrPatchDepthBlood_Create.gml</script>
           <script>scripts\scrPatchDepthBombGround_Create.gml</script>
+          <script>scripts\scrPatchDepth_objRailH.gml</script>
         </scripts>
+        <script>scripts\scrViewAngle_Update.gml</script>
         <script>scripts\scrPatchLevelTitle_Create.gml</script>
         <script>scripts\scrXboxLevelSelect.gml</script>
       </scripts>

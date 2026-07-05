@@ -3,8 +3,8 @@
   <caption></caption>
   <width>800</width>
   <height>640</height>
-  <vsnap>16</vsnap>
-  <hsnap>16</hsnap>
+  <vsnap>8</vsnap>
+  <hsnap>8</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -43,7 +43,7 @@ with objDoorV sprite_index=sprHospitalDoorH</code>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="450" hview="270" xport="0" yport="0" wport="1366" hport="768" hborder="160" vborder="120" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="480" hview="270" xport="0" yport="0" wport="1920" hport="1080" hborder="160" vborder="120" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -53,9 +53,9 @@ with objDoorV sprite_index=sprHospitalDoorH</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objBackgroundColorClear" x="10" y="216" name="inst_5F8BE2AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBackgroundColorClear" x="0" y="64" name="inst_5F8BE2AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalElevator" x="736" y="304" name="inst_9D11780A" locked="0" code="movex=0&#xA;movey=0&#xA;image_angle=90" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSurfacer" x="16" y="240" name="inst_B8347EC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSurfacer" x="0" y="96" name="inst_B8347EC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSink" x="474" y="506" name="inst_6003D71B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSink" x="474" y="526" name="inst_170BF31D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSink" x="474" y="548" name="inst_8EDEB6E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -99,9 +99,9 @@ with objDoorV sprite_index=sprHospitalDoorH</code>
     <instance objName="objHospitalSofaH" x="62" y="242" name="inst_7D26DB30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalSofaH" x="104" y="242" name="inst_BC477DAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalSofaH" x="146" y="242" name="inst_6F015958" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objHospitalSofaH" x="62" y="374" name="inst_B7B21C77" locked="0" code="image_yscale=-1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objHospitalSofaH" x="104" y="374" name="inst_E90054B5" locked="0" code="image_yscale=-1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objHospitalSofaH" x="146" y="374" name="inst_8E60ED31" locked="0" code="image_yscale=-1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objHospitalSofaH" x="62" y="374" name="inst_B7B21C77" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
+    <instance objName="objHospitalSofaH" x="104" y="374" name="inst_E90054B5" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
+    <instance objName="objHospitalSofaH" x="146" y="374" name="inst_8E60ED31" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalLocker" x="268" y="208" name="inst_0D1F5085" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalLocker" x="268" y="224" name="inst_78CC1C03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalLocker" x="268" y="240" name="inst_E4E5A1DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -128,7 +128,7 @@ with objDoorV sprite_index=sprHospitalDoorH</code>
     <instance objName="objGlassPanelV" x="160" y="160" name="inst_EA3D8C63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorV" x="448" y="64" name="inst_AEE32730" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHandicapToilet" x="620" y="144" name="inst_94E38DC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objExamTable" x="96" y="152" name="inst_E8A920E1" locked="0" code="image_angle=270" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objExamTable" x="96" y="152" name="inst_E8A920E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objExamTable" x="640" y="84" name="inst_84DFFFB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objExamTable" x="152" y="528" name="inst_0E6BCB60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objExamTable" x="452" y="268" name="inst_9F2AD53C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -139,7 +139,7 @@ with objDoorV sprite_index=sprHospitalDoorH</code>
     <instance objName="objShirts" x="364" y="216" name="inst_2E63B00F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalReception" x="232" y="308" name="inst_39131510" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalStaffSofa" x="536" y="556" name="inst_A138649F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objHospitalStaffSofa" x="536" y="508" name="inst_3AA7F49A" locked="0" code="image_yscale=-1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objHospitalStaffSofa" x="536" y="508" name="inst_3AA7F49A" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalStaffTable" x="536" y="528" name="inst_45E9D7B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalStaffMicro" x="686" y="408" name="inst_9E0D2357" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStoreFridge" x="658" y="404" name="inst_1363802C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -155,10 +155,10 @@ with objDoorV sprite_index=sprHospitalDoorH</code>
     <instance objName="objVendingMachine" x="368" y="108" name="inst_187540AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalPlant" x="244" y="206" name="inst_EA06638C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHospitalPlant" x="244" y="412" name="inst_96C68D0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objHospitalPlant" x="524" y="410" name="inst_7A9D3D43" locked="0" code="image_angle=180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objHospitalPlant" x="524" y="208" name="inst_A7F4A97D" locked="0" code="image_angle=180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objHospitalPlant" x="524" y="292" name="inst_C677693B" locked="0" code="image_angle=180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objHospitalPlant" x="524" y="332" name="inst_B7DE3043" locked="0" code="image_angle=180" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objHospitalPlant" x="524" y="410" name="inst_7A9D3D43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="objHospitalPlant" x="524" y="208" name="inst_A7F4A97D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="objHospitalPlant" x="524" y="292" name="inst_C677693B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="objHospitalPlant" x="524" y="332" name="inst_B7DE3043" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="objHospitalEntranceDoors" x="32" y="272" name="inst_18C4867D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="704" y="32" name="inst_D8B5E6AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyV" x="704" y="64" name="inst_B94959E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -315,8 +315,8 @@ with objDoorV sprite_index=sprHospitalDoorH</code>
     <instance objName="objWallHospitalV" x="32" y="352" name="inst_D01BC326" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHospitalV" x="32" y="240" name="inst_DCEC7945" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHospitalV" x="32" y="336" name="inst_35F7E1C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objEffectorHospital" x="222" y="332" name="inst_52C489C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDizzy" x="238" y="348" name="inst_F97D667D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objEffectorHospital" x="8" y="8" name="inst_52C489C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDizzy" x="0" y="32" name="inst_F97D667D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTiles" x="384" y="192" w="16" h="16" xo="272" yo="208" id="10067015" name="tile_C7BAA976" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

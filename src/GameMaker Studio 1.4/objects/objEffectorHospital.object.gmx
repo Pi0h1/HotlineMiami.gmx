@@ -154,57 +154,7 @@ scrPatch_RoomStart();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if instance_exists(objPlayer) {
-width=display_get_width()
-height=display_get_height()
-if global.xbox=1 {
-if checkbutton(0,getid(9)) {
-global.mousex=objPlayer.x+rightthumb_x(0)*0.009
-global.mousey=objPlayer.y-rightthumb_y(0)*0.006
-} else {
-if objPlayer.object_index=objPlayerMouse or objPlayer.object_index=objPlayerMouseHouse or objPlayer.object_index=objPlayerBiker or objPlayer.object_index=objPlayerBikerHouse or objPlayer.object_index=objPlayerHospital  {
-global.mousex=objPlayer.x+lengthdir_x(64,objPlayer.dir)
-global.mousey=objPlayer.y+lengthdir_y(64,objPlayer.dir)
-} else {global.mousex=objPlayer.x global.mousey=objPlayer.y}
-}
-} else {
-factor=1
-if keyboard_check_direct(vk_shift) factor=1.8
-global.mousex=objPlayer.x+((display_mouse_get_x()-width*0.5)*(view_wview[0]/width))*factor
-global.mousey=objPlayer.y+((display_mouse_get_y()-height*0.5)*(view_hview[0]/height))*factor
-}
-x=global.mousex
-y=global.mousey
-}
-
-if !instance_exists(objPhoneConversation) {
-draw_sprite_ext(sprite_index,image_index,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
-draw_set_blend_mode(bm_add)
-draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_white,1)
-draw_set_blend_mode(bm_normal)
-}
+            <string>
 //if black draw_clear(c_black)
 
 exit
@@ -328,6 +278,57 @@ draw_set_alpha(1)
 }
 
 drawVignette();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if instance_exists(objPlayer) {
+width=display_get_width()
+height=display_get_height()
+if global.xbox=1 {
+if checkbutton(0,getid(9)) {
+global.mousex=objPlayer.x+rightthumb_x(0)*0.009
+global.mousey=objPlayer.y-rightthumb_y(0)*0.006
+} else {
+if objPlayer.object_index=objPlayerMouse or objPlayer.object_index=objPlayerMouseHouse or objPlayer.object_index=objPlayerBiker or objPlayer.object_index=objPlayerBikerHouse or objPlayer.object_index=objPlayerHospital  {
+global.mousex=objPlayer.x+lengthdir_x(64,objPlayer.dir)
+global.mousey=objPlayer.y+lengthdir_y(64,objPlayer.dir)
+} else {global.mousex=objPlayer.x global.mousey=objPlayer.y}
+}
+} else {
+factor=1
+if keyboard_check_direct(vk_shift) factor=1.8
+global.mousex=objPlayer.x+((display_mouse_get_x()-width*0.5)*(view_wview[0]/width))*factor
+global.mousey=objPlayer.y+((display_mouse_get_y()-height*0.5)*(view_hview[0]/height))*factor
+}
+x=global.mousex
+y=global.mousey
+}
+
+if !instance_exists(objPhoneConversation) {
+draw_sprite_ext(sprite_index,image_index,global.mousex+1,global.mousey+1,1,1,-view_angle[0],c_black,0.5)
+draw_set_blend_mode(bm_add)
+draw_sprite_ext(sprite_index,image_index,global.mousex,global.mousey,1,1,-view_angle[0],c_white,1)
+draw_set_blend_mode(bm_normal)
+}
 </string>
           </argument>
         </arguments>

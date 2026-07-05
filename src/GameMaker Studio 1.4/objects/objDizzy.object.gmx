@@ -45,7 +45,11 @@ myy2=0
 h1=0
 h2=155
 dir=random(10000)
-noiseindex=0</string>
+noiseindex=0
+
+gui_w = 480;
+gui_h = 270;
+</string>
           </argument>
         </arguments>
       </action>
@@ -109,7 +113,7 @@ draw_set_color(c_white)
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -126,7 +130,8 @@ draw_set_color(c_white)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>d3d_set_projection_ortho(0,0,view_wport,view_hport,0)
+            <string>display_set_gui_size(gui_w, gui_h);
+//d3d_set_projection_ortho(0,0,view_wport,view_hport,0)
 dir+=1+dizziness*2
 
 h1+=(-10+random(20))*dizziness
@@ -145,8 +150,8 @@ draw_circle_color(view_wport/2,view_hport/2,view_wport*0.75,c_black,make_color_h
 
 draw_set_blend_mode(bm_add)
 noiseindex+=0.25
-d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
-draw_sprite_ext(sprNoise,noiseindex,0,0,1,1,0,merge_color(c_black,c_ltgray,dizziness*0.5),1)
+//d3d_set_projection_ortho(0,0,view_wview[0],view_hview[0],0)
+draw_sprite_tiled_ext(sprNoise,noiseindex,0,0,1,1,merge_color(c_black,c_ltgray,dizziness*0.5),1)
 draw_set_blend_mode(bm_normal)
 with objEffectorHospital {
 if blackx&lt;15 blackx+=1

@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>current=0
+            <string>x = room_width/2
+y = room_height/2
+
+current=0
 
 dir=random(360)
 factor=0
@@ -52,7 +55,8 @@ wait=60
 
 global.levels[scrGetCurrentLevel()]=1
 global.grade[12]=15
-scrSaveUnlocked()</string>
+scrSaveUnlocked()
+</string>
           </argument>
         </arguments>
       </action>

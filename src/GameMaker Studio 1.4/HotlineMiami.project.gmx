@@ -1665,25 +1665,7 @@
         <sprite>sprites\sprVertBarrier</sprite>
       </sprites>
       <sprites name="Environment">
-        <sprites name="Assault">
-          <sprite>sprites\sprBarricade1</sprite>
-          <sprite>sprites\sprBarricade2</sprite>
-          <sprite>sprites\sprPoliceChair</sprite>
-          <sprite>sprites\sprPoliceCouch</sprite>
-          <sprite>sprites\sprPoliceDesk</sprite>
-          <sprite>sprites\sprPoliceDeskChair</sprite>
-          <sprite>sprites\sprPoliceDeskPuter</sprite>
-          <sprite>sprites\sprPoliceEntryDesk2</sprite>
-          <sprite>sprites\sprPoliceFrontDesk</sprite>
-          <sprite>sprites\sprPoliceInterrogationTable</sprite>
-          <sprite>sprites\sprPolicePhone1</sprite>
-          <sprite>sprites\sprPolicePhone2</sprite>
-          <sprite>sprites\sprPolicePhoneTable</sprite>
-          <sprite>sprites\sprPoliceTape</sprite>
-          <sprite>sprites\sprPoliceTapeRipped</sprite>
-          <sprite>sprites\sprBigPoliceTable</sprite>
-        </sprites>
-        <sprites name="Biker's apartment">
+        <sprites name="Apartment - Biker">
           <sprite>sprites\sprMCAquarium</sprite>
           <sprite>sprites\sprMCBed</sprite>
           <sprite>sprites\sprMCCouch</sprite>
@@ -1705,6 +1687,42 @@
           <sprite>sprites\sprPimpPhoneOff</sprite>
           <sprite>sprites\sprPimpSink</sprite>
           <sprite>sprites\sprPimpToilet</sprite>
+        </sprites>
+        <sprites name="Apartment - Jacket">
+          <sprite>sprites\sprDrawersH24Phone</sprite>
+          <sprite>sprites\sprDrawersH24PhoneOff</sprite>
+          <sprite>sprites\sprPlayerBed1</sprite>
+          <sprite>sprites\sprPlayerBed2</sprite>
+          <sprite>sprites\sprPlayerCouch</sprite>
+          <sprite>sprites\sprPlayerForm</sprite>
+          <sprite>sprites\sprPlayerFridge</sprite>
+          <sprite>sprites\sprPlayerKitchenCounter</sprite>
+          <sprite>sprites\sprPlayerKitchenShelf</sprite>
+          <sprite>sprites\sprPlayerKitchenSink</sprite>
+          <sprite>sprites\sprPlayerLivingRoomTable</sprite>
+          <sprite>sprites\sprPlayerStove</sprite>
+          <sprite>sprites\sprPlayerTable</sprite>
+          <sprite>sprites\sprPlayerTub</sprite>
+          <sprite>sprites\sprBox</sprite>
+          <sprite>sprites\sprBoxOpen</sprite>
+        </sprites>
+        <sprites name="Assault">
+          <sprite>sprites\sprBarricade1</sprite>
+          <sprite>sprites\sprBarricade2</sprite>
+          <sprite>sprites\sprPoliceChair</sprite>
+          <sprite>sprites\sprPoliceCouch</sprite>
+          <sprite>sprites\sprPoliceDesk</sprite>
+          <sprite>sprites\sprPoliceDeskChair</sprite>
+          <sprite>sprites\sprPoliceDeskPuter</sprite>
+          <sprite>sprites\sprPoliceEntryDesk2</sprite>
+          <sprite>sprites\sprPoliceFrontDesk</sprite>
+          <sprite>sprites\sprPoliceInterrogationTable</sprite>
+          <sprite>sprites\sprPolicePhone1</sprite>
+          <sprite>sprites\sprPolicePhone2</sprite>
+          <sprite>sprites\sprPolicePhoneTable</sprite>
+          <sprite>sprites\sprPoliceTape</sprite>
+          <sprite>sprites\sprPoliceTapeRipped</sprite>
+          <sprite>sprites\sprBigPoliceTable</sprite>
         </sprites>
         <sprites name="Clean Hit">
           <sprite>sprites\sprHotelChair</sprite>
@@ -1780,24 +1798,6 @@
           <sprite>sprites\sprKaraokeCouchBlack</sprite>
           <sprite>sprites\sprKaraokeCouchPink</sprite>
           <sprite>sprites\sprKaraokeMachine</sprite>
-        </sprites>
-        <sprites name="Jacket's apartment">
-          <sprite>sprites\sprDrawersH24Phone</sprite>
-          <sprite>sprites\sprDrawersH24PhoneOff</sprite>
-          <sprite>sprites\sprPlayerBed1</sprite>
-          <sprite>sprites\sprPlayerBed2</sprite>
-          <sprite>sprites\sprPlayerCouch</sprite>
-          <sprite>sprites\sprPlayerForm</sprite>
-          <sprite>sprites\sprPlayerFridge</sprite>
-          <sprite>sprites\sprPlayerKitchenCounter</sprite>
-          <sprite>sprites\sprPlayerKitchenShelf</sprite>
-          <sprite>sprites\sprPlayerKitchenSink</sprite>
-          <sprite>sprites\sprPlayerLivingRoomTable</sprite>
-          <sprite>sprites\sprPlayerStove</sprite>
-          <sprite>sprites\sprPlayerTable</sprite>
-          <sprite>sprites\sprPlayerTub</sprite>
-          <sprite>sprites\sprBox</sprite>
-          <sprite>sprites\sprBoxOpen</sprite>
         </sprites>
         <sprites name="Neighbors">
           <sprites name="Anders">
@@ -2413,6 +2413,7 @@
         <sprite>sprites\sprSpark2</sprite>
         <sprite>sprites\sprExplosionSmoke</sprite>
         <sprite>sprites\sprLaser</sprite>
+        <sprite>sprites\sprRainSplash</sprite>
       </sprites>
       <sprites name="Unused">
         <sprite>sprites\sprite1001</sprite>
@@ -2446,9 +2447,8 @@
       <sprite>sprites\sprCowboy_WindowLeft</sprite>
       <sprite>sprites\sprCowboy_WindowUp</sprite>
       <sprite>sprites\sprCowboy_WindowDown</sprite>
+      <sprite>sprites\sprTitleCocaineCowboy</sprite>
     </sprites>
-    <sprite>sprites\sprTitleCocaineCowboy</sprite>
-    <sprite>sprites\sprRainSplash</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Hotline Miami">
@@ -3420,7 +3420,6 @@
           <object>objects\objLetterDone</object>
           <object>objects\objLetterFound</object>
         </objects>
-        <object>objects\objScanlines</object>
         <object>objects\sxms</object>
         <object>objects\objVCapture</object>
         <object>objects\objPathTest</object>
@@ -4002,6 +4001,7 @@
         <object>objects\objLeaderboards</object>
       </objects>
       <object>objects\objGame</object>
+      <object>objects\objScanlines</object>
     </objects>
     <objects name="Custom">
       <object>objects\objRain</object>

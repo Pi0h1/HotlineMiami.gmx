@@ -155,8 +155,8 @@ objPlayer.sprite_index=sprPEnding
 with objPlayer {
 if image_index&lt;160 image_index+=0.15
 if image_index&gt;=13 and image_index-0.15&lt;13 audio_play_sound(sndLighter,0,false)
-if image_index&gt;52 and global.smoke=0 {global.smoke=1 my_id=instance_create(x+lengthdir_x(8,dir),y+lengthdir_y(8,dir),objSmokeHit) my_id.depth=-1 my_id.image_angle=dir my_id.image_speed=0.15}
-if image_index&gt;92 and global.smoke=1 {global.smoke=2 my_id=instance_create(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objSmokeHit) my_id.depth=-1 my_id.image_angle=dir my_id.image_speed=0.15}
+if image_index&gt;52 and global.smoke=0 {global.smoke=1 my_id=instance_create(x+lengthdir_x(8,dir),y+lengthdir_y(8,dir),objSmokeHit) my_id.depth=-3 my_id.image_angle=dir my_id.image_speed=0.15}
+if image_index&gt;92 and global.smoke=1 {global.smoke=2 my_id=instance_create(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objSmokeHit) my_id.depth=-3 my_id.image_angle=dir my_id.image_speed=0.15}
 if image_index&gt;122 and global.picture=0 {global.picture=1 my_id=instance_create(x-7,y-13,objPicture) my_id.direction=90 my_id.speed=1.5}
 }
 }

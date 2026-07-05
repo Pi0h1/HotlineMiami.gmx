@@ -98,6 +98,9 @@ instance_create(random(room_width),random(room_height),objSpread)
 SteamSetAchievement("ACH_THE_END")
 endfade=0
 c_amount=0
+
+x = room_width/2;
+y = room_height/2;
 </string>
           </argument>
         </arguments>
@@ -211,7 +214,7 @@ i+=1
 draw_set_alpha(1)
 } 
 if rollcredits=1 {
-d3d_set_projection_ortho(0,0,399,255,0)
+d3d_set_projection_ortho(0,0,room_width,room_height,0)
 draw_set_color(color1)
 draw_set_font(fntCreditList)
 draw_text(room_width/2+1,room_height-floor(credit_y)+1,creditlist)
@@ -231,7 +234,8 @@ draw_set_blend_mode(bm_add)
 draw_surface_ext(global.surf3,-1200*0.01,-768*0.01,1.02,1.02,0,c_white,1)
 texture_set_interpolation(false)
 draw_set_blend_mode(bm_normal)
-surface_reset_target()</string>
+surface_reset_target()
+</string>
           </argument>
         </arguments>
       </action>
@@ -278,10 +282,10 @@ endfade=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>d3d_set_projection_ortho(0,0,400,256,0)
+            <string>d3d_set_projection_ortho(0,0,room_width,room_height,0)
 draw_rectangle_color(0,60,room_width,room_height-60,merge_color(c_black,c_navy,0.1+lengthdir_x(0.1,dir*0.5)),merge_color(c_black,c_navy,0.1+lengthdir_x(0.1,dir*2)),merge_color(c_maroon,c_red,0.4+lengthdir_x(0.3,dir*0.76)+random(0.05)),merge_color(c_maroon,c_red,0.4+lengthdir_x(0.3,dir*0.76)+random(0.05)),0)
 if rollcredits=0 view_angle[0]=lengthdir_x(2,dir*0.2) else {if topicalpha&lt;=0.05 view_angle[0]=0}
-d3d_set_projection_ortho(0,0,400,256,view_angle[0])
+d3d_set_projection_ortho(0,0,room_width,room_height,view_angle[0])
 if rollcredits=1 {draw_set_font(fntCreditList) if credit_y&lt;string_height(creditlist)+128 {if credits_y&lt;1 credits_y+=0.2 else {credits_y=0} if credits_y=1 credit_y+=1}}
 draw_set_blend_mode(bm_add)
 draw_surface_ext(global.surf2,0,0,1/3,1/3,0,merge_color(merge_color(c_fuchsia,c_aqua,0.5+lengthdir_x(0.5,dir*0.4)),merge_color(c_yellow,c_lime,0.5+lengthdir_x(0.5,dir)),0.5+lengthdir_x(0.5,dir*0.1)),0.4)
@@ -293,7 +297,7 @@ draw_surface_ext(global.surf1,-1,0-frac(credits_y),1,1,0,c_black,1)
 
 draw_surface_ext(global.surf1,0,0-frac(credits_y),1,1,0,c_white,1)
 //if rollcredits=1 and credits_y&gt;0.9 credit_y+=1
-d3d_set_projection_ortho(0,0,400,256,0)
+d3d_set_projection_ortho(0,0,room_width,room_height,0)
 draw_set_color(c_black)
 draw_rectangle(0,0,room_width,60,0)
 draw_rectangle(0,room_height-60,room_width,room_height,0)

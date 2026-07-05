@@ -53,7 +53,6 @@ global.done=0</code>
   </views>
   <instances>
     <instance objName="objBackgroundColor" x="360" y="544" name="inst_E8C9157A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objShadowH" x="136" y="544" name="inst_129A98EB" locked="0" code="image_xscale=9&#xA;image_yscale=2&#xA;color1=c_black&#xA;color2=c_dkgray" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGlassFloor" x="128" y="128" name="inst_0828C38A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGlassFloor" x="160" y="128" name="inst_323A9463" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGlassFloor" x="192" y="128" name="inst_1CA8CD66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -211,6 +210,7 @@ global.done=0</code>
     <instance objName="objWallHeavyH" x="256" y="576" name="inst_AFE62DD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWallHeavyH" x="288" y="576" name="inst_30CC2E9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEffectorHouse" x="400" y="544" name="inst_AD3A8C17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objShadowV" x="128" y="544" name="inst_312AA10F" locked="0" code="image_xscale=12&#xA;image_yscale=2&#xA;color1=c_black&#xA;color2=c_dkgray&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tlFloorTiles" x="208" y="480" w="16" h="16" xo="672" yo="48" id="10079023" name="tile_46F43219" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

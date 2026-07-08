@@ -1080,12 +1080,92 @@
           </sprites>
         </sprites>
         <sprites name="Pig Butcher">
-          <sprite>sprites\sprPigButcher</sprite>
-          <sprite>sprites\sprPigButcherAttack</sprite>
-          <sprite>sprites\sprPigButcherHeadButt</sprite>
-          <sprite>sprites\sprPigButcherKill</sprite>
-          <sprite>sprites\sprPigButcherShoot</sprite>
-          <sprite>sprites\sprPigButcherWalkMP5</sprite>
+          <sprites name="Original">
+            <sprite>sprites\sprPigButcher</sprite>
+            <sprite>sprites\sprPigButcherAttack</sprite>
+            <sprite>sprites\sprPigButcherHeadButt</sprite>
+            <sprite>sprites\sprPigButcherKill</sprite>
+            <sprite>sprites\sprPigButcherShoot</sprite>
+            <sprite>sprites\sprPigButcherWalkMP5</sprite>
+          </sprites>
+          <sprites name="Imported">
+            <sprite>sprites\sprPigAttack9mm</sprite>
+            <sprite>sprites\sprPigAttackBat</sprite>
+            <sprite>sprites\sprPigAttackChain</sprite>
+            <sprite>sprites\sprPigAttackClub</sprite>
+            <sprite>sprites\sprPigAttackDoubleBarrel1</sprite>
+            <sprite>sprites\sprPigAttackDoubleBarrel2</sprite>
+            <sprite>sprites\sprPigAttackFamae</sprite>
+            <sprite>sprites\sprPigAttackHammer</sprite>
+            <sprite>sprites\sprPigAttackKalashnikov</sprite>
+            <sprite>sprites\sprPigAttackKnife</sprite>
+            <sprite>sprites\sprPigAttackM16</sprite>
+            <sprite>sprites\sprPigAttackMachete</sprite>
+            <sprite>sprites\sprPigAttackMagnum</sprite>
+            <sprite>sprites\sprPigAttackMendoza</sprite>
+            <sprite>sprites\sprPigAttackPipe</sprite>
+            <sprite>sprites\sprPigAttackPunch</sprite>
+            <sprite>sprites\sprPigAttackShotgun</sprite>
+            <sprite>sprites\sprPigAttackSilencer</sprite>
+            <sprite>sprites\sprPigAttackStick</sprite>
+            <sprite>sprites\sprPigAttackTaser</sprite>
+            <sprite>sprites\sprPigAttackUzi</sprite>
+            <sprite>sprites\sprPigBreakNeck</sprite>
+            <sprite>sprites\sprPigBrokenIdle</sprite>
+            <sprite>sprites\sprPigDeadBlunt</sprite>
+            <sprite>sprites\sprPigDeadCut</sprite>
+            <sprite>sprites\sprPigDeadMachinegun</sprite>
+            <sprite>sprites\sprPigDeadShotgun</sprite>
+            <sprite>sprites\sprPigDeadTaser</sprite>
+            <sprite>sprites\sprPigKillBat</sprite>
+            <sprite>sprites\sprPigKillBoss</sprite>
+            <sprite>sprites\sprPigKillChain</sprite>
+            <sprite>sprites\sprPigKillClub</sprite>
+            <sprite>sprites\sprPigKillHammer</sprite>
+            <sprite>sprites\sprPigKillHeadbutt</sprite>
+            <sprite>sprites\sprPigKillKick</sprite>
+            <sprite>sprites\sprPigKillKnife</sprite>
+            <sprite>sprites\sprPigKillLean</sprite>
+            <sprite>sprites\sprPigKillLeanPolice</sprite>
+            <sprite>sprites\sprPigKillMachete</sprite>
+            <sprite>sprites\sprPigKillNeck</sprite>
+            <sprite>sprites\sprPigKillPipe</sprite>
+            <sprite>sprites\sprPigKillRape</sprite>
+            <sprite>sprites\sprPigKillRapeCensored</sprite>
+            <sprite>sprites\sprPigKillStick</sprite>
+            <sprite>sprites\sprPigKillStomp</sprite>
+            <sprite>sprites\sprPigKillWall1</sprite>
+            <sprite>sprites\sprPigKillWall2</sprite>
+            <sprite>sprites\sprPigKillWall3</sprite>
+            <sprite>sprites\sprPigKillWall4</sprite>
+            <sprite>sprites\sprPigLegs</sprite>
+            <sprite>sprites\sprPigPutOnMask</sprite>
+            <sprite>sprites\sprPigSleeping</sprite>
+            <sprite>sprites\sprPigStunned</sprite>
+            <sprite>sprites\sprPigTakePhone</sprite>
+            <sprite>sprites\sprPigTalk</sprite>
+            <sprite>sprites\sprPigUnlock</sprite>
+            <sprite>sprites\sprPigWalk9mm</sprite>
+            <sprite>sprites\sprPigWalkBat</sprite>
+            <sprite>sprites\sprPigWalkChain</sprite>
+            <sprite>sprites\sprPigWalkClub</sprite>
+            <sprite>sprites\sprPigWalkDoubleBarrel</sprite>
+            <sprite>sprites\sprPigWalkFamae</sprite>
+            <sprite>sprites\sprPigWalkHammer</sprite>
+            <sprite>sprites\sprPigWalkKalashnikov</sprite>
+            <sprite>sprites\sprPigWalkKnife</sprite>
+            <sprite>sprites\sprPigWalkM16</sprite>
+            <sprite>sprites\sprPigWalkMachete</sprite>
+            <sprite>sprites\sprPigWalkMagnum</sprite>
+            <sprite>sprites\sprPigWalkMendoza</sprite>
+            <sprite>sprites\sprPigWalkPipe</sprite>
+            <sprite>sprites\sprPigWalkShotgun</sprite>
+            <sprite>sprites\sprPigWalkSilencer</sprite>
+            <sprite>sprites\sprPigWalkStick</sprite>
+            <sprite>sprites\sprPigWalkTaser</sprite>
+            <sprite>sprites\sprPigWalkUnarmed</sprite>
+            <sprite>sprites\sprPigWalkUzi</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Collision">
@@ -2928,6 +3008,7 @@
     </scripts>
     <scripts name="OriginalGame Fixes">
       <script>scripts\txtExplanation2.gml</script>
+      <script>scripts\txtCredits.gml</script>
       <script>scripts\scrMoveShieldUp.gml</script>
       <script>scripts\scrMoveShieldDown.gml</script>
       <script>scripts\scrMoveShieldLeft.gml</script>

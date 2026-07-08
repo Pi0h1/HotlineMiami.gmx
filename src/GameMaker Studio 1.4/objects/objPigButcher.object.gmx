@@ -110,119 +110,128 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=sprPigButcherShoot {
-if !mouse_check_button(mb_left) {if image_index&gt;0.2 image_index-=0.2 else {image_index=0 sprite_index=sprPigButcherWalkMP5}}
-}
-if room=rmTrainstationDownstairs or room=rmPoliceHQFloor3 or instance_exists(objVan) clear=1
-if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objECrawl)+instance_number(objMiscEnemy)+instance_number(objBoss)=0 {
-test=1
-if room=rmHotelEntrance {
-if objFatmanEating.sprite_index=sprFatmanEating or objFatmanEating.sprite_index=sprFatmanEatingGiveUp or objFatmanTelephone.sprite_index=sprFatmanTelephone or objFatmanTelephone.sprite_index=sprFatmanTelephoneGiveUp test=0
-}
-if room=rmHotelSuite {
-if objFatmanShit.sprite_index=sprFatmanShit or objFatmanShit.sprite_index=sprFatmanShitGiveUp  test=0
-}
-if test=1 {
-if clear=0 and global.done=0 {
-clear=1
-my_id=instance_create(x,y,objCheckpoint)
-my_id.text="STAGE CLEAR"
-
-}
-}
-} else clear=0
-if room=rmBossClubFloor3 {
-if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objECrawl)+instance_number(objMiscEnemy)=0 {
-my_id=instance_create(x-5+random(10),y-5+random(10),objClubKeys) my_id.direction=random(360) my_id.speed=random(3)
-}
+            <string>if global.xbox = 1 {
+    scrXboxPlayerMouse()
 }
 
-/*if mouse_check_button(mb_right) and persistent=0 {
-if ammo&gt;0 {
-if place_meeting(x,y,objKnockedOut) {
-if sprite_index=sprPWalkScorpion or sprite_index=sprPWalkMP5 or sprite_index=sprPWalkMagnum or sprite_index=sprPWalkDoubleBarrel or sprite_index=sprPWalkUzi or sprite_index=sprPWalkSilencer {
-shieldwait+=1
-if shieldwait&gt;=10 {
-if global.controller=0 my_id=instance_create(x,y,objPlayerShieldMouse) else my_id=instance_create(x,y,objPlayerShieldController)
-my_id.dir=dir
-my_id.ammo=ammo
-if sprite_index=sprPWalkScorpion my_id.sprite_index=sprPHumanShieldScorpion
-if sprite_index=sprPWalkMagnum my_id.sprite_index=sprPHumanShieldMagnum
-if sprite_index=sprPWalkDoubleBarrel my_id.sprite_index=sprPHumanShieldDoubleBarrel
-if sprite_index=sprPWalkSilencer my_id.sprite_index=sprPHumanShieldSilencer
-if sprite_index=sprPWalkMP5 my_id.sprite_index=sprPHumanShieldMP5
-if sprite_index=sprPWalkUzi my_id.sprite_index=sprPHumanShieldUzi
-global.test=0
-with objKnockedOut {
-if global.test=0 {
-if place_meeting(x,y,objPlayer) {
-global.test=1
-instance_destroy()
-}
-}
-}
-instance_destroy()
-}
-exit
-}
-}
-}
-}*/
+if sprite_index = sprPWalkBoilingPot 
+    {
+    if round(random(5)) = 2 
+    instance_create(x + lengthdir_x(11, dir - 33 * left), y + lengthdir_y(11, dir - 33 * left), objSteam)
+    }
 
-global.test=0
-with objWeapon {if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;32 global.test=2}
-if place_meeting(x,y,objKnockedOut) global.test=1
-objEffector.action=global.test
-if throwreload&gt;0 throwreload-=1
-if keyboard_check_direct(vk_shift) {
-/*viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(96,dir),y+lengthdir_y(96,dir))*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(96,dir),y+lengthdir_y(96,dir))
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)*/
-if global.maskindex=7 factor=2 else factor=1
-viewx=objPlayer.x+((display_mouse_get_x()-display_get_width()*0.5)*(view_wview[0]/display_get_width()))*factor
-viewy=objPlayer.y+((display_mouse_get_y()-display_get_height()*0.5)*(view_hview[0]/display_get_height()))*factor
-viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)
-vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
-} else {
-/*vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(vdist*0.2,vdir-180),y+lengthdir_y(vdist*0.2,vdir-180))*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(vdist*0.2,vdir-180),y+lengthdir_y(vdist*0.2,vdir-180))
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)*/
+if sprite_index = sprPigButcherShoot 
+    {
+    if !mouse_check_button(mb_left) 
+        {
+            if image_index &gt; 0.2 {image_index -= 0.2}
+            else 
+                {
+                image_index = 0 sprite_index = sprPigButcherWalkMP5
+                }
+        }
+    }
+    
+if room = rmTrainstationDownstairs or room = rmPoliceHQFloor3 or instance_exists(objVan) or room = rmPhoneHomUpstairs
+    {
+    clear = 1
+    }
 
-viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(24,dir),y+lengthdir_y(24,dir))*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(24,dir),y+lengthdir_y(24,dir))
+if instance_number(objEnemy)+instance_number(objKnockedOut)+instance_number(objECrawl)+instance_number(objMiscEnemy)+instance_number(objBoss)+instance_number(objEHideM16)+instance_number(objEBullet)=0 
+    {
+    test = 1
+    
+    if room=rmHotelEntrance 
+        {
+        if objFatmanEating.sprite_index=sprFatmanEating or objFatmanEating.sprite_index=sprFatmanEatingGiveUp or objFatmanTelephone.sprite_index=sprFatmanTelephone or objFatmanTelephone.sprite_index=sprFatmanTelephoneGiveUp 
+            {
+            test = 0
+            }
+        }
+    if room = rmHotelSuite 
+        {
+        if objFatmanShit.sprite_index = sprFatmanShit or objFatmanShit.sprite_index = sprFatmanShitGiveUp  test = 0
+        }
+    if test = 1 
+        {
+        if clear = 0 and global.done = 0 
+            {
+            clear = 1
+            my_id = instance_create(x,y,objCheckpoint)
+            my_id.text = "STAGE CLEAR"
+            }
+        }
+    } else clear = 0
 
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)
+if global.xbox = 0 
+    {
+    aimfar = keyboard_check_direct(vk_shift)
+    } else 
+        {
+        aimfar = checkbutton(0,getid(9))
+        }
 
-vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
-}
+global.test = 0
+
+with objWeapon 
+    {
+    if point_distance(x, y, objPlayer.x, objPlayer.y) &lt; 32 
+        {
+        global.test = 2
+        }
+    }
+
+if place_meeting(x,y,objKnockedOut) global.test = 1
+objEffector.action = global.test
+if throwreload &gt; 0 throwreload -= 1
+
+if aimfar 
+    {
+    if global.maskindex = 7 factor = 2 else factor = 1
+    if global.xbox=1 
+        {
+        viewx = objPlayer.x + rightthumb_x(0) * 0.0045
+        viewy = objPlayer.y - rightthumb_y(0) * 0.003
+        } else 
+            {
+            viewx = objPlayer.x + ((display_mouse_get_x() - display_get_width() * 0.5) * (view_wview[0]/display_get_width()))*factor
+            viewy = objPlayer.y + ((display_mouse_get_y() - display_get_height() * 0.5) * (view_hview[0]/display_get_height()))*factor
+            }
+    viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)*0.1
+    viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)
+    view_xview[0]+=lengthdir_x(viewspeed,viewdir)
+    view_yview[0]+=lengthdir_y(viewspeed,viewdir)
+    vdist=point_distance(x,y,room_width/2,room_height/2)
+    vdir=point_direction(room_width/2,room_height/2,x,y)
+    view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
+    } else 
+        {
+        viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(24,dir),y+lengthdir_y(24,dir))*0.1
+        viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x+lengthdir_x(24,dir),y+lengthdir_y(24,dir))
+        
+        view_xview[0]+=lengthdir_x(viewspeed,viewdir)
+        view_yview[0]+=lengthdir_y(viewspeed,viewdir)
+        
+        vdist=point_distance(x,y,room_width/2,room_height/2)
+        vdir=point_direction(room_width/2,room_height/2,x,y)
+        view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
+        }
 
 xview=view_xview[0]
 yview=view_yview[0]
-if persistent=1 and objEffector.fade=1 {
-if place_free(x+addx,y) x+=addx
-if place_free(x,y+addy) y+=addy
-if image_speed=0 image_index+=0.15
-legindex+=0.4
-exit 
-}
+
+if persistent = 1 and objEffector.fade = 1 
+    {
+    if place_free(x + addx, y) x += addx
+    if place_free(x, y + addy) y += addy
+    if image_speed = 0 image_index += 0.15
+    legindex += 0.4
+    exit 
+    }
 
 scrPlayerMoveKeyboard()
 
-
-if (sprite_index=sprPAttackKnife or sprite_index=sprPAttackBat or sprite_index=sprPigButcherAttack or sprite_index=sprPAttackNightStick or sprite_index=sprPAttackPipe or sprite_index=sprPAttackClub or sprite_index=sprPAttackSword or sprite_index=sprPAttackAxe or sprite_index=sprPAttackPool or sprite_index=sprPAttackPoolBroke) or (global.maskindex=2 and sprite_index=sprPAttackPunch) {
+if (sprite_index = sprPigButcherAttack or sprite_index=sprPAttackKnife or sprite_index=sprPAttackBat or sprite_index=sprPAttackCrowbar or sprite_index=sprPAttackPan or sprite_index=sprPAttackPot or sprite_index=sprPAttackMachete or sprite_index=sprPAttackSledgeHammer or sprite_index=sprPigButcherAttack or sprite_index=sprPAttackNightStick or sprite_index=sprPAttackPipe or sprite_index=sprPAttackClub or sprite_index=sprPAttackSword or sprite_index=sprPAttackAxe or sprite_index=sprPAttackPool or sprite_index=sprPAttackPoolBroke) or (global.maskindex=2 and sprite_index=sprPAttackPunch) {
 lastx=x
 lasty=y
 global.spacex=lengthdir_x(12,dir)
@@ -232,6 +241,7 @@ y+=global.spacey
 global.my_id=id
 with objGlassPanelH {
 if place_meeting(x,y,global.my_id) {
+SteamIncStat("Windows",1)
 if global.my_id.lasty&lt;y+2 {
 add=-1
 } else {
@@ -247,14 +257,15 @@ i+=1
 instance_create(x,y,objGlassPanelHBroken)
 global.shake=4
 instance_destroy()
-audio_play_sound(sndGlass1,0,false)
-audio_play_sound(sndGlass2,0,false)
-audio_play_sound(sndWeaponHit,0,false)
+if !audio_is_playing(sndGlass1) and !audio_is_playing(sndGlass2) {
+audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
+}
 }
 }
 
 with objGlassPanelV {
 if place_meeting(x,y,global.my_id) {
+SteamIncStat("Windows",1)
 if global.my_id.lastx&lt;x+2 {
 add=-1
 } else {
@@ -270,9 +281,9 @@ i+=1
 instance_create(x,y,objGlassPanelVBroken)
 global.shake=4
 instance_destroy()
-audio_play_sound(sndGlass1,1,0)
-audio_play_sound(sndGlass2,1,0)
-audio_play_sound(sndWeaponHit,1,0)
+if !audio_is_playing(sndGlass1) and !audio_is_playing(sndGlass2) {
+audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
+}
 }
 }
 
@@ -283,7 +294,7 @@ y+=lengthdir_y(12,dir)
 with objEnemy {
 if place_meeting(x,y,objPlayer) or place_meeting(x+global.spacex,y+global.spacey,objPlayer) {
 mask_index=sprWeaponMask 
-if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoftH) or object_index=objEnemyFat {mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
+if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoftH) or object_index=objEnemyFat or object_index=objInspector nothing=1 else {//{mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
 mask_index=sprMask
 global.shake=7
 my_id=instance_create(x,y-12,objScore)
@@ -345,22 +356,38 @@ my_id.friction=0.15
 }
 my_id=instance_create(x,y,objDeadBody)
 if object_index=objDogPatrol {
-if objPlayer.sprite_index=sprPAttackClub or objPlayer.sprite_index=sprPAttackBat or sprite_index=sprPigButcherAttack or objPlayer.sprite_index=sprPAttackPipe or objPlayer.sprite_index=sprPAttackPool or sprite_index=sprPAttackPunch {sound_play(sndHit) my_id.sprite_index=sprDogDeadBlunt my_id.image_index=3+floor(random(3))} else {my_id.sprite_index=sprDogDeadCut sound_play(choose(sndCut1,sndCut2)) my_id.image_index=4+floor(random(3))}
+SteamIncStat("Dogs",1)
+if objPlayer.sprite_index = sprPigButcherAttack or objPlayer.sprite_index=sprPAttackClub or objPlayer.sprite_index=sprPAttackBat or objPlayer.sprite_index=sprPAttackCrowbar or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprPAttackSledgeHammer or objPlayer.sprite_index=sprPigButcherAttack or objPlayer.sprite_index=sprPAttackPipe or objPlayer.sprite_index=sprPAttackPool or objPlayer.sprite_index=sprPAttackPunch {audio_play_sound(sndHit,0,false) audio_play_sound(sndPunch,0,false) my_id.sprite_index=sprDogDeadBlunt my_id.image_index=3+floor(random(3))} else {my_id.sprite_index=sprDogDeadCut audio_play_sound(choose(sndCut1,sndCut2),0,false) my_id.image_index=4+floor(random(3))}
 } else {
-if objPlayer.sprite_index=sprPAttackClub or objPlayer.sprite_index=sprPAttackBat or sprite_index=sprPigButcherAttack or objPlayer.sprite_index=sprPAttackPipe or objPlayer.sprite_index=sprPAttackPool or sprite_index=sprPAttackPunch {sound_play(sndHit) my_id.sprite_index=choose(sprEBackBlunt,sprEBackBlunt,sprEFrontBlunt) my_id.image_index=4+floor(random(11)) if objPlayer.sprite_index=sprPAttackPool objPlayer.sprite_index=sprPWalkPoolBroke} 
-if objPlayer.sprite_index=sprPAttackNightStick {
+if objPlayer.sprite_index = sprPigButcherAttack or objPlayer.sprite_index=sprPAttackClub or objPlayer.sprite_index=sprPAttackBat or objPlayer.sprite_index=sprPAttackCrowbar or objPlayer.sprite_index=sprPigButcherAttack or objPlayer.sprite_index=sprPAttackPan or objPlayer.sprite_index=sprPAttackPot or objPlayer.sprite_index=sprPAttackSledgeHammer or objPlayer.sprite_index=sprPAttackPipe or objPlayer.sprite_index=sprPAttackPool or objPlayer.sprite_index=sprPAttackPunch {audio_play_sound(sndHit,0,false) audio_play_sound(sndPunch,0,false) my_id.sprite_index=choose(sprEBackBlunt,sprEBackBlunt,sprEFrontBlunt) my_id.image_index=4+floor(random(11)) if objPlayer.sprite_index=sprPAttackPool objPlayer.sprite_index=sprPWalkPoolBroke} 
+if scrIsPolice(object_index) and (objPlayer.sprite_index=sprPAttackPunch or objPlayer.sprite_index=sprPAttackNightStick) {
 my_id1=instance_create(x,y,objPoliceHat)
 my_id1.direction=edir-10+random(20)
 my_id1.speed=1+random(2)
-sound_play(sndHit) my_id.sprite_index=choose(sprPoliceBackBlunt,sprPoliceBackBlunt,sprPoliceFrontBlunt) my_id.image_index=floor(random(13))
+audio_play_sound(sndHit,0,false) my_id.sprite_index=choose(sprPoliceBackBlunt,sprPoliceBackBlunt,sprPoliceFrontBlunt) my_id.image_index=floor(random(13))
+if my_id.sprite_index=sprPoliceBackBlunt {
+if my_id.image_index=2 or my_id.image_index=6 scrGoreBash(x,y,edir-180,1,1) else scrGoreBash(x,y,edir-180,0,0)
 }
-if objPlayer.sprite_index=sprPAttackKnife {my_id.sprite_index=sprEBackCut sound_play(choose(sndCut1,sndCut2)) my_id.image_index=2+floor(random(3))}
-if objPlayer.sprite_index=sprPAttackPoolBroke {my_id.sprite_index=choose(sprEDeadBackPool,sprEDeadBackPool,sprEDeadFrontPool) sound_play(choose(sndCut1,sndCut2)) my_id.image_index=random(2) objPlayer.sprite_index=sprPWalkUnarmed objPlayer.image_speed=0}
-if objPlayer.sprite_index=sprPAttackSword or objPlayer.sprite_index=sprPAttackAxe {
+if my_id.sprite_index=sprPoliceFrontBlunt {
+if my_id.image_index=2 or my_id.image_index=3 or my_id.image_index=4 scrGoreBash(x,y,edir-180,1,1) else scrGoreBash(x,y,edir-180,0,0)
+}
+
+}
+if my_id.sprite_index=sprEBackBlunt {
+if my_id.image_index=6 or my_id.image_index=12  or my_id.image_index=14 scrGoreBash(x,y,edir-180,1,1) else scrGoreBash(x,y,edir-180,0,0)
+}
+if my_id.sprite_index=sprEFrontBlunt {
+if my_id.image_index=6 or my_id.image_index=7  or my_id.image_index=8 scrGoreBash(x,y,edir-180,1,1) else scrGoreBash(x,y,edir-180,0,0)
+}
+if objPlayer.sprite_index=sprPAttackKnife {my_id.sprite_index=sprEBackCut audio_play_sound(choose(sndCut1,sndCut2),0,false) my_id.image_index=2+floor(random(3)) if my_id.image_index=3 or my_id.image_index=4 scrGoreCut(x,y,edir-180,1) else scrGoreCut(x,y,edir-180,0)}
+if objPlayer.sprite_index=sprPAttackPoolBroke {my_id.sprite_index=choose(sprEDeadBackPool,sprEDeadBackPool,sprEDeadFrontPool) audio_play_sound(choose(sndCut1,sndCut2),0,false) my_id.image_index=random(2) objPlayer.sprite_index=sprPWalkUnarmed objPlayer.image_speed=0}
+if objPlayer.sprite_index=sprPAttackSword or objPlayer.sprite_index=sprPAttackAxe or objPlayer.sprite_index=sprPAttackMachete {
 my_id.sprite_index=sprEBackSlashed 
-sound_play(choose(sndCut1,sndCut2)) 
-sound_play(sndHit) 
+audio_play_sound(choose(sndCut1,sndCut2),0,false) 
+audio_play_sound(sndHit,0,false) 
+
 my_id.image_index=floor(random(4))
+if my_id.image_index=1 scrGoreCut(x,y,edir-180,1) else scrGoreCut(x,y,edir-180,0)
 if my_id.image_index=0 {
 part=instance_create(my_id.x+lengthdir_x(22,edir),my_id.y+lengthdir_y(18,edir),objBodyPart)
 part.image_angle=edir-10+random(20)
@@ -400,7 +427,15 @@ with my_id {if !place_free(x,y) {global.test=1 instance_destroy()}}
 if global.test=0 instance_destroy()
 }
 }
-if sprite_index=sprEWalkUnarmed or sprite_index=sprPoliceWalkUnarmed or object_index=objDogPatrol noweapon=1 else noweapon=0
+
+if instance_exists(my_id) {
+if my_id.sprite_index=sprEBackBlunt and round(random(24))=2 {
+my_id.sprite_index=sprEBackCracked
+my_id.image_index=0
+}
+}
+
+if sprite_index=sprEWalkUnarmed or sprite_index=sprPoliceWalkUnarmed or sprite_index=sprEGiveUp or object_index=objDogPatrol noweapon=1 else noweapon=0
 scrIdleGetEnemy()
 if noweapon=0 {
 my_id=instance_create(x,y,objWeaponThrow)
@@ -410,6 +445,7 @@ my_id.image_index=scrCurrentWeaponExt(sprite_index)
 my_id.ammo=ammo
 }
 instance_destroy()
+}
 }
 }
 x=lastx
@@ -430,6 +466,7 @@ y+=global.spacey
 global.my_id=id
 with objGlassPanelH {
 if place_meeting(x,y,global.my_id) {
+SteamIncStat("Windows",1)
 if global.my_id.lasty&lt;y+2 {
 add=-1
 } else {
@@ -445,14 +482,15 @@ i+=1
 instance_create(x,y,objGlassPanelHBroken)
 global.shake=2
 instance_destroy()
-sound_play(sndGlass1)
-sound_play(sndGlass2)
-sound_play(sndWeaponHit)
+if !audio_is_playing(sndGlass1) and !audio_is_playing(sndGlass2) {
+audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
+}
 }
 }
 
 with objGlassPanelV {
 if place_meeting(x,y,global.my_id) {
+SteamIncStat("Windows",1)
 if global.my_id.lastx&lt;x+2 {
 add=-1
 } else {
@@ -468,9 +506,9 @@ i+=1
 instance_create(x,y,objGlassPanelVBroken)
 global.shake=2
 instance_destroy()
-sound_play(sndGlass1)
-sound_play(sndGlass2)
-sound_play(sndWeaponHit)
+if !audio_is_playing(sndGlass1) and !audio_is_playing(sndGlass2) {
+audio_play_sound(choose(sndGlass1,sndGlass2),0,false)
+}
 }
 }
 
@@ -478,13 +516,13 @@ x+=lengthdir_x(12,dir)
 y+=lengthdir_y(12,dir)
 
 with objEnemy {
-if object_index=objDogPatrol or object_index=objEnemyFat valid=0 else valid=1
+if scrCantGetHit(object_index) valid=0 else valid=1
 if (place_meeting(x,y,objPlayer) or place_meeting(x+global.spacex,y+global.spacey,objPlayer)) and valid=1 {
 mask_index=sprWeaponMask 
-if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoftH) {mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
+if scrCollisionLineExt(x,y,objPlayer.lastx,objPlayer.lasty,4,objSolid,objDoorV,objWallSoftH) {scrMoveSolidOff() mask_index=sprMask objPlayer.x=objPlayer.lastx objPlayer.y=objPlayer.lasty exit}
 mask_index=sprMask
 edir=point_direction(objPlayer.lastx,objPlayer.lasty,x,y)
-sound_play(sndDoorHit)
+audio_play_sound(sndDoorHit,0,false)
 global.shake=3
 my_id=instance_create(x,y,objKnockedOut)
 my_id.type=object_index
@@ -642,41 +680,210 @@ instance_destroy()
       </action>
       <action>
         <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>9</kind>
-            <script>scrPlayerPickUp</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <kind>1</kind>
+            <string>///scrPigButcherPickUp
+if place_meeting(x,y,objToken) {
+with objToken {
+instance_destroy()
+audio_play_sound(sndToken,0,false)
+my_id=instance_create(x,y,objLetterFound)
+my_id.text='"'+scrGetTokenLetter(letter)+'"'
+global.letter[letter]=1
+}
+exit
+}
+
+if place_meeting(x+lengthdir_x(10,dir),y+lengthdir_y(10,dir),objSecretMask) or place_meeting(x,y,objSecretMask) {
+with objSecretMask {
+global.masks[image_index]=1
+global.newmask[global.newmasks]=image_index
+global.newmasks+=1
+audio_play_sound(sndToken,0,false)
+my_id=instance_create(x,y,objLetterFound)
+my_id.text='"'+scrMaskGetName(image_index)+'"'
+instance_destroy()
+}
+exit
+}
+
+if global.masks[24]=0 {
+if place_meeting(x,y,objCobraDead) {
+with objCobraDead {
+if taken=0 {
+taken=1
+global.masks[24]=1
+global.newmask[global.newmasks]=24
+global.newmasks+=1
+audio_play_sound(sndToken,0,false)
+my_id=instance_create(x,y,objLetterFound)
+my_id.text='"'+scrMaskGetName(24)+'"'
+}
+}
+exit
+}
+}
+
+if place_meeting(x,y,objLocustDead) {
+with objLocustDead {
+if taken=0 {
+taken=1
+global.masks[23]=1
+global.newmask[global.newmasks]=23
+global.newmasks+=1
+audio_play_sound(sndToken,0,false)
+my_id=instance_create(x,y,objLetterFound)
+my_id.text='"'+scrMaskGetName(23)+'"'
+}
+}
+exit
+}
+
+if place_meeting(x+lengthdir_x(8,dir),y+lengthdir_y(8,dir),objWalrusDead) {
+with objWalrusDead {
+if taken=0 {
+taken=1
+global.masks[21]=1
+global.newmask[global.newmasks]=21
+global.newmasks+=1
+audio_play_sound(sndToken,0,false)
+my_id=instance_create(x,y,objLetterFound)
+my_id.text='"'+scrMaskGetName(21)+'"'
+}
+}
+exit
+}
+
+
+release=0
+if reload&gt;0 exit
+if sprite_index=sprPWalkBag or sprite_index=sprPAttackBag or sprite_index=sprPWalkBossgun or sprite_index=sprPLeaveBag or sprite_index=sprPTakePhone exit
+lastweapon=scrCurrentWeaponExt(sprite_index)
+lastammo=ammo
+global.gotweapon=0
+global.exposed=1
+
+global.test=0
+if sprite_index=sprPWalkUnarmed or sprite_index=sprPAttackPunch noweapon=1 else noweapon=0
+with objWeapon {
+if global.test=0 {
+if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;32 {
+if ammo&gt;0 {
+global.etest=0
+with objEnemy {if sprite_index=sprEWalkUnarmed or sprite_index=sprEGiveUp nothing=1 else {if alert=1 global.etest=1}}
+if global.etest=1 {
+my_id=instance_create(x,y-12,objScore)
+my_id.text="+"+string(60*global.factor)+"pts"
+global.myscore+=60*global.factor
+ds_list_add(global.bonuslist,"Dangerous Pickup")
+}
+}
+reload=5
+global.gotweapon=1
+if image_index=0 objPlayer.sprite_index=sprPWalkM16
+if image_index=1 objPlayer.sprite_index=sprPWalkShotgun
+if image_index=2 objPlayer.sprite_index=sprPWalkClub
+if image_index=3 objPlayer.sprite_index=sprPWalkPipe
+if image_index=4 objPlayer.sprite_index=sprPWalkBat
+if image_index=5 objPlayer.sprite_index=sprPWalkKnife
+if image_index=6 objPlayer.sprite_index=sprPWalkDoubleBarrel
+if image_index=7 objPlayer.sprite_index=sprPWalkSilencer
+if image_index=8 objPlayer.sprite_index=sprPWalkSword
+if image_index=9 objPlayer.sprite_index=sprPWalkUzi
+if image_index=10 objPlayer.sprite_index=sprPWalkMagnum
+if image_index=11 objPlayer.sprite_index=sprPWalkScorpion
+if image_index=12 objPlayer.sprite_index=sprPigButcherWalkMP5
+if image_index=13 objPlayer.sprite_index=sprPWalkPool
+if image_index=14 objPlayer.sprite_index=sprPWalkPoolBroke
+if image_index=15 objPlayer.sprite_index=sprPWalkAxe
+if image_index=16 objPlayer.sprite_index=sprPWalkNightStick
+if image_index=17 objPlayer.sprite_index=sprPWalkCrowbar
+if image_index=18 objPlayer.sprite_index=sprPWalkMachete
+if image_index=19 objPlayer.sprite_index=sprPWalkSledgeHammer
+if image_index=20 objPlayer.sprite_index=sprPWalkTrophy
+if image_index=21 objPlayer.sprite_index=sprPWalkDrill
+if image_index=22 objPlayer.sprite_index=sprPWalkPan
+if image_index=23 objPlayer.sprite_index=sprPWalkBoilingPot
+if image_index=24 objPlayer.sprite_index=sprPWalkPot
+if image_index=25 objPlayer.sprite_index=sprPWalkSilencedUzi
+if image_index&gt;26 {objPlayer.sprite_index=sprPWalkThrow objPlayer.throwindex=image_index-27}
+if image_index&gt;=0 global.flexibility[image_index]=1
+global.barehanded=0
+global.test=1
+objPlayer.ammo=ammo
+audio_play_sound(sndPickupWeapon,0,false)
+instance_destroy()
+
+/*if objPlayer.sprite_index=sprPWalkUnarmed nothing=1 else {
+if objPlayer.throwreload=0 {
+if global.exposed=1 {
+objPlayer.throwreload=30
+}
+}
+}*/
+
+
+}
+}
+}
+
+
+if noweapon=1 global.test=4 else {if lastweapon&gt;26 global.test=2}
+
+
+if lastweapon&lt;0 exit
+if sprite_index=sprPWalkUnarmed exit
+switch global.test {
+case 0:
+global.dir=dir
+my_id=instance_create(x,y,objWeaponThrow)
+with my_id move_contact_solid(global.dir,12)
+audio_play_sound(sndThrow,0,false)
+my_id.speed=8
+my_id.direction=dir-5+random(10)
+my_id.ammo=lastammo
+my_id.image_index=lastweapon
+sprite_index=sprPWalkUnarmed
+release=1
+break;
+case 1:
+global.dir=dir
+my_id=instance_create(x,y,objWeaponThrow)
+with my_id move_contact_solid(global.dir,12)
+audio_play_sound(sndThrow,0,false)
+my_id.speed=8
+my_id.direction=dir-5+random(10)
+my_id.ammo=lastammo
+my_id.image_index=lastweapon
+release=1
+break;
+case 2:
+global.dir=dir+left*-20
+my_id=instance_create(x,y,objThrowingWeapon)
+with my_id move_contact_solid(global.dir,12)
+audio_play_sound(sndThrow,0,false)
+my_id.speed=10
+my_id.direction=dir-5+random(10)
+my_id.ammo=lastammo
+my_id.image_index=lastweapon-27
+global.usedthrow[my_id.image_index]=1
+if global.gotweapon=0 sprite_index=sprPWalkUnarmed
+release=1
+break;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -806,7 +1013,82 @@ image_yscale=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if release&lt;20 release+=1 else scrPlayerPickUp2()</string>
+            <string>if release&lt;20 release+=1 else {
+    release=0
+    if reload&gt;0 exit
+    if objPlayer.sprite_index=sprPWalkBag or sprite_index=sprPWalkBossgun or objPlayer.sprite_index=sprPLeaveBag or sprite_index=sprPTakePhone exit
+    lastweapon=scrCurrentWeapon()
+    lastammo=ammo
+    global.exposed=0
+    release=0
+    
+    
+    if sprite_index=sprPWalkUnarmed nothing=1 else {
+    my_id=instance_create(objPlayer.x+lengthdir_x(8,objPlayer.dir+90),objPlayer.y+lengthdir_y(8,objPlayer.dir+90),objWeaponThrow)
+    my_id.image_index=lastweapon
+    my_id.direction=dir+70+random(40)
+    my_id.speed=1+random(2)
+    my_id.ammo=lastammo
+    sprite_index=sprPWalkUnarmed
+    mouse_clear(mb_right)
+    }
+    
+    
+    
+    
+    global.test=0
+    with objWeapon {
+    if global.test=0 {
+    if point_distance(x,y,objPlayer.x,objPlayer.y)&lt;32 {
+    if ammo&gt;0 {
+    global.etest=0
+    with objEnemy {if sprite_index=sprEWalkUnarmed or sprite_index=sprEGiveUp nothing=1 else {if alert=1 global.etest=1}}
+    if global.etest=1 {
+    my_id=instance_create(x,y-12,objScore)
+    my_id.text="+"+string(60*global.factor)+"pts"
+    global.myscore+=60*global.factor
+    ds_list_add(global.bonuslist,"Dangerous Pickup")
+    }
+    }
+    if image_index=0 objPlayer.sprite_index=sprPWalkM16
+    if image_index=1 objPlayer.sprite_index=sprPWalkShotgun
+    if image_index=2 objPlayer.sprite_index=sprPWalkClub
+    if image_index=3 objPlayer.sprite_index=sprPWalkPipe
+    if image_index=4 objPlayer.sprite_index=sprPWalkBat
+    if image_index=5 objPlayer.sprite_index=sprPWalkKnife
+    if image_index=6 objPlayer.sprite_index=sprPWalkDoubleBarrel
+    if image_index=7 objPlayer.sprite_index=sprPWalkSilencer
+    if image_index=8 objPlayer.sprite_index=sprPWalkSword
+    if image_index=9 objPlayer.sprite_index=sprPWalkUzi
+    if image_index=10 objPlayer.sprite_index=sprPWalkMagnum
+    if image_index=11 objPlayer.sprite_index=sprPWalkScorpion
+    if image_index=12 objPlayer.sprite_index=sprPigButcherWalkMP5
+    if image_index=13 objPlayer.sprite_index=sprPWalkPool
+    if image_index=14 objPlayer.sprite_index=sprPWalkPoolBroke
+    if image_index=15 objPlayer.sprite_index=sprPWalkAxe
+    if image_index=16 objPlayer.sprite_index=sprPWalkNightStick
+    if image_index=17 objPlayer.sprite_index=sprPWalkCrowbar
+    if image_index=18 objPlayer.sprite_index=sprPWalkMachete
+    if image_index=19 objPlayer.sprite_index=sprPWalkSledgeHammer
+    if image_index=20 objPlayer.sprite_index=sprPWalkTrophy
+    if image_index=21 objPlayer.sprite_index=sprPWalkDrill
+    if image_index=22 objPlayer.sprite_index=sprPWalkPan
+    if image_index=23 objPlayer.sprite_index=sprPWalkBoilingPot
+    if image_index=24 objPlayer.sprite_index=sprPWalkPot
+    if image_index=25 objPlayer.sprite_index=sprPWalkSilencedUzi
+    if image_index&gt;26 {objPlayer.sprite_index=sprPWalkThrow objPlayer.throwindex=image_index-27}
+    if image_index&gt;=0 global.flexibility[image_index]=1
+    global.barehanded=0
+    mouse_clear(mb_right)
+    objPlayer.ammo=ammo
+    audio_play_sound(sndPickupWeapon,0,false)
+    instance_destroy()
+    global.test=1
+    }
+    }
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -1143,41 +1425,191 @@ with objEnemy instance_destroy()
     <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>9</kind>
-            <script>scrKillShield</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <kind>1</kind>
+            <string>if reload&gt;0 exit
+if sprite_index=sprPLeaveBag or sprite_index=sprPTakePhone exit
+lastweapon=scrCurrentWeapon()
+lastammo=ammo
+
+global.executionx=x
+global.executiony=y
+
+// Standing Execution Begins
+
+if sprite_index=sprPWalkBag or sprite_index=sprPAttackBag nothing=1 else {
+global.test=0
+if place_meeting(x+lengthdir_x(12,dir),y+lengthdir_y(12,dir),objEnemy) {
+with objEnemy {
+if object_index=objDogPatrol or object_index=objEnemyFat or scrIsPolice(object_index) or global.test&gt;0 nothing=1 else {
+if place_meeting(x-lengthdir_x(12,objPlayer.dir),y-lengthdir_y(12,objPlayer.dir),objPlayer) {
+my_id=instance_create(objPlayer.x+lengthdir_x(7,objPlayer.dir),objPlayer.y+lengthdir_y(7,objPlayer.dir),objPigButcherHeadbutt)
+my_id.maskindex=objPlayer.maskindex
+my_id.maskon=1
+my_id.image_angle=objPlayer.dir
+instance_destroy()
+audio_play_sound(sndThrow,0,false)
+audio_play_sound(sndHitWall,0,false)
+global.test=1
+if sprite_index=sprEWalkUnarmed or sprite_index=sprEGiveUp or global.maskindex=11 noweapon=1 else noweapon=0
+if noweapon=0 {
+my_id=instance_create(x,y,objWeaponThrow)
+my_id.direction=direction-115+random(50)
+my_id.speed=2+random(1)
+my_id.image_index=scrCurrentWeaponExt(sprite_index)
+my_id.ammo=ammo
+}
+if global.maskindex=11 {if scrCurrentWeaponExt(sprite_index)&gt;0 global.gun=scrIndexToWeapon(scrCurrentWeaponExt(sprite_index)) else global.gun=sprPWalkUnarmed}
+}
+}
+}
+if global.test=1 {
+if sprite_index=sprPWalkUnarmed nothing=1 else {
+my_id=instance_create(objPlayer.x+lengthdir_x(8,objPlayer.dir+90),objPlayer.y+lengthdir_y(8,objPlayer.dir+90),objWeaponThrow)
+my_id.image_index=lastweapon
+my_id.direction=dir+70+random(40)
+my_id.speed=1+random(2)
+my_id.ammo=lastammo
+}
+global.test=3
+instance_destroy()
+exit
+}
+}
+}
+
+// Standing Execution ends
+
+if global.test=3 exit
+global.exposed=0
+release=0
+with objKnockedOut {image_xscale=3 image_yscale=3}
+if ammo&gt;0 {
+if sprite_index=sprPWalkScorpion or sprite_index=sprPWalkMP5 or sprite_index=sprPWalkMagnum or sprite_index=sprPWalkDoubleBarrel or sprite_index=sprPWalkUzi or sprite_index=sprPWalkSilencer {
+if place_meeting(x,y,objKnockedOut) {
+//remove from here
+my_id=instance_create(x,y,objPlayerShieldMouse)
+my_id.dir=dir
+my_id.ammo=ammo
+if sprite_index=sprPWalkScorpion my_id.sprite_index=sprPHumanShieldScorpion
+if sprite_index=sprPWalkMagnum my_id.sprite_index=sprPHumanShieldMagnum
+if sprite_index=sprPWalkDoubleBarrel my_id.sprite_index=sprPHumanShieldDoubleBarrel
+if sprite_index=sprPWalkSilencer my_id.sprite_index=sprPHumanShieldSilencer
+if sprite_index=sprPWalkMP5 my_id.sprite_index=sprPHumanShieldMP5
+if sprite_index=sprPWalkUzi my_id.sprite_index=sprPHumanShieldUzi
+global.test=0
+with objKnockedOut {
+if global.test=0 {
+if place_meeting(x,y,objPlayer) {
+if sprite_index=sprPoliceGetUp global.test=2 else {
+global.test=1
+instance_destroy()
+}
+}
+}
+}
+if global.test=2 {with my_id instance_destroy()} else instance_destroy()
+with objKnockedOut {image_xscale=1 image_yscale=1}
+//to here and enable in step event!
+exit
+}
+}
+}
+
+global.test=0
+global.drop=1
+
+
+
+if place_meeting(x,y,objKnockedOut) and global.exposed=0 {
+with objKnockedOut {
+image_xscale=3
+image_yscale=3
+if place_meeting(x,y,objPlayer) and global.test=0  {
+global.test=2
+if sprite_index=sprEGetUp or sprite_index=sprPoliceGetUp my_id=instance_create(x,y,scrGetKill(objPlayer.sprite_index))
+if sprite_index=sprEGetUpLean {my_id=instance_create(x,y,objEnemyHeadKick) if objPlayer.sprite_index=sprPWalkBag or objPlayer.sprite_index=sprPAttackBag my_id.bag=1 else my_id.bag=0 global.test=1}
+if my_id.object_index=objPBluntKill {
+if objPlayer.sprite_index=sprPWalkCrowbar or objPlayer.sprite_index=sprPAttackCrowbar {global.usedkill[9]=1 my_id.sprite_index=sprPKillCrowbar}
+if objPlayer.sprite_index=sprPWalkBat or objPlayer.sprite_index=sprPAttackBat {global.usedkill[2]=1 my_id.sprite_index=sprPBatKill}
+if objPlayer.sprite_index=sprPWalkPipe or objPlayer.sprite_index=sprPAttackPipe {global.usedkill[1]=1 my_id.sprite_index=sprPPipeKill}
+if objPlayer.sprite_index=sprPWalkClub or objPlayer.sprite_index=sprPAttackClub {global.usedkill[0]=1 my_id.sprite_index=sprPClubKill}
+if objPlayer.sprite_index=sprPWalkBag or objPlayer.sprite_index=sprPAttackBag my_id.sprite_index=sprPBagKill
+if objPlayer.sprite_index=sprPWalkPot or objPlayer.sprite_index=sprPAttackPot {global.usedkill[15]=1 my_id.sprite_index=sprPKillPot}
+if objPlayer.sprite_index=sprPWalkPan or objPlayer.sprite_index=sprPAttackPan {global.usedkill[13]=1 my_id.sprite_index=sprPKillPan}
+if objPlayer.sprite_index=sprPWalkNightStick or objPlayer.sprite_index=sprPAttackNightStick {
+my_id.image_angle=angle
+my_id1=instance_create(x+lengthdir_x(22,my_id.image_angle),y+lengthdir_x(22,my_id.image_angle),objPoliceHat)
+my_id1.direction=my_id.image_angle-10+random(20)
+my_id1.speed=1+random(2)
+my_id.bottom=sprPoliceBluntKill 
+my_id.sprite_index=sprPNightStickKill
+}
+}
+my_id.image_angle=angle
+if my_id.object_index=objEnemyBash and sprite_index=sprPoliceGetUp {
+my_id1=instance_create(x+lengthdir_x(22,my_id.image_angle),y+lengthdir_x(22,my_id.image_angle),objPoliceHat)
+my_id1.direction=my_id.image_angle-10+random(20)
+my_id1.speed=1+random(2)
+my_id.sprite_index=sprPAttackBashPolice
+my_id.maskindex=global.maskindex
+}
+if my_id.object_index=objPDrillKill and sprite_index=sprPoliceGetUp {
+my_id.sprite_index=sprPDrillKillPolice
+my_id1=instance_create(x+lengthdir_x(22,my_id.image_angle),y+lengthdir_x(22,my_id.image_angle),objPoliceHat)
+my_id1.direction=my_id.image_angle-10+random(20)
+my_id1.speed=1+random(2)
+}
+my_id.maskon=global.maskon
+instance_destroy()
+}
+image_xscale=1
+image_yscale=1
+scrCheckUsedKills()
+}
+with objKnockedOut {
+image_xscale=1
+image_yscale=1
+}
+if global.test=1 {
+if sprite_index=sprPWalkUnarmed or sprite_index=sprPWalkBag or sprite_index=sprPAttackBag nothing=1 else {
+my_id=instance_create(objPlayer.x+lengthdir_x(8,objPlayer.dir+90),objPlayer.y+lengthdir_y(8,objPlayer.dir+90),objWeaponThrow)
+my_id.image_index=lastweapon
+my_id.direction=dir+70+random(40)
+my_id.speed=1+random(2)
+my_id.ammo=lastammo
+}
+instance_destroy()
+exit
+}
+if global.test=2 {
+with objKnockedOut {
+image_xscale=1
+image_yscale=1
+}
+instance_destroy() 
+exit
+}
+
+}
+
+with objKnockedOut {
+image_xscale=1
+image_yscale=1
+}
+</string>
           </argument>
         </arguments>
       </action>

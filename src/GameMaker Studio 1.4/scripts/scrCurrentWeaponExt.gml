@@ -104,7 +104,10 @@ if argument0=sprPoliceSearchNightStick return 16
 if argument0=sprPWalkTrophy return 20
 if argument0=sprPAttackTrophy return 20
 
+if argument0=sprPigButcher or argument0=sprPigButcherAttack return 32
+if argument0=sprPigButcherWalkMP5 or argument0=sprPigButcherShoot return 12
+
 if argument0=sprPWalkThrow return 27+throwindex
 if argument0=sprPWalkUnarmed or argument0=sprPAttackPunch or argument0=sprPAttackThrow  return -123
-if argument0=sprPigButcher or argument0=sprPigButcherAttack return -123
+
 return -123

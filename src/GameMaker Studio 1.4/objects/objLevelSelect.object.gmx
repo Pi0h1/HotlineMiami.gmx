@@ -33,6 +33,7 @@ newsong = 1;
 global.levels[20] = 1;
 global.levels[21] = 1;
 global.levels[22] = 1;
+global.levels[23] = 1;
 
 if (global.xbox == 1) {
     scrInitXboxButtons();
@@ -64,6 +65,7 @@ level[a++]=sprBossClub2;
 level[a++]=sprVenusLevel;
 level[a++]=sprEurogamerLogo;
 level[a++]=sprTitleCocaineCowboy;
+level[a++]=sprLevelTrailer;
 
 a = 0;
 title[a++]="THE METRO";
@@ -89,6 +91,7 @@ title[a++]="RESOLUTION";
 title[a++]="HIGHBALL";
 title[a++]="EXPOSED";
 title[a++]="COCAINE COWBOY";
+title[a++]="TRAILER";
 
 a = 0;
 chapter[a++]="PRELUDE";
@@ -114,6 +117,7 @@ chapter[a++]="CHAPTER NINETEEN";
 chapter[a++]="BONUS CHAPTER";
 chapter[a++]="SPECIAL CHAPTER";
 chapter[a++]="BETA CHAPTERS";
+chapter[a++]="BONUS FEATURE";
 
 totalLevelCount_Jacket = 15;
 totalLevelCount = a-1;
@@ -378,6 +382,7 @@ if (intro == 0) {
         case 20:    scrLoadLevel("HIGHBALL",    "BONUS CHAPTER",        "Perturbator.mp3",  rmHighballer,            rmChapter);                break;
         case 21:    scrLoadLevel("EXPOSED",     "SPECIAL CHAPTER",      "ToTheTop.mp3",     rmEurogamer,             rmChapter);                break;
         case 22:    scrLoadLevel("COWBOY",      "COCAINE",              "\CocaineCowboy_Music\Lady.mp3",             rmTestLevel1,rmChapter);   break;
+        case 23:    scrLoadLevel("TRAILER",     "BONUS FEATURE",        "SilverLights.mp3", rmTrailer,               rmChapter);                break;
         default:    scrLoadLevel("ERROR",       "INVALID CHAPTER",      "Crystals.mp3",     rmApartment1Entrance,    rmSequence2);              break;
     }
 } else {
@@ -404,7 +409,8 @@ if (intro == 0) {
         case 19:    scrLoadLevel("RESOLUTION",  "NINETEENTH CHAPTER",   "ItsSafeNow.mp3",    rmMCSequence4,          rmMCSequence4);            break;
         case 20:    scrLoadLevel("HIGHBALL",    "BONUS CHAPTER",        "Perturbator.mp3",   rmHighballer,           rmChapter);                break;
         case 21:    scrLoadLevel("EXPOSED",     "SPECIAL CHAPTER",      "ToTheTop.mp3",      rmEurogamer,            rmChapter);                break;
-        case 22:    scrLoadLevel("COWBOY",      "COCAINE",              "\CocaineCowboy_Music\Lady.mp3",          rmTestLevel1,           rmChapter);                break;
+        case 22:    scrLoadLevel("COWBOY",      "COCAINE",              "\CocaineCowboy_Music\Lady.mp3",             rmTestLevel1,rmChapter);   break;
+        case 23:    scrLoadLevel("TRAILER",     "BONUS FEATURE",        "SilverLights.mp3", rmTrailer,               rmChapter);                break;
         default:    scrLoadLevel("ERROR",       "INVALID CHAPTER",      "DeepCover.mp3",     rmApartment1Entrance,   rmSequence2);              break;
     }
 }

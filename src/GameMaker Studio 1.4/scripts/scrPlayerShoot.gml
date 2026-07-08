@@ -445,7 +445,7 @@ with my_id {
 move_contact_solid(global.dir,16)
 }
 } else {
-my_id=instance_create(x+lengthdir_x(20,dir-18),y+lengthdir_y(20,dir-18),objBullet)
+my_id=instance_create(x+lengthdir_x(20*left,dir-18),y+lengthdir_y(20*left,dir-18),objBullet)
 if instance_exists(my_id) {
 my_id.direction=dir-5+random(10)
 my_id.speed=16

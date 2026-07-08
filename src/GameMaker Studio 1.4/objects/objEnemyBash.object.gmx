@@ -118,8 +118,7 @@ if image_index&lt;3 image_index+=0.25
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>exit
-with other {
+            <string>with other {
 if place_meeting(x,y,objSolid) {
 move_outside_solid(direction-180,speed*2) 
 if !place_meeting(x,y,objPlayer) exit
@@ -190,7 +189,8 @@ if sprite_index=sprPAttackBashPolice {
 my_id.sprite_index=sprPoliceGetUp
 my_id.type=objPolice
 } else my_id.type=objEnemy
-instance_destroy()</string>
+instance_destroy()
+</string>
           </argument>
         </arguments>
       </action>

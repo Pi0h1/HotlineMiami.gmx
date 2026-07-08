@@ -53,7 +53,7 @@ bottom=sprEBluntKill</string>
             <kind>1</kind>
             <string>if hurtindex=11 {
 if image_index=0 {
-my_id=instance_create(x,y,objPlayerMouse)
+my_id=instance_create(x,y,objPigButcher)
 my_id.sprite_index=sprPigButcher
 global.angle=image_angle-180
 my_id.reload=10
@@ -80,7 +80,8 @@ global.kills+=1
 ds_list_add(global.bonuslist,"Execution")
 if global.combotime&lt;12 global.combotime=12
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -108,8 +109,8 @@ if targetindex=4 targetindex=8
 if targetindex=0 {targetindex=4 if global.maskindex=2 {hurtindex=8 targetindex=11}}
 hurtindex+=1
 image_index=7
-sound_play(sndHit)
-sound_play(sndPunch)
+audio_play_sound(sndHit,0,false)
+audio_play_sound(sndPunch,0,false)
 global.shake=4
 repeat (1+random(3)) {
 instance_create(x+lengthdir_x(18,image_angle-1+random(2)),y+lengthdir_y(18,image_angle-1+random(2)),objBloodSquirt)
@@ -129,7 +130,8 @@ my_id.image_angle=random(360)
 my_id.speed=random(1)
 }
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

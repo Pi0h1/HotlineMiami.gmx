@@ -1409,6 +1409,7 @@
           <sprite>sprites\sprNoMask</sprite>
           <sprite>sprites\sprLetterIcon</sprite>
           <sprite>sprites\sprSecretLevel</sprite>
+          <sprite>sprites\sprLevelTrailer</sprite>
         </sprites>
         <sprites name="Cursor">
           <sprite>sprites\sprCursor</sprite>

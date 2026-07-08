@@ -29,6 +29,14 @@ if !instance_exists(objEnemy) {if global.done=0 and instance_number(objEBullet)=
 }
 }
 
+if room=rmTrailer {
+if !instance_exists(objEnemy) {
+if !instance_exists(objKnockedOut) and !instance_exists(objEHideM16) {
+if !instance_exists(objEnemy) {if global.done=0 and instance_number(objEBullet)=0 {instance_create(x,y,objLevelComplete) global.done=1}}
+}
+}
+}
+
 
 if room=rmArcadeUpstairs {
 if !instance_exists(objEnemy) {

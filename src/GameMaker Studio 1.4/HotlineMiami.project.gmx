@@ -773,400 +773,887 @@
   </sounds>
   <sprites name="sprites">
     <sprites name="Hotline Miami">
-      <sprites name="Player">
-        <sprites name="Jacket">
-          <sprites name="Walking">
-            <sprites name="Legs">
-              <sprite>sprites\sprLegs</sprite>
-              <sprite>sprites\sprLegsHospital</sprite>
-              <sprite>sprites\sprLegsLimp</sprite>
-              <sprite>sprites\sprLegsStairs</sprite>
+      <sprites name="Actor">
+        <sprites name="Player">
+          <sprites name="Jacket">
+            <sprites name="Walk">
+              <sprites name="Legs">
+                <sprite>sprites\sprLegs</sprite>
+                <sprite>sprites\sprLegsHospital</sprite>
+                <sprite>sprites\sprLegsLimp</sprite>
+                <sprite>sprites\sprLegsStairs</sprite>
+              </sprites>
+              <sprite>sprites\sprPWalkAxe</sprite>
+              <sprite>sprites\sprPWalkBag</sprite>
+              <sprite>sprites\sprPWalkBat</sprite>
+              <sprite>sprites\sprPWalkBoilingPot</sprite>
+              <sprite>sprites\sprPWalkBossgun</sprite>
+              <sprite>sprites\sprPWalkClub</sprite>
+              <sprite>sprites\sprPWalkCrowbar</sprite>
+              <sprite>sprites\sprPWalkDoubleBarrel</sprite>
+              <sprite>sprites\sprPWalkDrill</sprite>
+              <sprite>sprites\sprPWalkGirlfriend</sprite>
+              <sprite>sprites\sprPWalkKnife</sprite>
+              <sprite>sprites\sprPWalkLedge</sprite>
+              <sprite>sprites\sprPWalkM16</sprite>
+              <sprite>sprites\sprPWalkMachete</sprite>
+              <sprite>sprites\sprPWalkMagnum</sprite>
+              <sprite>sprites\sprPWalkMP5</sprite>
+              <sprite>sprites\sprPWalkNightStick</sprite>
+              <sprite>sprites\sprPWalkPan</sprite>
+              <sprite>sprites\sprPWalkPipe</sprite>
+              <sprite>sprites\sprPWalkPool</sprite>
+              <sprite>sprites\sprPWalkPoolBroke</sprite>
+              <sprite>sprites\sprPWalkPot</sprite>
+              <sprite>sprites\sprPWalkScorpion</sprite>
+              <sprite>sprites\sprPWalkShotgun</sprite>
+              <sprite>sprites\sprPWalkSilencedUzi</sprite>
+              <sprite>sprites\sprPWalkSilencer</sprite>
+              <sprite>sprites\sprPWalkSledgeHammer</sprite>
+              <sprite>sprites\sprPWalkSword</sprite>
+              <sprite>sprites\sprPWalkTaser</sprite>
+              <sprite>sprites\sprPWalkThrow</sprite>
+              <sprite>sprites\sprPWalkTrophy</sprite>
+              <sprite>sprites\sprPWalkUnarmed</sprite>
+              <sprite>sprites\sprPWalkUnarmed2</sprite>
+              <sprite>sprites\sprPWalkUzi</sprite>
             </sprites>
-            <sprite>sprites\sprPWalkAxe</sprite>
-            <sprite>sprites\sprPWalkBag</sprite>
-            <sprite>sprites\sprPWalkBat</sprite>
-            <sprite>sprites\sprPWalkBoilingPot</sprite>
-            <sprite>sprites\sprPWalkBossgun</sprite>
-            <sprite>sprites\sprPWalkClub</sprite>
-            <sprite>sprites\sprPWalkCrowbar</sprite>
-            <sprite>sprites\sprPWalkDoubleBarrel</sprite>
-            <sprite>sprites\sprPWalkDrill</sprite>
-            <sprite>sprites\sprPWalkGirlfriend</sprite>
-            <sprite>sprites\sprPWalkKnife</sprite>
-            <sprite>sprites\sprPWalkLedge</sprite>
-            <sprite>sprites\sprPWalkM16</sprite>
-            <sprite>sprites\sprPWalkMachete</sprite>
-            <sprite>sprites\sprPWalkMagnum</sprite>
-            <sprite>sprites\sprPWalkMP5</sprite>
-            <sprite>sprites\sprPWalkNightStick</sprite>
-            <sprite>sprites\sprPWalkPan</sprite>
-            <sprite>sprites\sprPWalkPipe</sprite>
-            <sprite>sprites\sprPWalkPool</sprite>
-            <sprite>sprites\sprPWalkPoolBroke</sprite>
-            <sprite>sprites\sprPWalkPot</sprite>
-            <sprite>sprites\sprPWalkScorpion</sprite>
-            <sprite>sprites\sprPWalkShotgun</sprite>
-            <sprite>sprites\sprPWalkSilencedUzi</sprite>
-            <sprite>sprites\sprPWalkSilencer</sprite>
-            <sprite>sprites\sprPWalkSledgeHammer</sprite>
-            <sprite>sprites\sprPWalkSword</sprite>
-            <sprite>sprites\sprPWalkTaser</sprite>
-            <sprite>sprites\sprPWalkThrow</sprite>
-            <sprite>sprites\sprPWalkTrophy</sprite>
-            <sprite>sprites\sprPWalkUnarmed</sprite>
-            <sprite>sprites\sprPWalkUnarmed2</sprite>
-            <sprite>sprites\sprPWalkUzi</sprite>
-          </sprites>
-          <sprites name="Attacking">
-            <sprite>sprites\sprPAttackAxe</sprite>
-            <sprite>sprites\sprPAttackBag</sprite>
-            <sprite>sprites\sprPAttackBash</sprite>
-            <sprite>sprites\sprPAttackBashPolice</sprite>
-            <sprite>sprites\sprPAttackBat</sprite>
-            <sprite>sprites\sprPAttackBoilingPot</sprite>
-            <sprite>sprites\sprPAttackBossgun</sprite>
-            <sprite>sprites\sprPAttackClub</sprite>
-            <sprite>sprites\sprPAttackCrowbar</sprite>
-            <sprite>sprites\sprPAttackDoubleBarrel1</sprite>
-            <sprite>sprites\sprPAttackDoubleBarrel2</sprite>
-            <sprite>sprites\sprPAttackDrill</sprite>
-            <sprite>sprites\sprPAttackKnife</sprite>
-            <sprite>sprites\sprPAttackM16</sprite>
-            <sprite>sprites\sprPAttackMachete</sprite>
-            <sprite>sprites\sprPAttackMagnum</sprite>
-            <sprite>sprites\sprPAttackMP5</sprite>
-            <sprite>sprites\sprPAttackNightStick</sprite>
-            <sprite>sprites\sprPAttackPan</sprite>
-            <sprite>sprites\sprPAttackPipe</sprite>
-            <sprite>sprites\sprPAttackPool</sprite>
-            <sprite>sprites\sprPAttackPoolBroke</sprite>
-            <sprite>sprites\sprPAttackPot</sprite>
-            <sprite>sprites\sprPAttackPunch</sprite>
-            <sprite>sprites\sprPAttackScorpion</sprite>
-            <sprite>sprites\sprPAttackShotgun</sprite>
-            <sprite>sprites\sprPAttackSilencedUzi</sprite>
-            <sprite>sprites\sprPAttackSilencer</sprite>
-            <sprite>sprites\sprPAttackSledgeHammer</sprite>
-            <sprite>sprites\sprPAttackSword</sprite>
-            <sprite>sprites\sprPAttackTaser</sprite>
-            <sprite>sprites\sprPAttackThroat</sprite>
-            <sprite>sprites\sprPAttackThrow</sprite>
-            <sprite>sprites\sprPAttackTrophy</sprite>
-            <sprite>sprites\sprPAttackUzi</sprite>
-            <sprite>sprites\sprPAxeKill</sprite>
-          </sprites>
-          <sprites name="Dead">
+            <sprites name="Attack">
+              <sprite>sprites\sprPAttackAxe</sprite>
+              <sprite>sprites\sprPAttackBag</sprite>
+              <sprite>sprites\sprPAttackBash</sprite>
+              <sprite>sprites\sprPAttackBashPolice</sprite>
+              <sprite>sprites\sprPAttackBat</sprite>
+              <sprite>sprites\sprPAttackBoilingPot</sprite>
+              <sprite>sprites\sprPAttackBossgun</sprite>
+              <sprite>sprites\sprPAttackClub</sprite>
+              <sprite>sprites\sprPAttackCrowbar</sprite>
+              <sprite>sprites\sprPAttackDoubleBarrel1</sprite>
+              <sprite>sprites\sprPAttackDoubleBarrel2</sprite>
+              <sprite>sprites\sprPAttackDrill</sprite>
+              <sprite>sprites\sprPAttackKnife</sprite>
+              <sprite>sprites\sprPAttackM16</sprite>
+              <sprite>sprites\sprPAttackMachete</sprite>
+              <sprite>sprites\sprPAttackMagnum</sprite>
+              <sprite>sprites\sprPAttackMP5</sprite>
+              <sprite>sprites\sprPAttackNightStick</sprite>
+              <sprite>sprites\sprPAttackPan</sprite>
+              <sprite>sprites\sprPAttackPipe</sprite>
+              <sprite>sprites\sprPAttackPool</sprite>
+              <sprite>sprites\sprPAttackPoolBroke</sprite>
+              <sprite>sprites\sprPAttackPot</sprite>
+              <sprite>sprites\sprPAttackPunch</sprite>
+              <sprite>sprites\sprPAttackScorpion</sprite>
+              <sprite>sprites\sprPAttackShotgun</sprite>
+              <sprite>sprites\sprPAttackSilencedUzi</sprite>
+              <sprite>sprites\sprPAttackSilencer</sprite>
+              <sprite>sprites\sprPAttackSledgeHammer</sprite>
+              <sprite>sprites\sprPAttackSword</sprite>
+              <sprite>sprites\sprPAttackTaser</sprite>
+              <sprite>sprites\sprPAttackThroat</sprite>
+              <sprite>sprites\sprPAttackThrow</sprite>
+              <sprite>sprites\sprPAttackTrophy</sprite>
+              <sprite>sprites\sprPAttackUzi</sprite>
+              <sprite>sprites\sprPAxeKill</sprite>
+            </sprites>
+            <sprites name="Dead">
+              <sprites name="Unused">
+                <sprite>sprites\sprPBackBlunt2</sprite>
+                <sprite>sprites\sprPBackCut2</sprite>
+                <sprite>sprites\sprPBackEaten2</sprite>
+                <sprite>sprites\sprPBackElectrified2</sprite>
+                <sprite>sprites\sprPBackMachinegun2</sprite>
+                <sprite>sprites\sprPBackShotgun2</sprite>
+                <sprite>sprites\sprPFrontBlunt2</sprite>
+                <sprite>sprites\sprPFrontMachinegun2</sprite>
+                <sprite>sprites\sprPFrontShotgun2</sprite>
+              </sprites>
+              <sprite>sprites\sprPBackBlunt</sprite>
+              <sprite>sprites\sprPBackCar</sprite>
+              <sprite>sprites\sprPBackCut</sprite>
+              <sprite>sprites\sprPBackEaten</sprite>
+              <sprite>sprites\sprPBackElectrified</sprite>
+              <sprite>sprites\sprPBackMachinegun</sprite>
+              <sprite>sprites\sprPBackNinjaKnife</sprite>
+              <sprite>sprites\sprPBackShotgun</sprite>
+              <sprite>sprites\sprPFrontBlunt</sprite>
+              <sprite>sprites\sprPFrontMachinegun</sprite>
+              <sprite>sprites\sprPFrontShotgun</sprite>
+              <sprite>sprites\sprPDeadExploded</sprite>
+            </sprites>
+            <sprites name="Kill">
+              <sprite>sprites\sprPAttackFaceKick</sprite>
+              <sprite>sprites\sprPAttackSnap</sprite>
+              <sprite>sprites\sprPBagKill</sprite>
+              <sprite>sprites\sprPBashBodyguard</sprite>
+              <sprite>sprites\sprPBashBoss2</sprite>
+              <sprite>sprites\sprPBashHobo</sprite>
+              <sprite>sprites\sprPBatKill</sprite>
+              <sprite>sprites\sprPBrickKill</sprite>
+              <sprite>sprites\sprPBrokenPoolKill</sprite>
+              <sprite>sprites\sprPClubBoss2</sprite>
+              <sprite>sprites\sprPClubKill</sprite>
+              <sprite>sprites\sprPDrillKillPolice</sprite>
+              <sprite>sprites\sprPKillBoilingPot</sprite>
+              <sprite>sprites\sprPKillBottle</sprite>
+              <sprite>sprites\sprPKillCrowbar</sprite>
+              <sprite>sprites\sprPKillDart</sprite>
+              <sprite>sprites\sprPKillDrill</sprite>
+              <sprite>sprites\sprPKillHammer</sprite>
+              <sprite>sprites\sprPKillMachete</sprite>
+              <sprite>sprites\sprPKillPan</sprite>
+              <sprite>sprites\sprPKillPot</sprite>
+              <sprite>sprites\sprPKillSledgeHammer</sprite>
+              <sprite>sprites\sprPKnifeKill</sprite>
+              <sprite>sprites\sprPPipeKill</sprite>
+              <sprite>sprites\sprPPoolKill</sprite>
+              <sprite>sprites\sprPScissorKill</sprite>
+              <sprite>sprites\sprPStrangleAssassin</sprite>
+              <sprite>sprites\sprPNightStickKill</sprite>
+              <sprite>sprites\sprPTrophyKill</sprite>
+              <sprite>sprites\sprPSwordKill</sprite>
+            </sprites>
+            <sprites name="Shield">
+              <sprites name="Walking">
+                <sprite>sprites\sprPHumanShieldDoubleBarrel</sprite>
+                <sprite>sprites\sprPHumanShieldMagnum</sprite>
+                <sprite>sprites\sprPHumanShieldMP5</sprite>
+                <sprite>sprites\sprPHumanShieldScorpion</sprite>
+                <sprite>sprites\sprPHumanShieldSilencer</sprite>
+                <sprite>sprites\sprPHumanShieldUzi</sprite>
+              </sprites>
+              <sprites name="Attacking">
+                <sprite>sprites\sprPHumanShieldDoubleBarrelShoot1</sprite>
+                <sprite>sprites\sprPHumanShieldDoubleBarrelShoot2</sprite>
+                <sprite>sprites\sprPHumanShieldMagnumShoot</sprite>
+                <sprite>sprites\sprPHumanShieldMP5Shoot</sprite>
+                <sprite>sprites\sprPHumanShieldScorpionShoot</sprite>
+                <sprite>sprites\sprPHumanShieldSilencerShoot</sprite>
+                <sprite>sprites\sprPHumanShieldUziShoot</sprite>
+              </sprites>
+              <sprites name="Snap">
+                <sprite>sprites\sprShieldSnapDoubleBarrel</sprite>
+                <sprite>sprites\sprShieldSnapMagnum</sprite>
+                <sprite>sprites\sprShieldSnapMP5</sprite>
+                <sprite>sprites\sprShieldSnapScorpion</sprite>
+                <sprite>sprites\sprShieldSnapSilencer</sprite>
+                <sprite>sprites\sprShieldSnapUzi</sprite>
+              </sprites>
+              <sprite>sprites\sprHumanShield</sprite>
+            </sprites>
+            <sprites name="Mask">
+              <sprites name="MaskPutOnAnimation">
+                <sprite>sprites\sprPMaskSlip</sprite>
+                <sprite>sprites\sprPThrowMask</sprite>
+                <sprite>sprites\sprRoosterMask</sprite>
+                <sprite>sprites\sprBatMask</sprite>
+                <sprite>sprites\sprCamelMask</sprite>
+                <sprite>sprites\sprChamelionMask</sprite>
+                <sprite>sprites\sprCobraMask</sprite>
+                <sprite>sprites\sprCollieMask</sprite>
+                <sprite>sprites\sprCrocodileMask</sprite>
+                <sprite>sprites\sprTigerMask</sprite>
+                <sprite>sprites\sprElephantMask</sprite>
+                <sprite>sprites\sprFishMask</sprite>
+                <sprite>sprites\sprFoxMask</sprite>
+                <sprite>sprites\sprFrogMask</sprite>
+                <sprite>sprites\sprGiraffeMask</sprite>
+                <sprite>sprites\sprHorseMask</sprite>
+                <sprite>sprites\sprLocustMask</sprite>
+                <sprite>sprites\sprMoleMask</sprite>
+                <sprite>sprites\sprMonkeyMask</sprite>
+                <sprite>sprites\sprRabbitMask</sprite>
+                <sprite>sprites\sprRatMask</sprite>
+                <sprite>sprites\sprUnicornMask</sprite>
+                <sprite>sprites\sprOctopusMask</sprite>
+                <sprite>sprites\sprWolfMask</sprite>
+                <sprite>sprites\sprCowMask</sprite>
+                <sprite>sprites\sprWalrusMask</sprite>
+                <sprite>sprites\sprPigMask</sprite>
+                <sprite>sprites\sprOwlMask</sprite>
+              </sprites>
+              <sprite>sprites\sprMaskDropBack</sprite>
+              <sprite>sprites\sprMaskDropFront</sprite>
+              <sprite>sprites\sprMaskLetter</sprite>
+              <sprite>sprites\sprMasksBig</sprite>
+              <sprite>sprites\sprMasks</sprite>
+            </sprites>
+            <sprites name="Car">
+              <sprite>sprites\sprCarMask</sprite>
+              <sprite>sprites\sprCarThrashed</sprite>
+              <sprite>sprites\sprCarThrashedBottom</sprite>
+              <sprite>sprites\sprPlayerCar</sprite>
+            </sprites>
+            <sprites name="Story">
+              <sprites name="Hospital">
+                <sprite>sprites\sprEnterWindow</sprite>
+                <sprite>sprites\sprPExitWindow</sprite>
+                <sprite>sprites\sprPHeadExplode</sprite>
+                <sprite>sprites\sprPHospitalHeadache</sprite>
+                <sprite>sprites\sprPKeyLockOpen</sprite>
+                <sprite>sprites\sprPRipPoliceTape</sprite>
+                <sprite>sprites\sprPSleepHospital</sprite>
+                <sprite>sprites\sprPWalkHospital</sprite>
+                <sprite>sprites\sprPWalkWindow</sprite>
+              </sprites>
+              <sprites name="Window">
+                <sprite>sprites\sprPClimbLedge</sprite>
+                <sprite>sprites\sprPClimbWindow</sprite>
+              </sprites>
+              <sprite>sprites\sprPEnding</sprite>
+              <sprite>sprites\sprPKneel</sprite>
+              <sprite>sprites\sprPlayerClimbDown</sprite>
+              <sprite>sprites\sprPlayerClimbUp</sprite>
+              <sprite>sprites\sprPlayerLighter</sprite>
+              <sprite>sprites\sprPLeaveBag</sprite>
+              <sprite>sprites\sprPOpenSewer</sprite>
+              <sprite>sprites\sprPStomped</sprite>
+              <sprite>sprites\sprPTakePhone</sprite>
+              <sprite>sprites\sprPUnlockDoor</sprite>
+              <sprite>sprites\sprPVomit</sprite>
+            </sprites>
             <sprites name="Unused">
-              <sprite>sprites\sprPBackBlunt2</sprite>
-              <sprite>sprites\sprPBackCut2</sprite>
-              <sprite>sprites\sprPBackEaten2</sprite>
-              <sprite>sprites\sprPBackElectrified2</sprite>
-              <sprite>sprites\sprPBackMachinegun2</sprite>
-              <sprite>sprites\sprPBackShotgun2</sprite>
-              <sprite>sprites\sprPFrontBlunt2</sprite>
-              <sprite>sprites\sprPFrontMachinegun2</sprite>
-              <sprite>sprites\sprPFrontShotgun2</sprite>
-            </sprites>
-            <sprite>sprites\sprPBackBlunt</sprite>
-            <sprite>sprites\sprPBackCar</sprite>
-            <sprite>sprites\sprPBackCut</sprite>
-            <sprite>sprites\sprPBackEaten</sprite>
-            <sprite>sprites\sprPBackElectrified</sprite>
-            <sprite>sprites\sprPBackMachinegun</sprite>
-            <sprite>sprites\sprPBackNinjaKnife</sprite>
-            <sprite>sprites\sprPBackShotgun</sprite>
-            <sprite>sprites\sprPFrontBlunt</sprite>
-            <sprite>sprites\sprPFrontMachinegun</sprite>
-            <sprite>sprites\sprPFrontShotgun</sprite>
-            <sprite>sprites\sprPDeadExploded</sprite>
-          </sprites>
-          <sprites name="Executions">
-            <sprite>sprites\sprPAttackFaceKick</sprite>
-            <sprite>sprites\sprPAttackSnap</sprite>
-            <sprite>sprites\sprPBagKill</sprite>
-            <sprite>sprites\sprPBashBodyguard</sprite>
-            <sprite>sprites\sprPBashBoss2</sprite>
-            <sprite>sprites\sprPBashHobo</sprite>
-            <sprite>sprites\sprPBatKill</sprite>
-            <sprite>sprites\sprPBrickKill</sprite>
-            <sprite>sprites\sprPBrokenPoolKill</sprite>
-            <sprite>sprites\sprPClubBoss2</sprite>
-            <sprite>sprites\sprPClubKill</sprite>
-            <sprite>sprites\sprPDrillKillPolice</sprite>
-            <sprite>sprites\sprPKillBoilingPot</sprite>
-            <sprite>sprites\sprPKillBottle</sprite>
-            <sprite>sprites\sprPKillCrowbar</sprite>
-            <sprite>sprites\sprPKillDart</sprite>
-            <sprite>sprites\sprPKillDrill</sprite>
-            <sprite>sprites\sprPKillHammer</sprite>
-            <sprite>sprites\sprPKillMachete</sprite>
-            <sprite>sprites\sprPKillPan</sprite>
-            <sprite>sprites\sprPKillPot</sprite>
-            <sprite>sprites\sprPKillSledgeHammer</sprite>
-            <sprite>sprites\sprPKnifeKill</sprite>
-            <sprite>sprites\sprPPipeKill</sprite>
-            <sprite>sprites\sprPPoolKill</sprite>
-            <sprite>sprites\sprPScissorKill</sprite>
-            <sprite>sprites\sprPStrangleAssassin</sprite>
-            <sprite>sprites\sprPNightStickKill</sprite>
-            <sprite>sprites\sprPTrophyKill</sprite>
-            <sprite>sprites\sprPSwordKill</sprite>
-          </sprites>
-          <sprites name="Human shield">
-            <sprites name="Walking">
-              <sprite>sprites\sprPHumanShieldDoubleBarrel</sprite>
-              <sprite>sprites\sprPHumanShieldMagnum</sprite>
-              <sprite>sprites\sprPHumanShieldMP5</sprite>
-              <sprite>sprites\sprPHumanShieldScorpion</sprite>
-              <sprite>sprites\sprPHumanShieldSilencer</sprite>
-              <sprite>sprites\sprPHumanShieldUzi</sprite>
-            </sprites>
-            <sprites name="Attacking">
-              <sprite>sprites\sprPHumanShieldDoubleBarrelShoot1</sprite>
-              <sprite>sprites\sprPHumanShieldDoubleBarrelShoot2</sprite>
-              <sprite>sprites\sprPHumanShieldMagnumShoot</sprite>
-              <sprite>sprites\sprPHumanShieldMP5Shoot</sprite>
-              <sprite>sprites\sprPHumanShieldScorpionShoot</sprite>
-              <sprite>sprites\sprPHumanShieldSilencerShoot</sprite>
-              <sprite>sprites\sprPHumanShieldUziShoot</sprite>
-            </sprites>
-            <sprites name="Snap">
-              <sprite>sprites\sprShieldSnapDoubleBarrel</sprite>
-              <sprite>sprites\sprShieldSnapMagnum</sprite>
-              <sprite>sprites\sprShieldSnapMP5</sprite>
-              <sprite>sprites\sprShieldSnapScorpion</sprite>
-              <sprite>sprites\sprShieldSnapSilencer</sprite>
-              <sprite>sprites\sprShieldSnapUzi</sprite>
-            </sprites>
-            <sprite>sprites\sprHumanShield</sprite>
-          </sprites>
-          <sprites name="Masks">
-            <sprite>sprites\sprMaskDropBack</sprite>
-            <sprite>sprites\sprMaskDropFront</sprite>
-            <sprite>sprites\sprMaskLetter</sprite>
-            <sprite>sprites\sprMasksBig</sprite>
-            <sprite>sprites\sprMasks</sprite>
-          </sprites>
-          <sprites name="Car">
-            <sprite>sprites\sprCarMask</sprite>
-            <sprite>sprites\sprCarThrashed</sprite>
-            <sprite>sprites\sprCarThrashedBottom</sprite>
-            <sprite>sprites\sprPlayerCar</sprite>
-          </sprites>
-          <sprites name="Miscelaneous">
-            <sprites name="Hospital">
-              <sprite>sprites\sprEnterWindow</sprite>
-              <sprite>sprites\sprPExitWindow</sprite>
-              <sprite>sprites\sprPHeadExplode</sprite>
-              <sprite>sprites\sprPHospitalHeadache</sprite>
-              <sprite>sprites\sprPKeyLockOpen</sprite>
-              <sprite>sprites\sprPRipPoliceTape</sprite>
-              <sprite>sprites\sprPSleepHospital</sprite>
-              <sprite>sprites\sprPWalkHospital</sprite>
-              <sprite>sprites\sprPWalkWindow</sprite>
-            </sprites>
-            <sprites name="Sneak">
-              <sprite>sprites\sprPSneakBat</sprite>
-              <sprite>sprites\sprPSneakClub</sprite>
-              <sprite>sprites\sprPSneakKnife</sprite>
-              <sprite>sprites\sprPSneakM16</sprite>
-              <sprite>sprites\sprPSneakPipe</sprite>
-              <sprite>sprites\sprPSneakUnarmed</sprite>
-            </sprites>
-            <sprites name="Window">
-              <sprite>sprites\sprPClimbLedge</sprite>
-              <sprite>sprites\sprPClimbWindow</sprite>
-            </sprites>
-            <sprites name="Unused">
+              <sprites name="Sneak">
+                <sprite>sprites\sprPSneakBat</sprite>
+                <sprite>sprites\sprPSneakClub</sprite>
+                <sprite>sprites\sprPSneakKnife</sprite>
+                <sprite>sprites\sprPSneakM16</sprite>
+                <sprite>sprites\sprPSneakPipe</sprite>
+                <sprite>sprites\sprPSneakUnarmed</sprite>
+              </sprites>
               <sprite>sprites\sprPlayerHeavyAttack</sprite>
               <sprite>sprites\sprPMaskSlip2</sprite>
               <sprite>sprites\sprPPickup</sprite>
               <sprite>sprites\sprPTakePhone2</sprite>
+              <sprite>sprites\sprShotgunTurn</sprite>
             </sprites>
-            <sprites name="Put on Masks">
-              <sprite>sprites\sprRoosterMask</sprite>
-              <sprite>sprites\sprBatMask</sprite>
-              <sprite>sprites\sprCamelMask</sprite>
-              <sprite>sprites\sprChamelionMask</sprite>
-              <sprite>sprites\sprCobraMask</sprite>
-              <sprite>sprites\sprCollieMask</sprite>
-              <sprite>sprites\sprCrocodileMask</sprite>
-              <sprite>sprites\sprTigerMask</sprite>
-              <sprite>sprites\sprElephantMask</sprite>
-              <sprite>sprites\sprFishMask</sprite>
-              <sprite>sprites\sprFoxMask</sprite>
-              <sprite>sprites\sprFrogMask</sprite>
-              <sprite>sprites\sprGiraffeMask</sprite>
-              <sprite>sprites\sprHorseMask</sprite>
-              <sprite>sprites\sprLocustMask</sprite>
-              <sprite>sprites\sprMoleMask</sprite>
-              <sprite>sprites\sprMonkeyMask</sprite>
-              <sprite>sprites\sprRabbitMask</sprite>
-              <sprite>sprites\sprRatMask</sprite>
-              <sprite>sprites\sprUnicornMask</sprite>
-              <sprite>sprites\sprOctopusMask</sprite>
-              <sprite>sprites\sprWolfMask</sprite>
-              <sprite>sprites\sprCowMask</sprite>
-              <sprite>sprites\sprWalrusMask</sprite>
-              <sprite>sprites\sprPigMask</sprite>
-              <sprite>sprites\sprOwlMask</sprite>
+          </sprites>
+          <sprites name="Biker">
+            <sprites name="Walk">
+              <sprite>sprites\sprBoss2Walk</sprite>
+              <sprite>sprites\sprBoss2WalkCleaver</sprite>
+              <sprite>sprites\sprMCWalkNoHelmet</sprite>
+              <sprite>sprites\sprBikerLegs</sprite>
+              <sprite>sprites\sprBikerLegsStairs</sprite>
             </sprites>
-            <sprite>sprites\sprPEnding</sprite>
-            <sprite>sprites\sprPKneel</sprite>
-            <sprite>sprites\sprPlayerClimbDown</sprite>
-            <sprite>sprites\sprShotgunTurn</sprite>
-            <sprite>sprites\sprPlayerClimbUp</sprite>
-            <sprite>sprites\sprPlayerJacket</sprite>
-            <sprite>sprites\sprPlayerLighter</sprite>
-            <sprite>sprites\sprPlayerPants</sprite>
-            <sprite>sprites\sprPLeaveBag</sprite>
-            <sprite>sprites\sprPMaskSlip</sprite>
-            <sprite>sprites\sprPOpenSewer</sprite>
-            <sprite>sprites\sprPStomped</sprite>
-            <sprite>sprites\sprPTakePhone</sprite>
-            <sprite>sprites\sprPThrowMask</sprite>
-            <sprite>sprites\sprPUnlockDoor</sprite>
-            <sprite>sprites\sprPVomit</sprite>
+            <sprites name="Attack">
+              <sprite>sprites\sprBoss2AttackCleaver</sprite>
+              <sprite>sprites\sprBoss2ThrowKnife</sprite>
+              <sprite>sprites\sprBikerKnife</sprite>
+            </sprites>
+            <sprites name="Kill">
+              <sprite>sprites\sprBikerKick</sprite>
+              <sprite>sprites\sprMCKillChop</sprite>
+              <sprite>sprites\sprMCKillCut</sprite>
+              <sprite>sprites\sprMCKillStomp</sprite>
+            </sprites>
+            <sprites name="Dead">
+              <sprite>sprites\sprMCBackBlunt</sprite>
+              <sprite>sprites\sprMCBackCut</sprite>
+              <sprite>sprites\sprMCBackMachinegun</sprite>
+              <sprite>sprites\sprMCBackShotgun</sprite>
+              <sprite>sprites\sprMCFrontBlunt</sprite>
+              <sprite>sprites\sprMCFrontMachinegun</sprite>
+              <sprite>sprites\sprMCFrontShotgun</sprite>
+              <sprite>sprites\sprMCHelmet</sprite>
+              <sprite>sprites\sprHelmetBroken</sprite>
+            </sprites>
+            <sprites name="Story">
+              <sprite>sprites\sprBikeSmoke</sprite>
+              <sprite>sprites\sprBoss2Computer</sprite>
+              <sprite>sprites\sprMCBike</sprite>
+              <sprite>sprites\sprMCClimbDown</sprite>
+              <sprite>sprites\sprMCClimbUp</sprite>
+              <sprite>sprites\sprMCDeadDog</sprite>
+              <sprite>sprites\sprMCDrive</sprite>
+              <sprite>sprites\sprMCDriveOff</sprite>
+              <sprite>sprites\sprMCGetOnBike</sprite>
+              <sprite>sprites\sprMCPickUpPhone</sprite>
+              <sprite>sprites\sprMCPushPig</sprite>
+              <sprite>sprites\sprMCPutOnHelmet</sprite>
+              <sprite>sprites\sprMCShakePig</sprite>
+              <sprite>sprites\sprSushiGuyHold</sprite>
+            </sprites>
+          </sprites>
+          <sprites name="PigButcher">
+            <sprites name="Original">
+              <sprite>sprites\sprPigButcher</sprite>
+              <sprite>sprites\sprPigButcherAttack</sprite>
+              <sprite>sprites\sprPigButcherHeadButt</sprite>
+              <sprite>sprites\sprPigButcherKill</sprite>
+              <sprite>sprites\sprPigButcherShoot</sprite>
+              <sprite>sprites\sprPigButcherWalkMP5</sprite>
+            </sprites>
+            <sprites name="Imported">
+              <sprite>sprites\sprPigAttack9mm</sprite>
+              <sprite>sprites\sprPigAttackBat</sprite>
+              <sprite>sprites\sprPigAttackChain</sprite>
+              <sprite>sprites\sprPigAttackClub</sprite>
+              <sprite>sprites\sprPigAttackDoubleBarrel1</sprite>
+              <sprite>sprites\sprPigAttackDoubleBarrel2</sprite>
+              <sprite>sprites\sprPigAttackFamae</sprite>
+              <sprite>sprites\sprPigAttackHammer</sprite>
+              <sprite>sprites\sprPigAttackKalashnikov</sprite>
+              <sprite>sprites\sprPigAttackKnife</sprite>
+              <sprite>sprites\sprPigAttackM16</sprite>
+              <sprite>sprites\sprPigAttackMachete</sprite>
+              <sprite>sprites\sprPigAttackMagnum</sprite>
+              <sprite>sprites\sprPigAttackMendoza</sprite>
+              <sprite>sprites\sprPigAttackPipe</sprite>
+              <sprite>sprites\sprPigAttackPunch</sprite>
+              <sprite>sprites\sprPigAttackShotgun</sprite>
+              <sprite>sprites\sprPigAttackSilencer</sprite>
+              <sprite>sprites\sprPigAttackStick</sprite>
+              <sprite>sprites\sprPigAttackTaser</sprite>
+              <sprite>sprites\sprPigAttackUzi</sprite>
+              <sprite>sprites\sprPigBreakNeck</sprite>
+              <sprite>sprites\sprPigBrokenIdle</sprite>
+              <sprite>sprites\sprPigDeadBlunt</sprite>
+              <sprite>sprites\sprPigDeadCut</sprite>
+              <sprite>sprites\sprPigDeadMachinegun</sprite>
+              <sprite>sprites\sprPigDeadShotgun</sprite>
+              <sprite>sprites\sprPigDeadTaser</sprite>
+              <sprite>sprites\sprPigKillBat</sprite>
+              <sprite>sprites\sprPigKillBoss</sprite>
+              <sprite>sprites\sprPigKillChain</sprite>
+              <sprite>sprites\sprPigKillClub</sprite>
+              <sprite>sprites\sprPigKillHammer</sprite>
+              <sprite>sprites\sprPigKillHeadbutt</sprite>
+              <sprite>sprites\sprPigKillKick</sprite>
+              <sprite>sprites\sprPigKillKnife</sprite>
+              <sprite>sprites\sprPigKillLean</sprite>
+              <sprite>sprites\sprPigKillLeanPolice</sprite>
+              <sprite>sprites\sprPigKillMachete</sprite>
+              <sprite>sprites\sprPigKillNeck</sprite>
+              <sprite>sprites\sprPigKillPipe</sprite>
+              <sprite>sprites\sprPigKillRape</sprite>
+              <sprite>sprites\sprPigKillRapeCensored</sprite>
+              <sprite>sprites\sprPigKillStick</sprite>
+              <sprite>sprites\sprPigKillStomp</sprite>
+              <sprite>sprites\sprPigKillWall1</sprite>
+              <sprite>sprites\sprPigKillWall2</sprite>
+              <sprite>sprites\sprPigKillWall3</sprite>
+              <sprite>sprites\sprPigKillWall4</sprite>
+              <sprite>sprites\sprPigLegs</sprite>
+              <sprite>sprites\sprPigPutOnMask</sprite>
+              <sprite>sprites\sprPigSleeping</sprite>
+              <sprite>sprites\sprPigStunned</sprite>
+              <sprite>sprites\sprPigTakePhone</sprite>
+              <sprite>sprites\sprPigTalk</sprite>
+              <sprite>sprites\sprPigUnlock</sprite>
+              <sprite>sprites\sprPigWalk9mm</sprite>
+              <sprite>sprites\sprPigWalkBat</sprite>
+              <sprite>sprites\sprPigWalkChain</sprite>
+              <sprite>sprites\sprPigWalkClub</sprite>
+              <sprite>sprites\sprPigWalkDoubleBarrel</sprite>
+              <sprite>sprites\sprPigWalkFamae</sprite>
+              <sprite>sprites\sprPigWalkHammer</sprite>
+              <sprite>sprites\sprPigWalkKalashnikov</sprite>
+              <sprite>sprites\sprPigWalkKnife</sprite>
+              <sprite>sprites\sprPigWalkM16</sprite>
+              <sprite>sprites\sprPigWalkMachete</sprite>
+              <sprite>sprites\sprPigWalkMagnum</sprite>
+              <sprite>sprites\sprPigWalkMendoza</sprite>
+              <sprite>sprites\sprPigWalkPipe</sprite>
+              <sprite>sprites\sprPigWalkShotgun</sprite>
+              <sprite>sprites\sprPigWalkSilencer</sprite>
+              <sprite>sprites\sprPigWalkStick</sprite>
+              <sprite>sprites\sprPigWalkTaser</sprite>
+              <sprite>sprites\sprPigWalkUnarmed</sprite>
+              <sprite>sprites\sprPigWalkUzi</sprite>
+            </sprites>
           </sprites>
         </sprites>
-        <sprites name="Biker">
-          <sprites name="Walking">
-            <sprite>sprites\sprBoss2Walk</sprite>
-            <sprite>sprites\sprBoss2WalkCleaver</sprite>
-            <sprite>sprites\sprMCWalkNoHelmet</sprite>
-            <sprite>sprites\sprBikerLegs</sprite>
-            <sprite>sprites\sprBikerLegsStairs</sprite>
+        <sprites name="Enemy">
+          <sprites name="Mafia">
+            <sprites name="Walking">
+              <sprite>sprites\sprEWalkBat</sprite>
+              <sprite>sprites\sprEWalkDoubleBarrel</sprite>
+              <sprite>sprites\sprEWalkKnife</sprite>
+              <sprite>sprites\sprEWalkM16</sprite>
+              <sprite>sprites\sprEWalkPipe</sprite>
+              <sprite>sprites\sprEWalkSilencer</sprite>
+              <sprite>sprites\sprEWalkUnarmed</sprite>
+              <sprite>sprites\sprEWalkClub</sprite>
+              <sprite>sprites\sprELegs</sprite>
+              <sprite>sprites\sprEGetUp</sprite>
+              <sprite>sprites\sprEGetUpLean</sprite>
+              <sprite>sprites\sprEGetUpLeanMask</sprite>
+              <sprite>sprites\sprEM16CourchingLegs</sprite>
+              <sprite>sprites\sprEM16Crouching</sprite>
+              <sprite>sprites\sprEGiveUp</sprite>
+            </sprites>
+            <sprites name="Attacking">
+              <sprite>sprites\sprEAttackClub</sprite>
+              <sprite>sprites\sprEAttackBat</sprite>
+              <sprite>sprites\sprEAttackDoubleBarrel1</sprite>
+              <sprite>sprites\sprEAttackKnife</sprite>
+              <sprite>sprites\sprEAttackDoubleBarrel2</sprite>
+              <sprite>sprites\sprEAttackM16</sprite>
+              <sprite>sprites\sprEAttackPipe</sprite>
+              <sprite>sprites\sprEAttackShotgun</sprite>
+            </sprites>
+            <sprites name="Dead">
+              <sprite>sprites\sprEAxeKill</sprite>
+              <sprite>sprites\sprEBackBashed</sprite>
+              <sprite>sprites\sprEBackBlunt</sprite>
+              <sprite>sprites\sprEBackCracked</sprite>
+              <sprite>sprites\sprEBackCut</sprite>
+              <sprite>sprites\sprEBackDrill</sprite>
+              <sprite>sprites\sprEBackHeadbutt</sprite>
+              <sprite>sprites\sprEBackHeadJerk</sprite>
+              <sprite>sprites\sprEBackHeadshot</sprite>
+              <sprite>sprites\sprEBackKicked</sprite>
+              <sprite>sprites\sprEBackMachinegun</sprite>
+              <sprite>sprites\sprEBackScissor</sprite>
+              <sprite>sprites\sprEBackShieldSnap</sprite>
+              <sprite>sprites\sprEBackShotgun</sprite>
+              <sprite>sprites\sprEBackShotgunVomit</sprite>
+              <sprite>sprites\sprEBackSlashed</sprite>
+              <sprite>sprites\sprEBackSlashedPiece</sprite>
+              <sprite>sprites\sprEBackThroat</sprite>
+              <sprite>sprites\sprEBatKill</sprite>
+              <sprite>sprites\sprEBluntKill</sprite>
+              <sprite>sprites\sprEBombTinker</sprite>
+              <sprite>sprites\sprEBrickKill</sprite>
+              <sprite>sprites\sprEBrokenPoolKill</sprite>
+              <sprite>sprites\sprEChopKill</sprite>
+              <sprite>sprites\sprECrawl</sprite>
+              <sprite>sprites\sprEDeadBackPool</sprite>
+              <sprite>sprites\sprEDeadBoiling</sprite>
+              <sprite>sprites\sprEDeadDart</sprite>
+              <sprite>sprites\sprEDeadFrontPool</sprite>
+              <sprite>sprites\sprEDeadHammer</sprite>
+              <sprite>sprites\sprEDeadLean</sprite>
+              <sprite>sprites\sprEDeadMachete</sprite>
+              <sprite>sprites\sprEDeadWall</sprite>
+              <sprite>sprites\sprEFrontBlunt</sprite>
+              <sprite>sprites\sprEFrontMachinegun</sprite>
+              <sprite>sprites\sprEFrontShotgun</sprite>
+              <sprite>sprites\sprEFrontSlit</sprite>
+              <sprite>sprites\sprEFrontSnap</sprite>
+              <sprite>sprites\sprEGroundBoiling</sprite>
+              <sprite>sprites\sprEGroundBottle</sprite>
+              <sprite>sprites\sprEGroundDart</sprite>
+              <sprite>sprites\sprEHeadStomp</sprite>
+              <sprite>sprites\sprEPoolKill</sprite>
+              <sprite>sprites\sprESwordKill</sprite>
+              <sprite>sprites\sprExplodedBody1</sprite>
+              <sprite>sprites\sprExplodedBody2</sprite>
+            </sprites>
+            <sprites name="Search">
+              <sprite>sprites\sprESearchBat</sprite>
+              <sprite>sprites\sprESearchClub</sprite>
+              <sprite>sprites\sprESearchDoubleBarrel</sprite>
+              <sprite>sprites\sprESearchKnife</sprite>
+              <sprite>sprites\sprESearchM16</sprite>
+              <sprite>sprites\sprESearchPipe</sprite>
+              <sprite>sprites\sprESearchShotgun</sprite>
+              <sprite>sprites\sprESearchSilencer</sprite>
+            </sprites>
+            <sprites name="Idle">
+              <sprite>sprites\sprEDrinking</sprite>
+              <sprite>sprites\sprEDrinkingLegs</sprite>
+              <sprite>sprites\sprEIdlePee</sprite>
+              <sprite>sprites\sprEIdlePeeStop</sprite>
+              <sprite>sprites\sprEIdleSmoke</sprite>
+              <sprite>sprites\sprEnemyCellPhone</sprite>
+              <sprite>sprites\sprEnemyPhone</sprite>
+              <sprite>sprites\sprEnemyRise</sprite>
+              <sprite>sprites\sprEnemySit</sprite>
+              <sprite>sprites\sprEStandGuard</sprite>
+            </sprites>
+            <sprites name="Taunt">
+              <sprite>sprites\sprETauntBat</sprite>
+              <sprite>sprites\sprETauntChain</sprite>
+              <sprite>sprites\sprETauntPipe</sprite>
+            </sprites>
+            <sprites name="Unused">
+              <sprite>sprites\sprEAttackM16n</sprite>
+              <sprite>sprites\sprEAttackShotgunn</sprite>
+              <sprite>sprites\sprESneakM16</sprite>
+              <sprite>sprites\sprESneakUnarmed</sprite>
+              <sprite>sprites\sprEWalkM16n</sprite>
+              <sprite>sprites\sprEWalkShotgun</sprite>
+              <sprite>sprites\sprEWalkUnarmedn</sprite>
+              <sprite>sprites\sprEPickup</sprite>
+            </sprites>
+            <sprites name="Story">
+              <sprite>sprites\sprDeadGuysTable</sprite>
+            </sprites>
           </sprites>
-          <sprites name="Attacking">
-            <sprite>sprites\sprBoss2AttackCleaver</sprite>
-            <sprite>sprites\sprBoss2ThrowKnife</sprite>
-            <sprite>sprites\sprBikerKnife</sprite>
+          <sprites name="Fat">
+            <sprites name="Politicians">
+              <sprite>sprites\sprFatmanEating</sprite>
+              <sprite>sprites\sprFatmanShit</sprite>
+              <sprite>sprites\sprFatmanEatingDie</sprite>
+              <sprite>sprites\sprFatmanEatingGiveUp</sprite>
+              <sprite>sprites\sprFatmanHead</sprite>
+              <sprite>sprites\sprFatmanShitDecapitated</sprite>
+              <sprite>sprites\sprFatmanShitDie</sprite>
+              <sprite>sprites\sprFatmanTelephone</sprite>
+              <sprite>sprites\sprFatmanShitGiveUp</sprite>
+              <sprite>sprites\sprFatmanTelephoneDie</sprite>
+              <sprite>sprites\sprFatmanTelephoneGiveUp</sprite>
+            </sprites>
+            <sprites name="Story">
+              <sprite>sprites\sprFatCorpseEat</sprite>
+            </sprites>
+            <sprite>sprites\sprEFatAttack</sprite>
+            <sprite>sprites\sprEFatDead</sprite>
+            <sprite>sprites\sprEFatDie</sprite>
+            <sprite>sprites\sprEFatLegs</sprite>
+            <sprite>sprites\sprEFatWalk</sprite>
+            <sprite>sprites\sprESearchFat</sprite>
           </sprites>
-          <sprites name="Executions">
-            <sprite>sprites\sprBikerKick</sprite>
-            <sprite>sprites\sprMCKillChop</sprite>
-            <sprite>sprites\sprMCKillCut</sprite>
-            <sprite>sprites\sprMCKillStomp</sprite>
+          <sprites name="Police">
+            <sprites name="Walking">
+              <sprite>sprites\sprPoliceWalkGun</sprite>
+              <sprite>sprites\sprPoliceWalkM16</sprite>
+              <sprite>sprites\sprPoliceWalkNightStick</sprite>
+              <sprite>sprites\sprPoliceWalkShotgun</sprite>
+              <sprite>sprites\sprPoliceWalkUnarmed</sprite>
+              <sprite>sprites\sprPoliceWallBashed</sprite>
+              <sprite>sprites\sprPoliceLegs</sprite>
+              <sprite>sprites\sprPoliceGetUp</sprite>
+              <sprite>sprites\sprPoliceGetUpLean</sprite>
+            </sprites>
+            <sprites name="Attacking">
+              <sprite>sprites\sprPoliceAttackNightStick</sprite>
+            </sprites>
+            <sprites name="Search">
+              <sprite>sprites\sprPoliceSearchGun</sprite>
+              <sprite>sprites\sprPoliceSearchM16</sprite>
+              <sprite>sprites\sprPoliceSearchNightStick</sprite>
+              <sprite>sprites\sprPoliceSearchShotgun</sprite>
+            </sprites>
+            <sprites name="Dead">
+              <sprite>sprites\sprPoliceBackBashed</sprite>
+              <sprite>sprites\sprPoliceBackBlunt</sprite>
+              <sprite>sprites\sprPoliceBackMachinegun</sprite>
+              <sprite>sprites\sprPoliceBackShotgun</sprite>
+              <sprite>sprites\sprPoliceBluntKill</sprite>
+              <sprite>sprites\sprPoliceDeadDrill</sprite>
+              <sprite>sprites\sprPoliceFrontBlunt</sprite>
+              <sprite>sprites\sprPoliceFrontMachinegun</sprite>
+              <sprite>sprites\sprPoliceFrontShotgun</sprite>
+              <sprite>sprites\sprPoliceHat</sprite>
+              <sprite>sprites\sprPoliceKicked</sprite>
+            </sprites>
+            <sprites name="Misc">
+              <sprite>sprites\sprPolicePoint</sprite>
+              <sprite>sprites\sprPoliceReading</sprite>
+              <sprite>sprites\sprPoliceTalk</sprite>
+            </sprites>
           </sprites>
-          <sprites name="Dead">
-            <sprite>sprites\sprMCBackBlunt</sprite>
-            <sprite>sprites\sprMCBackCut</sprite>
-            <sprite>sprites\sprMCBackMachinegun</sprite>
-            <sprite>sprites\sprMCBackShotgun</sprite>
-            <sprite>sprites\sprMCFrontBlunt</sprite>
-            <sprite>sprites\sprMCFrontMachinegun</sprite>
-            <sprite>sprites\sprMCFrontShotgun</sprite>
-            <sprite>sprites\sprMCHelmet</sprite>
-            <sprite>sprites\sprHelmetBroken</sprite>
+          <sprites name="Inspector">
+            <sprite>sprites\sprPInspectorAttack</sprite>
+            <sprite>sprites\sprInspectorHat</sprite>
+            <sprite>sprites\sprPInspectorDead</sprite>
+            <sprite>sprites\sprPInspectorDie</sprite>
+            <sprite>sprites\sprPInspectorWalk</sprite>
+            <sprite>sprites\sprPInspectorSearch</sprite>
           </sprites>
-          <sprites name="Miscelaneous">
-            <sprite>sprites\sprBiker</sprite>
-            <sprite>sprites\sprBikerDestroyedFace</sprite>
-            <sprite>sprites\sprBikerHurt</sprite>
-            <sprite>sprites\sprBikeSmoke</sprite>
-            <sprite>sprites\sprBoss2Computer</sprite>
-            <sprite>sprites\sprMCBike</sprite>
-            <sprite>sprites\sprMCClimbDown</sprite>
-            <sprite>sprites\sprMCClimbUp</sprite>
-            <sprite>sprites\sprMCDeadDog</sprite>
-            <sprite>sprites\sprMCDrive</sprite>
-            <sprite>sprites\sprMCDriveOff</sprite>
-            <sprite>sprites\sprMCGetOnBike</sprite>
-            <sprite>sprites\sprMCPickUpPhone</sprite>
-            <sprite>sprites\sprMCPushPig</sprite>
-            <sprite>sprites\sprMCPutOnHelmet</sprite>
-            <sprite>sprites\sprMCShakePig</sprite>
-            <sprite>sprites\sprSushiGuyHold</sprite>
+          <sprites name="Swat">
+            <sprite>sprites\sprSwatCar</sprite>
+            <sprite>sprites\sprSwatFade</sprite>
+            <sprite>sprites\sprSwatGetUp</sprite>
+            <sprite>sprites\sprSwatKickDoor</sprite>
+            <sprite>sprites\sprSwatLegs</sprite>
+            <sprite>sprites\sprSwatLegsHurt</sprite>
+            <sprite>sprites\sprSwatSign</sprite>
+            <sprite>sprites\sprSwatStumble</sprite>
+            <sprite>sprites\sprSwatVan</sprite>
+            <sprite>sprites\sprSwatWalkM16</sprite>
+            <sprite>sprites\sprSwatWalkM16Hurt</sprite>
+            <sprite>sprites\sprCAttackM16</sprite>
+            <sprite>sprites\sprCDeadUp</sprite>
+            <sprite>sprites\sprCSneakM16</sprite>
+          </sprites>
+          <sprites name="Employee">
+            <sprite>sprites\sprEmployeeDead</sprite>
+            <sprite>sprites\sprEmployeeDeadPiece</sprite>
+            <sprite>sprites\sprEmployeeDeadWall</sprite>
+            <sprite>sprites\sprEmployeeLegs</sprite>
+            <sprite>sprites\sprEmployeeThrowingKnife</sprite>
+            <sprite>sprites\sprEmployeeWalk</sprite>
+            <sprite>sprites\sprDeadCivilians</sprite>
+          </sprites>
+          <sprites name="Doctor">
+            <sprite>sprites\sprDoctorPoint</sprite>
+            <sprite>sprites\sprDoctorTalk</sprite>
+            <sprite>sprites\sprDoctorWalk</sprite>
+          </sprites>
+          <sprites name="Subway">
+            <sprite>sprites\sprESubwayBriefcase</sprite>
+            <sprite>sprites\sprESubwayDead</sprite>
+            <sprite>sprites\sprESubwayGetup</sprite>
+            <sprite>sprites\sprESubwayWalk</sprite>
+          </sprites>
+          <sprites name="Waiters">
+            <sprite>sprites\sprEWaiterAttackUzi</sprite>
+            <sprite>sprites\sprEWaiterLegs</sprite>
+            <sprite>sprites\sprEWaiterWalkFood</sprite>
+            <sprite>sprites\sprEWaiterWalkUzi</sprite>
+            <sprite>sprites\sprEWaiterWalkWine</sprite>
+            <sprite>sprites\sprWaiterDeadMachinegun</sprite>
+            <sprite>sprites\sprWaiterDeadShotgun</sprite>
+            <sprite>sprites\sprWaiterLegs</sprite>
+            <sprite>sprites\sprWaiterWalkFood</sprite>
+            <sprite>sprites\sprWaiterWalkUzi</sprite>
+            <sprite>sprites\sprWaiterWalkWine</sprite>
+          </sprites>
+          <sprites name="Dog">
+            <sprite>sprites\sprDogPetCorpse</sprite>
+            <sprite>sprites\sprDogDeadBlunt</sprite>
+            <sprite>sprites\sprDogDeadCut</sprite>
+            <sprite>sprites\sprDogDeadShot</sprite>
+            <sprite>sprites\sprDogEat</sprite>
+            <sprite>sprites\sprDogRun</sprite>
+            <sprite>sprites\sprDogSit</sprite>
+            <sprite>sprites\sprDogWalk</sprite>
+          </sprites>
+          <sprites name="Worker">
+            <sprite>sprites\sprWorkerDead</sprite>
+            <sprite>sprites\sprWorkerDeadCap</sprite>
+            <sprite>sprites\sprWorkerLegs</sprite>
+            <sprite>sprites\sprWorkerWalk</sprite>
+          </sprites>
+          <sprites name="CEO">
+            <sprite>sprites\sprCeoDead</sprite>
+            <sprite>sprites\sprCeoWalk</sprite>
+          </sprites>
+          <sprites name="Hobo">
+            <sprite>sprites\sprHoboAttack</sprite>
+            <sprite>sprites\sprHoboBashed</sprite>
+            <sprite>sprites\sprHoboGetUp</sprite>
+            <sprite>sprites\sprHoboGround</sprite>
+            <sprite>sprites\sprHoboLegs</sprite>
+            <sprite>sprites\sprHoboTalk</sprite>
+            <sprite>sprites\sprHoboWalk</sprite>
+            <sprite>sprites\sprHoboWalkBat</sprite>
+          </sprites>
+          <sprites name="Chief">
+            <sprite>sprites\sprChiefArm</sprite>
+            <sprite>sprites\sprChiefDead</sprite>
+            <sprite>sprites\sprChiefDie</sprite>
+            <sprite>sprites\sprChiefLegs</sprite>
+            <sprite>sprites\sprChiefShoot</sprite>
+            <sprite>sprites\sprChiefTalk</sprite>
+            <sprite>sprites\sprChiefWalk</sprite>
+          </sprites>
+          <sprites name="Bodyguard">
+            <sprite>sprites\sprBodyGuard1</sprite>
+            <sprite>sprites\sprBodyGuard2</sprite>
+            <sprite>sprites\sprBodyguardAttack</sprite>
+            <sprite>sprites\sprBodyguardBashed</sprite>
+            <sprite>sprites\sprBodyguardBlunt</sprite>
+            <sprite>sprites\sprBodyguardCrawl</sprite>
+            <sprite>sprites\sprBodyguardDead</sprite>
+            <sprite>sprites\sprBodyguardFinish1</sprite>
+            <sprite>sprites\sprBodyguardFinish2</sprite>
+            <sprite>sprites\sprBodyguardKnockedOut</sprite>
+            <sprite>sprites\sprBodyguardLegs</sprite>
+            <sprite>sprites\sprBodyguardThrow</sprite>
+            <sprite>sprites\sprBodyguardTurn</sprite>
+            <sprite>sprites\sprBGSword</sprite>
+            <sprite>sprites\sprNinjaKnife</sprite>
+          </sprites>
+          <sprites name="Panther">
+            <sprite>sprites\sprPantherBite</sprite>
+            <sprite>sprites\sprPantherDead</sprite>
+            <sprite>sprites\sprPantherHitback</sprite>
+            <sprite>sprites\sprPantherMask</sprite>
+            <sprite>sprites\sprPantherRun</sprite>
+            <sprite>sprites\sprPantherSit</sprite>
+            <sprite>sprites\sprPantherWalk</sprite>
           </sprites>
         </sprites>
-        <sprites name="Pig Butcher">
-          <sprites name="Original">
-            <sprite>sprites\sprPigButcher</sprite>
-            <sprite>sprites\sprPigButcherAttack</sprite>
-            <sprite>sprites\sprPigButcherHeadButt</sprite>
-            <sprite>sprites\sprPigButcherKill</sprite>
-            <sprite>sprites\sprPigButcherShoot</sprite>
-            <sprite>sprites\sprPigButcherWalkMP5</sprite>
+        <sprites name="Boss">
+          <sprites name="Boss1">
+            <sprite>sprites\sprBoss1Attack</sprite>
+            <sprite>sprites\sprBoss1Beg</sprite>
+            <sprite>sprites\sprBoss1Chair</sprite>
+            <sprite>sprites\sprBoss1Dead</sprite>
+            <sprite>sprites\sprBoss1Dodge</sprite>
+            <sprite>sprites\sprBoss1Finish</sprite>
+            <sprite>sprites\sprBoss1GetUp</sprite>
+            <sprite>sprites\sprBoss1Idle</sprite>
+            <sprite>sprites\sprBoss1Shot</sprite>
+            <sprite>sprites\sprBoss1Taunt</sprite>
+            <sprite>sprites\sprBoss1Walk</sprite>
+            <sprite>sprites\sprBossJacket</sprite>
           </sprites>
-          <sprites name="Imported">
-            <sprite>sprites\sprPigAttack9mm</sprite>
-            <sprite>sprites\sprPigAttackBat</sprite>
-            <sprite>sprites\sprPigAttackChain</sprite>
-            <sprite>sprites\sprPigAttackClub</sprite>
-            <sprite>sprites\sprPigAttackDoubleBarrel1</sprite>
-            <sprite>sprites\sprPigAttackDoubleBarrel2</sprite>
-            <sprite>sprites\sprPigAttackFamae</sprite>
-            <sprite>sprites\sprPigAttackHammer</sprite>
-            <sprite>sprites\sprPigAttackKalashnikov</sprite>
-            <sprite>sprites\sprPigAttackKnife</sprite>
-            <sprite>sprites\sprPigAttackM16</sprite>
-            <sprite>sprites\sprPigAttackMachete</sprite>
-            <sprite>sprites\sprPigAttackMagnum</sprite>
-            <sprite>sprites\sprPigAttackMendoza</sprite>
-            <sprite>sprites\sprPigAttackPipe</sprite>
-            <sprite>sprites\sprPigAttackPunch</sprite>
-            <sprite>sprites\sprPigAttackShotgun</sprite>
-            <sprite>sprites\sprPigAttackSilencer</sprite>
-            <sprite>sprites\sprPigAttackStick</sprite>
-            <sprite>sprites\sprPigAttackTaser</sprite>
-            <sprite>sprites\sprPigAttackUzi</sprite>
-            <sprite>sprites\sprPigBreakNeck</sprite>
-            <sprite>sprites\sprPigBrokenIdle</sprite>
-            <sprite>sprites\sprPigDeadBlunt</sprite>
-            <sprite>sprites\sprPigDeadCut</sprite>
-            <sprite>sprites\sprPigDeadMachinegun</sprite>
-            <sprite>sprites\sprPigDeadShotgun</sprite>
-            <sprite>sprites\sprPigDeadTaser</sprite>
-            <sprite>sprites\sprPigKillBat</sprite>
-            <sprite>sprites\sprPigKillBoss</sprite>
-            <sprite>sprites\sprPigKillChain</sprite>
-            <sprite>sprites\sprPigKillClub</sprite>
-            <sprite>sprites\sprPigKillHammer</sprite>
-            <sprite>sprites\sprPigKillHeadbutt</sprite>
-            <sprite>sprites\sprPigKillKick</sprite>
-            <sprite>sprites\sprPigKillKnife</sprite>
-            <sprite>sprites\sprPigKillLean</sprite>
-            <sprite>sprites\sprPigKillLeanPolice</sprite>
-            <sprite>sprites\sprPigKillMachete</sprite>
-            <sprite>sprites\sprPigKillNeck</sprite>
-            <sprite>sprites\sprPigKillPipe</sprite>
-            <sprite>sprites\sprPigKillRape</sprite>
-            <sprite>sprites\sprPigKillRapeCensored</sprite>
-            <sprite>sprites\sprPigKillStick</sprite>
-            <sprite>sprites\sprPigKillStomp</sprite>
-            <sprite>sprites\sprPigKillWall1</sprite>
-            <sprite>sprites\sprPigKillWall2</sprite>
-            <sprite>sprites\sprPigKillWall3</sprite>
-            <sprite>sprites\sprPigKillWall4</sprite>
-            <sprite>sprites\sprPigLegs</sprite>
-            <sprite>sprites\sprPigPutOnMask</sprite>
-            <sprite>sprites\sprPigSleeping</sprite>
-            <sprite>sprites\sprPigStunned</sprite>
-            <sprite>sprites\sprPigTakePhone</sprite>
-            <sprite>sprites\sprPigTalk</sprite>
-            <sprite>sprites\sprPigUnlock</sprite>
-            <sprite>sprites\sprPigWalk9mm</sprite>
-            <sprite>sprites\sprPigWalkBat</sprite>
-            <sprite>sprites\sprPigWalkChain</sprite>
-            <sprite>sprites\sprPigWalkClub</sprite>
-            <sprite>sprites\sprPigWalkDoubleBarrel</sprite>
-            <sprite>sprites\sprPigWalkFamae</sprite>
-            <sprite>sprites\sprPigWalkHammer</sprite>
-            <sprite>sprites\sprPigWalkKalashnikov</sprite>
-            <sprite>sprites\sprPigWalkKnife</sprite>
-            <sprite>sprites\sprPigWalkM16</sprite>
-            <sprite>sprites\sprPigWalkMachete</sprite>
-            <sprite>sprites\sprPigWalkMagnum</sprite>
-            <sprite>sprites\sprPigWalkMendoza</sprite>
-            <sprite>sprites\sprPigWalkPipe</sprite>
-            <sprite>sprites\sprPigWalkShotgun</sprite>
-            <sprite>sprites\sprPigWalkSilencer</sprite>
-            <sprite>sprites\sprPigWalkStick</sprite>
-            <sprite>sprites\sprPigWalkTaser</sprite>
-            <sprite>sprites\sprPigWalkUnarmed</sprite>
-            <sprite>sprites\sprPigWalkUzi</sprite>
+          <sprites name="Boss2">
+            <sprite>sprites\sprBoss2Bash</sprite>
+            <sprite>sprites\sprBoss2Block</sprite>
+            <sprite>sprites\sprBoss2Clubbed</sprite>
+            <sprite>sprites\sprBoss2CorpseStruggle</sprite>
+            <sprite>sprites\sprBoss2Crawl</sprite>
+            <sprite>sprites\sprBoss2CrawlStart</sprite>
+            <sprite>sprites\sprBoss2Dead</sprite>
+            <sprite>sprites\sprBoss2Dodge</sprite>
+            <sprite>sprites\sprBoss2GetUp1</sprite>
+            <sprite>sprites\sprBoss2GetUp2</sprite>
+            <sprite>sprites\sprBoss2Pry</sprite>
+            <sprite>sprites\sprBoss2PryMask</sprite>
+            <sprite>sprites\sprBoss2Slide</sprite>
+            <sprite>sprites\sprBoss2Throw</sprite>
+          </sprites>
+          <sprites name="Boss3">
+            <sprites name="Burning">
+              <sprite>sprites\sprBurningDie</sprite>
+              <sprite>sprites\sprBurningLegs</sprite>
+              <sprite>sprites\sprBurningWalk</sprite>
+            </sprites>
+            <sprites name="Van">
+              <sprite>sprites\sprVan</sprite>
+              <sprite>sprites\sprVanBottom</sprite>
+              <sprite>sprites\sprVanDoor</sprite>
+              <sprite>sprites\sprVanOpenDoor</sprite>
+              <sprite>sprites\sprVanTop</sprite>
+              <sprite>sprites\sprVanDoorsOpen</sprite>
+            </sprites>
+            <sprite>sprites\sprBoss3Ash</sprite>
+            <sprite>sprites\sprBoss3Bash</sprite>
+            <sprite>sprites\sprBoss3BreakArm</sprite>
+            <sprite>sprites\sprBoss3Burning</sprite>
+            <sprite>sprites\sprBoss3Burning2</sprite>
+            <sprite>sprites\sprBoss3Dead</sprite>
+            <sprite>sprites\sprBoss3GiveUp</sprite>
+            <sprite>sprites\sprBoss3Head</sprite>
+            <sprite>sprites\sprBoss3Legs</sprite>
+            <sprite>sprites\sprBoss3Walk</sprite>
+            <sprite>sprites\sprBottleExplode</sprite>
+            <sprite>sprites\sprBottleExplodeFlame</sprite>
+            <sprite>sprites\sprBottleFlames</sprite>
+          </sprites>
+          <sprites name="Boss4">
+            <sprite>sprites\sprBoss4Die</sprite>
+            <sprite>sprites\sprBoss4GetGuns</sprite>
+            <sprite>sprites\sprBoss4Hit1</sprite>
+            <sprite>sprites\sprBoss4Hit2</sprite>
+            <sprite>sprites\sprBoss4Idle</sprite>
+            <sprite>sprites\sprBoss4Reload1</sprite>
+            <sprite>sprites\sprBoss4Reload2</sprite>
+            <sprite>sprites\sprBoss4Seat</sprite>
+            <sprite>sprites\sprBoss4Shoot1</sprite>
+            <sprite>sprites\sprBoss4Shoot2</sprite>
           </sprites>
         </sprites>
+        <sprites name="Story">
+          <sprites name="Assassin">
+            <sprite>sprites\sprAssassinBar</sprite>
+            <sprite>sprites\sprAssassinDead</sprite>
+            <sprite>sprites\sprAssassinPizza</sprite>
+            <sprite>sprites\sprAssassinSitLegs</sprite>
+            <sprite>sprites\sprAssassinSitUzi</sprite>
+            <sprite>sprites\sprAssassinStore</sprite>
+            <sprite>sprites\sprAssassinTalk</sprite>
+            <sprite>sprites\sprAssassinTalkShot</sprite>
+            <sprite>sprites\sprAssassinUzi</sprite>
+            <sprite>sprites\sprAssassinVHS</sprite>
+            <sprite>sprites\sprAssassinWalk</sprite>
+            <sprite>sprites\sprRichterMask</sprite>
+          </sprites>
+          <sprites name="Background">
+            <sprite>sprites\sprLoneSurvivor</sprite>
+            <sprite>sprites\sprBenjamin</sprite>
+            <sprite>sprites\sprElliott</sprite>
+            <sprite>sprites\sprNigelScream</sprite>
+            <sprite>sprites\sprLocustDead</sprite>
+            <sprite>sprites\sprEirik</sprite>
+            <sprite>sprites\sprCoconuts</sprite>
+            <sprite>sprites\sprNigelTalk</sprite>
+            <sprite>sprites\sprScattle</sprite>
+            <sprite>sprites\sprDJ</sprite>
+            <sprite>sprites\sprCobraDead</sprite>
+            <sprite>sprites\sprMoon</sprite>
+            <sprite>sprites\sprSunAraw</sprite>
+            <sprite>sprites\sprOscar</sprite>
+            <sprite>sprites\sprPerturbator</sprite>
+            <sprite>sprites\sprVictimWall1</sprite>
+            <sprite>sprites\sprMCDate</sprite>
+            <sprite>sprites\sprVictimWall2</sprite>
+            <sprite>sprites\sprRamusHat</sprite>
+            <sprite>sprites\sprVictimDead</sprite>
+            <sprite>sprites\sprWalrusDead</sprite>
+            <sprite>sprites\sprRasmus</sprite>
+            <sprite>sprites\sprSacrifice</sprite>
+            <sprite>sprites\sprJasper</sprite>
+          </sprites>
+          <sprites name="Bartender">
+            <sprite>sprites\sprBartender</sprite>
+            <sprite>sprites\sprBartenderDeath</sprite>
+            <sprite>sprites\sprBartenderTalk</sprite>
+          </sprites>
+          <sprites name="Brandon">
+            <sprite>sprites\sprBrandonBoyer</sprite>
+          </sprites>
+          <sprites name="Dream people">
+            <sprite>sprites\sprDreamSit</sprite>
+            <sprite>sprites\sprDreamSitFinal</sprite>
+          </sprites>
+          <sprites name="Girlfriend">
+            <sprite>sprites\sprGirlfriend</sprite>
+            <sprite>sprites\sprGirlfriendBathroom</sprite>
+            <sprite>sprites\sprGirlfriendDead</sprite>
+            <sprite>sprites\sprGirlfriendDrugged</sprite>
+            <sprite>sprites\sprGirlfriendEating</sprite>
+            <sprite>sprites\sprGirlfriendOutline</sprite>
+            <sprite>sprites\sprGirlfriendSit</sprite>
+            <sprite>sprites\sprGirlfriendTalk</sprite>
+          </sprites>
+          <sprites name="Janitors">
+            <sprites name="Dennis">
+              <sprite>sprites\sprDennisDie</sprite>
+            </sprites>
+            <sprites name="Jonatan">
+              <sprite>sprites\sprJonatanDie</sprite>
+            </sprites>
+            <sprite>sprites\sprJanitorCap</sprite>
+            <sprite>sprites\sprJanitorClean</sprite>
+            <sprite>sprites\sprJanitorFinger</sprite>
+            <sprite>sprites\sprJanitorLegs</sprite>
+            <sprite>sprites\sprJanitorVacuum</sprite>
+            <sprite>sprites\sprJanitorWalk</sprite>
+          </sprites>
+          <sprites name="Jones">
+            <sprite>sprites\sprCrocodileManDie</sprite>
+            <sprite>sprites\sprCrocodileMan</sprite>
+          </sprites>
+          <sprites name="Niklas">
+            <sprite>sprites\sprNicklasBar</sprite>
+            <sprite>sprites\sprNicklasBarFace</sprite>
+            <sprite>sprites\sprNicklasDead</sprite>
+            <sprite>sprites\sprNicklasPizza</sprite>
+            <sprite>sprites\sprNicklasServe</sprite>
+            <sprite>sprites\sprNicklasStore</sprite>
+            <sprite>sprites\sprNicklasTiedUp</sprite>
+            <sprite>sprites\sprNicklasVHS</sprite>
+          </sprites>
+          <sprites name="Sushi">
+            <sprite>sprites\sprSushiGuy</sprite>
+            <sprite>sprites\sprSushiGuyShake</sprite>
+          </sprites>
+          <sprites name="Wiley">
+            <sprite>sprites\sprWiley</sprite>
+            <sprite>sprites\sprWileyDead</sprite>
+          </sprites>
+          <sprites name="Oldman">
+            <sprite>sprites\sprOldmanDeath</sprite>
+            <sprite>sprites\sprOldmanFace</sprite>
+            <sprite>sprites\sprOldmanTalk</sprite>
+          </sprites>
+          <sprites name="Owner">
+            <sprite>sprites\sprClubOwnerDie</sprite>
+            <sprite>sprites\sprClubOwnerFall</sprite>
+            <sprite>sprites\sprClubOwnerTalk</sprite>
+            <sprite>sprites\sprOwnerDead</sprite>
+            <sprite>sprites\sprOwnerGlasses</sprite>
+          </sprites>
+        </sprites>
+        <sprite>sprites\sprite0</sprite>
       </sprites>
       <sprites name="Collision">
         <sprite>sprites\sprBodyMask</sprite>
@@ -1175,278 +1662,8 @@
         <sprite>sprites\sprWeaponMask</sprite>
         <sprite>sprites\sprKitchenSinkMask</sprite>
       </sprites>
-      <sprites name="Enemies">
-        <sprites name="Russian Mafia">
-          <sprites name="Walking">
-            <sprite>sprites\sprEWalkBat</sprite>
-            <sprite>sprites\sprEWalkDoubleBarrel</sprite>
-            <sprite>sprites\sprEWalkKnife</sprite>
-            <sprite>sprites\sprEWalkM16</sprite>
-            <sprite>sprites\sprEWalkPipe</sprite>
-            <sprite>sprites\sprEWalkSilencer</sprite>
-            <sprite>sprites\sprEWalkUnarmed</sprite>
-            <sprite>sprites\sprEWalkClub</sprite>
-            <sprite>sprites\sprELegs</sprite>
-            <sprite>sprites\sprEGetUp</sprite>
-            <sprite>sprites\sprEGetUpLean</sprite>
-            <sprite>sprites\sprEGetUpLeanMask</sprite>
-            <sprite>sprites\sprEM16CourchingLegs</sprite>
-            <sprite>sprites\sprEM16Crouching</sprite>
-            <sprite>sprites\sprEGiveUp</sprite>
-          </sprites>
-          <sprites name="Attacking">
-            <sprite>sprites\sprEAttackClub</sprite>
-            <sprite>sprites\sprEAttackBat</sprite>
-            <sprite>sprites\sprEAttackDoubleBarrel1</sprite>
-            <sprite>sprites\sprEAttackKnife</sprite>
-            <sprite>sprites\sprEAttackDoubleBarrel2</sprite>
-            <sprite>sprites\sprEAttackM16</sprite>
-            <sprite>sprites\sprEAttackPipe</sprite>
-            <sprite>sprites\sprEAttackShotgun</sprite>
-          </sprites>
-          <sprites name="Dead">
-            <sprite>sprites\sprEAxeKill</sprite>
-            <sprite>sprites\sprEBackBashed</sprite>
-            <sprite>sprites\sprEBackBlunt</sprite>
-            <sprite>sprites\sprEBackCracked</sprite>
-            <sprite>sprites\sprEBackCut</sprite>
-            <sprite>sprites\sprEBackDrill</sprite>
-            <sprite>sprites\sprEBackHeadbutt</sprite>
-            <sprite>sprites\sprEBackHeadJerk</sprite>
-            <sprite>sprites\sprEBackHeadshot</sprite>
-            <sprite>sprites\sprEBackKicked</sprite>
-            <sprite>sprites\sprEBackMachinegun</sprite>
-            <sprite>sprites\sprEBackScissor</sprite>
-            <sprite>sprites\sprEBackShieldSnap</sprite>
-            <sprite>sprites\sprEBackShotgun</sprite>
-            <sprite>sprites\sprEBackShotgunVomit</sprite>
-            <sprite>sprites\sprEBackSlashed</sprite>
-            <sprite>sprites\sprEBackSlashedPiece</sprite>
-            <sprite>sprites\sprEBackThroat</sprite>
-            <sprite>sprites\sprEBatKill</sprite>
-            <sprite>sprites\sprEBluntKill</sprite>
-            <sprite>sprites\sprEBombTinker</sprite>
-            <sprite>sprites\sprEBrickKill</sprite>
-            <sprite>sprites\sprEBrokenPoolKill</sprite>
-            <sprite>sprites\sprEChopKill</sprite>
-            <sprite>sprites\sprECrawl</sprite>
-            <sprite>sprites\sprEDeadBackPool</sprite>
-            <sprite>sprites\sprEDeadBoiling</sprite>
-            <sprite>sprites\sprEDeadDart</sprite>
-            <sprite>sprites\sprEDeadFrontPool</sprite>
-            <sprite>sprites\sprEDeadHammer</sprite>
-            <sprite>sprites\sprEDeadLean</sprite>
-            <sprite>sprites\sprEDeadMachete</sprite>
-            <sprite>sprites\sprEDeadWall</sprite>
-            <sprite>sprites\sprEFrontBlunt</sprite>
-            <sprite>sprites\sprEFrontMachinegun</sprite>
-            <sprite>sprites\sprEFrontShotgun</sprite>
-            <sprite>sprites\sprEFrontSlit</sprite>
-            <sprite>sprites\sprEFrontSnap</sprite>
-            <sprite>sprites\sprEGroundBoiling</sprite>
-            <sprite>sprites\sprEGroundBottle</sprite>
-            <sprite>sprites\sprEGroundDart</sprite>
-            <sprite>sprites\sprEHeadStomp</sprite>
-            <sprite>sprites\sprEPoolKill</sprite>
-            <sprite>sprites\sprESwordKill</sprite>
-            <sprite>sprites\sprExplodedBody1</sprite>
-            <sprite>sprites\sprExplodedBody2</sprite>
-          </sprites>
-          <sprites name="Search">
-            <sprite>sprites\sprESearchBat</sprite>
-            <sprite>sprites\sprESearchClub</sprite>
-            <sprite>sprites\sprESearchDoubleBarrel</sprite>
-            <sprite>sprites\sprESearchKnife</sprite>
-            <sprite>sprites\sprESearchM16</sprite>
-            <sprite>sprites\sprESearchPipe</sprite>
-            <sprite>sprites\sprESearchShotgun</sprite>
-            <sprite>sprites\sprESearchSilencer</sprite>
-          </sprites>
-          <sprites name="Idle">
-            <sprite>sprites\sprEDrinking</sprite>
-            <sprite>sprites\sprEDrinkingLegs</sprite>
-            <sprite>sprites\sprEIdlePee</sprite>
-            <sprite>sprites\sprEIdlePeeStop</sprite>
-            <sprite>sprites\sprEIdleSmoke</sprite>
-            <sprite>sprites\sprEnemyCellPhone</sprite>
-            <sprite>sprites\sprEnemyPhone</sprite>
-            <sprite>sprites\sprEnemyRise</sprite>
-            <sprite>sprites\sprEnemySit</sprite>
-            <sprite>sprites\sprEStandGuard</sprite>
-          </sprites>
-          <sprites name="Taunt">
-            <sprite>sprites\sprETauntBat</sprite>
-            <sprite>sprites\sprETauntChain</sprite>
-            <sprite>sprites\sprETauntPipe</sprite>
-          </sprites>
-          <sprites name="Unused">
-            <sprite>sprites\sprEAttackM16n</sprite>
-            <sprite>sprites\sprEAttackShotgunn</sprite>
-            <sprite>sprites\sprESneakM16</sprite>
-            <sprite>sprites\sprESneakUnarmed</sprite>
-            <sprite>sprites\sprEWalkM16n</sprite>
-            <sprite>sprites\sprEWalkShotgun</sprite>
-            <sprite>sprites\sprEWalkUnarmedn</sprite>
-            <sprite>sprites\sprEPickup</sprite>
-          </sprites>
-          <sprites name="Hallucination">
-            <sprite>sprites\sprDeadGuyFace</sprite>
-            <sprite>sprites\sprDeadGuysTable</sprite>
-          </sprites>
-        </sprites>
-        <sprites name="Fat">
-          <sprites name="Politicians">
-            <sprite>sprites\sprFatmanEating</sprite>
-            <sprite>sprites\sprFatmanShit</sprite>
-            <sprite>sprites\sprFatmanEatingDie</sprite>
-            <sprite>sprites\sprFatmanEatingGiveUp</sprite>
-            <sprite>sprites\sprFatmanHead</sprite>
-            <sprite>sprites\sprFatmanShitDecapitated</sprite>
-            <sprite>sprites\sprFatmanShitDie</sprite>
-            <sprite>sprites\sprFatmanTelephone</sprite>
-            <sprite>sprites\sprFatmanShitGiveUp</sprite>
-            <sprite>sprites\sprFatmanTelephoneDie</sprite>
-            <sprite>sprites\sprFatmanTelephoneGiveUp</sprite>
-          </sprites>
-          <sprites name="Hallucination">
-            <sprite>sprites\sprFatCorpseEat</sprite>
-            <sprite>sprites\sprFatCorpseFace</sprite>
-          </sprites>
-          <sprite>sprites\sprEFatAttack</sprite>
-          <sprite>sprites\sprEFatDead</sprite>
-          <sprite>sprites\sprEFatDie</sprite>
-          <sprite>sprites\sprEFatLegs</sprite>
-          <sprite>sprites\sprEFatWalk</sprite>
-          <sprite>sprites\sprESearchFat</sprite>
-        </sprites>
-        <sprites name="Police">
-          <sprites name="Walking">
-            <sprite>sprites\sprPoliceWalkGun</sprite>
-            <sprite>sprites\sprPoliceWalkM16</sprite>
-            <sprite>sprites\sprPoliceWalkNightStick</sprite>
-            <sprite>sprites\sprPoliceWalkShotgun</sprite>
-            <sprite>sprites\sprPoliceWalkUnarmed</sprite>
-            <sprite>sprites\sprPoliceWallBashed</sprite>
-            <sprite>sprites\sprPoliceLegs</sprite>
-            <sprite>sprites\sprPoliceGetUp</sprite>
-            <sprite>sprites\sprPoliceGetUpLean</sprite>
-          </sprites>
-          <sprites name="Attacking">
-            <sprite>sprites\sprPoliceAttackNightStick</sprite>
-          </sprites>
-          <sprites name="Search">
-            <sprite>sprites\sprPoliceSearchGun</sprite>
-            <sprite>sprites\sprPoliceSearchM16</sprite>
-            <sprite>sprites\sprPoliceSearchNightStick</sprite>
-            <sprite>sprites\sprPoliceSearchShotgun</sprite>
-          </sprites>
-          <sprites name="Dead">
-            <sprite>sprites\sprPoliceBackBashed</sprite>
-            <sprite>sprites\sprPoliceBackBlunt</sprite>
-            <sprite>sprites\sprPoliceBackMachinegun</sprite>
-            <sprite>sprites\sprPoliceBackShotgun</sprite>
-            <sprite>sprites\sprPoliceBluntKill</sprite>
-            <sprite>sprites\sprPoliceDeadDrill</sprite>
-            <sprite>sprites\sprPoliceFrontBlunt</sprite>
-            <sprite>sprites\sprPoliceFrontMachinegun</sprite>
-            <sprite>sprites\sprPoliceFrontShotgun</sprite>
-            <sprite>sprites\sprPoliceHat</sprite>
-            <sprite>sprites\sprPoliceKicked</sprite>
-          </sprites>
-          <sprites name="Misc">
-            <sprite>sprites\sprPoliceFace</sprite>
-            <sprite>sprites\sprPolicePoint</sprite>
-            <sprite>sprites\sprPoliceReading</sprite>
-            <sprite>sprites\sprPoliceTalk</sprite>
-          </sprites>
-        </sprites>
-        <sprites name="Inspector">
-          <sprite>sprites\sprPInspectorAttack</sprite>
-          <sprite>sprites\sprInspectorHat</sprite>
-          <sprite>sprites\sprPInspectorDead</sprite>
-          <sprite>sprites\sprPInspectorDie</sprite>
-          <sprite>sprites\sprPInspectorWalk</sprite>
-          <sprite>sprites\sprPInspectorSearch</sprite>
-        </sprites>
-        <sprites name="Swat">
-          <sprite>sprites\sprSwatCar</sprite>
-          <sprite>sprites\sprSwatFade</sprite>
-          <sprite>sprites\sprSwatGetUp</sprite>
-          <sprite>sprites\sprSwatKickDoor</sprite>
-          <sprite>sprites\sprSwatLegs</sprite>
-          <sprite>sprites\sprSwatLegsHurt</sprite>
-          <sprite>sprites\sprSwatSign</sprite>
-          <sprite>sprites\sprSwatStumble</sprite>
-          <sprite>sprites\sprSwatVan</sprite>
-          <sprite>sprites\sprSwatWalkM16</sprite>
-          <sprite>sprites\sprSwatWalkM16Hurt</sprite>
-          <sprite>sprites\sprCAttackM16</sprite>
-          <sprite>sprites\sprCDeadUp</sprite>
-          <sprite>sprites\sprCSneakM16</sprite>
-        </sprites>
-        <sprites name="PhoneHom">
-          <sprites name="CEO">
-            <sprite>sprites\sprCeoDead</sprite>
-            <sprite>sprites\sprCEOFace</sprite>
-            <sprite>sprites\sprCeoWalk</sprite>
-          </sprites>
-          <sprites name="Worker">
-            <sprite>sprites\sprWorkerDead</sprite>
-            <sprite>sprites\sprWorkerDeadCap</sprite>
-            <sprite>sprites\sprWorkerLegs</sprite>
-            <sprite>sprites\sprWorkerWalk</sprite>
-          </sprites>
-          <sprite>sprites\sprEmployeeDead</sprite>
-          <sprite>sprites\sprEmployeeDeadPiece</sprite>
-          <sprite>sprites\sprEmployeeDeadWall</sprite>
-          <sprite>sprites\sprEmployeeLegs</sprite>
-          <sprite>sprites\sprEmployeeThrowingKnife</sprite>
-          <sprite>sprites\sprEmployeeWalk</sprite>
-          <sprite>sprites\sprDeadCivilians</sprite>
-        </sprites>
-        <sprites name="Doctor">
-          <sprite>sprites\sprDoctorFace</sprite>
-          <sprite>sprites\sprDoctorPoint</sprite>
-          <sprite>sprites\sprDoctorTalk</sprite>
-          <sprite>sprites\sprDoctorWalk</sprite>
-        </sprites>
-        <sprites name="Subway">
-          <sprite>sprites\sprESubwayBriefcase</sprite>
-          <sprite>sprites\sprESubwayDead</sprite>
-          <sprite>sprites\sprESubwayGetup</sprite>
-          <sprite>sprites\sprESubwayWalk</sprite>
-        </sprites>
-        <sprites name="Waiters">
-          <sprite>sprites\sprEWaiterAttackUzi</sprite>
-          <sprite>sprites\sprEWaiterLegs</sprite>
-          <sprite>sprites\sprEWaiterWalkFood</sprite>
-          <sprite>sprites\sprEWaiterWalkUzi</sprite>
-          <sprite>sprites\sprEWaiterWalkWine</sprite>
-          <sprite>sprites\sprWaiterDeadMachinegun</sprite>
-          <sprite>sprites\sprWaiterDeadShotgun</sprite>
-          <sprite>sprites\sprWaiterLegs</sprite>
-          <sprite>sprites\sprWaiterWalkFood</sprite>
-          <sprite>sprites\sprWaiterWalkUzi</sprite>
-          <sprite>sprites\sprWaiterWalkWine</sprite>
-        </sprites>
-        <sprites name="Dog">
-          <sprites name="Hallucination">
-            <sprite>sprites\sprDogCorpseFace</sprite>
-            <sprite>sprites\sprDogFace</sprite>
-            <sprite>sprites\sprDogPetCorpse</sprite>
-          </sprites>
-          <sprite>sprites\sprDogDeadBlunt</sprite>
-          <sprite>sprites\sprDogDeadCut</sprite>
-          <sprite>sprites\sprDogDeadShot</sprite>
-          <sprite>sprites\sprDogEat</sprite>
-          <sprite>sprites\sprDogRun</sprite>
-          <sprite>sprites\sprDogSit</sprite>
-          <sprite>sprites\sprDogWalk</sprite>
-        </sprites>
-        <sprite>sprites\sprite0</sprite>
-      </sprites>
-      <sprites name="UI">
-        <sprites name="Dennaton &amp; Devolver Logo">
+      <sprites name="Interface">
+        <sprites name="Splash">
           <sprite>sprites\sprDevolver</sprite>
           <sprite>sprites\splBullet</sprite>
           <sprite>sprites\splDennatonBlink</sprite>
@@ -1459,11 +1676,11 @@
           <sprite>sprites\splSplashShift</sprite>
           <sprite>sprites\splWaveComing</sprite>
         </sprites>
-        <sprites name="Title Screen">
+        <sprites name="Title">
           <sprite>sprites\sprTitle</sprite>
           <sprite>sprites\sprPalmTrees</sprite>
         </sprites>
-        <sprites name="Level Select">
+        <sprites name="LevelSelect">
           <sprites name="Blueprints">
             <sprite>sprites\sprApartment1</sprite>
             <sprite>sprites\sprApartment2</sprite>
@@ -1490,18 +1707,20 @@
           <sprite>sprites\sprLetterIcon</sprite>
           <sprite>sprites\sprSecretLevel</sprite>
           <sprite>sprites\sprLevelTrailer</sprite>
+          <sprite>sprites\sprHouse</sprite>
+          <sprite>sprites\sprHouses</sprite>
+          <sprite>sprites\sprHouseSilhouettes</sprite>
+          <sprite>sprites\sprSunSparkle</sprite>
+          <sprite>sprites\sprSpread</sprite>
+          <sprite>sprites\sprWave</sprite>
         </sprites>
         <sprites name="Cursor">
           <sprite>sprites\sprCursor</sprite>
           <sprite>sprites\sprCursorAction</sprite>
           <sprite>sprites\sprAim</sprite>
+          <sprite>sprites\sprScanlines</sprite>
         </sprites>
-        <sprites name="Arrow">
-          <sprite>sprites\sprArrow</sprite>
-          <sprite>sprites\sprArrowGray</sprite>
-          <sprite>sprites\sprGoArrow</sprite>
-        </sprites>
-        <sprites name="Puzzle Pieces">
+        <sprites name="Puzzle">
           <sprite>sprites\sprToken</sprite>
           <sprite>sprites\sprLetters</sprite>
           <sprite>sprites\sprI</sprite>
@@ -1532,886 +1751,59 @@
           <sprite>sprites\sprUGlow</sprite>
           <sprite>sprites\sprLetterMask</sprite>
         </sprites>
-        <sprites name="Elevator">
-          <sprite>sprites\sprElevator</sprite>
-          <sprite>sprites\sprElevatorFloor</sprite>
-          <sprite>sprites\sprElevatorMask</sprite>
-        </sprites>
         <sprites name="Dialogue">
-          <sprite>sprites\sprPhoneLine</sprite>
-          <sprite>sprites\sprFilesBig</sprite>
-          <sprite>sprites\sprPhone</sprite>
-          <sprite>sprites\sprForms</sprite>
-        </sprites>
-        <sprite>sprites\sprHouse</sprite>
-        <sprite>sprites\sprHouses</sprite>
-        <sprite>sprites\sprHouseSilhouettes</sprite>
-        <sprite>sprites\sprSunSparkle</sprite>
-        <sprite>sprites\sprSpread</sprite>
-        <sprite>sprites\sprWave</sprite>
-        <sprite>sprites\sprScanlines</sprite>
-      </sprites>
-      <sprites name="Boss Fights">
-        <sprites name="Hobo">
-          <sprite>sprites\sprHoboAttack</sprite>
-          <sprite>sprites\sprHoboBashed</sprite>
-          <sprite>sprites\sprHoboFace</sprite>
-          <sprite>sprites\sprHoboGetUp</sprite>
-          <sprite>sprites\sprHoboGround</sprite>
-          <sprite>sprites\sprHoboLegs</sprite>
-          <sprite>sprites\sprHoboTalk</sprite>
-          <sprite>sprites\sprHoboWalk</sprite>
-          <sprite>sprites\sprHoboWalkBat</sprite>
-        </sprites>
-        <sprites name="Boss 1 (Producer)">
-          <sprite>sprites\sprBoss1Attack</sprite>
-          <sprite>sprites\sprBoss1Beg</sprite>
-          <sprite>sprites\sprBoss1Chair</sprite>
-          <sprite>sprites\sprBoss1Dead</sprite>
-          <sprite>sprites\sprBoss1Dodge</sprite>
-          <sprite>sprites\sprBoss1Finish</sprite>
-          <sprite>sprites\sprBoss1GetUp</sprite>
-          <sprite>sprites\sprBoss1Idle</sprite>
-          <sprite>sprites\sprBoss1Shot</sprite>
-          <sprite>sprites\sprBoss1Taunt</sprite>
-          <sprite>sprites\sprBoss1Walk</sprite>
-          <sprite>sprites\sprBossJacket</sprite>
-          <sprite>sprites\sprBlackGuy</sprite>
-          <sprite>sprites\sprBlackGuyHurt</sprite>
-        </sprites>
-        <sprites name="Boss 2 (Biker)">
-          <sprite>sprites\sprBoss2Bash</sprite>
-          <sprite>sprites\sprBoss2Block</sprite>
-          <sprite>sprites\sprBoss2Clubbed</sprite>
-          <sprite>sprites\sprBoss2CorpseStruggle</sprite>
-          <sprite>sprites\sprBoss2Crawl</sprite>
-          <sprite>sprites\sprBoss2CrawlStart</sprite>
-          <sprite>sprites\sprBoss2Dead</sprite>
-          <sprite>sprites\sprBoss2Dodge</sprite>
-          <sprite>sprites\sprBoss2GetUp1</sprite>
-          <sprite>sprites\sprBoss2GetUp2</sprite>
-          <sprite>sprites\sprBoss2Pry</sprite>
-          <sprite>sprites\sprBoss2PryMask</sprite>
-          <sprite>sprites\sprBoss2Slide</sprite>
-          <sprite>sprites\sprBoss2Throw</sprite>
-        </sprites>
-        <sprites name="Boss 3 (Van Driver)">
-          <sprites name="Burning">
-            <sprite>sprites\sprBurningDie</sprite>
-            <sprite>sprites\sprBurningLegs</sprite>
-            <sprite>sprites\sprBurningWalk</sprite>
-          </sprites>
-          <sprites name="Van">
-            <sprite>sprites\sprVan</sprite>
-            <sprite>sprites\sprVanBottom</sprite>
-            <sprite>sprites\sprVanDoor</sprite>
-            <sprite>sprites\sprVanOpenDoor</sprite>
-            <sprite>sprites\sprVanTop</sprite>
-            <sprite>sprites\sprVanDoorsOpen</sprite>
-          </sprites>
-          <sprite>sprites\sprBoss3Ash</sprite>
-          <sprite>sprites\sprBoss3Bash</sprite>
-          <sprite>sprites\sprBoss3BreakArm</sprite>
-          <sprite>sprites\sprBoss3Burning</sprite>
-          <sprite>sprites\sprBoss3Burning2</sprite>
-          <sprite>sprites\sprBoss3Dead</sprite>
-          <sprite>sprites\sprBoss3Face</sprite>
-          <sprite>sprites\sprBoss3GiveUp</sprite>
-          <sprite>sprites\sprBoss3Head</sprite>
-          <sprite>sprites\sprBoss3Legs</sprite>
-          <sprite>sprites\sprBoss3Walk</sprite>
-          <sprite>sprites\sprBottleExplode</sprite>
-          <sprite>sprites\sprBottleExplodeFlame</sprite>
-          <sprite>sprites\sprBottleFlames</sprite>
-        </sprites>
-        <sprites name="Police Chief">
-          <sprite>sprites\sprChiefArm</sprite>
-          <sprite>sprites\sprChiefDead</sprite>
-          <sprite>sprites\sprChiefDie</sprite>
-          <sprite>sprites\sprChiefFace</sprite>
-          <sprite>sprites\sprChiefLegs</sprite>
-          <sprite>sprites\sprChiefShoot</sprite>
-          <sprite>sprites\sprChiefTalk</sprite>
-          <sprite>sprites\sprChiefWalk</sprite>
-        </sprites>
-        <sprites name="Club owner">
-          <sprite>sprites\sprClubOwnerDie</sprite>
-          <sprite>sprites\sprClubOwnerFace</sprite>
-          <sprite>sprites\sprClubOwnerFall</sprite>
-          <sprite>sprites\sprClubOwnerScaredFace</sprite>
-          <sprite>sprites\sprClubOwnerTalk</sprite>
-          <sprite>sprites\sprOwnerDead</sprite>
-          <sprite>sprites\sprOwnerGlasses</sprite>
-        </sprites>
-        <sprites name="Boss 4 (The Father)">
-          <sprites name="Bodyguard">
-            <sprite>sprites\sprBodyGuard1</sprite>
-            <sprite>sprites\sprBodyGuard2</sprite>
-            <sprite>sprites\sprBodyguardAttack</sprite>
-            <sprite>sprites\sprBodyguardBashed</sprite>
-            <sprite>sprites\sprBodyguardBlunt</sprite>
-            <sprite>sprites\sprBodyguardCrawl</sprite>
-            <sprite>sprites\sprBodyguardDead</sprite>
+          <sprites name="Face">
+            <sprite>sprites\sprAssassinBloodyFace</sprite>
+            <sprite>sprites\sprAssassinBruisedFace</sprite>
+            <sprite>sprites\sprAssassinFace</sprite>
+            <sprite>sprites\sprAssassinRatFace</sprite>
+            <sprite>sprites\sprBartenderFace</sprite>
+            <sprite>sprites\sprBiker</sprite>
+            <sprite>sprites\sprBikerDestroyedFace</sprite>
+            <sprite>sprites\sprBikerHurt</sprite>
+            <sprite>sprites\sprBlackGuy</sprite>
+            <sprite>sprites\sprBlackGuyHurt</sprite>
             <sprite>sprites\sprBodyguardFace</sprite>
-            <sprite>sprites\sprBodyguardFinish1</sprite>
-            <sprite>sprites\sprBodyguardFinish2</sprite>
-            <sprite>sprites\sprBodyguardKnockedOut</sprite>
-            <sprite>sprites\sprBodyguardLegs</sprite>
-            <sprite>sprites\sprBodyguardThrow</sprite>
-            <sprite>sprites\sprBodyguardTurn</sprite>
-            <sprite>sprites\sprBGSword</sprite>
-            <sprite>sprites\sprNinjaKnife</sprite>
-          </sprites>
-          <sprites name="Panthers">
-            <sprite>sprites\sprPantherBite</sprite>
-            <sprite>sprites\sprPantherDead</sprite>
-            <sprite>sprites\sprPantherHitback</sprite>
-            <sprite>sprites\sprPantherMask</sprite>
-            <sprite>sprites\sprPantherRun</sprite>
-            <sprite>sprites\sprPantherSit</sprite>
-            <sprite>sprites\sprPantherWalk</sprite>
-          </sprites>
-          <sprites name="Old Man">
-            <sprite>sprites\sprOldmanDeath</sprite>
-            <sprite>sprites\sprOldmanFace</sprite>
-            <sprite>sprites\sprOldmanTalk</sprite>
-          </sprites>
-          <sprite>sprites\sprBoss4CrazyFace</sprite>
-          <sprite>sprites\sprBoss4Die</sprite>
-          <sprite>sprites\sprBoss4Face</sprite>
-          <sprite>sprites\sprBoss4GetGuns</sprite>
-          <sprite>sprites\sprBoss4Hit1</sprite>
-          <sprite>sprites\sprBoss4Hit2</sprite>
-          <sprite>sprites\sprBoss4Idle</sprite>
-          <sprite>sprites\sprBoss4Phone</sprite>
-          <sprite>sprites\sprBoss4Pool</sprite>
-          <sprite>sprites\sprBoss4PoolMask</sprite>
-          <sprite>sprites\sprBoss4Reload1</sprite>
-          <sprite>sprites\sprBoss4Reload2</sprite>
-          <sprite>sprites\sprBoss4Seat</sprite>
-          <sprite>sprites\sprBoss4Shoot1</sprite>
-          <sprite>sprites\sprBoss4Shoot2</sprite>
-          <sprite>sprites\sprBoss4Sofa</sprite>
-          <sprite>sprites\sprBoss4Table</sprite>
-          <sprite>sprites\sprBossCar1</sprite>
-          <sprite>sprites\sprBossCar2</sprite>
-          <sprite>sprites\sprBossFountain</sprite>
-          <sprite>sprites\sprBossgun</sprite>
-        </sprites>
-      </sprites>
-      <sprites name="Walls">
-        <sprite>sprites\sprWallBrickH</sprite>
-        <sprite>sprites\sprWallBrickV</sprite>
-        <sprite>sprites\sprWallHeavyH</sprite>
-        <sprite>sprites\sprWallHeavyV</sprite>
-        <sprite>sprites\sprWallHospitalH</sprite>
-        <sprite>sprites\sprWallHospitalV</sprite>
-        <sprite>sprites\sprWalls</sprite>
-        <sprite>sprites\sprWallSoftH</sprite>
-        <sprite>sprites\sprWallSoftV</sprite>
-        <sprite>sprites\sprWoodFenceH</sprite>
-        <sprite>sprites\sprWoodFenceV</sprite>
-        <sprite>sprites\sprBalconyH</sprite>
-        <sprite>sprites\sprBalconyV</sprite>
-        <sprite>sprites\sprCellDoor</sprite>
-        <sprite>sprites\sprWindow</sprite>
-        <sprite>sprites\sprWindowDown</sprite>
-        <sprite>sprites\sprWindowExplode</sprite>
-        <sprite>sprites\sprWindowframe</sprite>
-        <sprite>sprites\sprWindowLeft</sprite>
-        <sprite>sprites\sprWindowOpen</sprite>
-        <sprite>sprites\sprWindowRight</sprite>
-        <sprite>sprites\sprWindowSill</sprite>
-        <sprite>sprites\sprWindowUp</sprite>
-        <sprite>sprites\sprBrokenWindow</sprite>
-        <sprite>sprites\sprRailH</sprite>
-        <sprite>sprites\sprRailV</sprite>
-        <sprite>sprites\sprSewerWallH</sprite>
-        <sprite>sprites\sprSewerWallV</sprite>
-        <sprite>sprites\sprGlassPanelBrokenH</sprite>
-        <sprite>sprites\sprGlassPanelBrokenV</sprite>
-        <sprite>sprites\sprGlassPanelDestroyedH</sprite>
-        <sprite>sprites\sprGlassPanelDestroyedV</sprite>
-        <sprite>sprites\sprGlassPanelH</sprite>
-        <sprite>sprites\sprGlassPanelV</sprite>
-        <sprite>sprites\sprDoorH</sprite>
-        <sprite>sprites\sprDoorV</sprite>
-        <sprite>sprites\sprDoorH2</sprite>
-        <sprite>sprites\sprDoorV2</sprite>
-        <sprite>sprites\sprCorner</sprite>
-        <sprite>sprites\sprCornerBrick</sprite>
-        <sprite>sprites\sprCellWallH</sprite>
-        <sprite>sprites\sprCellWallV</sprite>
-        <sprite>sprites\sprHorBarrier</sprite>
-        <sprite>sprites\sprVertBarrier</sprite>
-      </sprites>
-      <sprites name="Environment">
-        <sprites name="Apartment - Biker">
-          <sprite>sprites\sprMCAquarium</sprite>
-          <sprite>sprites\sprMCBed</sprite>
-          <sprite>sprites\sprMCCouch</sprite>
-          <sprite>sprites\sprMCComputer</sprite>
-          <sprite>sprites\sprMCForm</sprite>
-          <sprite>sprites\sprMCGlassTable</sprite>
-          <sprite>sprites\sprMCKeytar</sprite>
-          <sprite>sprites\sprMCKitchenSink</sprite>
-          <sprite>sprites\sprMCKitchenShelf</sprite>
-          <sprite>sprites\sprMCSkateboard</sprite>
-          <sprite>sprites\sprMCStereo</sprite>
-          <sprite>sprites\sprMCRecords</sprite>
-          <sprite>sprites\sprMCStove</sprite>
-          <sprite>sprites\sprMCTigerCarpet</sprite>
-          <sprite>sprites\sprMCTVTable</sprite>
-          <sprite>sprites\sprMCStatue</sprite>
-          <sprite>sprites\sprBlackTub</sprite>
-          <sprite>sprites\sprPimpPhone</sprite>
-          <sprite>sprites\sprPimpPhoneOff</sprite>
-          <sprite>sprites\sprPimpSink</sprite>
-          <sprite>sprites\sprPimpToilet</sprite>
-        </sprites>
-        <sprites name="Apartment - Jacket">
-          <sprite>sprites\sprDrawersH24Phone</sprite>
-          <sprite>sprites\sprDrawersH24PhoneOff</sprite>
-          <sprite>sprites\sprPlayerBed1</sprite>
-          <sprite>sprites\sprPlayerBed2</sprite>
-          <sprite>sprites\sprPlayerCouch</sprite>
-          <sprite>sprites\sprPlayerForm</sprite>
-          <sprite>sprites\sprPlayerFridge</sprite>
-          <sprite>sprites\sprPlayerKitchenCounter</sprite>
-          <sprite>sprites\sprPlayerKitchenShelf</sprite>
-          <sprite>sprites\sprPlayerKitchenSink</sprite>
-          <sprite>sprites\sprPlayerLivingRoomTable</sprite>
-          <sprite>sprites\sprPlayerStove</sprite>
-          <sprite>sprites\sprPlayerTable</sprite>
-          <sprite>sprites\sprPlayerTub</sprite>
-          <sprite>sprites\sprBox</sprite>
-          <sprite>sprites\sprBoxOpen</sprite>
-        </sprites>
-        <sprites name="Assault">
-          <sprite>sprites\sprBarricade1</sprite>
-          <sprite>sprites\sprBarricade2</sprite>
-          <sprite>sprites\sprPoliceChair</sprite>
-          <sprite>sprites\sprPoliceCouch</sprite>
-          <sprite>sprites\sprPoliceDesk</sprite>
-          <sprite>sprites\sprPoliceDeskChair</sprite>
-          <sprite>sprites\sprPoliceDeskPuter</sprite>
-          <sprite>sprites\sprPoliceEntryDesk2</sprite>
-          <sprite>sprites\sprPoliceFrontDesk</sprite>
-          <sprite>sprites\sprPoliceInterrogationTable</sprite>
-          <sprite>sprites\sprPolicePhone1</sprite>
-          <sprite>sprites\sprPolicePhone2</sprite>
-          <sprite>sprites\sprPolicePhoneTable</sprite>
-          <sprite>sprites\sprPoliceTape</sprite>
-          <sprite>sprites\sprPoliceTapeRipped</sprite>
-          <sprite>sprites\sprBigPoliceTable</sprite>
-        </sprites>
-        <sprites name="Clean Hit">
-          <sprite>sprites\sprHotelChair</sprite>
-          <sprite>sprites\sprHotelCloset</sprite>
-          <sprite>sprites\sprHotelNightStand</sprite>
-          <sprite>sprites\sprHotelNightStandLight</sprite>
-          <sprite>sprites\sprHotelSimpleBed</sprite>
-          <sprite>sprites\sprHotelSink</sprite>
-          <sprite>sprites\sprHotelSuiteBed</sprite>
-          <sprite>sprites\sprHotelSuiteChair</sprite>
-          <sprite>sprites\sprHotelSuiteEntertainment</sprite>
-          <sprite>sprites\sprHotelSuiteSofa</sprite>
-          <sprite>sprites\sprHotelSuiteToilet</sprite>
-          <sprite>sprites\sprHotelSuiteTub</sprite>
-        </sprites>
-        <sprites name="Clothesline">
-          <sprite>sprites\sprClotheslineH1</sprite>
-          <sprite>sprites\sprClotheslineH2</sprite>
-          <sprite>sprites\sprClotheslineV1</sprite>
-          <sprite>sprites\sprClotheslineV2</sprite>
-        </sprites>
-        <sprites name="Crackdown">
-          <sprite>sprites\sprJapaneseLiquor</sprite>
-          <sprite>sprites\sprJapaneseTable</sprite>
-        </sprites>
-        <sprites name="Exposed">
-          <sprite>sprites\spr18</sprite>
-          <sprite>sprites\sprAssassinsBreed</sprite>
-          <sprite>sprites\sprBallOfDuty</sprite>
-          <sprite>sprites\sprEuroFenceH</sprite>
-          <sprite>sprites\sprEuroFenceV</sprite>
-          <sprite>sprites\sprEurogamerLogo</sprite>
-          <sprite>sprites\sprEuroHotlineMiamiLogo</sprite>
-          <sprite>sprites\sprEuroIce</sprite>
-          <sprite>sprites\sprEuroPillar</sprite>
-          <sprite>sprites\sprEuroPod2H</sprite>
-          <sprite>sprites\sprEuroPod2V</sprite>
-          <sprite>sprites\sprEuroPod3V</sprite>
-          <sprite>sprites\sprEuroPodH</sprite>
-          <sprite>sprites\sprEuroPodV</sprite>
-          <sprite>sprites\sprEuroTrash</sprite>
-        </sprites>
-        <sprites name="Fun &amp; Games">
-          <sprite>sprites\sprArcadeCabinet1</sprite>
-          <sprite>sprites\sprArcadeCabinet10</sprite>
-          <sprite>sprites\sprArcadeCabinet11</sprite>
-          <sprite>sprites\sprArcadeCabinet12</sprite>
-          <sprite>sprites\sprArcadeCabinet2</sprite>
-          <sprite>sprites\sprArcadeCabinet3</sprite>
-          <sprite>sprites\sprArcadeCabinet4</sprite>
-          <sprite>sprites\sprArcadeCabinet5</sprite>
-          <sprite>sprites\sprArcadeCabinet6</sprite>
-          <sprite>sprites\sprArcadeCabinet7</sprite>
-          <sprite>sprites\sprArcadeCabinet8</sprite>
-          <sprite>sprites\sprArcadeCabinet9</sprite>
-          <sprite>sprites\sprArcadeLight1</sprite>
-          <sprite>sprites\sprArcadeLight2</sprite>
-          <sprite>sprites\sprBasketBallGame</sprite>
-          <sprite>sprites\sprCarcade</sprite>
-          <sprite>sprites\sprClawMachine</sprite>
-          <sprite>sprites\sprClawMachineGlass</sprite>
-        </sprites>
-        <sprites name="Highball">
-          <sprite>sprites\sprBowlingEnd</sprite>
-          <sprite>sprites\sprBowlingLane</sprite>
-          <sprite>sprites\sprBowlingStart</sprite>
-          <sprite>sprites\sprHighballBar</sprite>
-          <sprite>sprites\sprHighballBooth</sprite>
-          <sprite>sprites\sprHighballBoothBlack</sprite>
-          <sprite>sprites\sprHighballChair</sprite>
-          <sprite>sprites\sprHighballChairBig</sprite>
-          <sprite>sprites\sprHighballCurtain</sprite>
-          <sprite>sprites\sprKaraokeCouchBlack</sprite>
-          <sprite>sprites\sprKaraokeCouchPink</sprite>
-          <sprite>sprites\sprKaraokeMachine</sprite>
-        </sprites>
-        <sprites name="Neighbors">
-          <sprites name="Anders">
-            <sprite>sprites\sprAndersBed</sprite>
-            <sprite>sprites\sprAndersCouch</sprite>
-            <sprite>sprites\sprAndersDesk</sprite>
-            <sprite>sprites\sprAndersDrawer</sprite>
-            <sprite>sprites\sprAndersTable</sprite>
-          </sprites>
-          <sprites name="Dennis">
-            <sprite>sprites\sprDennisBed</sprite>
-            <sprite>sprites\sprDennisCouch</sprite>
-            <sprite>sprites\sprDennisLivingRoomTable</sprite>
-            <sprite>sprites\sprDennisShelves</sprite>
-            <sprite>sprites\sprDennisTVBench</sprite>
-            <sprite>sprites\sprDennisTable</sprite>
-          </sprites>
-          <sprites name="Peter">
-            <sprite>sprites\sprPetersBed</sprite>
-            <sprite>sprites\sprPetersCloset</sprite>
-            <sprite>sprites\sprPetersTub</sprite>
-            <sprite>sprites\sprPetersCouch</sprite>
-          </sprites>
-          <sprite>sprites\sprMailboxes1</sprite>
-        </sprites>
-        <sprites name="Resolution">
-          <sprite>sprites\sprJanitorBucket</sprite>
-          <sprite>sprites\sprJanitorWorkBench</sprite>
-          <sprite>sprites\sprJanitorMop</sprite>
-          <sprite>sprites\sprJanitorComputer</sprite>
-          <sprite>sprites\sprJanitorPhoneBox</sprite>
-          <sprite>sprites\sprJanitorTable</sprite>
-          <sprite>sprites\sprManhole</sprite>
-          <sprite>sprites\sprManholeEquipment</sprite>
-          <sprite>sprites\sprManholeMask</sprite>
-          <sprite>sprites\sprManholePipe</sprite>
-          <sprite>sprites\sprLadder</sprite>
-        </sprites>
-        <sprites name="Showdown">
-          <sprite>sprites\sprOldAquarium</sprite>
-          <sprite>sprites\sprOldBed</sprite>
-          <sprite>sprites\sprOldCouch</sprite>
-          <sprite>sprites\sprOldEntertainment</sprite>
-          <sprite>sprites\sprOldLiquor</sprite>
-          <sprite>sprites\sprOldFountain</sprite>
-          <sprite>sprites\sprOldNightstand</sprite>
-          <sprite>sprites\sprOldPhone</sprite>
-        </sprites>
-        <sprites name="The Metro">
-          <sprite>sprites\sprClosedLockerH</sprite>
-          <sprite>sprites\sprClosedLockerV</sprite>
-          <sprite>sprites\sprSubwayBenchH</sprite>
-          <sprite>sprites\sprSubwayBenchV</sprite>
-          <sprite>sprites\sprSubwayDoor</sprite>
-          <sprite>sprites\sprSubwayTrain</sprite>
-          <sprite>sprites\sprTag</sprite>
-          <sprite>sprites\sprLockerDoor</sprite>
-          <sprite>sprites\sprLockerOpen</sprite>
-        </sprites>
-        <sprites name="Tension">
-          <sprite>sprites\sprBombCables</sprite>
-          <sprite>sprites\sprBombCablesBroken</sprite>
-          <sprite>sprites\sprBombDoorH</sprite>
-          <sprite>sprites\sprBombDoorV</sprite>
-          <sprite>sprites\sprBombGround</sprite>
-          <sprite>sprites\sprBombGuy</sprite>
-          <sprite>sprites\sprBrokenDetonator1</sprite>
-          <sprite>sprites\sprBrokenDetonator2</sprite>
-        </sprites>
-        <sprites name="Push It">
-          <sprites name="Dance Floor">
-            <sprite>sprites\sprDanceFloor</sprite>
-            <sprite>sprites\sprDanceFloorFrame</sprite>
-            <sprite>sprites\sprDanceFloorLight0</sprite>
-            <sprite>sprites\sprDanceFloorLight1</sprite>
-            <sprite>sprites\sprDanceFloorLight2</sprite>
-            <sprite>sprites\sprDanceFloorLight3</sprite>
-          </sprites>
-          <sprite>sprites\sprLight</sprite>
-        </sprites>
-        <sprite>sprites\sprAquarium</sprite>
-        <sprite>sprites\sprSaunaSteam</sprite>
-        <sprite>sprites\sprAquariumBreak</sprite>
-        <sprite>sprites\sprAquariumWater</sprite>
-        <sprite>sprites\sprArmchair</sprite>
-        <sprite>sprites\sprBannerH</sprite>
-        <sprite>sprites\sprBannerV</sprite>
-        <sprite>sprites\sprBarBooth</sprite>
-        <sprite>sprites\sprBarPoolTable</sprite>
-        <sprite>sprites\sprBarRegister</sprite>
-        <sprite>sprites\sprBarRegisterGlow</sprite>
-        <sprite>sprites\sprBarRegisterSpecial</sprite>
-        <sprite>sprites\sprBarShelf</sprite>
-        <sprite>sprites\sprBarShelfGlow</sprite>
-        <sprite>sprites\sprBarStool</sprite>
-        <sprite>sprites\sprBarTable</sprite>
-        <sprite>sprites\sprBeds</sprite>
-        <sprite>sprites\sprBench</sprite>
-        <sprite>sprites\sprBigBed</sprite>
-        <sprite>sprites\sprBigTable</sprite>
-        <sprite>sprites\sprBigTag</sprite>
-        <sprite>sprites\sprBookshelfLeft</sprite>
-        <sprite>sprites\sprBookshelfMiddle</sprite>
-        <sprite>sprites\sprBookshelfRight</sprite>
-        <sprite>sprites\sprBubbleBath</sprite>
-        <sprite>sprites\sprBuddhaStatue</sprite>
-        <sprite>sprites\sprBuffe</sprite>
-        <sprite>sprites\sprBuffePlates</sprite>
-        <sprite>sprites\sprBurningTrashcan</sprite>
-        <sprite>sprites\sprCable1</sprite>
-        <sprite>sprites\sprCable2</sprite>
-        <sprite>sprites\sprCamera</sprite>
-        <sprite>sprites\sprCameraHolder</sprite>
-        <sprite>sprites\sprCandleTable</sprite>
-        <sprite>sprites\sprCandleTableBurning</sprite>
-        <sprite>sprites\sprCarLift</sprite>
-        <sprite>sprites\sprCassetteDeck</sprite>
-        <sprite>sprites\sprCellBed</sprite>
-        <sprite>sprites\sprCellPhone</sprite>
-        <sprite>sprites\sprCellSink</sprite>
-        <sprite>sprites\sprCellToilet</sprite>
-        <sprite>sprites\sprCeoTable</sprite>
-        <sprite>sprites\sprChairDown</sprite>
-        <sprite>sprites\sprChineseFishtank</sprite>
-        <sprite>sprites\sprChineseLight</sprite>
-        <sprite>sprites\sprChineseLightBlue</sprite>
-        <sprite>sprites\sprCleaningCart</sprite>
-        <sprite>sprites\sprClosetGlow</sprite>
-        <sprite>sprites\sprClubRegister</sprite>
-        <sprite>sprites\sprClubSafe</sprite>
-        <sprite>sprites\sprClubSafePapers</sprite>
-        <sprite>sprites\sprClueBig</sprite>
-        <sprite>sprites\sprCocaineBox</sprite>
-        <sprite>sprites\sprCocaineCrate</sprite>
-        <sprite>sprites\sprComputer</sprite>
-        <sprite>sprites\sprConferenceTable</sprite>
-        <sprite>sprites\sprCopCar</sprite>
-        <sprite>sprites\sprCopyMachine</sprite>
-        <sprite>sprites\sprCouchCushion</sprite>
-        <sprite>sprites\sprCyanPlant</sprite>
-        <sprite>sprites\sprDiningChair</sprite>
-        <sprite>sprites\sprDiscoBar</sprite>
-        <sprite>sprites\sprDJRecords</sprite>
-        <sprite>sprites\sprDJTable</sprite>
-        <sprite>sprites\sprDoubleFridge</sprite>
-        <sprite>sprites\sprDrawerMask</sprite>
-        <sprite>sprites\sprDrawersH24</sprite>
-        <sprite>sprites\sprDrawersV24</sprite>
-        <sprite>sprites\sprDrugCabinet</sprite>
-        <sprite>sprites\sprDrugMaterial</sprite>
-        <sprite>sprites\sprDrugSafe</sprite>
-        <sprite>sprites\sprDrugTable</sprite>
-        <sprite>sprites\sprDumpster</sprite>
-        <sprite>sprites\sprEnormousFountain</sprite>
-        <sprite>sprites\sprEnvelopes</sprite>
-        <sprite>sprites\sprEvidenceTable1</sprite>
-        <sprite>sprites\sprEvidenceTable2</sprite>
-        <sprite>sprites\sprEvidenceTable3</sprite>
-        <sprite>sprites\sprFan</sprite>
-        <sprite>sprites\sprFancyBar</sprite>
-        <sprite>sprites\sprFileCabinet</sprite>
-        <sprite>sprites\sprFileCabinetMask</sprite>
-        <sprite>sprites\sprFileCabinetOffice</sprite>
-        <sprite>sprites\sprFileCabinetOfficeMask</sprite>
-        <sprite>sprites\sprFireAxe</sprite>
-        <sprite>sprites\sprFloatingBottle</sprite>
-        <sprite>sprites\sprFloorMail</sprite>
-        <sprite>sprites\sprFloorTable</sprite>
-        <sprite>sprites\sprFoodTray</sprite>
-        <sprite>sprites\sprFootStand</sprite>
-        <sprite>sprites\sprFountain</sprite>
-        <sprite>sprites\sprFreezer</sprite>
-        <sprite>sprites\sprFridgeDown</sprite>
-        <sprite>sprites\sprFridgeMask</sprite>
-        <sprite>sprites\sprFryingKitchen</sprite>
-        <sprite>sprites\sprGargoyle</sprite>
-        <sprite>sprites\sprGate</sprite>
-        <sprite>sprites\sprGlassFloor</sprite>
-        <sprite>sprites\sprGlassTable</sprite>
-        <sprite>sprites\sprGlimmer</sprite>
-        <sprite>sprites\sprGoldenBar</sprite>
-        <sprite>sprites\sprGoldenBarBooth</sprite>
-        <sprite>sprites\sprGoldenCat</sprite>
-        <sprite>sprites\sprGoldenDragon</sprite>
-        <sprite>sprites\sprGolfBag</sprite>
-        <sprite>sprites\sprGolfCourt</sprite>
-        <sprite>sprites\sprGymLocker</sprite>
-        <sprite>sprites\sprHandicapToilet</sprite>
-        <sprite>sprites\sprHatRack</sprite>
-        <sprite>sprites\sprHeater</sprite>
-        <sprite>sprites\sprHockeyTable</sprite>
-        <sprite>sprites\sprHomelessBed</sprite>
-        <sprite>sprites\sprInvestigationFiles</sprite>
-        <sprite>sprites\sprInvestigationFileSpread</sprite>
-        <sprite>sprites\sprJacuzzi</sprite>
-        <sprite>sprites\sprJukebox</sprite>
-        <sprite>sprites\sprJukeboxGlow</sprite>
-        <sprite>sprites\sprJukeGlass</sprite>
-        <sprite>sprites\sprKitchenCounter</sprite>
-        <sprite>sprites\sprKitchenSinkDown</sprite>
-        <sprite>sprites\sprLamps</sprite>
-        <sprite>sprites\sprLaptopTable</sprite>
-        <sprite>sprites\sprLaundryBasket</sprite>
-        <sprite>sprites\sprLeatherCouch</sprite>
-        <sprite>sprites\sprLitterbox</sprite>
-        <sprite>sprites\sprLockedDoor</sprite>
-        <sprite>sprites\sprMassageTable</sprite>
-        <sprite>sprites\sprMetalDetector</sprite>
-        <sprite>sprites\sprMetalDetectorAlarm</sprite>
-        <sprite>sprites\sprMicrowaveDown</sprite>
-        <sprite>sprites\sprMinibar</sprite>
-        <sprite>sprites\sprModernArt</sprite>
-        <sprite>sprites\sprMolotov</sprite>
-        <sprite>sprites\sprMonitors</sprite>
-        <sprite>sprites\sprMonsterTruck</sprite>
-        <sprite>sprites\sprNeonSign</sprite>
-        <sprite>sprites\sprNes</sprite>
-        <sprite>sprites\sprNightStand</sprite>
-        <sprite>sprites\sprNiklasFridge</sprite>
-        <sprite>sprites\sprNoodleTable</sprite>
-        <sprite>sprites\sprOfficeCouch</sprite>
-        <sprite>sprites\sprOfficeCouchBig</sprite>
-        <sprite>sprites\sprOfficeDesk</sprite>
-        <sprite>sprites\sprOpenTrashbag</sprite>
-        <sprite>sprites\sprOscarPlate</sprite>
-        <sprite>sprites\sprOscarTable</sprite>
-        <sprite>sprites\sprOwnerDesk</sprite>
-        <sprite>sprites\sprPalmTreeTop</sprite>
-        <sprite>sprites\sprPantherStatue</sprite>
-        <sprite>sprites\sprPaperbin</sprite>
-        <sprite>sprites\sprPapers</sprite>
-        <sprite>sprites\sprPelletPlant</sprite>
-        <sprite>sprites\sprPellets</sprite>
-        <sprite>sprites\sprPelletsCorner</sprite>
-        <sprite>sprites\sprPelletsSide</sprite>
-        <sprite>sprites\sprPhoneBooth</sprite>
-        <sprite>sprites\sprPhoneHom</sprite>
-        <sprite>sprites\sprPhoneHomPainting</sprite>
-        <sprite>sprites\sprPhoneHomPaintingFallen</sprite>
-        <sprite>sprites\sprPhoneHomSafe1</sprite>
-        <sprite>sprites\sprPhoneRecorder</sprite>
-        <sprite>sprites\sprPhoneSmall</sprite>
-        <sprite>sprites\sprPizza</sprite>
-        <sprite>sprites\sprPizzaCounter</sprite>
-        <sprite>sprites\sprPizzaFresh</sprite>
-        <sprite>sprites\sprPizzaGlass</sprite>
-        <sprite>sprites\sprPizzaOven</sprite>
-        <sprite>sprites\sprPizzaRegister</sprite>
-        <sprite>sprites\sprPizzas</sprite>
-        <sprite>sprites\sprPizzaTables</sprite>
-        <sprite>sprites\sprPlant1</sprite>
-        <sprite>sprites\sprPlant2</sprite>
-        <sprite>sprites\sprPlant3</sprite>
-        <sprite>sprites\sprPool</sprite>
-        <sprite>sprites\sprPoolChair</sprite>
-        <sprite>sprites\sprPoolTable</sprite>
-        <sprite>sprites\sprPoolTray</sprite>
-        <sprite>sprites\sprPornBed</sprite>
-        <sprite>sprites\sprPornCamera</sprite>
-        <sprite>sprites\sprPornLight</sprite>
-        <sprite>sprites\sprProjector</sprite>
-        <sprite>sprites\sprProjectorLight</sprite>
-        <sprite>sprites\sprProjectorTable</sprite>
-        <sprite>sprites\sprReceptionDesk</sprite>
-        <sprite>sprites\sprRecordPlayer</sprite>
-        <sprite>sprites\sprRegister</sprite>
-        <sprite>sprites\sprRestaurantChair</sprite>
-        <sprite>sprites\sprRestaurantTable</sprite>
-        <sprite>sprites\sprRezzedLogo</sprite>
-        <sprite>sprites\sprRichTable</sprite>
-        <sprite>sprites\sprSaunaBench</sprite>
-        <sprite>sprites\sprSaunaCounter</sprite>
-        <sprite>sprites\sprSaunaCurtain</sprite>
-        <sprite>sprites\sprSaunaFountain</sprite>
-        <sprite>sprites\sprSecretSewerGrate</sprite>
-        <sprite>sprites\sprSecretSewerManhole</sprite>
-        <sprite>sprites\sprSecretSewerShadow</sprite>
-        <sprite>sprites\sprSewerFall1</sprite>
-        <sprite>sprites\sprSewerFall1Water</sprite>
-        <sprite>sprites\sprSewerFall2</sprite>
-        <sprite>sprites\sprSewerFall2Water</sprite>
-        <sprite>sprites\sprSewerForms</sprite>
-        <sprite>sprites\sprSewerMasks</sprite>
-        <sprite>sprites\sprSewerPhones</sprite>
-        <sprite>sprites\sprSewerPlans</sprite>
-        <sprite>sprites\sprSewerTapes</sprite>
-        <sprite>sprites\sprSewerWaterLarge</sprite>
-        <sprite>sprites\sprSewerWaterMedium</sprite>
-        <sprite>sprites\sprSewerWaterSmall</sprite>
-        <sprite>sprites\sprShelvesDown</sprite>
-        <sprite>sprites\sprShelvesMask</sprite>
-        <sprite>sprites\sprShirts</sprite>
-        <sprite>sprites\sprShittyBar</sprite>
-        <sprite>sprites\sprShittyBarShelf</sprite>
-        <sprite>sprites\sprShittyBarTable</sprite>
-        <sprite>sprites\sprShoes</sprite>
-        <sprite>sprites\sprShowerCurtain</sprite>
-        <sprite>sprites\sprShowerGlassDoor</sprite>
-        <sprite>sprites\sprShowerGlassH</sprite>
-        <sprite>sprites\sprShowerGlassV</sprite>
-        <sprite>sprites\sprSign</sprite>
-        <sprite>sprites\sprSignGlow</sprite>
-        <sprite>sprites\sprSink</sprite>
-        <sprite>sprites\sprSitCushion</sprite>
-        <sprite>sprites\sprSmallTable</sprite>
-        <sprite>sprites\sprSofaH48</sprite>
-        <sprite>sprites\sprSofaH64</sprite>
-        <sprite>sprites\sprSofaV48</sprite>
-        <sprite>sprites\sprSofaV64</sprite>
-        <sprite>sprites\sprSolarium</sprite>
-        <sprite>sprites\sprSolariumOpen</sprite>
-        <sprite>sprites\sprSpeaker</sprite>
-        <sprite>sprites\sprSpeakerBooth</sprite>
-        <sprite>sprites\sprSpeakerTable</sprite>
-        <sprite>sprites\sprSpot</sprite>
-        <sprite>sprites\sprSpotLight</sprite>
-        <sprite>sprites\sprSquareTable</sprite>
-        <sprite>sprites\sprStage</sprite>
-        <sprite>sprites\sprStatueFence</sprite>
-        <sprite>sprites\sprStoreShelf</sprite>
-        <sprite>sprites\sprStoveDown</sprite>
-        <sprite>sprites\sprStroboscope</sprite>
-        <sprite>sprites\sprStroller</sprite>
-        <sprite>sprites\sprSunChair</sprite>
-        <sprite>sprites\sprSurveillanceCorner</sprite>
-        <sprite>sprites\sprTable</sprite>
-        <sprite>sprites\sprTableBarricade</sprite>
-        <sprite>sprites\sprTableStriped</sprite>
-        <sprite>sprites\sprTigerCarpet</sprite>
-        <sprite>sprites\sprToaster</sprite>
-        <sprite>sprites\sprToiletDown</sprite>
-        <sprite>sprites\sprToolTable</sprite>
-        <sprite>sprites\sprTowels</sprite>
-        <sprite>sprites\sprToyBall</sprite>
-        <sprite>sprites\sprToyBear</sprite>
-        <sprite>sprites\sprToyCar</sprite>
-        <sprite>sprites\sprToyLego</sprite>
-        <sprite>sprites\sprToyM16</sprite>
-        <sprite>sprites\sprToyMP5</sprite>
-        <sprite>sprites\sprToyTurtle</sprite>
-        <sprite>sprites\sprTrashbag</sprite>
-        <sprite>sprites\sprTrashcan</sprite>
-        <sprite>sprites\sprTrophy</sprite>
-        <sprite>sprites\sprTrophyCabinet1</sprite>
-        <sprite>sprites\sprTrophyCabinet2</sprite>
-        <sprite>sprites\sprTrophyHead</sprite>
-        <sprite>sprites\sprTruckFence</sprite>
-        <sprite>sprites\sprTub</sprite>
-        <sprite>sprites\sprTurd</sprite>
-        <sprite>sprites\sprTVBlack</sprite>
-        <sprite>sprites\sprTVSet</sprite>
-        <sprite>sprites\sprTVWallMounted</sprite>
-        <sprite>sprites\sprTyre</sprite>
-        <sprite>sprites\sprUnderwear</sprite>
-        <sprite>sprites\sprUrinalV</sprite>
-        <sprite>sprites\sprVendingMachine</sprite>
-        <sprite>sprites\sprVenusCandle</sprite>
-        <sprite>sprites\sprVenusLevel</sprite>
-        <sprite>sprites\sprVenusPatrol</sprite>
-        <sprite>sprites\sprVenusPatrolChalk</sprite>
-        <sprite>sprites\sprVenusPatrolSmall</sprite>
-        <sprite>sprites\sprVenusPetrol</sprite>
-        <sprite>sprites\sprVHSArchive</sprite>
-        <sprite>sprites\sprVHSCounter</sprite>
-        <sprite>sprites\sprVHSRackH</sprite>
-        <sprite>sprites\sprVHSRackV</sprite>
-        <sprite>sprites\sprVHStapes</sprite>
-        <sprite>sprites\sprVinylPlayer</sprite>
-        <sprite>sprites\sprVinylRecord</sprite>
-        <sprite>sprites\sprVomit</sprite>
-        <sprite>sprites\sprVomitBucket</sprite>
-        <sprite>sprites\sprWaterPuddle</sprite>
-        <sprite>sprites\sprWetFloorWarning</sprite>
-        <sprite>sprites\sprWetSpot</sprite>
-        <sprite>sprites\sprWheelChair</sprite>
-        <sprite>sprites\sprWhiteBarStool</sprite>
-        <sprite>sprites\sprWhiteSofa</sprite>
-        <sprite>sprites\sprWhiteTigerCarpet</sprite>
-        <sprite>sprites\sprWineRack</sprite>
-        <sprite>sprites\sprWokKitchen</sprite>
-        <sprite>sprites\sprWorkTable</sprite>
-        <sprite>sprites\sprYinYang</sprite>
-        <sprites name="Trauma">
-          <sprite>sprites\sprHospitalBed</sprite>
-          <sprite>sprites\sprHospitalBed2</sprite>
-          <sprite>sprites\sprHospitalBedStand</sprite>
-          <sprite>sprites\sprHospitalChair</sprite>
-          <sprite>sprites\sprHospitalCouch</sprite>
-          <sprite>sprites\sprHospitalCouch2</sprite>
-          <sprite>sprites\sprHospitalCupboard</sprite>
-          <sprite>sprites\sprHospitalCurtains</sprite>
-          <sprite>sprites\sprHospitalDesk</sprite>
-          <sprite>sprites\sprHospitalDoorH</sprite>
-          <sprite>sprites\sprHospitalDoorV</sprite>
-          <sprite>sprites\sprHospitalEntranceDoors</sprite>
-          <sprite>sprites\sprHospitalLocker</sprite>
-          <sprite>sprites\sprHospitalPlant</sprite>
-          <sprite>sprites\sprHospitalPlantDead</sprite>
-          <sprite>sprites\sprHospitalReception</sprite>
-          <sprite>sprites\sprHospitalSofaH</sprite>
-          <sprite>sprites\sprHospitalSofaV</sprite>
-          <sprite>sprites\sprHospitalStaffMicro</sprite>
-          <sprite>sprites\sprHospitalStaffSofa</sprite>
-          <sprite>sprites\sprHospitalStaffTable</sprite>
-          <sprite>sprites\sprXray</sprite>
-        </sprites>
-        <sprite>sprites\sprJacket</sprite>
-        <sprite>sprites\sprSewerShadow</sprite>
-        <sprite>sprites\sprSoup</sprite>
-      </sprites>
-      <sprites name="NPCs">
-        <sprites name="Dream people">
-          <sprite>sprites\sprDreamPeople</sprite>
-          <sprite>sprites\sprDreamSit</sprite>
-          <sprite>sprites\sprDreamSitFinal</sprite>
-        </sprites>
-        <sprites name="Assassin">
-          <sprite>sprites\sprAssassinBar</sprite>
-          <sprite>sprites\sprAssassinBloodyFace</sprite>
-          <sprite>sprites\sprAssassinBruisedFace</sprite>
-          <sprite>sprites\sprAssassinDead</sprite>
-          <sprite>sprites\sprAssassinFace</sprite>
-          <sprite>sprites\sprAssassinPizza</sprite>
-          <sprite>sprites\sprAssassinRatFace</sprite>
-          <sprite>sprites\sprAssassinSitLegs</sprite>
-          <sprite>sprites\sprAssassinSitUzi</sprite>
-          <sprite>sprites\sprAssassinStore</sprite>
-          <sprite>sprites\sprAssassinTalk</sprite>
-          <sprite>sprites\sprAssassinTalkShot</sprite>
-          <sprite>sprites\sprAssassinUzi</sprite>
-          <sprite>sprites\sprAssassinVHS</sprite>
-          <sprite>sprites\sprAssassinWalk</sprite>
-          <sprite>sprites\sprRichterMask</sprite>
-        </sprites>
-        <sprites name="Bartender">
-          <sprite>sprites\sprBartender</sprite>
-          <sprite>sprites\sprBartenderDeath</sprite>
-          <sprite>sprites\sprBartenderFace</sprite>
-          <sprite>sprites\sprBartenderTalk</sprite>
-        </sprites>
-        <sprites name="Niklas">
-          <sprite>sprites\sprNicklasBar</sprite>
-          <sprite>sprites\sprNicklasBarFace</sprite>
-          <sprite>sprites\sprNicklasDead</sprite>
-          <sprite>sprites\sprNicklasFace</sprite>
-          <sprite>sprites\sprNicklasPizza</sprite>
-          <sprite>sprites\sprNicklasPizzaFace</sprite>
-          <sprite>sprites\sprNicklasServe</sprite>
-          <sprite>sprites\sprNicklasStore</sprite>
-          <sprite>sprites\sprNicklasTiedUp</sprite>
-          <sprite>sprites\sprNicklasStoreFace</sprite>
-          <sprite>sprites\sprNicklasVideoFace</sprite>
-          <sprite>sprites\sprNicklasVHS</sprite>
-        </sprites>
-        <sprites name="Jones">
-          <sprite>sprites\sprCrocodileManDie</sprite>
-          <sprite>sprites\sprCrocodileFace</sprite>
-          <sprite>sprites\sprCrocodileMan</sprite>
-        </sprites>
-        <sprites name="Brandon Boyer">
-          <sprite>sprites\sprBrandonBoyer</sprite>
-          <sprite>sprites\sprBrandonFace</sprite>
-        </sprites>
-        <sprites name="Janitors">
-          <sprites name="Dennis">
-            <sprite>sprites\sprDennisDie</sprite>
+            <sprite>sprites\sprBoss3Face</sprite>
+            <sprite>sprites\sprBoss4CrazyFace</sprite>
+            <sprite>sprites\sprBoss4Face</sprite>
+            <sprite>sprites\sprBrandonFace</sprite>
+            <sprite>sprites\sprCEOFace</sprite>
+            <sprite>sprites\sprChiefFace</sprite>
+            <sprite>sprites\sprClubOwnerFace</sprite>
+            <sprite>sprites\sprClubOwnerScaredFace</sprite>
+            <sprite>sprites\sprClueBig</sprite>
+            <sprite>sprites\sprCrocodileFace</sprite>
+            <sprite>sprites\sprDeadGuyFace</sprite>
             <sprite>sprites\sprDennisFace</sprite>
             <sprite>sprites\sprDennisStraightFace</sprite>
             <sprite>sprites\sprDialogueFaces</sprite>
-          </sprites>
-          <sprites name="Jonatan">
-            <sprite>sprites\sprJonatanDie</sprite>
+            <sprite>sprites\sprDoctorFace</sprite>
+            <sprite>sprites\sprDogCorpseFace</sprite>
+            <sprite>sprites\sprDogFace</sprite>
+            <sprite>sprites\sprDreamPeople</sprite>
+            <sprite>sprites\sprFatCorpseFace</sprite>
+            <sprite>sprites\sprFilesBig</sprite>
+            <sprite>sprites\sprForms</sprite>
+            <sprite>sprites\sprGirlfriendDeadFace</sprite>
+            <sprite>sprites\sprGirlfriendFace</sprite>
+            <sprite>sprites\sprGirlfriendFaceOld</sprite>
+            <sprite>sprites\sprHoboFace</sprite>
             <sprite>sprites\sprJonatanFace</sprite>
             <sprite>sprites\sprJonatanStraightFace</sprite>
+            <sprite>sprites\sprNicklasFace</sprite>
+            <sprite>sprites\sprNicklasPizzaFace</sprite>
+            <sprite>sprites\sprNicklasStoreFace</sprite>
+            <sprite>sprites\sprNicklasVideoFace</sprite>
+            <sprite>sprites\sprPhone</sprite>
+            <sprite>sprites\sprPoliceFace</sprite>
+            <sprite>sprites\sprSushiGuyFace</sprite>
+            <sprite>sprites\sprWileyFace</sprite>
           </sprites>
-          <sprite>sprites\sprJanitorCap</sprite>
-          <sprite>sprites\sprJanitorClean</sprite>
-          <sprite>sprites\sprJanitorFinger</sprite>
-          <sprite>sprites\sprJanitorLegs</sprite>
-          <sprite>sprites\sprJanitorVacuum</sprite>
-          <sprite>sprites\sprJanitorWalk</sprite>
-        </sprites>
-        <sprites name="Girlfriend">
-          <sprite>sprites\sprGirlfriend</sprite>
-          <sprite>sprites\sprGirlfriendBathroom</sprite>
-          <sprite>sprites\sprGirlfriendDead</sprite>
-          <sprite>sprites\sprGirlfriendDeadFace</sprite>
-          <sprite>sprites\sprGirlfriendDrugged</sprite>
-          <sprite>sprites\sprGirlfriendEating</sprite>
-          <sprite>sprites\sprGirlfriendFace</sprite>
-          <sprite>sprites\sprGirlfriendFaceOld</sprite>
-          <sprite>sprites\sprGirlfriendOutline</sprite>
-          <sprite>sprites\sprGirlfriendSit</sprite>
-          <sprite>sprites\sprGirlfriendTalk</sprite>
-        </sprites>
-        <sprites name="Background characters">
-          <sprite>sprites\sprLoneSurvivor</sprite>
-          <sprite>sprites\sprBenjamin</sprite>
-          <sprite>sprites\sprElliott</sprite>
-          <sprite>sprites\sprNigelScream</sprite>
-          <sprite>sprites\sprLocustDead</sprite>
-          <sprite>sprites\sprEirik</sprite>
-          <sprite>sprites\sprCoconuts</sprite>
-          <sprite>sprites\sprNigelTalk</sprite>
-          <sprite>sprites\sprScattle</sprite>
-          <sprite>sprites\sprDJ</sprite>
-          <sprite>sprites\sprCobraDead</sprite>
-          <sprite>sprites\sprMoon</sprite>
-          <sprite>sprites\sprSunAraw</sprite>
-          <sprite>sprites\sprOscar</sprite>
-          <sprite>sprites\sprPerturbator</sprite>
-          <sprite>sprites\sprVictimWall1</sprite>
-          <sprite>sprites\sprMCDate</sprite>
-          <sprite>sprites\sprVictimWall2</sprite>
-          <sprite>sprites\sprRamusHat</sprite>
-          <sprite>sprites\sprVictimDead</sprite>
-          <sprite>sprites\sprWalrusDead</sprite>
-          <sprite>sprites\sprRasmus</sprite>
-          <sprite>sprites\sprSacrifice</sprite>
-          <sprite>sprites\sprJasper</sprite>
-        </sprites>
-        <sprites name="Sushi guy">
-          <sprite>sprites\sprSushiGuy</sprite>
-          <sprite>sprites\sprSushiGuyFace</sprite>
-          <sprite>sprites\sprSushiGuyShake</sprite>
-        </sprites>
-        <sprites name="Wiley">
-          <sprite>sprites\sprWiley</sprite>
-          <sprite>sprites\sprWileyDead</sprite>
-          <sprite>sprites\sprWileyFace</sprite>
+          <sprite>sprites\sprPhoneLine</sprite>
         </sprites>
       </sprites>
-      <sprites name="Items &amp; Weapons">
+      <sprites name="Item">
         <sprites name="Clips">
           <sprite>sprites\sprBedClip</sprite>
           <sprite>sprites\sprKitchenCounterClip1</sprite>
@@ -2423,9 +1815,13 @@
           <sprite>sprites\sprLivingRoomTableClip2</sprite>
         </sprites>
         <sprite>sprites\sprChipsBag</sprite>
+        <sprite>sprites\sprBossgun</sprite>
         <sprite>sprites\sprSixpack</sprite>
+        <sprite>sprites\sprBoss4Phone</sprite>
         <sprite>sprites\sprDrink</sprite>
         <sprite>sprites\sprBriefcase</sprite>
+        <sprite>sprites\sprPlayerJacket</sprite>
+        <sprite>sprites\sprPlayerPants</sprite>
         <sprite>sprites\sprCleaver</sprite>
         <sprite>sprites\sprCleaverDrop</sprite>
         <sprite>sprites\sprBigWeapons</sprite>
@@ -2434,7 +1830,7 @@
         <sprite>sprites\sprCellKeys</sprite>
         <sprite>sprites\sprKeycard</sprite>
       </sprites>
-      <sprites name="Effects">
+      <sprites name="Effect">
         <sprites name="Gore">
           <sprites name="Blood">
             <sprite>sprites\sprBloodDrop</sprite>
@@ -2521,6 +1917,614 @@
         <sprite>sprites\sprWeaponsTest</sprite>
         <sprite>sprites\sprSushiTable</sprite>
         <sprite>sprites\sprMartinDead</sprite>
+      </sprites>
+      <sprites name="Map">
+        <sprites name="Wall">
+          <sprite>sprites\sprWallBrickH</sprite>
+          <sprite>sprites\sprWallBrickV</sprite>
+          <sprite>sprites\sprWallHeavyH</sprite>
+          <sprite>sprites\sprWallHeavyV</sprite>
+          <sprite>sprites\sprWallHospitalH</sprite>
+          <sprite>sprites\sprWallHospitalV</sprite>
+          <sprite>sprites\sprWalls</sprite>
+          <sprite>sprites\sprWallSoftH</sprite>
+          <sprite>sprites\sprWallSoftV</sprite>
+          <sprite>sprites\sprWoodFenceH</sprite>
+          <sprite>sprites\sprWoodFenceV</sprite>
+          <sprite>sprites\sprBalconyH</sprite>
+          <sprite>sprites\sprBalconyV</sprite>
+          <sprite>sprites\sprCellDoor</sprite>
+          <sprite>sprites\sprWindow</sprite>
+          <sprite>sprites\sprWindowDown</sprite>
+          <sprite>sprites\sprWindowExplode</sprite>
+          <sprite>sprites\sprWindowframe</sprite>
+          <sprite>sprites\sprWindowLeft</sprite>
+          <sprite>sprites\sprWindowOpen</sprite>
+          <sprite>sprites\sprWindowRight</sprite>
+          <sprite>sprites\sprWindowSill</sprite>
+          <sprite>sprites\sprWindowUp</sprite>
+          <sprite>sprites\sprBrokenWindow</sprite>
+          <sprite>sprites\sprRailH</sprite>
+          <sprite>sprites\sprRailV</sprite>
+          <sprite>sprites\sprSewerWallH</sprite>
+          <sprite>sprites\sprSewerWallV</sprite>
+          <sprite>sprites\sprGlassPanelBrokenH</sprite>
+          <sprite>sprites\sprGlassPanelBrokenV</sprite>
+          <sprite>sprites\sprGlassPanelDestroyedH</sprite>
+          <sprite>sprites\sprGlassPanelDestroyedV</sprite>
+          <sprite>sprites\sprGlassPanelH</sprite>
+          <sprite>sprites\sprGlassPanelV</sprite>
+          <sprite>sprites\sprDoorH</sprite>
+          <sprite>sprites\sprDoorV</sprite>
+          <sprite>sprites\sprDoorH2</sprite>
+          <sprite>sprites\sprDoorV2</sprite>
+          <sprite>sprites\sprCorner</sprite>
+          <sprite>sprites\sprCornerBrick</sprite>
+          <sprite>sprites\sprCellWallH</sprite>
+          <sprite>sprites\sprCellWallV</sprite>
+          <sprite>sprites\sprHorBarrier</sprite>
+          <sprite>sprites\sprVertBarrier</sprite>
+        </sprites>
+        <sprites name="Prop">
+          <sprites name="Apartment - Biker">
+            <sprite>sprites\sprMCAquarium</sprite>
+            <sprite>sprites\sprMCBed</sprite>
+            <sprite>sprites\sprMCCouch</sprite>
+            <sprite>sprites\sprMCComputer</sprite>
+            <sprite>sprites\sprMCForm</sprite>
+            <sprite>sprites\sprMCGlassTable</sprite>
+            <sprite>sprites\sprMCKeytar</sprite>
+            <sprite>sprites\sprMCKitchenSink</sprite>
+            <sprite>sprites\sprMCKitchenShelf</sprite>
+            <sprite>sprites\sprMCSkateboard</sprite>
+            <sprite>sprites\sprMCStereo</sprite>
+            <sprite>sprites\sprMCRecords</sprite>
+            <sprite>sprites\sprMCStove</sprite>
+            <sprite>sprites\sprMCTigerCarpet</sprite>
+            <sprite>sprites\sprMCTVTable</sprite>
+            <sprite>sprites\sprMCStatue</sprite>
+            <sprite>sprites\sprBlackTub</sprite>
+            <sprite>sprites\sprPimpPhone</sprite>
+            <sprite>sprites\sprPimpPhoneOff</sprite>
+            <sprite>sprites\sprPimpSink</sprite>
+            <sprite>sprites\sprPimpToilet</sprite>
+          </sprites>
+          <sprites name="Apartment - Jacket">
+            <sprite>sprites\sprDrawersH24Phone</sprite>
+            <sprite>sprites\sprDrawersH24PhoneOff</sprite>
+            <sprite>sprites\sprPlayerBed1</sprite>
+            <sprite>sprites\sprPlayerBed2</sprite>
+            <sprite>sprites\sprPlayerCouch</sprite>
+            <sprite>sprites\sprPlayerForm</sprite>
+            <sprite>sprites\sprPlayerFridge</sprite>
+            <sprite>sprites\sprPlayerKitchenCounter</sprite>
+            <sprite>sprites\sprPlayerKitchenShelf</sprite>
+            <sprite>sprites\sprPlayerKitchenSink</sprite>
+            <sprite>sprites\sprPlayerLivingRoomTable</sprite>
+            <sprite>sprites\sprPlayerStove</sprite>
+            <sprite>sprites\sprPlayerTable</sprite>
+            <sprite>sprites\sprPlayerTub</sprite>
+            <sprite>sprites\sprBox</sprite>
+            <sprite>sprites\sprBoxOpen</sprite>
+          </sprites>
+          <sprites name="Assault">
+            <sprite>sprites\sprBarricade1</sprite>
+            <sprite>sprites\sprBarricade2</sprite>
+            <sprite>sprites\sprPoliceChair</sprite>
+            <sprite>sprites\sprPoliceCouch</sprite>
+            <sprite>sprites\sprPoliceDesk</sprite>
+            <sprite>sprites\sprPoliceDeskChair</sprite>
+            <sprite>sprites\sprPoliceDeskPuter</sprite>
+            <sprite>sprites\sprPoliceEntryDesk2</sprite>
+            <sprite>sprites\sprPoliceFrontDesk</sprite>
+            <sprite>sprites\sprPoliceInterrogationTable</sprite>
+            <sprite>sprites\sprPolicePhone1</sprite>
+            <sprite>sprites\sprPolicePhone2</sprite>
+            <sprite>sprites\sprPolicePhoneTable</sprite>
+            <sprite>sprites\sprPoliceTape</sprite>
+            <sprite>sprites\sprPoliceTapeRipped</sprite>
+            <sprite>sprites\sprBigPoliceTable</sprite>
+          </sprites>
+          <sprites name="Clean Hit">
+            <sprite>sprites\sprHotelChair</sprite>
+            <sprite>sprites\sprHotelCloset</sprite>
+            <sprite>sprites\sprHotelNightStand</sprite>
+            <sprite>sprites\sprHotelNightStandLight</sprite>
+            <sprite>sprites\sprHotelSimpleBed</sprite>
+            <sprite>sprites\sprHotelSink</sprite>
+            <sprite>sprites\sprHotelSuiteBed</sprite>
+            <sprite>sprites\sprHotelSuiteChair</sprite>
+            <sprite>sprites\sprHotelSuiteEntertainment</sprite>
+            <sprite>sprites\sprHotelSuiteSofa</sprite>
+            <sprite>sprites\sprHotelSuiteToilet</sprite>
+            <sprite>sprites\sprHotelSuiteTub</sprite>
+          </sprites>
+          <sprites name="Clothesline">
+            <sprite>sprites\sprClotheslineH1</sprite>
+            <sprite>sprites\sprClotheslineH2</sprite>
+            <sprite>sprites\sprClotheslineV1</sprite>
+            <sprite>sprites\sprClotheslineV2</sprite>
+          </sprites>
+          <sprites name="Crackdown">
+            <sprite>sprites\sprJapaneseLiquor</sprite>
+            <sprite>sprites\sprJapaneseTable</sprite>
+          </sprites>
+          <sprites name="Exposed">
+            <sprite>sprites\spr18</sprite>
+            <sprite>sprites\sprAssassinsBreed</sprite>
+            <sprite>sprites\sprBallOfDuty</sprite>
+            <sprite>sprites\sprEuroFenceH</sprite>
+            <sprite>sprites\sprEuroFenceV</sprite>
+            <sprite>sprites\sprEurogamerLogo</sprite>
+            <sprite>sprites\sprEuroHotlineMiamiLogo</sprite>
+            <sprite>sprites\sprEuroIce</sprite>
+            <sprite>sprites\sprEuroPillar</sprite>
+            <sprite>sprites\sprEuroPod2H</sprite>
+            <sprite>sprites\sprEuroPod2V</sprite>
+            <sprite>sprites\sprEuroPod3V</sprite>
+            <sprite>sprites\sprEuroPodH</sprite>
+            <sprite>sprites\sprEuroPodV</sprite>
+            <sprite>sprites\sprEuroTrash</sprite>
+          </sprites>
+          <sprites name="Fun &amp; Games">
+            <sprite>sprites\sprArcadeCabinet1</sprite>
+            <sprite>sprites\sprArcadeCabinet10</sprite>
+            <sprite>sprites\sprArcadeCabinet11</sprite>
+            <sprite>sprites\sprArcadeCabinet12</sprite>
+            <sprite>sprites\sprArcadeCabinet2</sprite>
+            <sprite>sprites\sprArcadeCabinet3</sprite>
+            <sprite>sprites\sprArcadeCabinet4</sprite>
+            <sprite>sprites\sprArcadeCabinet5</sprite>
+            <sprite>sprites\sprArcadeCabinet6</sprite>
+            <sprite>sprites\sprArcadeCabinet7</sprite>
+            <sprite>sprites\sprArcadeCabinet8</sprite>
+            <sprite>sprites\sprArcadeCabinet9</sprite>
+            <sprite>sprites\sprArcadeLight1</sprite>
+            <sprite>sprites\sprArcadeLight2</sprite>
+            <sprite>sprites\sprBasketBallGame</sprite>
+            <sprite>sprites\sprCarcade</sprite>
+            <sprite>sprites\sprClawMachine</sprite>
+            <sprite>sprites\sprClawMachineGlass</sprite>
+          </sprites>
+          <sprites name="Highball">
+            <sprite>sprites\sprBowlingEnd</sprite>
+            <sprite>sprites\sprBowlingLane</sprite>
+            <sprite>sprites\sprBowlingStart</sprite>
+            <sprite>sprites\sprHighballBar</sprite>
+            <sprite>sprites\sprHighballBooth</sprite>
+            <sprite>sprites\sprHighballBoothBlack</sprite>
+            <sprite>sprites\sprHighballChair</sprite>
+            <sprite>sprites\sprHighballChairBig</sprite>
+            <sprite>sprites\sprHighballCurtain</sprite>
+            <sprite>sprites\sprKaraokeCouchBlack</sprite>
+            <sprite>sprites\sprKaraokeCouchPink</sprite>
+            <sprite>sprites\sprKaraokeMachine</sprite>
+          </sprites>
+          <sprites name="Neighbors">
+            <sprites name="Anders">
+              <sprite>sprites\sprAndersBed</sprite>
+              <sprite>sprites\sprAndersCouch</sprite>
+              <sprite>sprites\sprAndersDesk</sprite>
+              <sprite>sprites\sprAndersDrawer</sprite>
+              <sprite>sprites\sprAndersTable</sprite>
+            </sprites>
+            <sprites name="Dennis">
+              <sprite>sprites\sprDennisBed</sprite>
+              <sprite>sprites\sprDennisCouch</sprite>
+              <sprite>sprites\sprDennisLivingRoomTable</sprite>
+              <sprite>sprites\sprDennisShelves</sprite>
+              <sprite>sprites\sprDennisTVBench</sprite>
+              <sprite>sprites\sprDennisTable</sprite>
+            </sprites>
+            <sprites name="Peter">
+              <sprite>sprites\sprPetersBed</sprite>
+              <sprite>sprites\sprPetersCloset</sprite>
+              <sprite>sprites\sprPetersTub</sprite>
+              <sprite>sprites\sprPetersCouch</sprite>
+            </sprites>
+            <sprite>sprites\sprMailboxes1</sprite>
+          </sprites>
+          <sprites name="Resolution">
+            <sprite>sprites\sprJanitorBucket</sprite>
+            <sprite>sprites\sprJanitorWorkBench</sprite>
+            <sprite>sprites\sprJanitorMop</sprite>
+            <sprite>sprites\sprJanitorComputer</sprite>
+            <sprite>sprites\sprJanitorPhoneBox</sprite>
+            <sprite>sprites\sprJanitorTable</sprite>
+            <sprite>sprites\sprManhole</sprite>
+            <sprite>sprites\sprManholeEquipment</sprite>
+            <sprite>sprites\sprManholeMask</sprite>
+            <sprite>sprites\sprManholePipe</sprite>
+            <sprite>sprites\sprLadder</sprite>
+          </sprites>
+          <sprites name="Showdown">
+            <sprite>sprites\sprOldAquarium</sprite>
+            <sprite>sprites\sprOldBed</sprite>
+            <sprite>sprites\sprOldCouch</sprite>
+            <sprite>sprites\sprOldEntertainment</sprite>
+            <sprite>sprites\sprOldLiquor</sprite>
+            <sprite>sprites\sprOldFountain</sprite>
+            <sprite>sprites\sprOldNightstand</sprite>
+            <sprite>sprites\sprOldPhone</sprite>
+          </sprites>
+          <sprites name="The Metro">
+            <sprite>sprites\sprClosedLockerH</sprite>
+            <sprite>sprites\sprClosedLockerV</sprite>
+            <sprite>sprites\sprSubwayBenchH</sprite>
+            <sprite>sprites\sprSubwayBenchV</sprite>
+            <sprite>sprites\sprSubwayDoor</sprite>
+            <sprite>sprites\sprSubwayTrain</sprite>
+            <sprite>sprites\sprTag</sprite>
+            <sprite>sprites\sprLockerDoor</sprite>
+            <sprite>sprites\sprLockerOpen</sprite>
+          </sprites>
+          <sprites name="Tension">
+            <sprite>sprites\sprBombCables</sprite>
+            <sprite>sprites\sprBombCablesBroken</sprite>
+            <sprite>sprites\sprBombDoorH</sprite>
+            <sprite>sprites\sprBombDoorV</sprite>
+            <sprite>sprites\sprBombGround</sprite>
+            <sprite>sprites\sprBombGuy</sprite>
+            <sprite>sprites\sprBrokenDetonator1</sprite>
+            <sprite>sprites\sprBrokenDetonator2</sprite>
+          </sprites>
+          <sprites name="Push It">
+            <sprites name="Dance Floor">
+              <sprite>sprites\sprDanceFloor</sprite>
+              <sprite>sprites\sprDanceFloorFrame</sprite>
+              <sprite>sprites\sprDanceFloorLight0</sprite>
+              <sprite>sprites\sprDanceFloorLight1</sprite>
+              <sprite>sprites\sprDanceFloorLight2</sprite>
+              <sprite>sprites\sprDanceFloorLight3</sprite>
+            </sprites>
+            <sprite>sprites\sprLight</sprite>
+          </sprites>
+          <sprite>sprites\sprBossFountain</sprite>
+          <sprite>sprites\sprBossCar2</sprite>
+          <sprite>sprites\sprBossCar1</sprite>
+          <sprite>sprites\sprBoss4Pool</sprite>
+          <sprite>sprites\sprBoss4Table</sprite>
+          <sprite>sprites\sprBoss4PoolMask</sprite>
+          <sprite>sprites\sprBoss4Sofa</sprite>
+          <sprite>sprites\sprAquarium</sprite>
+          <sprite>sprites\sprSaunaSteam</sprite>
+          <sprite>sprites\sprAquariumBreak</sprite>
+          <sprite>sprites\sprAquariumWater</sprite>
+          <sprite>sprites\sprArmchair</sprite>
+          <sprite>sprites\sprBannerH</sprite>
+          <sprite>sprites\sprBannerV</sprite>
+          <sprite>sprites\sprBarBooth</sprite>
+          <sprite>sprites\sprBarPoolTable</sprite>
+          <sprite>sprites\sprBarRegister</sprite>
+          <sprite>sprites\sprBarRegisterGlow</sprite>
+          <sprite>sprites\sprBarRegisterSpecial</sprite>
+          <sprite>sprites\sprBarShelf</sprite>
+          <sprite>sprites\sprBarShelfGlow</sprite>
+          <sprite>sprites\sprBarStool</sprite>
+          <sprite>sprites\sprBarTable</sprite>
+          <sprite>sprites\sprBeds</sprite>
+          <sprite>sprites\sprBench</sprite>
+          <sprite>sprites\sprBigBed</sprite>
+          <sprite>sprites\sprBigTable</sprite>
+          <sprite>sprites\sprBigTag</sprite>
+          <sprite>sprites\sprBookshelfLeft</sprite>
+          <sprite>sprites\sprBookshelfMiddle</sprite>
+          <sprite>sprites\sprBookshelfRight</sprite>
+          <sprite>sprites\sprBubbleBath</sprite>
+          <sprite>sprites\sprBuddhaStatue</sprite>
+          <sprite>sprites\sprBuffe</sprite>
+          <sprite>sprites\sprBuffePlates</sprite>
+          <sprite>sprites\sprBurningTrashcan</sprite>
+          <sprite>sprites\sprCable1</sprite>
+          <sprite>sprites\sprCable2</sprite>
+          <sprite>sprites\sprCamera</sprite>
+          <sprite>sprites\sprCameraHolder</sprite>
+          <sprite>sprites\sprCandleTable</sprite>
+          <sprite>sprites\sprCandleTableBurning</sprite>
+          <sprite>sprites\sprCarLift</sprite>
+          <sprite>sprites\sprCassetteDeck</sprite>
+          <sprite>sprites\sprCellBed</sprite>
+          <sprite>sprites\sprCellPhone</sprite>
+          <sprite>sprites\sprCellSink</sprite>
+          <sprite>sprites\sprCellToilet</sprite>
+          <sprite>sprites\sprCeoTable</sprite>
+          <sprite>sprites\sprChairDown</sprite>
+          <sprite>sprites\sprChineseFishtank</sprite>
+          <sprite>sprites\sprChineseLight</sprite>
+          <sprite>sprites\sprChineseLightBlue</sprite>
+          <sprite>sprites\sprCleaningCart</sprite>
+          <sprite>sprites\sprClosetGlow</sprite>
+          <sprite>sprites\sprClubRegister</sprite>
+          <sprite>sprites\sprClubSafe</sprite>
+          <sprite>sprites\sprClubSafePapers</sprite>
+          <sprite>sprites\sprCocaineBox</sprite>
+          <sprite>sprites\sprCocaineCrate</sprite>
+          <sprite>sprites\sprComputer</sprite>
+          <sprite>sprites\sprConferenceTable</sprite>
+          <sprite>sprites\sprCopCar</sprite>
+          <sprite>sprites\sprCopyMachine</sprite>
+          <sprite>sprites\sprCouchCushion</sprite>
+          <sprite>sprites\sprCyanPlant</sprite>
+          <sprite>sprites\sprDiningChair</sprite>
+          <sprite>sprites\sprDiscoBar</sprite>
+          <sprite>sprites\sprDJRecords</sprite>
+          <sprite>sprites\sprDJTable</sprite>
+          <sprite>sprites\sprDoubleFridge</sprite>
+          <sprite>sprites\sprDrawerMask</sprite>
+          <sprite>sprites\sprDrawersH24</sprite>
+          <sprite>sprites\sprDrawersV24</sprite>
+          <sprite>sprites\sprDrugCabinet</sprite>
+          <sprite>sprites\sprDrugMaterial</sprite>
+          <sprite>sprites\sprDrugSafe</sprite>
+          <sprite>sprites\sprDrugTable</sprite>
+          <sprite>sprites\sprDumpster</sprite>
+          <sprite>sprites\sprEnormousFountain</sprite>
+          <sprite>sprites\sprEnvelopes</sprite>
+          <sprite>sprites\sprEvidenceTable1</sprite>
+          <sprite>sprites\sprEvidenceTable2</sprite>
+          <sprite>sprites\sprEvidenceTable3</sprite>
+          <sprite>sprites\sprFan</sprite>
+          <sprite>sprites\sprFancyBar</sprite>
+          <sprite>sprites\sprFileCabinet</sprite>
+          <sprite>sprites\sprFileCabinetMask</sprite>
+          <sprite>sprites\sprFileCabinetOffice</sprite>
+          <sprite>sprites\sprFileCabinetOfficeMask</sprite>
+          <sprite>sprites\sprFireAxe</sprite>
+          <sprite>sprites\sprFloatingBottle</sprite>
+          <sprite>sprites\sprFloorMail</sprite>
+          <sprite>sprites\sprFloorTable</sprite>
+          <sprite>sprites\sprFoodTray</sprite>
+          <sprite>sprites\sprFootStand</sprite>
+          <sprite>sprites\sprFountain</sprite>
+          <sprite>sprites\sprFreezer</sprite>
+          <sprite>sprites\sprFridgeDown</sprite>
+          <sprite>sprites\sprFridgeMask</sprite>
+          <sprite>sprites\sprFryingKitchen</sprite>
+          <sprite>sprites\sprGargoyle</sprite>
+          <sprite>sprites\sprGate</sprite>
+          <sprite>sprites\sprGlassFloor</sprite>
+          <sprite>sprites\sprGlassTable</sprite>
+          <sprite>sprites\sprGlimmer</sprite>
+          <sprite>sprites\sprGoldenBar</sprite>
+          <sprite>sprites\sprGoldenBarBooth</sprite>
+          <sprite>sprites\sprGoldenCat</sprite>
+          <sprite>sprites\sprGoldenDragon</sprite>
+          <sprite>sprites\sprGolfBag</sprite>
+          <sprite>sprites\sprGolfCourt</sprite>
+          <sprite>sprites\sprGymLocker</sprite>
+          <sprite>sprites\sprHandicapToilet</sprite>
+          <sprite>sprites\sprHatRack</sprite>
+          <sprite>sprites\sprHeater</sprite>
+          <sprite>sprites\sprHockeyTable</sprite>
+          <sprite>sprites\sprHomelessBed</sprite>
+          <sprite>sprites\sprInvestigationFiles</sprite>
+          <sprite>sprites\sprInvestigationFileSpread</sprite>
+          <sprite>sprites\sprJacuzzi</sprite>
+          <sprite>sprites\sprJukebox</sprite>
+          <sprite>sprites\sprJukeboxGlow</sprite>
+          <sprite>sprites\sprJukeGlass</sprite>
+          <sprite>sprites\sprKitchenCounter</sprite>
+          <sprite>sprites\sprKitchenSinkDown</sprite>
+          <sprite>sprites\sprLamps</sprite>
+          <sprite>sprites\sprLaptopTable</sprite>
+          <sprite>sprites\sprLaundryBasket</sprite>
+          <sprite>sprites\sprLeatherCouch</sprite>
+          <sprite>sprites\sprLitterbox</sprite>
+          <sprite>sprites\sprLockedDoor</sprite>
+          <sprite>sprites\sprMassageTable</sprite>
+          <sprite>sprites\sprMetalDetector</sprite>
+          <sprite>sprites\sprMetalDetectorAlarm</sprite>
+          <sprite>sprites\sprMicrowaveDown</sprite>
+          <sprite>sprites\sprMinibar</sprite>
+          <sprite>sprites\sprModernArt</sprite>
+          <sprite>sprites\sprMolotov</sprite>
+          <sprite>sprites\sprMonitors</sprite>
+          <sprite>sprites\sprMonsterTruck</sprite>
+          <sprite>sprites\sprNeonSign</sprite>
+          <sprite>sprites\sprNes</sprite>
+          <sprite>sprites\sprNightStand</sprite>
+          <sprite>sprites\sprNiklasFridge</sprite>
+          <sprite>sprites\sprNoodleTable</sprite>
+          <sprite>sprites\sprOfficeCouch</sprite>
+          <sprite>sprites\sprOfficeCouchBig</sprite>
+          <sprite>sprites\sprOfficeDesk</sprite>
+          <sprite>sprites\sprOpenTrashbag</sprite>
+          <sprite>sprites\sprOscarPlate</sprite>
+          <sprite>sprites\sprOscarTable</sprite>
+          <sprite>sprites\sprOwnerDesk</sprite>
+          <sprite>sprites\sprPalmTreeTop</sprite>
+          <sprite>sprites\sprPantherStatue</sprite>
+          <sprite>sprites\sprPaperbin</sprite>
+          <sprite>sprites\sprPapers</sprite>
+          <sprite>sprites\sprPelletPlant</sprite>
+          <sprite>sprites\sprPellets</sprite>
+          <sprite>sprites\sprPelletsCorner</sprite>
+          <sprite>sprites\sprPelletsSide</sprite>
+          <sprite>sprites\sprPhoneBooth</sprite>
+          <sprite>sprites\sprPhoneHom</sprite>
+          <sprite>sprites\sprPhoneHomPainting</sprite>
+          <sprite>sprites\sprPhoneHomPaintingFallen</sprite>
+          <sprite>sprites\sprPhoneHomSafe1</sprite>
+          <sprite>sprites\sprPhoneRecorder</sprite>
+          <sprite>sprites\sprPhoneSmall</sprite>
+          <sprite>sprites\sprPizza</sprite>
+          <sprite>sprites\sprPizzaCounter</sprite>
+          <sprite>sprites\sprPizzaFresh</sprite>
+          <sprite>sprites\sprPizzaGlass</sprite>
+          <sprite>sprites\sprPizzaOven</sprite>
+          <sprite>sprites\sprPizzaRegister</sprite>
+          <sprite>sprites\sprPizzas</sprite>
+          <sprite>sprites\sprPizzaTables</sprite>
+          <sprite>sprites\sprPlant1</sprite>
+          <sprite>sprites\sprPlant2</sprite>
+          <sprite>sprites\sprPlant3</sprite>
+          <sprite>sprites\sprPool</sprite>
+          <sprite>sprites\sprPoolChair</sprite>
+          <sprite>sprites\sprPoolTable</sprite>
+          <sprite>sprites\sprPoolTray</sprite>
+          <sprite>sprites\sprPornBed</sprite>
+          <sprite>sprites\sprPornCamera</sprite>
+          <sprite>sprites\sprPornLight</sprite>
+          <sprite>sprites\sprProjector</sprite>
+          <sprite>sprites\sprProjectorLight</sprite>
+          <sprite>sprites\sprProjectorTable</sprite>
+          <sprite>sprites\sprReceptionDesk</sprite>
+          <sprite>sprites\sprRecordPlayer</sprite>
+          <sprite>sprites\sprRegister</sprite>
+          <sprite>sprites\sprRestaurantChair</sprite>
+          <sprite>sprites\sprRestaurantTable</sprite>
+          <sprite>sprites\sprRezzedLogo</sprite>
+          <sprite>sprites\sprRichTable</sprite>
+          <sprite>sprites\sprSaunaBench</sprite>
+          <sprite>sprites\sprSaunaCounter</sprite>
+          <sprite>sprites\sprSaunaCurtain</sprite>
+          <sprite>sprites\sprSaunaFountain</sprite>
+          <sprite>sprites\sprSecretSewerGrate</sprite>
+          <sprite>sprites\sprSecretSewerManhole</sprite>
+          <sprite>sprites\sprSecretSewerShadow</sprite>
+          <sprite>sprites\sprSewerFall1</sprite>
+          <sprite>sprites\sprSewerFall1Water</sprite>
+          <sprite>sprites\sprSewerFall2</sprite>
+          <sprite>sprites\sprSewerFall2Water</sprite>
+          <sprite>sprites\sprSewerForms</sprite>
+          <sprite>sprites\sprSewerMasks</sprite>
+          <sprite>sprites\sprSewerPhones</sprite>
+          <sprite>sprites\sprSewerPlans</sprite>
+          <sprite>sprites\sprSewerTapes</sprite>
+          <sprite>sprites\sprSewerWaterLarge</sprite>
+          <sprite>sprites\sprSewerWaterMedium</sprite>
+          <sprite>sprites\sprSewerWaterSmall</sprite>
+          <sprite>sprites\sprShelvesDown</sprite>
+          <sprite>sprites\sprShelvesMask</sprite>
+          <sprite>sprites\sprShirts</sprite>
+          <sprite>sprites\sprShittyBar</sprite>
+          <sprite>sprites\sprShittyBarShelf</sprite>
+          <sprite>sprites\sprShittyBarTable</sprite>
+          <sprite>sprites\sprShoes</sprite>
+          <sprite>sprites\sprShowerCurtain</sprite>
+          <sprite>sprites\sprShowerGlassDoor</sprite>
+          <sprite>sprites\sprShowerGlassH</sprite>
+          <sprite>sprites\sprShowerGlassV</sprite>
+          <sprite>sprites\sprSign</sprite>
+          <sprite>sprites\sprSignGlow</sprite>
+          <sprite>sprites\sprSink</sprite>
+          <sprite>sprites\sprSitCushion</sprite>
+          <sprite>sprites\sprSmallTable</sprite>
+          <sprite>sprites\sprSofaH48</sprite>
+          <sprite>sprites\sprSofaH64</sprite>
+          <sprite>sprites\sprSofaV48</sprite>
+          <sprite>sprites\sprSofaV64</sprite>
+          <sprite>sprites\sprSolarium</sprite>
+          <sprite>sprites\sprSolariumOpen</sprite>
+          <sprite>sprites\sprSpeaker</sprite>
+          <sprite>sprites\sprSpeakerBooth</sprite>
+          <sprite>sprites\sprSpeakerTable</sprite>
+          <sprite>sprites\sprSpot</sprite>
+          <sprite>sprites\sprSpotLight</sprite>
+          <sprite>sprites\sprSquareTable</sprite>
+          <sprite>sprites\sprStage</sprite>
+          <sprite>sprites\sprStatueFence</sprite>
+          <sprite>sprites\sprStoreShelf</sprite>
+          <sprite>sprites\sprStoveDown</sprite>
+          <sprite>sprites\sprStroboscope</sprite>
+          <sprite>sprites\sprStroller</sprite>
+          <sprite>sprites\sprSunChair</sprite>
+          <sprite>sprites\sprSurveillanceCorner</sprite>
+          <sprite>sprites\sprTable</sprite>
+          <sprite>sprites\sprTableBarricade</sprite>
+          <sprite>sprites\sprTableStriped</sprite>
+          <sprite>sprites\sprTigerCarpet</sprite>
+          <sprite>sprites\sprToaster</sprite>
+          <sprite>sprites\sprToiletDown</sprite>
+          <sprite>sprites\sprToolTable</sprite>
+          <sprite>sprites\sprTowels</sprite>
+          <sprite>sprites\sprToyBall</sprite>
+          <sprite>sprites\sprToyBear</sprite>
+          <sprite>sprites\sprToyCar</sprite>
+          <sprite>sprites\sprToyLego</sprite>
+          <sprite>sprites\sprToyM16</sprite>
+          <sprite>sprites\sprToyMP5</sprite>
+          <sprite>sprites\sprToyTurtle</sprite>
+          <sprite>sprites\sprTrashbag</sprite>
+          <sprite>sprites\sprTrashcan</sprite>
+          <sprite>sprites\sprTrophy</sprite>
+          <sprite>sprites\sprTrophyCabinet1</sprite>
+          <sprite>sprites\sprTrophyCabinet2</sprite>
+          <sprite>sprites\sprTrophyHead</sprite>
+          <sprite>sprites\sprTruckFence</sprite>
+          <sprite>sprites\sprTub</sprite>
+          <sprite>sprites\sprTurd</sprite>
+          <sprite>sprites\sprTVBlack</sprite>
+          <sprite>sprites\sprTVSet</sprite>
+          <sprite>sprites\sprTVWallMounted</sprite>
+          <sprite>sprites\sprTyre</sprite>
+          <sprite>sprites\sprUnderwear</sprite>
+          <sprite>sprites\sprUrinalV</sprite>
+          <sprite>sprites\sprVendingMachine</sprite>
+          <sprite>sprites\sprVenusCandle</sprite>
+          <sprite>sprites\sprVenusLevel</sprite>
+          <sprite>sprites\sprVenusPatrol</sprite>
+          <sprite>sprites\sprVenusPatrolChalk</sprite>
+          <sprite>sprites\sprVenusPatrolSmall</sprite>
+          <sprite>sprites\sprVenusPetrol</sprite>
+          <sprite>sprites\sprVHSArchive</sprite>
+          <sprite>sprites\sprVHSCounter</sprite>
+          <sprite>sprites\sprVHSRackH</sprite>
+          <sprite>sprites\sprVHSRackV</sprite>
+          <sprite>sprites\sprVHStapes</sprite>
+          <sprite>sprites\sprVinylPlayer</sprite>
+          <sprite>sprites\sprVinylRecord</sprite>
+          <sprite>sprites\sprVomit</sprite>
+          <sprite>sprites\sprVomitBucket</sprite>
+          <sprite>sprites\sprWaterPuddle</sprite>
+          <sprite>sprites\sprWetFloorWarning</sprite>
+          <sprite>sprites\sprWetSpot</sprite>
+          <sprite>sprites\sprWheelChair</sprite>
+          <sprite>sprites\sprWhiteBarStool</sprite>
+          <sprite>sprites\sprWhiteSofa</sprite>
+          <sprite>sprites\sprWhiteTigerCarpet</sprite>
+          <sprite>sprites\sprWineRack</sprite>
+          <sprite>sprites\sprWokKitchen</sprite>
+          <sprite>sprites\sprWorkTable</sprite>
+          <sprite>sprites\sprYinYang</sprite>
+          <sprites name="Trauma">
+            <sprite>sprites\sprHospitalBed</sprite>
+            <sprite>sprites\sprHospitalBed2</sprite>
+            <sprite>sprites\sprHospitalBedStand</sprite>
+            <sprite>sprites\sprHospitalChair</sprite>
+            <sprite>sprites\sprHospitalCouch</sprite>
+            <sprite>sprites\sprHospitalCouch2</sprite>
+            <sprite>sprites\sprHospitalCupboard</sprite>
+            <sprite>sprites\sprHospitalCurtains</sprite>
+            <sprite>sprites\sprHospitalDesk</sprite>
+            <sprite>sprites\sprHospitalDoorH</sprite>
+            <sprite>sprites\sprHospitalDoorV</sprite>
+            <sprite>sprites\sprHospitalEntranceDoors</sprite>
+            <sprite>sprites\sprHospitalLocker</sprite>
+            <sprite>sprites\sprHospitalPlant</sprite>
+            <sprite>sprites\sprHospitalPlantDead</sprite>
+            <sprite>sprites\sprHospitalReception</sprite>
+            <sprite>sprites\sprHospitalSofaH</sprite>
+            <sprite>sprites\sprHospitalSofaV</sprite>
+            <sprite>sprites\sprHospitalStaffMicro</sprite>
+            <sprite>sprites\sprHospitalStaffSofa</sprite>
+            <sprite>sprites\sprHospitalStaffTable</sprite>
+            <sprite>sprites\sprXray</sprite>
+          </sprites>
+          <sprite>sprites\sprJacket</sprite>
+          <sprite>sprites\sprSewerShadow</sprite>
+          <sprite>sprites\sprSoup</sprite>
+        </sprites>
+        <sprites name="Arrow">
+          <sprite>sprites\sprArrow</sprite>
+          <sprite>sprites\sprArrowGray</sprite>
+          <sprite>sprites\sprGoArrow</sprite>
+        </sprites>
+        <sprites name="Elevator">
+          <sprite>sprites\sprElevator</sprite>
+          <sprite>sprites\sprElevatorFloor</sprite>
+          <sprite>sprites\sprElevatorMask</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Cocaine Cowboy">

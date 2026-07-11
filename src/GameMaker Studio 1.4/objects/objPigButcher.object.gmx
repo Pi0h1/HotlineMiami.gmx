@@ -1392,8 +1392,10 @@ if sprite_index=sprPigButcher or sprite_index=sprPigButcherAttack or sprite_inde
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index=sprPigButcher
-global.pigkill=1</string>
+            <string>exit;
+sprite_index=sprPigButcher
+global.pigkill=1
+</string>
           </argument>
         </arguments>
       </action>
@@ -1415,9 +1417,11 @@ global.pigkill=1</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(vk_shift) {
-with objEnemy instance_destroy()
-}</string>
+            <string>exit;
+if keyboard_check(vk_shift) {
+    with objEnemy instance_destroy()
+}
+</string>
           </argument>
         </arguments>
       </action>

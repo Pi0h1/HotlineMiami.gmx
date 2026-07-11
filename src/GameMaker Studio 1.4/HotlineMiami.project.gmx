@@ -3050,6 +3050,15 @@
       <script>scripts\scrMaskDrop_DrawPatch.gml</script>
       <script>scripts\scrDrawConversation.gml</script>
     </scripts>
+    <scripts name="Custom Character Example">
+      <script>scripts\scrPigMoveKeyboard.gml</script>
+      <script>scripts\scrPigPickUp.gml</script>
+      <script>scripts\scrPigPickUp2.gml</script>
+      <script>scripts\scrPigGetWeapon.gml</script>
+      <script>scripts\scrPigAnimationEnd.gml</script>
+      <script>scripts\scrPigAttack.gml</script>
+      <script>scripts\scrPigIsWalking.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <fonts name="Hotline Miami">
@@ -3163,6 +3172,7 @@
           </objects>
         </objects>
         <objects name="Pig Butcher">
+          <object>objects\objPlayerPig</object>
           <object>objects\objPigButcher</object>
           <object>objects\objPigButcherHeadbutt</object>
           <object>objects\objPigButcherKill</object>

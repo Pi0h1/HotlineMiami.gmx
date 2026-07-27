@@ -62,6 +62,8 @@ if global.grade[global.currentlevel - 1] &lt; scrGradeToNumber(grade) global.gra
 global.lastgrade = scrGradeToNumber(grade);
 
 loadingIconSpeed = .125;
+
+txt_Warning = "Leaderboards are unsupported#in this modded version of the game."
 </string>
           </argument>
         </arguments>
@@ -212,6 +214,13 @@ repeat(o_def){
     o_i+=(360/o_def);
 }
 draw_sprite(sprWeapons,loadingIndex,loading_x,loading_y);
+
+draw_set_halign(fa_middle);
+draw_set_valign(fa_center);
+draw_set_font(fntDate);
+
+draw_text_colour((room_width/2)+1,(room_height/2)+64+1,txt_Warning,c_black,c_black,c_black,c_black,1);
+draw_text_colour(room_width/2,(room_height/2)+64,txt_Warning,c_white,c_white,c_white,c_white,1);
 
 loadingIndex+=loadingIconSpeed;
 

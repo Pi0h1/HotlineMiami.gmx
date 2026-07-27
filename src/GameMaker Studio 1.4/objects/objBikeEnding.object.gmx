@@ -43,7 +43,11 @@ credits_y=room_height
 
 global.grade[19]=15
 start_time=current_time
-credits="a game by##DENNATON####game design by##JONATAN SODERSTROM##&amp; DENNIS WEDIN####graphics artist##DENNIS WEDIN####additional graphics##JONATAN SODERSTROM####programmer##JONATAN SODERSTROM######additional programming##OSCAR DRAGEN####sound effects##JORDAN FEHR####mac version##LEON ARNOTT######published by##DEVOLVER DIGITAL##-----------##GRAEME STRUTHERS##NIGEL LOWRIE##RICK STULTS##MIKE WILSON##HARRY MILLER##STEPHANIE TINSLEY-SCHOPP##KIRK JOHNSON##WILL ELLIOTT######music by##SUN ARAW##COCONUTS##M.O.O.N.##JASPER BYRNE##EL HUERVO##PERTURBATOR##SCATTLE##ELIOTT BERLIN##EIRIK SUHRKE######special thanks to####TIM W##VILLE KRUMLINDE##JEFF ROBERTS##NIKLAS AKERBLAD##MATS EK##PETER RASMUSSON##MARTIN SVENSSON##OSCAR DRAGEN##MARKUS LARSSON##LINDA PARLESTEN##NIGEL LOWRIE##JAN WILLEM NIJMAN##RAMI ISMAIL#############THE END##########################THANK YOU FOR PLAYING!"</string>
+
+txt_PortCredit = "''GameMaker: Studio 1.4'' port by#Pi0h1.com" // If you used this port, thank me by not altering my credit! ;)
+
+credits="a game by##DENNATON####game design by##JONATAN SODERSTROM##&amp; DENNIS WEDIN####graphics artist##DENNIS WEDIN####additional graphics##JONATAN SODERSTROM####programmer##JONATAN SODERSTROM######additional programming##OSCAR DRAGEN####sound effects##JORDAN FEHR####mac version##LEON ARNOTT######published by##DEVOLVER DIGITAL##-----------##GRAEME STRUTHERS##NIGEL LOWRIE##RICK STULTS##MIKE WILSON##HARRY MILLER##STEPHANIE TINSLEY-SCHOPP##KIRK JOHNSON##WILL ELLIOTT######music by##SUN ARAW##COCONUTS##M.O.O.N.##JASPER BYRNE##EL HUERVO##PERTURBATOR##SCATTLE##ELIOTT BERLIN##EIRIK SUHRKE######special thanks to####TIM W##VILLE KRUMLINDE##JEFF ROBERTS##NIKLAS AKERBLAD##MATS EK##PETER RASMUSSON##MARTIN SVENSSON##OSCAR DRAGEN##MARKUS LARSSON##LINDA PARLESTEN##NIGEL LOWRIE##JAN WILLEM NIJMAN##RAMI ISMAIL##"+txt_PortCredit+"##########THE END##########################THANK YOU FOR PLAYING!"
+</string>
           </argument>
         </arguments>
       </action>

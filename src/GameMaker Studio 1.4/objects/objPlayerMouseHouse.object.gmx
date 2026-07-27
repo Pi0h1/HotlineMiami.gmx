@@ -112,13 +112,15 @@ viewx=objPlayer.x+((display_mouse_get_x()-display_get_width()*0.5)*(view_wview[0
 viewy=objPlayer.y+((display_mouse_get_y()-display_get_height()*0.5)*(view_hview[0]/display_get_height()))*factor
 }
 
-viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)*0.1
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)
-vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
+    if !instance_exists(objPicture) {
+        viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)*0.1
+        viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,viewx,viewy)
+        view_xview[0]+=lengthdir_x(viewspeed,viewdir)
+        view_yview[0]+=lengthdir_y(viewspeed,viewdir)
+        vdist=point_distance(x,y,room_width/2,room_height/2)
+        vdir=point_direction(room_width/2,room_height/2,x,y)
+        view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
+    }
 } else {
 if objPlayer.active=0 and (instance_exists(objPhoneConversation) or instance_exists(objFocus)) {
 if instance_exists(objLightingEngine) or instance_exists(objTutorialLight) {
@@ -430,14 +432,7 @@ view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
 }
 
 with objPicture {
-valid=0 
-vdist=point_distance(x,y,room_width/2,room_height/2)
-vdir=point_direction(room_width/2,room_height/2,x,y)
-viewspeed=point_distance(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x,y)*0.2
-viewdir=point_direction(view_xview[0]+view_wview[0]/2,view_yview[0]+view_hview[0]/2,x,y)
-view_xview[0]+=lengthdir_x(viewspeed,viewdir)
-view_yview[0]+=lengthdir_y(viewspeed,viewdir)
-view_angle[0]=lengthdir_y(vdist*(1/160),vdir*2)
+
 }
 
 with objBoss4 {
@@ -674,7 +669,8 @@ y=lasty
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with other {
+            <string>if (room == rmMansionMainHall &amp;&amp; (instance_exists(objLevelComplete) || file_exists(working_directory+"\restartmusic"))) {exit;} // To prevent dying to the Father's suicide bullet...
+with other {
 if place_meeting(x,y,objSolid) {
 move_outside_solid(direction-180,speed*2) 
 if !place_meeting(x,y,objPlayer) exit
@@ -758,7 +754,8 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room=rmSequence12b {
+            <string>if (room == rmMansionMainHall &amp;&amp; (instance_exists(objLevelComplete) || file_exists(working_directory+"\restartmusic"))) {exit;} // To prevent dying to the Father's suicide bullet...
+if room=rmSequence12b {
 with other {
 if place_meeting(x,y,objSolid) {
 move_outside_solid(direction-180,speed*2) 
@@ -821,7 +818,8 @@ my_id.speed=1.5+random(1)+bullets*0.15
 my_id.image_angle=my_id.direction
 instance_destroy()
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

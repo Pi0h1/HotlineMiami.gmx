@@ -30,7 +30,9 @@ wait=60
 image_speed=0
 alarm[0]=100+random(200)
 global.done=0
-scrInitPathFinding()</string>
+scrInitPathFinding()
+hasShotHimself = false;
+</string>
           </argument>
         </arguments>
       </action>
@@ -359,7 +361,7 @@ instance_destroy()
 exit
 state=8
 }
-if image_index&gt;12 and image_index-0.2&lt;12 {
+if image_index&gt;12 and !hasShotHimself {
 repeat (8) {
 my_id=instance_create(x-3+random(6),y-3+random(6),objBloodDrop)
 my_id.image_xscale=1-random(0.2)
@@ -392,6 +394,7 @@ my_id.speed=12
 with objPlayer energie=100
 instance_create(x,y,objLevelComplete)
 audio_play_sound(sndMagnum,0,false)
+hasShotHimself = true;
 }
 }
 </string>

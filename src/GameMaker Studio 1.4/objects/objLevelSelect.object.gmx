@@ -32,8 +32,8 @@ newsong = 1;
 
 global.levels[20] = 1;
 global.levels[21] = 1;
-global.levels[22] = 1;
-global.levels[23] = 1;
+global.levels[22] = 0;
+global.levels[23] = 0;
 
 if (global.xbox == 1) {
     scrInitXboxButtons();
@@ -120,7 +120,7 @@ chapter[a++]="BETA CHAPTERS";
 chapter[a++]="BONUS FEATURE";
 
 totalLevelCount_Jacket = 15;
-totalLevelCount = a-1;
+totalLevelCount = a-1 -2;
 
 if (global.levels[totalLevelCount_Jacket] == 1) {
     levels = totalLevelCount // Reveal the real amount of levels once Jacket's campaign is complete. 

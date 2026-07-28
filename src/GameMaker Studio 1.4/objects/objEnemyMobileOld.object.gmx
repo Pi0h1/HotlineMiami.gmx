@@ -70,7 +70,7 @@ findwall=0</string>
             <string>scrMoveSolidOn()
 if alert&gt;0 findwall=1
 if sprite_index=sprEWalkUnarmed scrGoGetWeapon()
-if sprite_index=sprEWalkUnarmed nothing=0 else global.factor+=sign(alert)
+
 if path_index&gt;0 {
 image_speed=0.1
 if path_position=1 {path_end() direction=round(direction*0.1)*10}
@@ -129,7 +129,8 @@ if sprite_index=sprEWalkM16 and reload=0 direction=scrRotate(direction,point_dir
 angle=direction
 if ammo&lt;=0 exit
 scrEnemyShoot()
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

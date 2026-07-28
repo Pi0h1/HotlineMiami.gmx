@@ -3026,6 +3026,7 @@
         <script>scripts\scrPatchLevelTitle_Create.gml</script>
         <script>scripts\scrXboxLevelSelect.gml</script>
         <script>scripts\drawVignette.gml</script>
+        <script>scripts\scrGetFactor.gml</script>
       </scripts>
       <scripts name="Obsolete">
         <script>scripts\sleep.gml</script>

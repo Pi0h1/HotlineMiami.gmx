@@ -67,7 +67,7 @@ gotowall=0</string>
           <argument>
             <kind>1</kind>
             <string>
-global.factor+=sign(alert)
+
 
 if path_index&gt;0 {
 if image_speed&lt;0.3 image_speed=0.3
@@ -212,10 +212,10 @@ my_id.friction=0.15
 }
 if bullets&gt;1 or round(random(1)) or energie&lt;0 {
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(((100+bullets*20))+200*global.factor)+"pts"
-global.myscore+=((100+bullets*20))+200*global.factor
+my_id.text="+"+string(((100+bullets*20))+200*scrGetFactor())+"pts"
+global.myscore+=((100+bullets*20))+200*scrGetFactor()
 global.killscore+=(100+bullets*20)
-global.boldscore+=200*global.factor
+global.boldscore+=200*scrGetFactor()
 global.combo+=1
 global.combotime=240
 global.killx[global.kills]=x

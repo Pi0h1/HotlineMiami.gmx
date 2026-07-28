@@ -70,8 +70,8 @@ audio_play_sound(sndPunch,0,false)
 myx=x+lengthdir_x(20,image_angle)
 myy=y+lengthdir_y(24,image_angle)
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((200)+400*(global.factor-1))+"pts"
-global.myscore+=(200)+400*(global.factor-1)
+my_id.text="+"+string((200)+400*(scrGetFactor()-1))+"pts"
+global.myscore+=(200)+400*(scrGetFactor()-1)
 my_id=instance_create(myx,myy,objBloodPool)
 my_id=instance_create(x,y,objDeadBody)
 my_id.sprite_index=sprEBackBashed
@@ -225,10 +225,10 @@ audio_play_sound(sndHit,0,false)
 audio_play_sound(sndPunch,0,false)
 global.shake=5
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((200)+400*(global.factor))+"pts"
-global.myscore+=(200)+400*(global.factor)
+my_id.text="+"+string((200)+400*(scrGetFactor()))+"pts"
+global.myscore+=(200)+400*(scrGetFactor())
 global.killscore+=200
-global.boldscore+=400*global.factor
+global.boldscore+=400*scrGetFactor()
 global.combotime=240
 global.combo+=1
 global.killx[global.kills]=x

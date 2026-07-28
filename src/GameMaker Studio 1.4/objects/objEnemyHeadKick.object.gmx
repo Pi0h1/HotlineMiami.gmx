@@ -53,14 +53,14 @@ scrUpdateMaskPos(sprite_index)</string>
           <argument>
             <kind>1</kind>
             <string>if image_index&lt;9 image_index+=0.2 else {
-if global.maskindex=4 global.factor+=4
+
 myx=x+lengthdir_x(5,image_angle)
 myy=y+lengthdir_y(5,image_angle)
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((200)+400*(global.factor))+"pts"
-global.myscore+=(200)+400*(global.factor)
+my_id.text="+"+string((200)+400*(scrGetFactor()))+"pts"
+global.myscore+=(200)+400*(scrGetFactor())
 global.killscore+=200
-global.boldscore+=400*global.factor
+global.boldscore+=400*scrGetFactor()
 global.combotime=240
 global.combo+=1
 global.killx[global.kills]=x

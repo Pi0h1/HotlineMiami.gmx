@@ -98,7 +98,7 @@ if speed=0 image_index=0</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=sprPoliceWalkUnarmed nothing=0 else global.factor+=sign(alert)
+            <string>
 scrMoveSolidOn()
 if sprite_index=sprPoliceWalkUnarmed scrPoliceGetWeapon()
 if !place_free(x+hspeed*3,y+vspeed*3) {
@@ -137,7 +137,8 @@ if !instance_exists(objPlayer) {alert=0 scrMoveSolidOff() exit}
 
 friction=0
 
-scrMoveSolidOff()</string>
+scrMoveSolidOff()
+</string>
           </argument>
         </arguments>
       </action>
@@ -213,8 +214,8 @@ scrIdleGetEnemy()
 global.punchonly=0
 if noweapon=1 factor=0.5 else factor=1
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(((100+bullets*20)+80*factor)*global.factor)+"pts"
-global.myscore+=((100+bullets*20)+80*factor)*global.factor
+my_id.text="+"+string(((100+bullets*20)+80*factor)*scrGetFactor())+"pts"
+global.myscore+=((100+bullets*20)+80*factor)*scrGetFactor()
 global.killscore+=(100+bullets*20)
 global.boldscore+=80*factor
 global.combo+=1
@@ -261,7 +262,8 @@ my_id.speed=2+random(2)
 my_id.ammo=ammo
 }
 instance_destroy()
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

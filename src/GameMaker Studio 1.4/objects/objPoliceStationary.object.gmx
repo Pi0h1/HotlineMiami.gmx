@@ -94,7 +94,7 @@ image_angle=floor(random(4))*90</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=sprPoliceWalkUnarmed nothing=0 else global.factor+=sign(alert)
+            <string>
 scrMoveSolidOn()
 if sprite_index=sprPoliceWalkUnarmed scrPoliceGetWeapon()
 if !place_free(x+hspeed*3,y+vspeed*3) {
@@ -108,7 +108,8 @@ if path_position=1 path_end()
 scrMoveSolidOff()
 if !instance_exists(objPlayer) {alert=0 speed=0 exit}
 
-scrPoliceStaticStep()</string>
+scrPoliceStaticStep()
+</string>
           </argument>
         </arguments>
       </action>

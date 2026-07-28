@@ -95,9 +95,9 @@ if noweapon=0 {
 global.test=0
 with objEnemy if alert=1 global.test+=1
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(500*global.factor)+"pts"
-global.myscore+=(500*global.factor)
-global.boldscore+=(500*global.factor)
+my_id.text="+"+string(500*scrGetFactor())+"pts"
+global.myscore+=(500*scrGetFactor())
+global.boldscore+=(500*scrGetFactor())
 global.combotime+=100
 global.killx[global.kills]=x
 global.killy[global.kills]=y
@@ -133,9 +133,9 @@ exit
 if (global.my_id.image_index=6) {
 if sprite_index=sprEWalkUnarmed nothing=1 else {
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(500*global.factor)+"pts"
-global.myscore+=(500*global.factor)
-global.boldscore+=(500*global.factor)
+my_id.text="+"+string(500*scrGetFactor())+"pts"
+global.myscore+=(500*scrGetFactor())
+global.boldscore+=(500*scrGetFactor())
 global.combotime+=100
 global.killx[global.kills]=x
 global.killy[global.kills]=y

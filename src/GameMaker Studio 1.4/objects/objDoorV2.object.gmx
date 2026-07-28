@@ -127,9 +127,9 @@ if noweapon=0 {
 global.test=0
 with objEnemy if alert=1 global.test+=1
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string(180+300*global.factor)+"pts"
-global.myscore+=180+300*global.factor
-global.boldscore+=180+300*global.factor
+my_id.text="+"+string(180+300*scrGetFactor())+"pts"
+global.myscore+=180+300*scrGetFactor()
+global.boldscore+=180+300*scrGetFactor()
 global.combotime+=100
 global.killx[global.kills]=x
 global.killy[global.kills]=y

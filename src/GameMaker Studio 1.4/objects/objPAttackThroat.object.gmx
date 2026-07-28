@@ -61,10 +61,10 @@ audio_play_sound(sndHitWall,0,false)
 myx=x+lengthdir_x(7,image_angle)
 myy=y+lengthdir_y(7,image_angle)
 my_id=instance_create(x,y-12,objScore)
-my_id.text="+"+string((kill)+bold*(global.factor))+"pts"
-global.myscore+=(kill)+bold*(global.factor)
+my_id.text="+"+string((kill)+bold*(scrGetFactor()))+"pts"
+global.myscore+=(kill)+bold*(scrGetFactor())
 global.killscore+=kill
-global.boldscore+=bold*global.factor
+global.boldscore+=bold*scrGetFactor()
 global.combotime=240
 global.combo+=1
 global.killx[global.kills]=x

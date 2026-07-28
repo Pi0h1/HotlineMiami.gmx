@@ -91,7 +91,7 @@ image_angle=floor(random(4))*90</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sprite_index=sprEWalkUnarmed nothing=0 else global.factor+=sign(alert)
+            <string>
 scrMoveSolidOn()
 if sprite_index=sprEWalkUnarmed scrGoGetWeapon()
 if !place_free(x+hspeed*3,y+vspeed*3) {
@@ -127,7 +127,8 @@ if sprite_index=sprEWalkM16 and reload=0 direction=scrRotate(direction,point_dir
 angle=direction
 if ammo&lt;=0 exit
 scrEnemyShoot()
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

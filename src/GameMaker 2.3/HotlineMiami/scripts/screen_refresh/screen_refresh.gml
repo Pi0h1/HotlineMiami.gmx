@@ -1,6 +1,0 @@
-function screen_refresh() {
-
-
-
-
-}

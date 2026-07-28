@@ -1,2 +1,0 @@
-scrPatch_Ammo();
-

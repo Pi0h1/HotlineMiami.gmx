@@ -1,1 +1,0 @@
-scrGetMessage(0)

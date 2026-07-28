@@ -1,1 +1,0 @@
-image_angel=-35

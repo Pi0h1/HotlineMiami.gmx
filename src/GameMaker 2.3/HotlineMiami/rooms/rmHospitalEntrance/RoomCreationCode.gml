@@ -1,3 +1,0 @@
-global.done=1
-with objDoorH sprite_index=sprHospitalDoorH
-with objDoorV sprite_index=sprHospitalDoorH

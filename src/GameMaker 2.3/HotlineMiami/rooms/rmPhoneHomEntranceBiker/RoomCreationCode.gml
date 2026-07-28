@@ -1,1 +1,0 @@
-global.done=0

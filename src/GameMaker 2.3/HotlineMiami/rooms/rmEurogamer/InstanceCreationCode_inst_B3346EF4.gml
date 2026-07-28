@@ -1,1 +1,0 @@
-sprite_index=sprEuroPod2H

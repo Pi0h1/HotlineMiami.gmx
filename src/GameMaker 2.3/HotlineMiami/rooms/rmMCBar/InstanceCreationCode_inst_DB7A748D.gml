@@ -1,1 +1,0 @@
-image_angle=180-5+random(10)

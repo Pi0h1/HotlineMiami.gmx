@@ -1,1 +1,0 @@
-image_index=random(12)

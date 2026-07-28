@@ -1,6 +1,0 @@
-function scrXboxBikerKill() {
-	scrMCKill()
-
-
-
-}

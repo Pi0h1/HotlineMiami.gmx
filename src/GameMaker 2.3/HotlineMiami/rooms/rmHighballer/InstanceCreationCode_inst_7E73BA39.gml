@@ -1,2 +1,0 @@
-sprite_index=sprArcadeCabinet4
-image_angle=-135

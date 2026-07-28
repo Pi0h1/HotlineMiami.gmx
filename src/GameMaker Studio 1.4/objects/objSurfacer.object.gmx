@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if surface_exists(global.surf2) {
+            <string>instance_create(x,y,objGoreSurface);
+
+exit;
+if surface_exists(global.surf2) {
 surface_free(global.surf2)
 global.surf2=surface_create(room_width*3,room_height*3)
 }
@@ -73,7 +76,8 @@ check=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//global.factor=1
+            <string>exit;
+//global.factor=1
 if testsurface=1 {scrSurfaceTiles() testsurface=0}
 if !surface_exists(global.surf2) {
 global.surf2=surface_create(room_width*3,room_height*3)
@@ -114,7 +118,8 @@ tile_layer_show(1000000)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.surfaces=1 {
+            <string>exit;
+if global.surfaces=1 {
 if surface_exists(global.surf3) and surface_exists(global.surf2) {
 if save=1 {
 my_id=instance_create(0,0,objSurfaceReturn)
@@ -137,7 +142,8 @@ draw_clear_alpha(make_color_hsv(0,0,2),0)
 surface_alpha()
 surface_reset_target()
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -159,7 +165,8 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.resetstory {
+            <string>exit;
+if global.resetstory {
 draw_clear(c_black)
 screen_refresh()
 room_persistent=0
@@ -180,7 +187,8 @@ surface_alpha()
 surface_reset_target()
 }
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -202,13 +210,15 @@ surface_reset_target()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.surfaces {
+            <string>exit;
+if global.surfaces {
 if surface_exists(global.surf3) and surf3 draw_surface_ext(global.surf3,0,0,(1/3),(1/3),0,c_white,1)
 /*with objWater {
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 }*/
 if surface_exists(global.surf2) and surf2 draw_surface_ext(global.surf2,0,0,(1/3),(1/3),0,c_white,1)
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

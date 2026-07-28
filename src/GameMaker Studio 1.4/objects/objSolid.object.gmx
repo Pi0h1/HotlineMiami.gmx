@@ -8,6 +8,65 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if object_get_parent(objWall) {
+    alarm[0] = 2;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if object_get_parent(objWall) {
+    shadow = instance_create(x+2, y+3, objWallShadow);
+    shadow.sprite_index = sprite_index;
+    shadow.image_index  = image_index;
+    shadow.image_xscale = image_xscale;
+    shadow.image_yscale = image_yscale;
+    shadow.image_angle  = image_angle;
+    shadow.image_blend  = c_black;
+    shadow.image_alpha  = 0.5;
+    shadow.depth        = depth+1;
+    shadow.visible      = visible;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -26,7 +85,8 @@
           <argument>
             <kind>1</kind>
             <string>draw_sprite_ext(sprite_index,image_index,x+2,y+3,image_xscale,image_yscale,image_angle,c_black,0.5)
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)</string>
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+</string>
           </argument>
         </arguments>
       </action>

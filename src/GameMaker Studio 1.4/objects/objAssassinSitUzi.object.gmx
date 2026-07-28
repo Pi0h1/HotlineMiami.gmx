@@ -118,7 +118,8 @@ draw_sprite_ext(sprAssassinSitLegs,0,x,y,image_xscale,image_yscale,image_angle,i
 draw_sprite_ext(sprAssassinUzi,0,x+1,y+1,image_xscale,image_yscale,direction,c_black,0.5)
 draw_sprite_ext(sprAssassinUzi,0,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
 }
-draw_sprite_ext(sprRatMask,0,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)</string>
+draw_sprite_ext(sprRichterMask,0,x,y,image_xscale,image_yscale,direction,image_blend,image_alpha)
+</string>
           </argument>
         </arguments>
       </action>

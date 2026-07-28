@@ -4125,6 +4125,11 @@
       </objects>
       <object>objects\objGame</object>
       <object>objects\objScanlines</object>
+      <object>objects\objSurfaceManager</object>
+      <object>objects\objGoreSurface</object>
+      <object>objects\objWallShadow</object>
+      <object>objects\objWall</object>
+      <object>objects\objEffectsGround</object>
     </objects>
     <objects name="Custom">
       <object>objects\objRain</object>

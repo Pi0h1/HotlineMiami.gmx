@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>2</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objEffectsGround</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,9 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>friction=0.1
+            <string>event_inherited();
+friction=0.1
 rotspeed=(-1+round(random(1))*2)*random(5)
-startspeed=0.1</string>
+startspeed=0.1
+</string>
           </argument>
         </arguments>
       </action>

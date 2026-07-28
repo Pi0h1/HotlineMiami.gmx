@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>dir=random(1000)
 if global.alienware scrAlienWarePink()
-lastbonus=global.bonustime</string>
+lastbonus=global.bonustime
+</string>
           </argument>
         </arguments>
       </action>
